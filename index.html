@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NYC Nightlife | Best Bars, Clubs & Events in New York</title>
-  <meta name="description" content="Expert guide to NYC nightlife. Discover the best bars, clubs, events, and experiences in New York City. Real-time event listings, insider tips, and booking guides.">
-  <meta name="keywords" content="NYC nightlife, bars in New York, best clubs, NYC events, things to do tonight">
+  <title>NYC Nightlife — The Digital Front Door to New York's Best Nights</title>
+  <meta name="description" content="Immersive NYC nightlife platform. Real-time events, insider guides, and authentic experiences. Where to go tonight in New York City.">
+  <meta name="keywords" content="NYC nightlife, bars, clubs, events, things to do tonight">
   <link rel="canonical" href="https://newyorknightlife.github.io/">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="NYC Nightlife | Best Bars, Clubs & Events">
-  <meta property="og:description" content="Your complete guide to NYC's best nightlife, events, and experiences.">
+  <meta property="og:title" content="NYC Nightlife — The Digital Front Door">
+  <meta property="og:description" content="Electric energy. Neon lights. Real insider knowledge. Your guide to NYC's best nightlife.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://newyorknightlife.github.io/">
   
@@ -21,233 +21,341 @@
     "@type": "WebSite",
     "name": "NYC Nightlife",
     "url": "https://newyorknightlife.github.io/",
-    "description": "Expert guide to NYC nightlife, bars, clubs, and events",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://newyorknightlife.github.io/?q={search_term_string}"
-      }
-    }
+    "description": "Immersive guide to NYC's nightlife, bars, clubs, and experiences"
   }
   </script>
   
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/creative.css">
 </head>
 <body>
 
-<!-- Header / Navigation -->
-<header>
+<!-- Canvas for ambient particles -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- Times Square Background Glow -->
+<div class="ambient-glow"></div>
+
+<!-- Navigation -->
+<header class="neon-header">
   <div class="header-container">
-    <div class="logo">🗽 NYC Nightlife</div>
-    <nav>
-      <a href="/" class="active">Home</a>
-      <a href="/guides/">Guides</a>
-      <a href="/tools/night-out-spinner.html">Tools</a>
-      <a href="/blog/">Blog</a>
-      <a href="#newsletter">Newsletter</a>
+    <div class="logo-neon">🗽 NYC</div>
+    <nav class="nav-glitch">
+      <a href="#guides" class="nav-link">Guides</a>
+      <a href="#tools" class="nav-link">Tools</a>
+      <a href="#events" class="nav-link">Events</a>
+      <a href="/#newsletter" class="nav-link cta-nav">Get In</a>
     </nav>
   </div>
 </header>
 
-<!-- Hero Section -->
-<section class="hero">
-  <h1>Nightlife Insider Knowledge</h1>
-  <p>Discover NYC's best bars, clubs, and experiences. Real-time events, insider tips, and expert recommendations for every night out.</p>
-  <div style="margin-top: 2rem;">
-    <a href="/guides/" class="cta-button">Explore Guides</a>
-    <a href="/tools/night-out-spinner.html" class="cta-button secondary">Need Ideas?</a>
-  </div>
-</section>
-
 <main>
-  <div class="container">
+  
+  <!-- HERO SECTION: Times Square Immersion -->
+  <section class="hero-immersive">
+    <div class="hero-backdrop">
+      <svg class="skyline-svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice">
+        <!-- Neon skyline silhouette -->
+        <defs>
+          <filter id="neon-glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- NYC Skyline shapes (simplified) -->
+        <rect x="0" y="200" width="80" height="200" fill="none" stroke="#FF006E" stroke-width="2" filter="url(#neon-glow)" opacity="0.8"/>
+        <rect x="100" y="150" width="100" height="250" fill="none" stroke="#00D9FF" stroke-width="2" filter="url(#neon-glow)" opacity="0.8"/>
+        <rect x="220" y="180" width="60" height="220" fill="none" stroke="#FFD60A" stroke-width="2" filter="url(#neon-glow)" opacity="0.8"/>
+        <rect x="300" y="120" width="120" height="280" fill="none" stroke="#FF006E" stroke-width="2" filter="url(#neon-glow)" opacity="0.8"/>
+        <rect x="440" y="140" width="90" height="260" fill="none" stroke="#00D9FF" stroke-width="2" filter="url(#neon-glow)" opacity="0.8"/>
+        <rect x="550" y="100" width="110" height="300" fill="none" stroke="#FF006E" stroke-width="2" filter="url(#neon-glow)" opacity="0.8"/>
+        <rect x="680" y="160" width="80" height="240" fill="none" stroke="#FFD60A" stroke-width="2" filter="url(#neon-glow)" opacity="0.8"/>
+        <rect x="780" y="130" width="100" height="270" fill="none" stroke="#00D9FF" stroke-width="2" filter="url(#neon-glow)" opacity="0.8"/>
+        <rect x="900" y="170" width="70" height="230" fill="none" stroke="#FF006E" stroke-width="2" filter="url(#neon-glow)" opacity="0.8"/>
+        <rect x="990" y="140" width="95" height="260" fill="none" stroke="#00D9FF" stroke-width="2" filter="url(#neon-glow)" opacity="0.8"/>
+        <rect x="1100" y="190" width="100" height="210" fill="none" stroke="#FFD60A" stroke-width="2" filter="url(#neon-glow)" opacity="0.8"/>
+      </svg>
+      
+      <!-- Floating neon signs -->
+      <div class="neon-sign sign-1">TONIGHT</div>
+      <div class="neon-sign sign-2">LIVE</div>
+      <div class="neon-sign sign-3">NOW</div>
+    </div>
     
-    <!-- Quick Links Section -->
-    <section>
-      <h2>Tonight's Top Picks</h2>
-      <div class="grid-3">
-        <div class="card">
-          <h3>🎉 Best Bar Crawls</h3>
-          <p>Multi-venue crawls with groups, drink specials, and local promoters. Perfect for first-timers and regulars.</p>
-          <a href="/guides/bar-crawl-guide.html">Explore Bar Crawls →</a>
-        </div>
-        <div class="card">
-          <h3>🏨 Stay Near the Action</h3>
-          <p>Hotels, Airbnbs, and accommodations positioned near NYC's best nightlife districts. Nightlife-focused.</p>
-          <a href="/guides/stay-near-nightlife.html">Find Hotels →</a>
-        </div>
-        <div class="card">
-          <h3>🎫 Events This Weekend</h3>
-          <p>Live concerts, club nights, special events, and DJ residencies happening in NYC. Updated daily.</p>
-          <a href="/guides/events-this-weekend.html">See Events →</a>
-        </div>
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <h1 class="hero-headline">
+        <span class="headline-word">Electric</span>
+        <span class="headline-word">Nights</span>
+        <span class="headline-word">Real</span>
+        <span class="headline-word">Vibes</span>
+      </h1>
+      <p class="hero-subheadline">You just stepped into Times Square at midnight. Neon lights. Pulsing energy. Real insider knowledge.</p>
+      
+      <!-- CTA Buttons as LED signs -->
+      <div class="cta-buttons">
+        <a href="/guides/" class="btn-led btn-pink">→ EXPLORE GUIDES</a>
+        <a href="#tools" class="btn-led btn-cyan">⚡ SPIN THE NIGHT</a>
       </div>
-    </section>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span>SCROLL</span>
+      <div class="scroll-arrow">↓</div>
+    </div>
+  </section>
 
-    <!-- Featured Content -->
-    <section>
-      <h2>How to Plan Your Perfect Night</h2>
-      <div class="grid-2">
-        <div>
-          <h3>Choose Your Vibe</h3>
-          <p>From dive bars to upscale lounges, rooftop venues to underground clubs — NYC has it all. Our neighborhood guides help you find exactly what you're looking for.</p>
-          <p><a href="/guides/best-nightlife-experiences.html">Browse by Neighborhood →</a></p>
-        </div>
-        <div>
-          <h3>Get a Free Planning Guide</h3>
-          <p>Download our "NYC Nightlife Cheat Sheet" — includes dress codes, average spend, how to get in, and insider tips for every neighborhood.</p>
-          <div id="newsletter" class="email-capture">
-            <h3>Get the Free Guide</h3>
-            <p>Dress codes, pricing, and insider tips for every NYC neighborhood.</p>
-            <form class="email-form">
-              <input type="email" placeholder="your@email.com" required>
-              <button type="submit">Send Guide</button>
-            </form>
+  <!-- FEATURED SECTION: What's Happening Tonight -->
+  <section class="featured-section" id="tonight">
+    <div class="section-title-bar">
+      <h2 class="section-title">🎉 WHAT'S HAPPENING TONIGHT</h2>
+      <div class="title-underline"></div>
+    </div>
+    
+    <div class="featured-grid">
+      <div class="featured-card card-blue">
+        <div class="card-badge">BARS</div>
+        <h3>Best Bars Tonight</h3>
+        <p>Rooftops. Dives. Speakeasies. Everything happening right now in real-time.</p>
+        <a href="/guides/best-nightlife-experiences.html" class="card-link">→ EXPLORE</a>
+      </div>
+      
+      <div class="featured-card card-pink">
+        <div class="card-badge">CRAWL</div>
+        <h3>Bar Crawl Crews</h3>
+        <p>Multi-venue group experiences. Organized crawls. The classic NYC night out.</p>
+        <a href="/guides/bar-crawl-guide.html" class="card-link">→ EXPLORE</a>
+      </div>
+      
+      <div class="featured-card card-yellow">
+        <div class="card-badge">EVENTS</div>
+        <h3>Live Events & DJ Nights</h3>
+        <p>Concerts. DJ residencies. Club nights. Real-time bookable experiences.</p>
+        <a href="/guides/events-this-weekend.html" class="card-link">→ EXPLORE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE TOOLS SECTION -->
+  <section class="tools-section" id="tools">
+    <div class="section-title-bar">
+      <h2 class="section-title">⚡ INTERACTIVE TOOLS</h2>
+      <div class="title-underline"></div>
+    </div>
+    
+    <!-- Neon Wheel Spinner -->
+    <div class="tool-container">
+      <div class="tool-card">
+        <h3 class="tool-title">🎡 Spin the Night</h3>
+        <p>Can't decide? Let fate choose your perfect NYC night.</p>
+        <div class="spinner-wheel" id="spinnerWheel">
+          <div class="wheel-pointer">▼</div>
+          <div class="wheel-segments">
+            <div class="segment seg-1">Rooftop Bar</div>
+            <div class="segment seg-2">Dive Bar Crawl</div>
+            <div class="segment seg-3">Live Music Venue</div>
+            <div class="segment seg-4">Club Night</div>
+            <div class="segment seg-5">Speakeasy Hunt</div>
+            <div class="segment seg-6">Group Crawl</div>
+            <div class="segment seg-7">Late Night Spot</div>
+            <div class="segment seg-8">VIP Experience</div>
           </div>
         </div>
+        <button id="spinBtn" class="btn-spin">SPIN IT</button>
+        <div id="spinResult" class="spin-result"></div>
       </div>
-    </section>
+      
+      <!-- Budget Slider Tool -->
+      <div class="tool-card">
+        <h3 class="tool-title">💰 Budget Planner</h3>
+        <p>Tell us your budget. We'll show you what's possible.</p>
+        <div class="budget-slider-wrapper">
+          <input type="range" id="budgetSlider" min="20" max="500" value="100" class="budget-slider">
+          <div class="budget-labels">
+            <span>$20</span>
+            <span class="budget-display">$100</span>
+            <span>$500</span>
+          </div>
+        </div>
+        <div id="budgetResult" class="budget-result">
+          <p>💰 <strong>$100 Night:</strong> 4-5 drinks at mid-range bars + cover charge</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Monetization Clusters -->
-    <section>
-      <h2>Our Expertise</h2>
-      <p style="text-align: center; margin-bottom: 2rem;">We specialize in NYC nightlife strategy, venue recommendations, and booking optimization.</p>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Bar & Club Guides</h3>
-          <p>In-depth reviews of 100+ venues. What to order, who goes, dress codes, and how to get in.</p>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Curated experiences from local promoters and venue managers</p>
-          <a href="/guides/best-nightlife-experiences.html">View Guides</a>
-        </div>
-        <div class="card">
-          <h3>Hotel & Travel</h3>
-          <p>Stay in the right neighborhood. We recommend hotels near the best nightlife, with booking guides.</p>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Transparent pricing and booking partner links</p>
-          <a href="/guides/hotels-near-clubs.html">Find Hotels</a>
-        </div>
-        <div class="card">
-          <h3>Events & Ticketing</h3>
-          <p>Real-time events, DJ nights, special parties, and ticketed experiences. Book direct.</p>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Partner with official ticketing and event platforms</p>
-          <a href="/guides/events-this-weekend.html">Browse Events</a>
-        </div>
+  <!-- GUIDES PREVIEW -->
+  <section class="guides-preview" id="guides">
+    <div class="section-title-bar">
+      <h2 class="section-title">📖 INSIDER GUIDES</h2>
+      <div class="title-underline"></div>
+    </div>
+    
+    <div class="guides-grid">
+      <div class="guide-preview-card">
+        <div class="guide-number">01</div>
+        <h3>Best NYC Nightlife Experiences</h3>
+        <p>1500+ word comprehensive guide. Neighborhoods. Venues. Dress codes. Pricing. Everything you need.</p>
+        <a href="/guides/best-nightlife-experiences.html" class="guide-link">Read Guide →</a>
       </div>
-    </section>
+      
+      <div class="guide-preview-card">
+        <div class="guide-number">02</div>
+        <h3>Bar Crawl Mastery</h3>
+        <p>How to crawl like a local. Routes. Group tips. Neighborhoods. Booking platforms. Full playbook.</p>
+        <a href="/guides/bar-crawl-guide.html" class="guide-link">Read Guide →</a>
+      </div>
+      
+      <div class="guide-preview-card">
+        <div class="guide-number">03</div>
+        <h3>Stay Near the Action</h3>
+        <p>Hotel guide. Position yourself near the best nightlife. Hotels by neighborhood + booking.</p>
+        <a href="/guides/stay-near-nightlife.html" class="guide-link">Read Guide →</a>
+      </div>
+      
+      <div class="guide-preview-card">
+        <div class="guide-number">04</div>
+        <h3>Events This Weekend</h3>
+        <p>Real-time event listings. Clubs. Concerts. DJ nights. Ticketing integration. Updated daily.</p>
+        <a href="/guides/events-this-weekend.html" class="guide-link">Read Guide →</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Tools Section -->
-    <section>
-      <h2>Interactive Tools</h2>
-      <p style="text-align: center;">Use these tools to plan your ideal night out in NYC.</p>
-      <div class="grid-2">
-        <div class="card">
-          <h3>🎡 Night Out Spinner</h3>
-          <p>Can't decide what to do? Spin the wheel for random NYC nightlife ideas. Great for breaking indecision.</p>
-          <a href="/tools/night-out-spinner.html">Try the Spinner</a>
-        </div>
-        <div class="card">
-          <h3>💰 Budget Night Planner</h3>
-          <p>Enter your budget. We suggest venues, drinks, and activities that fit your spending.</p>
-          <a href="/tools/budget-planner.html">Plan by Budget</a>
-        </div>
-        <div class="card">
-          <h3>🗺️ Neighborhood Quiz</h3>
-          <p>Answer quick questions about your vibe. We recommend the perfect NYC neighborhood for you.</p>
-          <a href="/tools/neighborhood-quiz.html">Take Quiz</a>
-        </div>
-        <div class="card">
-          <h3>📅 Event Calendar</h3>
-          <p>See what's happening tonight, this weekend, and beyond. All major NYC nightlife events in one place.</p>
-          <a href="/guides/events-this-weekend.html">View Calendar</a>
-        </div>
+  <!-- EMAIL CAPTURE: VIP Pass Signup -->
+  <section class="vip-pass-section" id="newsletter">
+    <div class="vip-pass-card">
+      <div class="pass-header">
+        <div class="pass-text">VIP INSIDER PASS</div>
+        <div class="pass-glow"></div>
       </div>
-    </section>
+      <h3>Get Insider Knowledge</h3>
+      <p>Weekly tips, event highlights, and nightlife trends. Delivered to your inbox.</p>
+      <form class="vip-form">
+        <input type="email" placeholder="your@email.com" required>
+        <button type="submit" class="btn-pass">GET PASS →</button>
+      </form>
+      <p class="pass-disclaimer">Join 500+ insiders. Unsubscribe anytime. No spam.</p>
+    </div>
+  </section>
 
-    <!-- Blog Preview -->
-    <section>
-      <h2>Latest From The Blog</h2>
-      <p>Expert insights on NYC nightlife trends, venue reviews, and planning tips.</p>
-      <div style="margin-top: 2rem;">
-        <div class="blog-item">
-          <h3>The Complete Guide to Rooftop Bars in Manhattan</h3>
-          <div class="blog-meta">Updated Feb 2026 | 8 min read</div>
-          <p>From Midtown high-rises to Lower Manhattan views, discover the best rooftop bars in NYC. Includes dress codes, pricing, and reservation tips.</p>
-          <a href="/blog/rooftop-bars-manhattan.html">Read Article →</a>
-        </div>
-        <div class="blog-item">
-          <h3>Williamsburg vs. Brooklyn Heights: Which Neighborhood Matches Your Vibe?</h3>
-          <div class="blog-meta">Updated Jan 2026 | 6 min read</div>
-          <p>Two Brooklyn neighborhoods, two completely different nightlife scenes. We break down the differences and help you choose.</p>
-          <a href="/blog/williamsburg-vs-brooklyn-heights.html">Read Article →</a>
-        </div>
-        <div class="blog-item">
-          <h3>How to Actually Get Into Exclusive NYC Clubs</h3>
-          <div class="blog-meta">Updated Feb 2026 | 10 min read</div>
-          <p>Insider tips on guest list strategy, dress codes, connections, and timing. Written by venue managers and promoters.</p>
-          <a href="/blog/getting-into-exclusive-clubs.html">Read Article →</a>
-        </div>
+  <!-- Why NYC Nightlife -->
+  <section class="why-section">
+    <div class="section-title-bar">
+      <h2 class="section-title">WHY NYC NIGHTLIFE?</h2>
+      <div class="title-underline"></div>
+    </div>
+    
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <h4>Real Insider Knowledge</h4>
+        <p>Written by NYC nightlife professionals. Promoters. Venue managers. Real experience.</p>
       </div>
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="/blog/" class="cta-button secondary">Read All Articles</a>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h4>Updated in Real-Time</h4>
+        <p>Events change fast. We update daily. Tonight's events. New openings. What's trending.</p>
       </div>
-    </section>
+      <div class="why-card">
+        <div class="why-icon">💡</div>
+        <h4>Actionable Strategy</h4>
+        <p>Not just recommendations. We teach you how. Guest list strategy. Dress codes. How to get in.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎪</div>
+        <h4>No Fluff</h4>
+        <p>Direct. Honest. What's actually worth your time. Budget-friendly to VIP. All covered.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Call to Action -->
-    <section>
-      <div class="email-capture">
-        <h3>Stay Updated on NYC Nightlife</h3>
-        <p>Get weekly insider tips, event highlights, and venue recommendations delivered to your inbox.</p>
-        <form class="email-form">
-          <input type="email" placeholder="your@email.com" required>
-          <button type="submit">Subscribe</button>
-        </form>
-        <p style="font-size: 0.85rem; margin-top: 1rem;">We respect your inbox. Unsubscribe anytime.</p>
-      </div>
-    </section>
-
-  </div>
 </main>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-content">
+<!-- MASCOT + CHAT INTERFACE -->
+<div class="mascot-container" id="mascot">
+  <div class="mascot-character" id="mascotChar">
+    <svg viewBox="0 0 100 100" class="mascot-svg">
+      <!-- Neon NYC Guide Bot -->
+      <defs>
+        <linearGradient id="botGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#FF006E;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#00D9FF;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <!-- Bot body -->
+      <circle cx="50" cy="50" r="35" fill="url(#botGradient)" opacity="0.2" stroke="#FF006E" stroke-width="2"/>
+      <!-- Bot head -->
+      <circle cx="50" cy="35" r="20" fill="none" stroke="#00D9FF" stroke-width="2"/>
+      <!-- Eyes -->
+      <circle cx="43" cy="32" r="3" fill="#FFD60A" class="mascot-eye"/>
+      <circle cx="57" cy="32" r="3" fill="#FFD60A" class="mascot-eye"/>
+      <!-- Mouth -->
+      <path d="M 43 38 Q 50 42 57 38" stroke="#FF006E" stroke-width="2" fill="none"/>
+      <!-- Body -->
+      <rect x="42" y="55" width="16" height="20" fill="none" stroke="#00D9FF" stroke-width="2" rx="2"/>
+      <!-- Arms -->
+      <line x1="40" y1="60" x2="25" y2="55" stroke="#FF006E" stroke-width="2"/>
+      <line x1="60" y1="60" x2="75" y2="55" stroke="#FF006E" stroke-width="2"/>
+    </svg>
+  </div>
+  
+  <!-- Chat bubble indicator -->
+  <div class="chat-indicator">?</div>
+  
+  <!-- Chat Interface (hidden by default) -->
+  <div class="chat-interface" id="chatInterface">
+    <div class="chat-header">
+      <h4>Nightlife Guide</h4>
+      <button class="close-chat" id="closeChat">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot-msg">
+        <p>Hey! I'm your NYC nightlife guide. Ask me anything about tonight, neighborhoods, or how to plan your perfect night.</p>
+      </div>
+    </div>
+    <div class="chat-input-group">
+      <input type="text" id="chatInput" placeholder="Ask me anything..." class="chat-input">
+      <button id="sendChat" class="send-btn">→</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="neon-footer">
+  <div class="footer-container">
     <div class="footer-section">
       <h4>Explore</h4>
       <a href="/guides/">Guides</a>
       <a href="/blog/">Blog</a>
       <a href="/tools/night-out-spinner.html">Tools</a>
-      <a href="/guides/events-this-weekend.html">Events</a>
     </div>
     <div class="footer-section">
-      <h4>Popular Guides</h4>
-      <a href="/guides/best-nightlife-experiences.html">Best Experiences</a>
+      <h4>Popular</h4>
+      <a href="/guides/best-nightlife-experiences.html">Best Venues</a>
       <a href="/guides/bar-crawl-guide.html">Bar Crawls</a>
-      <a href="/guides/stay-near-nightlife.html">Where to Stay</a>
       <a href="/guides/events-this-weekend.html">Events</a>
-    </div>
-    <div class="footer-section">
-      <h4>About</h4>
-      <a href="/privacy-policy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms of Service</a>
-      <a href="/contact.html">Contact</a>
-      <a href="#newsletter">Newsletter</a>
     </div>
     <div class="footer-section">
       <h4>Legal</h4>
-      <a href="/privacy-policy.html#affiliate-disclosure">Affiliate Disclosure</a>
-      <a href="/terms.html">Terms & Conditions</a>
-      <a href="/contact.html">Report Issue</a>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 NYC Nightlife. All rights reserved. | Expert guide to New York City nightlife, bars, and events.</p>
-    <p style="margin-top: 1rem; font-size: 0.8rem;">
-      <strong>Affiliate Disclosure:</strong> This site contains affiliate links to Booking.com, Amazon Associates, GetYourGuide, and Eventbrite. We earn a commission if you book through our links at no extra cost to you. <a href="/privacy-policy.html#affiliate-disclosure">Learn more</a>.
-    </p>
+    <p>&copy; 2026 NYC Nightlife. The digital front door to NYC's best nights.</p>
+    <p style="font-size: 0.85rem; margin-top: 0.5rem;">This site uses affiliate links. <a href="/privacy-policy.html#affiliate-disclosure">Learn more</a>.</p>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<!-- Scripts -->
+<script src="js/creative-animations.js"></script>
+<script src="js/mascot-chat.js"></script>
+<script src="js/interactive-tools.js"></script>
 
 </body>
 </html>
