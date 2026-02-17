@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYC Nightlife Budget Planner | What Can I Do with My Budget?</title>
+  <meta name="description" content="Enter your budget and see what bars, clubs, and experiences fit in NYC.">
+  <link rel="canonical" href="https://newyorknightlife.github.io/tools/budget-planner.html">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    .budget-input-group {
+      background: var(--secondary);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    #budget-input {
+      font-size: 1.2rem;
+      padding: 1rem;
+      width: 150px;
+      text-align: center;
+      margin: 1rem 0;
+    }
+    #budget-result {
+      background: var(--accent);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      text-align: left;
+    }
+    #budget-result ul {
+      margin: 1rem 0;
+      padding-left: 2rem;
+    }
+    #budget-result li {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">🗽 NYC Nightlife</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/guides/">Guides</a>
+      <a href="/tools/night-out-spinner.html" class="active">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#newsletter">Newsletter</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    
+    <section>
+      <h1>💰 NYC Nightlife Budget Planner</h1>
+      <p>Enter your budget. We'll show you exactly what you can do in NYC nightlife.</p>
+    </section>
+
+    <section class="budget-input-group">
+      <h2>What's Your Budget?</h2>
+      <label for="budget-input">Budget ($): </label>
+      <input type="number" id="budget-input" placeholder="50" min="10" max="500" value="50">
+      <button type="button" onclick="calculateBudget()" class="cta-button">Calculate</button>
+      <div id="budget-result" style="display: none;"></div>
+    </section>
+
+    <section>
+      <h2>Example Budgets</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>$30-50 Budget</h3>
+          <p><strong>Option 1:</strong> Happy hour crawl at 4 bars with drink specials</p>
+          <p><strong>Option 2:</strong> Dive bar night with cheap beers and conversation</p>
+          <p><strong>Option 3:</strong> Free event + one premium cocktail somewhere nice</p>
+          <p><a href="/guides/bar-crawl-guide.html">See bar crawl guide →</a></p>
+        </div>
+        <div class="card">
+          <h3>$75-150 Budget</h3>
+          <p><strong>Option 1:</strong> Dinner ($25) + drinks at nice bar ($15 x 4) + cover</p>
+          <p><strong>Option 2:</strong> Organized bar crawl tour with guide</p>
+          <p><strong>Option 3:</strong> Club cover + VIP experience with drinks</p>
+          <p><a href="/guides/best-nightlife-experiences.html">Explore venues →</a></p>
+        </div>
+        <div class="card">
+          <h3>$200+ Budget</h3>
+          <p><strong>Option 1:</strong> Premium dinner + upscale cocktails + nightclub</p>
+          <p><strong>Option 2:</strong> VIP club package with bottle service</p>
+          <p><strong>Option 3:</strong> Multiple venues with premium experiences</p>
+          <p><a href="/guides/events-this-weekend.html">Find premium events →</a></p>
+        </div>
+        <div class="card">
+          <h3>Group Budget</h3>
+          <p><strong>Tip:</strong> Groups spend more efficiently. Larger groups (8+) get better deals and service.</p>
+          <p><strong>Best For:</strong> Bar crawls, club bottle service, group tours</p>
+          <p><a href="/guides/bar-crawl-guide.html">Group crawls →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Budget Breakdown</h2>
+      <p>Here's how NYC nightlife spending typically breaks down:</p>
+      <table style="width: 100%; background: var(--secondary); border: 1px solid var(--border); margin: 1.5rem 0;">
+        <tr style="border-bottom: 1px solid var(--border);">
+          <th style="padding: 1rem; text-align: left; color: var(--gold);">Item</th>
+          <th style="padding: 1rem; text-align: left; color: var(--gold);">Cost</th>
+          <th style="padding: 1rem; text-align: left; color: var(--gold);">Notes</th>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 1rem;">Dive Bar Drink</td>
+          <td style="padding: 1rem;">$5-8</td>
+          <td style="padding: 1rem;">Beer, whiskey, basic cocktails</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 1rem;">Mid-Range Cocktail</td>
+          <td style="padding: 1rem;">$12-16</td>
+          <td style="padding: 1rem;">Nice bars, quality ingredients</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 1rem;">Premium Cocktail</td>
+          <td style="padding: 1rem;">$16-22</td>
+          <td style="padding: 1rem;">Rooftop bars, upscale lounges</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 1rem;">Club Cover Charge</td>
+          <td style="padding: 1rem;">$0-50</td>
+          <td style="padding: 1rem;">Varies by venue and day</td>
+        </tr>
+        <tr>
+          <td style="padding: 1rem;">Happy Hour Drink</td>
+          <td style="padding: 1rem;">$5-7</td>
+          <td style="padding: 1rem;">5-7pm daily at most bars</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Pro Budget Tips</h2>
+      <ul>
+        <li><strong>Happy Hour:</strong> Drink $5-7 cocktails from 5-7pm. Best value in NYC.</li>
+        <li><strong>Bar Crawls:</strong> Organized crawls include drink specials at each venue.</li>
+        <li><strong>Group Discounts:</strong> Groups of 8+ get better pricing on clubs and tours.</li>
+        <li><strong>Wednesday Nights:</strong> Cheaper night. Many venues run specials.</li>
+        <li><strong>Beer Over Cocktails:</strong> Save money by ordering beer instead of cocktails.</li>
+        <li><strong>Free Events:</strong> Check <a href="/guides/events-this-weekend.html">Events page</a> for free nightlife activities.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Get a Free Budget Guide</h2>
+      <div class="email-capture">
+        <h3>NYC Nightlife Budget Cheat Sheet</h3>
+        <p>Free PDF with pricing by neighborhood, best value venues, and budget breakdown.</p>
+        <form class="email-form">
+          <input type="email" placeholder="your@email.com" required>
+          <button type="submit">Send Guide</button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Tools</h4>
+      <a href="/tools/night-out-spinner.html">Night Spinner</a>
+      <a href="/tools/budget-planner.html">Budget Planner</a>
+      <a href="/tools/neighborhood-quiz.html">Neighborhood Quiz</a>
+    </div>
+    <div class="footer-section">
+      <h4>Guides</h4>
+      <a href="/guides/">All Guides</a>
+      <a href="/guides/best-nightlife-experiences.html">Best Experiences</a>
+      <a href="/guides/bar-crawl-guide.html">Bar Crawls</a>
+    </div>
+    <div class="footer-section">
+      <h4>More</h4>
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="footer-section">
+      <h4>Legal</h4>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/privacy-policy.html#affiliate-disclosure">Affiliate Disclosure</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 NYC Nightlife. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYC Neighborhood Quiz | Find Your Perfect Nightlife Vibe</title>
+  <meta name="description" content="Take our quiz. Answer questions about your nightlife preferences and we'll recommend your perfect NYC neighborhood.">
+  <link rel="canonical" href="https://newyorknightlife.github.io/tools/neighborhood-quiz.html">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    .quiz-container {
+      background: var(--secondary);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    .quiz-result {
+      background: var(--accent);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      border: 2px solid var(--gold);
+    }
+    .quiz-result h3 {
+      color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">🗽 NYC Nightlife</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/guides/">Guides</a>
+      <a href="/tools/night-out-spinner.html" class="active">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#newsletter">Newsletter</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    
+    <section>
+      <h1>🗺️ Find Your NYC Neighborhood</h1>
+      <p>Answer a few quick questions. We'll recommend your perfect NYC nightlife neighborhood.</p>
+    </section>
+
+    <section class="quiz-container">
+      <h2>Quick Quiz</h2>
+      <p><strong>Question 1:</strong> What's your vibe?</p>
+      <div style="margin: 1rem 0;">
+        <button class="cta-button secondary" onclick="selectQuiz('rooftop')" style="width: 100%; margin: 0.5rem 0;">🌃 Rooftop bars with skyline views</button>
+        <button class="cta-button secondary" onclick="selectQuiz('dive')" style="width: 100%; margin: 0.5rem 0;">🍺 Dive bars, cheap drinks, casual</button>
+        <button class="cta-button secondary" onclick="selectQuiz('upscale')" style="width: 100%; margin: 0.5rem 0;">🍸 Upscale cocktails, sophisticated</button>
+        <button class="cta-button secondary" onclick="selectQuiz('dance')" style="width: 100%; margin: 0.5rem 0;">💃 Dancing, clubs, DJ scene</button>
+        <button class="cta-button secondary" onclick="selectQuiz('craft')" style="width: 100%; margin: 0.5rem 0;">🍻 Craft beer, trendy, hipster</button>
+      </div>
+      <div id="quiz-result"></div>
+    </section>
+
+    <section>
+      <h2>Neighborhoods & Their Vibes</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Lower East Side</h3>
+          <p><strong>Vibe:</strong> Eclectic, dive bars, speakeasies, live music</p>
+          <p><strong>Best For:</strong> Bar crawls, diverse crowd, classic NYC</p>
+          <p><strong>Price:</strong> $8-12 per drink</p>
+          <a href="/guides/best-nightlife-experiences.html">Explore →</a>
+        </div>
+        <div class="card">
+          <h3>SoHo</h3>
+          <p><strong>Vibe:</strong> Upscale, cocktails, wine bars, lounge scene</p>
+          <p><strong>Best For:</strong> Sophisticated night out, quality drinks</p>
+          <p><strong>Price:</strong> $14-18 per drink</p>
+          <a href="/guides/best-nightlife-experiences.html">Explore →</a>
+        </div>
+        <div class="card">
+          <h3>Midtown</h3>
+          <p><strong>Vibe:</strong> Rooftop bars, networking, business casual</p>
+          <p><strong>Best For:</strong> Skyline views, cocktails, after-work crowd</p>
+          <p><strong>Price:</strong> $15-20 per drink</p>
+          <a href="/guides/best-nightlife-experiences.html">Explore →</a>
+        </div>
+        <div class="card">
+          <h3>Meatpacking District</h3>
+          <p><strong>Vibe:</strong> Nightclubs, dancing, high-energy, VIP</p>
+          <p><strong>Best For:</strong> Club nights, dancing, special events</p>
+          <p><strong>Price:</strong> $12-16 per drink + cover</p>
+          <a href="/guides/events-this-weekend.html">Find Events →</a>
+        </div>
+        <div class="card">
+          <h3>Williamsburg, Brooklyn</h3>
+          <p><strong>Vibe:</strong> Craft beer, trendy, rooftop, hipster</p>
+          <p><strong>Best For:</strong> Younger crowd, best value, rooftop lounges</p>
+          <p><strong>Price:</strong> $10-14 per drink</p>
+          <a href="/guides/best-nightlife-experiences.html">Explore →</a>
+        </div>
+        <div class="card">
+          <h3>Park Slope, Brooklyn</h3>
+          <p><strong>Vibe:</strong> Relaxed, neighborhood bars, live music, casual</p>
+          <p><strong>Best For:</strong> Budget nightlife, local feel, groups</p>
+          <p><strong>Price:</strong> $8-12 per drink</p>
+          <a href="/guides/stay-near-nightlife.html">Find Hotels →</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>How to Use This</h2>
+      <ol>
+        <li>Take the quiz above. Select your vibe.</li>
+        <li>Review the recommended neighborhood.</li>
+        <li>Explore guides for that neighborhood.</li>
+        <li>Check out events and bookings.</li>
+        <li>Book hotels nearby for best experience.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Mixed Preferences?</h2>
+      <p>Love multiple vibes? Try these combinations:</p>
+      <ul>
+        <li><strong>Rooftop + Dancing:</strong> Midtown + Meatpacking combo (easy subway ride)</li>
+        <li><strong>Dive + Upscale:</strong> Lower East Side (has both on same street)</li>
+        <li><strong>Craft Beer + Dancing:</strong> Williamsburg (bars flow into clubs)</li>
+        <li><strong>Casual + Rooftop:</strong> Park Slope (neighborhood) + Williamsburg (rooftop)</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="email-capture">
+        <h3>Get a Neighborhood Map</h3>
+        <p>Free PDF map of all NYC nightlife neighborhoods with venue types and recommendations.</p>
+        <form class="email-form">
+          <input type="email" placeholder="your@email.com" required>
+          <button type="submit">Send Map</button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Tools</h4>
+      <a href="/tools/night-out-spinner.html">Night Spinner</a>
+      <a href="/tools/budget-planner.html">Budget Planner</a>
+      <a href="/tools/neighborhood-quiz.html">Neighborhood Quiz</a>
+    </div>
+    <div class="footer-section">
+      <h4>Guides</h4>
+      <a href="/guides/">All Guides</a>
+      <a href="/guides/best-nightlife-experiences.html">Best Experiences</a>
+      <a href="/guides/bar-crawl-guide.html">Bar Crawls</a>
+    </div>
+    <div class="footer-section">
+      <h4>More</h4>
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="footer-section">
+      <h4>Legal</h4>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/privacy-policy.html#affiliate-disclosure">Affiliate Disclosure</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 NYC Nightlife. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
