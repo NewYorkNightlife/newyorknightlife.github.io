@@ -168,7 +168,10 @@ header {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(201, 173, 109, 0.1);
   z-index: 1000;
-  padding: 0.8rem 0;
+  padding: 0.7rem 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   animation: headerSlideDown 0.6s ease-out;
 }
@@ -257,14 +260,15 @@ nav.nav-glitch {
    ═══════════════════════════════════════════════════════════════ */
 
 .hero-immersive {
-  height: 100vh;
+  height: calc(100vh - 60px);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  margin-top: 0;
-  padding-top: 80px;
+  margin-top: 60px;
+  margin-bottom: 0;
+  padding: 0;
   background: linear-gradient(135deg, 
     var(--black-primary) 0%, 
     var(--night-blue) 50%, 
@@ -454,7 +458,7 @@ nav.nav-glitch {
 /* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -494,13 +498,14 @@ nav.nav-glitch {
 section {
   position: relative;
   z-index: 2;
-  padding: 4rem 2rem;
+  padding: 3.5rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .section-title-bar {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   animation: sectionSlideIn 0.8s ease-out;
   text-align: center;
 }
@@ -534,9 +539,10 @@ section {
 .featured-section {
   background: rgba(26, 26, 26, 0.5);
   margin: 0;
-  padding: 4rem 2rem;
+  padding: 3.5rem 2rem;
   border-top: 1px solid rgba(201, 173, 109, 0.1);
   border-bottom: 1px solid rgba(201, 173, 109, 0.1);
+  width: 100%;
 }
 
 .featured-grid {
@@ -992,9 +998,10 @@ section {
 .vip-pass-section {
   background: rgba(28, 39, 51, 0.6);
   margin: 0;
-  padding: 4rem 2rem;
+  padding: 3.5rem 2rem;
   border-top: 1px solid rgba(201, 173, 109, 0.15);
   border-bottom: 1px solid rgba(201, 173, 109, 0.15);
+  width: 100%;
 }
 
 .vip-pass-card {
@@ -1591,7 +1598,15 @@ section {
   }
 
   section {
-    padding: 3rem 1rem;
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .featured-section {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .vip-pass-section {
+    padding: 2.5rem 1.5rem;
   }
 }
 
