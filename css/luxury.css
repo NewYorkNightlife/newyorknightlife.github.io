@@ -98,7 +98,8 @@ h2::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
   height: 2px;
   background: linear-gradient(90deg, var(--gold), transparent);
@@ -253,6 +254,11 @@ nav.nav-glitch {
   max-width: 700px;
   animation: contentFadeIn 1.5s ease-out 0.3s forwards;
   opacity: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes contentFadeIn {
@@ -390,11 +396,13 @@ section {
   padding: 5rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 .section-title-bar {
   margin-bottom: 3rem;
   animation: sectionSlideIn 0.8s ease-out;
+  text-align: center;
 }
 
 .section-title {
@@ -404,6 +412,10 @@ section {
   margin-bottom: 0;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(201, 173, 109, 0.2);
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
 }
 
 @keyframes sectionSlideIn {
@@ -427,6 +439,22 @@ section {
   padding: 5rem 2rem;
   border-top: 1px solid rgba(201, 173, 109, 0.1);
   border-bottom: 1px solid rgba(201, 173, 109, 0.1);
+}
+
+.featured-section {
+  padding: 5rem 2rem !important;
+}
+
+.featured-section .section-title-bar {
+  margin-bottom: 3rem;
+}
+
+.featured-section .featured-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
 .featured-grid {
@@ -521,6 +549,9 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: 2.5rem;
   margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tool-card {
@@ -730,6 +761,8 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .guide-preview-card {
@@ -807,16 +840,22 @@ section {
 .vip-pass-section {
   background: rgba(28, 39, 51, 0.6);
   margin: 0;
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   border-top: 1px solid rgba(201, 173, 109, 0.15);
   border-bottom: 1px solid rgba(201, 173, 109, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
 }
 
 .vip-pass-card {
   max-width: 450px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   position: relative;
+  padding: 0 2rem;
 }
 
 .pass-header {
@@ -925,6 +964,9 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .why-card {
@@ -1214,10 +1256,12 @@ section {
 
 .footer-container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 2rem;
+  padding: 0 2rem;
 }
 
 .footer-section h4 {
@@ -1277,8 +1321,16 @@ section {
     font-size: 2.2rem;
   }
 
+  .hero-content {
+    padding: 0 1rem;
+  }
+
   .section-title {
     font-size: 1.6rem;
+  }
+
+  section {
+    padding: 4rem 1.5rem;
   }
 
   .cta-buttons {
@@ -1292,6 +1344,7 @@ section {
 
   .tool-container {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .spinner-wheel {
@@ -1306,10 +1359,17 @@ section {
 
   .guides-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .featured-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .chat-interface {
@@ -1320,6 +1380,15 @@ section {
   .mascot-character {
     width: 60px;
     height: 60px;
+  }
+
+  .vip-pass-card {
+    padding: 0 1rem;
+  }
+
+  .vip-pass-section {
+    min-height: 350px;
+    padding: 3rem 1rem;
   }
 }
 
@@ -1332,8 +1401,13 @@ section {
     font-size: 1.6rem;
   }
 
+  .hero-content {
+    padding: 0 1rem;
+  }
+
   section {
-    padding: 3rem 1rem;
+    padding: 2.5rem 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .section-title {
@@ -1342,6 +1416,10 @@ section {
 
   .tool-card {
     padding: 1.5rem;
+  }
+
+  .tool-container {
+    gap: 1.5rem;
   }
 
   .nav-link {
@@ -1357,8 +1435,31 @@ section {
     padding: 1.5rem;
   }
 
+  .why-card {
+    padding: 1.5rem;
+  }
+
+  .guide-preview-card {
+    padding: 1.5rem;
+  }
+
   .chat-interface {
     width: 240px;
-    right: -20px;
+    right: 10px;
+    bottom: 30px;
+  }
+
+  .vip-pass-card {
+    padding: 0 0.5rem;
+  }
+
+  .vip-pass-section {
+    min-height: 320px;
+    padding: 2.5rem 1rem;
+  }
+
+  .spinner-wheel {
+    width: 160px;
+    height: 160px;
   }
 }
