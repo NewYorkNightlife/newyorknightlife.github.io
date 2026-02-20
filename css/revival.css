@@ -13,13 +13,38 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
+  position: relative;
   font-family: 'Manrope', system-ui, -apple-system, sans-serif;
-  background: radial-gradient(1200px 600px at 10% -10%, #221838 0%, transparent 60%),
-              radial-gradient(1100px 500px at 90% -20%, #0f2e40 0%, transparent 55%),
-              var(--bg);
+  background: transparent;
   color: var(--text);
   line-height: 1.5;
   overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('/assets/images/nyc-nightlife-collage.jpg') center / cover no-repeat;
+  z-index: -3;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.80) 48%, rgba(0, 0, 0, 0.88) 100%),
+    radial-gradient(1200px 600px at 10% -10%, rgba(34, 24, 56, 0.34) 0%, transparent 60%),
+    radial-gradient(1100px 500px at 90% -20%, rgba(15, 46, 64, 0.24) 0%, transparent 55%);
+  z-index: -2;
+  pointer-events: none;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 .noise {
@@ -70,29 +95,8 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   padding: clamp(60px, 14vw, 140px) 22px 56px;
-  background-image: url('/assets/images/nyc-nightlife-collage.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent;
   border-radius: 16px;
-  overflow: hidden;
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.72) 0%,
-    rgba(0, 0, 0, 0.78) 42%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
-  pointer-events: none;
-  z-index: 0;
-}
-.hero > * {
-  position: relative;
-  z-index: 1;
 }
 .kicker { color: #8ce6ff; letter-spacing: .14em; font-size: .78rem; font-weight: 700; }
 .hero h1 {
@@ -179,15 +183,12 @@ body {
 .links a { color: #d3d0c8; text-decoration: none; }
 .links a:hover { color: var(--gold); }
 
-@media (min-width: 1024px) {
-  .hero {
-    background-attachment: fixed;
-  }
-}
-
 @media (max-width: 920px) {
-  .hero {
-    background-attachment: scroll;
+  body::after {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.86) 48%, rgba(0, 0, 0, 0.92) 100%),
+      radial-gradient(1000px 500px at 10% -10%, rgba(34, 24, 56, 0.28) 0%, transparent 60%),
+      radial-gradient(900px 450px at 90% -20%, rgba(15, 46, 64, 0.2) 0%, transparent 55%);
   }
   .nav { display: none; }
   .cards-3, .split, .concierge { grid-template-columns: 1fr; }
