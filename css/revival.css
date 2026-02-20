@@ -11,9 +11,10 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; min-height: 100%; }
 body {
   position: relative;
+  isolation: isolate;
   font-family: 'Manrope', system-ui, -apple-system, sans-serif;
   background: transparent;
   color: var(--text);
@@ -24,9 +25,15 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
-  background: url('/assets/images/nyc-nightlife-collage.jpg') center / cover no-repeat;
-  z-index: -3;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/assets/images/nyc-nightlife-collage.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -2;
   pointer-events: none;
 }
 
@@ -34,17 +41,19 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.80) 48%, rgba(0, 0, 0, 0.88) 100%),
     radial-gradient(1200px 600px at 10% -10%, rgba(34, 24, 56, 0.34) 0%, transparent 60%),
     radial-gradient(1100px 500px at 90% -20%, rgba(15, 46, 64, 0.24) 0%, transparent 55%);
-  z-index: -2;
+  z-index: -1;
   pointer-events: none;
 }
 
 body > * {
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
 .noise {
