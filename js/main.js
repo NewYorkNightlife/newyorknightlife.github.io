@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setupEmailCapture();
   setupTools();
   setupAnalytics();
+  setupInternalLinkBlock();
 });
 
 // Set active nav link
@@ -277,6 +278,98 @@ function setupAnalytics() {
   });
 
   setupOutboundLinkTracking();
+}
+
+function setupInternalLinkBlock() {
+  const pathname = window.location.pathname;
+  const main = document.querySelector('main');
+  if (!main) return;
+
+  // Skip homepage; keep links focused on deeper pages.
+  if (pathname === '/' || pathname === '/index.html') return;
+
+  const links = getInternalLinkRecommendations(pathname);
+  if (!links || links.length < 3) return;
+
+  const existing = document.querySelector('.internal-links-block');
+  if (existing) return;
+
+  const section = document.createElement('section');
+  section.className = 'section internal-links-block';
+  section.style.paddingTop = '24px';
+
+  section.innerHTML = `
+    <div class="card glow" style="max-width:1100px; margin:0 auto;">
+      <p class="eyebrow">Keep Exploring</p>
+      <h2 style="margin-top:4px;">Next Best Pages</h2>
+      <div class="links" style="margin-top:8px; gap:12px 18px;">
+        ${links.map(link => `<a href="${link.href}" data-internal-rec="1">${link.label} →</a>`).join('')}
+      </div>
+    </div>
+  `;
+
+  const footer = document.querySelector('footer');
+  if (footer && footer.parentNode) {
+    footer.parentNode.insertBefore(section, footer);
+  } else {
+    main.appendChild(section);
+  }
+
+  section.querySelectorAll('a[data-internal-rec="1"]').forEach(a => {
+    a.addEventListener('click', () => {
+      trackEvent('internal_link_recommendation_click', {
+        from: pathname,
+        to: a.getAttribute('href') || ''
+      });
+    });
+  });
+}
+
+function getInternalLinkRecommendations(pathname) {
+  const common = [
+    { href: '/guides/', label: 'Guides Hub' },
+    { href: '/tools/', label: 'Nightlife Tools' },
+    { href: '/neighborhoods/', label: 'Neighborhoods Hub' },
+    { href: '/tonight/', label: 'Tonight in NYC' }
+  ];
+
+  if (pathname.startsWith('/guides/')) {
+    return [
+      { href: '/tools/nyc-night-planner.html', label: 'NYC Night Planner' },
+      { href: '/neighborhoods/lower-east-side-nightlife.html', label: 'Lower East Side Guide' },
+      { href: '/rankings/best-bars-in-nyc.html', label: 'Best Bars in NYC' },
+      ...common.slice(1, 3)
+    ];
+  }
+
+  if (pathname.startsWith('/neighborhoods/')) {
+    return [
+      { href: '/tools/venue-compare-nyc.html', label: 'Venue Compare Tool' },
+      { href: '/guides/best-nightlife-experiences.html', label: 'Best Nightlife Experiences' },
+      { href: '/safety/late-night-safety-by-borough.html', label: 'Late-Night Safety by Borough' },
+      ...common.slice(0, 2)
+    ];
+  }
+
+  if (pathname.startsWith('/tools/')) {
+    return [
+      { href: '/guides/bar-crawl-guide.html', label: 'Bar Crawl Guide' },
+      { href: '/tonight/things-to-do-in-nyc-tonight.html', label: 'Things to Do Tonight' },
+      { href: '/visit/first-time-nyc-nightlife-guide.html', label: 'First-Time Nightlife Guide' },
+      ...common.slice(0, 2)
+    ];
+  }
+
+  if (pathname.startsWith('/rankings/') || pathname.startsWith('/categories/')) {
+    return [
+      { href: '/guides/events-this-weekend.html', label: 'Events This Weekend' },
+      { href: '/tools/budget-planner.html', label: 'Budget Planner Tool' },
+      { href: '/neighborhoods/williamsburg-nightlife.html', label: 'Williamsburg Nightlife' },
+      ...common.slice(0, 2)
+    ];
+  }
+
+  return common;
 }
 
 function setupOutboundLinkTracking() {

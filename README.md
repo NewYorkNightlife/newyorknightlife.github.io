@@ -46,6 +46,7 @@ https://newyorknightlife.github.io/
 3. [AUTOMATION.md](docs/AUTOMATION.md) — How to maintain it
 4. [EMAIL-CAPTURE.md](docs/EMAIL-CAPTURE.md) — How to connect forms to your email provider
 5. [ANALYTICS.md](docs/ANALYTICS.md) — Event tracking + GA4/Plausible setup
+6. [INTERNAL-LINKING.md](docs/INTERNAL-LINKING.md) — Session depth and recommendation links
 
 ## Features
 
