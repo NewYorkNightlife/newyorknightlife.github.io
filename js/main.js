@@ -476,23 +476,46 @@ function setupOutboundLinkTracking() {
 
 // Lightweight analytics bridge for GA4/Plausible/custom stacks.
 function trackEvent(eventName, data = {}) {
+  const payload = sanitizeEventPayload(data);
+
   // Google Analytics 4 via gtag
   if (typeof window.gtag === 'function') {
-    window.gtag('event', eventName, data);
+    window.gtag('event', eventName, payload);
   }
 
   // Plausible custom event API
   if (typeof window.plausible === 'function') {
-    window.plausible(eventName, { props: data });
+    window.plausible(eventName, { props: payload });
   }
 
   // Optional custom callback hook for future integrations
   if (typeof window.NYNTrackEvent === 'function') {
-    window.NYNTrackEvent(eventName, data);
+    window.NYNTrackEvent(eventName, payload);
   }
 
   // Keep console visibility during buildout
-  console.log('[trackEvent]', eventName, data);
+  console.log('[trackEvent]', eventName, payload);
+}
+
+function sanitizeEventPayload(data) {
+  const out = {};
+  Object.entries(data || {}).forEach(([key, value]) => {
+    if (value === undefined || value === null) return;
+
+    if (typeof value === 'string') {
+      out[key] = value.trim().slice(0, 200);
+      return;
+    }
+
+    if (typeof value === 'number' || typeof value === 'boolean') {
+      out[key] = value;
+      return;
+    }
+
+    out[key] = String(value).slice(0, 200);
+  });
+
+  return out;
 }
 
 // Smooth scroll for anchor links
