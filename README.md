@@ -50,6 +50,7 @@ https://newyorknightlife.github.io/
 7. [AFFILIATE-MODULE.md](docs/AFFILIATE-MODULE.md) — Affiliate block + disclosure standard
 8. [CONTENT-STANDARDS.md](docs/CONTENT-STANDARDS.md) — Template lock + publishing QA
 9. [PERFORMANCE-MEDIA-PIPELINE.md](docs/PERFORMANCE-MEDIA-PIPELINE.md) — Image/performance standards
+10. [TRUST-POLICY.md](docs/TRUST-POLICY.md) — Trust and policy completeness
 
 ## Features
 
