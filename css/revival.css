@@ -131,7 +131,10 @@ body > * {
 .pulse-stats span { color: var(--muted); font-size:.9rem; }
 
 .marquee {
-  overflow: hidden; white-space: nowrap; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   background: rgba(255,255,255,0.02);
 }
 .track {
@@ -139,7 +142,7 @@ body > * {
   align-items: center;
   width: max-content;
   padding: 16px 0;
-  animation: slide 28s linear infinite;
+  animation: slide 34s linear infinite;
 }
 .marquee:hover .track,
 .marquee:focus-within .track {
@@ -151,24 +154,27 @@ body > * {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.track-group a,
-.track-group a:link,
-.track-group a:visited {
-  margin-right: 12px;
-  color: #cfcbc3;
-  text-decoration: none;
+.track-item,
+.track-item:link,
+.track-item:visited {
+  display: inline-flex;
+  align-items: center;
+  color: #cfcbc3 !important;
+  text-decoration: none !important;
   font-weight: 700;
-}
-.track-group a:hover,
-.track-group a:focus-visible,
-.track-group a:active {
-  color: var(--gold);
-  text-decoration: none;
-}
-.track-group span {
   margin-right: 18px;
+}
+.track-item::after {
+  content: "•";
+  margin-left: 18px;
   color: #cfcbc3;
   font-weight: 600;
+}
+.track-item:hover,
+.track-item:focus-visible,
+.track-item:active {
+  color: var(--gold) !important;
+  text-decoration: none !important;
 }
 @keyframes slide { from { transform: translateX(0);} to {transform: translateX(-50%);} }
 
