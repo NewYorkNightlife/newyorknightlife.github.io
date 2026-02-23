@@ -47,6 +47,7 @@ https://newyorknightlife.github.io/
 4. [EMAIL-CAPTURE.md](docs/EMAIL-CAPTURE.md) — How to connect forms to your email provider
 5. [ANALYTICS.md](docs/ANALYTICS.md) — Event tracking + GA4/Plausible setup
 6. [INTERNAL-LINKING.md](docs/INTERNAL-LINKING.md) — Session depth and recommendation links
+7. [AFFILIATE-MODULE.md](docs/AFFILIATE-MODULE.md) — Affiliate block + disclosure standard
 
 ## Features
 
