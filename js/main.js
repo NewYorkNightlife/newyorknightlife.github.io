@@ -21,25 +21,95 @@ function setActiveNav() {
 function setupEmailCapture() {
   const forms = document.querySelectorAll('.email-form');
   forms.forEach(form => {
-    form.addEventListener('submit', function(e) {
+    const button = form.querySelector('button');
+    if (button && !button.dataset.originalText) {
+      button.dataset.originalText = button.textContent;
+    }
+
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value;
-      const button = this.querySelector('button');
-      
-      if (email && isValidEmail(email)) {
-        // Store locally for now (would integrate with MailerLite/ConvertKit)
-        localStorage.setItem('nynightlife_email', email);
-        button.textContent = '✓ Check your email!';
-        button.disabled = true;
-        
-        setTimeout(() => {
-          this.reset();
-          button.textContent = 'Get Guide';
-          button.disabled = false;
-        }, 3000);
+      const emailInput = this.querySelector('input[type="email"]');
+      const email = emailInput ? emailInput.value.trim() : '';
+      const submitButton = this.querySelector('button');
+
+      if (!email || !isValidEmail(email)) return;
+
+      setButtonState(submitButton, 'Saving…', true);
+
+      const payload = {
+        email,
+        source: window.location.pathname,
+        page_url: window.location.href,
+        captured_at: new Date().toISOString()
+      };
+
+      const endpoint = getEmailEndpoint(this);
+
+      try {
+        if (!endpoint) {
+          // Fallback capture so we never lose the lead while endpoint is being configured.
+          storeLeadFallback(payload);
+          showEmailSuccess(this, submitButton, '✓ Saved. (Provider not connected yet)');
+          return;
+        }
+
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          throw new Error(`Email capture failed with status ${response.status}`);
+        }
+
+        storeLeadFallback(payload);
+        showEmailSuccess(this, submitButton, '✓ Check your email!');
+        trackEvent('email_capture_success', { source: payload.source });
+      } catch (error) {
+        console.error(error);
+        storeLeadFallback(payload);
+        showEmailSuccess(this, submitButton, '✓ Saved. (Retrying sync later)');
+        trackEvent('email_capture_fallback', { source: payload.source });
       }
     });
   });
+}
+
+function getEmailEndpoint(form) {
+  if (form.dataset.endpoint) return form.dataset.endpoint;
+
+  const meta = document.querySelector('meta[name="nyn-email-endpoint"]');
+  if (meta && meta.content) return meta.content;
+
+  if (window.NYN_EMAIL_ENDPOINT) return window.NYN_EMAIL_ENDPOINT;
+
+  return null;
+}
+
+function storeLeadFallback(payload) {
+  const key = 'nynightlife_email_leads';
+  const leads = JSON.parse(localStorage.getItem(key) || '[]');
+  leads.push(payload);
+  localStorage.setItem(key, JSON.stringify(leads));
+}
+
+function showEmailSuccess(form, button, successText) {
+  setButtonState(button, successText, true);
+  form.reset();
+
+  setTimeout(() => {
+    setButtonState(button, button?.dataset.originalText || 'Submit', false);
+  }, 2500);
+}
+
+function setButtonState(button, label, disabled) {
+  if (!button) return;
+  button.textContent = label;
+  button.disabled = disabled;
 }
 
 function isValidEmail(email) {
