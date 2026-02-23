@@ -33,7 +33,8 @@ body::before {
   height: 100vh;
   background-image: url('/assets/images/nyc-nightlife-collage.jpg');
   background-repeat: no-repeat;
-  background-position: center center;
+  /* Keep the top of the source image visible when cover-cropping */
+  background-position: center top;
   background-size: cover;
   z-index: -2;
   pointer-events: none;
