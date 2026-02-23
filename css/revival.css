@@ -136,6 +136,7 @@ body > * {
 }
 .track {
   display: flex;
+  align-items: center;
   width: max-content;
   padding: 16px 0;
   animation: slide 28s linear infinite;
@@ -147,15 +148,23 @@ body > * {
 .track-group {
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
   flex-shrink: 0;
 }
-.track-group a {
+.track-group a,
+.track-group a:link,
+.track-group a:visited {
   margin-right: 12px;
   color: #cfcbc3;
   text-decoration: none;
   font-weight: 700;
 }
-.track-group a:hover { color: var(--gold); }
+.track-group a:hover,
+.track-group a:focus-visible,
+.track-group a:active {
+  color: var(--gold);
+  text-decoration: none;
+}
 .track-group span {
   margin-right: 18px;
   color: #cfcbc3;
