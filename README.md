@@ -49,6 +49,7 @@ https://newyorknightlife.github.io/
 6. [INTERNAL-LINKING.md](docs/INTERNAL-LINKING.md) — Session depth and recommendation links
 7. [AFFILIATE-MODULE.md](docs/AFFILIATE-MODULE.md) — Affiliate block + disclosure standard
 8. [CONTENT-STANDARDS.md](docs/CONTENT-STANDARDS.md) — Template lock + publishing QA
+9. [PERFORMANCE-MEDIA-PIPELINE.md](docs/PERFORMANCE-MEDIA-PIPELINE.md) — Image/performance standards
 
 ## Features
 
