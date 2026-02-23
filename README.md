@@ -48,6 +48,7 @@ https://newyorknightlife.github.io/
 5. [ANALYTICS.md](docs/ANALYTICS.md) — Event tracking + GA4/Plausible setup
 6. [INTERNAL-LINKING.md](docs/INTERNAL-LINKING.md) — Session depth and recommendation links
 7. [AFFILIATE-MODULE.md](docs/AFFILIATE-MODULE.md) — Affiliate block + disclosure standard
+8. [CONTENT-STANDARDS.md](docs/CONTENT-STANDARDS.md) — Template lock + publishing QA
 
 ## Features
 
