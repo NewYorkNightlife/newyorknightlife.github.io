@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setupTools();
   setupAnalytics();
   setupInternalLinkBlock();
+  setupAffiliateModule();
 });
 
 // Set active nav link
@@ -370,6 +371,69 @@ function getInternalLinkRecommendations(pathname) {
   }
 
   return common;
+}
+
+function setupAffiliateModule() {
+  const pathname = window.location.pathname;
+  const monetizedPaths = [
+    '/guides/', '/tools/', '/things-to-do/', '/visit/', '/rankings/', '/categories/', '/tonight/', '/weekend/'
+  ];
+
+  if (!monetizedPaths.some(prefix => pathname.startsWith(prefix))) return;
+  if (document.querySelector('.affiliate-module')) return;
+
+  const section = document.createElement('section');
+  section.className = 'section affiliate-module';
+  section.style.paddingTop = '20px';
+
+  const offers = getAffiliateOffers(pathname);
+
+  section.innerHTML = `
+    <div class="card glow" style="max-width:1100px; margin:0 auto;">
+      <p class="eyebrow">Book Smarter</p>
+      <h2 style="margin-top:4px;">Recommended Booking Options</h2>
+      <p class="muted" style="margin-top:-8px;">Affiliate disclosure: We may earn a commission if you book through these links, at no extra cost to you.</p>
+      <div class="links" style="gap:12px 18px; margin-top:8px;">
+        ${offers.map(offer => `<a href="${offer.href}" target="_blank" rel="nofollow sponsored noopener" data-affiliate-link="1">${offer.label} ↗</a>`).join('')}
+      </div>
+    </div>
+  `;
+
+  const footer = document.querySelector('footer');
+  if (footer && footer.parentNode) {
+    footer.parentNode.insertBefore(section, footer);
+  } else {
+    const main = document.querySelector('main');
+    if (main) main.appendChild(section);
+  }
+
+  section.querySelectorAll('a[data-affiliate-link="1"]').forEach(a => {
+    a.addEventListener('click', () => {
+      trackEvent('affiliate_link_click', {
+        from: pathname,
+        to: a.getAttribute('href') || '',
+        label: (a.textContent || '').trim()
+      });
+    });
+  });
+}
+
+function getAffiliateOffers(pathname) {
+  const defaultOffers = [
+    { label: 'Eventbrite NYC Events', href: 'https://www.eventbrite.com/d/ny--new-york/nightlife/' },
+    { label: 'Viator NYC Experiences', href: 'https://www.viator.com/New-York-City/d687-ttd' },
+    { label: 'GetYourGuide NYC Tours', href: 'https://www.getyourguide.com/new-york-city-l59/' }
+  ];
+
+  if (pathname.startsWith('/visit/') || pathname.startsWith('/things-to-do/')) {
+    return [
+      { label: 'Booking.com NYC Hotels', href: 'https://www.booking.com/city/us/new-york.html' },
+      { label: 'Viator NYC Experiences', href: 'https://www.viator.com/New-York-City/d687-ttd' },
+      { label: 'GetYourGuide NYC Tours', href: 'https://www.getyourguide.com/new-york-city-l59/' }
+    ];
+  }
+
+  return defaultOffers;
 }
 
 function setupOutboundLinkTracking() {
