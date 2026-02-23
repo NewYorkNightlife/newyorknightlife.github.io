@@ -419,21 +419,40 @@ function setupAffiliateModule() {
 }
 
 function getAffiliateOffers(pathname) {
+  const campaign = getAffiliateCampaign(pathname);
+
   const defaultOffers = [
-    { label: 'Eventbrite NYC Events', href: 'https://www.eventbrite.com/d/ny--new-york/nightlife/' },
-    { label: 'Viator NYC Experiences', href: 'https://www.viator.com/New-York-City/d687-ttd' },
-    { label: 'GetYourGuide NYC Tours', href: 'https://www.getyourguide.com/new-york-city-l59/' }
+    { label: 'Eventbrite NYC Events', href: withUTM('https://www.eventbrite.com/d/ny--new-york/nightlife/', campaign, 'eventbrite') },
+    { label: 'Viator NYC Experiences', href: withUTM('https://www.viator.com/New-York-City/d687-ttd', campaign, 'viator') },
+    { label: 'GetYourGuide NYC Tours', href: withUTM('https://www.getyourguide.com/new-york-city-l59/', campaign, 'getyourguide') }
   ];
 
   if (pathname.startsWith('/visit/') || pathname.startsWith('/things-to-do/')) {
     return [
-      { label: 'Booking.com NYC Hotels', href: 'https://www.booking.com/city/us/new-york.html' },
-      { label: 'Viator NYC Experiences', href: 'https://www.viator.com/New-York-City/d687-ttd' },
-      { label: 'GetYourGuide NYC Tours', href: 'https://www.getyourguide.com/new-york-city-l59/' }
+      { label: 'Booking.com NYC Hotels', href: withUTM('https://www.booking.com/city/us/new-york.html', campaign, 'booking') },
+      { label: 'Viator NYC Experiences', href: withUTM('https://www.viator.com/New-York-City/d687-ttd', campaign, 'viator') },
+      { label: 'GetYourGuide NYC Tours', href: withUTM('https://www.getyourguide.com/new-york-city-l59/', campaign, 'getyourguide') }
     ];
   }
 
   return defaultOffers;
+}
+
+function getAffiliateCampaign(pathname) {
+  if (pathname.startsWith('/guides/')) return 'guides';
+  if (pathname.startsWith('/tools/')) return 'tools';
+  if (pathname.startsWith('/visit/')) return 'visit';
+  if (pathname.startsWith('/things-to-do/')) return 'things_to_do';
+  if (pathname.startsWith('/rankings/')) return 'rankings';
+  if (pathname.startsWith('/categories/')) return 'categories';
+  if (pathname.startsWith('/tonight/')) return 'tonight';
+  if (pathname.startsWith('/weekend/')) return 'weekend';
+  return 'site';
+}
+
+function withUTM(url, campaign, source) {
+  const separator = url.includes('?') ? '&' : '?';
+  return `${url}${separator}utm_source=nynightlife&utm_medium=affiliate_module&utm_campaign=${encodeURIComponent(campaign)}&utm_content=${encodeURIComponent(source)}`;
 }
 
 function setupOutboundLinkTracking() {
