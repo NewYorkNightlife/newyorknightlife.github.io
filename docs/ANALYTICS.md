@@ -15,6 +15,21 @@ Tracked events currently include:
 - `tool_spin_wheel_complete`
 - `tool_budget_calculate`
 - `tool_neighborhood_quiz_complete`
+- `internal_link_recommendation_click`
+- `affiliate_link_click`
+
+## Recommended GA4 custom dimensions
+
+In GA4 Admin → Custom definitions, add event-scoped dimensions for:
+- `source`
+- `from`
+- `to`
+- `label`
+- `budget`
+- `vibe`
+- `recommendation`
+
+This makes internal links, affiliate clicks, and tool interactions reportable in Explorations.
 
 ## How to enable GA4
 
