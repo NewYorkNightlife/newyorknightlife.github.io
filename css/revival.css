@@ -140,6 +140,10 @@ body > * {
   padding: 16px 0;
   animation: slide 28s linear infinite;
 }
+.marquee:hover .track,
+.marquee:focus-within .track {
+  animation-play-state: paused;
+}
 .track-group {
   display: inline-flex;
   align-items: center;
