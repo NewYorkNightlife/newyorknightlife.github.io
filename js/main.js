@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setActiveNav();
   setupEmailCapture();
   setupTools();
+  setupAnalytics();
 });
 
 // Set active nav link
@@ -145,6 +146,10 @@ function spinWheel() {
       if (spins > 15) {
         clearInterval(spinInterval);
         button.disabled = false;
+        trackEvent('tool_spin_wheel_complete', {
+          source: window.location.pathname,
+          result: document.getElementById('wheel-result')?.textContent || ''
+        });
       }
     }, 100);
   }
@@ -154,6 +159,11 @@ function spinWheel() {
 function calculateBudget() {
   const budget = document.getElementById('budget-input').value;
   const result = document.getElementById('budget-result');
+
+  trackEvent('tool_budget_calculate', {
+    source: window.location.pathname,
+    budget
+  });
   
   if (budget < 30) {
     result.innerHTML = `
@@ -202,6 +212,12 @@ function startNighborhoodQuiz() {
     <p>${neighborhood.description}</p>
     <p><a href="${neighborhood.guide}">See Guide →</a></p>
   `;
+
+  trackEvent('tool_neighborhood_quiz_complete', {
+    source: window.location.pathname,
+    vibe: preferences || 'unknown',
+    recommendation: neighborhood.name
+  });
 }
 
 function getNeighborhoodRecommendation(vibe) {
@@ -254,10 +270,53 @@ function setupTools() {
   }
 }
 
-// Analytics placeholder
+function setupAnalytics() {
+  trackEvent('page_view', {
+    path: window.location.pathname,
+    title: document.title
+  });
+
+  setupOutboundLinkTracking();
+}
+
+function setupOutboundLinkTracking() {
+  const links = document.querySelectorAll('a[href]');
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      const href = link.getAttribute('href') || '';
+      const isExternal = /^https?:\/\//i.test(href) && !href.includes(window.location.host);
+
+      if (isExternal) {
+        trackEvent('outbound_click', {
+          href,
+          text: (link.textContent || '').trim().slice(0, 120),
+          source: window.location.pathname
+        });
+      }
+    });
+  });
+}
+
+// Lightweight analytics bridge for GA4/Plausible/custom stacks.
 function trackEvent(eventName, data = {}) {
-  // Would integrate with Google Analytics or Plausible
-  console.log('Event:', eventName, data);
+  // Google Analytics 4 via gtag
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', eventName, data);
+  }
+
+  // Plausible custom event API
+  if (typeof window.plausible === 'function') {
+    window.plausible(eventName, { props: data });
+  }
+
+  // Optional custom callback hook for future integrations
+  if (typeof window.NYNTrackEvent === 'function') {
+    window.NYNTrackEvent(eventName, data);
+  }
+
+  // Keep console visibility during buildout
+  console.log('[trackEvent]', eventName, data);
 }
 
 // Smooth scroll for anchor links
