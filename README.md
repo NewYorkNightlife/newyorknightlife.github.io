@@ -44,6 +44,7 @@ https://newyorknightlife.github.io/
 1. [SITE-ARCHITECTURE.md](docs/SITE-ARCHITECTURE.md) — How the site is built
 2. [MONETIZATION.md](docs/MONETIZATION.md) — How it makes money
 3. [AUTOMATION.md](docs/AUTOMATION.md) — How to maintain it
+4. [EMAIL-CAPTURE.md](docs/EMAIL-CAPTURE.md) — How to connect forms to your email provider
 
 ## Features
 
