@@ -39,4 +39,12 @@ Payload:
 - General pages: Eventbrite / Viator / GetYourGuide
 - Visit + things-to-do pages: Booking.com / Viator / GetYourGuide
 
+## Tracking parameters (UTM)
+
+Affiliate module links now include UTM parameters for attribution:
+- `utm_source=nynightlife`
+- `utm_medium=affiliate_module`
+- `utm_campaign=<section>` (guides/tools/visit/things_to_do/rankings/categories/tonight/weekend)
+- `utm_content=<partner>`
+
 This gives immediate monetization structure while we refine partner-specific deep links later.
