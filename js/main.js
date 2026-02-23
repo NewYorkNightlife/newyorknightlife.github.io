@@ -1,5 +1,7 @@
 // NYC Nightlife Platform — Main JavaScript
 
+const DEFAULT_EMAIL_ENDPOINT = 'https://formspree.io/f/xojnprqp';
+
 document.addEventListener('DOMContentLoaded', function() {
   setActiveNav();
   setupEmailCapture();
@@ -87,7 +89,7 @@ function getEmailEndpoint(form) {
 
   if (window.NYN_EMAIL_ENDPOINT) return window.NYN_EMAIL_ENDPOINT;
 
-  return null;
+  return DEFAULT_EMAIL_ENDPOINT;
 }
 
 function storeLeadFallback(payload) {
