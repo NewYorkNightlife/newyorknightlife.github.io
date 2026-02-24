@@ -57,6 +57,7 @@ https://newyorknightlife.github.io/
 14. [MONEY-PAGES.md](docs/MONEY-PAGES.md) — Priority page module for execution focus
 15. [AFFILIATE-OPS.md](docs/AFFILIATE-OPS.md) — Affiliate application and launch operations
 16. [CONTENT-BASELINE-PASS.md](docs/CONTENT-BASELINE-PASS.md) — Baseline content fill workflow
+17. [AFFILIATE-APPLICATION-RUNBOOK.md](docs/AFFILIATE-APPLICATION-RUNBOOK.md) — Step-by-step affiliate application plan
 
 ## Features
 
