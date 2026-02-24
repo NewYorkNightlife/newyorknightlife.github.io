@@ -17,6 +17,7 @@ Tracked events currently include:
 - `tool_neighborhood_quiz_complete`
 - `internal_link_recommendation_click`
 - `affiliate_link_click`
+- `conversion_cta_click`
 
 ## Recommended GA4 custom dimensions
 

@@ -52,6 +52,7 @@ https://newyorknightlife.github.io/
 9. [PERFORMANCE-MEDIA-PIPELINE.md](docs/PERFORMANCE-MEDIA-PIPELINE.md) — Image/performance standards
 10. [TRUST-POLICY.md](docs/TRUST-POLICY.md) — Trust and policy completeness
 11. [SCHEMA-STANDARDS.md](docs/SCHEMA-STANDARDS.md) — Structured data rollout standards
+12. [CONVERSION-CTA.md](docs/CONVERSION-CTA.md) — Reusable high-intent CTA module
 
 ## Features
 

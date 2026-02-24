@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setupAnalytics();
   setupInternalLinkBlock();
   setupAffiliateModule();
+  setupConversionCTABlock();
 });
 
 // Set active nav link
@@ -453,6 +454,42 @@ function getAffiliateCampaign(pathname) {
 function withUTM(url, campaign, source) {
   const separator = url.includes('?') ? '&' : '?';
   return `${url}${separator}utm_source=nynightlife&utm_medium=affiliate_module&utm_campaign=${encodeURIComponent(campaign)}&utm_content=${encodeURIComponent(source)}`;
+}
+
+function setupConversionCTABlock() {
+  const pathname = window.location.pathname;
+  const targetPrefixes = ['/guides/', '/rankings/', '/categories/', '/tonight/', '/weekend/', '/visit/', '/things-to-do/'];
+  if (!targetPrefixes.some(prefix => pathname.startsWith(prefix))) return;
+  if (document.querySelector('.conversion-cta-module')) return;
+
+  const section = document.createElement('section');
+  section.className = 'section conversion-cta-module';
+  section.style.paddingTop = '16px';
+  section.innerHTML = `
+    <div class="card glow" style="max-width:1100px; margin:0 auto; background:linear-gradient(160deg, rgba(131,93,255,.16), rgba(84,214,255,.1));">
+      <p class="eyebrow">Plan Faster</p>
+      <h2 style="margin-top:4px;">Ready to lock your NYC night?</h2>
+      <p class="muted">Use the planner flow to choose neighborhood, budget, and next move in under 2 minutes.</p>
+      <div class="links" style="gap:12px 18px; margin-top:8px;">
+        <a href="/tools/nyc-night-planner.html" data-conv-cta="night_planner">Open Night Planner →</a>
+        <a href="/tools/venue-compare-nyc.html" data-conv-cta="venue_compare">Compare Venues →</a>
+        <a href="/weekend/nyc-nightlife-this-weekend.html" data-conv-cta="weekend_brief">See This Weekend →</a>
+      </div>
+    </div>
+  `;
+
+  const footer = document.querySelector('footer');
+  if (footer && footer.parentNode) footer.parentNode.insertBefore(section, footer);
+
+  section.querySelectorAll('a[data-conv-cta]').forEach(a => {
+    a.addEventListener('click', () => {
+      trackEvent('conversion_cta_click', {
+        from: pathname,
+        to: a.getAttribute('href') || '',
+        cta: a.getAttribute('data-conv-cta') || ''
+      });
+    });
+  });
 }
 
 function setupOutboundLinkTracking() {
