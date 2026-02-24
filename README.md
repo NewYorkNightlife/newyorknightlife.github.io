@@ -53,6 +53,7 @@ https://newyorknightlife.github.io/
 10. [TRUST-POLICY.md](docs/TRUST-POLICY.md) — Trust and policy completeness
 11. [SCHEMA-STANDARDS.md](docs/SCHEMA-STANDARDS.md) — Structured data rollout standards
 12. [CONVERSION-CTA.md](docs/CONVERSION-CTA.md) — Reusable high-intent CTA module
+13. [BREADCRUMBS.md](docs/BREADCRUMBS.md) — Reusable breadcrumb navigation module
 
 ## Features
 

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setupEmailCapture();
   setupTools();
   setupAnalytics();
+  setupBreadcrumbs();
   setupInternalLinkBlock();
   setupAffiliateModule();
   setupConversionCTABlock();
@@ -280,6 +281,45 @@ function setupAnalytics() {
   });
 
   setupOutboundLinkTracking();
+}
+
+function setupBreadcrumbs() {
+  const path = window.location.pathname;
+  if (path === '/' || path === '/index.html') return;
+
+  const parts = path.replace(/^\//, '').split('/').filter(Boolean);
+  if (parts.length < 2) return; // only deeper pages
+
+  const section = parts[0];
+  const page = parts[parts.length - 1].replace('.html', '');
+
+  const labels = {
+    guides: 'Guides',
+    neighborhoods: 'Neighborhoods',
+    tools: 'Tools',
+    rankings: 'Rankings',
+    categories: 'Categories',
+    visit: 'Visit',
+    tonight: 'Tonight',
+    weekend: 'Weekend',
+    'things-to-do': 'Things to Do'
+  };
+
+  const sectionLabel = labels[section] || section.replace(/-/g, ' ');
+  const pageLabel = page.replace(/-/g, ' ').replace(/\b\w/g, m => m.toUpperCase());
+
+  const main = document.querySelector('main');
+  if (!main || main.querySelector('.breadcrumb-nav')) return;
+
+  const nav = document.createElement('nav');
+  nav.className = 'breadcrumb-nav';
+  nav.setAttribute('aria-label', 'Breadcrumb');
+  nav.style.maxWidth = '1100px';
+  nav.style.margin = '18px auto 0';
+  nav.style.padding = '0 22px';
+  nav.innerHTML = `<a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/${section}/">${sectionLabel}</a> <span aria-hidden="true">›</span> <span>${pageLabel}</span>`;
+
+  main.parentNode.insertBefore(nav, main);
 }
 
 function setupInternalLinkBlock() {
