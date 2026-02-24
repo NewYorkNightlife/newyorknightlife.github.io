@@ -51,6 +51,7 @@ https://newyorknightlife.github.io/
 8. [CONTENT-STANDARDS.md](docs/CONTENT-STANDARDS.md) — Template lock + publishing QA
 9. [PERFORMANCE-MEDIA-PIPELINE.md](docs/PERFORMANCE-MEDIA-PIPELINE.md) — Image/performance standards
 10. [TRUST-POLICY.md](docs/TRUST-POLICY.md) — Trust and policy completeness
+11. [SCHEMA-STANDARDS.md](docs/SCHEMA-STANDARDS.md) — Structured data rollout standards
 
 ## Features
 
