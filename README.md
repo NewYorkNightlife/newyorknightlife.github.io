@@ -55,6 +55,7 @@ https://newyorknightlife.github.io/
 12. [CONVERSION-CTA.md](docs/CONVERSION-CTA.md) — Reusable high-intent CTA module
 13. [BREADCRUMBS.md](docs/BREADCRUMBS.md) — Reusable breadcrumb navigation module
 14. [MONEY-PAGES.md](docs/MONEY-PAGES.md) — Priority page module for execution focus
+15. [AFFILIATE-OPS.md](docs/AFFILIATE-OPS.md) — Affiliate application and launch operations
 
 ## Features
 
