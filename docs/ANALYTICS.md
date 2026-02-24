@@ -18,6 +18,7 @@ Tracked events currently include:
 - `internal_link_recommendation_click`
 - `affiliate_link_click`
 - `conversion_cta_click`
+- `money_page_click`
 
 ## Recommended GA4 custom dimensions
 
