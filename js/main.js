@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setupInternalLinkBlock();
   setupAffiliateModule();
   setupConversionCTABlock();
+  setupMoneyPagesModule();
 });
 
 // Set active nav link
@@ -527,6 +528,68 @@ function setupConversionCTABlock() {
         from: pathname,
         to: a.getAttribute('href') || '',
         cta: a.getAttribute('data-conv-cta') || ''
+      });
+    });
+  });
+}
+
+function setupMoneyPagesModule() {
+  const pathname = window.location.pathname;
+  const hubs = {
+    '/guides/': [
+      { href: '/guides/events-this-weekend.html', label: 'Events This Weekend' },
+      { href: '/guides/best-nightlife-experiences.html', label: 'Best Nightlife Experiences' },
+      { href: '/guides/stay-near-nightlife.html', label: 'Stay Near Nightlife' }
+    ],
+    '/tools/': [
+      { href: '/tools/nyc-night-planner.html', label: 'NYC Night Planner' },
+      { href: '/tools/venue-compare-nyc.html', label: 'Venue Compare NYC' },
+      { href: '/tools/budget-planner.html', label: 'Budget Planner' }
+    ],
+    '/rankings/': [
+      { href: '/rankings/best-bars-in-nyc.html', label: 'Best Bars in NYC' },
+      { href: '/rankings/best-clubs-in-nyc.html', label: 'Best Clubs in NYC' },
+      { href: '/rankings/best-vip-experiences-nyc.html', label: 'Best VIP Experiences NYC' }
+    ],
+    '/tonight/': [
+      { href: '/tonight/things-to-do-in-nyc-tonight.html', label: 'Things to Do in NYC Tonight' },
+      { href: '/tonight/friday-night-nyc.html', label: 'Friday Night NYC' },
+      { href: '/tonight/saturday-night-nyc.html', label: 'Saturday Night NYC' }
+    ],
+    '/weekend/': [
+      { href: '/weekend/nyc-nightlife-this-weekend.html', label: 'NYC Nightlife This Weekend' },
+      { href: '/weekend/nyc-rooftop-weekend-guide.html', label: 'NYC Rooftop Weekend Guide' },
+      { href: '/visit/where-to-stay-for-nightlife-nyc.html', label: 'Where to Stay for Nightlife NYC' }
+    ]
+  };
+
+  const picks = hubs[pathname];
+  if (!picks || document.querySelector('.money-pages-module')) return;
+
+  const main = document.querySelector('main');
+  if (!main) return;
+
+  const section = document.createElement('section');
+  section.className = 'section money-pages-module';
+  section.style.paddingTop = '20px';
+  section.innerHTML = `
+    <div class="card glow" style="max-width:1100px; margin:0 auto;">
+      <p class="eyebrow">Priority Pages</p>
+      <h2 style="margin-top:4px;">High-Intent Pages to Build First</h2>
+      <div class="links" style="gap:12px 18px; margin-top:8px;">
+        ${picks.map(p => `<a href="${p.href}" data-money-page="1">${p.label} →</a>`).join('')}
+      </div>
+    </div>
+  `;
+
+  const footer = document.querySelector('footer');
+  if (footer && footer.parentNode) footer.parentNode.insertBefore(section, footer);
+
+  section.querySelectorAll('a[data-money-page="1"]').forEach(a => {
+    a.addEventListener('click', () => {
+      trackEvent('money_page_click', {
+        from: pathname,
+        to: a.getAttribute('href') || ''
       });
     });
   });
