@@ -6,7 +6,8 @@ Publish one source-backed NYC Weekend Brief every Friday at **2:00 PM America/Ne
 ## Non-negotiables
 - No fabricated events, listings, specials, or discounts.
 - Time-sensitive/commercial claims require **3 independent sources**.
-- Inline citations + clickable source links section.
+- Inline citations must be clickable hyperlinks in the sentence itself (no bracket-number citation markers like [1], [2]).
+- Keep a clickable source links section at bottom for transparency.
 
 ## Weekly runbook
 1. Collect candidate signals from trusted event/calendar sources.
