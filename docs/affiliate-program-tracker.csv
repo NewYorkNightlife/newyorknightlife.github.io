@@ -1,6 +1,6 @@
 program,submitted_at,status,login_url,tracking_id,payout_model,payout_terms,next_action,owner
-Booking.com,,,,,,,,
-Viator,,,,,,,,
-GetYourGuide,,,,,,,,
-Eventbrite,,,,,,,,
-OpenTable,,,,,,,,
+Booking.com,,pending submit,https://www.booking.com/affiliate-program/v2/index.html,,, ,Submit application,Dan
+Viator,,pending submit,https://partnerresources.viator.com/,,, ,Submit application,Dan
+GetYourGuide,,pending submit,https://www.getyourguide.com/c/affiliate-program/,,, ,Submit application,Dan
+Eventbrite,,research route,https://www.eventbrite.com/,,, ,Confirm affiliate path,Dan
+OpenTable,,research route,https://www.opentable.com/,,, ,Confirm partner route,Dan
