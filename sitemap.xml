@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://newyorknightlife.github.io/about.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/affiliate-disclosure.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/ai/index.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/ai/nybot-nightlife-concierge.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/archive-weekly-briefs.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/blog/getting-into-exclusive-clubs.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/blog/index.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/blog/rooftop-bars-manhattan.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-02-28.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-03-07.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-03-14.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-03-21.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-03-28.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-04-04.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-04-11.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-04-18.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-04-25.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-05-02.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-05-09.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-05-16.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-05-23.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-05-30.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-06-06.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-06-13.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-06-20.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-06-27.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-07-04.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-07-11.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-07-18.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-07-25.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-08-01.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-08-08.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-08-15.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-08-22.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-08-29.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-09-05.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-09-12.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-09-19.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-09-26.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-10-03.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-10-10.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-10-17.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-10-24.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-10-31.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-11-07.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-11-14.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-11-21.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-11-28.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-12-05.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-12-12.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-12-19.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2025-12-26.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2026-01-02.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2026-01-09.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2026-01-16.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2026-01-23.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2026-01-30.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2026-02-06.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2026-02-13.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/blog/weekly/weekend-brief-2026-02-20.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/boroughs/bronx-nightlife.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/boroughs/brooklyn-nightlife.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/boroughs/index.html</loc></url>
@@ -26,6 +80,7 @@
   <url><loc>https://newyorknightlife.github.io/categories/rooftop-bars-nyc.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/categories/speakeasies-nyc.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/contact.html</loc></url>
+  <url><loc>https://newyorknightlife.github.io/docs/GUIDE-TEMPLATE.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/games/bar-or-club-quiz.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/games/build-your-perfect-nyc-night.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/games/dj-or-genre-match.html</loc></url>
@@ -43,6 +98,7 @@
   <url><loc>https://newyorknightlife.github.io/guides/index.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/guides/stay-near-nightlife.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/</loc></url>
+  <url><loc>https://newyorknightlife.github.io/methodology/editorial-policy.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/methodology/how-we-rate-venues.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/methodology/index.html</loc></url>
   <url><loc>https://newyorknightlife.github.io/neighborhoods/astoria-nightlife.html</loc></url>
