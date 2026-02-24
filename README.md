@@ -56,6 +56,7 @@ https://newyorknightlife.github.io/
 13. [BREADCRUMBS.md](docs/BREADCRUMBS.md) — Reusable breadcrumb navigation module
 14. [MONEY-PAGES.md](docs/MONEY-PAGES.md) — Priority page module for execution focus
 15. [AFFILIATE-OPS.md](docs/AFFILIATE-OPS.md) — Affiliate application and launch operations
+16. [CONTENT-BASELINE-PASS.md](docs/CONTENT-BASELINE-PASS.md) — Baseline content fill workflow
 
 ## Features
 
