@@ -18,19 +18,59 @@
   <link rel="stylesheet" href="../css/main.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1>Uber Lyft Vs Subway NYC Night</h1>
-      <p>Actionable NYC planning content is continuously updated for quality, accuracy, and usability.</p>
-      <nav>
-        <a href="../index.html">Home</a> |
-        <a href="../visitor-start-here.html">Visitor Start</a> |
-        <a href="../boroughs/manhattan-nightlife.html">Boroughs</a> |
-        <a href="../tools/nyc-nightlife-map.html">Map</a> |
-        <a href="../things-to-do/nyc-on-a-budget-guide.html">Budget NYC</a>
-      </nav>
+  <header class="site-header site-header--premium">
+  <div class="header-container">
+    <a class="brand" href="/" aria-label="NYNightlife home">
+      <span class="brand-icon" aria-hidden="true">🗽</span>
+      <span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span>
+      <span class="brand-tagline">NYC Nightlife</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="/tonight/">Tonight</a>
+
+      <div class="nav-item has-dropdown">
+        <button class="dropdown-toggle" aria-expanded="false" aria-controls="guides-menu" type="button">
+          Guides
+        </button>
+        <div id="guides-menu" class="dropdown-menu">
+          <a href="/boroughs/manhattan-nightlife.html">Manhattan</a>
+          <a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a>
+          <a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a>
+          <a href="/guides/vip-club-access-nyc.html">VIP Club Access</a>
+          <a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a>
+        </div>
+      </div>
+
+      <a href="/blog/">Blog</a>
+      <a href="/about.html">About</a>
+      <a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a>
+    </nav>
+  </div>
+
+  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile Primary" hidden>
+    <a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a>
+    <a href="/tonight/">Tonight</a>
+
+    <button class="mobile-accordion-toggle" aria-expanded="false" aria-controls="mobile-guides" type="button">
+      Guides
+    </button>
+    <div id="mobile-guides" class="mobile-accordion" hidden>
+      <a href="/boroughs/manhattan-nightlife.html">Manhattan</a>
+      <a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a>
+      <a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a>
+      <a href="/guides/vip-club-access-nyc.html">VIP Club Access</a>
+      <a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a>
     </div>
-  </header>
+
+    <a href="/blog/">Blog</a>
+    <a href="/about.html">About</a>
+  </nav>
+</header>
   <main class="container" style="padding:2rem 1rem;">
     <section>
       <h2>What this page will deliver</h2>

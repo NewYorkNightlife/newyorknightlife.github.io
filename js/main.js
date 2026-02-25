@@ -3,6 +3,7 @@
 const DEFAULT_EMAIL_ENDPOINT = 'https://formspree.io/f/xojnprqp';
 
 document.addEventListener('DOMContentLoaded', function() {
+  setupPremiumNav();
   setActiveNav();
   setupEmailCapture();
   setupTools();
