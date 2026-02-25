@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NYNightlife Tonight Feed",
+  "type": "object",
+  "required": ["generated_at", "timezone", "featured_tonight", "weather", "headlines"],
+  "properties": {
+    "generated_at": { "type": "string", "format": "date-time" },
+    "timezone": { "type": "string" },
+    "confidence_policy": { "type": "string" },
+    "weather": {
+      "type": "object",
+      "properties": {
+        "summary": { "type": "string" },
+        "temp_f": { "type": ["number", "null"] },
+        "feels_like_f": { "type": ["number", "null"] },
+        "icon": { "type": "string" },
+        "five_day": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "day": { "type": "string" },
+              "summary": { "type": "string" },
+              "high_f": { "type": ["number", "null"] },
+              "low_f": { "type": ["number", "null"] }
+            }
+          }
+        }
+      }
+    },
+    "headlines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "url"],
+        "properties": {
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "featured_tonight": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "time_window", "venue", "verification"],
+        "properties": {
+          "title": { "type": "string" },
+          "category": { "type": "string" },
+          "borough": { "type": "string" },
+          "time_window": { "type": "string" },
+          "venue": { "type": "string" },
+          "summary": { "type": "string" },
+          "booking_url": { "type": "string" },
+          "verification": {
+            "type": "object",
+            "required": ["confidence", "source_count", "sources"],
+            "properties": {
+              "confidence": { "type": "string" },
+              "source_count": { "type": "number" },
+              "sources": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": { "type": "string" },
+                    "url": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "last_three_nights": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": { "type": "string" },
+          "title": { "type": "string" },
+          "url": { "type": "string" }
+        }
+      }
+    }
+  }
+}
