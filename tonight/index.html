@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJE6L0D7H"></script>
   <script>
@@ -9,49 +10,142 @@
     gtag('config', 'G-ZXJE6L0D7H');
   </script>
 
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Tonight Hub | NYNightlife</title>
-<meta name="description" content="Tonight hub planning hub with practical NYC nightlife guidance."/>
-<link rel="canonical" href="https://newyorknightlife.github.io/tonight/"/>
-<link rel="stylesheet" href="../css/main.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Things to Do in NYC Tonight | Live Verified Nightlife Picks</title>
+  <meta name="description" content="Live NYC tonight page with triple-verified nightlife picks, weather, and fresh headlines. Updated daily for fast nightlife planning." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://nynightlife.com/tonight/" />
+  <link rel="stylesheet" href="/css/main.css" />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Tonight Hub | NYC Nightlife",
-    "url": "https://newyorknightlife.github.io/tonight/",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "NYC Nightlife",
-      "url": "https://newyorknightlife.github.io/"
-    },
-    "about": "NYC nightlife tonight hub"
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://nynightlife.com/tonight/#webpage",
+        "url": "https://nynightlife.com/tonight/",
+        "name": "Things to Do in NYC Tonight",
+        "description": "Live NYC nightlife picks for tonight with verification-first publishing rules.",
+        "isPartOf": { "@id": "https://nynightlife.com/#website" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://nynightlife.com/#website",
+        "url": "https://nynightlife.com/",
+        "name": "NYNightlife"
+      },
+      {
+        "@type": "ItemList",
+        "name": "Verified NYC Tonight Picks",
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "numberOfItems": 3
+      }
+    ]
   }
   </script>
-</head><body>
-<main class="container" style="padding:2rem 1rem;">
-<h1>NYC Tonight Hub</h1>
-<p>This is your fast-decision page for tonight’s plan: where to go, what vibe fits, and what to lock first so your night doesn’t drift.</p>
 
-<h2>Start here based on your night</h2>
-<ul>
-        <li><a href="./things-to-do-in-nyc-tonight.html">Things To Do In NYC Tonight</a> — broad options for mixed groups and quick decisions.</li>
-        <li><a href="./friday-night-nyc.html">Friday Night NYC</a> — high-energy flow with weekend kickoff logic.</li>
-        <li><a href="./saturday-night-nyc.html">Saturday Night NYC</a> — peak-night strategy with backup options.</li>
-</ul>
+  <style>
+    .tonight-grid { display:grid; gap:1rem; grid-template-columns: 1.2fr .8fr; }
+    .tonight-panel { background: rgba(14,18,30,.72); border:1px solid rgba(212,175,55,.22); border-radius: 14px; padding: 1rem; }
+    .tonight-card { background: rgba(8,10,18,.72); border:1px solid rgba(212,175,55,.18); border-radius: 12px; padding: .9rem; margin-bottom: .8rem; }
+    .tonight-card h3 { margin: 0 0 .35rem; }
+    .tonight-verify { color:#cbb06a; font-size:.92rem; }
+    .tonight-muted { color:#b7b3ab; font-size:.92rem; }
+    .tonight-list { margin:.4rem 0 0 1rem; }
+    @media (max-width: 920px) { .tonight-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<header class="site-header site-header--premium">
+  <div class="header-container">
+    <a class="brand" href="/" aria-label="NYNightlife home">
+      <span class="brand-icon" aria-hidden="true">🗽</span>
+      <span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span>
+      <span class="brand-tagline">NYC Nightlife</span>
+    </a>
 
-<h2>2-minute planning checklist</h2>
-<ul>
-  <li>Pick one neighborhood cluster (don’t borough-hop late).</li>
-  <li>Set budget before first venue.</li>
-  <li>Choose one main plan + one backup nearby.</li>
-</ul>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
 
-<p><strong>Next step:</strong> use <a href="../tools/nyc-night-planner.html">Night Planner</a> and compare options in <a href="../tools/venue-compare-nyc.html">Venue Compare</a>.</p>
-<p style="color:#b7b3ab;">Last updated: 2026-02-24 (America/New_York)</p>
-<p><a href="../affiliate-disclosure.html">Affiliate Disclosure</a> · <a href="../methodology/">Methodology</a></p>
-<p><a href="../index.html">← Back to Home</a></p>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="/tonight/">Tonight</a>
+
+      <div class="nav-item has-dropdown">
+        <button class="dropdown-toggle" aria-expanded="false" aria-controls="guides-menu" type="button">Guides</button>
+        <div id="guides-menu" class="dropdown-menu">
+          <a href="/boroughs/manhattan-nightlife.html">Manhattan</a>
+          <a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a>
+          <a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a>
+          <a href="/guides/vip-club-access-nyc.html">VIP Club Access</a>
+          <a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a>
+        </div>
+      </div>
+
+      <a href="/blog/">Blog</a>
+      <a href="/about.html">About</a>
+      <a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a>
+    </nav>
+  </div>
+
+  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile Primary" hidden>
+    <a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a>
+    <a href="/tonight/">Tonight</a>
+
+    <button class="mobile-accordion-toggle" aria-expanded="false" aria-controls="mobile-guides" type="button">Guides</button>
+    <div id="mobile-guides" class="mobile-accordion" hidden>
+      <a href="/boroughs/manhattan-nightlife.html">Manhattan</a>
+      <a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a>
+      <a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a>
+      <a href="/guides/vip-club-access-nyc.html">VIP Club Access</a>
+      <a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a>
+    </div>
+
+    <a href="/blog/">Blog</a>
+    <a href="/about.html">About</a>
+  </nav>
+</header>
+
+<main class="container" style="padding:2rem 1rem; max-width:1080px;">
+  <h1>Things to Do in NYC Tonight</h1>
+  <p>Verification-first nightly picks for NYC. Featured items publish only after 3-source confirmation.</p>
+  <p class="tonight-muted">Last refreshed: <strong id="tonight-updated-at">Loading...</strong></p>
+
+  <section class="tonight-grid" aria-label="Tonight live modules">
+    <div class="tonight-panel">
+      <h2>Featured Tonight (Verified)</h2>
+      <div id="tonight-featured"></div>
+      <p class="tonight-muted">Policy: if an event cannot be triple-confirmed, it is excluded.</p>
+    </div>
+
+    <aside class="tonight-panel">
+      <h2>NYC Weather</h2>
+      <div id="tonight-weather"></div>
+
+      <h2 style="margin-top:1rem;">Nightlife Headlines</h2>
+      <ul id="tonight-headlines" class="tonight-list"></ul>
+
+      <h2 style="margin-top:1rem;">Last 3 Nights</h2>
+      <ul id="tonight-last-three" class="tonight-list"></ul>
+    </aside>
+  </section>
+
+  <section style="margin-top:1.2rem;">
+    <h2>Quick Actions</h2>
+    <ul>
+      <li><a href="/tonight/things-to-do-in-nyc-tonight.html">Tonight broad guide</a></li>
+      <li><a href="/tools/nyc-night-planner.html">Night planner</a></li>
+      <li><a href="/tools/venue-compare-nyc.html">Venue compare</a></li>
+      <li><a href="/workflows/README.md">Workflow setup docs</a></li>
+    </ul>
+  </section>
+
+  <p class="tonight-muted">For sources and trust standards, see <a href="/docs/EDITORIAL-TRUTH-POLICY.md">Editorial Truth Policy</a> and <a href="/methodology/">Methodology</a>.</p>
 </main>
-<script src="../js/main.js"></script>
-</body></html>
+
+<script src="/js/main.js"></script>
+<script src="/js/tonight-live.js"></script>
+</body>
+</html>

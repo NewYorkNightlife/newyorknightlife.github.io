@@ -1,0 +1,289 @@
+{
+  "name": "NYNightlife - Tonight Production Feed",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "10 11,16,20 * * *"
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule Trigger (ET)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1320,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.openweathermap.org/data/2.5/weather",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "lat", "value": "40.7589" },
+            { "name": "lon", "value": "-73.9851" },
+            { "name": "units", "value": "imperial" },
+            { "name": "appid", "value": "={{$env.OPENWEATHER_API_KEY}}" }
+          ]
+        }
+      },
+      "id": "weather-now",
+      "name": "Weather Now",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1080,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.openweathermap.org/data/2.5/forecast",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "lat", "value": "40.7589" },
+            { "name": "lon", "value": "-73.9851" },
+            { "name": "units", "value": "imperial" },
+            { "name": "appid", "value": "={{$env.OPENWEATHER_API_KEY}}" }
+          ]
+        }
+      },
+      "id": "weather-forecast",
+      "name": "Weather 5-Day",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1080,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://newsapi.org/v2/everything",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "q", "value": "New York nightlife OR NYC events tonight" },
+            { "name": "language", "value": "en" },
+            { "name": "sortBy", "value": "publishedAt" },
+            { "name": "pageSize", "value": "10" },
+            { "name": "apiKey", "value": "={{$env.NEWS_API_KEY}}" }
+          ]
+        }
+      },
+      "id": "news-headlines",
+      "name": "Headlines Feed",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1080,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.EVENT_SOURCE_A_URL}}",
+        "options": { "timeout": 30000 }
+      },
+      "id": "events-source-a",
+      "name": "Events Source A (Official)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1080,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.EVENT_SOURCE_B_URL}}",
+        "options": { "timeout": 30000 }
+      },
+      "id": "events-source-b",
+      "name": "Events Source B (Ticketing)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1080,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.EVENT_SOURCE_C_URL}}",
+        "options": { "timeout": 30000 }
+      },
+      "id": "events-source-c",
+      "name": "Events Source C (Editorial/Aggregator)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1080,
+        840
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "id": "merge-all-feeds",
+      "name": "Merge Inputs",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -820,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const rows = $input.all();\nconst weatherNow = rows[0]?.json || {};\nconst weatherForecast = rows[1]?.json || {};\nconst headlinesRaw = rows[2]?.json?.articles || [];\nconst srcA = rows[3]?.json?.events || rows[3]?.json || [];\nconst srcB = rows[4]?.json?.events || rows[4]?.json || [];\nconst srcC = rows[5]?.json?.events || rows[5]?.json || [];\n\nfunction normalize(list, sourceName) {\n  if (!Array.isArray(list)) return [];\n  return list.map(e => ({\n    title: e.title || e.name || '',\n    venue: e.venue || e.location || '',\n    borough: e.borough || e.area || 'NYC',\n    time_window: e.time_window || e.time || e.start_time || '',\n    date: e.date || e.start_date || '',\n    url: e.url || e.link || '',\n    source: sourceName\n  })).filter(e => e.title && e.venue && e.time_window);\n}\n\nconst nA = normalize(srcA, 'SourceA');\nconst nB = normalize(srcB, 'SourceB');\nconst nC = normalize(srcC, 'SourceC');\n\nconst keyOf = (e) => `${e.title.toLowerCase().trim()}|${e.venue.toLowerCase().trim()}|${e.time_window.toLowerCase().trim()}`;\nconst byKey = new Map();\n\nfor (const e of [...nA, ...nB, ...nC]) {\n  const k = keyOf(e);\n  if (!byKey.has(k)) byKey.set(k, []);\n  byKey.get(k).push(e);\n}\n\nconst featured = [];\nfor (const [, group] of byKey.entries()) {\n  const distinctSources = [...new Set(group.map(g => g.source))];\n  if (distinctSources.length >= 3) {\n    const seed = group[0];\n    featured.push({\n      title: seed.title,\n      category: 'nightlife',\n      borough: seed.borough,\n      time_window: seed.time_window,\n      venue: seed.venue,\n      summary: 'Triple-confirmed listing across independent sources.',\n      booking_url: seed.url || '/tonight/things-to-do-in-nyc-tonight.html',\n      verification: {\n        confidence: 'high',\n        source_count: distinctSources.length,\n        sources: group.slice(0, 3).map(g => ({ name: g.source, url: g.url }))\n      }\n    });\n  }\n}\n\nconst topHeadlines = headlinesRaw.slice(0,3).map(h => ({\n  title: h.title || 'Untitled',\n  url: h.url || '/blog/',\n  source: h.source?.name || 'News'\n}));\n\nconst fiveDay = (weatherForecast.list || []).filter((_, idx) => idx % 8 === 0).slice(0,5).map(d => ({\n  day: new Date(d.dt * 1000).toLocaleDateString('en-US', { weekday: 'short' }),\n  summary: d.weather?.[0]?.main || '',\n  high_f: Math.round(d.main?.temp_max || 0),\n  low_f: Math.round(d.main?.temp_min || 0)\n}));\n\nconst payload = {\n  generated_at: new Date().toISOString(),\n  timezone: 'America/New_York',\n  confidence_policy: 'featured events require 3 independent source confirmations',\n  weather: {\n    summary: weatherNow.weather?.[0]?.description || 'Weather unavailable',\n    temp_f: Math.round(weatherNow.main?.temp || 0),\n    feels_like_f: Math.round(weatherNow.main?.feels_like || 0),\n    icon: '⛅',\n    five_day: fiveDay\n  },\n  headlines: topHeadlines,\n  featured_tonight: featured.slice(0, 12),\n  last_three_nights: [],\n  notes: [\n    'No fabricated events are published.',\n    'Featured events are filtered by triple confirmation.'\n  ]\n};\n\nreturn [{ json: payload }];"
+      },
+      "id": "normalize-verify",
+      "name": "Normalize + Triple Verify",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -560,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.AI_QA_ENDPOINT}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer {{$env.AI_QA_TOKEN}}" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"input\": $json, \"instruction\": \"Review for clarity, consistency, and non-fabrication. Do not invent missing facts. Return corrected payload only.\" }"
+      },
+      "id": "ai-qa",
+      "name": "AI QA Readability Check",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -320,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const payload = $json.output || $json.corrected_payload || $json.input || $json;\nconst encoded = Buffer.from(JSON.stringify(payload, null, 2), 'utf8').toString('base64');\nreturn [{ json: { payload, encoded } }];"
+      },
+      "id": "prepare-encoded",
+      "name": "Prepare GitHub Payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://api.github.com/repos/{{$env.GITHUB_OWNER}}/{{$env.GITHUB_REPO}}/contents/data/tonight-feed.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer {{$env.GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github+json" }
+          ]
+        }
+      },
+      "id": "github-get-file",
+      "name": "GitHub Get Existing Feed",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        160,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const prepared = $items('Prepare GitHub Payload', 0, 0)[0].json;\nconst existing = $json;\nreturn [{\n  json: {\n    encoded: prepared.encoded,\n    sha: existing.sha,\n    message: `chore(tonight): automated feed update ${new Date().toISOString()}`\n  }\n}];"
+      },
+      "id": "build-put-body",
+      "name": "Build GitHub PUT Body",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        400,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/{{$env.GITHUB_OWNER}}/{{$env.GITHUB_REPO}}/contents/data/tonight-feed.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer {{$env.GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github+json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"message\": $json.message, \"content\": $json.encoded, \"sha\": $json.sha, \"branch\": \"main\"}"
+      },
+      "id": "github-put-file",
+      "name": "GitHub Publish Feed",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        640,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger (ET)": {
+      "main": [
+        [
+          { "node": "Weather Now", "type": "main", "index": 0 },
+          { "node": "Weather 5-Day", "type": "main", "index": 0 },
+          { "node": "Headlines Feed", "type": "main", "index": 0 },
+          { "node": "Events Source A (Official)", "type": "main", "index": 0 },
+          { "node": "Events Source B (Ticketing)", "type": "main", "index": 0 },
+          { "node": "Events Source C (Editorial/Aggregator)", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Weather Now": { "main": [[{ "node": "Merge Inputs", "type": "main", "index": 0 }]] },
+    "Weather 5-Day": { "main": [[{ "node": "Merge Inputs", "type": "main", "index": 1 }]] },
+    "Headlines Feed": { "main": [[{ "node": "Merge Inputs", "type": "main", "index": 2 }]] },
+    "Events Source A (Official)": { "main": [[{ "node": "Merge Inputs", "type": "main", "index": 3 }]] },
+    "Events Source B (Ticketing)": { "main": [[{ "node": "Merge Inputs", "type": "main", "index": 4 }]] },
+    "Events Source C (Editorial/Aggregator)": { "main": [[{ "node": "Merge Inputs", "type": "main", "index": 5 }]] },
+    "Merge Inputs": { "main": [[{ "node": "Normalize + Triple Verify", "type": "main", "index": 0 }]] },
+    "Normalize + Triple Verify": { "main": [[{ "node": "AI QA Readability Check", "type": "main", "index": 0 }]] },
+    "AI QA Readability Check": { "main": [[{ "node": "Prepare GitHub Payload", "type": "main", "index": 0 }]] },
+    "Prepare GitHub Payload": { "main": [[{ "node": "GitHub Get Existing Feed", "type": "main", "index": 0 }]] },
+    "GitHub Get Existing Feed": { "main": [[{ "node": "Build GitHub PUT Body", "type": "main", "index": 0 }]] },
+    "Build GitHub PUT Body": { "main": [[{ "node": "GitHub Publish Feed", "type": "main", "index": 0 }]] }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "nyc-tonight-v1",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}
