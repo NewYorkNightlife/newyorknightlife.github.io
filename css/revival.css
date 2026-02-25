@@ -327,6 +327,29 @@ body > * {
   outline-offset: 2px;
 }
 .site-header--premium .cta-btn::after { display:none !important; }
+.site-header--premium .cta-btn {
+  animation: navCtaPulse 3.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes navCtaPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: inset 0 0 0 1px rgba(255,216,115,.18), 0 0 0 1px rgba(212,175,55,.24), 0 8px 20px rgba(212,175,55,.22), 0 0 20px rgba(212,175,55,.28);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: inset 0 0 0 1px rgba(255,227,147,.28), 0 0 0 1px rgba(212,175,55,.38), 0 10px 24px rgba(212,175,55,.34), 0 0 28px rgba(212,175,55,.48);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header--premium .cta-btn {
+    animation: none;
+    transform: none;
+  }
+}
+
 .site-header--premium .has-dropdown { position: relative; }
 .site-header--premium .dropdown-menu {
   position: absolute;
