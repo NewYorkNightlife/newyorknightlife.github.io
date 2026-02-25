@@ -3,6 +3,7 @@
 const DEFAULT_EMAIL_ENDPOINT = 'https://formspree.io/f/xojnprqp';
 
 document.addEventListener('DOMContentLoaded', function() {
+  setupPremiumNav();
   setActiveNav();
   setupEmailCapture();
   setupTools();
@@ -670,3 +671,76 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+/* === Premium Nav Controller (appended clean patch) === */
+(function premiumNavControllerInit() {
+  function setupPremiumNavController() {
+    const header = document.querySelector('.site-header--premium');
+    if (!header) return;
+
+    const navToggle = header.querySelector('.nav-toggle');
+    const mobileNav = header.querySelector('#mobile-nav');
+    const dropdownWrap = header.querySelector('.has-dropdown');
+    const dropdownToggle = header.querySelector('.dropdown-toggle');
+    const mobileGuidesToggle = header.querySelector('.mobile-accordion-toggle');
+    const mobileGuides = header.querySelector('#mobile-guides');
+
+    if (navToggle && mobileNav) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!expanded));
+        mobileNav.hidden = !expanded;
+      });
+    }
+
+    if (dropdownToggle && dropdownWrap) {
+      dropdownToggle.addEventListener('click', () => {
+        const expanded = dropdownToggle.getAttribute('aria-expanded') === 'true';
+        dropdownToggle.setAttribute('aria-expanded', String(!expanded));
+        dropdownWrap.classList.toggle('open', !expanded);
+      });
+    }
+
+    document.addEventListener('click', (event) => {
+      if (!dropdownWrap || !dropdownToggle) return;
+      if (!dropdownWrap.contains(event.target)) {
+        dropdownWrap.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    if (mobileGuidesToggle && mobileGuides) {
+      mobileGuidesToggle.addEventListener('click', () => {
+        const expanded = mobileGuidesToggle.getAttribute('aria-expanded') === 'true';
+        mobileGuidesToggle.setAttribute('aria-expanded', String(!expanded));
+        mobileGuides.hidden = expanded;
+      });
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+
+      if (dropdownWrap && dropdownToggle) {
+        dropdownWrap.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      if (mobileNav && navToggle && !mobileNav.hidden) {
+        mobileNav.hidden = true;
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      if (mobileGuides && mobileGuidesToggle && !mobileGuides.hidden) {
+        mobileGuides.hidden = true;
+        mobileGuidesToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupPremiumNavController);
+  } else {
+    setupPremiumNavController();
+  }
+})();
+/* === /Premium Nav Controller === */
