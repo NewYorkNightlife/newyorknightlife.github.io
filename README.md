@@ -61,6 +61,7 @@ https://newyorknightlife.github.io/
 18. [EDITORIAL-TRUTH-POLICY.md](docs/EDITORIAL-TRUTH-POLICY.md) — Permanent factual publishing + audit cadence policy
 19. [WEEKLY-BLOG-WORKFLOW.md](docs/WEEKLY-BLOG-WORKFLOW.md) — Friday 2 PM ET source-backed blog workflow
 20. [MONETIZATION-SPRINT.md](docs/MONETIZATION-SPRINT.md) — 14-day affiliate monetization execution plan
+21. [ops/affiliate-status.html](ops/affiliate-status.html) — visual affiliate ops dashboard
 
 ## Features
 

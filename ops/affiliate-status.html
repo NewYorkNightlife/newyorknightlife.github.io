@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Affiliate Status Dashboard | NYC Nightlife</title>
+  <meta name="description" content="Live ops dashboard for affiliate application and deployment status." />
+  <link rel="canonical" href="https://newyorknightlife.github.io/ops/affiliate-status.html" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    .wrap{max-width:1100px;margin:0 auto;padding:2rem 1rem 3rem}
+    .kpis{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 20px}
+    .pill{border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.03)}
+    table{width:100%;border-collapse:collapse;margin:10px 0 20px}
+    th,td{border:1px solid var(--line);padding:8px;text-align:left;font-size:.95rem}
+    th{background:rgba(255,255,255,.04)}
+    .muted{color:#b7b3ab}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="eyebrow">Operations</p>
+    <h1>Affiliate Status Dashboard</h1>
+    <p class="muted">Single-page view of application and deployment readiness for monetization sprint execution.</p>
+
+    <section class="kpis">
+      <span class="pill">Programs submitted/approved: <strong>0</strong></span>
+      <span class="pill">Programs approved: <strong>0</strong></span>
+      <span class="pill">Top pages deployed: <strong>0/6</strong></span>
+    </section>
+
+    <h2>Program application status</h2>
+    <table>
+      <thead><tr><th>Program</th><th>Status</th><th>Next Action</th><th>Apply/Login</th></tr></thead>
+      <tbody>
+        <tr><td>Booking.com</td><td>pending submit</td><td>Submit application</td><td><a href="https://www.booking.com/affiliate-program/v2/index.html" target="_blank" rel="noopener">Open</a></td></tr>
+        <tr><td>Viator</td><td>pending submit</td><td>Submit application</td><td><a href="https://partnerresources.viator.com/" target="_blank" rel="noopener">Open</a></td></tr>
+        <tr><td>GetYourGuide</td><td>pending submit</td><td>Submit application</td><td><a href="https://www.getyourguide.com/c/affiliate-program/" target="_blank" rel="noopener">Open</a></td></tr>
+        <tr><td>Eventbrite</td><td>research route</td><td>Confirm affiliate path</td><td><a href="https://www.eventbrite.com/" target="_blank" rel="noopener">Open</a></td></tr>
+        <tr><td>OpenTable</td><td>research route</td><td>Confirm partner route</td><td><a href="https://www.opentable.com/" target="_blank" rel="noopener">Open</a></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Top deployment queue</h2>
+    <table>
+      <thead><tr><th>Priority</th><th>Page</th><th>Program</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>/visit/where-to-stay-for-nightlife-nyc.html</td><td>Booking.com</td><td>pending approval</td></tr>
+        <tr><td>2</td><td>/guides/stay-near-nightlife.html</td><td>Booking.com</td><td>pending approval</td></tr>
+        <tr><td>3</td><td>/weekend/nyc-nightlife-this-weekend.html</td><td>Viator</td><td>pending approval</td></tr>
+        <tr><td>4</td><td>/things-to-do/nyc-night-cruises-and-ferry-experiences.html</td><td>Viator</td><td>pending approval</td></tr>
+        <tr><td>5</td><td>/guides/best-nightlife-experiences.html</td><td>GetYourGuide</td><td>pending approval</td></tr>
+        <tr><td>6</td><td>/tools/nyc-night-planner.html</td><td>GetYourGuide</td><td>pending approval</td></tr>
+      </tbody>
+    </table>
+
+    <p><a href="/docs/">Docs</a> · <a href="/blog/">Blog</a> · <a href="/">Home</a></p>
+  </main>
+</body>
+</html>
