@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-02-26T02:58:41.281Z",
+  "generated_at": "2026-02-26T03:03:38.340Z",
   "timezone": "America/New_York",
   "confidence_policy": "featured events require 3 independent source confirmations",
   "weather": {
-    "summary": "scattered clouds",
+    "summary": "broken clouds",
     "temp_f": 39,
     "feels_like_f": 30,
     "five_day": [
@@ -56,10 +56,36 @@
       "source": "New York Post"
     }
   ],
-  "featured_tonight": [],
+  "featured_tonight": [
+    {
+      "title": "TEST EVENT — Rooftop Party at SkyLounge",
+      "category": "nightlife",
+      "borough": "Manhattan",
+      "time_window": "10:00 PM",
+      "venue": "SkyLounge NYC",
+      "summary": "TEST ONLY: confirms Featured Tonight rendering + JSON publish pipeline.",
+      "booking_url": "https://example.com",
+      "verification": {
+        "confidence": "test",
+        "source_count": 3,
+        "sources": [
+          {
+            "name": "SourceA"
+          },
+          {
+            "name": "SourceB"
+          },
+          {
+            "name": "SourceC"
+          }
+        ]
+      }
+    }
+  ],
   "last_three_nights": [],
   "notes": [
     "No fabricated events are published.",
-    "Featured events are filtered by triple confirmation."
+    "Featured events are filtered by triple confirmation.",
+    "TEST_MODE is ON (remove after confirming UI)."
   ]
 }
