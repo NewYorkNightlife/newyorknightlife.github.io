@@ -1,40 +1,65 @@
 {
-  "generated_at": "2026-02-25T00:00:00Z",
+  "generated_at": "2026-02-26T02:39:16.400Z",
   "timezone": "America/New_York",
   "confidence_policy": "featured events require 3 independent source confirmations",
   "weather": {
-    "summary": "Weather feed not configured yet",
-    "temp_f": null,
-    "feels_like_f": null,
-    "icon": "⛅",
-    "five_day": []
+    "summary": "few clouds",
+    "temp_f": 38,
+    "feels_like_f": 32,
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 38,
+        "low_f": 34
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 27,
+        "low_f": 27
+      },
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 32,
+        "low_f": 32
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 41,
+        "low_f": 41
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 27,
+        "low_f": 27
+      }
+    ]
   },
   "headlines": [
     {
-      "title": "Live nightlife headlines will appear here once workflow credentials are configured",
-      "url": "/blog/",
-      "source": "NYNightlife"
-    }
-  ],
-  "featured_tonight": [
+      "title": "Go your own way! Wedding showers are now as varied as the brides they honor",
+      "url": "https://nypost.com/2026/02/19/lifestyle/showers-are-now-as-varied-as-the-brides-they-honor/",
+      "source": "New York Post"
+    },
     {
-      "title": "Tonight feed is initializing",
-      "category": "nightlife",
-      "borough": "Manhattan",
-      "time_window": "TBD",
-      "venue": "Data pipeline setup in progress",
-      "summary": "Configure the n8n workflow in /workflows/n8n to publish verified events daily.",
-      "booking_url": "/tonight/things-to-do-in-nyc-tonight.html",
-      "verification": {
-        "confidence": "pending",
-        "source_count": 0,
-        "sources": []
-      }
+      "title": "The 50 Most Powerful PR Firms of 2026",
+      "url": "https://observer.com/list/observer-pr-power-list-2026/",
+      "source": "Observer"
+    },
+    {
+      "title": "The rise of the (dinner) partygoers! Forget nightclubs — New Yorkers are forking out big bucks to eat in with strangers",
+      "url": "https://nypost.com/2026/02/10/lifestyle/nyc-nightlife-isnt-dead-meet-the-new-supper-club-crowd/",
+      "source": "New York Post"
     }
   ],
+  "featured_tonight": [],
   "last_three_nights": [],
   "notes": [
     "No fabricated events are published.",
-    "If an event cannot be triple-confirmed, it is excluded from featured picks."
+    "Featured events are filtered by triple confirmation."
   ]
 }
