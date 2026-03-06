@@ -1,65 +1,18 @@
 {
-  "generated_at": "2026-02-26T03:09:09.764Z",
+  "generated_at": "2026-03-06T00:17:10.410Z",
   "timezone": "America/New_York",
-  "confidence_policy": "featured events require 3 independent source confirmations",
   "weather": {
-    "summary": "broken clouds",
-    "temp_f": 39,
-    "feels_like_f": 30,
-    "five_day": [
-      {
-        "day": "Thu",
-        "summary": "Clouds",
-        "high_f": 37,
-        "low_f": 34
-      },
-      {
-        "day": "Fri",
-        "summary": "Clouds",
-        "high_f": 26,
-        "low_f": 26
-      },
-      {
-        "day": "Sat",
-        "summary": "Clear",
-        "high_f": 31,
-        "low_f": 31
-      },
-      {
-        "day": "Sun",
-        "summary": "Clouds",
-        "high_f": 39,
-        "low_f": 39
-      },
-      {
-        "day": "Mon",
-        "summary": "Clouds",
-        "high_f": 26,
-        "low_f": 26
-      }
-    ]
+    "summary": "moderate rain",
+    "temp_f": 40,
+    "feels_like_f": 32,
+    "five_day": []
   },
-  "headlines": [
-    {
-      "title": "Go your own way! Wedding showers are now as varied as the brides they honor",
-      "url": "https://nypost.com/2026/02/19/lifestyle/showers-are-now-as-varied-as-the-brides-they-honor/",
-      "source": "New York Post"
-    },
-    {
-      "title": "The 50 Most Powerful PR Firms of 2026",
-      "url": "https://observer.com/list/observer-pr-power-list-2026/",
-      "source": "Observer"
-    },
-    {
-      "title": "The rise of the (dinner) partygoers! Forget nightclubs — New Yorkers are forking out big bucks to eat in with strangers",
-      "url": "https://nypost.com/2026/02/10/lifestyle/nyc-nightlife-isnt-dead-meet-the-new-supper-club-crowd/",
-      "source": "New York Post"
-    }
-  ],
+  "headlines": [],
   "featured_tonight": [],
-  "last_three_nights": [],
+  "featured_verified": [],
+  "picks_from_sources": [],
   "notes": [
-    "No fabricated events are published.",
-    "Featured events are filtered by triple confirmation."
+    "Featured items require 2-source verification (confidence upgrades to high at 3+).",
+    "Picks From Sources are shown with explicit source attribution."
   ]
 }
