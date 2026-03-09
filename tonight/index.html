@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Things to Do in NYC Tonight | Top Picks, Weather & Live Events</title>
-  <meta name="description" content="See the best things to do in NYC tonight with curated top picks, live event listings, weather, and nightlife headlines. Updated daily for fast NYC night planning." />
+  <meta name="description" content="See the best things to do in NYC tonight with curated top picks, live event listings, weather, and nightlife headlines. Updated throughout the day for fast NYC night planning." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://nynightlife.com/tonight/" />
   <link rel="stylesheet" href="/css/main.css" />
@@ -431,8 +431,8 @@
     <p class="tonight-kicker">Tonight in New York City</p>
     <h1>Things to Do in NYC Tonight</h1>
     <p>
-      Our top picks focus on events that are actually happening tonight, are ticket-ready, and make strong choices for a real NYC night out.
-      We prioritize same-day timing, recognizable venues, audience appeal, and clean source data so visitors can make a fast decision.
+      Our top picks focus on real ticketable events that are actually relevant for tonight. We filter out article links,
+      generic city-feed items, and stale records so the featured section stays useful for an actual NYC night out.
     </p>
     <p class="tonight-updated">Last refreshed: <strong id="tonight-updated-at">Loading...</strong></p>
   </section>
@@ -441,7 +441,7 @@
     <div class="tonight-panel">
       <h2>Tonight’s Top Picks</h2>
       <p class="tonight-panel-subtitle">
-        Three handpicked events chosen automatically from tonight’s live feed based on same-day timing, venue quality, category balance, and click potential.
+        Automatically selected from the live feed using real event links, same-day timing, and stronger click potential.
       </p>
       <div id="tonight-featured" class="tonight-featured-grid"></div>
     </div>
@@ -472,7 +472,7 @@
     <div class="tonight-panel">
       <h2>More Events Happening Tonight</h2>
       <p class="tonight-panel-subtitle">
-        Live source-attributed picks for tonight in NYC. This list stays broader for discovery, while the top section stays tightly curated.
+        Broader live feed for discovery. The featured section above is stricter; this section can stay wider for browsing.
       </p>
       <div id="tonight-picks" class="tonight-picks-grid"></div>
     </div>
@@ -570,52 +570,8 @@
     return value || 'event';
   }
 
-  function scoreEvent(item, index) {
-    let score = 0;
-
-    const title = String(item.title || '').toLowerCase();
-    const venue = String(item.venue || '').toLowerCase();
-    const category = normalizeCategory(item.category);
-    const sourceName = String(item.source_name || '').toLowerCase();
-    const borough = String(item.borough || '').toLowerCase();
-    const price = String(item.price || '').toLowerCase();
-    const hour = item._eventHour;
-
-    if (item._isToday) score += 70;
-    if (item._hasValidLink) score += 20;
-    if (item._hasTime) score += 12;
-    if (item._hasImage) score += 8;
-
-    if (category === 'theater') score += 18;
-    if (category === 'music') score += 16;
-    if (category === 'experience') score += 10;
-    if (category === 'comedy') score += 10;
-    if (category === 'nightlife') score += 9;
-
-    if (borough.includes('manhattan')) score += 8;
-    if (sourceName.includes('ticketmaster')) score += 8;
-
-    if (hour >= 17 && hour <= 23) score += 16;
-    else if (hour >= 14 && hour < 17) score += 7;
-    else if (hour >= 0) score -= 6;
-
-    if (venue.includes('broadway') || venue.includes('theatre') || venue.includes('theater') || venue.includes('jazz')) score += 8;
-
-    if (
-      title.includes('hamilton') ||
-      title.includes('wicked') ||
-      title.includes('chicago') ||
-      title.includes('stranger things') ||
-      title.includes('harlem gospel')
-    ) {
-      score += 12;
-    }
-
-    if (price.includes('$0') || price.includes('free')) score += 3;
-
-    score += Math.max(0, 10 - (index * 0.15));
-
-    return score;
+  function getItemImage(item) {
+    return item.image_url || item.image || item.poster || item.thumbnail || '';
   }
 
   function buildFeaturedBlurb(item) {
@@ -624,22 +580,92 @@
     const venue = String(item.venue || 'NYC venue');
 
     if (category === 'theater') {
-      return `${title} is one of tonight’s strongest theater picks thanks to its recognizable title, reliable venue, and easy same-day planning value for visitors who want a classic NYC night out.`;
+      return `${title} stands out as a strong theater pick for tonight thanks to a recognizable title, proven venue, and easy same-day ticket appeal for visitors who want a classic NYC night out.`;
     }
 
     if (category === 'music') {
-      return `${title} stands out tonight for live energy, a known venue, and strong date-night appeal if you want something more atmospheric than a standard tourist stop.`;
+      return `${title} earns a featured spot for tonight with live-energy appeal, a known venue, and a better fit for people looking for something more atmospheric than a standard tourist stop.`;
     }
 
     if (category === 'comedy') {
-      return `${title} makes tonight’s list as a fun, lower-friction option for visitors who want an easy, high-reward NYC evening without committing to a full Broadway-style production.`;
+      return `${title} makes the shortlist as a lower-friction option for visitors who want a fun NYC evening without committing to a full Broadway-style production.`;
     }
 
     if (category === 'nightlife') {
-      return `${title} earns a top spot tonight for its nightlife appeal, strong city vibe, and better fit for visitors looking for an authentic after-dark NYC experience.`;
+      return `${title} fits tonight’s shortlist for its after-dark city feel and stronger alignment with a true nightlife experience in New York.`;
     }
 
     return `${title} makes tonight’s shortlist because it appears timely, ticket-ready, and well-positioned for a real NYC evening plan at ${venue}.`;
+  }
+
+  function isRealFeaturedCandidate(item) {
+    const url = String(item.url || item.source_url || '').toLowerCase();
+    const venue = String(item.venue || '').toLowerCase();
+    const category = String(item.category || '').toLowerCase();
+    const sourceName = String(item.source_name || '').toLowerCase();
+    const title = String(item.title || '').toLowerCase();
+
+    const validEventDomains = [
+      'ticketmaster.com',
+      'ticketweb.com',
+      'universe.com'
+    ];
+
+    const hasAllowedDomain = validEventDomains.some(domain => url.includes(domain));
+
+    const isCityFeed =
+      category === 'city' ||
+      venue === 'nyc' ||
+      sourceName.includes('open data');
+
+    const isEditorial =
+      sourceName.includes('playbill') ||
+      sourceName.includes('time out') ||
+      title.includes('weekly schedule') ||
+      title.includes('broadway real estate') ||
+      title.includes('new broadway plays');
+
+    return hasAllowedDomain && !isCityFeed && !isEditorial;
+  }
+
+  function scoreFeaturedEvent(item, currentHour) {
+    let score = 0;
+
+    const title = String(item.title || '').toLowerCase();
+    const venue = String(item.venue || '').toLowerCase();
+    const category = normalizeCategory(item.category);
+    const price = String(item.price || '').toLowerCase();
+    const hour = item._eventHour;
+
+    if (item._isToday) score += 60;
+    if (item._hasValidDate) score += 25;
+    if (item._hasValidLink) score += 20;
+    if (item._hasImage) score += 8;
+
+    if (hour >= currentHour && hour <= currentHour + 4) score += 40;
+    else if (hour >= currentHour - 1) score += 20;
+    else if (hour >= 0) score -= 20;
+
+    if (category === 'music') score += 18;
+    if (category === 'theater') score += 14;
+    if (category === 'nightlife') score += 10;
+    if (category === 'experience') score += 6;
+
+    if (title.includes('hamilton')) score += 14;
+    if (title.includes('wicked')) score += 14;
+    if (title.includes('chicago')) score += 12;
+    if (title.includes('lion king')) score += 12;
+    if (title.includes('harlem gospel')) score += 12;
+
+    if (venue.includes('blue note')) score += 12;
+    if (venue.includes('birdland')) score += 12;
+    if (venue.includes('gramercy')) score += 10;
+    if (venue.includes('mercury lounge')) score += 10;
+    if (venue.includes('theatre') || venue.includes('theater')) score += 6;
+
+    if (price.includes('$0') || price.includes('free')) score += 3;
+
+    return score;
   }
 
   function selectFeaturedTonight(items) {
@@ -649,79 +675,54 @@
     const currentHour = getCurrentHourInNY();
 
     const prepared = items
-      .filter(item => item && item.title)
+      .filter(item => item && item.title && (item.url || item.source_url))
       .map((item, index) => {
         const startIso = item.start_iso || '';
         const dateKey = formatEventDateKey(startIso);
         const dateObj = startIso ? new Date(startIso) : null;
         const hasValidDate = dateObj instanceof Date && !Number.isNaN(dateObj.getTime());
         const eventHour = hasValidDate
-          ? Number(dateObj.toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }))
+          ? Number(dateObj.toLocaleString('en-US', {
+              timeZone: 'America/New_York',
+              hour: 'numeric',
+              hour12: false
+            }))
           : -1;
 
-        const isToday = dateKey === todayKey;
-        const hasTime = Boolean(startIso || item.time_window);
-        const hasValidLink = Boolean(item.url || item.source_url);
-        const imageUrl = item.image_url || item.image || item.poster || '';
-        const hasImage = Boolean(imageUrl);
+        const imageUrl = getItemImage(item);
 
         return {
           ...item,
           _index: index,
-          _isToday: isToday,
-          _hasTime: hasTime,
-          _hasValidLink: hasValidLink,
-          _imageUrl: imageUrl,
-          _hasImage: hasImage,
+          _isToday: dateKey === todayKey,
+          _hasValidDate: hasValidDate,
+          _hasValidLink: Boolean(item.url || item.source_url),
           _eventHour: eventHour,
-          _score: 0
+          _imageUrl: imageUrl,
+          _hasImage: Boolean(imageUrl)
         };
       })
+      .filter(item => isRealFeaturedCandidate(item))
       .filter(item => item._isToday)
-      .filter(item => item._hasValidLink)
-      .filter(item => item._eventHour === -1 || item._eventHour >= Math.max(0, currentHour - 3));
-
-    const fallbackPool = prepared.length
-      ? prepared
-      : items
-          .filter(item => item && item.title)
-          .map((item, index) => {
-            const startIso = item.start_iso || '';
-            const dateObj = startIso ? new Date(startIso) : null;
-            const hasValidDate = dateObj instanceof Date && !Number.isNaN(dateObj.getTime());
-            const eventHour = hasValidDate
-              ? Number(dateObj.toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }))
-              : -1;
-            const imageUrl = item.image_url || item.image || item.poster || '';
-            return {
-              ...item,
-              _index: index,
-              _isToday: false,
-              _hasTime: Boolean(startIso || item.time_window),
-              _hasValidLink: Boolean(item.url || item.source_url),
-              _imageUrl: imageUrl,
-              _hasImage: Boolean(imageUrl),
-              _eventHour: eventHour,
-              _score: 0
-            };
-          })
-          .filter(item => item._hasValidLink);
-
-    const scored = fallbackPool
-      .map(item => ({ ...item, _score: scoreEvent(item, item._index) }))
+      .filter(item => item._hasValidDate)
+      .filter(item => item._eventHour >= currentHour - 1)
+      .map(item => ({
+        ...item,
+        _score: scoreFeaturedEvent(item, currentHour)
+      }))
       .sort((a, b) => b._score - a._score);
 
     const selected = [];
     const usedTitles = new Set();
     const usedCategories = new Set();
 
-    for (const item of scored) {
+    for (const item of prepared) {
       const cleanTitle = String(item.title || '').trim().toLowerCase();
       const category = normalizeCategory(item.category);
 
       if (!cleanTitle || usedTitles.has(cleanTitle)) continue;
 
-      if (selected.length < 2 && usedCategories.has(category) && scored.length > 3) {
+      if (selected.length < 2 && usedCategories.has(category) && prepared.length > 3) {
         continue;
       }
 
@@ -730,16 +731,6 @@
       usedCategories.add(category);
 
       if (selected.length === 3) break;
-    }
-
-    if (selected.length < 3) {
-      for (const item of scored) {
-        const cleanTitle = String(item.title || '').trim().toLowerCase();
-        if (!cleanTitle || usedTitles.has(cleanTitle)) continue;
-        selected.push(item);
-        usedTitles.add(cleanTitle);
-        if (selected.length === 3) break;
-      }
     }
 
     return selected;
@@ -752,7 +743,7 @@
     if (!Array.isArray(items) || items.length === 0) {
       wrap.innerHTML = `
         <p class="tonight-empty">
-          No strong same-day top picks are available yet. Check the live events below for the latest ticket-ready options across NYC.
+          No strong late-day featured picks are available right now. Browse the live events below for the latest ticket-ready options.
         </p>
       `;
       return;
@@ -768,7 +759,6 @@
       const url = item.url || item.source_url || '#';
       const imageUrl = item._imageUrl || '';
       const price = item.price ? `<span class="tonight-pill">${escapeHtml(item.price)}</span>` : '';
-      const confidenceText = item._isToday ? 'Confirmed in tonight feed' : 'Strong live pick';
       const blurb = escapeHtml(buildFeaturedBlurb(item));
 
       return `
@@ -776,6 +766,7 @@
           ${imageUrl ? `<img class="tonight-featured-image" src="${escapeHtml(imageUrl)}" alt="${title} in NYC tonight" loading="lazy" />` : ''}
           <div class="tonight-featured-body">
             <span class="tonight-rank">⭐ Top Pick #${idx + 1}</span>
+
             <h3 class="tonight-featured-title">
               <a href="${url}" target="_blank" rel="noopener noreferrer sponsored">${title}</a>
             </h3>
@@ -793,7 +784,6 @@
             </div>
 
             <p class="tonight-featured-copy">${blurb}</p>
-            <div class="tonight-confidence">${escapeHtml(confidenceText)}</div>
 
             <div class="tonight-actions">
               <a class="tonight-btn tonight-btn-primary" href="${url}" target="_blank" rel="noopener noreferrer sponsored">Get Tickets</a>
