@@ -1,70 +1,13 @@
 {
-  "generated_at": "2026-03-09T06:11:15.641Z",
+  "generated_at": "2026-03-09T06:26:06.699Z",
   "timezone": "America/New_York",
   "weather": {
     "summary": "clear sky",
     "temp_f": 51,
     "feels_like_f": 49,
-    "five_day": [
-      {
-        "day": "Mon",
-        "summary": "Clear",
-        "high_f": 58,
-        "low_f": 53
-      },
-      {
-        "day": "Tue",
-        "summary": "Clear",
-        "high_f": 49,
-        "low_f": 49
-      },
-      {
-        "day": "Wed",
-        "summary": "Clouds",
-        "high_f": 51,
-        "low_f": 51
-      },
-      {
-        "day": "Thu",
-        "summary": "Clouds",
-        "high_f": 63,
-        "low_f": 63
-      },
-      {
-        "day": "Fri",
-        "summary": "Clouds",
-        "high_f": 34,
-        "low_f": 34
-      }
-    ]
+    "five_day": []
   },
-  "headlines": [
-    {
-      "title": "More than Theoretical Girls: Adele Bertei on the Women of No Wave",
-      "url": "https://thequietus.com/culture/books/more-than-theoretical-girls-adele-bertei-on-the-women-of-no-wave/",
-      "source": "The Quietus"
-    },
-    {
-      "title": "Ambassadors Clubhouse Brings Punjabi Fine Dining to New York",
-      "url": "https://observer.com/2026/03/ambassadors-clubhouse-new-york-city-indian-restaurant-opening-review/",
-      "source": "Observer"
-    },
-    {
-      "title": "‘Haus of Joe’: Trader Joe’s Employees Vogue in Grocery Store Aisle",
-      "url": "https://www.today.com/food/trends/trader-joes-employees-vogue-tiktok-rcna261983",
-      "source": "TODAY"
-    },
-    {
-      "title": "\"Music was never just a hobby in my life\": singer Leaf continues her dreamgirl era for new EP \"In Your Dreams\"",
-      "url": "https://earmilk.com/2026/03/06/music-was-never-just-a-hobby-in-my-life-singer-leaf-continues-her-dreamgirl-era-for-new-ep-in-your-dreams/",
-      "source": "Earmilk.com"
-    },
-    {
-      "title": "‘Traitors’ star Maura Higgins on how Rob Rausch pulled off his big Birkin apology — with an assist from Lisa Rinna",
-      "url": "https://pagesix.com/2026/03/05/style/maura-higgins-tells-page-six-radio-why-she-knew-rob-rausch-would-make-good-on-birkin-promise/",
-      "source": "Page Six"
-    }
-  ],
+  "headlines": [],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
