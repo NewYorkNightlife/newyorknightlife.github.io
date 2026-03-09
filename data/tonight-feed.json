@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-09T04:54:13.083Z",
+  "generated_at": "2026-03-09T05:02:47.756Z",
   "timezone": "America/New_York",
   "weather": {
     "summary": "clear sky",
@@ -12,7 +12,9 @@
   "featured_verified": [],
   "picks_from_sources": [],
   "notes": [
-    "Featured items require 2-source verification (confidence upgrades to high at 3+).",
-    "Picks From Sources are shown with explicit source attribution."
+    "Featured Tonight now uses real ticketable events only.",
+    "Featured Verified requires 2-source verification among real event sources.",
+    "Editorial/article links and NYC Open Data city-feed records are excluded from Featured Tonight.",
+    "Image fields are included when available for featured cards."
   ]
 }
