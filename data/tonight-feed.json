@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 72,
     "feels_like_f": 70,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Mon",
+        "summary": "Clear",
+        "high_f": 69,
+        "low_f": 63
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 56,
+        "low_f": 56
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 64,
+        "low_f": 64
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 41,
+        "low_f": 41
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 41,
+        "low_f": 41
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Sunday: Hili dialogue",
+      "url": "https://whyevolutionistrue.com/2026/03/08/sunday-hili-dialogue-576/",
+      "source": "Whyevolutionistrue.com"
+    },
+    {
+      "title": "More than Theoretical Girls: Adele Bertei on the Women of No Wave",
+      "url": "https://thequietus.com/culture/books/more-than-theoretical-girls-adele-bertei-on-the-women-of-no-wave/",
+      "source": "The Quietus"
+    },
+    {
+      "title": "Ambassadors Clubhouse Brings Punjabi Fine Dining to New York",
+      "url": "https://observer.com/2026/03/ambassadors-clubhouse-new-york-city-indian-restaurant-opening-review/",
+      "source": "Observer"
+    },
+    {
+      "title": "‘Haus of Joe’: Trader Joe’s Employees Vogue in Grocery Store Aisle",
+      "url": "https://www.today.com/food/trends/trader-joes-employees-vogue-tiktok-rcna261983",
+      "source": "TODAY"
+    },
+    {
+      "title": "\"Music was never just a hobby in my life\": singer Leaf continues her dreamgirl era for new EP \"In Your Dreams\"",
+      "url": "https://earmilk.com/2026/03/06/music-was-never-just-a-hobby-in-my-life-singer-leaf-continues-her-dreamgirl-era-for-new-ep-in-your-dreams/",
+      "source": "Earmilk.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
