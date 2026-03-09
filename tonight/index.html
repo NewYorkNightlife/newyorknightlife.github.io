@@ -120,7 +120,7 @@
       border-radius: 18px;
       border: 1px solid rgba(212,175,55,.18);
       background:
-        linear-gradient(180deg, rgba(5,7,14,.38), rgba(5,7,14,.76)),
+        linear-gradient(180deg, rgba(5,7,14,.34), rgba(5,7,14,.72)),
         linear-gradient(135deg, rgba(212,175,55,.08), rgba(255,255,255,.02));
       min-height: 250px;
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
@@ -132,7 +132,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: .23;
+      opacity: .24;
       z-index: 0;
       transform: scale(1.02);
       border-radius: 18px;
@@ -144,26 +144,40 @@
       z-index: 0;
       border-radius: 18px;
       background:
-        linear-gradient(135deg, rgba(6,8,14,.18), rgba(6,8,14,.48)),
-        radial-gradient(circle at top right, rgba(212,175,55,.12), transparent 34%);
+        linear-gradient(135deg, rgba(6,8,14,.16), rgba(6,8,14,.42)),
+        radial-gradient(circle at top right, rgba(212,175,55,.12), transparent 36%);
     }
 
     .tonight-featured-thumb {
       position: absolute;
-      top: -14px;
-      right: -14px;
-      width: 78px;
-      height: 98px;
-      border-radius: 14px;
+      top: -16px;
+      right: -10px;
+      width: 126px;
+      height: 72px;
       overflow: hidden;
-      z-index: 3;
+      z-index: 4;
       border: 1px solid rgba(212,175,55,.34);
-      background: rgba(8,10,18,.92);
+      background: rgba(8,10,18,.94);
       box-shadow:
         0 14px 28px rgba(0,0,0,.35),
         0 0 0 1px rgba(255,255,255,.04) inset;
       transform: rotate(4deg);
       backdrop-filter: blur(6px);
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 22%,
+        94% 22%,
+        94% 38%,
+        100% 38%,
+        100% 100%,
+        0 100%,
+        0 70%,
+        6% 70%,
+        6% 54%,
+        0 54%
+      );
+      border-radius: 12px;
     }
 
     .tonight-featured-thumb img {
@@ -177,7 +191,9 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.12));
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(0,0,0,.14)),
+        linear-gradient(90deg, rgba(255,255,255,.03), transparent 18%, transparent 82%, rgba(255,255,255,.03));
       pointer-events: none;
     }
 
@@ -205,10 +221,11 @@
     .tonight-rank-row {
       display: flex;
       align-items: flex-start;
-      justify-content: space-between;
+      justify-content: flex-start;
       gap: .75rem;
       flex-wrap: wrap;
-      padding-right: 72px;
+      padding-right: 122px;
+      min-height: 36px;
     }
 
     .tonight-rank {
@@ -223,20 +240,6 @@
       color: #f1d47b;
       font-size: .82rem;
       font-weight: 700;
-    }
-
-    .tonight-featured-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .35rem;
-      width: fit-content;
-      padding: .25rem .55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.04);
-      color: #ddd5c8;
-      font-size: .78rem;
-      font-weight: 600;
     }
 
     .tonight-featured-title {
@@ -443,14 +446,14 @@
       }
 
       .tonight-featured-thumb {
-        width: 64px;
-        height: 82px;
-        top: -10px;
-        right: -8px;
+        width: 100px;
+        height: 58px;
+        top: -12px;
+        right: -6px;
       }
 
       .tonight-rank-row {
-        padding-right: 48px;
+        padding-right: 88px;
       }
 
       .tonight-actions,
@@ -646,377 +649,375 @@
       hour12: false
     }).formatToParts(new Date());
 
-    const hourPart = parts.find(part => part.type === 'hour');
-    return hourPart ? Number(hourPart.value) : 20;
-  }
-
-  function normalizeCategory(category) {
-    const value = String(category || '').toLowerCase();
-    if (value.includes('broadway') || value.includes('theatre') || value.includes('theater') || value.includes('arts')) return 'theater';
-    if (value.includes('music') || value.includes('concert') || value.includes('jazz')) return 'music';
-    if (value.includes('comedy')) return 'comedy';
-    if (value.includes('nightlife') || value.includes('club') || value.includes('bar')) return 'nightlife';
-    if (value.includes('experience') || value.includes('misc')) return 'experience';
-    return value || 'event';
-  }
-
-  function getItemImage(item) {
-    return item.image_url || item.image || item.poster || item.thumbnail || '';
-  }
-
-  function buildFeaturedBlurb(item) {
-    const category = normalizeCategory(item.category);
-    const title = String(item.title || '');
-    const venue = String(item.venue || 'NYC venue');
-
-    if (category === 'theater') {
-      return `${title} stands out as a strong theater pick for tonight thanks to a recognizable title, proven venue, and easy same-day ticket appeal for visitors who want a classic NYC night out.`;
+      const hourPart = parts.find(part => part.type === 'hour');
+      return hourPart ? Number(hourPart.value) : 20;
     }
 
-    if (category === 'music') {
-      return `${title} earns a featured spot for tonight with live-energy appeal, a known venue, and a better fit for people looking for something more atmospheric than a standard tourist stop.`;
+    function normalizeCategory(category) {
+      const value = String(category || '').toLowerCase();
+      if (value.includes('broadway') || value.includes('theatre') || value.includes('theater') || value.includes('arts')) return 'theater';
+      if (value.includes('music') || value.includes('concert') || value.includes('jazz')) return 'music';
+      if (value.includes('comedy')) return 'comedy';
+      if (value.includes('nightlife') || value.includes('club') || value.includes('bar')) return 'nightlife';
+      if (value.includes('experience') || value.includes('misc')) return 'experience';
+      return value || 'event';
     }
 
-    if (category === 'comedy') {
-      return `${title} makes the shortlist as a lower-friction option for visitors who want a fun NYC evening without committing to a full Broadway-style production.`;
+    function getItemImage(item) {
+      return item.image_url || item.image || item.poster || item.thumbnail || '';
     }
 
-    if (category === 'nightlife') {
-      return `${title} fits tonight’s shortlist for its after-dark city feel and stronger alignment with a true nightlife experience in New York.`;
-    }
-
-    return `${title} makes tonight’s shortlist because it appears timely, ticket-ready, and well-positioned for a real NYC evening plan at ${venue}.`;
-  }
-
-  function isRealFeaturedCandidate(item) {
-    const url = String(item.url || item.source_url || '').toLowerCase();
-    const venue = String(item.venue || '').toLowerCase();
-    const category = String(item.category || '').toLowerCase();
-    const sourceName = String(item.source_name || '').toLowerCase();
-    const title = String(item.title || '').toLowerCase();
-
-    const validEventDomains = [
-      'ticketmaster.com',
-      'ticketweb.com',
-      'universe.com',
-      'eventbrite.com',
-      'bandsintown.com'
-    ];
-
-    const hasAllowedDomain = validEventDomains.some(domain => url.includes(domain));
-
-    const isCityFeed =
-      category === 'city' ||
-      venue === 'nyc' ||
-      sourceName.includes('open data');
-
-    const isEditorial =
-      sourceName.includes('playbill') ||
-      sourceName.includes('time out') ||
-      sourceName.includes('timeout') ||
-      title.includes('weekly schedule') ||
-      title.includes('broadway real estate') ||
-      title.includes('new broadway plays');
-
-    return hasAllowedDomain && !isCityFeed && !isEditorial;
-  }
-
-  function scoreFeaturedEvent(item, currentHour) {
-    let score = 0;
-
-    const title = String(item.title || '').toLowerCase();
-    const venue = String(item.venue || '').toLowerCase();
-    const category = normalizeCategory(item.category);
-    const price = String(item.price || '').toLowerCase();
-    const hour = item._eventHour;
-
-    if (item._isToday) score += 60;
-    if (item._hasValidDate) score += 25;
-    if (item._hasValidLink) score += 20;
-    if (item._hasImage) score += 8;
-
-    if (hour >= currentHour && hour <= currentHour + 4) score += 40;
-    else if (hour >= currentHour - 1) score += 20;
-    else if (hour >= 0) score -= 20;
-
-    if (category === 'music') score += 18;
-    if (category === 'theater') score += 14;
-    if (category === 'nightlife') score += 10;
-    if (category === 'experience') score += 6;
-
-    if (title.includes('hamilton')) score += 14;
-    if (title.includes('wicked')) score += 14;
-    if (title.includes('chicago')) score += 12;
-    if (title.includes('lion king')) score += 12;
-    if (title.includes('harlem gospel')) score += 12;
-    if (title.includes('great gatsby')) score += 10;
-    if (title.includes('stranger things')) score += 10;
-
-    if (venue.includes('blue note')) score += 12;
-    if (venue.includes('birdland')) score += 12;
-    if (venue.includes('gramercy')) score += 10;
-    if (venue.includes('mercury lounge')) score += 10;
-    if (venue.includes('theatre') || venue.includes('theater')) score += 6;
-
-    if (price.includes('$0') || price.includes('free')) score += 3;
-
-    return score;
-  }
-
-  function selectFeaturedTonight(items) {
-    if (!Array.isArray(items) || items.length === 0) return [];
-
-    const todayKey = getTodayDateKey();
-    const currentHour = getCurrentHourInNY();
-
-    const prepared = items
-      .filter(item => item && item.title && (item.url || item.source_url))
-      .map((item, index) => {
-        const startIso = item.start_iso || '';
-        const dateKey = formatEventDateKey(startIso);
-        const dateObj = startIso ? new Date(startIso) : null;
-        const hasValidDate = dateObj instanceof Date && !Number.isNaN(dateObj.getTime());
-        const eventHour = hasValidDate
-          ? Number(dateObj.toLocaleString('en-US', {
-              timeZone: 'America/New_York',
-              hour: 'numeric',
-              hour12: false
-            }))
-          : -1;
-
-        const imageUrl = getItemImage(item);
-
-        return {
-          ...item,
-          _index: index,
-          _isToday: dateKey === todayKey,
-          _hasValidDate: hasValidDate,
-          _hasValidLink: Boolean(item.url || item.source_url),
-          _eventHour: eventHour,
-          _imageUrl: imageUrl,
-          _hasImage: Boolean(imageUrl)
-        };
-      })
-      .filter(item => isRealFeaturedCandidate(item))
-      .filter(item => item._isToday)
-      .filter(item => item._hasValidDate)
-      .filter(item => item._eventHour >= currentHour - 1)
-      .map(item => ({
-        ...item,
-        _score: scoreFeaturedEvent(item, currentHour)
-      }))
-      .sort((a, b) => b._score - a._score);
-
-    const selected = [];
-    const usedTitles = new Set();
-    const usedCategories = new Set();
-
-    for (const item of prepared) {
-      const cleanTitle = String(item.title || '').trim().toLowerCase();
+    function buildFeaturedBlurb(item) {
       const category = normalizeCategory(item.category);
+      const title = String(item.title || '');
+      const venue = String(item.venue || 'NYC venue');
 
-      if (!cleanTitle || usedTitles.has(cleanTitle)) continue;
-
-      if (selected.length < 2 && usedCategories.has(category) && prepared.length > 3) {
-        continue;
+      if (category === 'theater') {
+        return `${title} stands out as a strong theater pick for tonight thanks to a recognizable title, proven venue, and easy same-day ticket appeal for visitors who want a classic NYC night out.`;
       }
 
-      selected.push(item);
-      usedTitles.add(cleanTitle);
-      usedCategories.add(category);
+      if (category === 'music') {
+        return `${title} earns a featured spot for tonight with live-energy appeal, a known venue, and a better fit for people looking for something more atmospheric than a standard tourist stop.`;
+      }
 
-      if (selected.length === 3) break;
+      if (category === 'comedy') {
+        return `${title} makes the shortlist as a lower-friction option for visitors who want a fun NYC evening without committing to a full Broadway-style production.`;
+      }
+
+      if (category === 'nightlife') {
+        return `${title} fits tonight’s shortlist for its after-dark city feel and stronger alignment with a true nightlife experience in New York.`;
+      }
+
+      return `${title} makes tonight’s shortlist because it appears timely, ticket-ready, and well-positioned for a real NYC evening plan at ${venue}.`;
     }
 
-    return selected;
-  }
+    function isRealFeaturedCandidate(item) {
+      const url = String(item.url || item.source_url || '').toLowerCase();
+      const venue = String(item.venue || '').toLowerCase();
+      const category = String(item.category || '').toLowerCase();
+      const sourceName = String(item.source_name || '').toLowerCase();
+      const title = String(item.title || '').toLowerCase();
 
-  function renderFeatured(items) {
-    const wrap = document.getElementById('tonight-featured');
-    if (!wrap) return;
+      const validEventDomains = [
+        'ticketmaster.com',
+        'ticketweb.com',
+        'universe.com',
+        'eventbrite.com',
+        'bandsintown.com'
+      ];
 
-    if (!Array.isArray(items) || items.length === 0) {
+      const hasAllowedDomain = validEventDomains.some(domain => url.includes(domain));
+
+      const isCityFeed =
+        category === 'city' ||
+        venue === 'nyc' ||
+        sourceName.includes('open data');
+
+      const isEditorial =
+        sourceName.includes('playbill') ||
+        sourceName.includes('time out') ||
+        sourceName.includes('timeout') ||
+        title.includes('weekly schedule') ||
+        title.includes('broadway real estate') ||
+        title.includes('new broadway plays');
+
+      return hasAllowedDomain && !isCityFeed && !isEditorial;
+    }
+
+    function scoreFeaturedEvent(item, currentHour) {
+      let score = 0;
+
+      const title = String(item.title || '').toLowerCase();
+      const venue = String(item.venue || '').toLowerCase();
+      const category = normalizeCategory(item.category);
+      const price = String(item.price || '').toLowerCase();
+      const hour = item._eventHour;
+
+      if (item._isToday) score += 60;
+      if (item._hasValidDate) score += 25;
+      if (item._hasValidLink) score += 20;
+      if (item._hasImage) score += 8;
+
+      if (hour >= currentHour && hour <= currentHour + 4) score += 40;
+      else if (hour >= Math.max(0, currentHour - 6)) score += 20;
+      else if (hour >= 0) score -= 20;
+
+      if (category === 'music') score += 18;
+      if (category === 'theater') score += 14;
+      if (category === 'nightlife') score += 10;
+      if (category === 'experience') score += 6;
+
+      if (title.includes('hamilton')) score += 14;
+      if (title.includes('wicked')) score += 14;
+      if (title.includes('chicago')) score += 12;
+      if (title.includes('lion king')) score += 12;
+      if (title.includes('harlem gospel')) score += 12;
+      if (title.includes('great gatsby')) score += 10;
+      if (title.includes('stranger things')) score += 10;
+
+      if (venue.includes('blue note')) score += 12;
+      if (venue.includes('birdland')) score += 12;
+      if (venue.includes('gramercy')) score += 10;
+      if (venue.includes('mercury lounge')) score += 10;
+      if (venue.includes('theatre') || venue.includes('theater')) score += 6;
+
+      if (price.includes('$0') || price.includes('free')) score += 3;
+
+      return score;
+    }
+
+    function selectFeaturedTonight(items) {
+      if (!Array.isArray(items) || items.length === 0) return [];
+
+      const todayKey = getTodayDateKey();
+      const currentHour = getCurrentHourInNY();
+
+      const prepared = items
+        .filter(item => item && item.title && (item.url || item.source_url))
+        .map((item, index) => {
+          const startIso = item.start_iso || '';
+          const dateKey = formatEventDateKey(startIso);
+          const dateObj = startIso ? new Date(startIso) : null;
+          const hasValidDate = dateObj instanceof Date && !Number.isNaN(dateObj.getTime());
+          const eventHour = hasValidDate
+            ? Number(dateObj.toLocaleString('en-US', {
+                timeZone: 'America/New_York',
+                hour: 'numeric',
+                hour12: false
+              }))
+            : -1;
+
+          const imageUrl = getItemImage(item);
+
+          return {
+            ...item,
+            _index: index,
+            _isToday: dateKey === todayKey,
+            _hasValidDate: hasValidDate,
+            _hasValidLink: Boolean(item.url || item.source_url),
+            _eventHour: eventHour,
+            _imageUrl: imageUrl,
+            _hasImage: Boolean(imageUrl)
+          };
+        })
+        .filter(item => isRealFeaturedCandidate(item))
+        .filter(item => item._isToday)
+        .filter(item => item._hasValidDate)
+        .filter(item => item._eventHour >= Math.max(0, currentHour - 6))
+        .map(item => ({
+          ...item,
+          _score: scoreFeaturedEvent(item, currentHour)
+        }))
+        .sort((a, b) => b._score - a._score);
+
+      const selected = [];
+      const usedTitles = new Set();
+      const usedCategories = new Set();
+
+      for (const item of prepared) {
+        const cleanTitle = String(item.title || '').trim().toLowerCase();
+        const category = normalizeCategory(item.category);
+
+        if (!cleanTitle || usedTitles.has(cleanTitle)) continue;
+
+        if (selected.length < 2 && usedCategories.has(category) && prepared.length > 3) {
+          continue;
+        }
+
+        selected.push(item);
+        usedTitles.add(cleanTitle);
+        usedCategories.add(category);
+
+        if (selected.length === 3) break;
+      }
+
+      return selected;
+    }
+
+    function renderFeatured(items) {
+      const wrap = document.getElementById('tonight-featured');
+      if (!wrap) return;
+
+      if (!Array.isArray(items) || items.length === 0) {
+        wrap.innerHTML = `
+          <p class="tonight-empty">
+            No strong late-day featured picks are available right now. Browse the live events below for the latest ticket-ready options.
+          </p>
+        `;
+        return;
+      }
+
+      wrap.innerHTML = items.map((item, idx) => {
+        const title = escapeHtml(item.title || 'Untitled event');
+        const venue = escapeHtml(item.venue || 'Venue TBA');
+        const borough = escapeHtml(item.borough || 'NYC');
+        const category = escapeHtml(item.category || 'Event');
+        const timeText = escapeHtml(item.time_window || formatEventTime(item.start_iso));
+        const sourceName = escapeHtml(item.source_name || 'Source');
+        const url = item.url || item.source_url || '#';
+        const imageUrl = item._imageUrl || '';
+        const price = item.price ? `<span class="tonight-pill">${escapeHtml(item.price)}</span>` : '';
+        const blurb = escapeHtml(buildFeaturedBlurb(item));
+
+        return `
+          <article class="tonight-featured-card">
+            ${imageUrl ? `<img class="tonight-featured-image" src="${escapeHtml(imageUrl)}" alt="${title} in NYC tonight" loading="lazy" />` : ''}
+            <div class="tonight-featured-overlay"></div>
+            ${imageUrl ? `
+              <div class="tonight-featured-thumb" aria-hidden="true">
+                <img src="${escapeHtml(imageUrl)}" alt="" loading="lazy" />
+              </div>
+            ` : ''}
+
+            <div class="tonight-featured-body">
+              <div class="tonight-featured-inner">
+                <div class="tonight-rank-row">
+                  <span class="tonight-rank">⭐ Top Pick #${idx + 1}</span>
+                </div>
+
+                <h3 class="tonight-featured-title">
+                  <a href="${url}" target="_blank" rel="noopener noreferrer sponsored">${title}</a>
+                </h3>
+
+                <div class="tonight-meta">
+                  <span>${venue}</span>
+                  <span>${borough}</span>
+                  <span>${timeText}</span>
+                </div>
+
+                <div class="tonight-meta">
+                  <span class="tonight-pill">${category}</span>
+                  <span class="tonight-pill">${sourceName}</span>
+                  ${price}
+                </div>
+
+                <p class="tonight-featured-copy">${blurb}</p>
+
+                <div class="tonight-actions">
+                  <a class="tonight-btn tonight-btn-primary" href="${url}" target="_blank" rel="noopener noreferrer sponsored">Get Tickets</a>
+                  <a class="tonight-btn tonight-btn-secondary" href="/tools/night-out-spinner.html">Plan My Night</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function renderWeather(weather) {
+      const wrap = document.getElementById('tonight-weather');
+      if (!wrap) return;
+
+      if (!weather || typeof weather !== 'object') {
+        wrap.innerHTML = '<p class="tonight-empty">Weather unavailable.</p>';
+        return;
+      }
+
+      const summary = escapeHtml(weather.summary || 'Unavailable');
+      const temp = weather.temp_f ?? '—';
+      const feels = weather.feels_like_f ?? '—';
+      const forecast = Array.isArray(weather.five_day) ? weather.five_day : [];
+
+      const forecastHtml = forecast.length
+        ? `<ul class="tonight-list">${forecast.slice(0, 5).map(day => `
+            <li>${escapeHtml(day.day || '?')}: ${escapeHtml(day.summary || '—')} (${day.high_f ?? '—'}°/${day.low_f ?? '—'}°)</li>
+          `).join('')}</ul>`
+        : '<p class="tonight-empty">Forecast unavailable.</p>';
+
       wrap.innerHTML = `
-        <p class="tonight-empty">
-          No strong late-day featured picks are available right now. Browse the live events below for the latest ticket-ready options.
-        </p>
+        <p><strong>🌤️ ${summary}</strong></p>
+        <p>${temp}°F (feels like ${feels}°F)</p>
+        ${forecastHtml}
       `;
-      return;
     }
 
-    wrap.innerHTML = items.map((item, idx) => {
-      const title = escapeHtml(item.title || 'Untitled event');
-      const venue = escapeHtml(item.venue || 'Venue TBA');
-      const borough = escapeHtml(item.borough || 'NYC');
-      const category = escapeHtml(item.category || 'Event');
-      const timeText = escapeHtml(item.time_window || formatEventTime(item.start_iso));
-      const sourceName = escapeHtml(item.source_name || 'Source');
-      const url = item.url || item.source_url || '#';
-      const imageUrl = item._imageUrl || '';
-      const price = item.price ? `<span class="tonight-pill">${escapeHtml(item.price)}</span>` : '';
-      const blurb = escapeHtml(buildFeaturedBlurb(item));
-      const freshnessBadge = item._hasImage ? 'Photo-backed pick' : 'Editor-style pick';
+    function renderHeadlines(headlines) {
+      const wrap = document.getElementById('tonight-headlines');
+      if (!wrap) return;
 
-      return `
-        <article class="tonight-featured-card">
-          ${imageUrl ? `<img class="tonight-featured-image" src="${escapeHtml(imageUrl)}" alt="${title} in NYC tonight" loading="lazy" />` : ''}
-          <div class="tonight-featured-overlay"></div>
-          ${imageUrl ? `
-            <div class="tonight-featured-thumb" aria-hidden="true">
-              <img src="${escapeHtml(imageUrl)}" alt="" loading="lazy" />
+      if (!Array.isArray(headlines) || headlines.length === 0) {
+        wrap.innerHTML = '<li>No headlines available yet.</li>';
+        return;
+      }
+
+      wrap.innerHTML = headlines.slice(0, 6).map(item => {
+        const title = escapeHtml(item.title || 'Untitled');
+        const source = escapeHtml(item.source || 'Source');
+        const url = item.url || '#';
+        return `<li><a class="tonight-link" href="${url}" target="_blank" rel="noopener noreferrer">${title}</a> (${source})</li>`;
+      }).join('');
+    }
+
+    function renderPicks(items) {
+      const wrap = document.getElementById('tonight-picks');
+      if (!wrap) return;
+
+      if (!Array.isArray(items) || items.length === 0) {
+        wrap.innerHTML = '<p class="tonight-empty">No live event picks are available yet.</p>';
+        return;
+      }
+
+      const filtered = items
+        .filter(item => item && item.title)
+        .slice(0, 24);
+
+      wrap.innerHTML = filtered.map(item => {
+        const title = escapeHtml(item.title || 'Untitled event');
+        const venue = escapeHtml(item.venue || 'Venue TBA');
+        const borough = escapeHtml(item.borough || 'NYC');
+        const category = escapeHtml(item.category || 'Event');
+        const sourceName = escapeHtml(item.source_name || 'Source');
+        const timeText = escapeHtml(item.time_window || formatEventTime(item.start_iso));
+        const price = item.price ? `<span class="tonight-pill">${escapeHtml(item.price)}</span>` : '';
+        const url = item.url || item.source_url || '#';
+
+        return `
+          <article class="tonight-card">
+            <h3><a class="tonight-link" href="${url}" target="_blank" rel="noopener noreferrer sponsored">${title}</a></h3>
+            <div class="tonight-meta">
+              <span>${venue}</span>
+              <span>${borough}</span>
+              <span>${timeText}</span>
             </div>
-          ` : ''}
-
-          <div class="tonight-featured-body">
-            <div class="tonight-featured-inner">
-              <div class="tonight-rank-row">
-                <span class="tonight-rank">⭐ Top Pick #${idx + 1}</span>
-                <span class="tonight-featured-badge">${freshnessBadge}</span>
-              </div>
-
-              <h3 class="tonight-featured-title">
-                <a href="${url}" target="_blank" rel="noopener noreferrer sponsored">${title}</a>
-              </h3>
-
-              <div class="tonight-meta">
-                <span>${venue}</span>
-                <span>${borough}</span>
-                <span>${timeText}</span>
-              </div>
-
-              <div class="tonight-meta">
-                <span class="tonight-pill">${category}</span>
-                <span class="tonight-pill">${sourceName}</span>
-                ${price}
-              </div>
-
-              <p class="tonight-featured-copy">${blurb}</p>
-
-              <div class="tonight-actions">
-                <a class="tonight-btn tonight-btn-primary" href="${url}" target="_blank" rel="noopener noreferrer sponsored">Get Tickets</a>
-                <a class="tonight-btn tonight-btn-secondary" href="/tools/night-out-spinner.html">Plan My Night</a>
-              </div>
+            <div class="tonight-meta">
+              <span class="tonight-pill">${category}</span>
+              <span class="tonight-pill">${sourceName}</span>
+              ${price}
             </div>
-          </div>
-        </article>
-      `;
-    }).join('');
-  }
-
-  function renderWeather(weather) {
-    const wrap = document.getElementById('tonight-weather');
-    if (!wrap) return;
-
-    if (!weather || typeof weather !== 'object') {
-      wrap.innerHTML = '<p class="tonight-empty">Weather unavailable.</p>';
-      return;
+            <div class="tonight-card-cta">
+              <a class="tonight-mini-btn" href="${url}" target="_blank" rel="noopener noreferrer sponsored">View Tickets</a>
+            </div>
+          </article>
+        `;
+      }).join('');
     }
 
-    const summary = escapeHtml(weather.summary || 'Unavailable');
-    const temp = weather.temp_f ?? '—';
-    const feels = weather.feels_like_f ?? '—';
-    const forecast = Array.isArray(weather.five_day) ? weather.five_day : [];
+    async function loadTonightFeed() {
+      try {
+        const response = await fetch(`/data/tonight-feed.json?v=${Date.now()}`, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
 
-    const forecastHtml = forecast.length
-      ? `<ul class="tonight-list">${forecast.slice(0, 5).map(day => `
-          <li>${escapeHtml(day.day || '?')}: ${escapeHtml(day.summary || '—')} (${day.high_f ?? '—'}°/${day.low_f ?? '—'}°)</li>
-        `).join('')}</ul>`
-      : '<p class="tonight-empty">Forecast unavailable.</p>';
+        document.getElementById('tonight-updated-at').textContent = formatUpdatedAt(data.generated_at);
 
-    wrap.innerHTML = `
-      <p><strong>🌤️ ${summary}</strong></p>
-      <p>${temp}°F (feels like ${feels}°F)</p>
-      ${forecastHtml}
-    `;
-  }
+        const livePicks = Array.isArray(data.picks_from_sources) ? data.picks_from_sources : [];
+        const featuredItems = selectFeaturedTonight(livePicks);
 
-  function renderHeadlines(headlines) {
-    const wrap = document.getElementById('tonight-headlines');
-    if (!wrap) return;
-
-    if (!Array.isArray(headlines) || headlines.length === 0) {
-      wrap.innerHTML = '<li>No headlines available yet.</li>';
-      return;
+        renderFeatured(featuredItems);
+        renderWeather(data.weather || {});
+        renderHeadlines(data.headlines || []);
+        renderPicks(livePicks);
+      } catch (error) {
+        console.error('Tonight feed load failed:', error);
+        document.getElementById('tonight-updated-at').textContent = 'Unavailable';
+        renderFeatured([]);
+        renderWeather({});
+        renderHeadlines([]);
+        renderPicks([]);
+      }
     }
 
-    wrap.innerHTML = headlines.slice(0, 6).map(item => {
-      const title = escapeHtml(item.title || 'Untitled');
-      const source = escapeHtml(item.source || 'Source');
-      const url = item.url || '#';
-      return `<li><a class="tonight-link" href="${url}" target="_blank" rel="noopener noreferrer">${title}</a> (${source})</li>`;
-    }).join('');
-  }
-
-  function renderPicks(items) {
-    const wrap = document.getElementById('tonight-picks');
-    if (!wrap) return;
-
-    if (!Array.isArray(items) || items.length === 0) {
-      wrap.innerHTML = '<p class="tonight-empty">No live event picks are available yet.</p>';
-      return;
-    }
-
-    const filtered = items
-      .filter(item => item && item.title)
-      .slice(0, 24);
-
-    wrap.innerHTML = filtered.map(item => {
-      const title = escapeHtml(item.title || 'Untitled event');
-      const venue = escapeHtml(item.venue || 'Venue TBA');
-      const borough = escapeHtml(item.borough || 'NYC');
-      const category = escapeHtml(item.category || 'Event');
-      const sourceName = escapeHtml(item.source_name || 'Source');
-      const timeText = escapeHtml(item.time_window || formatEventTime(item.start_iso));
-      const price = item.price ? `<span class="tonight-pill">${escapeHtml(item.price)}</span>` : '';
-      const url = item.url || item.source_url || '#';
-
-      return `
-        <article class="tonight-card">
-          <h3><a class="tonight-link" href="${url}" target="_blank" rel="noopener noreferrer sponsored">${title}</a></h3>
-          <div class="tonight-meta">
-            <span>${venue}</span>
-            <span>${borough}</span>
-            <span>${timeText}</span>
-          </div>
-          <div class="tonight-meta">
-            <span class="tonight-pill">${category}</span>
-            <span class="tonight-pill">${sourceName}</span>
-            ${price}
-          </div>
-          <div class="tonight-card-cta">
-            <a class="tonight-mini-btn" href="${url}" target="_blank" rel="noopener noreferrer sponsored">View Tickets</a>
-          </div>
-        </article>
-      `;
-    }).join('');
-  }
-
-  async function loadTonightFeed() {
-    try {
-      const response = await fetch(`/data/tonight-feed.json?v=${Date.now()}`, { cache: 'no-store' });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const data = await response.json();
-
-      document.getElementById('tonight-updated-at').textContent = formatUpdatedAt(data.generated_at);
-
-      const livePicks = Array.isArray(data.picks_from_sources) ? data.picks_from_sources : [];
-      const featuredItems = selectFeaturedTonight(livePicks);
-
-      renderFeatured(featuredItems);
-      renderWeather(data.weather || {});
-      renderHeadlines(data.headlines || []);
-      renderPicks(livePicks);
-    } catch (error) {
-      console.error('Tonight feed load failed:', error);
-      document.getElementById('tonight-updated-at').textContent = 'Unavailable';
-      renderFeatured([]);
-      renderWeather({});
-      renderHeadlines([]);
-      renderPicks([]);
-    }
-  }
-
-  loadTonightFeed();
+    loadTonightFeed();
 </script>
 </body>
 </html>
