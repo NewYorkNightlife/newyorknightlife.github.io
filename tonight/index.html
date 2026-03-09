@@ -5,7 +5,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJE6L0D7H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-ZXJE6L0D7H');
   </script>
@@ -47,14 +47,97 @@
   </script>
 
   <style>
-    .tonight-grid { display:grid; gap:1rem; grid-template-columns: 1.2fr .8fr; }
-    .tonight-panel { background: rgba(14,18,30,.72); border:1px solid rgba(212,175,55,.22); border-radius: 14px; padding: 1rem; }
-    .tonight-card { background: rgba(8,10,18,.72); border:1px solid rgba(212,175,55,.18); border-radius: 12px; padding: .9rem; margin-bottom: .8rem; }
-    .tonight-card h3 { margin: 0 0 .35rem; }
-    .tonight-verify { color:#cbb06a; font-size:.92rem; }
-    .tonight-muted { color:#b7b3ab; font-size:.92rem; }
-    .tonight-list { margin:.4rem 0 0 1rem; }
-    @media (max-width: 920px) { .tonight-grid { grid-template-columns: 1fr; } }
+    .tonight-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1.2fr .8fr;
+    }
+
+    .tonight-panel {
+      background: rgba(14,18,30,.72);
+      border: 1px solid rgba(212,175,55,.22);
+      border-radius: 14px;
+      padding: 1rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .tonight-card {
+      background: rgba(8,10,18,.72);
+      border: 1px solid rgba(212,175,55,.18);
+      border-radius: 12px;
+      padding: .9rem;
+      margin-bottom: .8rem;
+    }
+
+    .tonight-card h3,
+    .tonight-card h4 {
+      margin: 0 0 .35rem;
+    }
+
+    .tonight-verify {
+      color: #cbb06a;
+      font-size: .92rem;
+    }
+
+    .tonight-muted {
+      color: #b7b3ab;
+      font-size: .92rem;
+    }
+
+    .tonight-list {
+      margin: .4rem 0 0 1rem;
+    }
+
+    .tonight-list li {
+      margin-bottom: .45rem;
+    }
+
+    .tonight-picks-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .9rem;
+    }
+
+    .tonight-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: .35rem 0 .45rem;
+      font-size: .9rem;
+      color: #d7d1c6;
+    }
+
+    .tonight-pill {
+      display: inline-block;
+      padding: .2rem .5rem;
+      border-radius: 999px;
+      background: rgba(212,175,55,.12);
+      border: 1px solid rgba(212,175,55,.24);
+      color: #e3c870;
+      font-size: .82rem;
+    }
+
+    .tonight-link {
+      color: #e3c870;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .tonight-empty {
+      color: #d2cdc3;
+      opacity: .95;
+    }
+
+    .tonight-section-spacer {
+      margin-top: 1.2rem;
+    }
+
+    @media (max-width: 920px) {
+      .tonight-grid,
+      .tonight-picks-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -132,6 +215,14 @@
     </aside>
   </section>
 
+  <section class="tonight-section-spacer">
+    <div class="tonight-panel">
+      <h2>Picks From Sources</h2>
+      <p class="tonight-muted">Fresh source-attributed event picks for tonight. These can appear before they reach verified status.</p>
+      <div id="tonight-picks" class="tonight-picks-grid"></div>
+    </div>
+  </section>
+
   <section style="margin-top:1.2rem;">
     <h2>Quick Actions</h2>
     <ul>
@@ -146,6 +237,191 @@
 </main>
 
 <script src="/js/main.js"></script>
-<script src="/js/tonight-live.js"></script>
+
+<script>
+  function escapeHtml(str) {
+    return String(str ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#39;');
+  }
+
+  function formatUpdatedAt(isoString) {
+    if (!isoString) return 'Unavailable';
+    const date = new Date(isoString);
+    if (Number.isNaN(date.getTime())) return isoString;
+
+    return date.toLocaleString('en-US', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      timeZone: 'America/New_York',
+      timeZoneName: 'short'
+    });
+  }
+
+  function formatEventTime(isoString, fallback = 'Tonight') {
+    if (!isoString) return fallback;
+    const date = new Date(isoString);
+    if (Number.isNaN(date.getTime())) return fallback;
+
+    return date.toLocaleString('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      timeZone: 'America/New_York'
+    });
+  }
+
+  function renderFeatured(items) {
+    const wrap = document.getElementById('tonight-featured');
+    if (!wrap) return;
+
+    if (!Array.isArray(items) || items.length === 0) {
+      wrap.innerHTML = '<p class="tonight-empty">No verified featured events yet.</p>';
+      return;
+    }
+
+    wrap.innerHTML = items.map(item => {
+      const title = escapeHtml(item.title || 'Untitled event');
+      const venue = escapeHtml(item.venue || 'Venue TBA');
+      const borough = escapeHtml(item.borough || 'NYC');
+      const category = escapeHtml(item.category || 'Event');
+      const timeText = escapeHtml(item.time_window || formatEventTime(item.start_iso));
+      const url = item.url || '#';
+
+      return `
+        <article class="tonight-card">
+          <h3><a class="tonight-link" href="${url}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
+          <div class="tonight-meta">
+            <span>${venue}</span>
+            <span>${borough}</span>
+            <span>${timeText}</span>
+          </div>
+          <div class="tonight-verify">Verified • ${category}</div>
+        </article>
+      `;
+    }).join('');
+  }
+
+  function renderWeather(weather) {
+    const wrap = document.getElementById('tonight-weather');
+    if (!wrap) return;
+
+    if (!weather || typeof weather !== 'object') {
+      wrap.innerHTML = '<p class="tonight-empty">Weather unavailable.</p>';
+      return;
+    }
+
+    const summary = escapeHtml(weather.summary || 'Unavailable');
+    const temp = weather.temp_f ?? '—';
+    const feels = weather.feels_like_f ?? '—';
+    const forecast = Array.isArray(weather.five_day) ? weather.five_day : [];
+
+    const forecastHtml = forecast.length
+      ? `<ul class="tonight-list">${forecast.map(day => `
+          <li>${escapeHtml(day.day || '?')}: ${escapeHtml(day.summary || '—')} (${day.high_f ?? '—'}°/${day.low_f ?? '—'}°)</li>
+        `).join('')}</ul>`
+      : '<p class="tonight-empty">Forecast unavailable.</p>';
+
+    wrap.innerHTML = `
+      <p><strong>🌤️ ${summary}</strong></p>
+      <p>${temp}°F (feels like ${feels}°F)</p>
+      ${forecastHtml}
+    `;
+  }
+
+  function renderHeadlines(headlines) {
+    const wrap = document.getElementById('tonight-headlines');
+    if (!wrap) return;
+
+    if (!Array.isArray(headlines) || headlines.length === 0) {
+      wrap.innerHTML = '<li>No headlines available yet.</li>';
+      return;
+    }
+
+    wrap.innerHTML = headlines.map(item => {
+      const title = escapeHtml(item.title || 'Untitled');
+      const source = escapeHtml(item.source || 'Source');
+      const url = item.url || '#';
+      return `<li><a class="tonight-link" href="${url}" target="_blank" rel="noopener noreferrer">${title}</a> (${source})</li>`;
+    }).join('');
+  }
+
+  function renderLastThree() {
+    const wrap = document.getElementById('tonight-last-three');
+    if (!wrap) return;
+    wrap.innerHTML = '<li>Last-three-night archive will appear after first automated updates.</li>';
+  }
+
+  function renderPicks(items) {
+    const wrap = document.getElementById('tonight-picks');
+    if (!wrap) return;
+
+    if (!Array.isArray(items) || items.length === 0) {
+      wrap.innerHTML = '<p class="tonight-empty">No source-attributed picks are available yet.</p>';
+      return;
+    }
+
+    const filtered = items
+      .filter(item => item && item.title)
+      .slice(0, 24);
+
+    wrap.innerHTML = filtered.map(item => {
+      const title = escapeHtml(item.title || 'Untitled event');
+      const venue = escapeHtml(item.venue || 'Venue TBA');
+      const borough = escapeHtml(item.borough || 'NYC');
+      const category = escapeHtml(item.category || 'Event');
+      const sourceName = escapeHtml(item.source_name || 'Source');
+      const timeText = escapeHtml(item.time_window || formatEventTime(item.start_iso));
+      const price = item.price ? `<span class="tonight-pill">${escapeHtml(item.price)}</span>` : '';
+      const url = item.url || item.source_url || '#';
+
+      return `
+        <article class="tonight-card">
+          <h3><a class="tonight-link" href="${url}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
+          <div class="tonight-meta">
+            <span>${venue}</span>
+            <span>${borough}</span>
+            <span>${timeText}</span>
+          </div>
+          <div class="tonight-meta">
+            <span class="tonight-pill">${category}</span>
+            <span class="tonight-pill">${sourceName}</span>
+            ${price}
+          </div>
+        </article>
+      `;
+    }).join('');
+  }
+
+  async function loadTonightFeed() {
+    try {
+      const response = await fetch(`/data/tonight-feed.json?v=${Date.now()}`, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+
+      document.getElementById('tonight-updated-at').textContent = formatUpdatedAt(data.generated_at);
+      renderFeatured(data.featured_verified || data.featured_tonight || []);
+      renderWeather(data.weather || {});
+      renderHeadlines(data.headlines || []);
+      renderLastThree();
+      renderPicks(data.picks_from_sources || []);
+    } catch (error) {
+      console.error('Tonight feed load failed:', error);
+      document.getElementById('tonight-updated-at').textContent = 'Unavailable';
+      renderFeatured([]);
+      renderWeather({});
+      renderHeadlines([]);
+      renderLastThree();
+      renderPicks([]);
+    }
+  }
+
+  loadTonightFeed();
+</script>
 </body>
 </html>
