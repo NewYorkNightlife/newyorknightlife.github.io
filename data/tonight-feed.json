@@ -1,70 +1,13 @@
 {
-  "generated_at": "2026-03-09T18:17:48.967Z",
+  "generated_at": "2026-03-09T18:36:12.378Z",
   "timezone": "America/New_York",
   "weather": {
     "summary": "clear sky",
     "temp_f": 70,
     "feels_like_f": 68,
-    "five_day": [
-      {
-        "day": "Mon",
-        "summary": "Clear",
-        "high_f": 69,
-        "low_f": 68
-      },
-      {
-        "day": "Tue",
-        "summary": "Clouds",
-        "high_f": 60,
-        "low_f": 60
-      },
-      {
-        "day": "Wed",
-        "summary": "Clouds",
-        "high_f": 69,
-        "low_f": 69
-      },
-      {
-        "day": "Thu",
-        "summary": "Rain",
-        "high_f": 41,
-        "low_f": 41
-      },
-      {
-        "day": "Fri",
-        "summary": "Rain",
-        "high_f": 42,
-        "low_f": 42
-      }
-    ]
+    "five_day": []
   },
-  "headlines": [
-    {
-      "title": "Sunday: Hili dialogue",
-      "url": "https://whyevolutionistrue.com/2026/03/08/sunday-hili-dialogue-576/",
-      "source": "Whyevolutionistrue.com"
-    },
-    {
-      "title": "More than Theoretical Girls: Adele Bertei on the Women of No Wave",
-      "url": "https://thequietus.com/culture/books/more-than-theoretical-girls-adele-bertei-on-the-women-of-no-wave/",
-      "source": "The Quietus"
-    },
-    {
-      "title": "Ambassadors Clubhouse Brings Punjabi Fine Dining to New York",
-      "url": "https://observer.com/2026/03/ambassadors-clubhouse-new-york-city-indian-restaurant-opening-review/",
-      "source": "Observer"
-    },
-    {
-      "title": "‘Haus of Joe’: Trader Joe’s Employees Vogue in Grocery Store Aisle",
-      "url": "https://www.today.com/food/trends/trader-joes-employees-vogue-tiktok-rcna261983",
-      "source": "TODAY"
-    },
-    {
-      "title": "\"Music was never just a hobby in my life\": singer Leaf continues her dreamgirl era for new EP \"In Your Dreams\"",
-      "url": "https://earmilk.com/2026/03/06/music-was-never-just-a-hobby-in-my-life-singer-leaf-continues-her-dreamgirl-era-for-new-ep-in-your-dreams/",
-      "source": "Earmilk.com"
-    }
-  ],
+  "headlines": [],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
