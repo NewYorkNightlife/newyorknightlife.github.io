@@ -90,7 +90,7 @@
     }
 
     .tonight-panel {
-      background: linear-gradient(180deg, rgba(14,18,30,.88), rgba(10,12,22,.82));
+      background: linear-gradient(180deg, rgba(14,18,30,.90), rgba(10,12,22,.86));
       border: 1px solid rgba(212,175,55,.18);
       border-radius: 18px;
       padding: 1.1rem;
@@ -111,18 +111,19 @@
 
     .tonight-featured-grid {
       display: grid;
-      gap: .95rem;
+      gap: 1rem;
     }
 
     .tonight-featured-card {
       position: relative;
       overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid rgba(212,175,55,.2);
+      border-radius: 18px;
+      border: 1px solid rgba(212,175,55,.18);
       background:
-        linear-gradient(180deg, rgba(8,10,18,.18), rgba(8,10,18,.88)),
-        linear-gradient(135deg, rgba(212,175,55,.08), rgba(255,255,255,.03));
-      min-height: 210px;
+        linear-gradient(180deg, rgba(5,7,14,.48), rgba(5,7,14,.82)),
+        linear-gradient(135deg, rgba(212,175,55,.08), rgba(255,255,255,.02));
+      min-height: 250px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
     }
 
     .tonight-featured-image {
@@ -131,18 +132,47 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: .24;
+      opacity: .11;
       z-index: 0;
+      transform: scale(1.02);
+    }
+
+    .tonight-featured-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(135deg, rgba(6,8,14,.22), rgba(6,8,14,.56)),
+        radial-gradient(circle at top right, rgba(212,175,55,.10), transparent 34%);
     }
 
     .tonight-featured-body {
       position: relative;
       z-index: 1;
       padding: 1rem;
+    }
+
+    .tonight-featured-inner {
+      background: linear-gradient(180deg, rgba(9,12,20,.84), rgba(10,12,20,.90));
+      border: 1px solid rgba(212,175,55,.16);
+      border-radius: 15px;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
-      gap: .65rem;
-      height: 100%;
+      gap: .7rem;
+      min-height: 100%;
+      box-shadow:
+        0 14px 28px rgba(0,0,0,.20),
+        inset 0 1px 0 rgba(255,255,255,.03);
+      backdrop-filter: blur(8px);
+    }
+
+    .tonight-rank-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: .75rem;
+      flex-wrap: wrap;
     }
 
     .tonight-rank {
@@ -159,10 +189,24 @@
       font-weight: 700;
     }
 
+    .tonight-featured-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      width: fit-content;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      color: #ddd5c8;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
     .tonight-featured-title {
       margin: 0;
       font-size: 1.45rem;
-      line-height: 1.18;
+      line-height: 1.16;
     }
 
     .tonight-featured-title a {
@@ -199,7 +243,7 @@
       color: #f1ebe2;
       margin: 0;
       font-size: .96rem;
-      line-height: 1.55;
+      line-height: 1.58;
       max-width: 62ch;
     }
 
@@ -208,6 +252,7 @@
       flex-wrap: wrap;
       gap: .7rem;
       margin-top: auto;
+      padding-top: .15rem;
     }
 
     .tonight-btn {
@@ -333,12 +378,6 @@
       color: #f0d279;
     }
 
-    .tonight-confidence {
-      color: #e4c768;
-      font-size: .85rem;
-      font-weight: 700;
-    }
-
     @media (max-width: 980px) {
       .tonight-grid,
       .tonight-picks-grid {
@@ -361,6 +400,10 @@
 
       .tonight-featured-card {
         min-height: 230px;
+      }
+
+      .tonight-featured-inner {
+        padding: .9rem;
       }
 
       .tonight-actions,
@@ -608,7 +651,9 @@
     const validEventDomains = [
       'ticketmaster.com',
       'ticketweb.com',
-      'universe.com'
+      'universe.com',
+      'eventbrite.com',
+      'bandsintown.com'
     ];
 
     const hasAllowedDomain = validEventDomains.some(domain => url.includes(domain));
@@ -621,6 +666,7 @@
     const isEditorial =
       sourceName.includes('playbill') ||
       sourceName.includes('time out') ||
+      sourceName.includes('timeout') ||
       title.includes('weekly schedule') ||
       title.includes('broadway real estate') ||
       title.includes('new broadway plays');
@@ -656,6 +702,8 @@
     if (title.includes('chicago')) score += 12;
     if (title.includes('lion king')) score += 12;
     if (title.includes('harlem gospel')) score += 12;
+    if (title.includes('great gatsby')) score += 10;
+    if (title.includes('stranger things')) score += 10;
 
     if (venue.includes('blue note')) score += 12;
     if (venue.includes('birdland')) score += 12;
@@ -760,34 +808,42 @@
       const imageUrl = item._imageUrl || '';
       const price = item.price ? `<span class="tonight-pill">${escapeHtml(item.price)}</span>` : '';
       const blurb = escapeHtml(buildFeaturedBlurb(item));
+      const freshnessBadge = item._hasImage ? 'Photo-backed pick' : 'Editor-style pick';
 
       return `
         <article class="tonight-featured-card">
           ${imageUrl ? `<img class="tonight-featured-image" src="${escapeHtml(imageUrl)}" alt="${title} in NYC tonight" loading="lazy" />` : ''}
+          <div class="tonight-featured-overlay"></div>
+
           <div class="tonight-featured-body">
-            <span class="tonight-rank">⭐ Top Pick #${idx + 1}</span>
+            <div class="tonight-featured-inner">
+              <div class="tonight-rank-row">
+                <span class="tonight-rank">⭐ Top Pick #${idx + 1}</span>
+                <span class="tonight-featured-badge">${freshnessBadge}</span>
+              </div>
 
-            <h3 class="tonight-featured-title">
-              <a href="${url}" target="_blank" rel="noopener noreferrer sponsored">${title}</a>
-            </h3>
+              <h3 class="tonight-featured-title">
+                <a href="${url}" target="_blank" rel="noopener noreferrer sponsored">${title}</a>
+              </h3>
 
-            <div class="tonight-meta">
-              <span>${venue}</span>
-              <span>${borough}</span>
-              <span>${timeText}</span>
-            </div>
+              <div class="tonight-meta">
+                <span>${venue}</span>
+                <span>${borough}</span>
+                <span>${timeText}</span>
+              </div>
 
-            <div class="tonight-meta">
-              <span class="tonight-pill">${category}</span>
-              <span class="tonight-pill">${sourceName}</span>
-              ${price}
-            </div>
+              <div class="tonight-meta">
+                <span class="tonight-pill">${category}</span>
+                <span class="tonight-pill">${sourceName}</span>
+                ${price}
+              </div>
 
-            <p class="tonight-featured-copy">${blurb}</p>
+              <p class="tonight-featured-copy">${blurb}</p>
 
-            <div class="tonight-actions">
-              <a class="tonight-btn tonight-btn-primary" href="${url}" target="_blank" rel="noopener noreferrer sponsored">Get Tickets</a>
-              <a class="tonight-btn tonight-btn-secondary" href="/tools/night-out-spinner.html">Plan My Night</a>
+              <div class="tonight-actions">
+                <a class="tonight-btn tonight-btn-primary" href="${url}" target="_blank" rel="noopener noreferrer sponsored">Get Tickets</a>
+                <a class="tonight-btn tonight-btn-secondary" href="/tools/night-out-spinner.html">Plan My Night</a>
+              </div>
             </div>
           </div>
         </article>
