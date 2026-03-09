@@ -12,8 +12,8 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Things to Do in NYC Tonight | Live Verified Nightlife Picks</title>
-  <meta name="description" content="Live NYC tonight page with triple-verified nightlife picks, weather, and fresh headlines. Updated daily for fast nightlife planning." />
+  <title>Things to Do in NYC Tonight | Top Picks, Weather & Live Events</title>
+  <meta name="description" content="See the best things to do in NYC tonight with curated top picks, live event listings, weather, and nightlife headlines. Updated daily for fast NYC night planning." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://nynightlife.com/tonight/" />
   <link rel="stylesheet" href="/css/main.css" />
@@ -27,7 +27,7 @@
         "@id": "https://nynightlife.com/tonight/#webpage",
         "url": "https://nynightlife.com/tonight/",
         "name": "Things to Do in NYC Tonight",
-        "description": "Live NYC nightlife picks for tonight with verification-first publishing rules.",
+        "description": "Curated NYC top picks for tonight with live event listings, weather, and nightlife headlines.",
         "isPartOf": { "@id": "https://nynightlife.com/#website" }
       },
       {
@@ -38,7 +38,7 @@
       },
       {
         "@type": "ItemList",
-        "name": "Verified NYC Tonight Picks",
+        "name": "Top Picks Tonight in NYC",
         "itemListOrder": "https://schema.org/ItemListOrderDescending",
         "numberOfItems": 3
       }
@@ -47,49 +47,230 @@
   </script>
 
   <style>
-    .tonight-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1.2fr .8fr;
+    .tonight-shell {
+      padding: 2rem 1rem;
+      max-width: 1160px;
+      margin: 0 auto;
     }
 
-    .tonight-panel {
-      background: rgba(14,18,30,.72);
-      border: 1px solid rgba(212,175,55,.22);
-      border-radius: 14px;
-      padding: 1rem;
-      backdrop-filter: blur(4px);
+    .tonight-kicker {
+      color: #d7b862;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .82rem;
+      margin: 0 0 .45rem;
+      font-weight: 700;
     }
 
-    .tonight-card {
-      background: rgba(8,10,18,.72);
-      border: 1px solid rgba(212,175,55,.18);
-      border-radius: 12px;
-      padding: .9rem;
-      margin-bottom: .8rem;
+    .tonight-page-intro {
+      max-width: 820px;
+      margin-bottom: 1rem;
     }
 
-    .tonight-card h3,
-    .tonight-card h4 {
-      margin: 0 0 .35rem;
-    }
-
-    .tonight-verify {
-      color: #cbb06a;
-      font-size: .92rem;
+    .tonight-page-intro h1 {
+      margin-bottom: .55rem;
     }
 
     .tonight-muted {
-      color: #b7b3ab;
-      font-size: .92rem;
+      color: #c7c1b5;
+      font-size: .95rem;
+    }
+
+    .tonight-updated {
+      margin-top: .6rem;
+      color: #ddd5c8;
+      font-size: .95rem;
+    }
+
+    .tonight-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1.45fr .85fr;
+      align-items: start;
+    }
+
+    .tonight-panel {
+      background: linear-gradient(180deg, rgba(14,18,30,.88), rgba(10,12,22,.82));
+      border: 1px solid rgba(212,175,55,.18);
+      border-radius: 18px;
+      padding: 1.1rem;
+      box-shadow: 0 14px 40px rgba(0,0,0,.22);
+      backdrop-filter: blur(6px);
+    }
+
+    .tonight-panel h2 {
+      margin-top: 0;
+      margin-bottom: .3rem;
+    }
+
+    .tonight-panel-subtitle {
+      margin: 0 0 1rem;
+      color: #bfb8ab;
+      font-size: .94rem;
+    }
+
+    .tonight-featured-grid {
+      display: grid;
+      gap: .95rem;
+    }
+
+    .tonight-featured-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid rgba(212,175,55,.2);
+      background:
+        linear-gradient(180deg, rgba(8,10,18,.18), rgba(8,10,18,.88)),
+        linear-gradient(135deg, rgba(212,175,55,.08), rgba(255,255,255,.03));
+      min-height: 210px;
+    }
+
+    .tonight-featured-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .24;
+      z-index: 0;
+    }
+
+    .tonight-featured-body {
+      position: relative;
+      z-index: 1;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+      height: 100%;
+    }
+
+    .tonight-rank {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      width: fit-content;
+      padding: .28rem .62rem;
+      border-radius: 999px;
+      border: 1px solid rgba(212,175,55,.28);
+      background: rgba(212,175,55,.13);
+      color: #f1d47b;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .tonight-featured-title {
+      margin: 0;
+      font-size: 1.45rem;
+      line-height: 1.18;
+    }
+
+    .tonight-featured-title a {
+      color: #fff7e6;
+      text-decoration: none;
+    }
+
+    .tonight-featured-title a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .tonight-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      color: #ddd5c8;
+      font-size: .93rem;
+    }
+
+    .tonight-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: .22rem .55rem;
+      border-radius: 999px;
+      background: rgba(212,175,55,.11);
+      border: 1px solid rgba(212,175,55,.2);
+      color: #e5c76e;
+      font-size: .82rem;
+      line-height: 1.2;
+    }
+
+    .tonight-featured-copy {
+      color: #f1ebe2;
+      margin: 0;
+      font-size: .96rem;
+      line-height: 1.55;
+      max-width: 62ch;
+    }
+
+    .tonight-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      margin-top: auto;
+    }
+
+    .tonight-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: .72rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(212,175,55,.24);
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .tonight-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    }
+
+    .tonight-btn-primary {
+      background: linear-gradient(180deg, #f0cf76, #d9af46);
+      color: #161616;
+    }
+
+    .tonight-btn-secondary {
+      background: rgba(255,255,255,.04);
+      color: #f7f3ea;
+    }
+
+    .tonight-side-stack {
+      display: grid;
+      gap: 1rem;
     }
 
     .tonight-list {
-      margin: .4rem 0 0 1rem;
+      margin: .5rem 0 0 1rem;
+      padding: 0;
     }
 
     .tonight-list li {
-      margin-bottom: .45rem;
+      margin-bottom: .55rem;
+      color: #f0ebe2;
+    }
+
+    .tonight-link {
+      color: #e6c86d;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .tonight-link:hover {
+      color: #f4db95;
+    }
+
+    .tonight-empty {
+      color: #d2cdc3;
+      opacity: .95;
+      margin: 0;
+    }
+
+    .tonight-section {
+      margin-top: 1.25rem;
     }
 
     .tonight-picks-grid {
@@ -98,44 +279,98 @@
       gap: .9rem;
     }
 
-    .tonight-meta {
+    .tonight-card {
+      background: linear-gradient(180deg, rgba(10,12,22,.9), rgba(14,16,28,.84));
+      border: 1px solid rgba(212,175,55,.14);
+      border-radius: 14px;
+      padding: .95rem;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+    }
+
+    .tonight-card h3,
+    .tonight-card h4 {
+      margin: 0;
+      line-height: 1.28;
+    }
+
+    .tonight-card p {
+      margin: 0;
+    }
+
+    .tonight-card-cta {
+      margin-top: .25rem;
+    }
+
+    .tonight-mini-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: .55rem .8rem;
+      border-radius: 999px;
+      background: rgba(212,175,55,.14);
+      border: 1px solid rgba(212,175,55,.22);
+      color: #f0d279;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    .tonight-mini-btn:hover {
+      background: rgba(212,175,55,.2);
+    }
+
+    .tonight-quick-links {
       display: flex;
       flex-wrap: wrap;
-      gap: .55rem;
-      margin: .35rem 0 .45rem;
-      font-size: .9rem;
-      color: #d7d1c6;
+      gap: .75rem;
+      margin-top: .9rem;
     }
 
-    .tonight-pill {
-      display: inline-block;
-      padding: .2rem .5rem;
-      border-radius: 999px;
-      background: rgba(212,175,55,.12);
-      border: 1px solid rgba(212,175,55,.24);
-      color: #e3c870;
-      font-size: .82rem;
+    .tonight-quick-links a {
+      color: #f0d279;
     }
 
-    .tonight-link {
-      color: #e3c870;
-      text-decoration: underline;
-      text-underline-offset: 2px;
+    .tonight-confidence {
+      color: #e4c768;
+      font-size: .85rem;
+      font-weight: 700;
     }
 
-    .tonight-empty {
-      color: #d2cdc3;
-      opacity: .95;
-    }
-
-    .tonight-section-spacer {
-      margin-top: 1.2rem;
-    }
-
-    @media (max-width: 920px) {
+    @media (max-width: 980px) {
       .tonight-grid,
       .tonight-picks-grid {
         grid-template-columns: 1fr;
+      }
+
+      .tonight-featured-title {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .tonight-shell {
+        padding: 1.35rem .85rem;
+      }
+
+      .tonight-panel {
+        padding: .95rem;
+      }
+
+      .tonight-featured-card {
+        min-height: 230px;
+      }
+
+      .tonight-actions,
+      .tonight-quick-links {
+        flex-direction: column;
+      }
+
+      .tonight-btn,
+      .tonight-mini-btn {
+        width: 100%;
       }
     }
   </style>
@@ -191,49 +426,66 @@
   </nav>
 </header>
 
-<main class="container" style="padding:2rem 1rem; max-width:1080px;">
-  <h1>Things to Do in NYC Tonight</h1>
-  <p>Verification-first nightly picks for NYC. Featured items publish only after 3-source confirmation.</p>
-  <p class="tonight-muted">Last refreshed: <strong id="tonight-updated-at">Loading...</strong></p>
+<main class="tonight-shell">
+  <section class="tonight-page-intro" aria-label="Tonight intro">
+    <p class="tonight-kicker">Tonight in New York City</p>
+    <h1>Things to Do in NYC Tonight</h1>
+    <p>
+      Our top picks focus on events that are actually happening tonight, are ticket-ready, and make strong choices for a real NYC night out.
+      We prioritize same-day timing, recognizable venues, audience appeal, and clean source data so visitors can make a fast decision.
+    </p>
+    <p class="tonight-updated">Last refreshed: <strong id="tonight-updated-at">Loading...</strong></p>
+  </section>
 
   <section class="tonight-grid" aria-label="Tonight live modules">
     <div class="tonight-panel">
-      <h2>Featured Tonight (Verified)</h2>
-      <div id="tonight-featured"></div>
-      <p class="tonight-muted">Policy: if an event cannot be triple-confirmed, it is excluded.</p>
+      <h2>Tonight’s Top Picks</h2>
+      <p class="tonight-panel-subtitle">
+        Three handpicked events chosen automatically from tonight’s live feed based on same-day timing, venue quality, category balance, and click potential.
+      </p>
+      <div id="tonight-featured" class="tonight-featured-grid"></div>
     </div>
 
-    <aside class="tonight-panel">
-      <h2>NYC Weather</h2>
-      <div id="tonight-weather"></div>
+    <div class="tonight-side-stack">
+      <aside class="tonight-panel">
+        <h2>NYC Weather</h2>
+        <div id="tonight-weather"></div>
+      </aside>
 
-      <h2 style="margin-top:1rem;">Nightlife Headlines</h2>
-      <ul id="tonight-headlines" class="tonight-list"></ul>
+      <aside class="tonight-panel">
+        <h2>Nightlife Headlines</h2>
+        <ul id="tonight-headlines" class="tonight-list"></ul>
+      </aside>
 
-      <h2 style="margin-top:1rem;">Last 3 Nights</h2>
-      <ul id="tonight-last-three" class="tonight-list"></ul>
-    </aside>
+      <aside class="tonight-panel">
+        <h2>Quick Actions</h2>
+        <div class="tonight-quick-links">
+          <a class="tonight-btn tonight-btn-secondary" href="/tonight/things-to-do-in-nyc-tonight.html">Tonight broad guide</a>
+          <a class="tonight-btn tonight-btn-secondary" href="/tools/nyc-night-planner.html">Night planner</a>
+          <a class="tonight-btn tonight-btn-secondary" href="/tools/venue-compare-nyc.html">Venue compare</a>
+        </div>
+      </aside>
+    </div>
   </section>
 
-  <section class="tonight-section-spacer">
+  <section class="tonight-section">
     <div class="tonight-panel">
-      <h2>Picks From Sources</h2>
-      <p class="tonight-muted">Fresh source-attributed event picks for tonight. These can appear before they reach verified status.</p>
+      <h2>More Events Happening Tonight</h2>
+      <p class="tonight-panel-subtitle">
+        Live source-attributed picks for tonight in NYC. This list stays broader for discovery, while the top section stays tightly curated.
+      </p>
       <div id="tonight-picks" class="tonight-picks-grid"></div>
     </div>
   </section>
 
-  <section style="margin-top:1.2rem;">
-    <h2>Quick Actions</h2>
-    <ul>
-      <li><a href="/tonight/things-to-do-in-nyc-tonight.html">Tonight broad guide</a></li>
-      <li><a href="/tools/nyc-night-planner.html">Night planner</a></li>
-      <li><a href="/tools/venue-compare-nyc.html">Venue compare</a></li>
-      <li><a href="/workflows/README.md">Workflow setup docs</a></li>
-    </ul>
+  <section class="tonight-section">
+    <p class="tonight-muted">
+      For sources and trust standards, see
+      <a class="tonight-link" href="/docs/EDITORIAL-TRUTH-POLICY.md">Editorial Truth Policy</a>
+      and
+      <a class="tonight-link" href="/methodology/">Methodology</a>.
+    </p>
   </section>
-
-  <p class="tonight-muted">For sources and trust standards, see <a href="/docs/EDITORIAL-TRUTH-POLICY.md">Editorial Truth Policy</a> and <a href="/methodology/">Methodology</a>.</p>
 </main>
 
 <script src="/js/main.js"></script>
@@ -276,32 +528,278 @@
     });
   }
 
+  function formatEventDateKey(isoString) {
+    if (!isoString) return '';
+    const date = new Date(isoString);
+    if (Number.isNaN(date.getTime())) return '';
+    return date.toLocaleString('en-CA', {
+      timeZone: 'America/New_York',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    });
+  }
+
+  function getTodayDateKey() {
+    return new Date().toLocaleString('en-CA', {
+      timeZone: 'America/New_York',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    });
+  }
+
+  function getCurrentHourInNY() {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York',
+      hour: 'numeric',
+      hour12: false
+    }).formatToParts(new Date());
+
+    const hourPart = parts.find(part => part.type === 'hour');
+    return hourPart ? Number(hourPart.value) : 20;
+  }
+
+  function normalizeCategory(category) {
+    const value = String(category || '').toLowerCase();
+    if (value.includes('broadway') || value.includes('theatre') || value.includes('theater') || value.includes('arts')) return 'theater';
+    if (value.includes('music') || value.includes('concert') || value.includes('jazz')) return 'music';
+    if (value.includes('comedy')) return 'comedy';
+    if (value.includes('nightlife') || value.includes('club') || value.includes('bar')) return 'nightlife';
+    if (value.includes('experience') || value.includes('misc')) return 'experience';
+    return value || 'event';
+  }
+
+  function scoreEvent(item, index) {
+    let score = 0;
+
+    const title = String(item.title || '').toLowerCase();
+    const venue = String(item.venue || '').toLowerCase();
+    const category = normalizeCategory(item.category);
+    const sourceName = String(item.source_name || '').toLowerCase();
+    const borough = String(item.borough || '').toLowerCase();
+    const price = String(item.price || '').toLowerCase();
+    const hour = item._eventHour;
+
+    if (item._isToday) score += 70;
+    if (item._hasValidLink) score += 20;
+    if (item._hasTime) score += 12;
+    if (item._hasImage) score += 8;
+
+    if (category === 'theater') score += 18;
+    if (category === 'music') score += 16;
+    if (category === 'experience') score += 10;
+    if (category === 'comedy') score += 10;
+    if (category === 'nightlife') score += 9;
+
+    if (borough.includes('manhattan')) score += 8;
+    if (sourceName.includes('ticketmaster')) score += 8;
+
+    if (hour >= 17 && hour <= 23) score += 16;
+    else if (hour >= 14 && hour < 17) score += 7;
+    else if (hour >= 0) score -= 6;
+
+    if (venue.includes('broadway') || venue.includes('theatre') || venue.includes('theater') || venue.includes('jazz')) score += 8;
+
+    if (
+      title.includes('hamilton') ||
+      title.includes('wicked') ||
+      title.includes('chicago') ||
+      title.includes('stranger things') ||
+      title.includes('harlem gospel')
+    ) {
+      score += 12;
+    }
+
+    if (price.includes('$0') || price.includes('free')) score += 3;
+
+    score += Math.max(0, 10 - (index * 0.15));
+
+    return score;
+  }
+
+  function buildFeaturedBlurb(item) {
+    const category = normalizeCategory(item.category);
+    const title = String(item.title || '');
+    const venue = String(item.venue || 'NYC venue');
+
+    if (category === 'theater') {
+      return `${title} is one of tonight’s strongest theater picks thanks to its recognizable title, reliable venue, and easy same-day planning value for visitors who want a classic NYC night out.`;
+    }
+
+    if (category === 'music') {
+      return `${title} stands out tonight for live energy, a known venue, and strong date-night appeal if you want something more atmospheric than a standard tourist stop.`;
+    }
+
+    if (category === 'comedy') {
+      return `${title} makes tonight’s list as a fun, lower-friction option for visitors who want an easy, high-reward NYC evening without committing to a full Broadway-style production.`;
+    }
+
+    if (category === 'nightlife') {
+      return `${title} earns a top spot tonight for its nightlife appeal, strong city vibe, and better fit for visitors looking for an authentic after-dark NYC experience.`;
+    }
+
+    return `${title} makes tonight’s shortlist because it appears timely, ticket-ready, and well-positioned for a real NYC evening plan at ${venue}.`;
+  }
+
+  function selectFeaturedTonight(items) {
+    if (!Array.isArray(items) || items.length === 0) return [];
+
+    const todayKey = getTodayDateKey();
+    const currentHour = getCurrentHourInNY();
+
+    const prepared = items
+      .filter(item => item && item.title)
+      .map((item, index) => {
+        const startIso = item.start_iso || '';
+        const dateKey = formatEventDateKey(startIso);
+        const dateObj = startIso ? new Date(startIso) : null;
+        const hasValidDate = dateObj instanceof Date && !Number.isNaN(dateObj.getTime());
+        const eventHour = hasValidDate
+          ? Number(dateObj.toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }))
+          : -1;
+
+        const isToday = dateKey === todayKey;
+        const hasTime = Boolean(startIso || item.time_window);
+        const hasValidLink = Boolean(item.url || item.source_url);
+        const imageUrl = item.image_url || item.image || item.poster || '';
+        const hasImage = Boolean(imageUrl);
+
+        return {
+          ...item,
+          _index: index,
+          _isToday: isToday,
+          _hasTime: hasTime,
+          _hasValidLink: hasValidLink,
+          _imageUrl: imageUrl,
+          _hasImage: hasImage,
+          _eventHour: eventHour,
+          _score: 0
+        };
+      })
+      .filter(item => item._isToday)
+      .filter(item => item._hasValidLink)
+      .filter(item => item._eventHour === -1 || item._eventHour >= Math.max(0, currentHour - 3));
+
+    const fallbackPool = prepared.length
+      ? prepared
+      : items
+          .filter(item => item && item.title)
+          .map((item, index) => {
+            const startIso = item.start_iso || '';
+            const dateObj = startIso ? new Date(startIso) : null;
+            const hasValidDate = dateObj instanceof Date && !Number.isNaN(dateObj.getTime());
+            const eventHour = hasValidDate
+              ? Number(dateObj.toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }))
+              : -1;
+            const imageUrl = item.image_url || item.image || item.poster || '';
+            return {
+              ...item,
+              _index: index,
+              _isToday: false,
+              _hasTime: Boolean(startIso || item.time_window),
+              _hasValidLink: Boolean(item.url || item.source_url),
+              _imageUrl: imageUrl,
+              _hasImage: Boolean(imageUrl),
+              _eventHour: eventHour,
+              _score: 0
+            };
+          })
+          .filter(item => item._hasValidLink);
+
+    const scored = fallbackPool
+      .map(item => ({ ...item, _score: scoreEvent(item, item._index) }))
+      .sort((a, b) => b._score - a._score);
+
+    const selected = [];
+    const usedTitles = new Set();
+    const usedCategories = new Set();
+
+    for (const item of scored) {
+      const cleanTitle = String(item.title || '').trim().toLowerCase();
+      const category = normalizeCategory(item.category);
+
+      if (!cleanTitle || usedTitles.has(cleanTitle)) continue;
+
+      if (selected.length < 2 && usedCategories.has(category) && scored.length > 3) {
+        continue;
+      }
+
+      selected.push(item);
+      usedTitles.add(cleanTitle);
+      usedCategories.add(category);
+
+      if (selected.length === 3) break;
+    }
+
+    if (selected.length < 3) {
+      for (const item of scored) {
+        const cleanTitle = String(item.title || '').trim().toLowerCase();
+        if (!cleanTitle || usedTitles.has(cleanTitle)) continue;
+        selected.push(item);
+        usedTitles.add(cleanTitle);
+        if (selected.length === 3) break;
+      }
+    }
+
+    return selected;
+  }
+
   function renderFeatured(items) {
     const wrap = document.getElementById('tonight-featured');
     if (!wrap) return;
 
     if (!Array.isArray(items) || items.length === 0) {
-      wrap.innerHTML = '<p class="tonight-empty">No verified featured events yet.</p>';
+      wrap.innerHTML = `
+        <p class="tonight-empty">
+          No strong same-day top picks are available yet. Check the live events below for the latest ticket-ready options across NYC.
+        </p>
+      `;
       return;
     }
 
-    wrap.innerHTML = items.map(item => {
+    wrap.innerHTML = items.map((item, idx) => {
       const title = escapeHtml(item.title || 'Untitled event');
       const venue = escapeHtml(item.venue || 'Venue TBA');
       const borough = escapeHtml(item.borough || 'NYC');
       const category = escapeHtml(item.category || 'Event');
       const timeText = escapeHtml(item.time_window || formatEventTime(item.start_iso));
-      const url = item.url || '#';
+      const sourceName = escapeHtml(item.source_name || 'Source');
+      const url = item.url || item.source_url || '#';
+      const imageUrl = item._imageUrl || '';
+      const price = item.price ? `<span class="tonight-pill">${escapeHtml(item.price)}</span>` : '';
+      const confidenceText = item._isToday ? 'Confirmed in tonight feed' : 'Strong live pick';
+      const blurb = escapeHtml(buildFeaturedBlurb(item));
 
       return `
-        <article class="tonight-card">
-          <h3><a class="tonight-link" href="${url}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
-          <div class="tonight-meta">
-            <span>${venue}</span>
-            <span>${borough}</span>
-            <span>${timeText}</span>
+        <article class="tonight-featured-card">
+          ${imageUrl ? `<img class="tonight-featured-image" src="${escapeHtml(imageUrl)}" alt="${title} in NYC tonight" loading="lazy" />` : ''}
+          <div class="tonight-featured-body">
+            <span class="tonight-rank">⭐ Top Pick #${idx + 1}</span>
+            <h3 class="tonight-featured-title">
+              <a href="${url}" target="_blank" rel="noopener noreferrer sponsored">${title}</a>
+            </h3>
+
+            <div class="tonight-meta">
+              <span>${venue}</span>
+              <span>${borough}</span>
+              <span>${timeText}</span>
+            </div>
+
+            <div class="tonight-meta">
+              <span class="tonight-pill">${category}</span>
+              <span class="tonight-pill">${sourceName}</span>
+              ${price}
+            </div>
+
+            <p class="tonight-featured-copy">${blurb}</p>
+            <div class="tonight-confidence">${escapeHtml(confidenceText)}</div>
+
+            <div class="tonight-actions">
+              <a class="tonight-btn tonight-btn-primary" href="${url}" target="_blank" rel="noopener noreferrer sponsored">Get Tickets</a>
+              <a class="tonight-btn tonight-btn-secondary" href="/tools/night-out-spinner.html">Plan My Night</a>
+            </div>
           </div>
-          <div class="tonight-verify">Verified • ${category}</div>
         </article>
       `;
     }).join('');
@@ -322,7 +820,7 @@
     const forecast = Array.isArray(weather.five_day) ? weather.five_day : [];
 
     const forecastHtml = forecast.length
-      ? `<ul class="tonight-list">${forecast.map(day => `
+      ? `<ul class="tonight-list">${forecast.slice(0, 5).map(day => `
           <li>${escapeHtml(day.day || '?')}: ${escapeHtml(day.summary || '—')} (${day.high_f ?? '—'}°/${day.low_f ?? '—'}°)</li>
         `).join('')}</ul>`
       : '<p class="tonight-empty">Forecast unavailable.</p>';
@@ -343,7 +841,7 @@
       return;
     }
 
-    wrap.innerHTML = headlines.map(item => {
+    wrap.innerHTML = headlines.slice(0, 6).map(item => {
       const title = escapeHtml(item.title || 'Untitled');
       const source = escapeHtml(item.source || 'Source');
       const url = item.url || '#';
@@ -351,18 +849,12 @@
     }).join('');
   }
 
-  function renderLastThree() {
-    const wrap = document.getElementById('tonight-last-three');
-    if (!wrap) return;
-    wrap.innerHTML = '<li>Last-three-night archive will appear after first automated updates.</li>';
-  }
-
   function renderPicks(items) {
     const wrap = document.getElementById('tonight-picks');
     if (!wrap) return;
 
     if (!Array.isArray(items) || items.length === 0) {
-      wrap.innerHTML = '<p class="tonight-empty">No source-attributed picks are available yet.</p>';
+      wrap.innerHTML = '<p class="tonight-empty">No live event picks are available yet.</p>';
       return;
     }
 
@@ -382,7 +874,7 @@
 
       return `
         <article class="tonight-card">
-          <h3><a class="tonight-link" href="${url}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
+          <h3><a class="tonight-link" href="${url}" target="_blank" rel="noopener noreferrer sponsored">${title}</a></h3>
           <div class="tonight-meta">
             <span>${venue}</span>
             <span>${borough}</span>
@@ -392,6 +884,9 @@
             <span class="tonight-pill">${category}</span>
             <span class="tonight-pill">${sourceName}</span>
             ${price}
+          </div>
+          <div class="tonight-card-cta">
+            <a class="tonight-mini-btn" href="${url}" target="_blank" rel="noopener noreferrer sponsored">View Tickets</a>
           </div>
         </article>
       `;
@@ -405,18 +900,20 @@
       const data = await response.json();
 
       document.getElementById('tonight-updated-at').textContent = formatUpdatedAt(data.generated_at);
-      renderFeatured(data.featured_verified || data.featured_tonight || []);
+
+      const livePicks = Array.isArray(data.picks_from_sources) ? data.picks_from_sources : [];
+      const featuredItems = selectFeaturedTonight(livePicks);
+
+      renderFeatured(featuredItems);
       renderWeather(data.weather || {});
       renderHeadlines(data.headlines || []);
-      renderLastThree();
-      renderPicks(data.picks_from_sources || []);
+      renderPicks(livePicks);
     } catch (error) {
       console.error('Tonight feed load failed:', error);
       document.getElementById('tonight-updated-at').textContent = 'Unavailable';
       renderFeatured([]);
       renderWeather({});
       renderHeadlines([]);
-      renderLastThree();
       renderPicks([]);
     }
   }
