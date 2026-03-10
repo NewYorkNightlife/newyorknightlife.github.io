@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 71,
     "feels_like_f": 70,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Tue",
+        "summary": "Clear",
+        "high_f": 78,
+        "low_f": 73
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 61,
+        "low_f": 61
+      },
+      {
+        "day": "Thu",
+        "summary": "Rain",
+        "high_f": 43,
+        "low_f": 43
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 42,
+        "low_f": 42
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 47,
+        "low_f": 47
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "9 Biggest And Best St. Patrick’s Day Celebrations In The USA",
+      "url": "https://brobible.com/culture/article/9-biggest-and-best-st-patricks-day-celebrations-in-the-usa/",
+      "source": "BroBible"
+    },
+    {
+      "title": "Keanu Reeves and Dogstar announce tour, NYC show. Get tickets",
+      "url": "https://nypost.com/2026/03/09/ticket-sales/keanu-reeves-dogstar-tour-2026-where-to-buy-tickets-schedule/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Horny hockey drama ‘Heated Rivalry’ parody musical coming to NYC",
+      "url": "https://gothamist.com/arts-entertainment/horny-hockey-drama-heated-rivalry-parody-musical-coming-to-nyc",
+      "source": "Gothamist"
+    },
+    {
+      "title": "M4 iPad Air Review: The ‘Better’ iPad Is Now Really That Good",
+      "url": "https://gizmodo.com/m4-ipad-air-review-the-better-ipad-is-now-really-that-good-2000730880",
+      "source": "Gizmodo.com"
+    },
+    {
+      "title": "Reminiscing about NYC’s golden age — and some ideas to help Mamdani with his budge woes",
+      "url": "https://nypost.com/2026/03/08/opinion/reminiscing-about-nycs-golden-age-and-some-ideas-to-help-mamdani-with-his-budge-woes/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
