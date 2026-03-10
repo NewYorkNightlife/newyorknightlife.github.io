@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "M4 iPad Air Review: The ‘Better’ iPad Is Now Really That Good",
+      "url": "https://gizmodo.com/m4-ipad-air-review-the-better-ipad-is-now-really-that-good-2000730880",
+      "source": "Gizmodo.com"
+    },
+    {
+      "title": "Reminiscing about NYC’s golden age — and some ideas to help Mamdani with his budge woes",
+      "url": "https://nypost.com/2026/03/08/opinion/reminiscing-about-nycs-golden-age-and-some-ideas-to-help-mamdani-with-his-budge-woes/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Sunday: Hili dialogue",
+      "url": "https://whyevolutionistrue.com/2026/03/08/sunday-hili-dialogue-576/",
+      "source": "Whyevolutionistrue.com"
+    },
+    {
+      "title": "More than Theoretical Girls: Adele Bertei on the Women of No Wave",
+      "url": "https://thequietus.com/culture/books/more-than-theoretical-girls-adele-bertei-on-the-women-of-no-wave/",
+      "source": "The Quietus"
+    },
+    {
+      "title": "Ambassadors Clubhouse Brings Punjabi Fine Dining to New York",
+      "url": "https://observer.com/2026/03/ambassadors-clubhouse-new-york-city-indian-restaurant-opening-review/",
+      "source": "Observer"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
