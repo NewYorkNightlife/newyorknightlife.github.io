@@ -5,9 +5,66 @@
     "summary": "few clouds",
     "temp_f": 48,
     "feels_like_f": 45,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 54,
+        "low_f": 48
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 46,
+        "low_f": 46
+      },
+      {
+        "day": "Thu",
+        "summary": "Rain",
+        "high_f": 53,
+        "low_f": 53
+      },
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 34,
+        "low_f": 34
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 38,
+        "low_f": 38
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Reminiscing about NYC’s golden age — and some ideas to help Mamdani with his budge woes",
+      "url": "https://nypost.com/2026/03/08/opinion/reminiscing-about-nycs-golden-age-and-some-ideas-to-help-mamdani-with-his-budge-woes/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Sunday: Hili dialogue",
+      "url": "https://whyevolutionistrue.com/2026/03/08/sunday-hili-dialogue-576/",
+      "source": "Whyevolutionistrue.com"
+    },
+    {
+      "title": "More than Theoretical Girls: Adele Bertei on the Women of No Wave",
+      "url": "https://thequietus.com/culture/books/more-than-theoretical-girls-adele-bertei-on-the-women-of-no-wave/",
+      "source": "The Quietus"
+    },
+    {
+      "title": "Ambassadors Clubhouse Brings Punjabi Fine Dining to New York",
+      "url": "https://observer.com/2026/03/ambassadors-clubhouse-new-york-city-indian-restaurant-opening-review/",
+      "source": "Observer"
+    },
+    {
+      "title": "‘Haus of Joe’: Trader Joe’s Employees Vogue in Grocery Store Aisle",
+      "url": "https://www.today.com/food/trends/trader-joes-employees-vogue-tiktok-rcna261983",
+      "source": "TODAY"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
