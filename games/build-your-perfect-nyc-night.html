@@ -1,50 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJE6L0D7H"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ZXJE6L0D7H');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZXJE6L0D7H');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build Your Perfect NYC Night | Interactive Nightlife Builder</title>
-  <meta name="description" content="Interactive nightlife builder to design your ideal NYC night by vibe, budget, neighborhood, and pace." />
+  <title>Build Your Perfect NYC Night | Interactive Route Game</title>
+  <meta name="description" content="Design your ideal NYC nightlife route with an interactive, visual game builder. Get a custom plan, budget lane, timeline, and fallback strategy." />
   <link rel="canonical" href="https://nynightlife.com/games/build-your-perfect-nyc-night.html" />
   <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    :root{
+      --bg1:#0f0f12; --bg2:#16141d; --card:#171720; --line:#343447;
+      --gold:#d2a54a; --cyan:#64d4ff; --pink:#ff7ac8; --green:#58d48a; --text:#f7f4ee;
+    }
+    .game-wrap{max-width:1100px;margin:0 auto;padding:2rem 1rem;color:var(--text)}
+    .hero{background:radial-gradient(1200px 500px at 20% -10%,#2a2238 0%,transparent 50%),linear-gradient(135deg,var(--bg1),var(--bg2));border:1px solid #2f2c3f;border-radius:18px;padding:1.2rem;margin-bottom:1rem}
+    .hero h1{margin:.2rem 0 .5rem}
+    .sub{color:#c7c2b6}
+    .stepper{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+    .chip{padding:.35rem .6rem;border:1px solid #4a465c;border-radius:999px;font-size:.85rem;color:#d7d2c8}
+    .chip.active{border-color:var(--gold);color:#fff;background:#2b2416}
+    .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem;margin:1rem 0}
+    .q-title{margin:.2rem 0 1rem}
+    .opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+    .opt{border:1px solid #3f3b52;background:#1a1a25;color:#f7f4ee;border-radius:12px;padding:.8rem;cursor:pointer;text-align:left;transition:.15s}
+    .opt:hover{transform:translateY(-1px);border-color:#8d7bd1}
+    .opt.sel{border-color:var(--gold);background:#2a2418}
+    .opt small{display:block;color:#bdb8ac;margin-top:.2rem}
+    .controls{display:flex;justify-content:space-between;gap:.6rem;margin-top:1rem;flex-wrap:wrap}
+    .btn{border:0;border-radius:10px;padding:.7rem 1rem;font-weight:700;cursor:pointer}
+    .btn-next{background:var(--gold);color:#111}
+    .btn-ghost{background:#2a2a35;color:#f5f5f5}
+    .progress{height:10px;background:#22222f;border-radius:99px;overflow:hidden;margin-top:1rem}
+    .bar{height:10px;background:linear-gradient(90deg,var(--gold),var(--pink));width:0%}
+    .result{display:none}
+    .result.show{display:block}
+    .lane{display:inline-block;padding:.35rem .7rem;border-radius:999px;border:1px solid #555;margin-right:.4rem}
+    .timeline{display:grid;gap:.6rem;margin-top:.7rem}
+    .slot{border:1px solid #37374a;border-radius:10px;padding:.7rem;background:#151522}
+    .slot b{color:var(--cyan)}
+    .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-top:.8rem}
+    .kpi{border:1px solid #38384b;border-radius:10px;padding:.7rem;background:#141420}
+    .kpi .val{font-size:1.2rem;font-weight:800}
+    @media(max-width:800px){.opts,.kpis{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
   <header class="site-header site-header--premium">
-  <div class="header-container">
-    <a class="brand" href="/" aria-label="NYNightlife home"><span class="brand-icon" aria-hidden="true">🗽</span><span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span><span class="brand-tagline">NYC Nightlife</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
-    <nav class="nav-desktop" aria-label="Primary"><a href="/tonight/">Tonight</a><div class="nav-item has-dropdown"><button class="dropdown-toggle" aria-expanded="false" aria-controls="guides-menu" type="button">Guides</button><div id="guides-menu" class="dropdown-menu"><a href="/boroughs/manhattan-nightlife.html">Manhattan</a><a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a><a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a><a href="/guides/vip-club-access-nyc.html">VIP Club Access</a><a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a></div></div><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a></nav>
-  </div>
-  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile Primary" hidden><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a><a href="/tonight/">Tonight</a><button class="mobile-accordion-toggle" aria-expanded="false" aria-controls="mobile-guides" type="button">Guides</button><div id="mobile-guides" class="mobile-accordion" hidden><a href="/boroughs/manhattan-nightlife.html">Manhattan</a><a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a><a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a><a href="/guides/vip-club-access-nyc.html">VIP Club Access</a><a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a></div><a href="/blog/">Blog</a><a href="/about.html">About</a></nav>
-</header>
-  <main class="container" style="padding:2rem 1rem; max-width:1040px;">
-    <p class="eyebrow">Nightlife Games</p>
-    <h1>Build Your Perfect NYC Night: Interactive Route Builder</h1>
-    <p>Use this interactive to make faster, better nightlife decisions without overthinking. It’s built for NYC conditions, real constraints, and real outcomes.</p>
-    <h2>Build flow</h2><p>Step 1 objective, Step 2 spend lane, Step 3 neighborhood, Step 4 anchor stop, Step 5 fallback. You finish with a complete route template.</p>
-    
-<h2>Why this game matters</h2>
-<p>Games are not filler—they increase return visits and help readers make better real-world nightlife decisions.</p>
-<h2>How to use results</h2>
-<ul>
-  <li>Use game output to pick your route objective</li>
-  <li>Set a realistic spend lane before committing</li>
-  <li>Choose one anchor + one backup neighborhood</li>
-</ul>
-<h2>Turn this into a real plan</h2>
-<ul>
-  <li><a href="/tools/nyc-night-planner.html">NYC Night Planner</a></li>
-  <li><a href="/tools/venue-compare-nyc.html">Venue Compare</a></li>
-  <li><a href="/tonight/">Tonight Live Feed</a></li>
-</ul>
+    <div class="header-container">
+      <a class="brand" href="/" aria-label="NYNightlife home">
+        <span class="brand-icon" aria-hidden="true">🗽</span><span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span><span class="brand-tagline">NYC Nightlife</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="nav-desktop" aria-label="Primary"><a href="/tonight/">Tonight</a><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a></nav>
+    </div>
+  </header>
 
-    <h2>Bottom line</h2>
-    <p>This game should help readers move from indecision to a confident plan in under five minutes.</p>
-    <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
+  <main class="game-wrap">
+    <section class="hero">
+      <p class="eyebrow">Nightlife Games · Premium Build</p>
+      <h1>Build Your Perfect NYC Night</h1>
+      <p class="sub">A visual route game: choose your vibe, constraints, and risk profile. We generate your best lane + fallback + timeline.</p>
+      <div id="stepper" class="stepper"></div>
+      <div class="progress"><div id="bar" class="bar"></div></div>
+    </section>
+
+    <section id="questionPanel" class="panel">
+      <h2 id="qTitle" class="q-title"></h2>
+      <div id="opts" class="opts"></div>
+      <div class="controls">
+        <button id="backBtn" class="btn btn-ghost">Back</button>
+        <button id="nextBtn" class="btn btn-next">Next</button>
+      </div>
+    </section>
+
+    <section id="result" class="panel result" aria-live="polite"></section>
   </main>
+
   <script src="../js/main.js"></script>
+  <script>
+    const qs = [
+      {id:'goal', t:'1) What is tonight’s mission?', o:[
+        ['Social momentum','bar','Keep it smooth + flexible'],
+        ['Balanced premium','hybrid','One anchor + fallback'],
+        ['All-in music energy','club','High payoff, higher friction']
+      ]},
+      {id:'budget', t:'2) Spend lane?', o:[
+        ['Lean ($60–$120)','bar','Value-first'],
+        ['Balanced ($140–$280)','hybrid','Best default lane'],
+        ['Premium ($350+)','club','High-control night']
+      ]},
+      {id:'group', t:'3) Group shape?', o:[
+        ['2–3 people','club','Fast decisions'],
+        ['4–6 people','hybrid','Needs structure'],
+        ['7+ people','bar','Lower-friction wins']
+      ]},
+      {id:'line', t:'4) Line tolerance?', o:[
+        ['Low','bar','Keep moving'],
+        ['Medium','hybrid','Some patience'],
+        ['High','club','Payoff over comfort']
+      ]},
+      {id:'move', t:'5) Movement style?', o:[
+        ['One neighborhood only','bar','Route discipline'],
+        ['One tactical pivot','hybrid','Controlled flexibility'],
+        ['Chase top anchor','club','Outcome-focused']
+      ]},
+      {id:'close', t:'6) Desired close-out?', o:[
+        ['Done by 1:00 AM','bar','Early finish'],
+        ['1:00–2:30 AM','hybrid','Balanced run'],
+        ['2:30 AM+','club','Late commitment']
+      ]}
+    ];
+
+    const st = {}; let idx = 0;
+    const stepper = document.getElementById('stepper');
+    const qTitle = document.getElementById('qTitle');
+    const opts = document.getElementById('opts');
+    const bar = document.getElementById('bar');
+    const result = document.getElementById('result');
+
+    function drawStepper(){
+      stepper.innerHTML='';
+      qs.forEach((q,i)=>{
+        const s=document.createElement('span');
+        s.className='chip'+(i===idx?' active':'');
+        s.textContent=`Step ${i+1}`;
+        stepper.appendChild(s);
+      });
+      bar.style.width = `${Math.round((Object.keys(st).length/qs.length)*100)}%`;
+    }
+
+    function drawQ(){
+      const q=qs[idx];
+      qTitle.textContent=q.t;
+      opts.innerHTML='';
+      q.o.forEach((o,oi)=>{
+        const b=document.createElement('button');
+        b.className='opt'+(st[q.id]===oi?' sel':'');
+        b.type='button';
+        b.innerHTML=`<strong>${o[0]}</strong><small>${o[2]}</small>`;
+        b.onclick=()=>{st[q.id]=oi; drawQ();};
+        opts.appendChild(b);
+      });
+      drawStepper();
+    }
+
+    function scores(){
+      const t={bar:0,hybrid:0,club:0};
+      qs.forEach(q=>{ const pick=q.o[st[q.id]]; if(pick) t[pick[1]]+=2; });
+      return t;
+    }
+
+    function buildTimeline(lane){
+      if(lane==='bar') return [
+        ['7:30 PM','Opener in a high-density neighborhood'],
+        ['9:45 PM','Second bar with easy pivot options'],
+        ['12:00 AM','Final stop near reliable transit']
+      ];
+      if(lane==='hybrid') return [
+        ['7:30 PM','Quality opener to set group rhythm'],
+        ['10:15 PM','Anchor venue attempt (main objective)'],
+        ['12:45 AM','Fallback lane with low movement friction']
+      ];
+      return [
+        ['9:30 PM','Warm-up near target anchor'],
+        ['11:15 PM','Primary club strategy window'],
+        ['1:45 AM','One backup option to avoid dead-end loss']
+      ];
+    }
+
+    function renderResult(){
+      for(const q of qs){ if(typeof st[q.id]!== 'number'){ alert('Answer all steps first.'); return; } }
+      const t=scores();
+      const sorted=Object.entries(t).sort((a,b)=>b[1]-a[1]);
+      const lane=sorted[0][0], fallback=sorted[1][0];
+      const labels={bar:'Bar Route',hybrid:'Hybrid Route',club:'Club Route'};
+      const budget={bar:'$60–$140',hybrid:'$140–$300',club:'$300+'};
+      const risk={bar:'Low',hybrid:'Medium',club:'Higher'};
+      const confidence=Math.round((sorted[0][1]/12)*100);
+      const tl=buildTimeline(lane);
+
+      result.classList.add('show');
+      result.innerHTML=`
+        <h2>Your Perfect Night Blueprint</h2>
+        <p><span class="lane">Primary: <strong>${labels[lane]}</strong></span><span class="lane">Fallback: <strong>${labels[fallback]}</strong></span><span class="lane">Confidence: <strong>${confidence}%</strong></span></p>
+
+        <div class="kpis">
+          <div class="kpi"><div class="val">${budget[lane]}</div><div>Estimated Spend Lane</div></div>
+          <div class="kpi"><div class="val">${risk[lane]}</div><div>Operational Risk</div></div>
+          <div class="kpi"><div class="val">1 Pivot</div><div>Max Recommended Pivots</div></div>
+        </div>
+
+        <h3 style="margin-top:1rem">Timeline</h3>
+        <div class="timeline">
+          ${tl.map(([time,txt])=>`<div class="slot"><b>${time}</b><div>${txt}</div></div>`).join('')}
+        </div>
+
+        <h3 style="margin-top:1rem">Immediate actions</h3>
+        <ul>
+          <li><a href="/tools/nyc-night-planner.html">Load this lane in Night Planner</a></li>
+          <li><a href="/tools/venue-compare-nyc.html">Shortlist venues with fallback logic</a></li>
+          <li><a href="/tonight/">Check live tonight signals</a></li>
+        </ul>
+      `;
+      result.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    document.getElementById('nextBtn').onclick=()=>{
+      const q=qs[idx];
+      if(typeof st[q.id]!== 'number'){ alert('Pick an option first.'); return; }
+      if(idx<qs.length-1){ idx++; drawQ(); }
+      else { renderResult(); }
+    };
+
+    document.getElementById('backBtn').onclick=()=>{ if(idx>0){ idx--; drawQ(); } };
+
+    drawQ();
+  </script>
 </body>
 </html>
