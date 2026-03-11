@@ -50,16 +50,18 @@
     .wheel::after{content:'';position:absolute;inset:38%;border-radius:50%;background:#171827;border:2px solid #4a4e67;z-index:5}
     .slice-icons{position:absolute;inset:0;z-index:4;pointer-events:none}
     .slice-icon{
-      position:absolute;width:38px;height:38px;border-radius:50%;
+      position:absolute;top:50%;left:50%;width:38px;height:38px;border-radius:50%;
       background:#121420;border:1px solid #545a78;display:grid;place-items:center;
       font-size:18px;box-shadow:0 0 12px rgba(255,230,163,.18);
+      transform: translate(-50%, -50%) rotate(var(--a)) translateY(-104px) rotate(calc(-1 * var(--a)));
     }
-    .i1{top:14%;left:50%;transform:translate(-50%,-50%)}
-    .i2{top:30%;right:14%;transform:translate(50%,-50%)}
-    .i3{bottom:30%;right:14%;transform:translate(50%,50%)}
-    .i4{bottom:14%;left:50%;transform:translate(-50%,50%)}
-    .i5{bottom:30%;left:14%;transform:translate(-50%,50%)}
-    .i6{top:30%;left:14%;transform:translate(-50%,-50%)}
+    /* place each icon at the center of its 60° slice */
+    .i1{--a:-60deg}
+    .i2{--a:0deg}
+    .i3{--a:60deg}
+    .i4{--a:120deg}
+    .i5{--a:180deg}
+    .i6{--a:240deg}
     @keyframes pulse{0%,100%{opacity:.6}50%{opacity:.95}}
     .legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem;margin-top:.9rem;width:100%}
     .tag{border:1px solid #4a4d66;border-radius:999px;padding:.3rem .6rem;font-size:.83rem;text-align:center;background:#121320}
