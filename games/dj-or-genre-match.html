@@ -185,9 +185,10 @@
       spinCount += 1;
       const idx = Math.floor(Math.random()*genres.length);
       const slice = 60;
-      const jitter = Math.floor(Math.random()*44);
+      const centerOfSlice = (idx * slice) + 30; // center angle for each slice
       const turns = 360*(4+spinCount);
-      const angle = turns + idx*slice + jitter;
+      // Align the winning slice center directly under top pointer (0deg)
+      const angle = turns - centerOfSlice;
       wheel.style.transform = `rotate(${angle}deg)`;
 
       setTimeout(()=>{
@@ -214,7 +215,7 @@
           <ul>${out.tips.map(x=>`<li>${x}</li>`).join('')}</ul>
           <p><a href="/tools/nyc-night-planner.html">Build this route in Night Planner</a> · <a href="/tools/venue-compare-nyc.html">Compare options</a></p>
         `;
-        result.scrollIntoView({behavior:'smooth',block:'start'});
+        // keep focus on wheel result; no auto-scroll
       }, 4100);
     }
 
