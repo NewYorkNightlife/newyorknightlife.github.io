@@ -3,48 +3,161 @@
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJE6L0D7H"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ZXJE6L0D7H');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZXJE6L0D7H');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Group Vibe Decider (NYC) | Pick a Night Everyone Actually Likes</title>
-  <meta name="description" content="Quick group nightlife decider for NYC to align preferences, budget, and route style before going out." />
+  <title>Group Vibe Decider (NYC) | Interactive Group Night Planner</title>
+  <meta name="description" content="Use the Group Vibe Decider to align group preferences and get a shared NYC nightlife plan in minutes." />
   <link rel="canonical" href="https://nynightlife.com/games/group-vibe-decider.html" />
   <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .wrap{max-width:1020px;margin:0 auto}
+    .card{background:#121212;border:1px solid #2a2a2a;border-radius:14px;padding:1rem;margin:1rem 0}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    .person{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;padding:.75rem;border:1px solid #2f2f2f;border-radius:10px}
+    label{font-size:.92rem;color:#d6d3cc}
+    select,input{background:#1a1a1a;color:#f5f5f5;border:1px solid #3a3a3a;border-radius:8px;padding:.55rem}
+    .btn{border:0;border-radius:10px;padding:.7rem 1rem;cursor:pointer;font-weight:600}
+    .btn-primary{background:#d2a54a;color:#111}
+    .btn-secondary{background:#2b2b2b;color:#eee}
+    .actions{display:flex;gap:.75rem;flex-wrap:wrap}
+    .pill{display:inline-block;background:#221a0f;color:#f8e2b0;border:1px solid #7a5c22;padding:.3rem .6rem;border-radius:999px;font-size:.85rem}
+    .muted{color:#b7b3ab}
+    @media(max-width:800px){.row,.person{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
   <header class="site-header site-header--premium">
-  <div class="header-container">
-    <a class="brand" href="/" aria-label="NYNightlife home"><span class="brand-icon" aria-hidden="true">🗽</span><span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span><span class="brand-tagline">NYC Nightlife</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
-    <nav class="nav-desktop" aria-label="Primary"><a href="/tonight/">Tonight</a><div class="nav-item has-dropdown"><button class="dropdown-toggle" aria-expanded="false" aria-controls="guides-menu" type="button">Guides</button><div id="guides-menu" class="dropdown-menu"><a href="/boroughs/manhattan-nightlife.html">Manhattan</a><a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a><a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a><a href="/guides/vip-club-access-nyc.html">VIP Club Access</a><a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a></div></div><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a></nav>
-  </div>
-  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile Primary" hidden><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a><a href="/tonight/">Tonight</a><button class="mobile-accordion-toggle" aria-expanded="false" aria-controls="mobile-guides" type="button">Guides</button><div id="mobile-guides" class="mobile-accordion" hidden><a href="/boroughs/manhattan-nightlife.html">Manhattan</a><a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a><a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a><a href="/guides/vip-club-access-nyc.html">VIP Club Access</a><a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a></div><a href="/blog/">Blog</a><a href="/about.html">About</a></nav>
-</header>
-  <main class="container" style="padding:2rem 1rem; max-width:1040px;">
+    <div class="header-container">
+      <a class="brand" href="/" aria-label="NYNightlife home">
+        <span class="brand-icon" aria-hidden="true">🗽</span>
+        <span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span>
+        <span class="brand-tagline">NYC Nightlife</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="/tonight/">Tonight</a><a href="/blog/">Blog</a><a href="/about.html">About</a>
+        <a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container wrap" style="padding:2rem 1rem;">
     <p class="eyebrow">Nightlife Games</p>
     <h1>Group Vibe Decider: End the Group Chat Chaos</h1>
-    <p>Use this interactive to make faster, better nightlife decisions without overthinking. It’s built for NYC conditions, real constraints, and real outcomes.</p>
-    <h2>Group alignment rules</h2><p>Each person votes on vibe, spend, and movement tolerance. The decider outputs one shared plan and one backup.</p>
-    
-<h2>Why this game matters</h2>
-<p>Games are not filler—they increase return visits and help readers make better real-world nightlife decisions.</p>
-<h2>How to use results</h2>
-<ul>
-  <li>Use game output to pick your route objective</li>
-  <li>Set a realistic spend lane before committing</li>
-  <li>Choose one anchor + one backup neighborhood</li>
-</ul>
-<h2>Turn this into a real plan</h2>
-<ul>
-  <li><a href="/tools/nyc-night-planner.html">NYC Night Planner</a></li>
-  <li><a href="/tools/venue-compare-nyc.html">Venue Compare</a></li>
-  <li><a href="/tonight/">Tonight Live Feed</a></li>
-</ul>
+    <p class="muted">Enter up to 4 people’s preferences. We’ll output one shared lane + one fallback plan.</p>
 
-    <h2>Bottom line</h2>
-    <p>This game should help readers move from indecision to a confident plan in under five minutes.</p>
-    <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
+    <section class="card">
+      <h2>Group Inputs</h2>
+      <div id="people"></div>
+      <div class="actions" style="margin-top:1rem;">
+        <button id="calcBtn" class="btn btn-primary">Decide for Us</button>
+        <button id="resetBtn" class="btn btn-secondary">Reset</button>
+      </div>
+    </section>
+
+    <section id="result" class="card" hidden aria-live="polite"></section>
   </main>
+
   <script src="../js/main.js"></script>
+  <script>
+    const peopleEl = document.getElementById('people');
+    const resultEl = document.getElementById('result');
+
+    function personTemplate(i){
+      return `
+      <div class="person" data-i="${i}">
+        <div><label>Person ${i+1} Name</label><input type="text" class="name" placeholder="Friend ${i+1}" /></div>
+        <div><label>Vibe Goal</label>
+          <select class="vibe">
+            <option value="bar">Chill/social bars</option>
+            <option value="hybrid">Balanced night</option>
+            <option value="club">High-energy club</option>
+          </select>
+        </div>
+        <div><label>Budget Lane</label>
+          <select class="budget">
+            <option value="bar">Lean ($60–$120)</option>
+            <option value="hybrid">Balanced ($140–$280)</option>
+            <option value="club">Premium ($350+)</option>
+          </select>
+        </div>
+        <div><label>Line Tolerance</label>
+          <select class="line">
+            <option value="bar">Low</option>
+            <option value="hybrid">Medium</option>
+            <option value="club">High</option>
+          </select>
+        </div>
+      </div>`;
+    }
+
+    function renderPeople(){
+      peopleEl.innerHTML = '';
+      for(let i=0;i<4;i++) peopleEl.insertAdjacentHTML('beforeend', personTemplate(i));
+    }
+
+    function decide(){
+      const cards=[...document.querySelectorAll('.person')];
+      const totals={bar:0,hybrid:0,club:0};
+      const names=[];
+
+      cards.forEach(c=>{
+        const name=(c.querySelector('.name').value||'').trim();
+        const vibe=c.querySelector('.vibe').value;
+        const budget=c.querySelector('.budget').value;
+        const line=c.querySelector('.line').value;
+        if(name) names.push(name);
+        totals[vibe]+=2;
+        totals[budget]+=2;
+        totals[line]+=1;
+      });
+
+      const sorted = Object.entries(totals).sort((a,b)=>b[1]-a[1]);
+      const lane=sorted[0][0];
+      const fallback=sorted[1][0];
+
+      const map={
+        bar:{title:'Bar Route',desc:'Low-friction, conversational, flexible pivots.',next:['Pick one dense bar neighborhood.','Lock 1 opener + 1 backup.','Close near reliable transit.']},
+        hybrid:{title:'Hybrid Route',desc:'Balanced control with one strong anchor.',next:['Start with a quality opener.','Hit one anchor around peak window.','Pivot once max if needed.']},
+        club:{title:'Club Route',desc:'High-energy lane with higher commitment.',next:['Commit to one anchor strategy early.','Optimize arrival timing.','Keep one fallback to avoid dead-end lines.']}
+      };
+
+      const lead=map[lane], back=map[fallback];
+      const groupLabel = names.length ? names.join(', ') : 'Your group';
+
+      resultEl.hidden=false;
+      resultEl.innerHTML=`
+        <h2>Decision Locked for ${groupLabel}</h2>
+        <p><span class="pill">Primary Lane: ${lead.title}</span> <span class="pill">Fallback: ${back.title}</span></p>
+        <p>${lead.desc}</p>
+        <h3>Execution plan</h3>
+        <ul>${lead.next.map(x=>`<li>${x}</li>`).join('')}</ul>
+        <h3>Now do this</h3>
+        <ul>
+          <li><a href="/tools/nyc-night-planner.html">Build route in Night Planner</a></li>
+          <li><a href="/tools/venue-compare-nyc.html">Compare venue options</a></li>
+          <li><a href="/tonight/">Check tonight live feed</a></li>
+        </ul>
+      `;
+      resultEl.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    function resetAll(){
+      renderPeople();
+      resultEl.hidden=true;
+      resultEl.innerHTML='';
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    document.getElementById('calcBtn').addEventListener('click',decide);
+    document.getElementById('resetBtn').addEventListener('click',resetAll);
+    renderPeople();
+  </script>
 </body>
 </html>

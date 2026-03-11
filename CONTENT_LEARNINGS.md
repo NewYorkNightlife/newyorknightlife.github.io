@@ -48,6 +48,31 @@ Purpose: Persistent guidance from live content work so quality improves every ba
 4. Commit, push, and verify live endpoints
 5. Report links clearly to Father Dan
 
+## Locked Build Rules (effective now)
+
+These are mandatory defaults unless Father Dan overrides them explicitly.
+
+1. **Existing pages only unless asked**
+   - Do not create new pages during placeholder-replacement sprints.
+
+2. **Games must be real interactives**
+   - Game pages must include working UI + scoring/decision logic.
+   - Descriptive-only game pages are not acceptable.
+
+3. **One game at a time**
+   - Build, test, ship, and confirm one game before starting the next.
+
+4. **Triple-check before publish**
+   - Verify no scaffold text remains.
+   - Verify JS logic is present in deployed HTML.
+   - Verify core user flow works: answer/select -> result -> reset.
+
+5. **Live validation required**
+   - After push, confirm on production URL with cache-busting query (`?v=` timestamp).
+
+6. **Quality threshold**
+   - Keep pages useful even before advanced polish: clear objective, strong output, and next-step actions.
+
 ## Future upgrades to apply
 
 - Add structured data where appropriate (Article/FAQ for deep guides, ItemList for rankings)
