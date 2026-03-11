@@ -53,15 +53,15 @@
       position:absolute;top:50%;left:50%;width:38px;height:38px;border-radius:50%;
       background:#121420;border:1px solid #545a78;display:grid;place-items:center;
       font-size:18px;box-shadow:0 0 12px rgba(255,230,163,.18);
-      transform: translate(-50%, -50%) rotate(var(--a)) translateY(-104px) rotate(calc(-1 * var(--a)));
+      transform: translate(-50%, -50%) rotate(var(--a)) translateY(-102px) rotate(calc(-1 * var(--a)));
     }
-    /* place each icon at the center of its 60° slice */
-    .i1{--a:-60deg}
-    .i2{--a:0deg}
-    .i3{--a:60deg}
-    .i4{--a:120deg}
-    .i5{--a:180deg}
-    .i6{--a:240deg}
+    /* exact centers of each 60° slice (30°, 90°, 150°, 210°, 270°, 330°) */
+    .i1{--a:-30deg}
+    .i2{--a:30deg}
+    .i3{--a:90deg}
+    .i4{--a:150deg}
+    .i5{--a:210deg}
+    .i6{--a:270deg}
     @keyframes pulse{0%,100%{opacity:.6}50%{opacity:.95}}
     .legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem;margin-top:.9rem;width:100%}
     .tag{border:1px solid #4a4d66;border-radius:999px;padding:.3rem .6rem;font-size:.83rem;text-align:center;background:#121320}
