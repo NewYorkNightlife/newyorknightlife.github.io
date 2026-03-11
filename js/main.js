@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setupAffiliateModule();
   setupConversionCTABlock();
   setupMoneyPagesModule();
+  setupPhase5LinkTracking();
 });
 
 // Set active nav link
@@ -363,7 +364,9 @@ function setupInternalLinkBlock() {
     a.addEventListener('click', () => {
       trackEvent('internal_link_recommendation_click', {
         from: pathname,
-        to: a.getAttribute('href') || ''
+        to: a.getAttribute('href') || '',
+        position: getLinkPosition(a),
+        module: 'internal_recommendation'
       });
     });
   });
@@ -455,7 +458,9 @@ function setupAffiliateModule() {
       trackEvent('affiliate_link_click', {
         from: pathname,
         to: a.getAttribute('href') || '',
-        label: (a.textContent || '').trim()
+        label: (a.textContent || '').trim(),
+        position: getLinkPosition(a),
+        module: 'affiliate_module'
       });
     });
   });
@@ -528,7 +533,9 @@ function setupConversionCTABlock() {
       trackEvent('conversion_cta_click', {
         from: pathname,
         to: a.getAttribute('href') || '',
-        cta: a.getAttribute('data-conv-cta') || ''
+        cta: a.getAttribute('data-conv-cta') || '',
+        position: getLinkPosition(a),
+        module: 'conversion_cta'
       });
     });
   });
@@ -590,10 +597,75 @@ function setupMoneyPagesModule() {
     a.addEventListener('click', () => {
       trackEvent('money_page_click', {
         from: pathname,
-        to: a.getAttribute('href') || ''
+        to: a.getAttribute('href') || '',
+        position: getLinkPosition(a),
+        module: 'priority_pages'
       });
     });
   });
+}
+
+
+
+function getLinkPosition(anchor) {
+  if (!anchor || !anchor.parentElement) return 0;
+  const links = Array.from(anchor.parentElement.querySelectorAll('a'));
+  return Math.max(0, links.indexOf(anchor)) + 1;
+}
+
+function setupPhase5LinkTracking() {
+  tuneHubMoneyLinkOrder();
+  const pathname = window.location.pathname;
+
+  document.querySelectorAll('.money-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      trackEvent('money_page_click', {
+        from: pathname,
+        to: a.getAttribute('href') || '',
+        anchor: (a.textContent || '').trim(),
+        position: getLinkPosition(a),
+        module: 'hub_money_links'
+      });
+    });
+  });
+}
+
+function tuneHubMoneyLinkOrder() {
+  const section = document.querySelector('.money-links');
+  if (!section) return;
+
+  const pathname = window.location.pathname;
+  const sectionKey = pathname === '/' ? 'home' : pathname.split('/').filter(Boolean)[0] || 'home';
+
+  const priority = {
+    home: ['/tools/nyc-night-planner.html','/weekend/nyc-nightlife-this-weekend.html','/rankings/best-clubs-in-nyc.html'],
+    guides: ['/guides/best-nightlife-experiences.html','/guides/vip-club-access-nyc.html','/guides/stay-near-nightlife.html'],
+    rankings: ['/rankings/best-clubs-in-nyc.html','/rankings/best-bars-in-nyc.html','/rankings/best-vip-experiences-nyc.html'],
+    tonight: ['/weekend/nyc-nightlife-this-weekend.html','/tools/nyc-night-planner.html','/rankings/best-clubs-in-nyc.html'],
+    weekend: ['/weekend/nyc-nightlife-this-weekend.html','/tools/nyc-night-planner.html','/visit/where-to-stay-for-nightlife-nyc.html'],
+    visit: ['/visit/where-to-stay-for-nightlife-nyc.html','/visit/first-time-nyc-nightlife-guide.html','/guides/stay-near-nightlife.html'],
+    'things-to-do': ['/things-to-do/nyc-night-cruises-and-ferry-experiences.html','/tools/venue-compare-nyc.html','/tools/nyc-night-planner.html'],
+    tools: ['/tools/nyc-night-planner.html','/tools/venue-compare-nyc.html','/weekend/nyc-nightlife-this-weekend.html'],
+    categories: ['/rankings/best-bars-in-nyc.html','/rankings/best-clubs-in-nyc.html','/tools/venue-compare-nyc.html'],
+    boroughs: ['/visit/where-to-stay-for-nightlife-nyc.html','/rankings/best-nightlife-by-borough.html','/tools/venue-compare-nyc.html'],
+    neighborhoods: ['/visit/first-time-nyc-nightlife-guide.html','/tools/venue-compare-nyc.html','/tools/nyc-night-planner.html']
+  };
+
+  const pref = priority[sectionKey] || priority.home;
+  const ul = section.querySelector('ul');
+  if (!ul) return;
+
+  const lis = Array.from(ul.querySelectorAll('li'));
+  lis.sort((a,b) => {
+    const ah = a.querySelector('a')?.getAttribute('href') || '';
+    const bh = b.querySelector('a')?.getAttribute('href') || '';
+    const ai = pref.indexOf(ah);
+    const bi = pref.indexOf(bh);
+    const av = ai === -1 ? 999 : ai;
+    const bv = bi === -1 ? 999 : bi;
+    return av - bv;
+  });
+  lis.forEach(li => ul.appendChild(li));
 }
 
 function setupOutboundLinkTracking() {

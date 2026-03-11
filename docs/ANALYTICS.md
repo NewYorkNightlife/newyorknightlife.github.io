@@ -20,6 +20,11 @@ Tracked events currently include:
 - `conversion_cta_click`
 - `money_page_click`
 
+Phase 5 instrumentation adds standardized click context fields on conversion-oriented links:
+- `position` (1-based link order in module)
+- `module` (e.g. `conversion_cta`, `priority_pages`, `hub_money_links`, `affiliate_module`)
+- `anchor` (link text, where relevant)
+
 ## Recommended GA4 custom dimensions
 
 In GA4 Admin → Custom definitions, add event-scoped dimensions for:
@@ -27,6 +32,9 @@ In GA4 Admin → Custom definitions, add event-scoped dimensions for:
 - `from`
 - `to`
 - `label`
+- `position`
+- `module`
+- `anchor`
 - `budget`
 - `vibe`
 - `recommendation`
