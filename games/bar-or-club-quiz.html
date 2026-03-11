@@ -3,48 +3,292 @@
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJE6L0D7H"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ZXJE6L0D7H');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZXJE6L0D7H');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bar or Club Quiz (NYC) | Find Your Best Night Type in 60 Seconds</title>
-  <meta name="description" content="Fast NYC nightlife quiz to determine whether a bar route or club route fits your vibe, budget, and group energy." />
+  <title>Bar or Club Quiz (NYC) | Interactive Nightlife Matcher</title>
+  <meta name="description" content="Take the interactive Bar or Club Quiz to get a personalized NYC nightlife plan by vibe, budget, line tolerance, and group size." />
   <link rel="canonical" href="https://nynightlife.com/games/bar-or-club-quiz.html" />
   <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .quiz-wrap { max-width: 980px; margin: 0 auto; }
+    .quiz-card { background: #121212; border: 1px solid #2b2b2b; border-radius: 14px; padding: 1rem; margin: 1rem 0; }
+    .quiz-q { margin: 0 0 .75rem 0; font-size: 1.05rem; }
+    .quiz-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .75rem; }
+    .opt-btn {
+      border: 1px solid #3a3a3a; border-radius: 10px; padding: .75rem; background:#171717; color:#f5f5f5;
+      text-align: left; cursor: pointer; transition: .2s ease;
+    }
+    .opt-btn:hover { border-color: #8d6a2f; transform: translateY(-1px); }
+    .opt-btn.active { border-color: #d2a54a; background: #201a10; }
+    .quiz-actions { display:flex; gap:.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .btn { border: 0; border-radius: 10px; padding: .7rem 1rem; cursor:pointer; font-weight:600; }
+    .btn-primary { background:#d2a54a; color:#111; }
+    .btn-secondary { background:#2a2a2a; color:#eee; }
+    .result { border-left: 4px solid #d2a54a; }
+    .result h2 { margin-top: 0; }
+    .result-badge { display:inline-block; padding:.35rem .6rem; border-radius:999px; font-size:.85rem; margin-bottom:.6rem; }
+    .lane-bar { background:#222; border-radius:8px; overflow:hidden; height:10px; margin:.5rem 0 1rem; }
+    .lane-fill { height:10px; }
+    .fill-bar { background:#4ea3ff; }
+    .fill-hybrid { background:#c49a3f; }
+    .fill-club { background:#d86dff; }
+    .muted { color:#b7b3ab; }
+    @media (max-width: 760px){ .quiz-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
   <header class="site-header site-header--premium">
-  <div class="header-container">
-    <a class="brand" href="/" aria-label="NYNightlife home"><span class="brand-icon" aria-hidden="true">🗽</span><span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span><span class="brand-tagline">NYC Nightlife</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
-    <nav class="nav-desktop" aria-label="Primary"><a href="/tonight/">Tonight</a><div class="nav-item has-dropdown"><button class="dropdown-toggle" aria-expanded="false" aria-controls="guides-menu" type="button">Guides</button><div id="guides-menu" class="dropdown-menu"><a href="/boroughs/manhattan-nightlife.html">Manhattan</a><a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a><a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a><a href="/guides/vip-club-access-nyc.html">VIP Club Access</a><a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a></div></div><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a></nav>
-  </div>
-  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile Primary" hidden><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a><a href="/tonight/">Tonight</a><button class="mobile-accordion-toggle" aria-expanded="false" aria-controls="mobile-guides" type="button">Guides</button><div id="mobile-guides" class="mobile-accordion" hidden><a href="/boroughs/manhattan-nightlife.html">Manhattan</a><a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a><a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a><a href="/guides/vip-club-access-nyc.html">VIP Club Access</a><a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a></div><a href="/blog/">Blog</a><a href="/about.html">About</a></nav>
-</header>
-  <main class="container" style="padding:2rem 1rem; max-width:1040px;">
+    <div class="header-container">
+      <a class="brand" href="/" aria-label="NYNightlife home">
+        <span class="brand-icon" aria-hidden="true">🗽</span>
+        <span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span>
+        <span class="brand-tagline">NYC Nightlife</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="/tonight/">Tonight</a>
+        <div class="nav-item has-dropdown">
+          <button class="dropdown-toggle" aria-expanded="false" aria-controls="guides-menu" type="button">Guides</button>
+          <div id="guides-menu" class="dropdown-menu">
+            <a href="/boroughs/manhattan-nightlife.html">Manhattan</a>
+            <a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a>
+            <a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a>
+            <a href="/guides/vip-club-access-nyc.html">VIP Club Access</a>
+            <a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/about.html">About</a>
+        <a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container quiz-wrap" style="padding:2rem 1rem;">
     <p class="eyebrow">Nightlife Games</p>
     <h1>Bar or Club Quiz: Which NYC Night Wins for You?</h1>
-    <p>Use this interactive to make faster, better nightlife decisions without overthinking. It’s built for NYC conditions, real constraints, and real outcomes.</p>
-    <h2>How scoring works</h2><p>Rate your group size, budget tolerance, noise preference, and patience for lines. The quiz maps you to Bar Lane, Club Lane, or Hybrid Lane.</p>
-    
-<h2>Why this game matters</h2>
-<p>Games are not filler—they increase return visits and help readers make better real-world nightlife decisions.</p>
-<h2>How to use results</h2>
-<ul>
-  <li>Use game output to pick your route objective</li>
-  <li>Set a realistic spend lane before committing</li>
-  <li>Choose one anchor + one backup neighborhood</li>
-</ul>
-<h2>Turn this into a real plan</h2>
-<ul>
-  <li><a href="/tools/nyc-night-planner.html">NYC Night Planner</a></li>
-  <li><a href="/tools/venue-compare-nyc.html">Venue Compare</a></li>
-  <li><a href="/tonight/">Tonight Live Feed</a></li>
-</ul>
+    <p class="muted">Answer 7 quick questions. We’ll score your best lane: <strong>Bar Route</strong>, <strong>Hybrid Route</strong>, or <strong>Club Route</strong>.</p>
 
-    <h2>Bottom line</h2>
-    <p>This game should help readers move from indecision to a confident plan in under five minutes.</p>
-    <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
+    <div id="quiz"></div>
+
+    <div class="quiz-actions">
+      <button id="calcBtn" class="btn btn-primary">Get My Result</button>
+      <button id="resetBtn" class="btn btn-secondary">Reset Quiz</button>
+    </div>
+
+    <section id="result" class="quiz-card result" hidden aria-live="polite"></section>
   </main>
+
   <script src="../js/main.js"></script>
+  <script>
+    const questions = [
+      {
+        id: 'energy',
+        text: '1) What energy do you want tonight?',
+        options: [
+          {label:'Chill + conversation', score:{bar:3,hybrid:1,club:0}},
+          {label:'Social but controlled', score:{bar:1,hybrid:3,club:1}},
+          {label:'High-energy + dance-focused', score:{bar:0,hybrid:1,club:3}},
+        ]
+      },
+      {
+        id: 'budget',
+        text: '2) Your per-person budget lane?',
+        options: [
+          {label:'Lean ($60–$120)', score:{bar:3,hybrid:1,club:0}},
+          {label:'Balanced ($140–$280)', score:{bar:1,hybrid:3,club:2}},
+          {label:'Premium ($350+)', score:{bar:0,hybrid:1,club:3}},
+        ]
+      },
+      {
+        id: 'lineTolerance',
+        text: '3) How much line/door friction can your group handle?',
+        options: [
+          {label:'Low tolerance (keep it moving)', score:{bar:3,hybrid:2,club:0}},
+          {label:'Some tolerance', score:{bar:1,hybrid:3,club:2}},
+          {label:'High tolerance for big payoff', score:{bar:0,hybrid:1,club:3}},
+        ]
+      },
+      {
+        id: 'groupSize',
+        text: '4) Group size tonight?',
+        options: [
+          {label:'2–3 people', score:{bar:2,hybrid:2,club:1}},
+          {label:'4–6 people', score:{bar:1,hybrid:3,club:2}},
+          {label:'7+ people', score:{bar:2,hybrid:2,club:0}},
+        ]
+      },
+      {
+        id: 'music',
+        text: '5) Music priority?',
+        options: [
+          {label:'Background vibe only', score:{bar:3,hybrid:1,club:0}},
+          {label:'Good music, not the full mission', score:{bar:1,hybrid:3,club:1}},
+          {label:'Music is the mission', score:{bar:0,hybrid:1,club:3}},
+        ]
+      },
+      {
+        id: 'movement',
+        text: '6) Route style?',
+        options: [
+          {label:'Walkable + simple pivots', score:{bar:3,hybrid:2,club:0}},
+          {label:'One planned anchor + backup', score:{bar:1,hybrid:3,club:2}},
+          {label:'Anchor venue above all', score:{bar:0,hybrid:1,club:3}},
+        ]
+      },
+      {
+        id: 'closeTime',
+        text: '7) Desired close-out time?',
+        options: [
+          {label:'Done by 1:00 AM', score:{bar:3,hybrid:1,club:0}},
+          {label:'1:00–2:30 AM', score:{bar:1,hybrid:3,club:2}},
+          {label:'2:30 AM+ / all-in', score:{bar:0,hybrid:1,club:3}},
+        ]
+      }
+    ];
+
+    const state = {};
+    const quizEl = document.getElementById('quiz');
+    const resultEl = document.getElementById('result');
+
+    function renderQuiz(){
+      quizEl.innerHTML = '';
+      questions.forEach((q) => {
+        const card = document.createElement('section');
+        card.className = 'quiz-card';
+        card.innerHTML = `<h2 class="quiz-q">${q.text}</h2>`;
+
+        const grid = document.createElement('div');
+        grid.className = 'quiz-grid';
+
+        q.options.forEach((opt, idx) => {
+          const btn = document.createElement('button');
+          btn.className = 'opt-btn';
+          btn.type = 'button';
+          btn.textContent = opt.label;
+          btn.setAttribute('aria-pressed', state[q.id] === idx ? 'true' : 'false');
+          if (state[q.id] === idx) btn.classList.add('active');
+          btn.addEventListener('click', () => {
+            state[q.id] = idx;
+            renderQuiz();
+          });
+          grid.appendChild(btn);
+        });
+
+        card.appendChild(grid);
+        quizEl.appendChild(card);
+      });
+    }
+
+    function calculate(){
+      for (const q of questions) {
+        if (typeof state[q.id] !== 'number') {
+          resultEl.hidden = false;
+          resultEl.innerHTML = `<h2>Finish all questions</h2><p>Please answer every question before scoring your lane.</p>`;
+          return;
+        }
+      }
+
+      const totals = {bar:0, hybrid:0, club:0};
+      questions.forEach(q => {
+        const choice = q.options[state[q.id]];
+        totals.bar += choice.score.bar;
+        totals.hybrid += choice.score.hybrid;
+        totals.club += choice.score.club;
+      });
+
+      const max = Math.max(totals.bar, totals.hybrid, totals.club);
+      let lane = 'bar';
+      if (totals.hybrid === max) lane = 'hybrid';
+      if (totals.club === max) lane = 'club';
+
+      const content = {
+        bar: {
+          title: '✅ Your Best Fit: Bar Route Lane',
+          badge: 'Low friction / high flexibility',
+          cls: 'fill-bar',
+          why: 'You optimize for momentum, easier pivots, and lower line risk.',
+          plan: [
+            'Pick one high-density neighborhood (LES, West Village, Williamsburg).',
+            'Lock 1 opener + 1 backup within 10–15 minutes.',
+            'Use a simple 3-stop structure and close near reliable transit.'
+          ],
+          links: [
+            ['/tools/nyc-night-planner.html','Build your bar route'],
+            ['/rankings/best-bars-in-nyc.html','Use the bar rankings'],
+            ['/tools/nyc-trip-cost-calculator.html','Run budget math']
+          ]
+        },
+        hybrid: {
+          title: '🔥 Your Best Fit: Hybrid Route Lane',
+          badge: 'Balanced control + upside',
+          cls: 'fill-hybrid',
+          why: 'You want one stronger anchor while keeping fallback optionality.',
+          plan: [
+            'Start with a quality opener, then hit one anchor venue.',
+            'Pre-select one fallback before peak congestion windows.',
+            'Set a hard pivot cutoff so the group doesn’t stall.'
+          ],
+          links: [
+            ['/tools/venue-compare-nyc.html','Compare anchor options'],
+            ['/tools/nyc-night-planner.html','Build a hybrid plan'],
+            ['/tonight/','Check tonight signals']
+          ]
+        },
+        club: {
+          title: '🎯 Your Best Fit: Club Route Lane',
+          badge: 'High energy / high commitment',
+          cls: 'fill-club',
+          why: 'You prioritize music/production payoff and accept higher door friction.',
+          plan: [
+            'Commit to one anchor club strategy early.',
+            'Optimize arrival timing instead of defaulting to peak-hour chaos.',
+            'Keep one nearby fallback to avoid dead-end line loss.'
+          ],
+          links: [
+            ['/rankings/best-clubs-in-nyc.html','Use club ranking framework'],
+            ['/guides/vip-club-access-nyc.html','Apply door strategy'],
+            ['/tools/cover-charge-calculator-nyc.html','Estimate total spend']
+          ]
+        }
+      };
+
+      const laneScorePct = Math.round((max / 21) * 100);
+      const pick = content[lane];
+
+      resultEl.hidden = false;
+      resultEl.innerHTML = `
+        <span class="result-badge">${pick.badge}</span>
+        <h2>${pick.title}</h2>
+        <p>${pick.why}</p>
+        <div class="lane-bar"><div class="lane-fill ${pick.cls}" style="width:${laneScorePct}%"></div></div>
+        <p class="muted">Confidence: ${laneScorePct}% alignment</p>
+        <h3>Tonight’s execution plan</h3>
+        <ul>${pick.plan.map(x=>`<li>${x}</li>`).join('')}</ul>
+        <h3>Next best actions</h3>
+        <ul>${pick.links.map(([u,t])=>`<li><a href="${u}">${t}</a></li>`).join('')}</ul>
+      `;
+      resultEl.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    function resetQuiz(){
+      Object.keys(state).forEach(k => delete state[k]);
+      resultEl.hidden = true;
+      resultEl.innerHTML = '';
+      renderQuiz();
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+
+    document.getElementById('calcBtn').addEventListener('click', calculate);
+    document.getElementById('resetBtn').addEventListener('click', resetQuiz);
+    renderQuiz();
+  </script>
 </body>
 </html>
