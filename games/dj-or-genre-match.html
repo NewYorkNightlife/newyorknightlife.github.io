@@ -47,7 +47,7 @@
         #ff9c66 300deg 360deg
       );
     }
-    .wheel::after{content:'';position:absolute;inset:38%;border-radius:50%;background:#171827;border:2px solid #4a4e67;z-index:3}
+    .wheel::after{content:'';position:absolute;inset:38%;border-radius:50%;background:#171827;border:2px solid #4a4e67;z-index:5}
     .slice-icons{position:absolute;inset:0;z-index:4;pointer-events:none}
     .slice-icon{
       position:absolute;width:38px;height:38px;border-radius:50%;
@@ -101,14 +101,15 @@
         <div class="wheel-shell" aria-label="Genre Wheel">
           <div class="wheel-neon" aria-hidden="true"></div>
           <div class="wheel-lights" aria-hidden="true"></div>
-          <div id="wheel" class="wheel"></div>
-          <div class="slice-icons" aria-hidden="true">
-            <div class="slice-icon i1" title="House">🏠</div>
-            <div class="slice-icon i2" title="Hip-Hop">🎤</div>
-            <div class="slice-icon i3" title="Latin">💃</div>
-            <div class="slice-icon i4" title="Afrobeats">🥁</div>
-            <div class="slice-icon i5" title="Open Format">🎛️</div>
-            <div class="slice-icon i6" title="EDM">⚡</div>
+          <div id="wheel" class="wheel">
+            <div class="slice-icons" aria-hidden="true">
+              <div class="slice-icon i1" title="House">🏠</div>
+              <div class="slice-icon i2" title="Hip-Hop">🎤</div>
+              <div class="slice-icon i3" title="Latin">💃</div>
+              <div class="slice-icon i4" title="Afrobeats">🥁</div>
+              <div class="slice-icon i5" title="Open Format">🎛️</div>
+              <div class="slice-icon i6" title="EDM">⚡</div>
+            </div>
           </div>
         </div>
         <div class="legend">
