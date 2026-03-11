@@ -59,7 +59,10 @@ These are mandatory defaults unless Father Dan overrides them explicitly.
    - Game pages must include working UI + scoring/decision logic.
    - Descriptive-only game pages are not acceptable.
 
-3. **One game at a time**
+3. **One core game mechanic per page**
+   - Keep each page centered on one primary mechanic (e.g., wheel OR cards OR dice), not stacked mechanics.
+
+4. **One game at a time**
    - Build, test, ship, and confirm one game before starting the next.
 
 4. **Triple-check before publish**
