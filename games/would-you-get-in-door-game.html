@@ -3,48 +3,219 @@
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJE6L0D7H"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ZXJE6L0D7H');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZXJE6L0D7H');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Would You Get In? NYC Door Game | Entry Strategy Simulator</title>
-  <meta name="description" content="NYC door-strategy simulator game to test entry decisions and improve nightlife conversion odds." />
+  <title>Would You Get In? NYC Door Game | Interactive Entry Simulator</title>
+  <meta name="description" content="Test your NYC nightlife door strategy with an interactive simulator. Get entry probability, risk factors, and a smarter fallback plan." />
   <link rel="canonical" href="https://nynightlife.com/games/would-you-get-in-door-game.html" />
   <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .wrap{max-width:1020px;margin:0 auto}
+    .card{background:#121212;border:1px solid #2a2a2a;border-radius:14px;padding:1rem;margin:1rem 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+    label{font-size:.92rem;color:#d2cdc2;display:block;margin-bottom:.35rem}
+    select,input{width:100%;background:#1a1a1a;color:#f5f5f5;border:1px solid #3b3b3b;border-radius:8px;padding:.6rem}
+    .actions{display:flex;gap:.75rem;flex-wrap:wrap}
+    .btn{border:0;border-radius:10px;padding:.7rem 1rem;cursor:pointer;font-weight:600}
+    .btn-primary{background:#d2a54a;color:#111}
+    .btn-secondary{background:#2b2b2b;color:#eee}
+    .meter{background:#222;border-radius:8px;overflow:hidden;height:12px;margin:.6rem 0}
+    .fill{height:12px;background:linear-gradient(90deg,#d9534f,#f0ad4e,#5cb85c)}
+    .pill{display:inline-block;padding:.25rem .55rem;border-radius:999px;font-size:.85rem;border:1px solid #555;margin-right:.4rem}
+    .muted{color:#b7b3ab}
+    @media(max-width:780px){.grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
   <header class="site-header site-header--premium">
-  <div class="header-container">
-    <a class="brand" href="/" aria-label="NYNightlife home"><span class="brand-icon" aria-hidden="true">🗽</span><span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span><span class="brand-tagline">NYC Nightlife</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
-    <nav class="nav-desktop" aria-label="Primary"><a href="/tonight/">Tonight</a><div class="nav-item has-dropdown"><button class="dropdown-toggle" aria-expanded="false" aria-controls="guides-menu" type="button">Guides</button><div id="guides-menu" class="dropdown-menu"><a href="/boroughs/manhattan-nightlife.html">Manhattan</a><a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a><a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a><a href="/guides/vip-club-access-nyc.html">VIP Club Access</a><a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a></div></div><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a></nav>
-  </div>
-  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile Primary" hidden><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a><a href="/tonight/">Tonight</a><button class="mobile-accordion-toggle" aria-expanded="false" aria-controls="mobile-guides" type="button">Guides</button><div id="mobile-guides" class="mobile-accordion" hidden><a href="/boroughs/manhattan-nightlife.html">Manhattan</a><a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a><a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a><a href="/guides/vip-club-access-nyc.html">VIP Club Access</a><a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a></div><a href="/blog/">Blog</a><a href="/about.html">About</a></nav>
-</header>
-  <main class="container" style="padding:2rem 1rem; max-width:1040px;">
+    <div class="header-container">
+      <a class="brand" href="/" aria-label="NYNightlife home">
+        <span class="brand-icon" aria-hidden="true">🗽</span>
+        <span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span>
+        <span class="brand-tagline">NYC Nightlife</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="/tonight/">Tonight</a><a href="/blog/">Blog</a><a href="/about.html">About</a>
+        <a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container wrap" style="padding:2rem 1rem;">
     <p class="eyebrow">Nightlife Games</p>
     <h1>Would You Get In? NYC Door Strategy Game</h1>
-    <p>Use this interactive to make faster, better nightlife decisions without overthinking. It’s built for NYC conditions, real constraints, and real outcomes.</p>
-    <h2>Door simulation model</h2><p>Players choose arrival time, group setup, and fallback plan. Results show likely outcomes and better alternative moves.</p>
-    
-<h2>Why this game matters</h2>
-<p>Games are not filler—they increase return visits and help readers make better real-world nightlife decisions.</p>
-<h2>How to use results</h2>
-<ul>
-  <li>Use game output to pick your route objective</li>
-  <li>Set a realistic spend lane before committing</li>
-  <li>Choose one anchor + one backup neighborhood</li>
-</ul>
-<h2>Turn this into a real plan</h2>
-<ul>
-  <li><a href="/tools/nyc-night-planner.html">NYC Night Planner</a></li>
-  <li><a href="/tools/venue-compare-nyc.html">Venue Compare</a></li>
-  <li><a href="/tonight/">Tonight Live Feed</a></li>
-</ul>
+    <p class="muted">Set your scenario and we’ll simulate your door odds with tactical fixes.</p>
 
-    <h2>Bottom line</h2>
-    <p>This game should help readers move from indecision to a confident plan in under five minutes.</p>
-    <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
+    <section class="card">
+      <h2>Scenario Builder</h2>
+      <div class="grid">
+        <div>
+          <label for="arrival">Arrival Window</label>
+          <select id="arrival">
+            <option value="early">Early (10:00–11:00 PM)</option>
+            <option value="peak">Peak (11:30 PM–12:30 AM)</option>
+            <option value="late">Late (1:00 AM+)</option>
+          </select>
+        </div>
+        <div>
+          <label for="group">Group Size</label>
+          <select id="group">
+            <option value="small">2–3 people</option>
+            <option value="mid">4–6 people</option>
+            <option value="large">7+ people</option>
+          </select>
+        </div>
+        <div>
+          <label for="dress">Dress Execution</label>
+          <select id="dress">
+            <option value="strong">Strong + consistent</option>
+            <option value="mixed">Mixed / uncertain</option>
+            <option value="weak">Weak fit for venue</option>
+          </select>
+        </div>
+        <div>
+          <label for="energy">Group Composure</label>
+          <select id="energy">
+            <option value="calm">Calm + coordinated</option>
+            <option value="average">Average</option>
+            <option value="chaotic">Chaotic / loud</option>
+          </select>
+        </div>
+        <div>
+          <label for="booking">Table/Host Situation</label>
+          <select id="booking">
+            <option value="host">Host/table confirmed</option>
+            <option value="message">Promoter/message trail only</option>
+            <option value="none">No pre-commit</option>
+          </select>
+        </div>
+        <div>
+          <label for="backup">Fallback Plan</label>
+          <select id="backup">
+            <option value="strong">Backup venue selected nearby</option>
+            <option value="weak">Rough backup idea</option>
+            <option value="none">No backup</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="actions" style="margin-top:1rem;">
+        <button id="runBtn" class="btn btn-primary">Simulate Door Odds</button>
+        <button id="resetBtn" class="btn btn-secondary">Reset</button>
+      </div>
+    </section>
+
+    <section id="result" class="card" hidden aria-live="polite"></section>
   </main>
+
   <script src="../js/main.js"></script>
+  <script>
+    const scoring = {
+      arrival: {early: 20, peak: 8, late: 14},
+      group: {small: 16, mid: 10, large: 3},
+      dress: {strong: 18, mixed: 9, weak: 1},
+      energy: {calm: 16, average: 10, chaotic: 2},
+      booking: {host: 20, message: 11, none: 4},
+      backup: {strong: 10, weak: 6, none: 1}
+    };
+
+    const fixes = {
+      arrival: {
+        peak: 'Shift arrival 30–60 min earlier or later to avoid worst congestion.',
+        late: 'Use late-arrival only with strong composure and clear fallback.'
+      },
+      group: {
+        large: 'Split into staggered arrivals or reduce visible door complexity.',
+        mid: 'Designate one spokesperson and keep the group tight.'
+      },
+      dress: {
+        mixed: 'Align footwear/outerwear quality before you arrive.',
+        weak: 'Recalibrate dress fit for venue profile before attempting entry.'
+      },
+      energy: {
+        average: 'Lower visible friction: calmer check-in behavior improves outcomes.',
+        chaotic: 'Reset group composure before line approach.'
+      },
+      booking: {
+        message: 'Confirm details before arrival; screenshots help reduce ambiguity.',
+        none: 'Treat this as a probability play and pre-select fallback.'
+      },
+      backup: {
+        weak: 'Choose one exact fallback within 10–15 minutes.',
+        none: 'Always lock at least one fallback before first attempt.'
+      }
+    };
+
+    function readValues(){
+      return {
+        arrival: document.getElementById('arrival').value,
+        group: document.getElementById('group').value,
+        dress: document.getElementById('dress').value,
+        energy: document.getElementById('energy').value,
+        booking: document.getElementById('booking').value,
+        backup: document.getElementById('backup').value,
+      };
+    }
+
+    function simulate(){
+      const v = readValues();
+      let total = 0;
+      for (const k of Object.keys(v)) total += scoring[k][v[k]];
+
+      // max 100 exactly from weights; clamp anyway
+      const pct = Math.max(0, Math.min(100, total));
+
+      let verdict = 'High Risk';
+      let color = '#d9534f';
+      if (pct >= 70) { verdict = 'Strong Entry Odds'; color = '#5cb85c'; }
+      else if (pct >= 50) { verdict = 'Moderate Odds'; color = '#f0ad4e'; }
+
+      const improvement = [];
+      Object.keys(v).forEach(k=>{
+        if (fixes[k] && fixes[k][v[k]]) improvement.push(fixes[k][v[k]]);
+      });
+
+      const topFixes = improvement.slice(0,3);
+
+      const resultEl = document.getElementById('result');
+      resultEl.hidden = false;
+      resultEl.innerHTML = `
+        <h2>Door Simulation Result</h2>
+        <p><span class="pill" style="border-color:${color};color:${color}">${verdict}</span><span class="pill">Estimated Entry Probability: ${pct}%</span></p>
+        <div class="meter"><div class="fill" style="width:${pct}%"></div></div>
+        <p class="muted">This score models practical nightlife variables, not guarantees.</p>
+        <h3>Fastest improvements</h3>
+        <ul>${topFixes.length ? topFixes.map(x=>`<li>${x}</li>`).join('') : '<li>Your setup is already optimized. Keep fallback discipline.</li>'}</ul>
+        <h3>Next move</h3>
+        <ul>
+          <li><a href="/guides/vip-club-access-nyc.html">Apply VIP/door strategy guide</a></li>
+          <li><a href="/tools/venue-compare-nyc.html">Pick best fallback venue</a></li>
+          <li><a href="/tools/nyc-night-planner.html">Lock full route in Night Planner</a></li>
+        </ul>
+      `;
+      resultEl.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    function resetAll(){
+      ['arrival','group','dress','energy','booking','backup'].forEach((id)=>{
+        const el=document.getElementById(id);
+        el.selectedIndex = 0;
+      });
+      const resultEl = document.getElementById('result');
+      resultEl.hidden = true;
+      resultEl.innerHTML = '';
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    document.getElementById('runBtn').addEventListener('click', simulate);
+    document.getElementById('resetBtn').addEventListener('click', resetAll);
+  </script>
 </body>
 </html>
