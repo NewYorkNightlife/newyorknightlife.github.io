@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 54,
     "feels_like_f": 53,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 68,
+        "low_f": 59
+      },
+      {
+        "day": "Thu",
+        "summary": "Rain",
+        "high_f": 40,
+        "low_f": 40
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 39,
+        "low_f": 39
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 40,
+        "low_f": 40
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 39,
+        "low_f": 39
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Melissa Brown \"Window Shopping\" @ Derek Eller Gallery, NYC",
+      "url": "https://www.juxtapoz.com/news/painting/melissa-brown-window-shopping-derek-eller-gallery-nyc/",
+      "source": "Juxtapoz.com"
+    },
+    {
+      "title": "Mingus Reedus Domestic Assault Court Case Dismissed, Lawyer Issues Statement",
+      "url": "https://www.justjared.com/2026/03/09/mingus-reedus-domestic-assault-court-case-dismissed-lawyer-issues-statement/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "9 Biggest And Best St. Patrick’s Day Celebrations In The USA",
+      "url": "https://brobible.com/culture/article/9-biggest-and-best-st-patricks-day-celebrations-in-the-usa/",
+      "source": "BroBible"
+    },
+    {
+      "title": "Keanu Reeves and Dogstar announce tour, NYC show. Get tickets",
+      "url": "https://nypost.com/2026/03/09/ticket-sales/keanu-reeves-dogstar-tour-2026-where-to-buy-tickets-schedule/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Horny hockey drama ‘Heated Rivalry’ parody musical coming to NYC",
+      "url": "https://gothamist.com/arts-entertainment/horny-hockey-drama-heated-rivalry-parody-musical-coming-to-nyc",
+      "source": "Gothamist"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
