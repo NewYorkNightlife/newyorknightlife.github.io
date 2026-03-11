@@ -21,12 +21,23 @@
     .hero p{color:#c8c2b7}
     .arena{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;margin-top:1rem}
     .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem}
-    .wheel-zone{display:grid;place-items:center;min-height:440px}
-    .pointer{width:0;height:0;border-left:16px solid transparent;border-right:16px solid transparent;border-top:26px solid #f3e1af;margin-bottom:10px;filter:drop-shadow(0 0 6px rgba(243,225,175,.35))}
+    .wheel-zone{display:grid;place-items:center;min-height:470px}
+    .pointer{width:0;height:0;border-left:16px solid transparent;border-right:16px solid transparent;border-top:26px solid #f3e1af;margin-bottom:10px;filter:drop-shadow(0 0 10px rgba(243,225,175,.65))}
+    .wheel-shell{position:relative;display:grid;place-items:center}
+    .wheel-neon{
+      position:absolute;inset:-18px;border-radius:50%;
+      background:conic-gradient(#ff4ecb,#ffe066,#64d4ff,#7dffb5,#ff8a5b,#c18bff,#ff4ecb);
+      filter:blur(6px) saturate(1.2);opacity:.7;z-index:0;
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    .wheel-lights{position:absolute;inset:-10px;border-radius:50%;z-index:1;
+      background:repeating-conic-gradient(from 0deg,#ffe6a3 0deg 2deg,transparent 2deg 10deg);
+      opacity:.7;
+    }
     .wheel{
       width:320px;height:320px;border-radius:50%;position:relative;transition:transform 4s cubic-bezier(.16,.86,.2,1);
-      border:5px solid #2c2f45;
-      box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 0 6px rgba(0,0,0,.2);
+      border:6px solid #2f3249;z-index:2;
+      box-shadow:0 10px 30px rgba(0,0,0,.45), inset 0 0 0 6px rgba(0,0,0,.25);
       background:conic-gradient(
         #ff6da8 0 60deg,
         #67c9ff 60deg 120deg,
@@ -36,7 +47,20 @@
         #ff9c66 300deg 360deg
       );
     }
-    .wheel::after{content:'';position:absolute;inset:38%;border-radius:50%;background:#171827;border:2px solid #4a4e67}
+    .wheel::after{content:'';position:absolute;inset:38%;border-radius:50%;background:#171827;border:2px solid #4a4e67;z-index:3}
+    .slice-icons{position:absolute;inset:0;z-index:4;pointer-events:none}
+    .slice-icon{
+      position:absolute;width:38px;height:38px;border-radius:50%;
+      background:#121420;border:1px solid #545a78;display:grid;place-items:center;
+      font-size:18px;box-shadow:0 0 12px rgba(255,230,163,.18);
+    }
+    .i1{top:14%;left:50%;transform:translate(-50%,-50%)}
+    .i2{top:30%;right:14%;transform:translate(50%,-50%)}
+    .i3{bottom:30%;right:14%;transform:translate(50%,50%)}
+    .i4{bottom:14%;left:50%;transform:translate(-50%,50%)}
+    .i5{bottom:30%;left:14%;transform:translate(-50%,50%)}
+    .i6{top:30%;left:14%;transform:translate(-50%,-50%)}
+    @keyframes pulse{0%,100%{opacity:.6}50%{opacity:.95}}
     .legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem;margin-top:.9rem;width:100%}
     .tag{border:1px solid #4a4d66;border-radius:999px;padding:.3rem .6rem;font-size:.83rem;text-align:center;background:#121320}
     .controls{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
@@ -74,11 +98,23 @@
     <section class="arena">
       <div class="panel wheel-zone">
         <div class="pointer" aria-hidden="true"></div>
-        <div id="wheel" class="wheel" aria-label="Genre Wheel"></div>
+        <div class="wheel-shell" aria-label="Genre Wheel">
+          <div class="wheel-neon" aria-hidden="true"></div>
+          <div class="wheel-lights" aria-hidden="true"></div>
+          <div id="wheel" class="wheel"></div>
+          <div class="slice-icons" aria-hidden="true">
+            <div class="slice-icon i1" title="House">🏠</div>
+            <div class="slice-icon i2" title="Hip-Hop">🎤</div>
+            <div class="slice-icon i3" title="Latin">💃</div>
+            <div class="slice-icon i4" title="Afrobeats">🥁</div>
+            <div class="slice-icon i5" title="Open Format">🎛️</div>
+            <div class="slice-icon i6" title="EDM">⚡</div>
+          </div>
+        </div>
         <div class="legend">
-          <span class="tag">House</span><span class="tag">Hip-Hop</span>
-          <span class="tag">Latin</span><span class="tag">Afrobeats</span>
-          <span class="tag">Open Format</span><span class="tag">EDM</span>
+          <span class="tag">🏠 House</span><span class="tag">🎤 Hip-Hop</span>
+          <span class="tag">💃 Latin</span><span class="tag">🥁 Afrobeats</span>
+          <span class="tag">🎛️ Open Format</span><span class="tag">⚡ EDM</span>
         </div>
         <div class="controls">
           <button id="spinBtn" class="btn btn-spin">Spin the Wheel</button>
