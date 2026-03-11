@@ -1,50 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJE6L0D7H"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ZXJE6L0D7H');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZXJE6L0D7H');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guess the Neighborhood (NYC Nightlife Edition)</title>
-  <meta name="description" content="NYC nightlife neighborhood guessing game with vibe clues, route hints, and planning insights." />
+  <title>Guess the Neighborhood (NYC) | Clue Reveal Game</title>
+  <meta name="description" content="Play a clue-reveal NYC nightlife game: guess the neighborhood in as few clues as possible and get a route strategy." />
   <link rel="canonical" href="https://nynightlife.com/games/guess-the-neighborhood.html" />
   <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .wrap{max-width:1050px;margin:0 auto;padding:2rem 1rem;color:#f4f1ea}
+    .hero{background:linear-gradient(145deg,#10131d,#1b1727);border:1px solid #3f3753;border-radius:16px;padding:1rem}
+    .hero p{color:#c7c0b5}
+    .layout{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+    .panel{background:#151824;border:1px solid #3b4057;border-radius:14px;padding:1rem}
+    .clue{border:1px dashed #4a4f69;border-radius:10px;padding:.7rem;margin:.55rem 0;background:#101320}
+    .hidden{opacity:.35;filter:blur(1px)}
+    .answers{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.8rem}
+    .ans{border:1px solid #4a4f6a;background:#1b1d2b;color:#f4f1ea;border-radius:10px;padding:.65rem;cursor:pointer;text-align:left}
+    .ans:hover{border-color:#d2a54a}
+    .btn{border:0;border-radius:10px;padding:.7rem 1rem;font-weight:700;cursor:pointer}
+    .btn-primary{background:#d2a54a;color:#111}
+    .btn-ghost{background:#2a2d40;color:#eee}
+    .controls{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+    .result{margin-top:1rem;border:1px solid #4a4e67;border-radius:12px;padding:1rem;background:#111422}
+    .kpi{display:inline-block;border:1px solid #565c78;border-radius:999px;padding:.25rem .55rem;margin-right:.35rem;font-size:.84rem}
+    @media(max-width:900px){.layout,.answers{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
   <header class="site-header site-header--premium">
-  <div class="header-container">
-    <a class="brand" href="/" aria-label="NYNightlife home"><span class="brand-icon" aria-hidden="true">🗽</span><span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span><span class="brand-tagline">NYC Nightlife</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
-    <nav class="nav-desktop" aria-label="Primary"><a href="/tonight/">Tonight</a><div class="nav-item has-dropdown"><button class="dropdown-toggle" aria-expanded="false" aria-controls="guides-menu" type="button">Guides</button><div id="guides-menu" class="dropdown-menu"><a href="/boroughs/manhattan-nightlife.html">Manhattan</a><a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a><a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a><a href="/guides/vip-club-access-nyc.html">VIP Club Access</a><a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a></div></div><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a></nav>
-  </div>
-  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile Primary" hidden><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a><a href="/tonight/">Tonight</a><button class="mobile-accordion-toggle" aria-expanded="false" aria-controls="mobile-guides" type="button">Guides</button><div id="mobile-guides" class="mobile-accordion" hidden><a href="/boroughs/manhattan-nightlife.html">Manhattan</a><a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a><a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a><a href="/guides/vip-club-access-nyc.html">VIP Club Access</a><a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a></div><a href="/blog/">Blog</a><a href="/about.html">About</a></nav>
-</header>
-  <main class="container" style="padding:2rem 1rem; max-width:1040px;">
-    <p class="eyebrow">Nightlife Games</p>
-    <h1>Guess the Neighborhood: NYC Nightlife Edition</h1>
-    <p>Use this interactive to make faster, better nightlife decisions without overthinking. It’s built for NYC conditions, real constraints, and real outcomes.</p>
-    <h2>How to play</h2><p>Read the clue stack (vibe, venue density, transport profile), then guess the neighborhood and reveal planning tips.</p>
-    
-<h2>Why this game matters</h2>
-<p>Games are not filler—they increase return visits and help readers make better real-world nightlife decisions.</p>
-<h2>How to use results</h2>
-<ul>
-  <li>Use game output to pick your route objective</li>
-  <li>Set a realistic spend lane before committing</li>
-  <li>Choose one anchor + one backup neighborhood</li>
-</ul>
-<h2>Turn this into a real plan</h2>
-<ul>
-  <li><a href="/tools/nyc-night-planner.html">NYC Night Planner</a></li>
-  <li><a href="/tools/venue-compare-nyc.html">Venue Compare</a></li>
-  <li><a href="/tonight/">Tonight Live Feed</a></li>
-</ul>
+    <div class="header-container">
+      <a class="brand" href="/" aria-label="NYNightlife home"><span class="brand-icon" aria-hidden="true">🗽</span><span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span><span class="brand-tagline">NYC Nightlife</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="nav-desktop" aria-label="Primary"><a href="/tonight/">Tonight</a><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a></nav>
+    </div>
+  </header>
 
-    <h2>Bottom line</h2>
-    <p>This game should help readers move from indecision to a confident plan in under five minutes.</p>
-    <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Nightlife Games · One Core Mechanic (Clue Reveal)</p>
+      <h1>Guess the Neighborhood — NYC Nightlife Edition</h1>
+      <p>Reveal clues one by one and lock your guess. Fewer clues = higher score. Then we show the best route strategy for that area.</p>
+    </section>
+
+    <section class="layout">
+      <div class="panel">
+        <h2>Clues</h2>
+        <div id="clues"></div>
+        <div class="controls">
+          <button id="revealBtn" class="btn btn-primary">Reveal Next Clue</button>
+          <button id="newBtn" class="btn btn-ghost">New Round</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Make Your Guess</h2>
+        <div id="answers" class="answers"></div>
+        <div id="result" class="result" hidden aria-live="polite"></div>
+      </div>
+    </section>
   </main>
+
   <script src="../js/main.js"></script>
+  <script>
+    const rounds = [
+      {
+        answer:'Lower East Side',
+        options:['Lower East Side','Williamsburg','Midtown','Astoria'],
+        clues:[
+          'High-density bar options with strong walkable pivots.',
+          'Great for flexible social nights and late food options.',
+          'Often chosen for lower-friction bar-route momentum.',
+          'Manhattan zone known for compact nightlife variety.'
+        ],
+        plan:['Start with one anchor bar by 8 PM.','Keep second/third stops within 10 minutes.','Close near reliable transit after midnight.']
+      },
+      {
+        answer:'Williamsburg',
+        options:['Williamsburg','West Village','Flushing','Chelsea'],
+        clues:[
+          'Brooklyn area with polished social + cocktail energy.',
+          'Strong date-night and small-group route potential.',
+          'Works well for opener-to-anchor sequencing.',
+          'One of the highest-demand nightlife zones in Brooklyn.'
+        ],
+        plan:['Open with reservation-strength venue.','Move to one anchor stop around 10 PM.','Use nearby fallback if lines spike.']
+      },
+      {
+        answer:'Midtown',
+        options:['Midtown','Bushwick','Greenpoint','Harlem'],
+        clues:[
+          'Central Manhattan access and easier mixed-group logistics.',
+          'Frequent rooftop + hotel-social route opportunities.',
+          'Good launch point for first-time visitors.',
+          'Best known for centrality over niche scene identity.'
+        ],
+        plan:['Start rooftop/hotel-social by 7 PM.','Choose one nearby anchor by 10 PM.','Avoid unnecessary cross-town pivots late.']
+      }
+    ];
+
+    let round = null;
+    let revealed = 1;
+    let locked = false;
+
+    const cluesEl = document.getElementById('clues');
+    const answersEl = document.getElementById('answers');
+    const resultEl = document.getElementById('result');
+
+    function pickRound(){ return rounds[Math.floor(Math.random()*rounds.length)]; }
+
+    function render(){
+      cluesEl.innerHTML = round.clues.map((c,i)=>`<div class="clue ${i<revealed?'':'hidden'}">${i<revealed?c:'Hidden clue'}</div>`).join('');
+      answersEl.innerHTML = round.options.map(opt=>`<button class="ans" data-opt="${opt}">${opt}</button>`).join('');
+      answersEl.querySelectorAll('.ans').forEach(btn=>{
+        btn.onclick=()=>guess(btn.dataset.opt);
+        if(locked) btn.disabled=true;
+      });
+      document.getElementById('revealBtn').disabled = revealed >= round.clues.length || locked;
+    }
+
+    function score(){
+      if(revealed===1) return 100;
+      if(revealed===2) return 80;
+      if(revealed===3) return 60;
+      return 40;
+    }
+
+    function guess(opt){
+      if(locked) return;
+      locked = true;
+      const correct = opt === round.answer;
+      const pts = correct ? score() : 0;
+      resultEl.hidden = false;
+      resultEl.innerHTML = `
+        <h3>${correct ? '✅ Correct!' : '❌ Not quite'}</h3>
+        <p><span class="kpi">Answer: <b>${round.answer}</b></span><span class="kpi">Score: <b>${pts}</b></span><span class="kpi">Clues used: <b>${revealed}</b></span></p>
+        <h4>Neighborhood route playbook</h4>
+        <ul>${round.plan.map(x=>`<li>${x}</li>`).join('')}</ul>
+        <p><a href="/tools/nyc-night-planner.html">Build this route in Night Planner</a> · <a href="/tools/venue-compare-nyc.html">Compare venue options</a></p>
+      `;
+      render();
+    }
+
+    function reveal(){
+      if(revealed < round.clues.length && !locked){ revealed += 1; render(); }
+    }
+
+    function newRound(){
+      round = pickRound();
+      revealed = 1;
+      locked = false;
+      resultEl.hidden = true;
+      resultEl.innerHTML = '';
+      render();
+    }
+
+    document.getElementById('revealBtn').addEventListener('click', reveal);
+    document.getElementById('newBtn').addEventListener('click', newRound);
+    newRound();
+  </script>
 </body>
 </html>
