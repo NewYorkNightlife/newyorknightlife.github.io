@@ -83,6 +83,8 @@ These are mandatory defaults unless Father Dan overrides them explicitly.
 - Visual polish that matters most: animated centerpiece, immediate feedback badges, and compact KPI output.
 - Always include a **"run again"/reset** path to increase engagement loops.
 - Keep random mechanics fun but tethered to actionable nightlife outputs (lane + fallback + next actions).
+- For spin wheels: winning segment must stop directly under the pointer (never ambiguous).
+- Do not auto-scroll users away from the wheel result immediately after spin; let the winning state breathe.
 
 ## Future upgrades to apply
 
