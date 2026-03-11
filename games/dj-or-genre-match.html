@@ -54,7 +54,9 @@
       background:#121420;border:1px solid #545a78;display:grid;place-items:center;
       font-size:18px;box-shadow:0 0 12px rgba(255,230,163,.18);
       transform: translate(-50%, -50%) rotate(var(--a)) translateY(-102px) rotate(calc(-1 * var(--a)));
+      transition:.25s ease;
     }
+    .slice-icon.win{border-color:#f5d483;box-shadow:0 0 20px rgba(245,212,131,.75);animation: winnerPulse .9s ease-in-out infinite}
     /* exact centers of each 60° slice */
     .i1{--a:30deg}
     .i2{--a:90deg}
@@ -63,8 +65,10 @@
     .i5{--a:270deg}
     .i6{--a:330deg}
     @keyframes pulse{0%,100%{opacity:.6}50%{opacity:.95}}
+    @keyframes winnerPulse{0%,100%{transform: translate(-50%, -50%) rotate(var(--a)) translateY(-102px) rotate(calc(-1 * var(--a))) scale(1)}50%{transform: translate(-50%, -50%) rotate(var(--a)) translateY(-102px) rotate(calc(-1 * var(--a))) scale(1.14)}}
     .legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem;margin-top:.9rem;width:100%}
-    .tag{border:1px solid #4a4d66;border-radius:999px;padding:.3rem .6rem;font-size:.83rem;text-align:center;background:#121320}
+    .tag{border:1px solid #4a4d66;border-radius:999px;padding:.3rem .6rem;font-size:.83rem;text-align:center;background:#121320;transition:.2s ease}
+    .tag.win{border-color:#f3d37b;background:#2d2514;color:#fff;box-shadow:0 0 14px rgba(243,211,123,.45)}
     .controls{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
     .btn{border:0;border-radius:10px;padding:.72rem 1rem;font-weight:700;cursor:pointer}
     .btn-spin{background:var(--gold);color:#111}
@@ -105,19 +109,19 @@
           <div class="wheel-lights" aria-hidden="true"></div>
           <div id="wheel" class="wheel">
             <div class="slice-icons" aria-hidden="true">
-              <div class="slice-icon i1" title="House">🏠</div>
-              <div class="slice-icon i2" title="Hip-Hop">🎤</div>
-              <div class="slice-icon i3" title="Latin">💃</div>
-              <div class="slice-icon i4" title="Afrobeats">🥁</div>
-              <div class="slice-icon i5" title="Open Format">🎛️</div>
-              <div class="slice-icon i6" title="EDM">⚡</div>
+              <div class="slice-icon i1" data-genre="House" title="House">🏠</div>
+              <div class="slice-icon i2" data-genre="Hip-Hop" title="Hip-Hop">🎤</div>
+              <div class="slice-icon i3" data-genre="Latin" title="Latin">💃</div>
+              <div class="slice-icon i4" data-genre="Afrobeats" title="Afrobeats">🥁</div>
+              <div class="slice-icon i5" data-genre="Open Format" title="Open Format">🎛️</div>
+              <div class="slice-icon i6" data-genre="EDM" title="EDM">⚡</div>
             </div>
           </div>
         </div>
         <div class="legend">
-          <span class="tag">🏠 House</span><span class="tag">🎤 Hip-Hop</span>
-          <span class="tag">💃 Latin</span><span class="tag">🥁 Afrobeats</span>
-          <span class="tag">🎛️ Open Format</span><span class="tag">⚡ EDM</span>
+          <span class="tag" data-genre="House">🏠 House</span><span class="tag" data-genre="Hip-Hop">🎤 Hip-Hop</span>
+          <span class="tag" data-genre="Latin">💃 Latin</span><span class="tag" data-genre="Afrobeats">🥁 Afrobeats</span>
+          <span class="tag" data-genre="Open Format">🎛️ Open Format</span><span class="tag" data-genre="EDM">⚡ EDM</span>
         </div>
         <div class="controls">
           <button id="spinBtn" class="btn btn-spin">Spin the Wheel</button>
@@ -165,7 +169,19 @@
 
     let spinCount = 0;
 
+    function clearHighlights(){
+      document.querySelectorAll('.tag.win, .slice-icon.win').forEach(el=>el.classList.remove('win'));
+    }
+
+    function highlightGenre(genre){
+      const tag = document.querySelector(`.tag[data-genre="${genre}"]`);
+      const icon = document.querySelector(`.slice-icon[data-genre="${genre}"]`);
+      if(tag) tag.classList.add('win');
+      if(icon) icon.classList.add('win');
+    }
+
     function spinWheel(){
+      clearHighlights();
       spinCount += 1;
       const idx = Math.floor(Math.random()*genres.length);
       const slice = 60;
@@ -178,6 +194,7 @@
         const genre = genres[idx];
         const out = mapping[genre];
         genreVal.textContent = genre;
+        highlightGenre(genre);
         laneVal.textContent = out.lane;
 
         result.hidden = false;
@@ -202,6 +219,7 @@
     }
 
     function resetGame(){
+      clearHighlights();
       wheel.style.transform = 'rotate(0deg)';
       genreVal.textContent = 'Not selected';
       laneVal.textContent = 'TBD';
