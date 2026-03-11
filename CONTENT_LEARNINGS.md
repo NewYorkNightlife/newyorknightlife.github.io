@@ -73,6 +73,14 @@ These are mandatory defaults unless Father Dan overrides them explicitly.
 6. **Quality threshold**
    - Keep pages useful even before advanced polish: clear objective, strong output, and next-step actions.
 
+## New learnings from interactive game builds
+
+- Real game feel = **multi-mechanic loop** (example: spin + dice + cards), not a single quiz form.
+- A strong loop needs: clear state, visible progression, randomness with bounded logic, and replayability.
+- Visual polish that matters most: animated centerpiece, immediate feedback badges, and compact KPI output.
+- Always include a **"run again"/reset** path to increase engagement loops.
+- Keep random mechanics fun but tethered to actionable nightlife outputs (lane + fallback + next actions).
+
 ## Future upgrades to apply
 
 - Add structured data where appropriate (Article/FAQ for deep guides, ItemList for rankings)

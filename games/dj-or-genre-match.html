@@ -1,50 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJE6L0D7H"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ZXJE6L0D7H');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-ZXJE6L0D7H');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DJ or Genre Match (NYC Nightlife) | Find Your Music Lane</title>
-  <meta name="description" content="Match your nightlife profile to the right DJ/genre lane for NYC nights with better music fit and less guesswork." />
+  <title>DJ or Genre Match (NYC) | Spin + Cards Nightlife Game</title>
+  <meta name="description" content="Spin the vibe wheel, roll risk dice, and draw modifier cards to match your best NYC music lane." />
   <link rel="canonical" href="https://nynightlife.com/games/dj-or-genre-match.html" />
   <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .wrap{max-width:1080px;margin:0 auto;padding:2rem 1rem}
+    .hero{background:linear-gradient(135deg,#111,#1d1628);border:1px solid #3b2f4f;border-radius:18px;padding:1rem}
+    .sub{color:#c9c2b5}
+    .arena{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+    .panel{background:#14141d;border:1px solid #33354a;border-radius:14px;padding:1rem}
+    .wheel-wrap{display:grid;place-items:center}
+    .wheel {
+      width: 270px; height: 270px; border-radius: 50%; position: relative;
+      border:4px solid #27222f; box-shadow:0 0 0 4px #0d0d14 inset;
+      background: conic-gradient(
+        #ff6ca8 0 60deg,
+        #6cc4ff 60deg 120deg,
+        #ffd166 120deg 180deg,
+        #74e3a8 180deg 240deg,
+        #c28cff 240deg 300deg,
+        #ff9b6a 300deg 360deg
+      );
+      transition: transform 3.2s cubic-bezier(.18,.85,.2,1);
+    }
+    .wheel::after{content:'';position:absolute;inset:35%;background:#161622;border-radius:50%;border:2px solid #43435c}
+    .pointer{width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:22px solid #f4e2b1; margin:0 auto 10px}
+    .controls{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+    .btn{border:0;border-radius:10px;padding:.65rem .95rem;font-weight:700;cursor:pointer}
+    .btn-primary{background:#d2a54a;color:#111}
+    .btn-ghost{background:#2a2a35;color:#eee}
+    .dice{display:flex;gap:.6rem;margin:.8rem 0}
+    .die{width:58px;height:58px;border-radius:10px;border:1px solid #4a4c64;background:#1d2030;display:grid;place-items:center;font-size:1.35rem;font-weight:800}
+    .card-stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin-top:.8rem}
+    .card{border:1px solid #42445a;border-radius:10px;padding:.65rem;background:#1a1b28;min-height:92px}
+    .kpi{display:inline-block;border:1px solid #4a4c63;border-radius:999px;padding:.25rem .55rem;margin-right:.35rem;font-size:.85rem}
+    .result{margin-top:1rem;padding:1rem;border:1px solid #484a60;border-radius:12px;background:#11131d}
+    @media(max-width:900px){.arena{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
   <header class="site-header site-header--premium">
-  <div class="header-container">
-    <a class="brand" href="/" aria-label="NYNightlife home"><span class="brand-icon" aria-hidden="true">🗽</span><span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span><span class="brand-tagline">NYC Nightlife</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
-    <nav class="nav-desktop" aria-label="Primary"><a href="/tonight/">Tonight</a><div class="nav-item has-dropdown"><button class="dropdown-toggle" aria-expanded="false" aria-controls="guides-menu" type="button">Guides</button><div id="guides-menu" class="dropdown-menu"><a href="/boroughs/manhattan-nightlife.html">Manhattan</a><a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a><a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a><a href="/guides/vip-club-access-nyc.html">VIP Club Access</a><a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a></div></div><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a></nav>
-  </div>
-  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile Primary" hidden><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a><a href="/tonight/">Tonight</a><button class="mobile-accordion-toggle" aria-expanded="false" aria-controls="mobile-guides" type="button">Guides</button><div id="mobile-guides" class="mobile-accordion" hidden><a href="/boroughs/manhattan-nightlife.html">Manhattan</a><a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a><a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a><a href="/guides/vip-club-access-nyc.html">VIP Club Access</a><a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a></div><a href="/blog/">Blog</a><a href="/about.html">About</a></nav>
-</header>
-  <main class="container" style="padding:2rem 1rem; max-width:1040px;">
-    <p class="eyebrow">Nightlife Games</p>
-    <h1>DJ or Genre Match: Choose Your NYC Music Lane</h1>
-    <p>Use this interactive to make faster, better nightlife decisions without overthinking. It’s built for NYC conditions, real constraints, and real outcomes.</p>
-    <h2>Music matching model</h2><p>This game filters by energy preference, tempo tolerance, and crowd style so users stop forcing bad music fits.</p>
-    
-<h2>Why this game matters</h2>
-<p>Games are not filler—they increase return visits and help readers make better real-world nightlife decisions.</p>
-<h2>How to use results</h2>
-<ul>
-  <li>Use game output to pick your route objective</li>
-  <li>Set a realistic spend lane before committing</li>
-  <li>Choose one anchor + one backup neighborhood</li>
-</ul>
-<h2>Turn this into a real plan</h2>
-<ul>
-  <li><a href="/tools/nyc-night-planner.html">NYC Night Planner</a></li>
-  <li><a href="/tools/venue-compare-nyc.html">Venue Compare</a></li>
-  <li><a href="/tonight/">Tonight Live Feed</a></li>
-</ul>
+    <div class="header-container">
+      <a class="brand" href="/" aria-label="NYNightlife home"><span class="brand-icon" aria-hidden="true">🗽</span><span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span><span class="brand-tagline">NYC Nightlife</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="nav-desktop" aria-label="Primary"><a href="/tonight/">Tonight</a><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a></nav>
+    </div>
+  </header>
 
-    <h2>Bottom line</h2>
-    <p>This game should help readers move from indecision to a confident plan in under five minutes.</p>
-    <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Nightlife Games · Spin + Dice + Cards</p>
+      <h1>DJ or Genre Match</h1>
+      <p class="sub">Spin for your core vibe, roll dice for risk tolerance, then draw 3 modifiers. We’ll output your strongest NYC music-night lane.</p>
+    </section>
+
+    <section class="arena">
+      <div class="panel wheel-wrap">
+        <div class="pointer"></div>
+        <div id="wheel" class="wheel" aria-label="Genre wheel"></div>
+        <div class="controls">
+          <button id="spinBtn" class="btn btn-primary">Spin Wheel</button>
+          <button id="diceBtn" class="btn btn-ghost">Roll Dice</button>
+          <button id="cardBtn" class="btn btn-ghost">Draw Cards</button>
+          <button id="runBtn" class="btn btn-primary">Build My Match</button>
+          <button id="resetBtn" class="btn btn-ghost">Reset</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Game State</h2>
+        <p><span class="kpi">Vibe Spin: <b id="spinVal">Not spun</b></span><span class="kpi">Risk Dice: <b id="diceVal">Not rolled</b></span></p>
+        <div class="dice">
+          <div id="die1" class="die">?</div>
+          <div id="die2" class="die">?</div>
+        </div>
+        <h3>Modifier Cards</h3>
+        <div id="cards" class="card-stack">
+          <div class="card">Draw card 1</div>
+          <div class="card">Draw card 2</div>
+          <div class="card">Draw card 3</div>
+        </div>
+        <div id="result" class="result" hidden></div>
+      </div>
+    </section>
   </main>
+
   <script src="../js/main.js"></script>
+  <script>
+    const genres = ['House', 'Hip-Hop', 'Latin', 'Afrobeats', 'Open Format', 'EDM'];
+    const cardsPool = [
+      {t:'Large Group', e:'favor hybrid', s:{hybrid:2,bar:1,club:0}},
+      {t:'Low Line Tolerance', e:'avoid peak friction', s:{bar:2,hybrid:1,club:-1}},
+      {t:'Music Purist', e:'prioritize curation', s:{club:2,hybrid:1,bar:0}},
+      {t:'Budget Guardrail', e:'protect spend', s:{bar:2,hybrid:1,club:-1}},
+      {t:'Late-Night Stamina', e:'strong after 2AM', s:{club:2,hybrid:1,bar:0}},
+      {t:'Date-Night Flow', e:'conversation + smooth pacing', s:{bar:2,hybrid:1,club:0}},
+      {t:'Backup Discipline', e:'fallback ready', s:{hybrid:2,bar:1,club:1}},
+      {t:'High Energy Crew', e:'dance-forward', s:{club:2,hybrid:1,bar:0}},
+    ];
+
+    let spinIndex = null;
+    let diceTotal = null;
+    let drawn = [];
+    let spinTurns = 0;
+
+    const wheel = document.getElementById('wheel');
+    const spinVal = document.getElementById('spinVal');
+    const diceVal = document.getElementById('diceVal');
+    const die1 = document.getElementById('die1');
+    const die2 = document.getElementById('die2');
+    const cardsEl = document.getElementById('cards');
+    const resultEl = document.getElementById('result');
+
+    function rand(n){ return Math.floor(Math.random()*n); }
+
+    function spinWheel(){
+      spinIndex = rand(genres.length);
+      spinTurns += 1;
+      const base = 360 * (4 + spinTurns);
+      const slice = 60;
+      const stopAt = spinIndex * slice + rand(45);
+      wheel.style.transform = `rotate(${base + stopAt}deg)`;
+      setTimeout(()=>{ spinVal.textContent = genres[spinIndex]; }, 3200);
+    }
+
+    function rollDice(){
+      const a = rand(6)+1;
+      const b = rand(6)+1;
+      die1.textContent = a;
+      die2.textContent = b;
+      diceTotal = a+b;
+      diceVal.textContent = `${diceTotal} / 12`;
+    }
+
+    function drawCards(){
+      const bag=[...cardsPool];
+      drawn=[];
+      for(let i=0;i<3;i++){
+        const idx=rand(bag.length);
+        drawn.push(bag.splice(idx,1)[0]);
+      }
+      cardsEl.innerHTML = drawn.map(c=>`<div class="card"><strong>${c.t}</strong><br><small>${c.e}</small></div>`).join('');
+    }
+
+    function genreBias(g){
+      if (g==='EDM' || g==='House') return {club:3,hybrid:1,bar:0};
+      if (g==='Hip-Hop' || g==='Latin' || g==='Afrobeats') return {club:2,hybrid:2,bar:0};
+      return {club:1,hybrid:2,bar:2};
+    }
+
+    function diceBias(t){
+      if (t<=4) return {bar:3,hybrid:1,club:0};
+      if (t<=8) return {bar:1,hybrid:3,club:1};
+      return {bar:0,hybrid:1,club:3};
+    }
+
+    function buildMatch(){
+      if (spinIndex===null || diceTotal===null || drawn.length!==3){
+        alert('Run all three mechanics first: Spin, Dice, and Cards.');
+        return;
+      }
+      const score={bar:0,hybrid:0,club:0};
+      const gb=genreBias(genres[spinIndex]);
+      const db=diceBias(diceTotal);
+      ['bar','hybrid','club'].forEach(k=>{ score[k]+=gb[k]+db[k]; });
+      drawn.forEach(c=>{ ['bar','hybrid','club'].forEach(k=>{ score[k]+= (c.s[k]||0); }); });
+
+      const ranked=Object.entries(score).sort((a,b)=>b[1]-a[1]);
+      const lane=ranked[0][0], fallback=ranked[1][0];
+      const labels={bar:'Bar Music Route',hybrid:'Hybrid Music Route',club:'Club Music Route'};
+      const guidance={
+        bar:['Start in a dense bar district with live DJs.','Keep pivots walkable and low-friction.','Close near transit before energy drops.'],
+        hybrid:['Open with social drinks, then hit one anchor set.','Set one fallback before peak congestion.','Use one tactical pivot max.'],
+        club:['Commit to anchor venue timing.','Optimize entry window, not just hype.','Keep a close fallback to avoid dead-end lines.']
+      };
+
+      resultEl.hidden=false;
+      resultEl.innerHTML=`
+        <h3>Your Match Result</h3>
+        <p><span class="kpi">Primary: <b>${labels[lane]}</b></span><span class="kpi">Fallback: <b>${labels[fallback]}</b></span></p>
+        <p>Spin gave you <b>${genres[spinIndex]}</b>. Dice risk came in at <b>${diceTotal}/12</b>. Card modifiers shaped your tactical lane.</p>
+        <ul>${guidance[lane].map(x=>`<li>${x}</li>`).join('')}</ul>
+        <p><a href="/tools/nyc-night-planner.html">Build this lane in Night Planner</a> · <a href="/tools/venue-compare-nyc.html">Compare venue options</a></p>
+      `;
+      resultEl.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    function resetGame(){
+      spinIndex=null; diceTotal=null; drawn=[];
+      spinVal.textContent='Not spun'; diceVal.textContent='Not rolled';
+      die1.textContent='?'; die2.textContent='?';
+      cardsEl.innerHTML='<div class="card">Draw card 1</div><div class="card">Draw card 2</div><div class="card">Draw card 3</div>';
+      resultEl.hidden=true; resultEl.innerHTML='';
+      wheel.style.transform='rotate(0deg)';
+    }
+
+    document.getElementById('spinBtn').addEventListener('click', spinWheel);
+    document.getElementById('diceBtn').addEventListener('click', rollDice);
+    document.getElementById('cardBtn').addEventListener('click', drawCards);
+    document.getElementById('runBtn').addEventListener('click', buildMatch);
+    document.getElementById('resetBtn').addEventListener('click', resetGame);
+  </script>
 </body>
 </html>
