@@ -5,9 +5,66 @@
     "summary": "light rain",
     "temp_f": 36,
     "feels_like_f": 28,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Rain",
+        "high_f": 39,
+        "low_f": 37
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 43,
+        "low_f": 43
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 44,
+        "low_f": 44
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 45,
+        "low_f": 45
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 55,
+        "low_f": 55
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Backstage At The Paramount With Nymphia Wind & Plastique Tiara",
+      "url": "https://coveteur.com/nymphia-wind-plastique-tiara-interview",
+      "source": "Coveteur.com"
+    },
+    {
+      "title": "Film Fans in New York City Are About to Get a Massive Treat, Care of the Inaugural Art House Cinema Week",
+      "url": "https://www.indiewire.com/news/general-news/art-house-cinema-week-new-york-1235183567/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "SXSW 2026 Curtain Raiser: 21 Films To Get Excited About At This Year's Festival",
+      "url": "https://screenanarchy.com/2026/03/sxsw-2026-curtain-raiser-21-films-to-get-excited-about-at-this-years-festival-gallery.html",
+      "source": "Screenanarchy.com"
+    },
+    {
+      "title": "This Week In Rust: This Week in Rust 642",
+      "url": "https://this-week-in-rust.org/blog/2026/03/11/this-week-in-rust-642/",
+      "source": "This-week-in-rust.org"
+    },
+    {
+      "title": "Best New R&B/Hip-Hop Songs: Nia Smith, Marlon Craft, Skrilla & More",
+      "url": "http://www.billboard.com/lists/rb-hip-hop-fresh-picks-nia-smith-ama-marlon-craft-skrilla/",
+      "source": "Billboard"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
