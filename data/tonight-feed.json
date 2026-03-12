@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "This Week In Rust: This Week in Rust 642",
+      "url": "https://this-week-in-rust.org/blog/2026/03/11/this-week-in-rust-642/",
+      "source": "This-week-in-rust.org"
+    },
+    {
+      "title": "Best New R&B/Hip-Hop Songs: Nia Smith, Marlon Craft, Skrilla & More",
+      "url": "http://www.billboard.com/lists/rb-hip-hop-fresh-picks-nia-smith-ama-marlon-craft-skrilla/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Abramorama Buys A Cappella Documentary ‘Just Sing’ (EXCLUSIVE)",
+      "url": "https://variety.com/2026/film/news/abramorama-buys-a-cappella-documentary-just-sing-1236683496/",
+      "source": "Variety"
+    },
+    {
+      "title": "Melissa Brown \"Window Shopping\" @ Derek Eller Gallery, NYC",
+      "url": "https://www.juxtapoz.com/news/painting/melissa-brown-window-shopping-derek-eller-gallery-nyc/",
+      "source": "Juxtapoz.com"
+    },
+    {
+      "title": "Mingus Reedus Domestic Assault Court Case Dismissed, Lawyer Issues Statement",
+      "url": "https://www.justjared.com/2026/03/09/mingus-reedus-domestic-assault-court-case-dismissed-lawyer-issues-statement/",
+      "source": "Just Jared"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
