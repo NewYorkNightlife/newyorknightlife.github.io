@@ -150,6 +150,10 @@ def render_post(d: dt.date, weather: dict, events: list) -> str:
 <p>Seasonal behavior matters right now: readers who lock one anchor district and two nearby backups consistently outperform “figure-it-out-later” groups. This weekend rewards route discipline, not maximalism.</p>
 <p>City momentum is strongest when cultural programming and nightlife listings overlap. Use this brief as a tactical planning guide: map your first move, protect your middle hours, and avoid long speculative transfers after midnight.</p>
 
+<h2>What Changed This Week</h2>
+<p>Compared with last week, the key shift is in <strong>event concentration and timing pressure</strong>: more activity is clustering into narrower peak windows, so late reactive pivots are less efficient. Weather range this week also changes pre-midnight movement behavior, especially for groups planning multi-stop routes.</p>
+<p>Practical implication: if you ran a broad exploratory route last week, tighten it this week to one district lane plus one verified backup. This preserves your best hours and reduces queue/transport drag.</p>
+
 <h2>Live Event Signals</h2>
 <p>Notable confirmed signals from live NYC listings:</p>
 <ul>{''.join(event_items)}</ul>

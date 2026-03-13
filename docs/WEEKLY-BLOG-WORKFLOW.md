@@ -13,11 +13,15 @@ Publish one source-backed NYC Weekend Brief every Friday at **2:00 PM America/Ne
 1. Collect candidate signals from trusted event/calendar sources.
 2. Verify material claims across at least 2 independent sources when possible (3 for sensitive/commercial claims).
 3. Draft the weekly brief from verified information only.
+   - Uniqueness rule: target >=80% unique content week-over-week.
+   - At least 8 confirmed weekly-specific events with venue + borough + date-linked listing.
+   - Avoid boilerplate paragraph reuse; generic evergreen copy should be <=20% of body.
 4. Enforce template sections in this exact order:
    - Title
    - Meta Description (150–160 chars)
    - NYC Weather Snapshot (current + 7-day, numeric highs/lows in both °F and °C for each day)
    - Weekend Overview
+   - What Changed This Week (specific delta vs prior week: weather shift, event mix, neighborhood pressure, pricing/queue conditions)
    - Live Event Signals
    - Top Neighborhoods
    - Night Route Strategies

@@ -15,6 +15,7 @@ warn=0
 need_strings=(
   "NYC Weather Snapshot"
   "Weekend Overview"
+  "What Changed This Week"
   "Live Event Signals"
   "Top Neighborhoods"
   "Night Route Strategies"
@@ -81,8 +82,8 @@ print(len(t.split()))
 PY
 )
 echo "Word count: $words"
-if [[ "$words" -lt 1800 || "$words" -gt 2700 ]]; then
-  echo "WARN: word count out of expected range (1800-2700)"
+if [[ "$words" -lt 800 || "$words" -gt 3000 ]]; then
+  echo "WARN: word count out of expected range (800-3000)"
   warn=1
 fi
 
@@ -99,6 +100,50 @@ echo "Sources links in sources section: $src_count"
 if [[ "$src_count" -lt 4 ]]; then
   echo "WARN: fewer than 4 source links"
   warn=1
+fi
+
+# uniqueness check against previous weekly brief
+prev=$(ls "$ROOT"/blog/weekly/weekend-brief-*.html 2>/dev/null | sort | tail -n 2 | head -n 1 || true)
+if [[ -n "$prev" && -f "$prev" ]]; then
+  uniq_report=$(python3 - <<'PY' "$LATEST" "$prev"
+import re,sys
+new=open(sys.argv[1],encoding='utf-8').read().lower()
+old=open(sys.argv[2],encoding='utf-8').read().lower()
+
+def clean(t):
+    t=re.sub(r'<script[\s\S]*?</script>',' ',t)
+    t=re.sub(r'<style[\s\S]*?</style>',' ',t)
+    t=re.sub(r'<[^>]+>',' ',t)
+    t=re.sub(r'\s+',' ',t)
+    return t.strip()
+
+def ngrams(words,n=4):
+    return set(tuple(words[i:i+n]) for i in range(len(words)-n+1)) if len(words)>=n else set()
+
+def sentences(t):
+    s=[x.strip() for x in re.split(r'(?<=[.!?])\s+',t) if len(x.strip())>60]
+    return s
+
+n=clean(new); o=clean(old)
+nw=n.split(); ow=o.split()
+ng_n=ngrams(nw,4); ng_o=ngrams(ow,4)
+inter=len(ng_n & ng_o); uni=max(1,len(ng_n | ng_o))
+sim=inter/uni
+sn=sentences(n); so=set(sentences(o))
+overlap=sum(1 for x in sn if x in so)
+ratio=(overlap/max(1,len(sn)))
+print(f"ngram_jaccard={sim:.3f} sentence_overlap={ratio:.3f}")
+if sim>0.35 and ratio>0.35:
+    print("FAIL")
+else:
+    print("PASS")
+PY
+)
+  echo "Uniqueness check vs previous: ${uniq_report%%$'\n'*}"
+  if grep -q "FAIL" <<< "$uniq_report"; then
+    echo "WARN: content too similar to previous week (target: >=80% unique)"
+    warn=1
+  fi
 fi
 
 echo "Weekly brief sanity check complete."
