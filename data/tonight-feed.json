@@ -5,9 +5,66 @@
     "summary": "broken clouds",
     "temp_f": 40,
     "feels_like_f": 31,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 43,
+        "low_f": 40
+      },
+      {
+        "day": "Sat",
+        "summary": "Clear",
+        "high_f": 44,
+        "low_f": 44
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 44,
+        "low_f": 44
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 54,
+        "low_f": 54
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 34,
+        "low_f": 34
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "LNR Partners Sells Retail Space Leased to Le Poisson Rouge for $21.3M",
+      "url": "http://commercialobserver.com/2026/03/lnr-partners-sell-156-168-bleecker-street-21m/",
+      "source": "Commercial Observer"
+    },
+    {
+      "title": "Architectural Digest tour: inside Athena Calderone’s Art Deco inspired NYC home",
+      "url": "https://ohnotheydidnt.livejournal.com/132052365.html",
+      "source": "Livejournal.com"
+    },
+    {
+      "title": "‘Mam’ Director Nan Feix and Chef Jerald Head on the San Sebastián-Winning Film Born From Their NYC Vietnamese Restaurant, Now at SXSW, Clip Unveiled (EXCLUSIVE)",
+      "url": "https://variety.com/2026/film/news/mam-nan-feix-chef-jerald-sxsw-1236685868/",
+      "source": "Variety"
+    },
+    {
+      "title": "A 2-Day New Orleans Itinerary Inspired By 'People We Meet On Vacation'",
+      "url": "https://www.elitedaily.com/lifestyle/new-orleans-2-day-itinerary-people-we-meet-on-vacation-filming-locations",
+      "source": "Elite Daily"
+    },
+    {
+      "title": "Backstage At The Paramount With Nymphia Wind & Plastique Tiara",
+      "url": "https://coveteur.com/nymphia-wind-plastique-tiara-interview",
+      "source": "Coveteur.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
