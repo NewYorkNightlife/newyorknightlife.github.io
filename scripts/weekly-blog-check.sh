@@ -270,4 +270,7 @@ PY
 fi
 
 echo "Weekly brief sanity check complete."
+if [[ "$warn" -ne 0 ]]; then
+  exit 1
+fi
 exit 0

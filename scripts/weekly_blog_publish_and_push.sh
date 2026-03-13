@@ -14,8 +14,17 @@ LOCK_FILE="$ROOT/.weekly-blog.lock"
   flock -n 9 || { echo "Lock busy; exiting."; exit 0; }
 
   cd "$ROOT"
+
+  # hard guard: rules file must exist
+  [[ -f "$ROOT/docs/BLOG_HARD_RULES.md" ]] || { echo "ERROR: docs/BLOG_HARD_RULES.md missing"; exit 1; }
+
   python3 scripts/weekly_blog_autopublish.py
-  ./scripts/weekly-blog-check.sh . || true
+
+  # hard gate: do NOT publish if QA fails
+  if ! ./scripts/weekly-blog-check.sh .; then
+    echo "ERROR: weekly-blog-check failed; aborting publish"
+    exit 1
+  fi
 
   if ! git diff --quiet; then
     git add blog/weekly blog/archive-weekly-briefs.html blog/index.html sitemap.xml
