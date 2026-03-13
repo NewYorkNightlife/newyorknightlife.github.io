@@ -59,6 +59,9 @@ Every weekly brief must include these links naturally in the article body:
 - Tone: NYC insider + editorial analyst.
 - Avoid repetitive boilerplate and vague filler.
 - Article must explain why **this specific weekend** is different.
+- Word count hard rule: **2,500–3,000 words** (reader-visible content).
+- At least 80% of body copy must be week-specific/original narrative, not reusable generic blocks.
+- Every week must use different image assets (no identical hero image stack from prior week).
 
 ## 9) Required Footer Integrity
 - Include Methodology + Affiliate Disclosure links.

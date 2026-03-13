@@ -82,8 +82,8 @@ print(len(t.split()))
 PY
 )
 echo "Word count: $words"
-if [[ "$words" -lt 500 || "$words" -gt 3000 ]]; then
-  echo "WARN: word count out of expected range (500-3000)"
+if [[ "$words" -lt 2500 || "$words" -gt 3000 ]]; then
+  echo "WARN: word count out of required range (2500-3000)"
   warn=1
 fi
 
