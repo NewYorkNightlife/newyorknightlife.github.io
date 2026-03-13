@@ -22,7 +22,7 @@ Each post must be a **week-specific NYC nightlife intelligence brief** for the c
 9. Budget + Risk Strategy
 10. Plan Your NYC Night
 11. Execution Checklist
-12. Image Notes
+12. Embedded Images + Captions
 13. Sources
 14. Editorial Note
 15. Final Takeaway
@@ -64,11 +64,23 @@ Every weekly brief must include these links naturally in the article body:
 - Include Methodology + Affiliate Disclosure links.
 - Include an Editorial Note that event details can change.
 
-## 10) QA Gate
+## 10) Image Rule (Mandatory)
+- Each weekly blog must include at least **2 embedded images** (`<img>`), each with a clear caption (`<figcaption>`).
+- Images must be relevant to that specific week/weekend context.
+- Do not publish placeholder instructions like "Image Notes" inside the reader-facing article.
+
+## 11) Link Validation Rule (Mandatory)
+- Before publishing, validate every external link in the blog resolves successfully (HTTP 200–399 after redirects).
+- Event links must resolve to the exact event/listing referenced in the sentence.
+- If a link fails validation, replace or remove before publish.
+
+## 12) QA Gate
 Post fails QA if any of the following are missing:
 - week-specific delta section
 - numeric °F/°C weather block
 - required internal links
 - proper external link attributes
 - minimum event specificity
+- embedded images + captions
+- validated external links
 - uniqueness threshold

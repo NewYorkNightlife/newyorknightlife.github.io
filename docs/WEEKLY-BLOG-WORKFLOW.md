@@ -28,14 +28,16 @@ Publish one source-backed NYC Weekend Brief every Friday at **2:00 PM America/Ne
    - Budget + Risk Strategy
    - Plan Your NYC Night
    - Execution Checklist
-   - Image Notes
+   - Embedded Images + Captions (reader-facing, not internal notes)
    - Sources
    - Editorial Note
    - Final Takeaway
 5. Add/confirm:
    - publish timestamp (Fri 2:00 PM ET)
    - weather block includes numeric values (°F and °C) plus daily range for 7 days
+   - at least 2 embedded images with meaningful captions
    - external links use `target="_blank" rel="noopener"`
+   - all external links are validated (HTTP 200–399)
    - methodology + affiliate disclosure links
    - required NYNightlife internal links:
      - https://nynightlife.com/tonight

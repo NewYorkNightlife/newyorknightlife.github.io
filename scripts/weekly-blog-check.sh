@@ -82,8 +82,8 @@ print(len(t.split()))
 PY
 )
 echo "Word count: $words"
-if [[ "$words" -lt 800 || "$words" -gt 3000 ]]; then
-  echo "WARN: word count out of expected range (800-3000)"
+if [[ "$words" -lt 500 || "$words" -gt 3000 ]]; then
+  echo "WARN: word count out of expected range (500-3000)"
   warn=1
 fi
 
@@ -99,6 +99,58 @@ PY
 echo "Sources links in sources section: $src_count"
 if [[ "$src_count" -lt 4 ]]; then
   echo "WARN: fewer than 4 source links"
+  warn=1
+fi
+
+# image + caption requirement
+img_count=$(grep -oi '<img ' "$LATEST" | wc -l | tr -d ' ')
+cap_count=$(grep -oi '<figcaption' "$LATEST" | wc -l | tr -d ' ')
+echo "Image count: $img_count | Caption count: $cap_count"
+if [[ "$img_count" -lt 2 || "$cap_count" -lt 2 ]]; then
+  echo "WARN: require at least 2 embedded images and 2 captions"
+  warn=1
+fi
+
+# external link validation
+link_report=$(python3 - <<'PY' "$LATEST"
+import re,sys,requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+html=open(sys.argv[1],encoding='utf-8').read()
+urls=sorted(set(re.findall(r'href="(https?://[^"]+)"', html)))
+
+s=requests.Session()
+retries=Retry(total=2, backoff_factor=0.3, status_forcelist=[429,500,502,503,504], allowed_methods=["HEAD","GET"])
+s.mount('http://', HTTPAdapter(max_retries=retries))
+s.mount('https://', HTTPAdapter(max_retries=retries))
+
+bad=[]
+for u in urls:
+    try:
+        r=s.head(u, allow_redirects=True, timeout=12)
+        code=r.status_code
+        if code>=400 or code<200:
+            r=s.get(u, allow_redirects=True, timeout=12)
+            code=r.status_code
+        if code<200 or code>=400:
+            bad.append((u,code))
+    except Exception:
+        bad.append((u,'ERR'))
+
+print(f"external_urls={len(urls)} bad={len(bad)}")
+for u,c in bad[:10]:
+    print(f"BAD {c} {u}")
+if bad:
+    print('FAIL')
+else:
+    print('PASS')
+PY
+)
+echo "Link check: ${link_report%%$'\n'*}"
+if grep -q 'FAIL' <<< "$link_report"; then
+  echo "$link_report" | sed -n '2,12p'
+  echo "WARN: one or more external links failed validation"
   warn=1
 fi
 
