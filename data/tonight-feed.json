@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Architectural Digest tour: inside Athena Calderone’s Art Deco inspired NYC home",
+      "url": "https://ohnotheydidnt.livejournal.com/132052365.html",
+      "source": "Livejournal.com"
+    },
+    {
+      "title": "‘Mam’ Director Nan Feix and Chef Jerald Head on the San Sebastián-Winning Film Born From Their NYC Vietnamese Restaurant, Now at SXSW, Clip Unveiled (EXCLUSIVE)",
+      "url": "https://variety.com/2026/film/news/mam-nan-feix-chef-jerald-sxsw-1236685868/",
+      "source": "Variety"
+    },
+    {
+      "title": "A 2-Day New Orleans Itinerary Inspired By 'People We Meet On Vacation'",
+      "url": "https://www.elitedaily.com/lifestyle/new-orleans-2-day-itinerary-people-we-meet-on-vacation-filming-locations",
+      "source": "Elite Daily"
+    },
+    {
+      "title": "Backstage At The Paramount With Nymphia Wind & Plastique Tiara",
+      "url": "https://coveteur.com/nymphia-wind-plastique-tiara-interview",
+      "source": "Coveteur.com"
+    },
+    {
+      "title": "Film Fans in New York City Are About to Get a Massive Treat, Care of the Inaugural Art House Cinema Week",
+      "url": "https://www.indiewire.com/news/general-news/art-house-cinema-week-new-york-1235183567/",
+      "source": "IndieWire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
