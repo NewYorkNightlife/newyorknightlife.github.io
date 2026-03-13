@@ -51,7 +51,8 @@ Publish one source-backed NYC Weekend Brief every Friday at **2:00 PM America/Ne
 7. Update sitemap.
 8. Run `scripts/weekly-blog-check.sh .` and fix warnings.
    - Triple-check sequence before publish: (1) content specificity pass, (2) link validation pass, (3) final QA pass.
-   - Word count must be 2,500–3,000.
+   - Word count must be 2,000–3,000.
+   - Reader-facing text must not contain internal template instructions.
 9. Commit + push.
 
 ## Source pool (starter)

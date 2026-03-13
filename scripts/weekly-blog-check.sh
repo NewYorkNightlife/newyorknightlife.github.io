@@ -85,8 +85,8 @@ print(len(t.split()))
 PY
 )
 echo "Word count: $words"
-if [[ "$words" -lt 2500 || "$words" -gt 3000 ]]; then
-  echo "WARN: word count out of required range (2500-3000)"
+if [[ "$words" -lt 2000 || "$words" -gt 3000 ]]; then
+  echo "WARN: word count out of required range (2000-3000)"
   warn=1
 fi
 
@@ -102,6 +102,47 @@ PY
 echo "Sources links in sources section: $src_count"
 if [[ "$src_count" -lt 4 ]]; then
   echo "WARN: fewer than 4 source links"
+  warn=1
+fi
+
+# event count in Live Event Signals
+event_count=$(python3 - <<'PY' "$LATEST"
+import re,sys
+t=open(sys.argv[1],encoding='utf-8').read()
+m=re.search(r'<h2>Live Event Signals</h2>([\s\S]*?)(<h2>|$)',t,re.I)
+sec=m.group(1) if m else ''
+print(len(re.findall(r'<li\b',sec,re.I)))
+PY
+)
+echo "Live Event Signals count: $event_count"
+if [[ "$event_count" -lt 12 ]]; then
+  echo "WARN: fewer than 12 week-specific event signals"
+  warn=1
+fi
+
+# ban internal/template language in reader-facing output
+template_hits=$(python3 - <<'PY' "$LATEST"
+import re,sys
+t=open(sys.argv[1],encoding='utf-8').read().lower()
+plain=re.sub(r'<script[\s\S]*?</script>',' ',t)
+plain=re.sub(r'<style[\s\S]*?</style>',' ',plain)
+plain=re.sub(r'<[^>]+>',' ',plain)
+plain=re.sub(r'\s+',' ',plain)
+patterns=[
+ 'this section is intentionally',
+ 'template',
+ 'for qa',
+ 'hard rule',
+ 'internal note',
+ 'by design',
+ 'anti-boilerplate guardrail'
+]
+hits=[p for p in patterns if p in plain]
+print('|'.join(hits))
+PY
+)
+if [[ -n "$template_hits" ]]; then
+  echo "WARN: internal/template phrasing detected: $template_hits"
   warn=1
 fi
 

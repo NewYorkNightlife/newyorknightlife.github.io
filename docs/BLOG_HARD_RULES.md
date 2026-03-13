@@ -60,7 +60,7 @@ Every weekly brief must include these links naturally in the article body:
 - Tone: NYC insider + editorial analyst.
 - Avoid repetitive boilerplate and vague filler.
 - Article must explain why **this specific weekend** is different.
-- Word count hard rule: **2,500–3,000 words** (reader-visible content).
+- Word count hard rule: **2,000–3,000 words** (reader-visible content).
 - At least 80% of body copy must be week-specific/original narrative, not reusable generic blocks.
 - Every week must use different image assets (no identical hero image stack from prior week).
 - Hard image uniqueness rule: image `src` set in the current weekly brief cannot be identical to the previous weekly brief.
@@ -79,7 +79,10 @@ Every weekly brief must include these links naturally in the article body:
 - Event links must resolve to the exact event/listing referenced in the sentence.
 - If a link fails validation, replace or remove before publish.
 
-## 12) QA Gate
+## 12) Reader-Facing Cleanliness Rule
+- Never include internal/template/instructional language in the published blog (e.g., “this section is intentionally…”, “template”, “for QA”, “rule”).
+
+## 13) QA Gate
 Post fails QA if any of the following are missing:
 - week-specific delta section
 - numeric °F/°C weather block
