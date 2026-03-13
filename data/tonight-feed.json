@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A 2-Day New Orleans Itinerary Inspired By 'People We Meet On Vacation'",
+      "url": "https://www.elitedaily.com/lifestyle/new-orleans-2-day-itinerary-people-we-meet-on-vacation-filming-locations",
+      "source": "Elite Daily"
+    },
+    {
+      "title": "Backstage At The Paramount With Nymphia Wind & Plastique Tiara",
+      "url": "https://coveteur.com/nymphia-wind-plastique-tiara-interview",
+      "source": "Coveteur.com"
+    },
+    {
+      "title": "Film Fans in New York City Are About to Get a Massive Treat, Care of the Inaugural Art House Cinema Week",
+      "url": "https://www.indiewire.com/news/general-news/art-house-cinema-week-new-york-1235183567/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "SXSW 2026 Curtain Raiser: 21 Films To Get Excited About At This Year's Festival",
+      "url": "https://screenanarchy.com/2026/03/sxsw-2026-curtain-raiser-21-films-to-get-excited-about-at-this-years-festival-gallery.html",
+      "source": "Screenanarchy.com"
+    },
+    {
+      "title": "This Week In Rust: This Week in Rust 642",
+      "url": "https://this-week-in-rust.org/blog/2026/03/11/this-week-in-rust-642/",
+      "source": "This-week-in-rust.org"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
