@@ -11,6 +11,9 @@ fi
 
 echo "Latest weekly brief: $LATEST"
 
+# previous weekly brief for comparison gates
+prev=$(ls "$ROOT"/blog/weekly/weekend-brief-*.html 2>/dev/null | sort | tail -n 2 | head -n 1 || true)
+
 warn=0
 need_strings=(
   "NYC Weather Snapshot"
@@ -111,6 +114,25 @@ if [[ "$img_count" -lt 2 || "$cap_count" -lt 2 ]]; then
   warn=1
 fi
 
+# image uniqueness vs previous week
+if [[ -n "$prev" && -f "$prev" ]]; then
+  img_cmp=$(python3 - <<'PY' "$LATEST" "$prev"
+import re,sys
+n=open(sys.argv[1],encoding='utf-8').read().lower()
+p=open(sys.argv[2],encoding='utf-8').read().lower()
+get=lambda t:set(re.findall(r'<img[^>]+src="([^"]+)"',t))
+a=get(n); b=get(p)
+print(f"current_imgs={len(a)} prev_imgs={len(b)} shared={len(a & b)}")
+print('FAIL' if a and a==b else 'PASS')
+PY
+)
+  echo "Image uniqueness check: ${img_cmp%%$'\n'*}"
+  if grep -q 'FAIL' <<< "$img_cmp"; then
+    echo "WARN: image src set identical to previous weekly brief"
+    warn=1
+  fi
+fi
+
 # external link validation
 link_report=$(python3 - <<'PY' "$LATEST"
 import re,sys,requests
@@ -155,7 +177,6 @@ if grep -q 'FAIL' <<< "$link_report"; then
 fi
 
 # uniqueness check against previous weekly brief
-prev=$(ls "$ROOT"/blog/weekly/weekend-brief-*.html 2>/dev/null | sort | tail -n 2 | head -n 1 || true)
 if [[ -n "$prev" && -f "$prev" ]]; then
   uniq_report=$(python3 - <<'PY' "$LATEST" "$prev"
 import re,sys

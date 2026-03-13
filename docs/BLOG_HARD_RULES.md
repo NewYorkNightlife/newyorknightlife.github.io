@@ -62,6 +62,7 @@ Every weekly brief must include these links naturally in the article body:
 - Word count hard rule: **2,500–3,000 words** (reader-visible content).
 - At least 80% of body copy must be week-specific/original narrative, not reusable generic blocks.
 - Every week must use different image assets (no identical hero image stack from prior week).
+- Hard image uniqueness rule: image `src` set in the current weekly brief cannot be identical to the previous weekly brief.
 
 ## 9) Required Footer Integrity
 - Include Methodology + Affiliate Disclosure links.
