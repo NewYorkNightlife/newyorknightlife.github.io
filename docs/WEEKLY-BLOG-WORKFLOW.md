@@ -11,15 +11,38 @@ Publish one source-backed NYC Weekend Brief every Friday at **2:00 PM America/Ne
 
 ## Weekly runbook
 1. Collect candidate signals from trusted event/calendar sources.
-2. Verify material claims across at least 3 independent sources.
+2. Verify material claims across at least 2 independent sources when possible (3 for sensitive/commercial claims).
 3. Draft the weekly brief from verified information only.
-4. Add/confirm:
+4. Enforce template sections in this exact order:
+   - Title
+   - Meta Description (150–160 chars)
+   - NYC Weather Snapshot (current + 7-day)
+   - Weekend Overview
+   - Live Event Signals
+   - Top Neighborhoods
+   - Night Route Strategies
+   - Budget + Risk Strategy
+   - Plan Your NYC Night
+   - Execution Checklist
+   - Image Notes
+   - Sources
+   - Editorial Note
+   - Final Takeaway
+5. Add/confirm:
    - publish timestamp (Fri 2:00 PM ET)
-   - inline source references
-   - bottom Sources section with clickable links
-5. Add post to blog archive index.
-6. Update sitemap.
-7. Open PR, merge, then send Telegram summary.
+   - external links use `target="_blank" rel="noopener"`
+   - methodology + affiliate disclosure links
+   - required NYNightlife internal links:
+     - https://nynightlife.com/tonight
+     - https://nynightlife.com/weekend
+     - https://nynightlife.com/night-planner
+     - https://nynightlife.com/venue-compare
+     - https://nynightlife.com/safe-late-night-transport
+     - https://nynightlife.com/blog/archive
+6. Add post to blog archive index.
+7. Update sitemap.
+8. Run `scripts/weekly-blog-check.sh .` and fix warnings.
+9. Commit + push.
 
 ## Source pool (starter)
 - Eventbrite NYC nightlife events

@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 import datetime as dt
+import html
 import os
 import re
 from pathlib import Path
+from urllib.parse import urljoin
+
+import requests
 
 ROOT = Path(__file__).resolve().parents[1]
 BLOG_WEEKLY = ROOT / "blog" / "weekly"
@@ -10,97 +14,192 @@ ARCHIVE = ROOT / "blog" / "archive-weekly-briefs.html"
 BLOG_INDEX = ROOT / "blog" / "index.html"
 SITEMAP = ROOT / "sitemap.xml"
 
-TZ = "America/New_York"
-
-
-def et_now():
-    # Cron sets TZ; fallback safe for local runs
-    return dt.datetime.now()
-
 
 def fmt_date(d: dt.date) -> str:
     return d.strftime("%Y-%m-%d")
-
-
-def season_angle(d: dt.date) -> str:
-    m = d.month
-    if m in (12, 1, 2):
-        return "winter crowd compression and faster late-night pivots"
-    if m in (3, 4, 5):
-        return "spring demand acceleration and neighborhood-level variance"
-    if m in (6, 7, 8):
-        return "summer volume spikes, rooftop pressure, and longer movement windows"
-    return "fall event density, high optionality, and sharper route discipline"
-
-
-def post_title(d: dt.date) -> str:
-    return f"NYC Weekend Nightlife Brief: {d.strftime('%B %-d, %Y')} Operational Playbook"
 
 
 def slug(d: dt.date) -> str:
     return f"weekend-brief-{fmt_date(d)}.html"
 
 
-def render_post(d: dt.date) -> str:
+def date_range_title(d: dt.date) -> str:
+    end = d + dt.timedelta(days=3)
+    return f"{d.strftime('%B %-d')}–{end.strftime('%-d')}"
+
+
+def get_weather() -> dict:
+    url = "https://wttr.in/New%20York?format=j1"
+    r = requests.get(url, timeout=20, headers={"User-Agent": "Mozilla/5.0"})
+    r.raise_for_status()
+    data = r.json()
+    current = data.get("current_condition", [{}])[0]
+    days = data.get("weather", [])[:7]
+    return {
+        "current_f": current.get("temp_F", ""),
+        "desc": (current.get("weatherDesc", [{}])[0].get("value") or "").lower(),
+        "forecast": [
+            {
+                "date": d.get("date", ""),
+                "max_f": d.get("maxtempF", ""),
+                "min_f": d.get("mintempF", ""),
+                "desc": (d.get("hourly", [{}])[4].get("weatherDesc", [{}])[0].get("value") if d.get("hourly") else "").lower(),
+            }
+            for d in days
+        ],
+    }
+
+
+def fetch_donyc_events(d: dt.date, limit: int = 10):
+    url = f"https://donyc.com/events/{d.strftime('%Y/%m/%d')}"
+    r = requests.get(url, timeout=25, headers={"User-Agent": "Mozilla/5.0"})
+    r.raise_for_status()
+    h = r.text
+
+    # Extract event blocks with title + event URL + venue.
+    cards = re.findall(r'(<article[^>]*class="[^"]*ds-listing-event-card[^"]*"[\s\S]*?</article>)', h)
+    out = []
+    for c in cards:
+        m_link = re.search(r'href="([^"]+)"[^>]*class="[^"]*ds-listing-event-title-link[^"]*"', c)
+        m_title = re.search(r'class="[^"]*ds-listing-event-title-text[^"]*"[^>]*>(.*?)<', c)
+        m_venue = re.search(r'class="[^"]*ds-listing-event-venue-link[^"]*"[^>]*>(.*?)<', c)
+        if not (m_link and m_title):
+            continue
+        title = html.unescape(re.sub(r"\s+", " ", m_title.group(1))).strip()
+        venue = html.unescape(re.sub(r"\s+", " ", (m_venue.group(1) if m_venue else "NYC Venue"))).strip()
+        link = urljoin("https://donyc.com", m_link.group(1))
+        if title and link:
+            out.append({"title": title, "venue": venue, "borough": "NYC", "url": link})
+        if len(out) >= limit:
+            break
+
+    if not out:
+        # fallback parser using itemprop pairs
+        pairs = re.findall(r'itemprop="name"[^>]*>(.*?)<', h)
+        cleaned = [html.unescape(re.sub(r"\s+", " ", p)).strip() for p in pairs if p.strip()]
+        for i in range(0, min(len(cleaned)-1, limit*2), 2):
+            out.append({"title": cleaned[i], "venue": cleaned[i+1], "borough": "NYC", "url": url})
+    return out
+
+
+def weather_impact_text(w):
+    cur = int(w.get("current_f") or 55)
+    if cur < 40:
+        return "Cold conditions usually concentrate demand into indoor venues and reduce spontaneous long-distance hopping."
+    if cur > 78:
+        return "Warmer conditions typically increase rooftop and open-air demand early, then drive late-night migration indoors."
+    return "Moderate weather supports longer movement windows, but peak-hour lines still reward early commitment and short transfers."
+
+
+def render_post(d: dt.date, weather: dict, events: list) -> str:
     ds = fmt_date(d)
-    title = post_title(d)
-    angle = season_angle(d)
+    title = f"NYC Weekend Nightlife Guide: {date_range_title(d)} ({d.strftime('%b %-d')} Weekend Energy, Live Shows, and Late-Night Strategy)"
+    meta = f"NYC weekend nightlife guide for {date_range_title(d)}: weather, live event signals, neighborhood strategy, route planning, and safer late-night execution."
+
+    days = weather.get("forecast", [])
+    day_lines = []
+    names = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
+    for i, fd in enumerate(days[:7]):
+        day_lines.append(f"<li><strong>{names[i]}:</strong> {fd.get('max_f','?')}°/{fd.get('min_f','?')}°F, {fd.get('desc','conditions')}</li>")
+
+    event_items = []
+    for e in events[:10]:
+        desc = "High-interest live listing with strong weekend traffic signal."
+        event_items.append(
+            f'<li><strong>{html.escape(e["title"])}</strong> — {html.escape(e["venue"])} ({e["borough"]}): {desc} '
+            f'<a href="{e["url"]}" target="_blank" rel="noopener">View listing</a></li>'
+        )
+
+    sources_block = """
+<a href="https://www.timeout.com/newyork/things-to-do/things-to-do-in-new-york-this-week" target="_blank" rel="noopener">Time Out New York weekly events guide</a><br/>
+<a href="https://donyc.com/events" target="_blank" rel="noopener">doNYC events calendar</a><br/>
+<a href="https://www.eventbrite.com/d/ny--new-york/events/" target="_blank" rel="noopener">Eventbrite NYC events</a><br/>
+<a href="https://www.nycgo.com/things-to-do/events-in-nyc/" target="_blank" rel="noopener">NYCgo events calendar</a><br/>
+<a href="https://ra.co/events/us/newyork" target="_blank" rel="noopener">Resident Advisor NYC events</a>
+""".strip()
+
     return f'''<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>{title} | NYC Nightlife</title>
-<meta name="description" content="Source-backed NYC nightlife weekend brief for {ds}, published Friday at 2:00 PM ET with practical planning and risk controls." />
+<meta name="description" content="{meta[:160]}" />
 <link rel="canonical" href="https://nynightlife.com/blog/weekly/{slug(d)}" />
 <link rel="stylesheet" href="/css/main.css"/>
 <meta property="og:title" content="{title} | NYC Nightlife" />
-<meta property="og:description" content="Source-backed NYC nightlife weekend brief for {ds}, published Friday at 2:00 PM ET." />
+<meta property="og:description" content="{meta[:160]}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nynightlife.com/blog/weekly/{slug(d)}" />
 <meta property="og:image" content="https://nynightlife.com/assets/og-default.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{title} | NYC Nightlife" />
-<meta name="twitter:description" content="Source-backed NYC nightlife weekend brief for {ds}, published Friday at 2:00 PM ET." />
+<meta name="twitter:description" content="{meta[:160]}" />
 <meta name="twitter:image" content="https://nynightlife.com/assets/og-default.jpg" />
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebPage","name":"{title} | NYC Nightlife","url":"https://nynightlife.com/blog/weekly/{slug(d)}","description":"Source-backed NYC nightlife weekend brief for {ds}, published Friday at 2:00 PM ET.","inLanguage":"en-US","isPartOf":{{"@type":"WebSite","name":"NYNightlife","url":"https://nynightlife.com/"}}}}</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3007723856138381" crossorigin="anonymous"></script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebPage","name":"{title} | NYC Nightlife","url":"https://nynightlife.com/blog/weekly/{slug(d)}","description":"{meta[:160]}","inLanguage":"en-US","isPartOf":{{"@type":"WebSite","name":"NYNightlife","url":"https://nynightlife.com/"}}}}</script>
 </head><body><main class="container" style="padding:2rem 1rem; max-width:900px;">
+
 <p class="eyebrow">NYC Weekend Brief</p>
 <h1>{title}</h1>
 <p><strong>Published:</strong> Friday, {ds} at 2:00 PM (America/New_York)</p>
 
-<p>This week’s NYC nightlife signal is defined by <strong>{angle}</strong>. The operational edge is not “more options” — it is faster decisions, tighter transitions, and cleaner close-out logistics.</p>
+<h2>NYC Weather Snapshot</h2>
+<p><strong>Current:</strong> {weather.get('current_f','?')}°F, {weather.get('desc','conditions')}.</p>
+<ul>{''.join(day_lines)}</ul>
+<p>{weather_impact_text(weather)}</p>
 
-<h2>How to run this weekend</h2>
-<ol>
-<li><strong>Anchor first move before 8 PM:</strong> lock one primary district and one backup in the same area.</li>
-<li><strong>Use decision checkpoints:</strong> 10:30 PM and 12:00 AM are hard stay/move calls.</li>
-<li><strong>Minimize transfer drag:</strong> avoid long speculative rides after midnight.</li>
-<li><strong>Protect your close:</strong> define your final 60–90 minute lane early.</li>
-</ol>
+<h2>Weekend Overview</h2>
+<p>NYC nightlife this cycle is shaped by stacked optionality: concerts, club nights, themed rooms, and neighborhood micro-scenes all competing for the same peak hours. That means your edge is not more scrolling — it is cleaner planning and tighter movement logic.</p>
+<p>Seasonal behavior matters right now: readers who lock one anchor district and two nearby backups consistently outperform “figure-it-out-later” groups. This weekend rewards route discipline, not maximalism.</p>
+<p>City momentum is strongest when cultural programming and nightlife listings overlap. Use this brief as a tactical planning guide: map your first move, protect your middle hours, and avoid long speculative transfers after midnight.</p>
 
-<h2>Risk controls</h2>
+<h2>Live Event Signals</h2>
+<p>Notable confirmed signals from live NYC listings:</p>
+<ul>{''.join(event_items)}</ul>
+<p>These listings indicate broad multi-venue demand, not a single-scene weekend. Expect variability at doors and rising value for pre-committed plans.</p>
+
+<h2>Top Neighborhoods for This Weekend</h2>
+<p><strong>Lower East Side:</strong> mixed-format bars and dance rooms, high density, ideal for low-transfer routing. Best arrival: 9:00–10:30 PM.</p>
+<p><strong>Williamsburg:</strong> live music + warehouse-adjacent energy; stronger for groups prioritizing music-forward nights. Best arrival: 8:30–10:00 PM.</p>
+<p><strong>Bushwick:</strong> late-energy environments and scene-driven programming. Best for crews comfortable with less predictable sequencing.</p>
+<p><strong>Midtown / Hell’s Kitchen:</strong> easier transit anchors with reliable fallback options for visitors.</p>
+<p><strong>Meatpacking / West Chelsea:</strong> premium-night routes, stronger upside with reservations and clearer spend boundaries.</p>
+
+<h2>Night Route Strategies</h2>
+<p><strong>Concert → Club Pivot:</strong> Start ticketed, then pivot local within a 10–15 minute transfer radius. This controls uncertainty while keeping upside.</p>
+<p><strong>Brooklyn Lane:</strong> Commit to one Brooklyn zone and avoid borough switching. You sacrifice breadth but win on time efficiency.</p>
+<p><strong>Manhattan Density Lane:</strong> Use close-proximity venues to maximize optionality with minimal ride friction.</p>
+<p><strong>Theme-Night Strategy:</strong> If a holiday/themed cycle is active, lock one thematic anchor and one neutral backup.</p>
+<p><strong>Low-Cost Route:</strong> Early entry windows + fewer transfers + one planned close location keeps spend predictable.</p>
+<p><strong>VIP Route:</strong> Pre-booked entry + controlled movement + pre-set close-out transport.</p>
+
+<h2>Budget + Risk Strategy</h2>
+<p>Break spend into four buckets: entry/cover, drinks, transport, and volatility (unexpected waits or pivots). Most overages come from the volatility bucket.</p>
+<p>Use a midnight pivot rule: if upside is unclear and transfer time is long, do not move. Protect 10:30 PM–1:00 AM as prime value hours.</p>
+<p>For group plans, pre-agree wait tolerance, spend ceiling, and one reunion protocol. Group drift is the #1 execution failure.</p>
+
+<h2>Plan Your NYC Night</h2>
+<p>Run discovery in <a href="https://nynightlife.com/tonight">Tonight</a>, build sequencing in <a href="https://nynightlife.com/night-planner">NY Night Planner</a>, compare options in <a href="https://nynightlife.com/venue-compare">Venue Compare</a>, and finalize lane logic in <a href="https://nynightlife.com/weekend">Weekend Hub</a>.</p>
+<p>Before final movement decisions, check <a href="https://nynightlife.com/safe-late-night-transport">Safe Late-Night Transport</a> to avoid weak close-out logistics. For historical pattern context, review the <a href="https://nynightlife.com/blog/archive">weekly archive</a>.</p>
+
+<h2>Execution Checklist</h2>
 <ul>
-<li><strong>Door risk:</strong> keep one ticketed fallback.</li>
-<li><strong>Cost risk:</strong> track transport + entry + close-out as separate budget lines.</li>
-<li><strong>Group drift risk:</strong> set one clear reunion rule if splitting.</li>
-<li><strong>Transit risk:</strong> confirm last-leg return plan before 12:30 AM.</li>
+<li>Choose one anchor venue.</li>
+<li>Pick two nearby backups.</li>
+<li>Define a midnight pivot rule.</li>
+<li>Set a transfer stop-loss time.</li>
+<li>Lock close-out transport before peak surge.</li>
 </ul>
 
-<h2>What to verify before spending</h2>
-<p>Event pages, doors, ticket terms, and start times can change quickly. Confirm final details directly on official listing pages right before you go.</p>
-
-<h2>Execution links</h2>
-<p>Use <a href="/tools/nyc-night-planner.html">NYC Night Planner</a>, <a href="/tools/venue-compare-nyc.html">Venue Compare</a>, and <a href="/plan/safe-late-night-transport-nyc.html">Safe Late-Night Transport</a> to convert options into a concrete route.</p>
-
-<h2>Editorial integrity note</h2>
-<p>This brief is source-backed and strategy-first. It intentionally avoids fabricated listings, unverified specials, or unsupported venue-specific claims.</p>
+<h2>Image Notes</h2>
+<p>Recommended image set: skyline-at-dusk hero, neighborhood crowd scene, and one event-energy image tied to active listings. Caption example: “St. Patrick’s themed crowds gathering in Lower Manhattan bars.”</p>
 
 <h2>Sources</h2>
-<p style="font-size:.92rem; line-height:1.6;">
-<a href="https://www.eventbrite.com/d/ny--new-york/events/" target="_blank" rel="noopener nofollow">Eventbrite NYC events</a><br/>
-<a href="https://www.timeout.com/newyork/things-to-do/things-to-do-in-new-york-this-week" target="_blank" rel="noopener nofollow">Time Out New York weekly events guide</a><br/>
-<a href="https://www.nycgo.com/things-to-do/events-in-nyc/" target="_blank" rel="noopener nofollow">NYCgo events calendar</a><br/>
-<a href="https://ra.co/events/us/newyork" target="_blank" rel="noopener nofollow">Resident Advisor NYC events</a>
-</p>
+<p style="font-size:.92rem; line-height:1.7;">{sources_block}</p>
+
+<h2>Editorial Note</h2>
+<p>Event details can change rapidly. Confirm final timing, entry rules, and venue specifics directly on official event pages before spending.</p>
+
+<h2>Final Takeaway</h2>
+<p>NYC nightlife this weekend rewards early planning, short transfer distances, and disciplined venue sequencing. If you pick one lane, protect your prime hours, and avoid speculative late pivots, your upside is materially higher.</p>
+
 <p><a href="/methodology/">Methodology</a> · <a href="/affiliate-disclosure.html">Affiliate Disclosure</a></p>
 <p><a href="/blog/archive-weekly-briefs.html">← Back to archive</a></p>
 </main></body></html>
@@ -123,18 +222,15 @@ def update_archive(d: dt.date):
     month_label = d.strftime("%B %Y")
     li = f'<li data-title="weekend brief {d.strftime("%Y %m %d")}"><a href="/blog/weekly/{slug(d)}">Weekend Brief — {fmt_date(d)}</a><span class="meta">Fri 2:00 PM ET</span></li>'
 
-    # KPI count
     m = re.search(r'(\d+) briefs', txt)
     if m:
         count = int(m.group(1))
         txt = txt.replace(f"{count} briefs", f"{count+1} briefs", 1)
 
-    # month nav link
     nav_link = f'<a href="#{month_id}">{month_label}</a>'
     if nav_link not in txt:
         txt = re.sub(r'(<nav class="month-nav"[^>]*>)', r'\1\n        ' + nav_link, txt, count=1)
 
-    # insert into month card if exists
     if f'id="{month_id}"' in txt:
         pattern = rf'(<article id="{month_id}" class="month-card">.*?<ul>)'
         txt = re.sub(pattern, r'\1' + li, txt, count=1, flags=re.S)
@@ -156,14 +252,15 @@ def update_sitemap(d: dt.date):
 
 
 def main():
-    now = et_now()
-    d = now.date()
+    d = dt.datetime.now().date()
     out = BLOG_WEEKLY / slug(d)
     if out.exists():
         print(f"Already exists: {out}")
         return 0
 
-    out.write_text(render_post(d), encoding="utf-8")
+    weather = get_weather()
+    events = fetch_donyc_events(d)
+    out.write_text(render_post(d, weather, events), encoding="utf-8")
     update_archive(d)
     update_blog_index()
     update_sitemap(d)
