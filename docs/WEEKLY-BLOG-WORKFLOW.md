@@ -16,7 +16,7 @@ Publish one source-backed NYC Weekend Brief every Friday at **2:00 PM America/Ne
 4. Enforce template sections in this exact order:
    - Title
    - Meta Description (150–160 chars)
-   - NYC Weather Snapshot (current + 7-day)
+   - NYC Weather Snapshot (current + 7-day, numeric highs/lows in both °F and °C for each day)
    - Weekend Overview
    - Live Event Signals
    - Top Neighborhoods
@@ -30,6 +30,7 @@ Publish one source-backed NYC Weekend Brief every Friday at **2:00 PM America/Ne
    - Final Takeaway
 5. Add/confirm:
    - publish timestamp (Fri 2:00 PM ET)
+   - weather block includes numeric values (°F and °C) plus daily range for 7 days
    - external links use `target="_blank" rel="noopener"`
    - methodology + affiliate disclosure links
    - required NYNightlife internal links:

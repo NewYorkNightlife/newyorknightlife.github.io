@@ -36,6 +36,15 @@ for s in "${need_strings[@]}"; do
   fi
 done
 
+# Weather numeric checks (must include both Fahrenheit and Celsius)
+f_count=$(grep -o '°F' "$LATEST" | wc -l | tr -d ' ')
+c_count=$(grep -o '°C' "$LATEST" | wc -l | tr -d ' ')
+echo "Weather unit markers: °F=$f_count °C=$c_count"
+if [[ "$f_count" -lt 8 || "$c_count" -lt 8 ]]; then
+  echo "WARN: weather block must include numeric °F and °C values (current + 7-day range)"
+  warn=1
+fi
+
 # Required internal links
 for u in \
   "https://nynightlife.com/tonight" \
