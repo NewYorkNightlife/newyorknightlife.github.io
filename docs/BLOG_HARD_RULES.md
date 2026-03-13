@@ -77,6 +77,7 @@ Every weekly brief must include these links naturally in the article body:
 ## 11) Link Validation Rule (Mandatory)
 - Before publishing, validate every external link in the blog resolves successfully (HTTP 200–399 after redirects).
 - Event links must resolve to the exact event/listing referenced in the sentence.
+- Search-result links are not allowed in Live Event Signals (`?q=` / search pages). Use direct event/listing URLs.
 - If a link fails validation, replace or remove before publish.
 
 ## 12) Reader-Facing Cleanliness Rule

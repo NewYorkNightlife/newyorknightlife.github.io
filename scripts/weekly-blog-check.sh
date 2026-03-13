@@ -105,18 +105,25 @@ if [[ "$src_count" -lt 4 ]]; then
   warn=1
 fi
 
-# event count in Live Event Signals
-event_count=$(python3 - <<'PY' "$LATEST"
+# event count + direct-link rule in Live Event Signals
+event_report=$(python3 - <<'PY' "$LATEST"
 import re,sys
 t=open(sys.argv[1],encoding='utf-8').read()
 m=re.search(r'<h2>Live Event Signals</h2>([\s\S]*?)(<h2>|$)',t,re.I)
 sec=m.group(1) if m else ''
-print(len(re.findall(r'<li\b',sec,re.I)))
+count=len(re.findall(r'<li\b',sec,re.I))
+urls=re.findall(r'href="(https?://[^"]+)"',sec,re.I)
+search=[u for u in urls if ('?q=' in u or '/search' in u)]
+print(f"count={count} links={len(urls)} search_links={len(search)}")
+if count<12 or search:
+    print('FAIL')
+else:
+    print('PASS')
 PY
 )
-echo "Live Event Signals count: $event_count"
-if [[ "$event_count" -lt 12 ]]; then
-  echo "WARN: fewer than 12 week-specific event signals"
+echo "Live Event Signals: ${event_report%%$'\n'*}"
+if grep -q 'FAIL' <<< "$event_report"; then
+  echo "WARN: Live Event Signals must have >=12 items and direct (non-search) links"
   warn=1
 fi
 
@@ -134,8 +141,10 @@ patterns=[
  'for qa',
  'hard rule',
  'internal note',
- 'by design',
- 'anti-boilerplate guardrail'
+ 'anti-boilerplate guardrail',
+ 'reader-facing text must not',
+ 'the main goal is',
+ 'this brief follows that rule'
 ]
 hits=[p for p in patterns if p in plain]
 print('|'.join(hits))

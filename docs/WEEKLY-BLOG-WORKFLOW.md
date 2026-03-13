@@ -39,6 +39,7 @@ Publish one source-backed NYC Weekend Brief every Friday at **2:00 PM America/Ne
    - at least 2 embedded images with meaningful captions
    - external links use `target="_blank" rel="noopener"`
    - all external links are validated (HTTP 200–399)
+   - no search-result links in Live Event Signals; use direct event/listing URLs only
    - methodology + affiliate disclosure links
    - required NYNightlife internal links:
      - https://nynightlife.com/tonight
