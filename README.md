@@ -21,7 +21,7 @@ This is a **complete, autonomous revenue-generating NYC nightlife platform** bui
 ## Getting Started
 
 ### Live Site
-https://newyorknightlife.github.io/
+https://nynightlife.com/
 
 ### File Structure
 ```
@@ -183,7 +183,7 @@ See [AUTOMATION.md](docs/AUTOMATION.md) for detailed workflow.
 
 ### Local Development
 ```bash
-git clone https://github.com/NewYorkNightlife/newyorknightlife.github.io.git
+git clone https://github.com/NewYorkNightlife/nynightlife.com.git
 cd newyorknightlife-site
 
 # Open in browser

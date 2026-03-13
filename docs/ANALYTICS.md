@@ -60,7 +60,7 @@ Add this in `<head>` (replace measurement id):
 Add this in `<head>` (replace domain):
 
 ```html
-<script defer data-domain="newyorknightlife.github.io" src="https://plausible.io/js/script.js"></script>
+<script defer data-domain="nynightlife.com" src="https://plausible.io/js/script.js"></script>
 ```
 
 ## Notes

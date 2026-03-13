@@ -5,7 +5,7 @@ Use this checklist to submit applications quickly and consistently.
 ## 1) Booking.com Affiliate Partner Program
 - Apply URL: https://www.booking.com/affiliate-program/v2/index.html
 - What to prepare:
-  - Site URL: https://newyorknightlife.github.io/
+  - Site URL: https://nynightlife.com/
   - Site description: NYC nightlife planning + hotel/experience guides
   - Traffic model: SEO + social + email
 - Immediate deployment target pages after approval:

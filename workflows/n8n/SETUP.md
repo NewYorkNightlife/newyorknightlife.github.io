@@ -18,7 +18,7 @@ Configure these nodes before enabling:
 5. **GitHub publish nodes**
    - Token with `repo` scope
    - Owner: `NewYorkNightlife`
-   - Repo: `newyorknightlife.github.io`
+   - Repo: `nynightlife.com`
    - Path: `data/tonight-feed.json`
 
 ## 3) Verification policy
