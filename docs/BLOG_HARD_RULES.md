@@ -5,10 +5,11 @@ Effective immediately, every Friday brief must follow these rules.
 ## 1) Purpose
 Each post must be a **week-specific NYC nightlife intelligence brief** for the coming weekend.
 
-## 2) Uniqueness Standard
-- Target: **>=80% unique week-over-week narrative content**.
-- Generic evergreen copy must be <=20% of article body.
+## 2) Core Content Standard (Event-First)
+- At least **80% of article body** must be week-specific NYC facts/signals (events, openings, closures, parades, festivals, show cycles, venue calendars, city operations impacts).
+- Generic nightlife strategy content is capped at **20%**.
 - Every post must include a section called **"What Changed This Week"** with concrete differences vs prior week.
+- If week-specific verified material is insufficient, publish is blocked.
 
 ## 3) Required Structure (in order)
 1. Title (SEO + date range)
@@ -33,7 +34,7 @@ Each post must be a **week-specific NYC nightlife intelligence brief** for the c
 - Include a short explanation of how weather affects nightlife behavior that week.
 
 ## 5) Event Specificity Requirements
-- Minimum **8 week-specific confirmed events**.
+- Minimum **12 week-specific confirmed NYC events/signals**.
 - For each event include:
   - event name
   - venue
@@ -70,7 +71,7 @@ Every weekly brief must include these links naturally in the article body:
 
 ## 10) Image Rule (Mandatory)
 - Each weekly blog must include at least **2 embedded images** (`<img>`), each with a clear caption (`<figcaption>`).
-- Images must be relevant to that specific week/weekend context.
+- Images must be directly grounded to topics explicitly discussed in the article (event type, neighborhood, parade/festival context, or venue cluster).
 - Do not publish placeholder instructions like "Image Notes" inside the reader-facing article.
 
 ## 11) Link Validation Rule (Mandatory)

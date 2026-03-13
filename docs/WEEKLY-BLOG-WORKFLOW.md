@@ -14,8 +14,9 @@ Publish one source-backed NYC Weekend Brief every Friday at **2:00 PM America/Ne
 2. Verify material claims across at least 2 independent sources when possible (3 for sensitive/commercial claims).
 3. Draft the weekly brief from verified information only.
    - Uniqueness rule: target >=80% unique content week-over-week.
-   - At least 8 confirmed weekly-specific events with venue + borough + date-linked listing.
-   - Avoid boilerplate paragraph reuse; generic evergreen copy should be <=20% of body.
+   - At least 12 confirmed weekly-specific NYC events/signals with venue + borough + listing/source link.
+   - Event-first rule: >=80% of body must be week-specific NYC happenings; generic planning advice <=20%.
+   - Avoid boilerplate paragraph reuse.
 4. Enforce template sections in this exact order:
    - Title
    - Meta Description (150–160 chars)
