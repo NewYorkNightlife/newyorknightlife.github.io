@@ -156,8 +156,8 @@ if [[ -n "$template_hits" ]]; then
 fi
 
 # ban robotic label patterns
-if grep -qi 'weekly event signal [0-9]' "$LATEST"; then
-  echo "WARN: robotic label pattern detected (weekly event signal N)"
+if grep -Eqi 'weekly event signal [0-9]|city context [0-9]|additional weekly city signals' "$LATEST"; then
+  echo "WARN: robotic label pattern detected (event-signal/context numbering)"
   warn=1
 fi
 

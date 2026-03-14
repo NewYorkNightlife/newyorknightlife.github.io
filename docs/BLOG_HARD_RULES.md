@@ -82,7 +82,7 @@ Every weekly brief must include these links naturally in the article body:
 
 ## 12) Reader-Facing Cleanliness Rule
 - Never include internal/template/instructional language in the published blog (e.g., “this section is intentionally…”, “template”, “for QA”, “rule”).
-- Never use robotic labels like “Weekly event signal 1/2/3…” in reader-facing copy.
+- Never use robotic labels like “Weekly event signal 1/2/3…” or “March city context 1/2/3…” in reader-facing copy.
 - Avoid repetitive boilerplate blocks that repeat the same sentence pattern across multiple paragraphs.
 - Event analysis should be grouped in human-readable format (by borough, night, or vibe), not machine-style item commentary.
 
