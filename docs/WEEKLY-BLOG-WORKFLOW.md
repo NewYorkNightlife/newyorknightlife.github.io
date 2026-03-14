@@ -18,6 +18,7 @@ Publish one source-backed NYC Weekend Brief every Friday at **2:00 PM America/Ne
    - Event-first rule: >=80% of body must be week-specific NYC happenings; generic planning advice <=20%.
    - Avoid boilerplate paragraph reuse.
 4. Enforce template sections in this exact order:
+   - All sections must read as human editorial prose (no numbered “signal” boilerplate commentary per event).
    - Title
    - Meta Description (150–160 chars)
    - NYC Weather Snapshot (current + 7-day, numeric highs/lows in both °F and °C for each day)

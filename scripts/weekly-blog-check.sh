@@ -155,6 +155,32 @@ if [[ -n "$template_hits" ]]; then
   warn=1
 fi
 
+# ban robotic label patterns
+if grep -qi 'weekly event signal [0-9]' "$LATEST"; then
+  echo "WARN: robotic label pattern detected (weekly event signal N)"
+  warn=1
+fi
+
+# repeated paragraph boilerplate check
+repeat_report=$(python3 - <<'PY' "$LATEST"
+import re,sys,collections
+h=open(sys.argv[1],encoding='utf-8').read().lower()
+paras=[re.sub(r'\s+',' ',re.sub(r'<[^>]+>',' ',p)).strip() for p in re.findall(r'<p>([\s\S]*?)</p>',h)]
+paras=[p for p in paras if len(p)>80]
+# stem by first 90 chars to catch templated repeats
+stems=[p[:90] for p in paras]
+c=collections.Counter(stems)
+max_rep=max(c.values()) if c else 0
+print(f"max_paragraph_stem_repeat={max_rep}")
+print('FAIL' if max_rep>=4 else 'PASS')
+PY
+)
+echo "Boilerplate check: ${repeat_report%%$'\n'*}"
+if grep -q 'FAIL' <<< "$repeat_report"; then
+  echo "WARN: repetitive paragraph boilerplate detected"
+  warn=1
+fi
+
 # image + caption requirement
 img_count=$(grep -oi '<img ' "$LATEST" | wc -l | tr -d ' ')
 cap_count=$(grep -oi '<figcaption' "$LATEST" | wc -l | tr -d ' ')
