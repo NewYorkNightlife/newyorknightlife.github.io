@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Good Morning, News! Moda Center Lobbyists' Money Grab, Crappy Willamette News, π Day, Iran War According to God's Plan (Horribly), and NYC Mayor Condemns Anti-Muslim Rhetoric (We Do Too)",
+      "url": "https://www.portlandmercury.com/good-morning-news/2026/03/13/48376848/good-morning-news-moda-center-lobbyists-money-grab-crappy-willamette-news-day-iran-war-going-according-to-gods-plan-horribly-and-n",
+      "source": "The Portland Mercury"
+    },
+    {
+      "title": "Jack Harlow Shares Rare Update on His Dating Life in NYC",
+      "url": "https://www.usmagazine.com/celebrity-news/news/jack-harlow-shares-rare-update-on-his-dating-life/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "Getting NYC Event Permits Is a Mess. They Want City Hall to Cut the Red Tape",
+      "url": "http://www.brownstoner.com/brooklyn-life/nyc-event-permit-process-report-design-trust-public-space/",
+      "source": "Brownstoner.com"
+    },
+    {
+      "title": "SNL: Harry Styles Catches Feels for Jane Wickline, Misses NYC & More",
+      "url": "https://bleedingcool.com/tv/snl-harry-styles-catches-feels-for-jane-wickline-misses-nyc-more/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "LNR Partners Sells Retail Space Leased to Le Poisson Rouge for $21.3M",
+      "url": "http://commercialobserver.com/2026/03/lnr-partners-sell-156-168-bleecker-street-21m/",
+      "source": "Commercial Observer"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
