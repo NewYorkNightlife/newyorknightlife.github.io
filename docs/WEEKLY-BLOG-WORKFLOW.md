@@ -1,70 +1,43 @@
-# Weekly Blog Workflow (Friday 2:00 PM ET)
+# Weekly Blog Workflow (Friday 3:00 PM ET)
 
 ## Objective
-Publish one source-backed NYC Weekend Brief every Friday at **2:00 PM America/New_York**.
-
-## Non-negotiables
-- No fabricated events, listings, specials, or discounts.
-- Time-sensitive/commercial claims require **3 independent sources**.
-- Inline citations must be clickable hyperlinks in the sentence itself (no bracket-number citation markers like [1], [2]).
-- Keep a clickable source links section at bottom for transparency.
+Publish one source-backed NYC Weekend Brief every Friday at **3:00 PM America/New_York** that is event-first, reader-friendly, and fully rule-compliant.
 
 ## Weekly runbook
-1. Collect candidate signals from trusted event/calendar sources.
-2. Verify material claims across at least 2 independent sources when possible (3 for sensitive/commercial claims).
-3. Draft the weekly brief from verified information only.
-   - Uniqueness rule: target >=80% unique content week-over-week.
-   - At least 12 confirmed weekly-specific NYC events/signals with venue + borough + listing/source link.
-   - Event-first rule: >=80% of body must be week-specific NYC happenings; generic planning advice <=20%.
-   - Avoid boilerplate paragraph reuse.
-4. Enforce template sections in this exact order:
-   - All sections must read as human editorial prose (no numbered “signal” boilerplate commentary per event).
-   - Title
-   - Meta Description (150–160 chars)
-   - NYC Weather Snapshot (current + 7-day, numeric highs/lows in both °F and °C for each day)
-   - Weekend Overview
-   - What Changed This Week (specific delta vs prior week: weather shift, event mix, neighborhood pressure, pricing/queue conditions)
-   - Live Event Signals
-   - Top Neighborhoods
-   - Night Route Strategies
-   - Budget + Risk Strategy
-   - Plan Your NYC Night
-   - Execution Checklist
-   - Embedded Images + Captions (reader-facing, not internal notes)
-   - Sources
-   - Editorial Note
-   - Final Takeaway
-5. Add/confirm:
-   - publish timestamp (Fri 2:00 PM ET)
-   - weather block includes numeric values (°F and °C) plus daily range for 7 days
-   - at least 2 embedded images with meaningful captions
-   - external links use `target="_blank" rel="noopener"`
-   - all external links are validated (HTTP 200–399)
-   - no search-result links in Live Event Signals; use direct event/listing URLs only
-   - methodology + affiliate disclosure links
-   - required NYNightlife internal links:
-     - https://nynightlife.com/tonight
-     - https://nynightlife.com/weekend
-     - https://nynightlife.com/night-planner
-     - https://nynightlife.com/venue-compare
-     - https://nynightlife.com/safe-late-night-transport
-     - https://nynightlife.com/blog/archive
-6. Add post to blog archive index.
-7. Update sitemap.
-8. Run `scripts/weekly-blog-check.sh .` and fix warnings.
-   - Triple-check sequence before publish: (1) content specificity pass, (2) link validation pass, (3) final QA pass.
-   - Word count must be 2,000–3,000.
-   - Reader-facing text must not contain internal template instructions.
-9. Commit + push.
+1. Collect weekly NYC signals from trusted sources.
+2. Verify material claims (2+ sources when possible; 3 for sensitive/commercial claims).
+3. Draft the brief with event-first focus:
+   - >=80% week-specific NYC happenings
+   - <=20% generic planning commentary
+   - >=12 confirmed weekly event signals (name + venue + borough + direct link)
+4. Build sections in required order (see `BLOG_HARD_RULES.md`).
+5. Add weather block (current + 7-day, numeric °F/°C).
+6. Add at least 2 relevant images with captions.
+7. Ensure all required NYNightlife internal links are present.
+8. Ensure reader-facing quality:
+   - no internal/template wording
+   - no robotic numbered “signal/context” copy
+   - no repetitive boilerplate blocks
+9. Validate links:
+   - all external links 200–399
+   - no search-result links in Live Event Signals
+10. Run QA:
+   - `scripts/weekly-blog-check.sh .`
+   - fix all warnings/errors
+11. Update archive/index/sitemap.
+12. Commit + push only after QA passes.
 
-## Source pool (starter)
-- Eventbrite NYC nightlife events
-- Time Out New York weekend listings
-- NYCgo events calendar
-- Resident Advisor NYC events
+## Non-negotiables
+- No fabricated events or unverified specifics.
+- No publish when hard rules fail.
+- Keep copy human, specific, and week-grounded.
 
-## QA before publish
-- [ ] All links valid and clickable
-- [ ] No unverified specific claims
-- [ ] Timestamp format is correct (America/New_York)
-- [ ] Methodology + affiliate disclosure links present
+## Quick QA checklist
+- [ ] 2,000–3,000 words
+- [ ] Weather section with °F/°C + 7-day range
+- [ ] 12+ direct event links
+- [ ] 2+ relevant images with captions
+- [ ] Required internal links included
+- [ ] No template/instructional text in article
+- [ ] All external links validated
+- [ ] Checker passes clean

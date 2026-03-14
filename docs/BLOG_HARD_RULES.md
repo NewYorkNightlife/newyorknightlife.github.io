@@ -1,15 +1,20 @@
 # NYNightlife Weekly Blog — Hard Rules (Non-Negotiable)
 
-Effective immediately, every Friday brief must follow these rules.
+Effective immediately, every weekly brief must follow these rules.
 
 ## 1) Purpose
-Each post must be a **week-specific NYC nightlife intelligence brief** for the coming weekend.
+Publish a **human-readable, week-specific NYC nightlife brief** that helps real readers decide what to do this weekend.
 
 ## 2) Core Content Standard (Event-First)
-- At least **80% of article body** must be week-specific NYC facts/signals (events, openings, closures, parades, festivals, show cycles, venue calendars, city operations impacts).
-- Generic nightlife strategy content is capped at **20%**.
-- Every post must include a section called **"What Changed This Week"** with concrete differences vs prior week.
-- If week-specific verified material is insufficient, publish is blocked.
+- At least **80%** of body content must be real, week-specific NYC happenings:
+  - events
+  - venue calendars
+  - neighborhood shifts
+  - holiday/parade/festival effects
+  - city conditions that impact going out
+- Generic strategy content is capped at **20%**.
+- Every post must include a **What Changed This Week** section.
+- If verified weekly material is insufficient, do not publish.
 
 ## 3) Required Structure (in order)
 1. Title (SEO + date range)
@@ -28,22 +33,23 @@ Each post must be a **week-specific NYC nightlife intelligence brief** for the c
 14. Editorial Note
 15. Final Takeaway
 
-## 4) Weather Requirements (Mandatory)
-- Include **numeric °F and °C** values.
-- Include current snapshot + **7 daily high/low ranges**.
-- Include a short explanation of how weather affects nightlife behavior that week.
+## 4) Weather Rule (Mandatory)
+- Include numeric **°F and °C**.
+- Include current + **7 daily high/low ranges**.
+- Explain how weather changes nightlife behavior this week.
 
-## 5) Event Specificity Requirements
-- Minimum **12 week-specific confirmed NYC events/signals**.
-- For each event include:
+## 5) Event Rule (Mandatory)
+- Minimum **12 confirmed weekly NYC event signals**.
+- Each event must include:
   - event name
   - venue
   - borough
-  - external listing URL
-- All external links: `target="_blank" rel="noopener"`.
+  - direct external listing URL
+- Event links in Live Event Signals must be **direct listing pages**.
+- Search-result links (`?q=`, `/search`) are not allowed in Live Event Signals.
 
-## 6) Internal Link Requirements
-Every weekly brief must include these links naturally in the article body:
+## 6) Internal Link Rule (Mandatory)
+Each blog must naturally include:
 - https://nynightlife.com/tonight
 - https://nynightlife.com/weekend
 - https://nynightlife.com/night-planner
@@ -51,48 +57,43 @@ Every weekly brief must include these links naturally in the article body:
 - https://nynightlife.com/safe-late-night-transport
 - https://nynightlife.com/blog/archive
 
-## 7) Fact-Checking Rules
-- Verify event, venue, date, and artist before publishing.
-- Use at least 2 independent sources when possible (3 for sensitive/commercial claims).
-- Never publish fabricated events or unverified specifics.
+## 7) Fact-Checking Rule
+- Verify event, venue, date, and artist before publish.
+- Use 2+ independent sources when possible (3 for sensitive/commercial claims).
+- Never fabricate.
 
-## 8) Quality Rules
+## 8) Writing Quality Rule
 - Tone: NYC insider + editorial analyst.
-- Avoid repetitive boilerplate and vague filler.
-- Article must explain why **this specific weekend** is different.
-- Word count hard rule: **2,000–3,000 words** (reader-visible content).
-- At least 80% of body copy must be week-specific/original narrative, not reusable generic blocks.
-- Every week must use different image assets (no identical hero image stack from prior week).
-- Hard image uniqueness rule: image `src` set in the current weekly brief cannot be identical to the previous weekly brief.
+- Hard word count: **2,000–3,000 words**.
+- Avoid repetitive filler.
+- Week-over-week uniqueness target: **>=80%**.
 
-## 9) Required Footer Integrity
-- Include Methodology + Affiliate Disclosure links.
-- Include an Editorial Note that event details can change.
+## 9) Reader-Facing Cleanliness Rule
+The published post must read like normal editorial writing.
+
+Do **not** include:
+- internal instruction language
+- template language
+- QA language
+- robotic labels like:
+  - “Weekly event signal 1/2/3”
+  - “City context 1/2/3”
+  - similar machine-style numbering blocks
 
 ## 10) Image Rule (Mandatory)
-- Each weekly blog must include at least **2 embedded images** (`<img>`), each with a clear caption (`<figcaption>`).
-- Images must be directly grounded to topics explicitly discussed in the article (event type, neighborhood, parade/festival context, or venue cluster).
-- Do not publish placeholder instructions like "Image Notes" inside the reader-facing article.
+- At least **2 embedded images** with `<figcaption>`.
+- Images must match topics discussed in the post.
+- Image `src` set cannot be identical to previous week’s post.
 
 ## 11) Link Validation Rule (Mandatory)
-- Before publishing, validate every external link in the blog resolves successfully (HTTP 200–399 after redirects).
-- Event links must resolve to the exact event/listing referenced in the sentence.
-- Search-result links are not allowed in Live Event Signals (`?q=` / search pages). Use direct event/listing URLs.
-- If a link fails validation, replace or remove before publish.
+- All external links must resolve (HTTP 200–399 after redirects).
+- If any required link fails, fix or remove before publish.
 
-## 12) Reader-Facing Cleanliness Rule
-- Never include internal/template/instructional language in the published blog (e.g., “this section is intentionally…”, “template”, “for QA”, “rule”).
-- Never use robotic labels like “Weekly event signal 1/2/3…” or “March city context 1/2/3…” in reader-facing copy.
-- Avoid repetitive boilerplate blocks that repeat the same sentence pattern across multiple paragraphs.
-- Event analysis should be grouped in human-readable format (by borough, night, or vibe), not machine-style item commentary.
+## 12) Footer Rule
+Must include:
+- Methodology link
+- Affiliate Disclosure link
+- Editorial Note that details can change
 
-## 13) QA Gate
-Post fails QA if any of the following are missing:
-- week-specific delta section
-- numeric °F/°C weather block
-- required internal links
-- proper external link attributes
-- minimum event specificity
-- embedded images + captions
-- validated external links
-- uniqueness threshold
+## 13) Publish Gate
+If any hard rule fails, publish must be blocked.
