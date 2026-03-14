@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 41,
     "feels_like_f": 35,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sat",
+        "summary": "Clear",
+        "high_f": 46,
+        "low_f": 41
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 37,
+        "low_f": 37
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 47,
+        "low_f": 47
+      },
+      {
+        "day": "Tue",
+        "summary": "Rain",
+        "high_f": 41,
+        "low_f": 41
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 31,
+        "low_f": 31
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "SNL: Harry Styles Catches Feels for Jane Wickline, Misses NYC & More",
+      "url": "https://bleedingcool.com/tv/snl-harry-styles-catches-feels-for-jane-wickline-misses-nyc-more/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "LNR Partners Sells Retail Space Leased to Le Poisson Rouge for $21.3M",
+      "url": "http://commercialobserver.com/2026/03/lnr-partners-sell-156-168-bleecker-street-21m/",
+      "source": "Commercial Observer"
+    },
+    {
+      "title": "Architectural Digest tour: inside Athena Calderone’s Art Deco inspired NYC home",
+      "url": "https://ohnotheydidnt.livejournal.com/132052365.html",
+      "source": "Livejournal.com"
+    },
+    {
+      "title": "‘Mam’ Director Nan Feix and Chef Jerald Head on the San Sebastián-Winning Film Born From Their NYC Vietnamese Restaurant, Now at SXSW, Clip Unveiled (EXCLUSIVE)",
+      "url": "https://variety.com/2026/film/news/mam-nan-feix-chef-jerald-sxsw-1236685868/",
+      "source": "Variety"
+    },
+    {
+      "title": "A 2-Day New Orleans Itinerary Inspired By 'People We Meet On Vacation'",
+      "url": "https://www.elitedaily.com/lifestyle/new-orleans-2-day-itinerary-people-we-meet-on-vacation-filming-locations",
+      "source": "Elite Daily"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
