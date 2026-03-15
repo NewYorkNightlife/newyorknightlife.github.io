@@ -24,4 +24,28 @@
     el.style.opacity = '0';
     reveal.observe(el);
   });
+
+  const setupMarquee = () => {
+    const marquee = document.querySelector('.marquee');
+    const track = marquee?.querySelector('.track');
+    const firstGroup = track?.querySelector('.track-group');
+    if (!marquee || !track || !firstGroup) return;
+
+    const distance = Math.ceil(firstGroup.getBoundingClientRect().width);
+    if (!distance) return;
+
+    track.style.setProperty('--marquee-distance', `${distance}px`);
+
+    // Keep speed visually stable across content edits (~75px/sec)
+    const durationSeconds = Math.max(16, Math.round(distance / 75));
+    track.style.setProperty('--marquee-duration', `${durationSeconds}s`);
+  };
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(setupMarquee);
+  } else {
+    window.addEventListener('load', setupMarquee, { once: true });
+  }
+
+  window.addEventListener('resize', setupMarquee);
 })();
