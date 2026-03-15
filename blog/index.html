@@ -32,9 +32,12 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3007723856138381" crossorigin="anonymous"></script>
 <style>
   .blog-shell{max-width:1120px;margin:0 auto;padding:2rem 1rem 3rem}
-  .blog-hero{padding:1.2rem 0 1.8rem}
+  .blog-hero{position:relative;padding:2.4rem 1.2rem 2.2rem;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#111}
+  .blog-hero::before{content:"";position:absolute;inset:0;background:url('/assets/images/nyc-nightlife-skyline.JPG') center/cover no-repeat;opacity:.42}
+  .blog-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(8,8,12,.85),rgba(8,8,12,.45));}
+  .blog-hero > *{position:relative;z-index:1}
   .blog-hero h1{margin:.35rem 0 .6rem}
-  .blog-hero p{color:#c9c3b8;max-width:760px}
+  .blog-hero p{color:#ddd7cc;max-width:760px}
   .kpi-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
   .kpi{border:1px solid var(--line);border-radius:999px;padding:6px 11px;font-size:.88rem;color:#ddd8cf;background:rgba(255,255,255,.02)}
 
@@ -105,25 +108,25 @@
     <p class="section-sub">Evergreen playbooks for execution and planning.</p>
     <div class="feature-grid">
       <a class="post-card" href="/blog/rooftop-bars-manhattan.html">
-        <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Manhattan rooftop skyline nightlife view" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=80" alt="Manhattan rooftop and skyline nightlife atmosphere" loading="lazy" />
         <div class="post-body">
-          <div class="post-meta">Published Feb 2025 · Updated Feb 2026 · 8 min read</div>
+          <div class="post-meta">Rooftop strategy playbook</div>
           <h3>The Complete Guide to Rooftop Bars in Manhattan</h3>
           <p>Best rooftop strategy by timing, vibe, spend range, and backup route logic.</p>
         </div>
       </a>
       <a class="post-card" href="/blog/getting-into-exclusive-clubs.html">
-        <img src="https://images.unsplash.com/photo-1571266028243-d220c9f87f39?auto=format&fit=crop&w=1200&q=80" alt="NYC nightclub dance floor lights and crowd" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80" alt="NYC club crowd and lighting during peak nightlife hours" loading="lazy" />
         <div class="post-body">
-          <div class="post-meta">Published Feb 2025 · Updated Feb 2026 · 10 min read</div>
+          <div class="post-meta">Club entry strategy</div>
           <h3>How to Actually Get Into Exclusive NYC Clubs</h3>
           <p>Door strategy, group setup, timing windows, and table math that improves hit rate.</p>
         </div>
       </a>
       <a class="post-card" href="/blog/archive-weekly-briefs.html">
-        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80" alt="NYC nightlife street scene at night" loading="lazy" />
+        <img src="/assets/images/nyc-nightlife-collage.jpg" alt="NYC nightlife collage highlighting Manhattan and Brooklyn scenes" loading="lazy" />
         <div class="post-body">
-          <div class="post-meta">Weekly Friday cadence · Archive</div>
+          <div class="post-meta">Weekly brief archive</div>
           <h3>Open the Full Weekly Brief Archive</h3>
           <p>Browse every Friday brief in one place with month-by-month navigation.</p>
         </div>
