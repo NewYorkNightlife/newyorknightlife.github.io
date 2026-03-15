@@ -59,7 +59,12 @@
     .grid-2,.grid-3{grid-template-columns:1fr}
     .soho-hero{min-height:320px;padding:1.8rem 1rem}
   }
+  .spot-link{display:inline-flex;align-items:center;gap:6px}
+  .map-jump{font-size:.9rem;text-decoration:none;opacity:.9}
+  .map-jump:hover{opacity:1}
+  #soho-map-canvas{height:460px;border-radius:12px;border:1px solid var(--line);margin-top:10px}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
 <body>
   <header class="site-header site-header--premium">
@@ -210,38 +215,45 @@
       <p class="muted">Coverage includes core SoHo plus immediate walkable edges (Nolita, NoHo, West SoHo) for practical route planning.</p>
       <div class="grid-3">
         <div class="card"><h3>Cocktail & Bar Anchors</h3><ul class="list-tight">
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Fanelli+Cafe+SoHo+NYC" target="_blank" rel="noopener">Fanelli Cafe</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Spring+Lounge+SoHo+NYC" target="_blank" rel="noopener">Spring Lounge</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Jimmy+at+ModernHaus+SoHo" target="_blank" rel="noopener">JIMMY at ModernHaus SoHo</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Ear+Inn+NYC" target="_blank" rel="noopener">Ear Inn</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Milano%27s+Bar+SoHo+NYC" target="_blank" rel="noopener">Milano's Bar</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=The+Crosby+Bar+SoHo+NYC" target="_blank" rel="noopener">The Crosby Bar</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Temple+Bar+Lafayette+Street+NYC" target="_blank" rel="noopener">Temple Bar</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Mother%27s+Ruin+Nolita+NYC" target="_blank" rel="noopener">Mother's Ruin</a></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Fanelli+Cafe+SoHo+NYC" target="_blank" rel="noopener">Fanelli Cafe</a> <a class="map-jump" href="#soho-map" data-place="Fanelli Cafe SoHo NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Spring+Lounge+SoHo+NYC" target="_blank" rel="noopener">Spring Lounge</a> <a class="map-jump" href="#soho-map" data-place="Spring Lounge SoHo NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Jimmy+at+ModernHaus+SoHo" target="_blank" rel="noopener">JIMMY at ModernHaus SoHo</a> <a class="map-jump" href="#soho-map" data-place="JIMMY at ModernHaus SoHo" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Ear+Inn+NYC" target="_blank" rel="noopener">Ear Inn</a> <a class="map-jump" href="#soho-map" data-place="Ear Inn NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Milano%27s+Bar+SoHo+NYC" target="_blank" rel="noopener">Milano's Bar</a> <a class="map-jump" href="#soho-map" data-place="Milano's Bar SoHo NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=The+Crosby+Bar+SoHo+NYC" target="_blank" rel="noopener">The Crosby Bar</a> <a class="map-jump" href="#soho-map" data-place="The Crosby Bar SoHo NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Temple+Bar+Lafayette+Street+NYC" target="_blank" rel="noopener">Temple Bar</a> <a class="map-jump" href="#soho-map" data-place="Temple Bar Lafayette Street NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Mother%27s+Ruin+Nolita+NYC" target="_blank" rel="noopener">Mother's Ruin</a> <a class="map-jump" href="#soho-map" data-place="Mother's Ruin Nolita NYC" title="Show on map">🗺️</a></span></li>
         </ul></div>
 
         <div class="card"><h3>Dining-Led Nightlife Spots</h3><ul class="list-tight">
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Balthazar+SoHo+NYC" target="_blank" rel="noopener">Balthazar</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Raoul%27s+SoHo+NYC" target="_blank" rel="noopener">Raoul's</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Lure+Fishbar+SoHo+NYC" target="_blank" rel="noopener">Lure Fishbar</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=The+Dutch+SoHo+NYC" target="_blank" rel="noopener">The Dutch</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Jack%27s+Wife+Freda+SoHo+NYC" target="_blank" rel="noopener">Jack's Wife Freda</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Shuka+SoHo+NYC" target="_blank" rel="noopener">Shuka</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Sadelle%27s+SoHo+NYC" target="_blank" rel="noopener">Sadelle's</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Bar+Mercer+Kitchen+SoHo+NYC" target="_blank" rel="noopener">Bar Mercer</a></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Balthazar+SoHo+NYC" target="_blank" rel="noopener">Balthazar</a> <a class="map-jump" href="#soho-map" data-place="Balthazar SoHo NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Raoul%27s+SoHo+NYC" target="_blank" rel="noopener">Raoul's</a> <a class="map-jump" href="#soho-map" data-place="Raoul's SoHo NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Lure+Fishbar+SoHo+NYC" target="_blank" rel="noopener">Lure Fishbar</a> <a class="map-jump" href="#soho-map" data-place="Lure Fishbar SoHo NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=The+Dutch+SoHo+NYC" target="_blank" rel="noopener">The Dutch</a> <a class="map-jump" href="#soho-map" data-place="The Dutch SoHo NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Jack%27s+Wife+Freda+SoHo+NYC" target="_blank" rel="noopener">Jack's Wife Freda</a> <a class="map-jump" href="#soho-map" data-place="Jack's Wife Freda SoHo NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Shuka+SoHo+NYC" target="_blank" rel="noopener">Shuka</a> <a class="map-jump" href="#soho-map" data-place="Shuka SoHo NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Sadelle%27s+SoHo+NYC" target="_blank" rel="noopener">Sadelle's</a> <a class="map-jump" href="#soho-map" data-place="Sadelle's SoHo NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Bar+Mercer+Kitchen+SoHo+NYC" target="_blank" rel="noopener">Bar Mercer</a> <a class="map-jump" href="#soho-map" data-place="Bar Mercer SoHo NYC" title="Show on map">🗺️</a></span></li>
         </ul></div>
 
         <div class="card"><h3>Clubs, Rooftops & Culture (Nearby)</h3><ul class="list-tight">
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Paul%27s+Casablanca+NYC" target="_blank" rel="noopener">Paul's Casablanca</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Public+Hotel+Rooftop+Mr+Purple+NYC" target="_blank" rel="noopener">Mr. Purple</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=ART+SoHo+NYC+Rooftop" target="_blank" rel="noopener">A.R.T. SoHo</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Soho+House+New+York" target="_blank" rel="noopener">Soho House New York</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Blue+Note+Jazz+Club+NYC" target="_blank" rel="noopener">Blue Note Jazz Club</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=City+Winery+New+York+City" target="_blank" rel="noopener">City Winery NYC</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=The+Public+Theater+NYC" target="_blank" rel="noopener">The Public Theater</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Comedy+Cellar+NYC" target="_blank" rel="noopener">Comedy Cellar</a></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Paul%27s+Casablanca+NYC" target="_blank" rel="noopener">Paul's Casablanca</a> <a class="map-jump" href="#soho-map" data-place="Paul's Casablanca NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Public+Hotel+Rooftop+Mr+Purple+NYC" target="_blank" rel="noopener">Mr. Purple</a> <a class="map-jump" href="#soho-map" data-place="Mr Purple Public Hotel NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=ART+SoHo+NYC+Rooftop" target="_blank" rel="noopener">A.R.T. SoHo</a> <a class="map-jump" href="#soho-map" data-place="A.R.T. SoHo Rooftop NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Soho+House+New+York" target="_blank" rel="noopener">Soho House New York</a> <a class="map-jump" href="#soho-map" data-place="Soho House New York" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Blue+Note+Jazz+Club+NYC" target="_blank" rel="noopener">Blue Note Jazz Club</a> <a class="map-jump" href="#soho-map" data-place="Blue Note Jazz Club NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=City+Winery+New+York+City" target="_blank" rel="noopener">City Winery NYC</a> <a class="map-jump" href="#soho-map" data-place="City Winery New York City" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=The+Public+Theater+NYC" target="_blank" rel="noopener">The Public Theater</a> <a class="map-jump" href="#soho-map" data-place="The Public Theater NYC" title="Show on map">🗺️</a></span></li>
+          <li><span class="spot-link"><a href="https://www.google.com/maps/search/?api=1&query=Comedy+Cellar+NYC" target="_blank" rel="noopener">Comedy Cellar</a> <a class="map-jump" href="#soho-map" data-place="Comedy Cellar NYC" title="Show on map">🗺️</a></span></li>
         </ul></div>
       </div>
+    </section>
+
+    <section class="section panel" id="soho-map">
+      <h2>Interactive SoHo Nightlife Map</h2>
+      <p class="muted">Zoom, pan, and click markers to inspect each spot. Use the 🗺️ icon next to any listing above to jump here.</p>
+      <div id="soho-map-canvas" role="region" aria-label="Interactive map of SoHo nightlife spots"></div>
+      <p class="muted" style="margin-top:8px;font-size:.88rem;">Map data: OpenStreetMap. Spot positioning is auto-matched from the listed names and may place some venues at nearby cross-streets.</p>
     </section>
 
     <section class="section panel">
@@ -267,6 +279,62 @@
     </section>
   </main>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    (function () {
+      const mapEl = document.getElementById('soho-map-canvas');
+      if (!mapEl || !window.L) return;
+
+      const map = L.map('soho-map-canvas', { scrollWheelZoom: true }).setView([40.7246, -74.0006], 14);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      const jumpLinks = [...document.querySelectorAll('.map-jump[data-place]')];
+      const placeNames = [...new Set(jumpLinks.map(a => a.dataset.place).filter(Boolean))];
+      const markers = new Map();
+      const bounds = L.latLngBounds();
+
+      const geocode = async (name) => {
+        const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=us&q=${encodeURIComponent(name + ', Manhattan, New York')}`;
+        const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+        if (!res.ok) return null;
+        const data = await res.json();
+        if (!data?.length) return null;
+        return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
+      };
+
+      const run = async () => {
+        for (const name of placeNames) {
+          try {
+            const pt = await geocode(name);
+            if (!pt) continue;
+            const marker = L.marker([pt.lat, pt.lon]).addTo(map).bindPopup(`<strong>${name}</strong>`);
+            markers.set(name, marker);
+            bounds.extend([pt.lat, pt.lon]);
+            await new Promise(r => setTimeout(r, 300));
+          } catch (_) {}
+        }
+        if (bounds.isValid()) map.fitBounds(bounds.pad(0.18));
+      };
+
+      run();
+
+      jumpLinks.forEach((a) => {
+        a.addEventListener('click', () => {
+          const name = a.dataset.place;
+          setTimeout(() => map.invalidateSize(), 120);
+          const marker = markers.get(name);
+          if (marker) {
+            const ll = marker.getLatLng();
+            map.setView(ll, Math.max(map.getZoom(), 15), { animate: true });
+            marker.openPopup();
+          }
+        });
+      });
+    })();
+  </script>
   <script src="/js/main.js"></script>
 </body>
 </html>
