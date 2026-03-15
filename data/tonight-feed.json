@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "No, Mayor Mamdani, the First Lady of NYC is not a private role",
+      "url": "https://nypost.com/2026/03/14/opinion/as-first-lady-of-nyc-rama-duwaji-needs-to-pay-attention-to-her-social-media/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Apple Kicks Off 50th Anniversary Celebration With Surprise Alicia Keys Concert",
+      "url": "https://www.mactrast.com/2026/03/apple-kicks-off-50th-anniversary-celebration-with-surprise-alicia-keys-concert/",
+      "source": "Mactrast.com"
+    },
+    {
+      "title": "Apple Kicks Off 50th Anniversary With Surprise Alicia Keys Concert in New York",
+      "url": "https://www.macrumors.com/2026/03/13/apple-50th-anniversary-alicia-keys-concert/",
+      "source": "MacRumors"
+    },
+    {
+      "title": "Pink Floyd’s instrument shatters records at NYC sale — becoming most expensive guitar ever sold at auction",
+      "url": "https://nypost.com/2026/03/13/us-news/pink-floyds-instrument-shatters-records-at-nyc-sale-becoming-most-expensive-guitar-ever-sold-at-auction/",
+      "source": "New York Post"
+    },
+    {
+      "title": "The 10 best ways to celebrate St. Patrick’s Day in NYC",
+      "url": "https://www.timeout.com/newyork/news/the-10-best-ways-to-celebrate-st-patricks-day-in-nyc-031326",
+      "source": "Time Out"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
