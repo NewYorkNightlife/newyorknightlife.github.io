@@ -44,7 +44,7 @@
   .chip-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
   .chip{border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.05);font-size:.84rem;color:#ddd7cd}
 
-  .section{margin-top:18px}
+  .section{margin-top:10px}
   .panel{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02);padding:14px}
   .grid-2{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
   .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
@@ -54,6 +54,7 @@
   .soho-img{width:100%;height:220px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
   .list-tight li{margin-bottom:8px}
   .muted{color:#b7b3ab}
+  .section-tight{padding-top:8px;padding-bottom:8px}
 
   @media (max-width:920px){
     .grid-2,.grid-3{grid-template-columns:1fr}
@@ -135,7 +136,7 @@
       </div>
     </section>
 
-    <section class="section grid-2">
+    <section class="section section-tight grid-2">
       <article class="panel">
         <h2>How to Win SoHo in 4 Moves</h2>
         <ol class="list-tight">
@@ -156,11 +157,11 @@
       </aside>
     </section>
 
-    <section class="section">
+    <section class="section section-tight">
       <img class="soho-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Cast%20Iron%20Buildings%20-%20SoHo%20Historic%20District.jpg" alt="SoHo Manhattan cast-iron district streetscape" loading="lazy" />
     </section>
 
-    <section class="section">
+    <section class="section section-tight">
       <h2>Budget Lanes (SoHo Edition)</h2>
       <div class="grid-3">
         <article class="card">
@@ -178,7 +179,7 @@
       </div>
     </section>
 
-    <section class="section grid-2">
+    <section class="section section-tight grid-2">
       <article class="panel">
         <h2>Common SoHo Mistakes</h2>
         <ul class="list-tight">
@@ -199,7 +200,7 @@
       </article>
     </section>
 
-    <section class="section panel">
+    <section class="section section-tight panel">
       <h2>SoHo Nightlife Editorial: Why This Area Feels Different After Dark</h2>
       <p>SoHo nightlife is less about mega-club chaos and more about rhythm, style, and sequencing. This neighborhood’s DNA comes from its cast-iron architecture, old manufacturing lofts, and decades-long shift from industrial utility to art, design, fashion, and hospitality. That history still shows up at night: the experience here tends to be curation-forward rather than volume-forward. You feel it in the pace of the sidewalks, the front-of-house energy, and the way venues reward people who arrive with a plan.</p>
       <p>In practical terms, SoHo works best for nightlife users who want social quality over random intensity. The area is strong for cocktails, date-forward dining, conversation-friendly bars, and polished pre-club starts. It is not the neighborhood where most people should attempt a five-stop marathon. Instead, SoHo typically delivers higher-quality outcomes when you choose one strong anchor and one nearby pivot, then keep your route tight. The walkability is the hidden edge: if your first choice underperforms, you can often recover quickly without losing momentum to long transfers.</p>
@@ -210,7 +211,7 @@
       <p>Bottom line: SoHo nightlife is a precision neighborhood. It rewards people who value curation, pacing, and walkable fallback structure. If you treat it like a random venue hunt, it can feel overpriced and inconsistent. If you treat it like an operating lane—anchor, backup, threshold, close—it becomes one of the highest-confidence nightlife districts in Manhattan.</p>
     </section>
 
-    <section class="section panel">
+    <section class="section section-tight panel">
       <h2>Top SoHo Nightlife Spots (Bars, Restaurants, Lounges, Rooftops & Culture)</h2>
       <p class="muted">Coverage includes core SoHo plus immediate walkable edges (Nolita, NoHo, West SoHo) for practical route planning.</p>
       <div class="grid-3">
@@ -249,14 +250,14 @@
       </div>
     </section>
 
-    <section class="section panel" id="soho-map">
+    <section class="section section-tight panel" id="soho-map">
       <h2>Interactive SoHo Nightlife Map</h2>
       <p class="muted">Zoom, pan, and click markers to inspect each spot. Use the 🗺️ icon next to any listing above to jump here.</p>
       <div id="soho-map-canvas" role="region" aria-label="Interactive map of SoHo nightlife spots"></div>
       <p class="muted" style="margin-top:8px;font-size:.88rem;">Map data: OpenStreetMap. Spot positioning is auto-matched from the listed names and may place some venues at nearby cross-streets.</p>
     </section>
 
-    <section class="section panel">
+    <section class="section section-tight panel">
       <h2>Use These Next</h2>
       <div class="grid-3">
         <div class="card">
