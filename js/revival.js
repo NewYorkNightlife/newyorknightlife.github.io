@@ -28,16 +28,46 @@
   const setupMarquee = () => {
     const marquee = document.querySelector('.marquee');
     const track = marquee?.querySelector('.track');
-    const firstGroup = track?.querySelector('.track-group');
-    if (!marquee || !track || !firstGroup) return;
+    const seedGroup = track?.querySelector('.track-group');
+    if (!marquee || !track || !seedGroup) return;
 
-    const distance = Math.ceil(firstGroup.getBoundingClientRect().width);
-    if (!distance) return;
+    // Preserve one canonical group and rebuild cleanly on each resize/font-load pass.
+    const baseMarkup = track.dataset.baseMarkup || seedGroup.innerHTML;
+    track.dataset.baseMarkup = baseMarkup;
 
-    track.style.setProperty('--marquee-distance', `${distance}px`);
+    track.innerHTML = '';
+
+    const createGroup = (hidden = false) => {
+      const group = document.createElement('div');
+      group.className = 'track-group';
+      group.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+      group.innerHTML = baseMarkup;
+      if (hidden) {
+        group.querySelectorAll('a').forEach((a) => a.setAttribute('tabindex', '-1'));
+      }
+      return group;
+    };
+
+    const firstGroup = createGroup(false);
+    track.appendChild(firstGroup);
+
+    const baseWidth = Math.ceil(firstGroup.getBoundingClientRect().width);
+    if (!baseWidth) return;
+
+    // Ensure there is always enough repeated content to avoid any visual gap.
+    const minTotalWidth = marquee.clientWidth * 2 + baseWidth;
+    let totalWidth = baseWidth;
+
+    while (totalWidth < minTotalWidth) {
+      const clone = createGroup(true);
+      track.appendChild(clone);
+      totalWidth += baseWidth;
+    }
+
+    track.style.setProperty('--marquee-distance', `${baseWidth}px`);
 
     // Keep speed visually stable across content edits (~75px/sec)
-    const durationSeconds = Math.max(16, Math.round(distance / 75));
+    const durationSeconds = Math.max(16, Math.round(baseWidth / 75));
     track.style.setProperty('--marquee-duration', `${durationSeconds}s`);
   };
 
