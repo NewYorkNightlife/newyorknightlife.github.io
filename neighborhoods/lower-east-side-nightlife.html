@@ -42,11 +42,11 @@
     .hero-actions,.chip-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
     .chip{border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.05);font-size:.84rem;color:#ddd7cd}
 
-    .section{margin-top:10px}
-    .panel{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02);padding:14px}
-    .grid-2{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-    .card{border:1px solid var(--line);border-radius:12px;padding:12px;background:rgba(255,255,255,.02)}
+    .section{margin-top:6px}
+    .panel{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02);padding:12px}
+    .grid-2{display:grid;grid-template-columns:1.2fr .8fr;gap:10px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+    .card{border:1px solid var(--line);border-radius:12px;padding:10px;background:rgba(255,255,255,.02)}
     .card h3{margin:0 0 8px;font-size:1.02rem}
     .card p{color:#c8c2b8;font-size:.92rem}
     .img-inline{width:100%;height:220px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
@@ -169,29 +169,56 @@
       const mapEl = document.getElementById('les-map-canvas'); if (!mapEl || !window.L) return;
       const map = L.map('les-map-canvas', { scrollWheelZoom: true }).setView([40.7188, -73.9882], 14);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
-      const jumpLinks = [...document.querySelectorAll('.map-jump[data-place]')];
-      const placeNames = [...new Set(jumpLinks.map(a => a.dataset.place).filter(Boolean))];
-      const markers = new Map(); const bounds = L.latLngBounds();
-      const geocode = async (name) => {
-        const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=us&q=${encodeURIComponent(name + ', Manhattan, New York')}`;
-        const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
-        if (!res.ok) return null; const data = await res.json(); if (!data?.length) return null;
-        return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
-      };
-      (async () => {
-        for (const name of placeNames) {
-          try { const pt = await geocode(name); if (!pt) continue;
-            const m = L.marker([pt.lat, pt.lon]).addTo(map).bindPopup(`<strong>${name}</strong>`);
-            markers.set(name, m); bounds.extend([pt.lat, pt.lon]); await new Promise(r => setTimeout(r, 250));
-          } catch (_) {}
-        }
-        if (bounds.isValid()) map.fitBounds(bounds.pad(0.18));
-      })();
-      jumpLinks.forEach((a) => a.addEventListener('click', () => {
-        const m = markers.get(a.dataset.place); setTimeout(() => map.invalidateSize(), 120);
-        if (m) { const ll = m.getLatLng(); map.setView(ll, Math.max(map.getZoom(), 15), { animate: true }); m.openPopup(); }
-      }));
+
+      const spots = [
+        { key:'Attaboy NYC', name:'Attaboy', lat:40.71937, lon:-73.98735 },
+        { key:'Beauty and Essex NYC', name:'Beauty & Essex', lat:40.71909, lon:-73.98744 },
+        { key:'169 Bar NYC', name:'169 Bar', lat:40.71813, lon:-73.99007 },
+        { key:'Double Down Saloon NYC', name:'Double Down Saloon', lat:40.71986, lon:-73.98652 },
+        { key:'Sour Mouse LES', name:'Sour Mouse', lat:40.71795, lon:-73.98959 },
+        { key:'Pianos NYC', name:'Pianos', lat:40.71901, lon:-73.98774 },
+        { key:'The Back Room NYC', name:'The Back Room', lat:40.71936, lon:-73.98795 },
+        { key:'Niagara NYC', name:'Niagara', lat:40.72110, lon:-73.98792 },
+        { key:"Katz's Delicatessen NYC", name:"Katz's Delicatessen", lat:40.72226, lon:-73.98738 },
+        { key:'Freemans NYC', name:'Freemans', lat:40.71894, lon:-73.99242 },
+        { key:'Dimes NYC', name:'Dimes', lat:40.71774, lon:-73.99017 },
+        { key:'Essex Restaurant NYC', name:'Essex Restaurant', lat:40.72041, lon:-73.98761 },
+        { key:'Dirty French NYC', name:'Dirty French', lat:40.72072, lon:-73.98827 },
+        { key:'Clinton St Baking Company NYC', name:'Clinton St. Baking Company', lat:40.72119, lon:-73.98374 },
+        { key:'Pig and Khao NYC', name:'Pig and Khao', lat:40.71959, lon:-73.98669 },
+        { key:'Wayla NYC', name:'Wayla', lat:40.71714, lon:-73.98383 },
+        { key:'Mercury Lounge NYC', name:'Mercury Lounge', lat:40.72200, lon:-73.98684 },
+        { key:'Bowery Ballroom NYC', name:'Bowery Ballroom', lat:40.72049, lon:-73.99393 },
+        { key:'Rockwood Music Hall NYC', name:'Rockwood Music Hall', lat:40.72209, lon:-73.98831 },
+        { key:"Arlene's Grocery NYC", name:"Arlene's Grocery", lat:40.72324, lon:-73.99232 },
+        { key:'Bowery Hotel Lobby Bar NYC', name:'Bowery Hotel Lobby Bar', lat:40.72642, lon:-73.99158 },
+        { key:'Nurse Bettie NYC', name:'Nurse Bettie', lat:40.71990, lon:-73.98805 },
+        { key:'Hotel Chantelle NYC', name:'Hotel Chantelle', lat:40.71934, lon:-73.98864 },
+        { key:"Kiki's NYC", name:"Kiki's", lat:40.71866, lon:-73.99044 }
+      ];
+
+      const markers = new Map();
+      const bounds = L.latLngBounds();
+      spots.forEach((spot) => {
+        const m = L.marker([spot.lat, spot.lon]).addTo(map).bindPopup(`<strong>${spot.name}</strong>`);
+        markers.set(spot.key, m);
+        bounds.extend([spot.lat, spot.lon]);
+      });
+      if (bounds.isValid()) map.fitBounds(bounds.pad(0.16));
+
+      document.querySelectorAll('.map-jump[data-place]').forEach((a) => {
+        a.addEventListener('click', () => {
+          const m = markers.get(a.dataset.place);
+          setTimeout(() => map.invalidateSize(), 100);
+          if (m) {
+            const ll = m.getLatLng();
+            map.setView(ll, Math.max(map.getZoom(), 15), { animate: true });
+            m.openPopup();
+          }
+        });
+      });
     })();
+  </script>
   </script>
   <script src="/js/main.js"></script>
 </body>
