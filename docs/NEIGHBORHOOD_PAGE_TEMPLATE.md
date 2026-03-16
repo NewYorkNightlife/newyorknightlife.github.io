@@ -82,6 +82,7 @@ Reference implementation quality is the finalized Williamsburg page.
   1) hero banner image
   2) in-content image
   3) one more image (editorial inline or dedicated section)
+- The 3 images must be **visually distinct** (different subject/angle/context), not near-duplicate shots.
 - Alt text must be neighborhood-specific and descriptive.
 
 ---
