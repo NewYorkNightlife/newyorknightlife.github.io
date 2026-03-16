@@ -1,86 +1,170 @@
-# Neighborhood Page Template (Locked)
+# Neighborhood Page Template (LOCKED v2 — Williamsburg Final)
 
-This is the canonical template for all neighborhood pages, based on the approved SoHo implementation.
+This is now the **100% canonical template** for all neighborhood pages.
+Reference implementation quality is the finalized Williamsburg page.
 
-## Canonical Live Example
-- `/neighborhoods/soho-nightlife.html`
+## Canonical Reference Page
+- Live: `https://nynightlife.com/neighborhoods/williamsburg-nightlife.html`
 
-## Required Page Structure (Do Not Skip)
+---
 
-1. **Premium Header/Nav**
-   - Same global menu/nav as homepage.
+## 1) Required Structure (Exact Order)
 
-2. **Hero Section (Town-Specific)**
-   - Background image must be town-specific and visually accurate.
-   - Eyebrow + strong H1 + strategic intro copy.
-   - Two CTAs:
-     - Build a plan (tool)
-     - Weekend signals (weekend page)
-   - 3 chips (best-for, route style, key risk).
+1. **Premium global header/nav**
+   - Same as homepage (no custom/local nav variants).
 
-3. **How to Win [Town] in 4 Moves**
-   - Practical route logic in ordered steps.
+2. **Hero banner (town-specific)**
+   - Full-width hero image relevant to that exact neighborhood.
+   - Eyebrow + clear H1 + 1 short intro paragraph.
+   - Two CTA buttons:
+     - Build plan tool
+     - Weekend signals page
+   - Three chips:
+     - best-for
+     - route style
+     - key risk
 
-4. **Quick Snapshot panel**
-   - Energy profile
-   - Best start window
-   - Group sweet spot
-   - Most common fail
+3. **How to Win [Town] in 4 Moves (left) + Quick Snapshot (right)**
+   - 2-column panel block.
 
-5. **Inline Visual Section**
-   - One additional town-specific image.
+4. **Image block #2 (town-specific)**
+   - Full-width in-content image.
 
-6. **Budget Lanes Section**
-   - Value / Standard / Premium cards.
+5. **Budget Lanes section**
+   - 3 cards: Value / Standard / Premium.
 
-7. **Mistakes + Execution Checklist**
-   - Two side-by-side panels.
+6. **Common Mistakes + Execution Checklist**
+   - 2-column panel block.
 
-8. **Editorial Section (500–1000 words)**
-   - Explain the town’s nightlife identity/history/behavior.
-   - Must be useful and practical, not generic filler.
+7. **Editorial card (history + identity focused)**
+   - Heading: short and readable (avoid overly long titles).
+   - Includes:
+     - lead paragraph
+     - subheads
+     - short paragraphs
+     - bullet callouts
+   - **Must include one inline image within the editorial card**
+     - text wraps around image on desktop
+     - image stacks on mobile
 
-9. **Top Spot Listings (20–40 links)**
-   - Group into 3 columns/cards.
-   - Include bars, restaurants, clubs, rooftops, and cultural/night options where relevant.
-   - Every spot must have:
-     - direct link (maps/search or official page)
-     - map-jump icon (🗺️) with `data-place`.
+8. **Image block #3 (town-specific)**
+   - Additional image section with short caption/context line.
 
-10. **Interactive Map Section**
-    - Leaflet + OpenStreetMap.
-    - Markers generated from the listed places.
-    - Clicking 🗺️ icon jumps to map and focuses marker.
+9. **Top spots section (20–40 listings)**
+   - 3 cards/columns:
+     - bars/cocktail anchors
+     - dining-led nightlife
+     - music/rooftops/culture
+   - Each listing must include:
+     - clickable venue link
+     - 🗺️ map-jump icon with `data-place`
+
+10. **Interactive map section**
+    - Leaflet + OpenStreetMap
+    - fixed marker coordinates (preferred) for reliability
+    - 🗺️ icon click jumps to map and focuses marker popup
 
 11. **Use These Next**
     - Tonight Hub
     - Venue Compare
-    - Weekly Archive
+    - Weekly Brief Archive
 
-## Design/UX Rules
-- Keep spacing compact/premium (use tightened section rhythm from SoHo page).
-- Keep same visual language as site-wide style.
-- Do not add random blocks not present in SoHo model unless approved.
+---
 
-## Content Rules
-- Must be town-specific (copy, image, spots, map place names).
-- No fabricated claims.
-- Prefer verifiable spot names and practical planning language.
-- Keep tone strategic and direct.
+## 2) Image Rules (Strict)
 
-## Implementation Workflow
-For each new neighborhood page:
-1. Duplicate SoHo page structure.
-2. Replace all SoHo-specific content with target town content.
-3. Update title/meta/OG/canonical and schema name/description.
-4. Replace hero and inline image with relevant town visuals.
-5. Replace all 20–40 spot links + map `data-place` values.
-6. Validate map markers and icon jump behavior.
-7. QA on mobile and desktop.
+- Use **real, neighborhood-relevant** imagery only.
+- No generic NYC image unless it is clearly tied to that neighborhood.
+- Minimum per page: **3 images total**
+  1) hero banner image
+  2) in-content image
+  3) one more image (editorial inline or dedicated section)
+- Alt text must be neighborhood-specific and descriptive.
 
-## Current Queue (to execute in order unless changed)
-- Lower East Side
-- Williamsburg
+---
+
+## 3) Editorial Writing Standard (500–1000 words)
+
+Editorial must be primarily:
+- neighborhood history
+- cultural identity
+- what differentiates it from other NYC zones
+- how nightlife evolved there
+
+And only secondarily:
+- practical strategy/execution
+
+Tone:
+- insider, direct, polished
+- no fluff
+- no fabricated claims
+
+Formatting standard:
+- short paragraphs
+- subheads every 1–3 paragraphs
+- at least one bullet list for scanability
+- avoid giant uninterrupted text blocks
+
+---
+
+## 4) Spacing & Readability Standard (Use This Exactly)
+
+Apply the tightened + breathable pattern from Williamsburg final:
+- namespaced page classes (avoid global CSS collisions)
+- compact section rhythm
+- increased card/panel inner padding
+- comfortable line-height for body text
+- editorial card has extra internal breathing room
+- avoid text hugging card edges
+
+### CSS Behavior Requirements
+- Namespaced classes per page (example pattern: `wb-*`, `les-*`, etc.)
+- Do **not** rely on generic `.hero` / `.section` alone
+- Ensure mobile media rules preserve readability and spacing
+
+---
+
+## 5) Map Standard
+
+- Use Leaflet + OSM tiles.
+- Prefer **fixed lat/lon marker set** over runtime geocoding.
+- Keep marker popup names human-readable.
+- Keep map-jump icon behavior consistent across all pages.
+
+---
+
+## 6) SEO/Schema Requirements
+
+Each page must include:
+- unique title + meta description
+- canonical URL
+- OG/Twitter tags
+- schema `WebPage` object with neighborhood-specific name/description
+
+---
+
+## 7) Implementation Workflow (For Every New Town)
+
+1. Copy finalized Williamsburg structure.
+2. Rename page namespace classes for that town.
+3. Replace all town-specific copy and metadata.
+4. Replace all 3 images with neighborhood-true images.
+5. Write 500–1000 word history/identity editorial (with inline image in card).
+6. Populate 20–40 spot links + 🗺️ icons.
+7. Add fixed marker coordinates for all listed spots.
+8. QA:
+   - desktop spacing
+   - mobile spacing
+   - map marker visibility
+   - map-jump behavior
+   - link correctness
+
+---
+
+## 8) Default Rollout Queue
 - Meatpacking
 - East Village
 - Midtown
+- remaining neighborhoods in `neighborhoods/`
+
+This template is locked unless explicitly changed by Father Dan.
