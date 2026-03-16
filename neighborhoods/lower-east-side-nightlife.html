@@ -31,25 +31,25 @@
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3007723856138381" crossorigin="anonymous"></script>
   <style>
-    .shell{max-width:1120px;margin:0 auto;padding:1.2rem 1rem 3rem}
-    .hero{position:relative;border:1px solid var(--line);border-radius:18px;overflow:hidden;padding:2.4rem 1.3rem;min-height:360px;display:flex;align-items:flex-end}
-    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;opacity:.5}
-    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(6,8,14,.9),rgba(6,8,14,.5))}
-    .hero-content{position:relative;z-index:1;max-width:780px}
-    .hero h1{font-size:clamp(2rem,5vw,3.6rem);margin:.45rem 0 .6rem;line-height:1.08}
-    .hero p{color:#d8d2c7;max-width:700px}
+    .les-shell{max-width:1120px;margin:0 auto;padding:1.2rem 1rem 3rem}
+    .les-hero{position:relative;border:1px solid var(--line);border-radius:18px;overflow:hidden;padding:2.4rem 1.3rem;min-height:360px;display:flex;align-items:flex-end}
+    .les-hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;opacity:.5}
+    .les-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(6,8,14,.9),rgba(6,8,14,.5))}
+    .les-hero-content{position:relative;z-index:1;max-width:780px}
+    .les-hero h1{font-size:clamp(2rem,5vw,3.6rem);margin:.45rem 0 .6rem;line-height:1.08}
+    .les-hero p{color:#d8d2c7;max-width:700px}
     .eyebrow{color:#7cdfff;letter-spacing:.12em;text-transform:uppercase;font-size:.75rem;font-weight:700}
     .hero-actions,.chip-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
     .chip{border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.05);font-size:.84rem;color:#ddd7cd}
 
-    .section{margin-top:4px}
+    .les-section{margin-top:6px;padding-top:8px;padding-bottom:8px}
     .panel{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02);padding:10px}
     .grid-2{display:grid;grid-template-columns:1.2fr .8fr;gap:8px}
     .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
     .card{border:1px solid var(--line);border-radius:12px;padding:8px 9px;background:rgba(255,255,255,.02)}
     .card h3{margin:0 0 4px;font-size:1.02rem;line-height:1.25}
     .card p{color:#c8c2b8;font-size:.92rem;margin:0;line-height:1.45}
-    .img-inline{width:100%;height:220px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+    .les-img-inline{width:100%;height:220px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
     .list-tight li{margin-bottom:4px}
     .muted{color:#b7b3ab}
     .panel h2,.panel h3{margin:0 0 6px}
@@ -62,7 +62,7 @@
     .map-jump:hover{opacity:1}
     #les-map-canvas{height:460px;border-radius:12px;border:1px solid var(--line);margin-top:10px}
 
-    @media (max-width:920px){.grid-2,.grid-3{grid-template-columns:1fr}.hero{min-height:320px;padding:1.8rem 1rem}}
+    @media (max-width:920px){.grid-2,.grid-3{grid-template-columns:1fr}.les-hero{min-height:320px;padding:1.8rem 1rem}}
   </style>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
@@ -91,9 +91,9 @@
     </nav>
   </header>
 
-  <main class="shell">
-    <section class="hero">
-      <div class="hero-content">
+  <main class="les-shell">
+    <section class="les-hero">
+      <div class="les-hero-content">
         <p class="eyebrow">Neighborhood Playbook</p>
         <h1>Lower East Side Nightlife: High Density, Fast Decisions, Strong Payoff</h1>
         <p>The LES is one of Manhattan’s best nightlife grids when executed right: short walks, high venue density, and multiple route pivots. This page gives you the clean execution model.</p>
@@ -102,18 +102,18 @@
       </div>
     </section>
 
-    <section class="section grid-2">
+    <section class="les-section grid-2">
       <article class="panel"><h2>How to Win LES in 4 Moves</h2><ol class="list-tight"><li><strong>Start with intent:</strong> music bars, cocktail quality, or social-volume crawl.</li><li><strong>Anchor one block cluster:</strong> Ludlow/Orchard/Essex lane first.</li><li><strong>Set 20-minute wait rule:</strong> if line or vibe misses, pivot immediately.</li><li><strong>Close near transit:</strong> don’t end with a long uncertain transfer.</li></ol></article>
       <aside class="panel"><h3>Quick LES Snapshot</h3><ul class="list-tight"><li><strong>Energy profile:</strong> fast, social, younger skew</li><li><strong>Best start window:</strong> 8:00–10:00 PM</li><li><strong>Group sweet spot:</strong> 3–8 people</li><li><strong>Most common fail:</strong> random stop-hopping without anchor</li></ul></aside>
     </section>
 
-    <section class="section"><img class="img-inline" src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1800&q=80" alt="Lower East Side style NYC nightlife street movement" loading="lazy" /></section>
+    <section class="les-les-section"><img class="les-img-inline" src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1800&q=80" alt="Lower East Side style NYC nightlife street movement" loading="lazy" /></section>
 
-    <section class="section"><h2>Budget Lanes (LES Edition)</h2><div class="grid-3"><article class="card"><h3>Value Lane</h3><p>2–3 nearby bars, no ride shares unless absolutely needed, spend cap locked pregame.</p></article><article class="card"><h3>Standard Lane</h3><p>One quality anchor + one music-forward pivot + one close option in the same corridor.</p></article><article class="card"><h3>Premium Lane</h3><p>Reservation-led start, curated backup, controlled transfer friction, quality over count.</p></article></div></section>
+    <section class="les-les-section"><h2>Budget Lanes (LES Edition)</h2><div class="grid-3"><article class="card"><h3>Value Lane</h3><p>2–3 nearby bars, no ride shares unless absolutely needed, spend cap locked pregame.</p></article><article class="card"><h3>Standard Lane</h3><p>One quality anchor + one music-forward pivot + one close option in the same corridor.</p></article><article class="card"><h3>Premium Lane</h3><p>Reservation-led start, curated backup, controlled transfer friction, quality over count.</p></article></div></section>
 
-    <section class="section grid-2"><article class="panel"><h2>Common LES Mistakes</h2><ul class="list-tight"><li>Trying to cover too many side streets without route discipline.</li><li>Burning prime time in long lines with no threshold.</li><li>No fallback option when group vibe splits.</li><li>Ignoring food and close-out logistics until late.</li></ul></article><article class="panel"><h2>Execution Checklist</h2><ul class="list-tight"><li>Anchor + pivot + close pre-selected</li><li>Budget lane chosen</li><li>Line/cover threshold set</li><li>Transit close-out decided early</li></ul></article></section>
+    <section class="les-section grid-2"><article class="panel"><h2>Common LES Mistakes</h2><ul class="list-tight"><li>Trying to cover too many side streets without route discipline.</li><li>Burning prime time in long lines with no threshold.</li><li>No fallback option when group vibe splits.</li><li>Ignoring food and close-out logistics until late.</li></ul></article><article class="panel"><h2>Execution Checklist</h2><ul class="list-tight"><li>Anchor + pivot + close pre-selected</li><li>Budget lane chosen</li><li>Line/cover threshold set</li><li>Transit close-out decided early</li></ul></article></section>
 
-    <section class="section panel">
+    <section class="les-section panel">
       <h2>Lower East Side Nightlife Editorial: Why LES Outperforms Most Districts for Bar-First Nights</h2>
       <p>The Lower East Side is one of NYC’s most forgiving nightlife neighborhoods for people who care about momentum. Unlike districts where one bad line can kill an hour, LES gives you dense options in a short walking radius. That density is the core advantage. If one room underdelivers, you can recover quickly without spending half your night in transit. That alone makes LES a high-conversion neighborhood for both visitors and locals.</p>
       <p>Historically, LES nightlife evolved from immigrant tenement culture, dive-bar history, and independent music scenes, then merged with newer cocktail and restaurant energy. The result is not one single "luxury lane" or one single "club lane"—it’s a mixed ecosystem where each block can feel different by hour. Early night tends to be more conversation and date-friendly; late night shifts to heavier crowd flow and higher decision pressure. Smart planners use that curve: lock quality early, then decide whether to escalate based on live conditions.</p>
@@ -124,7 +124,7 @@
       <p>Bottom line: LES works best as an operational grid, not a scavenger hunt. Treat it like a system—anchor, pivot, close—and it consistently produces better nightlife outcomes than more spread-out districts.</p>
     </section>
 
-    <section class="section panel">
+    <section class="les-section panel">
       <h2>Top LES Nightlife Spots (Bars, Restaurants, Music, Rooftops & Culture)</h2>
       <p class="muted">Coverage includes core LES plus immediate walkable edges (Chinatown, Nolita, East Village boundary) for practical routing.</p>
       <div class="grid-3">
@@ -163,9 +163,9 @@
       </div>
     </section>
 
-    <section class="section panel" id="les-map"><h2>Interactive LES Nightlife Map</h2><p class="muted">Zoom, pan, and click markers. Tap the 🗺️ icon next to any listing to jump here and focus the venue.</p><div id="les-map-canvas" role="region" aria-label="Interactive map of Lower East Side nightlife spots"></div></section>
+    <section class="les-section panel" id="les-map"><h2>Interactive LES Nightlife Map</h2><p class="muted">Zoom, pan, and click markers. Tap the 🗺️ icon next to any listing to jump here and focus the venue.</p><div id="les-map-canvas" role="region" aria-label="Interactive map of Lower East Side nightlife spots"></div></section>
 
-    <section class="section panel"><h2>Use These Next</h2><div class="grid-3"><div class="card"><h3>Tonight Hub</h3><p>Same-day NYC decisions.</p><a href="/tonight/">Open Tonight →</a></div><div class="card"><h3>Venue Compare</h3><p>Compare choices before spend.</p><a href="/tools/venue-compare-nyc.html">Compare Venues →</a></div><div class="card"><h3>Weekly Briefs</h3><p>City movement + timing signals.</p><a href="/blog/archive-weekly-briefs.html">Open Archive →</a></div></div></section>
+    <section class="les-section panel"><h2>Use These Next</h2><div class="grid-3"><div class="card"><h3>Tonight Hub</h3><p>Same-day NYC decisions.</p><a href="/tonight/">Open Tonight →</a></div><div class="card"><h3>Venue Compare</h3><p>Compare choices before spend.</p><a href="/tools/venue-compare-nyc.html">Compare Venues →</a></div><div class="card"><h3>Weekly Briefs</h3><p>City movement + timing signals.</p><a href="/blog/archive-weekly-briefs.html">Open Archive →</a></div></div></section>
   </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
