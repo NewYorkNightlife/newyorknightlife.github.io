@@ -74,6 +74,9 @@ Reference implementation quality is the finalized Williamsburg page.
 ## 2) Image Rules (Strict)
 
 - Use **real, neighborhood-relevant** imagery only.
+- Image must be clearly tied to the exact town page (landmark/street/venue context from that neighborhood).
+- **No hallucinated/made-up visuals.**
+- If generated (e.g., Nano Banana), output must still be realistic and faithful to that actual neighborhood.
 - No generic NYC image unless it is clearly tied to that neighborhood.
 - Minimum per page: **3 images total**
   1) hero banner image
