@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 38,
     "feels_like_f": 27,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 37,
+        "low_f": 35
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 34,
+        "low_f": 34
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 41,
+        "low_f": 41
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 46,
+        "low_f": 46
+      },
+      {
+        "day": "Sat",
+        "summary": "Clear",
+        "high_f": 52,
+        "low_f": 52
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Lin-Manuel Miranda's Tony Award-winning 'In the Heights' is coming back to NYC for a limited time this fall",
+      "url": "https://www.timeout.com/newyork/news/lin-manuel-mirandas-tony-award-winning-in-the-heights-is-coming-back-to-nyc-for-a-limited-time-this-fall-031626",
+      "source": "Time Out"
+    },
+    {
+      "title": "Inside the beloved NYC Irish neighborhood that’s had its cover blown on social media — but locals say the more the merrier",
+      "url": "https://nypost.com/2026/03/16/lifestyle/the-bronxs-little-ireland-goes-viral-on-social-media/",
+      "source": "New York Post"
+    },
+    {
+      "title": "BTS to Perform, Do Q&A at NYC Fan Event for New Album 'ARIRANG'",
+      "url": "http://www.billboard.com/music/music-news/bts-perform-qa-fan-event-nyc-new-album-arirang-1236200308/",
+      "source": "Billboard"
+    },
+    {
+      "title": "‘My weird Frankenstein Irish’: The rise of Gaeilge in New York",
+      "url": "https://www.irishtimes.com/life-style/people/2026/03/16/my-weird-frankenstein-irish-the-rise-of-gaeilge-in-new-york/",
+      "source": "The Irish Times"
+    },
+    {
+      "title": "We Watched 13 Going on 30, One of the Best Magazine Movies of All Time",
+      "url": "http://www.autostraddle.com/we-watched-13-going-on-30-one-of-the-best-magazine-movies-of-all-time/",
+      "source": "Autostraddle.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
