@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Gustavo Dudamel may be leaving L.A.—but he’ll be visiting again soon",
+      "url": "https://www.timeout.com/los-angeles/news/gustavo-dudamel-may-be-leaving-l-a-but-hell-be-visiting-again-soon-031826",
+      "source": "Time Out"
+    },
+    {
+      "title": "Mamdani references Palestinian 'genocide' during St Patrick's Day event",
+      "url": "https://www.foxnews.com/politics/mamdani-references-palestinian-genocide-during-st-patricks-day-event",
+      "source": "Fox News"
+    },
+    {
+      "title": "American Film Institute Unveils Participants for 2026 Cinematography Intensive",
+      "url": "https://variety.com/2026/artisans/news/afi-participants-cinematography-intensive-2026-1236691098/",
+      "source": "Variety"
+    },
+    {
+      "title": "Service Request #1: What Happens When I Call 311?",
+      "url": "https://99percentinvisible.org/episode/service-request-01-311/",
+      "source": "99percentinvisible.org"
+    },
+    {
+      "title": "Melissa Auf der Maur Is the Last Analog Girl",
+      "url": "https://www.spinmagazine.com/2026/03/melissa-auf-der-maur-is-the-last-analog-girl/",
+      "source": "Spinmagazine.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
