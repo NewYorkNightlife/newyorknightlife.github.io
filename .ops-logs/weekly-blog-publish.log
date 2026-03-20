@@ -1,0 +1,39 @@
+==== 2026-03-13 14:00:03 EDT weekly blog publish run ====
+Already exists: /home/nybotenv/.openclaw/workspace/repo-newyorknightlife/blog/weekly/weekend-brief-2026-03-13.html
+Latest weekly brief: ./blog/weekly/weekend-brief-2026-03-13.html
+Weather unit markers: °F=17 °C=17
+Word count: 2467
+Sources links in sources section: 6
+Live Event Signals: count=14 links=14 search_links=0
+Image count: 2 | Caption count: 2
+Image uniqueness check: current_imgs=2 prev_imgs=2 shared=0
+Link check: external_urls=27 bad=0
+Uniqueness check vs previous: ngram_jaccard=0.332 sentence_overlap=0.458
+Weekly brief sanity check complete.
+No content changes; nothing to commit.
+==== 2026-03-13 14:05:02 EDT weekly blog publish run ====
+Already exists: /home/nybotenv/.openclaw/workspace/repo-newyorknightlife/blog/weekly/weekend-brief-2026-03-13.html
+Latest weekly brief: ./blog/weekly/weekend-brief-2026-03-13.html
+WARN: required section/text missing: NYC Weather Snapshot
+WARN: required section/text missing: Weekend Overview
+WARN: required section/text missing: What Changed This Week
+WARN: required section/text missing: Top Neighborhoods
+WARN: required section/text missing: Night Route Strategies
+WARN: required section/text missing: Budget + Risk Strategy
+WARN: required section/text missing: Plan Your NYC Night
+WARN: required section/text missing: Execution Checklist
+WARN: required section/text missing: Final Takeaway
+No content changes; nothing to commit.
+==== 2026-03-13 14:20:02 EDT weekly blog publish run ====
+Already exists: /home/nybotenv/.openclaw/workspace/repo-newyorknightlife/blog/weekly/weekend-brief-2026-03-13.html
+Latest weekly brief: ./blog/weekly/weekend-brief-2026-03-13.html
+WARN: required section/text missing: NYC Weather Snapshot
+WARN: required section/text missing: Weekend Overview
+WARN: required section/text missing: What Changed This Week
+WARN: required section/text missing: Top Neighborhoods
+WARN: required section/text missing: Night Route Strategies
+WARN: required section/text missing: Budget + Risk Strategy
+WARN: required section/text missing: Plan Your NYC Night
+WARN: required section/text missing: Execution Checklist
+WARN: required section/text missing: Final Takeaway
+No content changes; nothing to commit.
