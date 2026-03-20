@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "How to see Jay-Z in NYC this summer",
+      "url": "https://www.fox5ny.com/news/jay-z-yankee-stadium-tickets-what-know-about-2-nyc-shows",
+      "source": "FOX 5 NY"
+    },
+    {
+      "title": "Hayley Williams, Geese, Clipse Lead 2026 Libera Indie Awards Nominees",
+      "url": "https://variety.com/2026/music/news/hayley-williams-geese-clipse-2026-libera-indie-awards-nominees-1236692437/",
+      "source": "Variety"
+    },
+    {
+      "title": "This Week In Rust: This Week in Rust 643",
+      "url": "https://this-week-in-rust.org/blog/2026/03/18/this-week-in-rust-643/",
+      "source": "This-week-in-rust.org"
+    },
+    {
+      "title": "Gustavo Dudamel may be leaving L.A.—but he’ll be visiting again soon",
+      "url": "https://www.timeout.com/los-angeles/news/gustavo-dudamel-may-be-leaving-l-a-but-hell-be-visiting-again-soon-031826",
+      "source": "Time Out"
+    },
+    {
+      "title": "Mamdani references Palestinian 'genocide' during St Patrick's Day event",
+      "url": "https://www.foxnews.com/politics/mamdani-references-palestinian-genocide-during-st-patricks-day-event",
+      "source": "Fox News"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
