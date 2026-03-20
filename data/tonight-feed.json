@@ -5,9 +5,66 @@
     "summary": "scattered clouds",
     "temp_f": 39,
     "feels_like_f": 32,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 42,
+        "low_f": 40
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 52,
+        "low_f": 52
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 45,
+        "low_f": 45
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 48,
+        "low_f": 48
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 37,
+        "low_f": 37
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Hayley Williams, Geese, Clipse Lead 2026 Libera Indie Awards Nominees",
+      "url": "https://variety.com/2026/music/news/hayley-williams-geese-clipse-2026-libera-indie-awards-nominees-1236692437/",
+      "source": "Variety"
+    },
+    {
+      "title": "This Week In Rust: This Week in Rust 643",
+      "url": "https://this-week-in-rust.org/blog/2026/03/18/this-week-in-rust-643/",
+      "source": "This-week-in-rust.org"
+    },
+    {
+      "title": "Gustavo Dudamel may be leaving L.A.—but he’ll be visiting again soon",
+      "url": "https://www.timeout.com/los-angeles/news/gustavo-dudamel-may-be-leaving-l-a-but-hell-be-visiting-again-soon-031826",
+      "source": "Time Out"
+    },
+    {
+      "title": "Mamdani references Palestinian 'genocide' during St Patrick's Day event",
+      "url": "https://www.foxnews.com/politics/mamdani-references-palestinian-genocide-during-st-patricks-day-event",
+      "source": "Fox News"
+    },
+    {
+      "title": "American Film Institute Unveils Participants for 2026 Cinematography Intensive",
+      "url": "https://variety.com/2026/artisans/news/afi-participants-cinematography-intensive-2026-1236691098/",
+      "source": "Variety"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
