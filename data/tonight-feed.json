@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Why Libraries Matter in a Fascist Moment",
+      "url": "https://truthout.org/audio/why-libraries-matter-in-a-fascist-moment/",
+      "source": "Truthout"
+    },
+    {
+      "title": "Sean Christie’s Carversteak Brings Las Vegas Sizzle to New York’s Theater District",
+      "url": "https://observer.com/2026/03/carversteak-restaurant-opens-new-york-city/",
+      "source": "Observer"
+    },
+    {
+      "title": "How to see Jay-Z in NYC this summer",
+      "url": "https://www.fox5ny.com/news/jay-z-yankee-stadium-tickets-what-know-about-2-nyc-shows",
+      "source": "FOX 5 NY"
+    },
+    {
+      "title": "Hayley Williams, Geese, Clipse Lead 2026 Libera Indie Awards Nominees",
+      "url": "https://variety.com/2026/music/news/hayley-williams-geese-clipse-2026-libera-indie-awards-nominees-1236692437/",
+      "source": "Variety"
+    },
+    {
+      "title": "This Week In Rust: This Week in Rust 643",
+      "url": "https://this-week-in-rust.org/blog/2026/03/18/this-week-in-rust-643/",
+      "source": "This-week-in-rust.org"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
