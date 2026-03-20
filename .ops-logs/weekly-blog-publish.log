@@ -37,3 +37,29 @@ WARN: required section/text missing: Plan Your NYC Night
 WARN: required section/text missing: Execution Checklist
 WARN: required section/text missing: Final Takeaway
 No content changes; nothing to commit.
+==== 2026-03-20 15:00:03 EDT weekly blog publish run ====
+Already exists: /home/nybotenv/.openclaw/workspace/repo-newyorknightlife/blog/weekly/weekend-brief-2026-03-20.html
+Latest weekly brief: ./blog/weekly/weekend-brief-2026-03-20.html
+Weather unit markers: °F=7 °C=7
+WARN: weather block must include numeric °F and °C values (current + 7-day range)
+WARN: required internal link missing: https://nynightlife.com/blog/archive
+Word count: 1811
+WARN: word count out of required range (2000-3000)
+Sources links in sources section: 14
+Live Event Signals: count=0 links=0 search_links=0
+WARN: Live Event Signals must have >=12 items and direct (non-search) links
+Boilerplate check: max_paragraph_stem_repeat=1
+ERROR: weekly-blog-check failed; aborting publish
+==== 2026-03-20 15:05:04 EDT weekly blog publish run ====
+Already exists: /home/nybotenv/.openclaw/workspace/repo-newyorknightlife/blog/weekly/weekend-brief-2026-03-20.html
+Latest weekly brief: ./blog/weekly/weekend-brief-2026-03-20.html
+Weather unit markers: °F=7 °C=7
+WARN: weather block must include numeric °F and °C values (current + 7-day range)
+WARN: required internal link missing: https://nynightlife.com/blog/archive
+Word count: 1811
+WARN: word count out of required range (2000-3000)
+Sources links in sources section: 14
+Live Event Signals: count=0 links=0 search_links=0
+WARN: Live Event Signals must have >=12 items and direct (non-search) links
+Boilerplate check: max_paragraph_stem_repeat=1
+ERROR: weekly-blog-check failed; aborting publish

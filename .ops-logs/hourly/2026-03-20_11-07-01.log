@@ -1,0 +1,31 @@
+=== Hourly Thin Page Audit (2026-03-20_11-07-01) ===
+Auditing HTML pages under: .
+Threshold: 1200 characters (visible text approximation)
+
+PAGE                                                              CHARS
+----                                                              -----
+./docs/GUIDE-TEMPLATE.html                                          957
+./night-planner/index.html                                           10
+./safe-late-night-transport/index.html                               10
+./venue-compare/index.html                                           10
+
+=== Affiliate Readiness Snapshot (2026-03-20_11-07-01) ===
+=== Affiliate Program Status ===
+- Booking.com | status=pending submit | next=Submit application
+- Viator | status=pending submit | next=Submit application
+- GetYourGuide | status=pending submit | next=Submit application
+- Eventbrite | status=research route | next=Confirm affiliate path
+- OpenTable | status=research route | next=Confirm partner route
+
+=== Deployment Queue Status ===
+- P1 /visit/where-to-stay-for-nightlife-nyc.html | Booking.com | pending approval
+- P2 /guides/stay-near-nightlife.html | Booking.com | pending approval
+- P3 /weekend/nyc-nightlife-this-weekend.html | Viator | pending approval
+- P4 /things-to-do/nyc-night-cruises-and-ferry-experiences.html | Viator | pending approval
+- P5 /guides/best-nightlife-experiences.html | GetYourGuide | pending approval
+- P6 /tools/nyc-night-planner.html | GetYourGuide | pending approval
+
+=== Quick Counts ===
+Programs submitted/approved: 0
+Programs approved: 0
+Queue deployed: 0
