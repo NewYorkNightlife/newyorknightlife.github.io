@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "PUMA Reveals Its Most Powerful International Football Kit Lineup yet on the Streets of New York City",
+      "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/puma-reveals-its-most-powerful-international-football-kit-lineup-yet-on-the-streets-of-new-york-city",
+      "source": "Financial Post"
+    },
+    {
+      "title": "Development Director – Eugene O’Neill Theater Center via TOC Arts Partners",
+      "url": "https://www.artsjournal.com/2026/03/development-director-eugene-oneill-theater-center-via-toc-arts-partners.html",
+      "source": "Artsjournal.com"
+    },
+    {
+      "title": "Why Libraries Matter in a Fascist Moment",
+      "url": "https://truthout.org/audio/why-libraries-matter-in-a-fascist-moment/",
+      "source": "Truthout"
+    },
+    {
+      "title": "Sean Christie’s Carversteak Brings Las Vegas Sizzle to New York’s Theater District",
+      "url": "https://observer.com/2026/03/carversteak-restaurant-opens-new-york-city/",
+      "source": "Observer"
+    },
+    {
+      "title": "How to see Jay-Z in NYC this summer",
+      "url": "https://www.fox5ny.com/news/jay-z-yankee-stadium-tickets-what-know-about-2-nyc-shows",
+      "source": "FOX 5 NY"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
