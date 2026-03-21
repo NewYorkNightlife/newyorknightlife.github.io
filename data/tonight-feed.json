@@ -5,9 +5,66 @@
     "summary": "few clouds",
     "temp_f": 55,
     "feels_like_f": 53,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 58,
+        "low_f": 55
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 60,
+        "low_f": 60
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 43,
+        "low_f": 43
+      },
+      {
+        "day": "Tue",
+        "summary": "Clear",
+        "high_f": 45,
+        "low_f": 45
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 52,
+        "low_f": 52
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Cinema Sizzlers: BOSSIP’s Bubbling Black Actresses Of 2026",
+      "url": "https://bossip.com/4532485/cinema-sizzlers-bossips-bubbling-black-actresses-of-2026/",
+      "source": "Bossip"
+    },
+    {
+      "title": "PUMA Reveals Its Most Powerful International Football Kit Lineup yet on the Streets of New York City",
+      "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/puma-reveals-its-most-powerful-international-football-kit-lineup-yet-on-the-streets-of-new-york-city",
+      "source": "Financial Post"
+    },
+    {
+      "title": "Development Director – Eugene O’Neill Theater Center via TOC Arts Partners",
+      "url": "https://www.artsjournal.com/2026/03/development-director-eugene-oneill-theater-center-via-toc-arts-partners.html",
+      "source": "Artsjournal.com"
+    },
+    {
+      "title": "Why Libraries Matter in a Fascist Moment",
+      "url": "https://truthout.org/audio/why-libraries-matter-in-a-fascist-moment/",
+      "source": "Truthout"
+    },
+    {
+      "title": "Sean Christie’s Carversteak Brings Las Vegas Sizzle to New York’s Theater District",
+      "url": "https://observer.com/2026/03/carversteak-restaurant-opens-new-york-city/",
+      "source": "Observer"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
