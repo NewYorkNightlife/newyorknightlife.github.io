@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 52,
     "feels_like_f": 51,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 64,
+        "low_f": 53
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 46,
+        "low_f": 46
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 46,
+        "low_f": 46
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 51,
+        "low_f": 51
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 55,
+        "low_f": 55
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "20 Best Classic Rock Album Covers That Visually Defined An Era, Ranked",
+      "url": "https://screenrant.com/best-classic-rock-album-covers-ranked/",
+      "source": "Screen Rant"
+    },
+    {
+      "title": "PGA Golf, NYC Open Data Week, NIH Funding Cuts, More: Saturday ResearchBuzz, March 21, 2026",
+      "url": "https://researchbuzz.me/2026/03/21/pga-golf-nyc-open-data-week-nih-funding-cuts-more-saturday-researchbuzz-march-21-2026/",
+      "source": "Researchbuzz.me"
+    },
+    {
+      "title": "Everything We Saw at SXSW 2026: I Love Boosters, Wishful Thinking, The Comeback, and More",
+      "url": "http://www.denofgeek.com/movies/everything-we-saw-sxsw-2026/",
+      "source": "Den of Geek US"
+    },
+    {
+      "title": "IDW June 2026 Full Solicits And Solicitations",
+      "url": "https://bleedingcool.com/comics/idw-june-2026-full-solicits-and-solicitations/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Pittsburgh Schools Will Be Shut Down For Multiple Days Thanks To The NFL Draft",
+      "url": "https://brobible.com/sports/article/pittsburgh-schools-closing-nfl-draft/",
+      "source": "BroBible"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
