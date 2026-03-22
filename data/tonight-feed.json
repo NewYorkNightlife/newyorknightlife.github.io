@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "PGA Golf, NYC Open Data Week, NIH Funding Cuts, More: Saturday ResearchBuzz, March 21, 2026",
+      "url": "https://researchbuzz.me/2026/03/21/pga-golf-nyc-open-data-week-nih-funding-cuts-more-saturday-researchbuzz-march-21-2026/",
+      "source": "Researchbuzz.me"
+    },
+    {
+      "title": "Everything We Saw at SXSW 2026: I Love Boosters, Wishful Thinking, The Comeback, and More",
+      "url": "http://www.denofgeek.com/movies/everything-we-saw-sxsw-2026/",
+      "source": "Den of Geek US"
+    },
+    {
+      "title": "IDW June 2026 Full Solicits And Solicitations",
+      "url": "https://bleedingcool.com/comics/idw-june-2026-full-solicits-and-solicitations/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Pittsburgh Schools Will Be Shut Down For Multiple Days Thanks To The NFL Draft",
+      "url": "https://brobible.com/sports/article/pittsburgh-schools-closing-nfl-draft/",
+      "source": "BroBible"
+    },
+    {
+      "title": "Cinema Sizzlers: BOSSIP’s Bubbling Black Actresses Of 2026",
+      "url": "https://bossip.com/4532485/cinema-sizzlers-bossips-bubbling-black-actresses-of-2026/",
+      "source": "Bossip"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
