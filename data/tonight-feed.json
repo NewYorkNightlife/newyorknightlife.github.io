@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 51,
     "feels_like_f": 49,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 51,
+        "low_f": 50
+      },
+      {
+        "day": "Sun",
+        "summary": "Rain",
+        "high_f": 58,
+        "low_f": 58
+      },
+      {
+        "day": "Mon",
+        "summary": "Clear",
+        "high_f": 39,
+        "low_f": 39
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 40,
+        "low_f": 40
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 46,
+        "low_f": 46
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Everything We Saw at SXSW 2026: I Love Boosters, Wishful Thinking, The Comeback, and More",
+      "url": "http://www.denofgeek.com/movies/everything-we-saw-sxsw-2026/",
+      "source": "Den of Geek US"
+    },
+    {
+      "title": "IDW June 2026 Full Solicits And Solicitations",
+      "url": "https://bleedingcool.com/comics/idw-june-2026-full-solicits-and-solicitations/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Pittsburgh Schools Will Be Shut Down For Multiple Days Thanks To The NFL Draft",
+      "url": "https://brobible.com/sports/article/pittsburgh-schools-closing-nfl-draft/",
+      "source": "BroBible"
+    },
+    {
+      "title": "Cinema Sizzlers: BOSSIP’s Bubbling Black Actresses Of 2026",
+      "url": "https://bossip.com/4532485/cinema-sizzlers-bossips-bubbling-black-actresses-of-2026/",
+      "source": "Bossip"
+    },
+    {
+      "title": "PUMA Reveals Its Most Powerful International Football Kit Lineup yet on the Streets of New York City",
+      "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/puma-reveals-its-most-powerful-international-football-kit-lineup-yet-on-the-streets-of-new-york-city",
+      "source": "Financial Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
