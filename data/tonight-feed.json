@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "BTS: Live, Travel, Fashion, and More",
+      "url": "https://www.laineygossip.com/bts-gave-us-so-much-to-analyse-and-take-in-with-the-release-of-arirang/",
+      "source": "LaineyGossip"
+    },
+    {
+      "title": "‘The Madison’ Ending Explained: The Fallout From Preston’s Funeral, Flying Back To New York, And Where Stacy Found Healing",
+      "url": "https://decider.com/2026/03/21/the-madison-season-1-ending-explained/",
+      "source": "Decider"
+    },
+    {
+      "title": "‘The Madison’ Episode 5 Recap: City Shock",
+      "url": "https://decider.com/2026/03/21/the-madison-episode-5-recap/",
+      "source": "Decider"
+    },
+    {
+      "title": "20 Best Classic Rock Album Covers That Visually Defined An Era, Ranked",
+      "url": "https://screenrant.com/best-classic-rock-album-covers-ranked/",
+      "source": "Screen Rant"
+    },
+    {
+      "title": "PGA Golf, NYC Open Data Week, NIH Funding Cuts, More: Saturday ResearchBuzz, March 21, 2026",
+      "url": "https://researchbuzz.me/2026/03/21/pga-golf-nyc-open-data-week-nih-funding-cuts-more-saturday-researchbuzz-march-21-2026/",
+      "source": "Researchbuzz.me"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
