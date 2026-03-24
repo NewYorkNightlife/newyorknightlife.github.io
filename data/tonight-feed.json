@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 47,
     "feels_like_f": 43,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Tue",
+        "summary": "Clear",
+        "high_f": 47,
+        "low_f": 46
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 48,
+        "low_f": 48
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 67,
+        "low_f": 67
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 48,
+        "low_f": 48
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 44,
+        "low_f": 44
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "‘The Madison’ Ending Explained: The Fallout From Preston’s Funeral, Flying Back To New York, And Where Stacy Found Healing",
+      "url": "https://decider.com/2026/03/21/the-madison-season-1-ending-explained/",
+      "source": "Decider"
+    },
+    {
+      "title": "‘The Madison’ Episode 5 Recap: City Shock",
+      "url": "https://decider.com/2026/03/21/the-madison-episode-5-recap/",
+      "source": "Decider"
+    },
+    {
+      "title": "20 Best Classic Rock Album Covers That Visually Defined An Era, Ranked",
+      "url": "https://screenrant.com/best-classic-rock-album-covers-ranked/",
+      "source": "Screen Rant"
+    },
+    {
+      "title": "PGA Golf, NYC Open Data Week, NIH Funding Cuts, More: Saturday ResearchBuzz, March 21, 2026",
+      "url": "https://researchbuzz.me/2026/03/21/pga-golf-nyc-open-data-week-nih-funding-cuts-more-saturday-researchbuzz-march-21-2026/",
+      "source": "Researchbuzz.me"
+    },
+    {
+      "title": "Everything We Saw at SXSW 2026: I Love Boosters, Wishful Thinking, The Comeback, and More",
+      "url": "http://www.denofgeek.com/movies/everything-we-saw-sxsw-2026/",
+      "source": "Den of Geek US"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
