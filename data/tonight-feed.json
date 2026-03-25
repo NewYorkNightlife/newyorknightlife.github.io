@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 39,
     "feels_like_f": 33,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Clear",
+        "high_f": 41,
+        "low_f": 39
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 48,
+        "low_f": 48
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 59,
+        "low_f": 59
+      },
+      {
+        "day": "Sat",
+        "summary": "Clear",
+        "high_f": 33,
+        "low_f": 33
+      },
+      {
+        "day": "Sun",
+        "summary": "Clear",
+        "high_f": 35,
+        "low_f": 35
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Chappell Roan’s Most Controversial Moments: From Security to Fan Boundaries",
+      "url": "https://www.usmagazine.com/celebrity-news/news/chappell-roans-most-controversial-moments-over-the-years/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "BTS: Live, Travel, Fashion, and More",
+      "url": "https://www.laineygossip.com/bts-gave-us-so-much-to-analyse-and-take-in-with-the-release-of-arirang/",
+      "source": "LaineyGossip"
+    },
+    {
+      "title": "‘The Madison’ Ending Explained: The Fallout From Preston’s Funeral, Flying Back To New York, And Where Stacy Found Healing",
+      "url": "https://decider.com/2026/03/21/the-madison-season-1-ending-explained/",
+      "source": "Decider"
+    },
+    {
+      "title": "‘The Madison’ Episode 5 Recap: City Shock",
+      "url": "https://decider.com/2026/03/21/the-madison-episode-5-recap/",
+      "source": "Decider"
+    },
+    {
+      "title": "20 Best Classic Rock Album Covers That Visually Defined An Era, Ranked",
+      "url": "https://screenrant.com/best-classic-rock-album-covers-ranked/",
+      "source": "Screen Rant"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
