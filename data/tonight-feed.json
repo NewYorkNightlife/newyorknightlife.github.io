@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 66,
     "feels_like_f": 64,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Clear",
+        "high_f": 71,
+        "low_f": 66
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 52,
+        "low_f": 52
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 41,
+        "low_f": 41
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 47,
+        "low_f": 47
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 53,
+        "low_f": 53
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Howard Stern: ‘I knew the real Carolyn Bessette… she was very lovely’",
+      "url": "https://www.celebitchy.com/968818/howard_stern_i_knew_the_real_carolyn_bessette_she_was_very_lovely/",
+      "source": "Celebitchy.com"
+    },
+    {
+      "title": "Mysterious noise plagues 3 neighboring towns, leaving residents exhausted and shaken",
+      "url": "https://www.foxnews.com/lifestyle/mysterious-noise-plagues-3-neighboring-towns-leaving-residents-exhausted-shaken",
+      "source": "Fox News"
+    },
+    {
+      "title": "Haylie Davis’ California Sunshine",
+      "url": "http://www.rollingstone.com/music/music-features/haylie-davis-interview-singer-songwriter-1235529174/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "This New N.Y.C. Car Show Celebrates Modern Classics to Attract a New Generation of Collectors",
+      "url": "http://robbreport.com/motors/cars/wheels-of-nyc-car-show-1237707560/",
+      "source": "Robb Report"
+    },
+    {
+      "title": "Circle X – Prehistory (1982, Reissue 2026)",
+      "url": "https://exystence.net/blog/2026/03/24/circle-x-prehistory-1982-reissue-2026/",
+      "source": "Exystence.net"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
