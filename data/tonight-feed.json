@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 48,
     "feels_like_f": 43,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 50,
+        "low_f": 48
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 49,
+        "low_f": 49
+      },
+      {
+        "day": "Sat",
+        "summary": "Clear",
+        "high_f": 32,
+        "low_f": 32
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 38,
+        "low_f": 38
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 46,
+        "low_f": 46
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Circle X – Prehistory (1982, Reissue 2026)",
+      "url": "https://exystence.net/blog/2026/03/24/circle-x-prehistory-1982-reissue-2026/",
+      "source": "Exystence.net"
+    },
+    {
+      "title": "Ms Rachel’s Gratingly Artificial Personality Takes Insidious Turn",
+      "url": "https://dailycaller.com/2026/03/24/rachel-accurso-dilley-immigration-detention-children-politics-israel-jews-far-left/",
+      "source": "The Daily Caller"
+    },
+    {
+      "title": "Hannah Berner & Paige DeSorbo Headline Comedy Series In Works At Netflix, Teaming With Amy Poehler & Kay Cannon",
+      "url": "http://deadline.com/2026/03/hannah-berner-paige-desorbo-netflix-comedy-amy-poehler-kay-cannon-1236763712/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Chappell Roan’s Most Controversial Moments: From Security to Fan Boundaries",
+      "url": "https://www.usmagazine.com/celebrity-news/news/chappell-roans-most-controversial-moments-over-the-years/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "BTS: Live, Travel, Fashion, and More",
+      "url": "https://www.laineygossip.com/bts-gave-us-so-much-to-analyse-and-take-in-with-the-release-of-arirang/",
+      "source": "LaineyGossip"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
