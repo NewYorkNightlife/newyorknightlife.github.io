@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "This New N.Y.C. Car Show Celebrates Modern Classics to Attract a New Generation of Collectors",
+      "url": "http://robbreport.com/motors/cars/wheels-of-nyc-car-show-1237707560/",
+      "source": "Robb Report"
+    },
+    {
+      "title": "Circle X – Prehistory (1982, Reissue 2026)",
+      "url": "https://exystence.net/blog/2026/03/24/circle-x-prehistory-1982-reissue-2026/",
+      "source": "Exystence.net"
+    },
+    {
+      "title": "Ms Rachel’s Gratingly Artificial Personality Takes Insidious Turn",
+      "url": "https://dailycaller.com/2026/03/24/rachel-accurso-dilley-immigration-detention-children-politics-israel-jews-far-left/",
+      "source": "The Daily Caller"
+    },
+    {
+      "title": "Hannah Berner & Paige DeSorbo Headline Comedy Series In Works At Netflix, Teaming With Amy Poehler & Kay Cannon",
+      "url": "http://deadline.com/2026/03/hannah-berner-paige-desorbo-netflix-comedy-amy-poehler-kay-cannon-1236763712/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Chappell Roan’s Most Controversial Moments: From Security to Fan Boundaries",
+      "url": "https://www.usmagazine.com/celebrity-news/news/chappell-roans-most-controversial-moments-over-the-years/",
+      "source": "Us Weekly"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
