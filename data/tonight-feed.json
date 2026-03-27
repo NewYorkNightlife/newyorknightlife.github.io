@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 64,
     "feels_like_f": 64,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 64,
+        "low_f": 63
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 38,
+        "low_f": 38
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 36,
+        "low_f": 36
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 45,
+        "low_f": 45
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 49,
+        "low_f": 49
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "BTS takes over the Guggenheim museum for secret ‘Tonight Show’ performance",
+      "url": "https://pagesix.com/2026/03/25/entertainment/bts-takes-over-the-guggenheim-museum-for-secret-tonight-show-performance/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Howard Stern: ‘I knew the real Carolyn Bessette… she was very lovely’",
+      "url": "https://www.celebitchy.com/968818/howard_stern_i_knew_the_real_carolyn_bessette_she_was_very_lovely/",
+      "source": "Celebitchy.com"
+    },
+    {
+      "title": "Mysterious noise plagues 3 neighboring towns, leaving residents exhausted and shaken",
+      "url": "https://www.foxnews.com/lifestyle/mysterious-noise-plagues-3-neighboring-towns-leaving-residents-exhausted-shaken",
+      "source": "Fox News"
+    },
+    {
+      "title": "Haylie Davis’ California Sunshine",
+      "url": "http://www.rollingstone.com/music/music-features/haylie-davis-interview-singer-songwriter-1235529174/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "This New N.Y.C. Car Show Celebrates Modern Classics to Attract a New Generation of Collectors",
+      "url": "http://robbreport.com/motors/cars/wheels-of-nyc-car-show-1237707560/",
+      "source": "Robb Report"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
