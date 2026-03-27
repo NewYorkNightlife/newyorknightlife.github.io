@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "How the Dazed US team are Airmaxxing",
+      "url": "https://www.dazeddigital.com/fashion/article/69975/1/how-the-dazed-us-team-are-airmaxxing?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=how-the-dazed-us-team-are-airmaxxing",
+      "source": "Dazed"
+    },
+    {
+      "title": "Usher: Sean Combs has been ‘misrepresented’, so many people benefited from him",
+      "url": "https://www.celebitchy.com/969019/usher_sean_combs_has_been_misrepresented_so_many_people_benefited_from_him/",
+      "source": "Celebitchy.com"
+    },
+    {
+      "title": "Shop Amazon’s Spring Sale like a pro: 25+ editor picks we’re adding to cart",
+      "url": "https://nypost.com/shopping/everything-our-editors-are-actually-shopping-at-amazons-spring-sale/",
+      "source": "New York Post"
+    },
+    {
+      "title": "BTS takes over the Guggenheim museum for secret ‘Tonight Show’ performance",
+      "url": "https://pagesix.com/2026/03/25/entertainment/bts-takes-over-the-guggenheim-museum-for-secret-tonight-show-performance/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Howard Stern: ‘I knew the real Carolyn Bessette… she was very lovely’",
+      "url": "https://www.celebitchy.com/968818/howard_stern_i_knew_the_real_carolyn_bessette_she_was_very_lovely/",
+      "source": "Celebitchy.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
