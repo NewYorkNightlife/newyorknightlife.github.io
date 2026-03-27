@@ -5,9 +5,66 @@
     "summary": "broken clouds",
     "temp_f": 46,
     "feels_like_f": 40,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 48,
+        "low_f": 46
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 42,
+        "low_f": 42
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 51,
+        "low_f": 51
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 49,
+        "low_f": 49
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 68,
+        "low_f": 68
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Cardi B's 'Little Miss Drama' New York City Tour Stop: 7 Best Moments",
+      "url": "http://www.billboard.com/lists/cardi-b-little-miss-drama-tour-new-york-city-best-moments/",
+      "source": "Billboard"
+    },
+    {
+      "title": "How the Dazed US team are Airmaxxing",
+      "url": "https://www.dazeddigital.com/fashion/article/69975/1/how-the-dazed-us-team-are-airmaxxing?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=how-the-dazed-us-team-are-airmaxxing",
+      "source": "Dazed"
+    },
+    {
+      "title": "Usher: Sean Combs has been ‘misrepresented’, so many people benefited from him",
+      "url": "https://www.celebitchy.com/969019/usher_sean_combs_has_been_misrepresented_so_many_people_benefited_from_him/",
+      "source": "Celebitchy.com"
+    },
+    {
+      "title": "Shop Amazon’s Spring Sale like a pro: 25+ editor picks we’re adding to cart",
+      "url": "https://nypost.com/shopping/everything-our-editors-are-actually-shopping-at-amazons-spring-sale/",
+      "source": "New York Post"
+    },
+    {
+      "title": "BTS takes over the Guggenheim museum for secret ‘Tonight Show’ performance",
+      "url": "https://pagesix.com/2026/03/25/entertainment/bts-takes-over-the-guggenheim-museum-for-secret-tonight-show-performance/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
