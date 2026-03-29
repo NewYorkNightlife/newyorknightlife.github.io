@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Zayn Malik Steps Out in NYC to Promote New Song 'Sideways'",
+      "url": "https://www.justjared.com/2026/03/27/zayn-malik-steps-out-in-nyc-to-promote-new-song-sideways/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "At 40, Lady Gaga isn't done revolutionizing pop music",
+      "url": "https://www.dw.com/en/at-40-lady-gaga-isnt-done-revolutionizing-pop-music/a-76539162",
+      "source": "DW (English)"
+    },
+    {
+      "title": "HYPOCRITE IDLER 1Q2026",
+      "url": "https://www.hilobrow.com/2026/03/27/hypocrite-idler-1q2026/",
+      "source": "Hilobrow.com"
+    },
+    {
+      "title": "Cardi B's 'Little Miss Drama' New York City Tour Stop: 7 Best Moments",
+      "url": "http://www.billboard.com/lists/cardi-b-little-miss-drama-tour-new-york-city-best-moments/",
+      "source": "Billboard"
+    },
+    {
+      "title": "How the Dazed US team are Airmaxxing",
+      "url": "https://www.dazeddigital.com/fashion/article/69975/1/how-the-dazed-us-team-are-airmaxxing?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=how-the-dazed-us-team-are-airmaxxing",
+      "source": "Dazed"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
