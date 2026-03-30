@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Most Iconic Movie & TV Sites - Celebrity & Entertainment News - Current News World",
+      "url": "https://currentnewsworld.com/2026/03/28/most-iconic-movie-tv-sites-celebrity-entertainment-news/",
+      "source": "Currentnewsworld.com"
+    },
+    {
+      "title": "HILOBROW 1Q2026",
+      "url": "https://www.hilobrow.com/2026/03/28/hilobrow-1q2026/",
+      "source": "Hilobrow.com"
+    },
+    {
+      "title": "Zayn Malik Steps Out in NYC to Promote New Song 'Sideways'",
+      "url": "https://www.justjared.com/2026/03/27/zayn-malik-steps-out-in-nyc-to-promote-new-song-sideways/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "At 40, Lady Gaga isn't done revolutionizing pop music",
+      "url": "https://www.dw.com/en/at-40-lady-gaga-isnt-done-revolutionizing-pop-music/a-76539162",
+      "source": "DW (English)"
+    },
+    {
+      "title": "HYPOCRITE IDLER 1Q2026",
+      "url": "https://www.hilobrow.com/2026/03/27/hypocrite-idler-1q2026/",
+      "source": "Hilobrow.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
