@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 75,
     "feels_like_f": 75,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Tue",
+        "summary": "Clear",
+        "high_f": 75,
+        "low_f": 74
+      },
+      {
+        "day": "Wed",
+        "summary": "Rain",
+        "high_f": 61,
+        "low_f": 61
+      },
+      {
+        "day": "Thu",
+        "summary": "Rain",
+        "high_f": 46,
+        "low_f": 46
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 67,
+        "low_f": 67
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 51,
+        "low_f": 51
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "I Am … The Drama!! Cardi B Now Dating Meg Thee Stallion’s Ex PARDI!!",
+      "url": "https://mediatakeout.com/i-am-the-drama-cardi-b-now-dating-meg-thee-stallions-ex-pardi/",
+      "source": "Mediatakeout.com"
+    },
+    {
+      "title": "How Tucker Carlson’s Bizarre Gear Became the Hottest Fashion Trend for Liberals",
+      "url": "https://slate.com/culture/2026/03/tucker-carlson-trump-news-israel-merch.html",
+      "source": "Slate Magazine"
+    },
+    {
+      "title": "AI Updates for the Week of 3/29/26",
+      "url": "https://www.annielytics.com/blog/ai/ai-updates-for-the-week-of-3-29-26/",
+      "source": "Annielytics.com"
+    },
+    {
+      "title": "‘Way Less Sexual Tension’: Zohran Mamdani Takes Shots At Media, Roasts Andrew Cuomo, Bill De Blasio At Black Tie Affair",
+      "url": "https://dailycaller.com/2026/03/29/mamdani-roasts-cuomo-de-blasio-media-inner-circle-dinner-hochul/",
+      "source": "The Daily Caller"
+    },
+    {
+      "title": "Most Iconic Movie & TV Sites - Celebrity & Entertainment News - Current News World",
+      "url": "https://currentnewsworld.com/2026/03/28/most-iconic-movie-tv-sites-celebrity-entertainment-news/",
+      "source": "Currentnewsworld.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
