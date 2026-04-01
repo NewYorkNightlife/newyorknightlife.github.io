@@ -5,7 +5,38 @@
     "summary": "broken clouds",
     "temp_f": 77,
     "feels_like_f": 77,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Rain",
+        "high_f": 75,
+        "low_f": 71
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 48,
+        "low_f": 48
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 68,
+        "low_f": 68
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 59,
+        "low_f": 59
+      },
+      {
+        "day": "Sun",
+        "summary": "Rain",
+        "high_f": 60,
+        "low_f": 60
+      }
+    ]
   },
   "headlines": [],
   "featured_tonight": [],
