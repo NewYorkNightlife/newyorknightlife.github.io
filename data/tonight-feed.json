@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "BTS 'ARIRANG' First-Week Numbers: Five Burning Questions",
+      "url": "http://www.billboard.com/music/pop/bts-arirang-first-week-five-burning-questions-1236211760/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Webby Awards 2026 Nominations: Taylor Swift, Bad Bunny, Stephen Colbert & Timothée Chalamet Make The List",
+      "url": "http://deadline.com/2026/03/webby-awards-2026-nominations-1236769823/",
+      "source": "Deadline"
+    },
+    {
+      "title": "2026 Webbys Nominations: PBS, Disney, NBCUniversal, Netflix, Nat Geo and WBD Vie for Media Company of the Year",
+      "url": "https://www.thewrap.com/culture-lifestyle/culture/2026-webby-awards-nominations-complete-list/",
+      "source": "TheWrap"
+    },
+    {
+      "title": "Variety Lands Two 2026 Webby Awards Nominations",
+      "url": "https://variety.com/2026/digital/news/webby-awards-nominations-2026-variety-1236702429/",
+      "source": "Variety"
+    },
+    {
+      "title": "I Am … The Drama!! Cardi B Now Dating Meg Thee Stallion’s Ex PARDI!!",
+      "url": "https://mediatakeout.com/i-am-the-drama-cardi-b-now-dating-meg-thee-stallions-ex-pardi/",
+      "source": "Mediatakeout.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
