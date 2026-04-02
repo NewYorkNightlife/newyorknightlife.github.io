@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Artist Collaborates With Pigeons To Create Music You Might Sample on an EDM Track",
+      "url": "https://mymodernmet.com/amedaee-making-music-with-pigeons/",
+      "source": "My Modern Met"
+    },
+    {
+      "title": "Chris “Daze” Ellis \"Orchid Rain on the Underground\" @ PPOW Gallery, NYC",
+      "url": "https://www.juxtapoz.com/news/graffiti/chris-daze-ellis-orchid-rain-on-the-underground-ppow-gallery-nyc/",
+      "source": "Juxtapoz.com"
+    },
+    {
+      "title": "Princeton Livestock Exchange Concert: Leo Chang",
+      "url": "https://www.princeton.edu/events/2026/princeton-livestock-exchange-concert-leo-chang",
+      "source": "Princeton University"
+    },
+    {
+      "title": "BTS 'ARIRANG' First-Week Numbers: Five Burning Questions",
+      "url": "http://www.billboard.com/music/pop/bts-arirang-first-week-five-burning-questions-1236211760/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Webby Awards 2026 Nominations: Taylor Swift, Bad Bunny, Stephen Colbert & Timothée Chalamet Make The List",
+      "url": "http://deadline.com/2026/03/webby-awards-2026-nominations-1236769823/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
