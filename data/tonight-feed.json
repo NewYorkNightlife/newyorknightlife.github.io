@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "James Tynion IV Funds B.O.D.E.G.A., Launches A New Brooklyn Comic Con",
+      "url": "https://bleedingcool.com/comics/james-tynion-iv-funds-b-o-d-e-g-a-launches-a-new-brooklyn-comic-con/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Zayn Malik Sports 'Drew' Hat as He Leaves 'Drew Barrymore Show' Studios in NYC",
+      "url": "https://www.justjared.com/2026/04/02/zayn-malik-sports-drew-hat-as-he-leaves-drew-barrymore-show-studios-in-nyc/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "Florida Keys History Center, TikTok, Google, More: Wednesday Afternoon ResearchBuzz, April 1, 2026",
+      "url": "https://researchbuzz.me/2026/04/01/florida-keys-history-center-tiktok-google-more-wednesday-afternoon-researchbuzz-april-1-2026/",
+      "source": "Researchbuzz.me"
+    },
+    {
+      "title": "‘The Invite,’ ‘Late Fame,’ and Many More Movies Lead SFFILM Festival Lineup",
+      "url": "https://www.indiewire.com/news/festivals/san-francisco-film-festival-reveals-2026-lineup-1235186900/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "Artist Collaborates With Pigeons To Create Music You Might Sample on an EDM Track",
+      "url": "https://mymodernmet.com/amedaee-making-music-with-pigeons/",
+      "source": "My Modern Met"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
