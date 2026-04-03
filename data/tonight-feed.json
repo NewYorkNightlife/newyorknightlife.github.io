@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Florida Keys History Center, TikTok, Google, More: Wednesday Afternoon ResearchBuzz, April 1, 2026",
+      "url": "https://researchbuzz.me/2026/04/01/florida-keys-history-center-tiktok-google-more-wednesday-afternoon-researchbuzz-april-1-2026/",
+      "source": "Researchbuzz.me"
+    },
+    {
+      "title": "‘The Invite,’ ‘Late Fame,’ and Many More Movies Lead SFFILM Festival Lineup",
+      "url": "https://www.indiewire.com/news/festivals/san-francisco-film-festival-reveals-2026-lineup-1235186900/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "Artist Collaborates With Pigeons To Create Music You Might Sample on an EDM Track",
+      "url": "https://mymodernmet.com/amedaee-making-music-with-pigeons/",
+      "source": "My Modern Met"
+    },
+    {
+      "title": "Chris “Daze” Ellis \"Orchid Rain on the Underground\" @ PPOW Gallery, NYC",
+      "url": "https://www.juxtapoz.com/news/graffiti/chris-daze-ellis-orchid-rain-on-the-underground-ppow-gallery-nyc/",
+      "source": "Juxtapoz.com"
+    },
+    {
+      "title": "Princeton Livestock Exchange Concert: Leo Chang",
+      "url": "https://www.princeton.edu/events/2026/princeton-livestock-exchange-concert-leo-chang",
+      "source": "Princeton University"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
