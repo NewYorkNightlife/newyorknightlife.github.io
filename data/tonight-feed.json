@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Tommy Lloyd's surest shot: Arizona coach built a behemoth and bond through his lifelong Beastie Boys fandom",
+      "url": "https://www.cbssports.com/college-basketball/news/tommy-lloyd-arizona-beastie-boys-final-four-mix-master-mike/",
+      "source": "CBS Sports"
+    },
+    {
+      "title": "I upgraded to Amtrak's business class for $50. As nice as my 8-hour ride was, I'll probably stick with coach.",
+      "url": "https://www.businessinsider.com/trying-amtrak-business-class-long-ride-pennsylvanian-review-photos-2026-4",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Diplo's Run Club New York 2026 5K Race Announced: Date, Location & Registration Details",
+      "url": "https://www.justjared.com/2026/04/02/diplo-run-club-new-york-2026-5k-race-date-registration/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "James Tynion IV Funds B.O.D.E.G.A., Launches A New Brooklyn Comic Con",
+      "url": "https://bleedingcool.com/comics/james-tynion-iv-funds-b-o-d-e-g-a-launches-a-new-brooklyn-comic-con/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Zayn Malik Sports 'Drew' Hat as He Leaves 'Drew Barrymore Show' Studios in NYC",
+      "url": "https://www.justjared.com/2026/04/02/zayn-malik-sports-drew-hat-as-he-leaves-drew-barrymore-show-studios-in-nyc/",
+      "source": "Just Jared"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
