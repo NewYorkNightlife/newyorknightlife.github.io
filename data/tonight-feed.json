@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Behind the music - We Are Scientists",
+      "url": "https://www.rte.ie/entertainment/2026/0405/1566072-behind-the-music-we-are-scientists/",
+      "source": "RTE"
+    },
+    {
+      "title": "Trenton Arts Princeton: Annual Showcase",
+      "url": "https://www.princeton.edu/events/2026/trenton-arts-princeton-annual-showcase",
+      "source": "Princeton University"
+    },
+    {
+      "title": "Jazz Festival 2026",
+      "url": "https://www.princeton.edu/events/2026/jazz-festival-2026",
+      "source": "Princeton University"
+    },
+    {
+      "title": "Benjamin Franklin Film ‘A Great Awakening’ Hits For Nation’s 250th; François Ozon Takes On ‘The Stranger’ – Specialty Preview",
+      "url": "http://deadline.com/2026/04/indie-films-opening-benjamin-franklin-a-great-awakening-the-stranger-1236773007/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Charlotte de Witte Announces NYC Debut At Under The K Bridge With Yousuke Yukimatsu",
+      "url": "https://dancingastronaut.com/2026/04/charlotte-de-witte-announces-nyc-debut-at-under-the-k-bridge-with-yousuke-yukimatsu/",
+      "source": "Dancing Astronaut"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
