@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Citi Bike is giving away unlimited free rides to New Yorkers for Earth Day",
+      "url": "https://www.timeout.com/newyork/news/citi-bike-is-giving-away-unlimited-free-rides-to-new-yorkers-for-earth-day-040626",
+      "source": "Time Out"
+    },
+    {
+      "title": "MoMA PS1 is celebrating 50 years with a free block party",
+      "url": "https://www.timeout.com/newyork/news/moma-ps1-is-celebrating-50-years-with-a-free-block-party-040626",
+      "source": "Time Out"
+    },
+    {
+      "title": "Pitchfork Review中文拙译：Kate & Anna McGarrigle-Kate & Anna McGarrigle (评论: Kate & Anna McGarrigle)",
+      "url": "https://music.douban.com/review/17541909/",
+      "source": "Douban.com"
+    },
+    {
+      "title": "Mamdani signs ‘emergency’ order to block concerts, food festivals at NYC parks during FIFA World Cup",
+      "url": "https://nypost.com/2026/04/06/us-news/mamdani-signs-emergency-order-to-block-concerts-food-festivals-at-nyc-parks-during-fifa-world-cup/",
+      "source": "New York Post"
+    },
+    {
+      "title": "I spend $12,000 a year on Botox, hair, nails, and fitness. In Utah, they're necessary — especially in PR.",
+      "url": "https://www.businessinsider.com/publicist-spend-12000-year-keep-up-appearance-utah-2026-4",
+      "source": "Business Insider"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
