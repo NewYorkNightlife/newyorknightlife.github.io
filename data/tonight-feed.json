@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "I spend $12,000 a year on Botox, hair, nails, and fitness. In Utah, they're necessary — especially in PR.",
+      "url": "https://www.businessinsider.com/publicist-spend-12000-year-keep-up-appearance-utah-2026-4",
+      "source": "Business Insider"
+    },
+    {
+      "title": "NYC’s car-free Earth Day returns April 25 with streets open across 5 boroughs",
+      "url": "https://gothamist.com/news/nycs-car-free-earth-day-returns-april-25-with-streets-open-across-5-boroughs",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Hochul running mate Adrienne Adams funneled $435K to migrant shelter tied to federal probe",
+      "url": "https://nypost.com/2026/04/05/us-news/hochul-running-mate-adrienne-adams-funneled-435k-to-migrant-shelter-tied-to-federal-probe/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Behind the music - We Are Scientists",
+      "url": "https://www.rte.ie/entertainment/2026/0405/1566072-behind-the-music-we-are-scientists/",
+      "source": "RTE"
+    },
+    {
+      "title": "Trenton Arts Princeton: Annual Showcase",
+      "url": "https://www.princeton.edu/events/2026/trenton-arts-princeton-annual-showcase",
+      "source": "Princeton University"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
