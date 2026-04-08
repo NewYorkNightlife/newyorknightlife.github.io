@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Comedy Bang! Bang! announced a tour, NYC show. Get tickets today",
+      "url": "https://nypost.com/2026/04/07/ticket-sales/comedy-bang-bang-ground-beefing-tour-2026-where-to-buy-tickets/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Mamdani throwing first 100 days celebration — and thousands of NYC teachers are invited",
+      "url": "https://nypost.com/2026/04/07/us-news/mamdani-throwing-first-100-days-celebration-and-thousands-of-nyc-teachers-are-invited/",
+      "source": "New York Post"
+    },
+    {
+      "title": "The 2026 Brand Genius Creators: Innovating How to Connect With Audiences",
+      "url": "https://www.adweek.com/brand-marketing/the-2026-brand-genius-creators-innovating-how-to-connect-with-audiences/",
+      "source": "Adweek"
+    },
+    {
+      "title": "Citi Bike is giving away unlimited free rides to New Yorkers for Earth Day",
+      "url": "https://www.timeout.com/newyork/news/citi-bike-is-giving-away-unlimited-free-rides-to-new-yorkers-for-earth-day-040626",
+      "source": "Time Out"
+    },
+    {
+      "title": "MoMA PS1 is celebrating 50 years with a free block party",
+      "url": "https://www.timeout.com/newyork/news/moma-ps1-is-celebrating-50-years-with-a-free-block-party-040626",
+      "source": "Time Out"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
