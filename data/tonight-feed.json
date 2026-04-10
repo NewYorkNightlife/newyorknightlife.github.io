@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift Proves She's in Her Bridal Era With Stylish NYC Outing",
+      "url": "https://www.eonline.com/news/1430729/taylor-swifts-white-outfit-bridal-era-in-nyc",
+      "source": "Eonline.com"
+    },
+    {
+      "title": "Brother Of Aubrey Plaza’s Husband Allegedly Breaks Silence With Scathing Post After She Revealed She’s Pregnant",
+      "url": "https://www.boredpanda.com/jeff-baena-brother-scathing-post-aubrey-plaza-pregnant/",
+      "source": "Boredpanda.com"
+    },
+    {
+      "title": "Chanpan dance between jungle and jazz on stimulating single “buzzin”",
+      "url": "https://www.thelineofbestfit.com/tracks/chanpan-buzzin",
+      "source": "Thelineofbestfit.com"
+    },
+    {
+      "title": "‘Cats: The Jellicle Ball’ review: A euphoric NYC reinvention of a Broadway classic",
+      "url": "https://nypost.com/2026/04/07/entertainment/cats-the-jellicle-ball-review-a-euphoric-nyc-reinvention-of-a-broadway-classic/",
+      "source": "New York Post"
+    },
+    {
+      "title": "50+ NYC streets are going completely car-free for Earth Day",
+      "url": "https://www.timeout.com/newyork/news/50-nyc-streets-are-going-completely-car-free-for-earth-day-040726",
+      "source": "Time Out"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
