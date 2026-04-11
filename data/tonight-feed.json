@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Mulasaki Ima Takes a “New Walk” for Eren the Southpaw Anime",
+      "url": "https://www.animenewsnetwork.com/feature/2026-04-10/mulasaki-ima-takes-a-new-walk-for-eren-the-southpaw-anime/.236207",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Taylor Swift & Travis Kelce Wedding Date Confirmed: Save-the-Dates Sent for July 3 in NYC",
+      "url": "https://www.ibtimes.com.au/taylor-swift-travis-kelce-wedding-date-confirmed-save-dates-sent-july-3-nyc-1866043",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "Alert: Taylor Swift’s $185 Bridal-Inspired Maxi Skirt Is Still in Stock",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a70977336/shop-taylor-swift-white-silk-skirt/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "BAM's newest film series is a cinematic love letter to this 90-year-old Brooklyn subway station",
+      "url": "https://www.timeout.com/newyork/news/bams-newest-film-series-is-a-cinematic-love-letter-to-this-90-year-old-brooklyn-subway-station-040926",
+      "source": "Time Out"
+    },
+    {
+      "title": "Taylor Swift Proves She's in Her Bridal Era With Stylish NYC Outing",
+      "url": "https://www.eonline.com/news/1430729/taylor-swifts-white-outfit-bridal-era-in-nyc",
+      "source": "Eonline.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
