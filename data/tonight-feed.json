@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Indie Crush: Bob Odenkirk In ‘Normal’, Riz Ahmed Is ‘Hamlet’, Thriller ‘Exit 8’, ‘The Christophers’, ‘New ‘Faces Of Death’ & BTS – Specialty Preview",
+      "url": "http://deadline.com/2026/04/indie-films-opening-faces-of-death-bts-normal-exit-8-1236786458/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Indie Crush: Riz Ahmed Is ‘Hamlet’, Thriller ‘Exit 8’, ‘The Christophers’, ‘New ‘Faces Of Death’ & BTS – Specialty Preview",
+      "url": "http://deadline.com/2026/04/indie-films-opening-faces-of-death-bts-exit-8-1236786458/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Mulasaki Ima Takes a “New Walk” for Eren the Southpaw Anime",
+      "url": "https://www.animenewsnetwork.com/feature/2026-04-10/mulasaki-ima-takes-a-new-walk-for-eren-the-southpaw-anime/.236207",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Taylor Swift & Travis Kelce Wedding Date Confirmed: Save-the-Dates Sent for July 3 in NYC",
+      "url": "https://www.ibtimes.com.au/taylor-swift-travis-kelce-wedding-date-confirmed-save-dates-sent-july-3-nyc-1866043",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "Alert: Taylor Swift’s $185 Bridal-Inspired Maxi Skirt Is Still in Stock",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a70977336/shop-taylor-swift-white-silk-skirt/",
+      "source": "Cosmopolitan.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
