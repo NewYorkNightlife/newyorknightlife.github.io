@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Rage Bait: The costs and benefits of Connecticut’s marketing ploy",
+      "url": "http://insideinvestigator.org/rage-bait-the-costs-and-benefits-of-connecticuts-marketing-ploy/",
+      "source": "Insideinvestigator.org"
+    },
+    {
+      "title": "Taylor Swift Wedding 2026: 10 Must-Know Details on Star's Rumored NYC Ceremony with Travis Kelce",
+      "url": "https://www.ibtimes.com.au/taylor-swift-wedding-2026-10-must-know-details-stars-rumored-nyc-ceremony-travis-kelce-1866169",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "Proud moment as Kelly Ripa and Mark Consuelos celebrate son Joaquin Consuelos’ Broadway debut in NYC",
+      "url": "https://economictimes.indiatimes.com/news/international/us/proud-moment-as-kelly-ripa-and-mark-consuelos-celebrate-son-joaquin-consuelos-broadway-debut-in-nyc/articleshow/130179881.cms",
+      "source": "The Times of India"
+    },
+    {
+      "title": "We found the best ‘Ghostbusters in Concert’ 2026 ticket prices",
+      "url": "https://nypost.com/2026/04/10/ticket-sales/ghostbusters-in-concert-2026-where-to-buy-tickets-best-prices/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Indie Crush: Riz Ahmed Is ‘Hamlet’, Thriller ‘Exit 8’, ‘The Christophers’, ‘New ‘Faces Of Death’ & BTS – Specialty Preview",
+      "url": "http://deadline.com/2026/04/indie-films-opening-faces-of-death-bts-exit-8-1236786458/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
