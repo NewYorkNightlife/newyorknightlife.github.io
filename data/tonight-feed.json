@@ -1,42 +1,11 @@
 {
-  "generated_at": "2026-04-14T09:31:38.187Z",
+  "generated_at": "2026-04-14T10:31:38.200Z",
   "timezone": "America/New_York",
   "weather": {
     "summary": "scattered clouds",
-    "temp_f": 62,
-    "feels_like_f": 62,
-    "five_day": [
-      {
-        "day": "Tue",
-        "summary": "Clouds",
-        "high_f": 66,
-        "low_f": 63
-      },
-      {
-        "day": "Wed",
-        "summary": "Clouds",
-        "high_f": 66,
-        "low_f": 66
-      },
-      {
-        "day": "Thu",
-        "summary": "Clouds",
-        "high_f": 69,
-        "low_f": 69
-      },
-      {
-        "day": "Fri",
-        "summary": "Clouds",
-        "high_f": 68,
-        "low_f": 68
-      },
-      {
-        "day": "Sat",
-        "summary": "Clouds",
-        "high_f": 58,
-        "low_f": 58
-      }
-    ]
+    "temp_f": 61,
+    "feels_like_f": 60,
+    "five_day": []
   },
   "headlines": [],
   "featured_tonight": [],
