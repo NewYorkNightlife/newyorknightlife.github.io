@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Spring may finally be here? We hope? Here's what NYC is looking forward to most.",
+      "url": "https://gothamist.com/news/spring-may-finally-be-here-we-hope-heres-what-nyc-is-looking-forward-to-most",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Hearing aids can seem like a big step. This NYC Ballet principal dancer doesn't regret taking it",
+      "url": "https://abcnews.com/Health/wireStory/hearing-aids-big-step-nyc-ballet-principal-dancer-131967183",
+      "source": "Abcnews.com"
+    },
+    {
+      "title": "1980s East Village Underground Film 'No Picnic' 4K Restoration Trailer",
+      "url": "https://www.firstshowing.net/2026/1980s-east-village-underground-film-no-picnic-4k-restoration-trailer/",
+      "source": "First Showing"
+    },
+    {
+      "title": "Rage Bait: The costs and benefits of Connecticut’s marketing ploy",
+      "url": "http://insideinvestigator.org/rage-bait-the-costs-and-benefits-of-connecticuts-marketing-ploy/",
+      "source": "Insideinvestigator.org"
+    },
+    {
+      "title": "Taylor Swift Wedding 2026: 10 Must-Know Details on Star's Rumored NYC Ceremony with Travis Kelce",
+      "url": "https://www.ibtimes.com.au/taylor-swift-wedding-2026-10-must-know-details-stars-rumored-nyc-ceremony-travis-kelce-1866169",
+      "source": "Ibtimes.com.au"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
