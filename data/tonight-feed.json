@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Schools Never Taught Critical Thinking: AI Exposed the Lie",
+      "url": "https://smarterarticles.co.uk/ai-exposed-the-lie-schools-never-taught-critical-thinking",
+      "source": "Smarterarticles.co.uk"
+    },
+    {
+      "title": "Taylor Swift tries to fly under the radar as she joins Travis Kelce for a high-fashion event in NYC",
+      "url": "https://www.marca.com/en/nfl/kansas-city-chiefs/2026/04/14/69de3b1846163f0b548b45d0.html",
+      "source": "Marca"
+    },
+    {
+      "title": "Anne Hathaway & Michaela Coel Bring Fierce Fashion to 'Mother Mary' Red Carpet Premiere in NYC!",
+      "url": "https://www.justjared.com/2026/04/13/anne-hathaway-michaela-coel-bring-fierce-fashion-to-mother-mary-red-carpet-premiere-in-nyc/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "Spring may finally be here? We hope? Here's what NYC is looking forward to most.",
+      "url": "https://gothamist.com/news/spring-may-finally-be-here-we-hope-heres-what-nyc-is-looking-forward-to-most",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Hearing aids can seem like a big step. This NYC Ballet principal dancer doesn't regret taking it",
+      "url": "https://abcnews.com/Health/wireStory/hearing-aids-big-step-nyc-ballet-principal-dancer-131967183",
+      "source": "Abcnews.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
