@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Hall of Fame Finally Got It Right on Joy Division/New Order",
+      "url": "http://www.rollingstone.com/music/music-features/joy-division-new-order-hall-of-fame-finally-1235545058/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Skip the playground — these cool places will enchant little ones",
+      "url": "https://nypost.com/2026/04/15/lifestyle/class-act-these-cool-places-will-enchant-little-ones/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Sombr announces ‘You Are The Reason Tour,’ two MSG shows. Get tickets",
+      "url": "https://nypost.com/2026/04/14/ticket-sales/sombr-you-are-the-reason-tour-2026-where-to-buy-tickets/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Brooklyn homecare indictment exposes web of corruption that could bring down city Dem politicians",
+      "url": "https://nypost.com/2026/04/14/us-news/brooklyn-migrant-nonprofits-spent-millions-on-salaries-on-irs-blacklist/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift Travis Kelce Wedding Rumors Explode as Save-the-Dates Reportedly Circulate for July NYC Date",
+      "url": "https://www.ibtimes.com.au/taylor-swift-travis-kelce-wedding-rumors-explode-save-dates-reportedly-circulate-july-nyc-date-1866570",
+      "source": "Ibtimes.com.au"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
