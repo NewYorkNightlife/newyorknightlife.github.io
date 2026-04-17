@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "This sprawling NYC art show is taking over an entire museum (and it’s free to attend!)",
+      "url": "https://www.timeout.com/newyork/news/this-sprawling-nyc-art-show-is-taking-over-an-entire-museum-and-its-free-to-attend-041626",
+      "source": "Time Out"
+    },
+    {
+      "title": "Mamdani's wife 'truly sorry' for controversial anti-Israel social media posts",
+      "url": "https://www.foxnews.com/politics/mamdanis-wife-truly-sorry-controversial-anti-israel-social-media-posts",
+      "source": "Fox News"
+    },
+    {
+      "title": "New York’s Bryant Park Announces 2026 Free Summer Concert Schedule",
+      "url": "https://variety.com/2026/music/news/bryant-park-2026-free-summer-concert-schedule-1236722897/",
+      "source": "Variety"
+    },
+    {
+      "title": "Ticketmaster, Live Nation Lose Federal Antitrust Trial",
+      "url": "https://dailycaller.com/2026/04/15/ticketmaster-live-nation-lose-antitrust-trial-concerts-monopoly-ticket-sales-doj-gail-slater/",
+      "source": "The Daily Caller"
+    },
+    {
+      "title": "Live Nation Is An Illegal Monopoly, Jury Decides; CA AG Calls Verdict “Historic & Resounding Victory For Artists, Fans”",
+      "url": "http://deadline.com/2026/04/live-nation-monopoly-trial-verdict-1236861889/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
