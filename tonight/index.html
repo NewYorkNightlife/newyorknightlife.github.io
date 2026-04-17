@@ -419,6 +419,32 @@
       color: #f0d279;
     }
 
+
+    .tonight-faq {
+      margin-top: 1.25rem;
+    }
+
+    .tonight-faq details {
+      border-top: 1px solid rgba(212,175,55,.2);
+      padding: .75rem 0;
+    }
+
+    .tonight-faq details:last-of-type {
+      border-bottom: 1px solid rgba(212,175,55,.2);
+    }
+
+    .tonight-faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: #f8f1e5;
+    }
+
+    .tonight-faq p {
+      margin: .6rem 0 0;
+      color: #dfd8cc;
+      line-height: 1.6;
+    }
+
     @media (max-width: 980px) {
       .tonight-grid,
       .tonight-picks-grid {
@@ -478,6 +504,40 @@
   <meta name="twitter:title" content="Things to Do in NYC Tonight | Top Picks, Weather &amp; Live Events" />
   <meta name="twitter:description" content="See the best things to do in NYC tonight with curated top picks, live event listings, weather, and nightlife headlines. Updated throughout the day for fast NYC night planning." />
   <meta name="twitter:image" content="https://nynightlife.com/assets/og-default.jpg" />
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the best things to do in NYC tonight by budget?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the NYC night budget planner to choose a low, medium, or premium plan and then pair it with live tonight picks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I plan an NYC night out if weather changes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Check tonight weather first, then keep an indoor backup route using nearby bars, clubs, and ticketed events in the same area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I need late-night transportation options?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Review late-night transit and rideshare guidance before leaving so your return route is clear before venues close."
+        }
+      }
+    ]
+  }
+  </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3007723856138381" crossorigin="anonymous"></script>
 <!-- Google tag (gtag.js) -->
@@ -602,6 +662,42 @@
       and
       <a class="tonight-link" href="/methodology/">Methodology</a>.
     </p>
+  </section>
+
+
+  <section class="tonight-section">
+    <div class="tonight-panel tonight-faq" aria-label="Tonight planning FAQ">
+      <h2>Tonight Planning FAQ</h2>
+      <p class="tonight-panel-subtitle">Quick answers for the highest-intent questions people ask before heading out.</p>
+
+      <details>
+        <summary>What are the best things to do in NYC tonight by budget?</summary>
+        <p>
+          Start with the <a class="tonight-link" href="/tools/budget-planner.html">NYC night budget planner</a>,
+          then match your price range to live events in our
+          <a class="tonight-link" href="/tonight/things-to-do-in-nyc-tonight.html">full tonight picks page</a>.
+        </p>
+      </details>
+
+      <details>
+        <summary>How should I plan if weather shifts mid-evening?</summary>
+        <p>
+          Prioritize indoor-friendly routes using our
+          <a class="tonight-link" href="/guides/best-nightlife-experiences.html">best nightlife experiences guide</a>
+          and keep a second option in the same neighborhood with the
+          <a class="tonight-link" href="/tools/venue-compare-nyc.html">venue comparison tool</a>.
+        </p>
+      </details>
+
+      <details>
+        <summary>What’s the safest way to get home after late-night events?</summary>
+        <p>
+          Review the <a class="tonight-link" href="/transport/">late-night transport guide</a> and
+          <a class="tonight-link" href="/safety/">NYC nightlife safety tips</a> before your first stop,
+          so your return plan is locked in before closing time.
+        </p>
+      </details>
+    </div>
   </section>
 
     <section class="money-links" aria-label="Top planning pages">
