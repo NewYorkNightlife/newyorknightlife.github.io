@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Ticketmaster, Live Nation Lose Federal Antitrust Trial",
+      "url": "https://dailycaller.com/2026/04/15/ticketmaster-live-nation-lose-antitrust-trial-concerts-monopoly-ticket-sales-doj-gail-slater/",
+      "source": "The Daily Caller"
+    },
+    {
+      "title": "Live Nation Is An Illegal Monopoly, Jury Decides; CA AG Calls Verdict “Historic & Resounding Victory For Artists, Fans”",
+      "url": "http://deadline.com/2026/04/live-nation-monopoly-trial-verdict-1236861889/",
+      "source": "Deadline"
+    },
+    {
+      "title": "This popular massive street festival is coming back to NYC!",
+      "url": "https://www.timeout.com/newyork/news/this-popular-massive-street-festival-is-coming-back-to-nyc-041526",
+      "source": "Time Out"
+    },
+    {
+      "title": "The Hall of Fame Finally Got It Right on Joy Division/New Order",
+      "url": "http://www.rollingstone.com/music/music-features/joy-division-new-order-hall-of-fame-finally-1235545058/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Skip the playground — these cool places will enchant little ones",
+      "url": "https://nypost.com/2026/04/15/lifestyle/class-act-these-cool-places-will-enchant-little-ones/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
