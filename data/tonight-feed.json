@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Tribeca Festival Reveals 25th Anniversary Lineup with 103 World Premiere Features",
+      "url": "https://www.indiewire.com/news/festivals/tribeca-festival-2026-lineup-1235189448/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "Comedian Cat Cohen’s One-Woman Show ‘Broad Strokes’ Sets Off-Broadway Debut (EXCLUSIVE)",
+      "url": "https://variety.com/2026/legit/news/cat-cohen-broad-strokes-off-broadway-debut-1236721465/",
+      "source": "Variety"
+    },
+    {
+      "title": "This sprawling NYC art show is taking over an entire museum (and it’s free to attend!)",
+      "url": "https://www.timeout.com/newyork/news/this-sprawling-nyc-art-show-is-taking-over-an-entire-museum-and-its-free-to-attend-041626",
+      "source": "Time Out"
+    },
+    {
+      "title": "Mamdani's wife 'truly sorry' for controversial anti-Israel social media posts",
+      "url": "https://www.foxnews.com/politics/mamdanis-wife-truly-sorry-controversial-anti-israel-social-media-posts",
+      "source": "Fox News"
+    },
+    {
+      "title": "New York’s Bryant Park Announces 2026 Free Summer Concert Schedule",
+      "url": "https://variety.com/2026/music/news/bryant-park-2026-free-summer-concert-schedule-1236722897/",
+      "source": "Variety"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
