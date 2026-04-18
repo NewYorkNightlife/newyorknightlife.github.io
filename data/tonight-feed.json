@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A Prominent PR Firm Is Running a Fake News Site That’s Plagiarizing Original Journalism at Incredible Scale",
+      "url": "http://futurism.com/artificial-intelligence/national-today-ai-plagiarizing",
+      "source": "Futurism"
+    },
+    {
+      "title": "Gwyneth Paltrow going back to her roots as star brings Goop Kitchen to NYC: ‘Feeding most of Manhattan’",
+      "url": "https://nypost.com/2026/04/17/business/gwyneth-paltrow-bringing-goop-kitchen-to-nyc/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Kyle Cooke and Meghan King spotted kissing after Page Six party in NYC",
+      "url": "https://pagesix.com/2026/04/17/celebrity-news/kyle-cooke-meghan-king-spotted-kissing-after-page-six-party-in-nyc/",
+      "source": "Page Six"
+    },
+    {
+      "title": "NYC Mayor Zohran Mamdani is still earning rap music royalties, tax filings show",
+      "url": "https://abcnews.com/US/wireStory/pay-nyc-mayor-zohran-mamdani-earning-rap-music-132119949",
+      "source": "Abcnews.com"
+    },
+    {
+      "title": "Pay Z: NYC Mayor Zohran Mamdani is still earning rap music royalties, tax filings show (Jake Offenhartz/Associated Press)",
+      "url": "https://www.memeorandum.com/260416/p139",
+      "source": "Memeorandum.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
