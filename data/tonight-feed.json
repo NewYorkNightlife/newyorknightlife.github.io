@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Pay Z: NYC Mayor Zohran Mamdani is still earning rap music royalties, tax filings show (Jake Offenhartz/Associated Press)",
+      "url": "https://www.memeorandum.com/260416/p139",
+      "source": "Memeorandum.com"
+    },
+    {
+      "title": "Spring has sprung, but the inventory crunch is still in full swing",
+      "url": "https://www.inman.com/2026/04/16/spring-has-sprung-but-the-inventory-crunch-is-still-in-full-swing/",
+      "source": "Inman"
+    },
+    {
+      "title": "Tribeca Festival’s 25th Anniversary Lineup Includes Questlove-Directed Earth, Wind & Fire Doc, Quentin Tarantino Movie",
+      "url": "https://www.thewrap.com/creative-content/movies/tribeca-festival-2026-lineup-questlove-quentin-tarantino/",
+      "source": "TheWrap"
+    },
+    {
+      "title": "Tribeca Festival Reveals 25th Anniversary Lineup with 103 World Premiere Features",
+      "url": "https://www.indiewire.com/news/festivals/tribeca-festival-2026-lineup-1235189448/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "Comedian Cat Cohen’s One-Woman Show ‘Broad Strokes’ Sets Off-Broadway Debut (EXCLUSIVE)",
+      "url": "https://variety.com/2026/legit/news/cat-cohen-broad-strokes-off-broadway-debut-1236721465/",
+      "source": "Variety"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
