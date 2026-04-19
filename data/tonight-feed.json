@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 61,
     "feels_like_f": 61,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sun",
+        "summary": "Rain",
+        "high_f": 57,
+        "low_f": 55
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 41,
+        "low_f": 41
+      },
+      {
+        "day": "Tue",
+        "summary": "Clear",
+        "high_f": 39,
+        "low_f": 39
+      },
+      {
+        "day": "Wed",
+        "summary": "Rain",
+        "high_f": 47,
+        "low_f": 47
+      },
+      {
+        "day": "Thu",
+        "summary": "Clear",
+        "high_f": 52,
+        "low_f": 52
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Ashtin Earle's Tips For Festival Season & Sourcing Vintage Pieces",
+      "url": "https://www.elitedaily.com/lifestyle/ashtin-earle-coachella-festival-vintage-fashion-advice",
+      "source": "Elite Daily"
+    },
+    {
+      "title": "NYC Mayor Zohran Mamdani Is Still Earning Royalties from His Rap Career",
+      "url": "https://consequence.net/2026/04/zohran-mamdani-tax-return-rap-royalties/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "A Prominent PR Firm Is Running a Fake News Site That’s Plagiarizing Original Journalism at Incredible Scale",
+      "url": "http://futurism.com/artificial-intelligence/national-today-ai-plagiarizing",
+      "source": "Futurism"
+    },
+    {
+      "title": "Gwyneth Paltrow going back to her roots as star brings Goop Kitchen to NYC: ‘Feeding most of Manhattan’",
+      "url": "https://nypost.com/2026/04/17/business/gwyneth-paltrow-bringing-goop-kitchen-to-nyc/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Kyle Cooke and Meghan King spotted kissing after Page Six party in NYC",
+      "url": "https://pagesix.com/2026/04/17/celebrity-news/kyle-cooke-meghan-king-spotted-kissing-after-page-six-party-in-nyc/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
