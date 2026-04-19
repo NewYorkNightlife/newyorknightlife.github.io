@@ -5,7 +5,38 @@
     "summary": "overcast clouds",
     "temp_f": 50,
     "feels_like_f": 45,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 48,
+        "low_f": 47
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 45,
+        "low_f": 45
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 49,
+        "low_f": 49
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 61,
+        "low_f": 61
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 64,
+        "low_f": 64
+      }
+    ]
   },
   "headlines": [],
   "featured_tonight": [],
