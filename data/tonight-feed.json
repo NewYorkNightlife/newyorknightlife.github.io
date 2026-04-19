@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Record Store Day 2026’s Most Wanted: Taylor Swift, Pink Floyd, Tom Petty, Brandi Carlile, Hilary Duff, ‘Demon Hunters,’ Bruce Springsteen and Laufey Lead a List of 350 Exclusives",
+      "url": "https://variety.com/lists/record-store-day-2026-musts-vinyl-exclusives-rsd/",
+      "source": "Variety"
+    },
+    {
+      "title": "Ashtin Earle's Tips For Festival Season & Sourcing Vintage Pieces",
+      "url": "https://www.elitedaily.com/lifestyle/ashtin-earle-coachella-festival-vintage-fashion-advice",
+      "source": "Elite Daily"
+    },
+    {
+      "title": "NYC Mayor Zohran Mamdani Is Still Earning Royalties from His Rap Career",
+      "url": "https://consequence.net/2026/04/zohran-mamdani-tax-return-rap-royalties/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "A Prominent PR Firm Is Running a Fake News Site That’s Plagiarizing Original Journalism at Incredible Scale",
+      "url": "http://futurism.com/artificial-intelligence/national-today-ai-plagiarizing",
+      "source": "Futurism"
+    },
+    {
+      "title": "Gwyneth Paltrow going back to her roots as star brings Goop Kitchen to NYC: ‘Feeding most of Manhattan’",
+      "url": "https://nypost.com/2026/04/17/business/gwyneth-paltrow-bringing-goop-kitchen-to-nyc/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
