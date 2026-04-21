@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "What weed really does to your brain, according to hundreds of thousands of scans",
+      "url": "https://nypost.com/2026/04/20/health/what-weed-does-to-your-brain-per-hundreds-of-thousands-of-scans/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor and Travis made a surprise appearance at a concert in NYC and left the musicians stunned by their \"generous\" gesture",
+      "url": "https://www.marca.com/en/nfl/kansas-city-chiefs/2026/04/19/69e51a9f268e3e2b1d8b4589.html",
+      "source": "Marca"
+    },
+    {
+      "title": "NYC schools watchdog got nearly 900 sexual misconduct complaints in 2025 — and only substantiated 62",
+      "url": "https://nypost.com/2026/04/18/us-news/nyc-schools-watchdog-got-nearly-900-sexual-misconduct-complaints-in-2025-and-only-substantiated-62/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Disco diva and hit podcaster Jessie Ware might be music’s coolest mum",
+      "url": "https://www.abc.net.au/news/2026-04-19/jessie-ware-superbloom-album-table-manners-podcast-motherhood/106567948",
+      "source": "ABC News (AU)"
+    },
+    {
+      "title": "Record Store Day 2026’s Most Wanted: Taylor Swift, Pink Floyd, Tom Petty, Brandi Carlile, Hilary Duff, ‘Demon Hunters,’ Bruce Springsteen and Laufey Lead a List of 350 Exclusives",
+      "url": "https://variety.com/lists/record-store-day-2026-musts-vinyl-exclusives-rsd/",
+      "source": "Variety"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
