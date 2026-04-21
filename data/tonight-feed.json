@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Every City Has a Soundtrack",
+      "url": "https://www.spinmagazine.com/2026/04/every-city-has-a-soundtrack/",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "NYC is noisier than ever — see which neighborhoods are the loudest as city officials unveil latest crackdown plan",
+      "url": "https://nypost.com/2026/04/20/us-news/nyc-noise-complaints-soar-and-city-has-a-plan-for-cracking-down/",
+      "source": "New York Post"
+    },
+    {
+      "title": "What weed really does to your brain, according to hundreds of thousands of scans",
+      "url": "https://nypost.com/2026/04/20/health/what-weed-does-to-your-brain-per-hundreds-of-thousands-of-scans/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor and Travis made a surprise appearance at a concert in NYC and left the musicians stunned by their \"generous\" gesture",
+      "url": "https://www.marca.com/en/nfl/kansas-city-chiefs/2026/04/19/69e51a9f268e3e2b1d8b4589.html",
+      "source": "Marca"
+    },
+    {
+      "title": "NYC schools watchdog got nearly 900 sexual misconduct complaints in 2025 — and only substantiated 62",
+      "url": "https://nypost.com/2026/04/18/us-news/nyc-schools-watchdog-got-nearly-900-sexual-misconduct-complaints-in-2025-and-only-substantiated-62/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
