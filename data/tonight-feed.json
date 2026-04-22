@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Webby Award Winners Include ‘Heated Rivalry’, Bad Bunny, Timothée Chalamet, Sabrina Carpenter, Lady Gaga, Shonda Rhimes",
+      "url": "http://deadline.com/2026/04/webby-award-winners-heated-rivalry-bad-bunny-list-1236866998/",
+      "source": "Deadline"
+    },
+    {
+      "title": "2026 Webbys Winners List: Google, iHeartMedia and PBS Win Companies of the Year",
+      "url": "https://www.thewrap.com/culture-lifestyle/culture/2026-webbys-winners-list-media-companies/",
+      "source": "TheWrap"
+    },
+    {
+      "title": "2026 Webby Awards Winners: List",
+      "url": "http://www.hollywoodreporter.com/business/digital/2026-webby-awards-winners-list-1236570024/",
+      "source": "Hollywood Reporter"
+    },
+    {
+      "title": "Webby Awards 2026 Winners Revealed, Variety Among Honorees",
+      "url": "https://variety.com/2026/digital/news/webby-awards-2026-winners-announced-variety-1236726296/",
+      "source": "Variety"
+    },
+    {
+      "title": "Olivia Rodrigo and Conan Gray’s Friendship Deserves Its Own Grammy-Winning Album",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a60454650/olivia-rodrigo-conan-gray-friendship-timeline/",
+      "source": "Cosmopolitan.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
