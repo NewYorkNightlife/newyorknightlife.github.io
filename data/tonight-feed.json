@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "2026 Webby Awards Winners: List",
+      "url": "http://www.hollywoodreporter.com/business/digital/2026-webby-awards-winners-list-1236570024/",
+      "source": "Hollywood Reporter"
+    },
+    {
+      "title": "Webby Awards 2026 Winners Revealed, Variety Among Honorees",
+      "url": "https://variety.com/2026/digital/news/webby-awards-2026-winners-announced-variety-1236726296/",
+      "source": "Variety"
+    },
+    {
+      "title": "Olivia Rodrigo and Conan Gray’s Friendship Deserves Its Own Grammy-Winning Album",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a60454650/olivia-rodrigo-conan-gray-friendship-timeline/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Zayn Malik cancels ‘Tonight Show’ appearance to seek treatment with top heart specialist",
+      "url": "https://pagesix.com/2026/04/20/celebrity-news/zayn-malik-cancels-tonight-show-appearance-to-seek-treatment-with-top-heart-specialist/",
+      "source": "Page Six"
+    },
+    {
+      "title": "How much are cheap tickets to see Buju Banton on tour with Stephen Marley?",
+      "url": "https://nypost.com/2026/04/20/ticket-sales/get-cheap-tickets-to-see-buju-banton-on-tour-with-stephen-marley/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
