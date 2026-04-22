@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Olivia Rodrigo and Conan Gray’s Friendship Deserves Its Own Grammy-Winning Album",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a60454650/olivia-rodrigo-conan-gray-friendship-timeline/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Zayn Malik cancels ‘Tonight Show’ appearance to seek treatment with top heart specialist",
+      "url": "https://pagesix.com/2026/04/20/celebrity-news/zayn-malik-cancels-tonight-show-appearance-to-seek-treatment-with-top-heart-specialist/",
+      "source": "Page Six"
+    },
+    {
+      "title": "How much are cheap tickets to see Buju Banton on tour with Stephen Marley?",
+      "url": "https://nypost.com/2026/04/20/ticket-sales/get-cheap-tickets-to-see-buju-banton-on-tour-with-stephen-marley/",
+      "source": "New York Post"
+    },
+    {
+      "title": "New York Drama League Award Nominees: Daniel Radcliffe, Luke Evans, Rose Byrne, Christopher Abbott, Lea Michelle Make Roster ; Shows Include ‘Giant’, ‘Cats: The Jellicle Ball’ & ‘The Rocky Horror Show’ – Complete List",
+      "url": "http://deadline.com/2026/04/new-york-drama-league-award-nominees-2026-1236865723/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Every City Has a Soundtrack",
+      "url": "https://www.spinmagazine.com/2026/04/every-city-has-a-soundtrack/",
+      "source": "Spinmagazine.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
