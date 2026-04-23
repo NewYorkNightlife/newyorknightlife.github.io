@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Snagging Shakespeare in the Park tickets is about to get much easier",
+      "url": "https://www.timeout.com/newyork/news/snagging-shakespeare-in-the-park-tickets-is-about-to-get-much-easier-042226",
+      "source": "Time Out"
+    },
+    {
+      "title": "Lena Dunham celebrates new memoir, Azzi Fudd’s ‘electric’ party and more celebrity sightings",
+      "url": "https://pagesix.com/2026/04/21/society/lena-dunham-celebrates-new-memoir-azzi-fudds-electric-party-and-more-celebrity-sightings/",
+      "source": "Page Six"
+    },
+    {
+      "title": "How much are the cheapest tickets to see Phish at Las Vegas Sphere residency?",
+      "url": "https://nypost.com/2026/04/21/ticket-sales/how-much-are-the-cheapest-phish-tickets-at-las-vegas-sphere/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Webby Award Winners Include ‘Heated Rivalry’, Bad Bunny, Timothée Chalamet, Sabrina Carpenter, Lady Gaga, Shonda Rhimes",
+      "url": "http://deadline.com/2026/04/webby-award-winners-heated-rivalry-bad-bunny-list-1236866998/",
+      "source": "Deadline"
+    },
+    {
+      "title": "2026 Webbys Winners List: Google, iHeartMedia and PBS Win Companies of the Year",
+      "url": "https://www.thewrap.com/culture-lifestyle/culture/2026-webbys-winners-list-media-companies/",
+      "source": "TheWrap"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
