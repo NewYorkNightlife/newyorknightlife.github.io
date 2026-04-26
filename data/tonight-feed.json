@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "T LOunge for April 24th 2026",
+      "url": "https://tomandlorenzo.com/2026/04/t-lounge-for-april-24th-2026/",
+      "source": "tomandlorenzo.com"
+    },
+    {
+      "title": "NYC Ballet Star Takes A Big Leap: Wearing Hearing Aids Onstage",
+      "url": "https://apnews.com/article/sara-mearns-nyc-ballet-hearing-loss-aids-30eb0e15724ca2feb8b58189208fb7e9",
+      "source": "Associated Press"
+    },
+    {
+      "title": "Geese Announce 2026 North American Fall Tour",
+      "url": "https://consequence.net/2026/04/geese-2026-north-american-fall-tour/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Geese Fall Tour Includes Band’s Largest NYC Show",
+      "url": "https://www.spinmagazine.com/2026/04/geese-fall-tour/",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "50 Forgotten Street Art Gems",
+      "url": "https://streetartutopia.com/2026/04/23/great-real-older-street-art/",
+      "source": "Streetartutopia.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
