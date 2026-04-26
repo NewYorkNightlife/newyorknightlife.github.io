@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Jutes: 5 Things to Know About Demi Lovato’s Husband",
+      "url": "https://hollywoodlife.com/feature/who-is-jutes-demi-lovato-husband-4819179/",
+      "source": "Hollywood Life"
+    },
+    {
+      "title": "We tried out xAI's Grok chatbot while driving a Tesla in NYC. Here's what happened.",
+      "url": "https://www.cnbc.com/2026/04/25/tesla-and-xais-grok-shows-promises-and-risks-of-ai-chatbots-in-cars.html",
+      "source": "CNBC"
+    },
+    {
+      "title": "Inside all the filming locations used in the Devil Wears Prada 2 you can visit - including a fashion-forward destination with £29 flights",
+      "url": "https://www.dailymail.com/travel/article-15750995/Inside-filming-locations-Devil-Wears-Prada-destination-cheap-flights.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "T LOunge for April 24th 2026",
+      "url": "https://tomandlorenzo.com/2026/04/t-lounge-for-april-24th-2026/",
+      "source": "tomandlorenzo.com"
+    },
+    {
+      "title": "NYC Ballet Star Takes A Big Leap: Wearing Hearing Aids Onstage",
+      "url": "https://apnews.com/article/sara-mearns-nyc-ballet-hearing-loss-aids-30eb0e15724ca2feb8b58189208fb7e9",
+      "source": "Associated Press"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
