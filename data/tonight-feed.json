@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "10 Famous Men and Their Motorcycles",
+      "url": "https://www.artofmanliness.com/lifestyle/gear/famous-men-and-their-motorcyles/",
+      "source": "Artofmanliness.com"
+    },
+    {
+      "title": "Nightclub to replace ill-fated BK Mirage scrambles to get ready in time for high-priced opening weekend",
+      "url": "https://nypost.com/2026/04/26/us-news/nightclub-to-replace-ill-fated-bk-mirage-scrambles-to-get-ready-in-time-for-high-priced-opening-weekend/",
+      "source": "New York Post"
+    },
+    {
+      "title": "I tried the viral Loop Earplugs —here’s why your hearing depends on them",
+      "url": "https://nypost.com/shopping/loop-earplugs-review/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift Travis Kelce Shift Wedding to Manhattan July 3 in Star-Studded NYC Blowout",
+      "url": "https://www.ibtimes.com.au/taylor-swift-travis-kelce-shift-wedding-manhattan-july-3-star-studded-nyc-blowout-1867489",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "Jutes: 5 Things to Know About Demi Lovato’s Husband",
+      "url": "https://hollywoodlife.com/feature/who-is-jutes-demi-lovato-husband-4819179/",
+      "source": "Hollywood Life"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
