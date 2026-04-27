@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "I tried the viral Loop Earplugs —here’s why your hearing depends on them",
+      "url": "https://nypost.com/shopping/loop-earplugs-review/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift Travis Kelce Shift Wedding to Manhattan July 3 in Star-Studded NYC Blowout",
+      "url": "https://www.ibtimes.com.au/taylor-swift-travis-kelce-shift-wedding-manhattan-july-3-star-studded-nyc-blowout-1867489",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "Jutes: 5 Things to Know About Demi Lovato’s Husband",
+      "url": "https://hollywoodlife.com/feature/who-is-jutes-demi-lovato-husband-4819179/",
+      "source": "Hollywood Life"
+    },
+    {
+      "title": "We tried out xAI's Grok chatbot while driving a Tesla in NYC. Here's what happened.",
+      "url": "https://www.cnbc.com/2026/04/25/tesla-and-xais-grok-shows-promises-and-risks-of-ai-chatbots-in-cars.html",
+      "source": "CNBC"
+    },
+    {
+      "title": "Inside all the filming locations used in the Devil Wears Prada 2 you can visit - including a fashion-forward destination with £29 flights",
+      "url": "https://www.dailymail.com/travel/article-15750995/Inside-filming-locations-Devil-Wears-Prada-destination-cheap-flights.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
