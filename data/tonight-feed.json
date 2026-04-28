@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Greenwich Village Author Points Out Legendary Music Sites",
+      "url": "https://www.forbes.com/sites/garystoller/2026/04/27/greenwich-village-author-points-out-legendary-music-sites/",
+      "source": "Forbes"
+    },
+    {
+      "title": "Goodbye Elmo, hello Candor: The businesses opening and closing across NYC",
+      "url": "https://gothamist.com/arts-entertainment/goodbye-elmo-hello-candor-the-businesses-opening-and-closing-across-nyc",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Does the home of Stonewall still need a gay NYC Council seat? Election set for Tuesday.",
+      "url": "https://gothamist.com/news/does-the-home-of-stonewall-still-need-a-gay-nyc-council-seat-election-set-for-tuesday",
+      "source": "Gothamist"
+    },
+    {
+      "title": "NYC snubbed on top 10 list of big cities for Gen Z grads — even Omaha and St. Louis made the cut",
+      "url": "https://nypost.com/2026/04/27/lifestyle/nyc-snubbed-on-top-10-list-of-major-cities-for-gen-z-grads/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Photos show British royal visits to the U.S. over the years",
+      "url": "https://www.cbsnews.com/news/british-royal-visits-us-king-charles-history-photos/",
+      "source": "CBS News"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
