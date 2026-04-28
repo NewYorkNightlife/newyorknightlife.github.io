@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Photos show British royal visits to the U.S. over the years",
+      "url": "https://www.cbsnews.com/news/british-royal-visits-us-king-charles-history-photos/",
+      "source": "CBS News"
+    },
+    {
+      "title": "Pink is joined by daughter Willow Hart, 14, for a rare red carpet appearance as they enjoy a night out at The Lost Boys opening on Broadway - after hitting back at marriage split rumours",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15767915/Pink-joined-daughter-Willow-Hart-14-rare-red-carpet-appearance-enjoy-night-Lost-Boys-opening-Broadway-hitting-marriage-split-rumours.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "“Such a boss move”: Taylor Swift’s bold stand for artists' rights trends again as Travis Kelce's wedding rumors swirl in NYC",
+      "url": "https://timesofindia.indiatimes.com/sports/nfl/news/such-a-boss-move-taylor-swifts-bold-stand-for-artists-rights-trends-again-as-travis-kelces-wedding-rumors-swirl-in-nyc/articleshow/130541926.cms",
+      "source": "The Times of India"
+    },
+    {
+      "title": "My favorite LLM prompt: “List the top cities in {COUNTRY}, and anthropomorphize each one, listing the good-natured stereotypes and jokes that other people in {COUNTRY} say about people in this city.”",
+      "url": "https://sive.rs/d",
+      "source": "Sive.rs"
+    },
+    {
+      "title": "10 Famous Men and Their Motorcycles",
+      "url": "https://www.artofmanliness.com/lifestyle/gear/famous-men-and-their-motorcyles/",
+      "source": "Artofmanliness.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
