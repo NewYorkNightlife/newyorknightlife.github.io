@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Charli xcx Announces NYC 'Conversations' Event Amid New Music Speculation",
+      "url": "https://www.justjared.com/2026/04/28/charli-xcx-nyc-conversations-event-new-music-speculation/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "Mavis Staples, De La Soul Lead Packed NYC SummerStage 40th Anniversary Lineup",
+      "url": "http://www.rollingstone.com/music/music-news/summerstage-concert-series-lineups-2026-season-1235554655/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "“Pretty Ugly” resurrects the Lunachicks as Punk Rock’s most underrated revolutionaries",
+      "url": "https://www.salon.com/2026/04/28/pretty-ugly-resurrects-the-lunachicks-as-punk-rocks-most-underrated-revolutionaries/",
+      "source": "Salon"
+    },
+    {
+      "title": "New York’s Central Park SummerStage Announces 2026 Concert Schedule",
+      "url": "https://variety.com/2026/music/news/central-park-summerstage-2026-concert-schedule-1236732282/",
+      "source": "Variety"
+    },
+    {
+      "title": "Taylor Swift breaks cover for NYC dinner outing with dad Scott ahead of Travis Kelce wedding",
+      "url": "https://pagesix.com/2026/04/28/entertainment/taylor-swift-breaks-cover-for-nyc-dinner-outing-with-dad-scott-ahead-of-travis-kelce-wedding/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
