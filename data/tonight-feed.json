@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift Spotted at Dinner in NYC With Her Dad & Some Celeb Friends!",
+      "url": "https://www.justjared.com/2026/04/27/taylor-swift-spotted-at-dinner-in-nyc-with-her-dad-some-celeb-friends/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "NYC nixes plan for AI-themed high school after woke backlash to merit-based admissions policy",
+      "url": "https://nypost.com/2026/04/27/us-news/nyc-nixes-plan-for-ai-themed-high-school-after-woke-backlash-to-merit-based-admissions/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Newly-engaged Zoe Kravitz shows off $1million diamond ring as details of Harry Styles proposal emerge",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15769827/Zoe-Kravitz-1million-ring-Harry-Styles.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Greenwich Village Author Points Out Legendary Music Sites",
+      "url": "https://www.forbes.com/sites/garystoller/2026/04/27/greenwich-village-author-points-out-legendary-music-sites/",
+      "source": "Forbes"
+    },
+    {
+      "title": "Goodbye Elmo, hello Candor: The businesses opening and closing across NYC",
+      "url": "https://gothamist.com/arts-entertainment/goodbye-elmo-hello-candor-the-businesses-opening-and-closing-across-nyc",
+      "source": "Gothamist"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
