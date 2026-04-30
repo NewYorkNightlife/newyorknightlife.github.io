@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "ZHU Joins Pacha New York’s Increasingly Global 2026 Lineup",
+      "url": "https://www.forbes.com/sites/jeffbenjamin/2026/04/28/zhu-joins-pacha-new-yorks-increasingly-global-2026-lineup/",
+      "source": "Forbes"
+    },
+    {
+      "title": "Charli xcx Announces NYC 'Conversations' Event Amid New Music Speculation",
+      "url": "https://www.justjared.com/2026/04/28/charli-xcx-nyc-conversations-event-new-music-speculation/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "Mavis Staples, De La Soul Lead Packed NYC SummerStage 40th Anniversary Lineup",
+      "url": "http://www.rollingstone.com/music/music-news/summerstage-concert-series-lineups-2026-season-1235554655/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "“Pretty Ugly” resurrects the Lunachicks as Punk Rock’s most underrated revolutionaries",
+      "url": "https://www.salon.com/2026/04/28/pretty-ugly-resurrects-the-lunachicks-as-punk-rocks-most-underrated-revolutionaries/",
+      "source": "Salon"
+    },
+    {
+      "title": "New York’s Central Park SummerStage Announces 2026 Concert Schedule",
+      "url": "https://variety.com/2026/music/news/central-park-summerstage-2026-concert-schedule-1236732282/",
+      "source": "Variety"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
