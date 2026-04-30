@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A look back at royal family’s NYC visits as King Charles, Camilla head to Big Apple",
+      "url": "https://nypost.com/2026/04/29/us-news/royal-familys-past-nyc-visits-as-king-charles-heads-to-big-apple/",
+      "source": "New York Post"
+    },
+    {
+      "title": "The Secret To AI Adoption? Make It Fun",
+      "url": "https://www.forbes.com/sites/michaelashley/2026/04/29/the-secret-to-ai-adoption-make-it-fun/",
+      "source": "Forbes"
+    },
+    {
+      "title": "Soft landing. Boomerangers back in the house.",
+      "url": "https://jennapark.substack.com/p/soft-landing-boomerangers-back-in",
+      "source": "Substack.com"
+    },
+    {
+      "title": "Zoe Kravitz hides massive engagement ring on NYC outing with superstar godfather after Harry Styles proposal",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15774297/zoe-kravitz-hides-engagement-ring-harry-styles-godfather.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "ZHU Joins Pacha New York’s Increasingly Global 2026 Lineup",
+      "url": "https://www.forbes.com/sites/jeffbenjamin/2026/04/28/zhu-joins-pacha-new-yorks-increasingly-global-2026-lineup/",
+      "source": "Forbes"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
