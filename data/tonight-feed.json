@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift Travis Kelce Wedding Date and Location Rumors Spark Buzz: July 3 NYC Eyed?",
+      "url": "https://www.ibtimes.com.au/taylor-swift-travis-kelce-wedding-date-location-rumors-spark-buzz-july-3-nyc-eyed-1867990",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "70-Year-Old Evelyn Hart Returns To Dance With The Royal Winnipeg — 50 Years After She Joined It",
+      "url": "http://www.winnipegfreepress.com/arts-and-life/2026/04/27/spring-in-her-step",
+      "source": "Winnipeg Free Press"
+    },
+    {
+      "title": "‘Material Lover’ Lyrics: Sienna Spiro Drops New Song for ‘The Devil Wears Prada 2’ Soundtrack – Listen Now!",
+      "url": "https://www.justjared.com/2026/05/01/material-lover-lyrics-sienna-spiro-drops-new-song-for-the-devil-wears-prada-2-soundtrack-listen-now/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "Zoe Kravitz flashes her massive diamond ring on NYC stroll after Harry Styles engagement",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15780755/zoe-kravitz-harry-styles-engagement-diamond-ring.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Knicks fans skip sky-high playoff ticket prices – by making a fast break to games outside NYC",
+      "url": "https://nypost.com/2026/04/30/us-news/knicks-fans-skip-sky-high-playoff-ticket-prices-by-making-a-fast-break-to-games-outside-nyc/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
