@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Marc Anthony Hosts Maestro Cares Golf Event & More Uplifting Moments",
+      "url": "http://www.billboard.com/music/latin/marc-anthony-maestro-cares-uplifting-moments-in-latin-music-1236237470/",
+      "source": "Billboard"
+    },
+    {
+      "title": "I went to an 'AI psychosis' party in NYC filled with zany art, vibe-coded apps, and Diet Coke",
+      "url": "https://www.businessinsider.com/inside-nyc-ai-psychosis-summit-party-anthropic-claude-code-2026-5",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Who would make the ultimate celebrity starting five for the Lakers and Knicks?",
+      "url": "https://nypost.com/2026/05/01/sports/inside-the-lakers-and-knicks-celebrity-courtside-scene/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Who would make the ultimate celebrity starting five for the Lakers and Knicks?",
+      "url": "https://nypost.com/2026/05/01/sports/inside-the-lakers-and-knicks-celebrity-courtside-scene/?utm_source=yahoo&amp;utm_campaign=nypost&amp;utm_medium=referral",
+      "source": "New York Post"
+    },
+    {
+      "title": "The lavish wedding that shut down Fifth Avenue — and got Manhattan up on its feet",
+      "url": "https://nypost.com/2026/05/01/lifestyle/the-wedding-that-shut-down-fifth-avenue-and-got-manhattan-on-its-feet/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
