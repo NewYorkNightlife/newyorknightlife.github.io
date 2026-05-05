@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NYC duo youbet leans into their creative chemistry on self-titled album",
+      "url": "https://www.npr.org/sections/world-cafe/2026/05/04/nx-s1-5810534/youbet-world-cafe-interview",
+      "source": "NPR"
+    },
+    {
+      "title": "All the Celebrities in NYC for the Met Gala",
+      "url": "http://www.thecut.com/article/all-the-celebs-nyc-2026-met-gala.html",
+      "source": "The Cut"
+    },
+    {
+      "title": "Cultural Icons Before They Were Famous: Photographer’s Work Goes on Show",
+      "url": "https://petapixel.com/2026/05/04/cultural-icons-before-they-were-famous-photographers-work-goes-on-show/",
+      "source": "PetaPixel"
+    },
+    {
+      "title": "The Masterminds of Reality TV",
+      "url": "http://www.vulture.com/article/reality-tv-masterminds-2026.html",
+      "source": "Vulture"
+    },
+    {
+      "title": "Communist and socialist groups call for 'revolution' and seizure of property at Minneapolis May Day rally",
+      "url": "https://www.foxnews.com/politics/communist-socialist-groups-call-revolution-seizure-property-minneapolis-may-day-rally",
+      "source": "Fox News"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
