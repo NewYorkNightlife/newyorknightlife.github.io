@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "All the Celebrities in NYC for the Met Gala",
+      "url": "http://www.thecut.com/article/all-the-celebs-nyc-2026-met-gala.html",
+      "source": "The Cut"
+    },
+    {
+      "title": "Cultural Icons Before They Were Famous: Photographer’s Work Goes on Show",
+      "url": "https://petapixel.com/2026/05/04/cultural-icons-before-they-were-famous-photographers-work-goes-on-show/",
+      "source": "PetaPixel"
+    },
+    {
+      "title": "The Masterminds of Reality TV",
+      "url": "http://www.vulture.com/article/reality-tv-masterminds-2026.html",
+      "source": "Vulture"
+    },
+    {
+      "title": "Communist and socialist groups call for 'revolution' and seizure of property at Minneapolis May Day rally",
+      "url": "https://www.foxnews.com/politics/communist-socialist-groups-call-revolution-seizure-property-minneapolis-may-day-rally",
+      "source": "Fox News"
+    },
+    {
+      "title": "Marc Anthony Hosts Maestro Cares Golf Event & More Uplifting Moments",
+      "url": "http://www.billboard.com/music/latin/marc-anthony-maestro-cares-uplifting-moments-in-latin-music-1236237470/",
+      "source": "Billboard"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
