@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Why Not Let The Vampire Lestat Cast (Kinda) Spoil Things For You?",
+      "url": "https://bleedingcool.com/tv/why-not-let-the-vampire-lestat-cast-kinda-spoil-things-for-you/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Shady NYC pedicabs could finally face crackdown — including requiring meters",
+      "url": "https://nypost.com/2026/05/05/us-news/shady-nyc-pedicabs-could-finally-face-crackdown/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Nayantara Roy's ‘Sisters of a Halved Heart’ Excerpt Brings a Broken Sister Back to NYC to Face Her Biggest Betrayal",
+      "url": "https://www.cosmopolitan.com/entertainment/books/a71218931/nayantara-roy-sisters-of-a-halved-heart-first-chapters/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Join IndieWire’s ‘Screen Talk’ Podcast Live at Tribeca Festival with Ronan Farrow This June",
+      "url": "https://www.indiewire.com/news/festivals/tribeca-screen-talk-live-ronan-farrow-1235192112/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "2026 Tony Nominations: 'Lost Boys,' 'Schmigadoon!' & More",
+      "url": "http://www.billboard.com/lists/2026-tony-nominations-musicals-top-nominees/",
+      "source": "Billboard"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
