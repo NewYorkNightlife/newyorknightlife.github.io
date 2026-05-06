@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "How much does a ticket to the Met Gala cost in 2026?",
+      "url": "https://www.cbsnews.com/news/how-much-met-gala-ticket-2026/",
+      "source": "CBS News"
+    },
+    {
+      "title": "The man behind NYC’s star-studded ‘Love Rocks’ gala is launching a 50-story Brooklyn condo — with a jazz club",
+      "url": "https://nypost.com/2026/05/04/real-estate/love-rocks-producer-to-launch-one-of-brooklyns-tallest-condos/",
+      "source": "New York Post"
+    },
+    {
+      "title": "NYC duo youbet leans into their creative chemistry on self-titled album",
+      "url": "https://www.npr.org/sections/world-cafe/2026/05/04/nx-s1-5810534/youbet-world-cafe-interview",
+      "source": "NPR"
+    },
+    {
+      "title": "All the Celebrities in NYC for the Met Gala",
+      "url": "http://www.thecut.com/article/all-the-celebs-nyc-2026-met-gala.html",
+      "source": "The Cut"
+    },
+    {
+      "title": "Cultural Icons Before They Were Famous: Photographer’s Work Goes on Show",
+      "url": "https://petapixel.com/2026/05/04/cultural-icons-before-they-were-famous-photographers-work-goes-on-show/",
+      "source": "PetaPixel"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
