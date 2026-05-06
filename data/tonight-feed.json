@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "2026 Tony Awards Nominations Full List",
+      "url": "http://www.hollywoodreporter.com/lifestyle/arts/2026-tony-awards-nominations-full-list-1236586323/",
+      "source": "Hollywood Reporter"
+    },
+    {
+      "title": "2026 Tony Award Nominations Announced",
+      "url": "http://www.thefutoncritic.com/news/2026/05/05/2026-tony-award-nominations-announced-808411/20260505cbs01/",
+      "source": "Thefutoncritic.com"
+    },
+    {
+      "title": "How much does a ticket to the Met Gala cost in 2026?",
+      "url": "https://www.cbsnews.com/news/how-much-met-gala-ticket-2026/",
+      "source": "CBS News"
+    },
+    {
+      "title": "The man behind NYC’s star-studded ‘Love Rocks’ gala is launching a 50-story Brooklyn condo — with a jazz club",
+      "url": "https://nypost.com/2026/05/04/real-estate/love-rocks-producer-to-launch-one-of-brooklyns-tallest-condos/",
+      "source": "New York Post"
+    },
+    {
+      "title": "NYC duo youbet leans into their creative chemistry on self-titled album",
+      "url": "https://www.npr.org/sections/world-cafe/2026/05/04/nx-s1-5810534/youbet-world-cafe-interview",
+      "source": "NPR"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
