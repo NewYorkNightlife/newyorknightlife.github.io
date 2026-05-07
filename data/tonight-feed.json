@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "This Week In Rust: This Week in Rust 650",
+      "url": "https://this-week-in-rust.org/blog/2026/05/06/this-week-in-rust-650/",
+      "source": "This-week-in-rust.org"
+    },
+    {
+      "title": "8 US Cities That Go All-Out For Cinco De Mayo",
+      "url": "https://brobible.com/culture/article/largest-cinco-de-mayo-festivals-us/",
+      "source": "BroBible"
+    },
+    {
+      "title": "Why Not Let The Vampire Lestat Cast (Kinda) Spoil Things For You?",
+      "url": "https://bleedingcool.com/tv/why-not-let-the-vampire-lestat-cast-kinda-spoil-things-for-you/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Shady NYC pedicabs could finally face crackdown — including requiring meters",
+      "url": "https://nypost.com/2026/05/05/us-news/shady-nyc-pedicabs-could-finally-face-crackdown/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Nayantara Roy's ‘Sisters of a Halved Heart’ Excerpt Brings a Broken Sister Back to NYC to Face Her Biggest Betrayal",
+      "url": "https://www.cosmopolitan.com/entertainment/books/a71218931/nayantara-roy-sisters-of-a-halved-heart-first-chapters/",
+      "source": "Cosmopolitan.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
