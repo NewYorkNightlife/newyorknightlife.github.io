@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A Dispatch From the AI Psychosis Summit",
+      "url": "https://reason.com/2026/05/06/a-dispatch-from-the-ai-psychosis-summit/",
+      "source": "Reason"
+    },
+    {
+      "title": "How much are the cheapest tickets to see Bruce Springsteen in NYC?",
+      "url": "https://nypost.com/2026/05/06/ticket-sales/get-tickets-to-see-bruce-springsteen-at-msg-and-barclays-center/",
+      "source": "New York Post"
+    },
+    {
+      "title": "This Week In Rust: This Week in Rust 650",
+      "url": "https://this-week-in-rust.org/blog/2026/05/06/this-week-in-rust-650/",
+      "source": "This-week-in-rust.org"
+    },
+    {
+      "title": "8 US Cities That Go All-Out For Cinco De Mayo",
+      "url": "https://brobible.com/culture/article/largest-cinco-de-mayo-festivals-us/",
+      "source": "BroBible"
+    },
+    {
+      "title": "Why Not Let The Vampire Lestat Cast (Kinda) Spoil Things For You?",
+      "url": "https://bleedingcool.com/tv/why-not-let-the-vampire-lestat-cast-kinda-spoil-things-for-you/",
+      "source": "Bleeding Cool News"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
