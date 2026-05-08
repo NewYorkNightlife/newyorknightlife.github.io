@@ -5,9 +5,66 @@
     "summary": "few clouds",
     "temp_f": 49,
     "feels_like_f": 45,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 71,
+        "low_f": 49
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 58,
+        "low_f": 58
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 59,
+        "low_f": 59
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 52,
+        "low_f": 52
+      },
+      {
+        "day": "Tue",
+        "summary": "Clear",
+        "high_f": 50,
+        "low_f": 50
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "New NYC Film Commissioner Rafael Espinal Is Wooing Wary Financiers & Frustrated Filmmakers, What’s His Plan? — The Deadline Q&A",
+      "url": "http://deadline.com/2026/05/new-york-city-film-commissioner-rafael-espinal-interview-1236883322/",
+      "source": "Deadline"
+    },
+    {
+      "title": "A Dispatch From the AI Psychosis Summit",
+      "url": "https://reason.com/2026/05/06/a-dispatch-from-the-ai-psychosis-summit/",
+      "source": "Reason"
+    },
+    {
+      "title": "How much are the cheapest tickets to see Bruce Springsteen in NYC?",
+      "url": "https://nypost.com/2026/05/06/ticket-sales/get-tickets-to-see-bruce-springsteen-at-msg-and-barclays-center/",
+      "source": "New York Post"
+    },
+    {
+      "title": "This Week In Rust: This Week in Rust 650",
+      "url": "https://this-week-in-rust.org/blog/2026/05/06/this-week-in-rust-650/",
+      "source": "This-week-in-rust.org"
+    },
+    {
+      "title": "8 US Cities That Go All-Out For Cinco De Mayo",
+      "url": "https://brobible.com/culture/article/largest-cinco-de-mayo-festivals-us/",
+      "source": "BroBible"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
