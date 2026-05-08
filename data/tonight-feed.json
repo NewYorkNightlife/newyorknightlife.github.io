@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "RSM and Brookfield Place Launch \"NYC Math Day,\" Honoring Hundreds of Young Mathematicians",
+      "url": "https://www.prnewswire.com/news-releases/rsm-and-brookfield-place-launch-nyc-math-day-honoring-hundreds-of-young-mathematicians-302765389.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "New NYC Film Commissioner Rafael Espinal Is Wooing Wary Financiers & Frustrated Filmmakers, What’s His Plan? — The Deadline Q&A",
+      "url": "http://deadline.com/2026/05/new-york-city-film-commissioner-rafael-espinal-interview-1236883322/",
+      "source": "Deadline"
+    },
+    {
+      "title": "A Dispatch From the AI Psychosis Summit",
+      "url": "https://reason.com/2026/05/06/a-dispatch-from-the-ai-psychosis-summit/",
+      "source": "Reason"
+    },
+    {
+      "title": "How much are the cheapest tickets to see Bruce Springsteen in NYC?",
+      "url": "https://nypost.com/2026/05/06/ticket-sales/get-tickets-to-see-bruce-springsteen-at-msg-and-barclays-center/",
+      "source": "New York Post"
+    },
+    {
+      "title": "This Week In Rust: This Week in Rust 650",
+      "url": "https://this-week-in-rust.org/blog/2026/05/06/this-week-in-rust-650/",
+      "source": "This-week-in-rust.org"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
