@@ -5,9 +5,66 @@
     "summary": "scattered clouds",
     "temp_f": 62,
     "feels_like_f": 60,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 62,
+        "low_f": 62
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 58,
+        "low_f": 58
+      },
+      {
+        "day": "Sun",
+        "summary": "Rain",
+        "high_f": 69,
+        "low_f": 69
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 54,
+        "low_f": 54
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 63,
+        "low_f": 63
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NYC Residential Development Design Suffers From Blandness: Compass Execs",
+      "url": "http://commercialobserver.com/2026/05/nyc-residential-development-design-suffers-from-blandness-compass-execs/",
+      "source": "Commercial Observer"
+    },
+    {
+      "title": "I lived in Austin for 6 years and loved it, but moving to New York City made me realize Texas isn't for me",
+      "url": "https://www.businessinsider.com/moved-from-austin-texas-to-new-york-city-2026-5",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Jane Fonda, Patti Smith, Rufus Wainwright to Gather in Celebration of the First Amendment in NYC",
+      "url": "http://www.rollingstone.com/music/music-news/jane-fonda-patti-smith-rise-up-sing-out-nyc-1235558300/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "RSM and Brookfield Place Launch \"NYC Math Day,\" Honoring Hundreds of Young Mathematicians",
+      "url": "https://www.prnewswire.com/news-releases/rsm-and-brookfield-place-launch-nyc-math-day-honoring-hundreds-of-young-mathematicians-302765389.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "New NYC Film Commissioner Rafael Espinal Is Wooing Wary Financiers & Frustrated Filmmakers, What’s His Plan? — The Deadline Q&A",
+      "url": "http://deadline.com/2026/05/new-york-city-film-commissioner-rafael-espinal-interview-1236883322/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
