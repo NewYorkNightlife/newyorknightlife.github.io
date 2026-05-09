@@ -5,9 +5,66 @@
     "summary": "light rain",
     "temp_f": 62,
     "feels_like_f": 62,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 61,
+        "low_f": 59
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 72,
+        "low_f": 72
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 56,
+        "low_f": 56
+      },
+      {
+        "day": "Tue",
+        "summary": "Clear",
+        "high_f": 66,
+        "low_f": 66
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 59,
+        "low_f": 59
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Beautifully dressed NYC man hit with vile threats after asking fellow subway rider not to play music from a speaker",
+      "url": "https://www.dailymail.com/news/article-15801379/NYC-man-vile-subway-threats-passenger-music-speaker.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Bravo Can’t Just Keep It in the Family",
+      "url": "http://www.vulture.com/article/bravo-next-gen-nyc-encounter.html",
+      "source": "Vulture"
+    },
+    {
+      "title": "NYC Residential Development Design Suffers From Blandness: Compass Execs",
+      "url": "http://commercialobserver.com/2026/05/nyc-residential-development-design-suffers-from-blandness-compass-execs/",
+      "source": "Commercial Observer"
+    },
+    {
+      "title": "I lived in Austin for 6 years and loved it, but moving to New York City made me realize Texas isn't for me",
+      "url": "https://www.businessinsider.com/moved-from-austin-texas-to-new-york-city-2026-5",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Jane Fonda, Patti Smith, Rufus Wainwright to Gather in Celebration of the First Amendment in NYC",
+      "url": "http://www.rollingstone.com/music/music-news/jane-fonda-patti-smith-rise-up-sing-out-nyc-1235558300/",
+      "source": "Rolling Stone"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
