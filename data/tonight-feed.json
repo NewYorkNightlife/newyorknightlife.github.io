@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Watch: Kirby's 'Saving Grace' Music Video for the 'Spider-Noir' Series",
+      "url": "https://www.firstshowing.net/2026/watch-kirbys-saving-grace-music-video-for-the-spider-noir-series/",
+      "source": "First Showing"
+    },
+    {
+      "title": "New Yorkers are embracing NYC’s most frozen-in-time hot spots — from cool Jazz Age hideouts to ’70s punk emporiums",
+      "url": "https://nypost.com/2026/05/08/lifestyle/new-yorkers-are-embracing-nycs-most-frozen-in-time-hot-spots-from-cool-jazz-age-hideouts-to-70s-punk-emporiums/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Beautifully dressed NYC man hit with vile threats after asking fellow subway rider not to play music from a speaker",
+      "url": "https://www.dailymail.com/news/article-15801379/NYC-man-vile-subway-threats-passenger-music-speaker.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Bravo Can’t Just Keep It in the Family",
+      "url": "http://www.vulture.com/article/bravo-next-gen-nyc-encounter.html",
+      "source": "Vulture"
+    },
+    {
+      "title": "NYC Residential Development Design Suffers From Blandness: Compass Execs",
+      "url": "http://commercialobserver.com/2026/05/nyc-residential-development-design-suffers-from-blandness-compass-execs/",
+      "source": "Commercial Observer"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
