@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Drummer’s slam dunk: NYC subway busker plays for Knicks at MSG in bucket-list moment",
+      "url": "https://nypost.com/2026/05/09/sports/nyc-subway-busker-plays-for-knicks-at-msg-in-bucket-list-moment/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Subway pusher was still wearing his psych ward bracelet when he pushed teacher to his death just an hour after hospital release, cops say",
+      "url": "https://www.dailymail.com/news/article-15803279/Rhamell-Burke-Ross-Falzone-subway-death.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "‘Linda Perry: Let It Die Here’ Timed To New Album, Tony Leung In ‘Silent Friend’, ‘Blue Film’ & ‘Influenced’ – Specialty Preview",
+      "url": "http://deadline.com/2026/05/indie-films-opening-linda-perry-let-it-die-here-blue-film-1236888638/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Watch: Kirby's 'Saving Grace' Music Video for the 'Spider-Noir' Series",
+      "url": "https://www.firstshowing.net/2026/watch-kirbys-saving-grace-music-video-for-the-spider-noir-series/",
+      "source": "First Showing"
+    },
+    {
+      "title": "New Yorkers are embracing NYC’s most frozen-in-time hot spots — from cool Jazz Age hideouts to ’70s punk emporiums",
+      "url": "https://nypost.com/2026/05/08/lifestyle/new-yorkers-are-embracing-nycs-most-frozen-in-time-hot-spots-from-cool-jazz-age-hideouts-to-70s-punk-emporiums/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
