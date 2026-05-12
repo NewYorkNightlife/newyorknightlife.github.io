@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 55,
     "feels_like_f": 53,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Tue",
+        "summary": "Clear",
+        "high_f": 58,
+        "low_f": 57
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 67,
+        "low_f": 67
+      },
+      {
+        "day": "Thu",
+        "summary": "Rain",
+        "high_f": 58,
+        "low_f": 58
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 53,
+        "low_f": 53
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 62,
+        "low_f": 62
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift and Travis Kelce Wedding Rumors Heat Up: July 3 NYC Date, Save-the-Dates Reportedly Sent",
+      "url": "https://www.ibtimes.com.au/taylor-swift-travis-kelce-wedding-rumors-heat-july-3-nyc-date-save-dates-reportedly-sent-1868555",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "‘Silent Friend’, Ildikó Enyedi’s Venice Prize Winner, Sees Strong Limited Opening — Specialty Box Office",
+      "url": "http://deadline.com/2026/05/indie-film-box-office-silent-friend-blue-film-1236889735/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Custom Oak, Venetian Plaster, and Vintage Furniture Shape This Elegant NYC Loft",
+      "url": "https://www.contemporist.com/custom-oak-venetian-plaster-and-vintage-furniture-shape-this-elegant-nyc-loft/#article",
+      "source": "Contemporist.com"
+    },
+    {
+      "title": "Drummer’s slam dunk: NYC subway busker plays for Knicks at MSG in bucket-list moment",
+      "url": "https://nypost.com/2026/05/09/sports/nyc-subway-busker-plays-for-knicks-at-msg-in-bucket-list-moment/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Subway pusher was still wearing his psych ward bracelet when he pushed teacher to his death just an hour after hospital release, cops say",
+      "url": "https://www.dailymail.com/news/article-15803279/Rhamell-Burke-Ross-Falzone-subway-death.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
