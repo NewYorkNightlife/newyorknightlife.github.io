@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Replit Announces vibecon, its First Creative Conference where Code meets Culture in New York, June 17-18",
+      "url": "https://www.prnewswire.com/news-releases/replit-announces-vibecon-its-first-creative-conference-where-code-meets-culture-in-new-york-june-17-18-302769318.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "No Phones, No Shortcuts: What NYC’s Phone-Free Rooms Know About Building Nightlife Culture",
+      "url": "https://dancingastronaut.com/2026/05/no-phones-no-shortcuts-what-nycs-phone-free-rooms-know-about-building-nightlife-culture/",
+      "source": "Dancing Astronaut"
+    },
+    {
+      "title": "Taylor Swift Was Spotted Having a Glam Dinner With Her Entire Family in NYC",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71279961/taylor-swift-nyc-family-dinner-pics/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "NYC dumping record $43B into public schools — at whopping $44K per pupil — despite plummeting enrollment, poor test results",
+      "url": "https://nypost.com/2026/05/12/us-news/nyc-dumping-record-43b-into-public-schools-at-whopping-44k-per-pupil-despite-plummeting-enrollment-poor-test-results/",
+      "source": "New York Post"
+    },
+    {
+      "title": "The Rapid-Fire Political Education of Zohran Mamdani",
+      "url": "https://www.thenation.com/article/politics/zohran-mamdani-new-york-politics-mayor/",
+      "source": "Thenation.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
