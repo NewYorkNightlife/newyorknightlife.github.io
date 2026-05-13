@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NYC dumping record $43B into public schools — at whopping $44K per pupil — despite plummeting enrollment, poor test results",
+      "url": "https://nypost.com/2026/05/12/us-news/nyc-dumping-record-43b-into-public-schools-at-whopping-44k-per-pupil-despite-plummeting-enrollment-poor-test-results/",
+      "source": "New York Post"
+    },
+    {
+      "title": "The Rapid-Fire Political Education of Zohran Mamdani",
+      "url": "https://www.thenation.com/article/politics/zohran-mamdani-new-york-politics-mayor/",
+      "source": "Thenation.com"
+    },
+    {
+      "title": "Jennifer Garner of The Five Star Weekend and Brooks Nader from the Baywatch reboot heat up the NYC upfronts",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15809169/Brooks-Nader-Jennifer-Garner-upfronts.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "13 Rappers Who Are Way Smarter Than Your Average CEO",
+      "url": "https://www.theroot.com/13-rappers-who-are-way-smarter-than-your-average-ceo-2000104769",
+      "source": "The Root"
+    },
+    {
+      "title": "Keli Holiday Abruptly Cancels NYC Gig After Border Detention and US Re-Entry Denial",
+      "url": "https://www.ibtimes.com.au/keli-holiday-abruptly-cancels-nyc-gig-after-border-detention-us-re-entry-denial-1868580",
+      "source": "Ibtimes.com.au"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
