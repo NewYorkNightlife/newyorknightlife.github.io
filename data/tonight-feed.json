@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Taylor Swift Superfan's Guide To New York City",
+      "url": "https://www.elitedaily.com/lifestyle/taylor-swift-fan-guide-new-york-city-locations-itinerary",
+      "source": "Elite Daily"
+    },
+    {
+      "title": "Jack Douglas dead at 80: Legendary rock producer famously recorded with John Lennon the day Beatles icon was shot and killed",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15812855/jack-douglas-dead-producer-lennon-aerosmith.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Replit Announces vibecon, its First Creative Conference where Code meets Culture in New York, June 17-18",
+      "url": "https://www.prnewswire.com/news-releases/replit-announces-vibecon-its-first-creative-conference-where-code-meets-culture-in-new-york-june-17-18-302769318.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "No Phones, No Shortcuts: What NYC’s Phone-Free Rooms Know About Building Nightlife Culture",
+      "url": "https://dancingastronaut.com/2026/05/no-phones-no-shortcuts-what-nycs-phone-free-rooms-know-about-building-nightlife-culture/",
+      "source": "Dancing Astronaut"
+    },
+    {
+      "title": "Taylor Swift Was Spotted Having a Glam Dinner With Her Entire Family in NYC",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71279961/taylor-swift-nyc-family-dinner-pics/",
+      "source": "Cosmopolitan.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
