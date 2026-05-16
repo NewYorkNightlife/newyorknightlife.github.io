@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift steps out in bridal white AGAIN as the unusual way guests are receiving invites to Travis Kelce wedding is revealed",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15819787/taylor-swift-bridal-white-unusual-wedding-invites-travis-kelce.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Rihanna & A$AP Rocky Step Out in NYC to Celebrate Son RZA’s 4th Birthday!",
+      "url": "https://www.justjared.com/2026/05/14/rihanna-aap-rocky-step-out-in-nyc-to-celebrate-son-rzas-4th-birthday/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "Kevin Morby – Little Wide Open (2026)",
+      "url": "https://exystence.net/blog/2026/05/14/kevin-morby-little-wide-open-2026/",
+      "source": "Exystence.net"
+    },
+    {
+      "title": "2026 Tribeca Festival Reveals Its Full Games Program",
+      "url": "https://bleedingcool.com/games/2026-tribeca-festival-reveals-its-full-games-program/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "This sold-out NYC Jewish food festival on Governors Island is coming back this summer",
+      "url": "https://www.timeout.com/newyork/news/this-sold-out-nyc-jewish-food-festival-on-governors-island-is-coming-back-this-summer-051326",
+      "source": "Time Out"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
