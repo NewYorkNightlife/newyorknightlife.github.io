@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Joshua Henry, ‘Liberation’, ‘Ragtime’ & ‘Death Of A Salesman’ Take Top New York Drama League Awards",
+      "url": "http://deadline.com/2026/05/new-york-drama-league-award-nominees-2026-1236865723/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Chiefs coach Andy Reid hints he's invited to Travis Kelce and Taylor Swift's star-studded wedding",
+      "url": "https://www.dailymail.com/sport/nfl/article-15821129/chiefs-coach-andy-reid-taylor-swift-travis-kelce-wedding.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Folger Theatre Presents World Premiere of \"How Shakespeare Saved My Life\", written by and starring Broadway's Jacob Ming-Trent",
+      "url": "https://www.prnewswire.com/news-releases/folger-theatre-presents-world-premiere-of-how-shakespeare-saved-my-life-written-by-and-starring-broadways-jacob-ming-trent-302773610.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Taylor Swift steps out in bridal white AGAIN as the unusual way guests are receiving invites to Travis Kelce wedding is revealed",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15819787/taylor-swift-bridal-white-unusual-wedding-invites-travis-kelce.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Rihanna & A$AP Rocky Step Out in NYC to Celebrate Son RZA’s 4th Birthday!",
+      "url": "https://www.justjared.com/2026/05/14/rihanna-aap-rocky-step-out-in-nyc-to-celebrate-son-rzas-4th-birthday/",
+      "source": "Just Jared"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
