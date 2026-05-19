@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 78,
     "feels_like_f": 78,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Mon",
+        "summary": "Clear",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 81,
+        "low_f": 81
+      },
+      {
+        "day": "Wed",
+        "summary": "Rain",
+        "high_f": 66,
+        "low_f": 66
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 57,
+        "low_f": 57
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 54,
+        "low_f": 54
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Brandi Glanville weighs in on Spencer Pratt's insurgent LA mayor run after his Epstein jab at Chelsea Handler",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15824361/brandi-glanville-spencer-pratt-la-mayor-chelsea-handler.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "From politics to pilsners: Ex-NYC Councilman opens beer garden",
+      "url": "https://nypost.com/2026/05/16/us-news/ex-nyc-council-gop-leader-betting-on-new-outdoor-beer-garden-at-staten-island-mall/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Runway Waiters brings luxury event staffing to New York events",
+      "url": "https://nypost.com/contributor-content/runway-waiters-brings-luxury-event-staffing-to-new-york-events/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce Hold Hands on Romantic Date Night in NYC",
+      "url": "https://www.usmagazine.com/celebrity-news/news/taylor-swift-and-travis-kelce-hold-hands-on-nyc-date-night/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "Ariana Madix and Daniel Wai’s Relationship Deserves Its Own Reality TV Special",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71321746/daniel-wai-ariana-madix-relationship-timeline/",
+      "source": "Cosmopolitan.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
