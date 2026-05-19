@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A Wedding at the Zoo (Which Explains the Brief Sea-Lion Emergency)",
+      "url": "http://www.thecut.com/article/the-wedding-files-stephen-sophie.html",
+      "source": "The Cut"
+    },
+    {
+      "title": "Brandi Glanville weighs in on Spencer Pratt's insurgent LA mayor run after his Epstein jab at Chelsea Handler",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15824361/brandi-glanville-spencer-pratt-la-mayor-chelsea-handler.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "From politics to pilsners: Ex-NYC Councilman opens beer garden",
+      "url": "https://nypost.com/2026/05/16/us-news/ex-nyc-council-gop-leader-betting-on-new-outdoor-beer-garden-at-staten-island-mall/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Runway Waiters brings luxury event staffing to New York events",
+      "url": "https://nypost.com/contributor-content/runway-waiters-brings-luxury-event-staffing-to-new-york-events/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce Hold Hands on Romantic Date Night in NYC",
+      "url": "https://www.usmagazine.com/celebrity-news/news/taylor-swift-and-travis-kelce-hold-hands-on-nyc-date-night/",
+      "source": "Us Weekly"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
