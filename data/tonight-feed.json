@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift Wore the Chicest Wedding Guest Dress for Summer—Shop the Affordable Nordstrom Dupe",
+      "url": "https://www.cosmopolitan.com/style-beauty/fashion/a71337763/taylor-swift-metallic-green-wedding-guest-dress-nyc-nordstrom/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "All Things Go NY Nabs Zara, Carly, Lola",
+      "url": "https://www.spinmagazine.com/2026/05/all-things-go-new-york/",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "The 100 Greatest Punk Albums of All Time",
+      "url": "http://www.rollingstone.com/music/music-lists/best-punk-albums-1235538842/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "A Wedding at the Zoo (Which Explains the Brief Sea-Lion Emergency)",
+      "url": "http://www.thecut.com/article/the-wedding-files-stephen-sophie.html",
+      "source": "The Cut"
+    },
+    {
+      "title": "Brandi Glanville weighs in on Spencer Pratt's insurgent LA mayor run after his Epstein jab at Chelsea Handler",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15824361/brandi-glanville-spencer-pratt-la-mayor-chelsea-handler.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
