@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A Tribute to the Golden Age of Travel Takes Off Near Reagan Airport",
+      "url": "https://dc.eater.com/openings/167941/constellation-cafe-altitude-wine-bar-national-landing-dc-openings",
+      "source": "Eater"
+    },
+    {
+      "title": "Wendy's Celebrates Its Redhead Roots with NYC Look-alike Contest on World Redhead Day",
+      "url": "https://www.prnewswire.com/news-releases/wendys-celebrates-its-redhead-roots-with-nyc-look-alike-contest-on-world-redhead-day-302776392.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "‘In The City’ Cast Guide: Who’s Joining Lindsay Hubbard, Kyle Cooke, And Amanda Batula For The ‘Summer House’ Spinoff?",
+      "url": "https://decider.com/2026/05/19/in-the-city-cast-guide-bravo/",
+      "source": "Decider"
+    },
+    {
+      "title": "Guess It’s Time to Dive Back Into Pete Davidson’s Celeb-Filled Dating History",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71349547/pete-davidson-exes-dating-history/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Luigi Mangione bloodthirsty superfans’ NYC-issued press passes draw outrage: ‘They’re not reporters – they’re ghouls’",
+      "url": "https://nypost.com/2026/05/18/us-news/luigi-mangione-bloodthirsty-superfans-nyc-issued-press-passes-draw-outrage-theyre-not-reporters-theyre-ghouls/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
