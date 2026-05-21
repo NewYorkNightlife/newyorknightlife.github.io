@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A Comprehensive Timeline of Ally Lewber and James Kennedy’s Pre-Breakup Relationship",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71362623/ally-lewber-james-kennedy-relationship-breakup-timeline/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "GMH Hotels: The NYC Labor Deal Every Hotel Operator Should Watch",
+      "url": "https://skift.com/2026/05/20/gmh-hotels-the-nyc-labor-deal-every-hotel-operator-should-watch/",
+      "source": "Skift"
+    },
+    {
+      "title": "New York Music Month Unveils 2026 Schedule: Samara Joy, Nile Rodgers, Frankie Grande and More",
+      "url": "https://variety.com/2026/music/news/new-york-music-month-2026-schedule-samara-joy-nile-rodgers-frankie-grande-1236754932/",
+      "source": "Variety"
+    },
+    {
+      "title": "New York Music Month Returns: Program Highlights AI & Supporting Creators",
+      "url": "http://www.billboard.com/pro/new-york-music-month-2026-qampa/",
+      "source": "Billboard"
+    },
+    {
+      "title": "An all-out oxtail only showdown is coming to NYC this summer",
+      "url": "https://www.timeout.com/newyork/news/an-all-out-oxtail-only-showdown-is-coming-to-nyc-this-summer-051926",
+      "source": "Time Out"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
