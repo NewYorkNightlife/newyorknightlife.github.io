@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "An all-out oxtail only showdown is coming to NYC this summer",
+      "url": "https://www.timeout.com/newyork/news/an-all-out-oxtail-only-showdown-is-coming-to-nyc-this-summer-051926",
+      "source": "Time Out"
+    },
+    {
+      "title": "The Smashing Pumpkins announce ‘Rats in a Cage Tour,’ NYC show. Get tickets",
+      "url": "https://nypost.com/2026/05/19/ticket-sales/smashing-pumpkins-rats-in-a-cage-tour-2026-where-to-buy-tickets/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Successful Queries: Ayla Zuraw-Friedland, Jacqueline Young, and “It’s Hard to Be an Animal,” by Robert Isaacs",
+      "url": "https://www.writersdigest.com/successful-queries-ayla-zuraw-friedland-jacqueline-young-and-its-hard-to-be-an-animal-by-robert-isaacs#article",
+      "source": "Writersdigest.com"
+    },
+    {
+      "title": "A Tribute to the Golden Age of Travel Takes Off Near Reagan Airport",
+      "url": "https://dc.eater.com/openings/167941/constellation-cafe-altitude-wine-bar-national-landing-dc-openings",
+      "source": "Eater"
+    },
+    {
+      "title": "Wendy's Celebrates Its Redhead Roots with NYC Look-alike Contest on World Redhead Day",
+      "url": "https://www.prnewswire.com/news-releases/wendys-celebrates-its-redhead-roots-with-nyc-look-alike-contest-on-world-redhead-day-302776392.html",
+      "source": "PRNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
