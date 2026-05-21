@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "‘The Man I Love’ Review: Rami Malek Is Blazingly Alive In Ira Sach’s Rich And Inspiring Movie Set Against AIDs And Downtown NYC’s Vibrant Artists Playground Of The Late 80’s -Cannes Film Festival",
+      "url": "http://deadline.com/2026/05/the-man-i-love-review-rami-malek-ira-sachs-aids-nyc-cannes-1236916575/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Historic lesbian bar forced to cancel Pride event after noise complaints from neighbors in ritzy NYC neighborhood",
+      "url": "https://www.dailymail.com/news/article-15834945/nyc-lesbian-bar-cancel-pride-event-gingers.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Busta Rhymes to Receive Songwriting Award at NYC Anti Social Camp Event",
+      "url": "http://www.rollingstone.com/music/music-news/busta-rhymes-songwriting-award-nyc-anti-social-camp-1235566466/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Wendy’s is hosting a Wendy lookalike competition in NYC next week",
+      "url": "https://www.timeout.com/newyork/news/wendys-is-hosting-a-wendy-lookalike-competition-in-nyc-next-week-052026",
+      "source": "Time Out"
+    },
+    {
+      "title": "Crown Heights’ Striking St. Bartholomew’s Episcopal Church, ‘All in a Bosky Bower’",
+      "url": "http://www.brownstoner.com/history/st-bartholomews-church-1227-pacific-street-crown-heights-history-architecture/",
+      "source": "Brownstoner.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
