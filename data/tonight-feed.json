@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Wendy’s is hosting a Wendy lookalike competition in NYC next week",
+      "url": "https://www.timeout.com/newyork/news/wendys-is-hosting-a-wendy-lookalike-competition-in-nyc-next-week-052026",
+      "source": "Time Out"
+    },
+    {
+      "title": "Crown Heights’ Striking St. Bartholomew’s Episcopal Church, ‘All in a Bosky Bower’",
+      "url": "http://www.brownstoner.com/history/st-bartholomews-church-1227-pacific-street-crown-heights-history-architecture/",
+      "source": "Brownstoner.com"
+    },
+    {
+      "title": "John Summit Announces ‘CTRL ESCAPE’ North American Tour: How to Buy Tickets",
+      "url": "https://www.justjared.com/2026/05/20/john-summit-announces-ctrl-escape-north-american-tour-how-to-buy-tickets/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "A Comprehensive Timeline of Ally Lewber and James Kennedy’s Pre-Breakup Relationship",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71362623/ally-lewber-james-kennedy-relationship-breakup-timeline/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "GMH Hotels: The NYC Labor Deal Every Hotel Operator Should Watch",
+      "url": "https://skift.com/2026/05/20/gmh-hotels-the-nyc-labor-deal-every-hotel-operator-should-watch/",
+      "source": "Skift"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
