@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NYC private school teachers make up to $17,000 less than parents pay in tuition — per pupil",
+      "url": "https://nypost.com/2026/05/21/us-news/nyc-private-school-teachers-make-up-to-17000-less-than-parents-pay-in-tuition-per-pupil/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Pregnant Aubrey Plaza looks radiant as she joins surprise guests on Stephen Colbert's second-to-last show",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15836465/Aubrey-Plaza-pregnant-Stephen-Colbert-christopher-abbott.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "STAIN ON THE BADGE: State Police Went AWOL During City Patrols — And Supervisor Had No Idea",
+      "url": "https://nyc.streetsblog.org/2026/05/21/stain-on-the-badge-state-police-went-awol-during-city-patrols-and-supervisor-had-no-idea",
+      "source": "Streetsblog.org"
+    },
+    {
+      "title": "Historic lesbian bar forced to cancel Pride event after noise complaints from neighbors in ritzy NYC neighborhood",
+      "url": "https://freerepublic.com/focus/f-chat/4380226/posts",
+      "source": "Freerepublic.com"
+    },
+    {
+      "title": "‘The Man I Love’ Review: Rami Malek Is Blazingly Alive In Ira Sach’s Rich And Inspiring Movie Set Against AIDs And Downtown NYC’s Vibrant Artists Playground Of The Late 80’s -Cannes Film Festival",
+      "url": "http://deadline.com/2026/05/the-man-i-love-review-rami-malek-ira-sachs-aids-nyc-cannes-1236916575/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
