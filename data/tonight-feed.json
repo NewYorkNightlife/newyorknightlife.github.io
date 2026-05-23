@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift's wedding invitation request has some guests so irked they're refusing to attend the NYC nuptials",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15840929/Taylor-Swift-wedding-request-irked.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Sweaty, wild, and decadent all night — how NYC clubbing is staging a comeback",
+      "url": "https://nypost.com/2026/05/22/lifestyle/nyc-nightlife-is-having-a-revival-with-the-return-of-clubs/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Brooke Shields spills juicy details about her 'lovely' romance with John F Kennedy Jr in the '80s",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15840983/Brooke-Shields-romance-John-F-Kennedy-Jr.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "The Left’s Assassination Cult Welcomes The Fangirls Of Accused Killer Luigi Mangione",
+      "url": "https://thefederalist.com/2026/05/22/the-lefts-assassination-cult-welcomes-the-fangirls-of-accused-killer-luigi-mangione/",
+      "source": "The Federalist"
+    },
+    {
+      "title": "Ira Sachs Cast Rami Malek to Sing in ‘The Man I Love’ Without Seeing ‘Bohemian Rhapsody’",
+      "url": "https://www.indiewire.com/features/interviews/ira-sachs-rami-malek-the-man-i-love-bohemian-rhapsody-cannes-1235195408/",
+      "source": "IndieWire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
