@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Left’s Assassination Cult Welcomes The Fangirls Of Accused Killer Luigi Mangione",
+      "url": "https://thefederalist.com/2026/05/22/the-lefts-assassination-cult-welcomes-the-fangirls-of-accused-killer-luigi-mangione/",
+      "source": "The Federalist"
+    },
+    {
+      "title": "Ira Sachs Cast Rami Malek to Sing in ‘The Man I Love’ Without Seeing ‘Bohemian Rhapsody’",
+      "url": "https://www.indiewire.com/features/interviews/ira-sachs-rami-malek-the-man-i-love-bohemian-rhapsody-cannes-1235195408/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "Tony Awards Predictions: First Projections With ‘Death of a Salesman,’ ‘The Lost Boys’ and Records on the Line for Squibb, Lithgow and Apple",
+      "url": "https://variety.com/lists/tonys-awards-winner-predictions-2026/",
+      "source": "Variety"
+    },
+    {
+      "title": "NYC private school teachers make up to $17,000 less than parents pay in tuition — per pupil",
+      "url": "https://nypost.com/2026/05/21/us-news/nyc-private-school-teachers-make-up-to-17000-less-than-parents-pay-in-tuition-per-pupil/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Pregnant Aubrey Plaza looks radiant as she joins surprise guests on Stephen Colbert's second-to-last show",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15836465/Aubrey-Plaza-pregnant-Stephen-Colbert-christopher-abbott.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
