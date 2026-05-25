@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Latin music star Lenny Tavárez swaps stage for Harlem classroom in touching visit with NYC kids",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15841879/reggaeton-lenny-tavarez-harlem-nyc-visit.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "‘Danny Go!’ star Daniel Coleman’s family: What to know about his wife and sons, Levi and Isaac",
+      "url": "https://pagesix.com/2026/05/22/celebrity-news/danny-go-star-daniel-colemans-family-what-to-know-about-his-wife-and-sons-levi-and-isaac/",
+      "source": "Page Six"
+    },
+    {
+      "title": "NYC is the city that never sleeps once again — restaurants, salons and gyms are scrambling to feed your 24/7 needs",
+      "url": "https://nypost.com/2026/05/22/lifestyle/nyc-is-the-city-that-never-sleeps-once-again-restaurants-salons-and-gyms-are-scrambling-to-feed-your-24-7-needs/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift's wedding invitation request has some guests so irked they're refusing to attend the NYC nuptials",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15840929/Taylor-Swift-wedding-request-irked.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Sweaty, wild, and decadent all night — how NYC clubbing is staging a comeback",
+      "url": "https://nypost.com/2026/05/22/lifestyle/nyc-nightlife-is-having-a-revival-with-the-return-of-clubs/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
