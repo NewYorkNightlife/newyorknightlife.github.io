@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Luigi Mangione Superfan Who Celebrated Brian Thompson's Murder Is Daughter of CVS Health Executive",
+      "url": "https://freerepublic.com/focus/f-news/4380839/posts",
+      "source": "Freerepublic.com"
+    },
+    {
+      "title": "Luigi Mangione Superfan Who Celebrated Brian Thompson's Murder Is Daughter of CVS Health Executive",
+      "url": "https://freerepublic.com/focus/f-chat/4380839/posts",
+      "source": "Freerepublic.com"
+    },
+    {
+      "title": "Rap Legend DMC & Idina Menzel Deliver Performances At $1 Million Fundraiser",
+      "url": "https://allhiphop.com/news/rap-legend-dmc-idina-menzel-deliver-performances-at-1-million-fundraiser/",
+      "source": "AllHipHop"
+    },
+    {
+      "title": "Brooklyn lesbian bar cancels Pride DJ events after noise complaints",
+      "url": "https://gothamist.com/news/brooklyn-lesbian-bar-cancels-pride-dj-events-after-noise-complaints",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Latin music star Lenny Tavárez swaps stage for Harlem classroom in touching visit with NYC kids",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15841879/reggaeton-lenny-tavarez-harlem-nyc-visit.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
