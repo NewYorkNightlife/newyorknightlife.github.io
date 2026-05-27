@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Knicks headed to the NBA finals for the first time in 27 years — as thousands of fans swarm NYC streets to party",
+      "url": "https://nypost.com/2026/05/26/sports/knicks-headed-to-the-nba-finals-for-the-first-time-in-27-years-as-thousands-of-fans-swarm-nyc-streets-to-party/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Knicks fans, celebrities take over Cleveland's arena, NYC streets in celebration of trip to NBA Finals; Zohran Mamdani weighs in",
+      "url": "https://sports.yahoo.com/nba/article/knicks-fans-celebrities-take-over-clevelands-arena-nyc-streets-in-celebration-of-trip-to-nba-finals-zohran-mamdani-weighs-in-035511775.html",
+      "source": "Yahoo Entertainment"
+    },
+    {
+      "title": "Knicks fans, celebrities take over Cleveland's arena, NYC streets in celebration of trip to NBA Finals; Mayor Mamdani weighs in",
+      "url": "https://sports.yahoo.com/nba/article/knicks-fans-celebrities-take-over-clevelands-arena-nyc-streets-in-celebration-of-trip-to-nba-finals-mayor-mamdani-weighs-in-035511054.html",
+      "source": "Yahoo Entertainment"
+    },
+    {
+      "title": "NYC erupts as Knicks sweep Cavaliers to earn first trip to NBA Finals since 1999",
+      "url": "https://www.nydailynews.com/2026/05/25/nyc-erupts-as-knicks-sweep-cavaliers-to-earn-first-trip-to-nba-finals-since-1999/",
+      "source": "New York Daily News"
+    },
+    {
+      "title": "Momo Cao’s ‘Not Alone’ Wins First-Ever Cartoon Brew Award At ASIFA-East Festival",
+      "url": "https://www.cartoonbrew.com/festivals/asifa-east-animation-festival-award-winners-261529.html",
+      "source": "Cartoon Brew"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
