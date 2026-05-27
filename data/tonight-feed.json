@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NYC Mayor takes swipe at Cavaliers after Knicks complete dominant sweep",
+      "url": "https://www.hitc.com/nyc-mayor-takes-swipe-at-cavaliers-after-knicks-complete-dominant-sweep/",
+      "source": "HITC - Football, Gaming, Movies, TV, Music"
+    },
+    {
+      "title": "What To Watch In June: A Printable TV Calendar Highlighting Every Major Premiere And Finale",
+      "url": "https://www.tvline.com/2181094/june-2026-tv-schedule-what-to-watch-printable-calendar-premieres-finales-list/",
+      "source": "TVLine"
+    },
+    {
+      "title": "T LOunge for May 26th 2026",
+      "url": "https://tomandlorenzo.com/2026/05/t-lounge-for-may-26th-2026/",
+      "source": "tomandlorenzo.com"
+    },
+    {
+      "title": "Coclico Introduces the Defining Shoes of Summer 2026",
+      "url": "https://www.globenewswire.com/news-release/2026/05/26/3301054/0/en/Coclico-Introduces-the-Defining-Shoes-of-Summer-2026.html",
+      "source": "GlobeNewswire"
+    },
+    {
+      "title": "Knicks fans send NYC into chaos after franchise reaches first NBA Finals since 1999: '",
+      "url": "https://www.foxnews.com/outkick-sports/knicks-fans-send-nyc-chaos-franchise-reaches-first-nba-finals-since-1999-",
+      "source": "Fox News"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
