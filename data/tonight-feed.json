@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Madonna on early life in NYC: ‘Nothing was beneath me’",
+      "url": "https://www.the-independent.com/arts-entertainment/music/news/madonna-new-york-confessions-bilt-b2984690.html",
+      "source": "The-independent.com"
+    },
+    {
+      "title": "How much do tickets cost to see Baby Keem in NYC on his ‘Casino Tour’?",
+      "url": "https://nypost.com/2026/05/27/ticket-sales/get-tickets-to-see-baby-keem-in-nyc-on-his-casino-tour/",
+      "source": "New York Post"
+    },
+    {
+      "title": "We Shouldn’t Have Taken Cozy Soup ’n’ Burger for Granted",
+      "url": "http://www.grubstreet.com/article/cozy-soup-n-burger-closing.html",
+      "source": "Grub Street"
+    },
+    {
+      "title": "Olivia Rodrigo Films New Music Video in NYC With Ballerinas",
+      "url": "https://ohnotheydidnt.livejournal.com/132390730.html",
+      "source": "Livejournal.com"
+    },
+    {
+      "title": "3652 - Trump Lost the War, Can he End it?",
+      "url": "https://majorityfm.libsyn.com/3652-trump-lost-the-war-can-he-end-it",
+      "source": "Libsyn.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
