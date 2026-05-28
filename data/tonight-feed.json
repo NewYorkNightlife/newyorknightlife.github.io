@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "We Shouldn’t Have Taken Cozy Soup ’n’ Burger for Granted",
+      "url": "http://www.grubstreet.com/article/cozy-soup-n-burger-closing.html",
+      "source": "Grub Street"
+    },
+    {
+      "title": "Olivia Rodrigo Films New Music Video in NYC With Ballerinas",
+      "url": "https://ohnotheydidnt.livejournal.com/132390730.html",
+      "source": "Livejournal.com"
+    },
+    {
+      "title": "3652 - Trump Lost the War, Can he End it?",
+      "url": "https://majorityfm.libsyn.com/3652-trump-lost-the-war-can-he-end-it",
+      "source": "Libsyn.com"
+    },
+    {
+      "title": "‘Spider-Noir’ Soundtrack Will Feature New Music by Kris Bowers and Michael Dean Parsons, and Two Original Songs Performed by Li Jun Li",
+      "url": "https://variety.com/2026/tv/news/spider-noir-soundtrack-listing-kris-bowers-1236758860/",
+      "source": "Variety"
+    },
+    {
+      "title": "NYC Mayor takes swipe at Cavaliers after Knicks complete dominant sweep",
+      "url": "https://www.hitc.com/nyc-mayor-takes-swipe-at-cavaliers-after-knicks-complete-dominant-sweep/",
+      "source": "HITC - Football, Gaming, Movies, TV, Music"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
