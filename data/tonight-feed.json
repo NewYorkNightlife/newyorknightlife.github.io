@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Meet Euphoria's new heartthrob Homer Gere: Nepo baby, 26, is set to follow in his father Richard's Hollywood footsteps after making his debut with THAT racy Sydney Sweeney scene",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15855799/Euphoria-Homer-Gere-Nepo-baby-Richard-Sydney-Sweeney.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Madonna on early life in NYC: ‘Nothing was beneath me’",
+      "url": "https://www.the-independent.com/arts-entertainment/music/news/madonna-new-york-early-career-b2985370.html",
+      "source": "The-independent.com"
+    },
+    {
+      "title": "A local's guide to the World Cup in New York",
+      "url": "https://gothamist.com/arts-entertainment/a-locals-guide-to-the-world-cup-in-new-york",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Tech Without Bros",
+      "url": "http://www.thecut.com/article/cyberdecks-anti-ai-resistance-trend.html",
+      "source": "The Cut"
+    },
+    {
+      "title": "Creatorverse: Late Night Is Evolving Into Its Creator Era",
+      "url": "https://www.thewrap.com/commentary-analysis/columns/creatorverse-late-night-ben-gleib-julian-shapiro-barnum/",
+      "source": "TheWrap"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
