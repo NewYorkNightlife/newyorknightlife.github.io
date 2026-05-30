@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Scooter Braun weighs in on Sydney Sweeney’s ‘Euphoria’ performance — and breaks silence on ‘surprise’ romance",
+      "url": "https://pagesix.com/2026/05/29/entertainment/scooter-braun-reacts-to-sydney-sweeneys-euphoria-performance-talks-surprise-romance/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Documentary Emmys: HBO’s ‘Prime Minister’ Lands Top Prize; Nat Geo and Netflix Lead Winners List",
+      "url": "https://variety.com/2026/tv/news/documentary-emmys-2026-winners-list-prime-minister-hbo-1236761866/",
+      "source": "Variety"
+    },
+    {
+      "title": "All the celebrities invited to Taylor Swift and Travis Kelce’s wedding",
+      "url": "https://pagesix.com/entertainment/all-the-celebrities-invited-to-taylor-swift-and-travis-kelces-wedding/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Another celebrity reveals invite to Taylor Swift and Travis Kelce’s NYC wedding as guest list grows",
+      "url": "https://pagesix.com/2026/05/28/entertainment/another-celebrity-reveals-invite-to-taylor-swift-travis-kelces-nyc-wedding/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Tom Jones announces ‘Come Gather Round Tour,’ two NYC shows. Get tickets",
+      "url": "https://nypost.com/2026/05/28/ticket-sales/tom-jones-come-gather-round-tour-2026-where-to-buy-tickets/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
