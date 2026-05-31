@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Do the right thing and see these movies in NYC this June",
+      "url": "https://gothamist.com/arts-entertainment/do-the-right-thing-and-see-these-movies-in-nyc-this-june",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Clive Davis, 94, Rushed To Hospital … Fans Fear The Worst!",
+      "url": "https://mediatakeout.com/clive-davis-94-rushed-to-hospital-fans-fear-the-worst/",
+      "source": "Mediatakeout.com"
+    },
+    {
+      "title": "Hacks star Hannah Einbinder is latest woke celebrity to rip into Spencer Pratt's LA mayoral bid... after Lisa Rinna and Chelsea Handler",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15860243/hacks-hannah-einbinder-slams-spencer-pratt-los-angeles-mayor.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Legendary music mogul Clive Davis, 94, hospitalized in NYC following respiratory issue",
+      "url": "https://pagesix.com/2026/05/30/celebrity-news/clive-davis-94-hospitalized-in-nyc/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Clive Davis, 94, hospitalized in New York... just DAYS after attending starry event with Alicia Keys",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15860105/clive-davis-hospitalized-new-york.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
