@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Legendary music mogul Clive Davis, 94, hospitalized in NYC following respiratory issue",
+      "url": "https://pagesix.com/2026/05/30/celebrity-news/clive-davis-94-hospitalized-in-nyc/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Clive Davis, 94, hospitalized in New York... just DAYS after attending starry event with Alicia Keys",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15860105/clive-davis-hospitalized-new-york.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Show HN: Simple news aggregator with source bias meters",
+      "url": "https://unbiasthenews.com",
+      "source": "Unbiasthenews.com"
+    },
+    {
+      "title": "I've spent 128 hours on overnight Amtrak trips. I wish I had known 10 things before stepping aboard.",
+      "url": "https://www.businessinsider.com/amtrak-overnight-train-what-to-know-before-booking",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Doc Trailer 'Humpty Dumpty X' About 'American History X' Folklore",
+      "url": "https://www.firstshowing.net/2026/doc-trailer-humpty-dumpty-x-about-american-history-x-folklore/",
+      "source": "First Showing"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
