@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Rise of the Military Retail Industrial Complex",
+      "url": "https://www.activistpost.com/the-rise-of-the-military-retail-industrial-complex/",
+      "source": "Activistpost.com"
+    },
+    {
+      "title": "Scooter Braun, Sydney Sweeney Enjoy Incognito Date Night in NYC",
+      "url": "https://www.eonline.com/news/1432510/scooter-braun-sydney-sweeney-have-incognito-date-night-in-nyc",
+      "source": "Eonline.com"
+    },
+    {
+      "title": "100 guitars and heavenly harmonies hit NYC this June. These are the concerts not to miss.",
+      "url": "https://gothamist.com/arts-entertainment/100-guitars-and-heavenly-harmonies-hit-nyc-this-june-these-are-the-concerts-not-to-miss",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Charlie Puth: Jimmy Fallon, Art Garfunkel Surprise Guests at NYC Show",
+      "url": "http://www.billboard.com/music/music-news/charlie-puth-jimmy-fallon-art-garfunkel-nyc-concert-video-1236260848/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Do the right thing and see these movies in NYC this June",
+      "url": "https://gothamist.com/arts-entertainment/do-the-right-thing-and-see-these-movies-in-nyc-this-june",
+      "source": "Gothamist"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
