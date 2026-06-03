@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Cro-Mags Are ‘Wired for Chaos’ on First New Song in Six Years",
+      "url": "http://www.rollingstone.com/music/music-news/cro-mags-wired-for-chaos-new-song-video-1235570755/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "LISTERINE® Introduces Range of Mouthwash Intensities, Including New Extra Mild",
+      "url": "https://www.prnewswire.com/news-releases/listerine-introduces-range-of-mouthwash-intensities-including-new-extra-mild-302787779.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Bars And Restaurants Near Madison Square Garden Embrace Knicks’ Playoff Run",
+      "url": "https://www.forbes.com/sites/timcasey/2026/06/02/bars-and-restaurants-near-madison-square-garden-embrace-knicks-playoff-run/",
+      "source": "Forbes"
+    },
+    {
+      "title": "Taylor Swift's A-list pals Miles Teller and wife Keleigh 'snubbed' from her upcoming wedding amid rumored rift",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15866345/Taylor-Swift-snubs-Miles-Teller-wife-Keleigh-wedding.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Sydney Sweeney's Times Square lie exposed by sleuths after actress claimed to have 'never visited' NYC landmark",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15865245/Sydney-Sweeney-Times-Square-NYC-fans-scooter-braun.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
