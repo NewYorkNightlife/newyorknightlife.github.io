@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift's A-list pals Miles Teller and wife Keleigh 'snubbed' from her upcoming wedding amid rumored rift",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15866345/Taylor-Swift-snubs-Miles-Teller-wife-Keleigh-wedding.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Sydney Sweeney's Times Square lie exposed by sleuths after actress claimed to have 'never visited' NYC landmark",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15865245/Sydney-Sweeney-Times-Square-NYC-fans-scooter-braun.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Julia Roberts, Lily Gladstone, Wilson Cruz and Peppermint Join Committee for the First Amendment NYC Concert Lineup",
+      "url": "https://variety.com/2026/politics/events/julia-roberts-committee-first-amendment-concert-lineup-1236762884/",
+      "source": "Variety"
+    },
+    {
+      "title": "Not your grandma’s game! Young New Yorkers are hooked on old-school gaming clubs — and willing to pay up to $2K to be a part of them",
+      "url": "https://nypost.com/2026/06/01/lifestyle/new-yorkers-are-hooked-on-old-school-gaming-clubs/",
+      "source": "New York Post"
+    },
+    {
+      "title": "May's Top 10 Celebrity Real Estate News: Debra Messing, Angelina Jolie & Selena Gomez",
+      "url": "https://www.prnewswire.com/news-releases/mays-top-10-celebrity-real-estate-news-debra-messing-angelina-jolie--selena-gomez-302785156.html",
+      "source": "PRNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
