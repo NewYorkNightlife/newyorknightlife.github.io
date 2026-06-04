@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NYPD lifts ban on Knicks watch parties outside MSG for Game 1 of NBA Finals after fans were too rowdy",
+      "url": "https://www.foxnews.com/sports/nypd-lifts-ban-knicks-watch-parties-outside-msg-game-1-nba-finals-fans-rowdy",
+      "source": "Fox News"
+    },
+    {
+      "title": "A family of 5 downsized from a Texas home to an NYC apartment. The kids share a room, but they've never been happier.",
+      "url": "https://www.businessinsider.com/family-downsized-dallas-texas-house-nyc-apartment-happier-2026-5",
+      "source": "Business Insider"
+    },
+    {
+      "title": "ASAP Rocky Says He Can Beat Zohran Mamdani in a Rap Battle, Mayor Race",
+      "url": "http://www.billboard.com/music/music-news/asap-rocky-zohran-mamdani-rap-battle-mayor-race-1236263099/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Rock Sucks: Backstage at ‘The Vampire Lestat’ and Its Music-Infused New Season",
+      "url": "https://www.indiewire.com/features/interviews/interview-the-vampire-lestat-music-sam-reid-jacob-anderson-1235197896/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "TEEN TOP’s CHANGJO heads back to class at Skyview High Summer School in Queens | amNewYork",
+      "url": "http://www.amny.com/entertainment/music/teen-tops-changjo-skyview-high-summer-school-queens/",
+      "source": "amNY"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
