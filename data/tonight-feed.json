@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "TEEN TOP’s CHANGJO heads back to class at Skyview High Summer School in Queens | amNewYork",
+      "url": "http://www.amny.com/entertainment/music/teen-tops-changjo-skyview-high-summer-school-queens/",
+      "source": "amNY"
+    },
+    {
+      "title": "Inside Diddy’s Prison Life and Crucial Appeal 1 Year After His Trial Began",
+      "url": "https://www.usmagazine.com/celebrity-news/news/inside-diddys-life-in-prison-amid-appeal-1-year-after-trial/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "Tribeca at 25: NYC festival celebrates music, Broadway and New York stories",
+      "url": "https://www.cbsnews.com/news/tribeca-new-york-city-25th-anniversary-documentaries-music-broadway/",
+      "source": "CBS News"
+    },
+    {
+      "title": "Jennifer Lopez stuns commuters as she takes the NYC subway for the first time in YEARS... but there's a catch",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15868855/Jennifer-Lopez-NYC-subway.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Hyatt's extended booking window, a famed LA hotel gets a new life and other hotel news",
+      "url": "https://thepointsguy.com/news/west-hollywood-edition-hyatt-booking-window/",
+      "source": "The Points Guy"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
