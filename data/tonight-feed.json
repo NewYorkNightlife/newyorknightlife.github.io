@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Tribeca at 25: NYC festival celebrates music, Broadway and New York stories",
+      "url": "https://www.cbsnews.com/news/tribeca-new-york-city-25th-anniversary-documentaries-music-broadway/",
+      "source": "CBS News"
+    },
+    {
+      "title": "Jennifer Lopez stuns commuters as she takes the NYC subway for the first time in YEARS... but there's a catch",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15868855/Jennifer-Lopez-NYC-subway.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Hyatt's extended booking window, a famed LA hotel gets a new life and other hotel news",
+      "url": "https://thepointsguy.com/news/west-hollywood-edition-hyatt-booking-window/",
+      "source": "The Points Guy"
+    },
+    {
+      "title": "From Knicks Air Force 1s to New Balance Collabs, Surprise Releases Are Bringing the Fun Back to Sneakers",
+      "url": "http://wwd.com/footwear-news/sneaker-news/surprise-sneaker-releases-1238988458/",
+      "source": "WWD"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce’s pal gives cryptic answer about wedding invite as couple’s other friends are snubbed",
+      "url": "https://pagesix.com/2026/06/02/entertainment/antoni-porowski-gives-cryptic-answer-over-taylor-swift-travis-kelce-wedding-invite/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
