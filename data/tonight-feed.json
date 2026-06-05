@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "JIM HENSON'S FRAGGLE ROCK: BACK TO THE ROCK LIVE KEEPS ROCKIN' FOR ITS SECOND NATIONAL TOUR",
+      "url": "https://www.prnewswire.com/news-releases/jim-hensons-fraggle-rock-back-to-the-rock-live-keeps-rockin-for-its-second-national-tour-302791974.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "TRUFF and PopUp Bagels® Turn Up the Heat with Limited-Edition Hot Sauce Schmear",
+      "url": "https://www.prnewswire.com/news-releases/truff-and-popup-bagels-turn-up-the-heat-with-limited-edition-hot-sauce-schmear-302791104.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Questlove, Earth, Wind & Fire Electrify Tribeca Festival Opening Night, Founders Reflect On 25th Anniversary – “It Just Kept Rolling And Rolling, And Here We Are”",
+      "url": "http://deadline.com/2026/06/tribeca-festival-25th-edition-questlove-earth-wind-fire-1236940280/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Inside ‘The Vampire Lestat’ Live NYC Concert: Glittering Tanks, Rabid Fans and a Once-in-a-Lifetime Showman",
+      "url": "https://www.thewrap.com/creative-content/tv-shows/the-vampire-lestat-concert-sam-reid-recap-review/",
+      "source": "TheWrap"
+    },
+    {
+      "title": "The Vampire Lestat: Sam Reid Rocks Out for \"One Night Only\" (IMAGES)",
+      "url": "https://bleedingcool.com/tv/the-vampire-lestat-sam-reid-rocks-out-for-one-night-only-images/",
+      "source": "Bleeding Cool News"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
