@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Inside ‘The Vampire Lestat’ Live NYC Concert: Glittering Tanks, Rabid Fans and a Once-in-a-Lifetime Showman",
+      "url": "https://www.thewrap.com/creative-content/tv-shows/the-vampire-lestat-concert-sam-reid-recap-review/",
+      "source": "TheWrap"
+    },
+    {
+      "title": "The Vampire Lestat: Sam Reid Rocks Out for \"One Night Only\" (IMAGES)",
+      "url": "https://bleedingcool.com/tv/the-vampire-lestat-sam-reid-rocks-out-for-one-night-only-images/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Andy Cohen goes public with hunky high-powered younger man as they celebrate Bravo exec's 58th birthday in NYC",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15871801/Andy-Cohen-goes-public-hunky-high-powered-younger-man-celebrate-Bravo-execs-58th-birthday-NYC.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Andy Cohen Holds Hands With Businessman Kevin Sobieski in NYC",
+      "url": "https://www.usmagazine.com/celebrity-news/news/andy-cohen-holds-hands-with-businessman-kevin-sobieski/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "This interactive map for kids helps them find free things to do in NYC this summer",
+      "url": "https://www.timeout.com/newyork/news/this-interactive-map-for-kids-helps-them-find-free-things-to-do-in-nyc-this-summer-060326",
+      "source": "Time Out"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
