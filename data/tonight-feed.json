@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Traveling Record Fair VINYLCON! Makes NYC Debut in Brooklyn on June 13 and 14",
+      "url": "https://www.spinmagazine.com/2026/06/traveling-record-fair-vinylcon-makes-nyc-debut-in-brooklyn-on-june-13-and-14/",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "Governors Ball is this weekend, NYC: here is the full lineup and everything you should know",
+      "url": "https://www.timeout.com/newyork/news/governors-ball-is-this-weekend-nyc-here-is-the-full-lineup-and-everything-you-should-know-060526",
+      "source": "Time Out"
+    },
+    {
+      "title": "Sydney Sweeney and Scooter Braun take their red-hot romance to the streets of New York",
+      "url": "https://www.foxnews.com/entertainment/sydney-sweeney-scooter-braun-take-red-hot-romance-streets-new-york",
+      "source": "Fox News"
+    },
+    {
+      "title": "Armen Donelian Crafts a Unique Pianistic Perspective on “Inquiry,” Set for Release Today by Sunnyside Records",
+      "url": "https://www.globenewswire.com/news-release/2026/06/05/3307383/0/en/Armen-Donelian-Crafts-a-Unique-Pianistic-Perspective-on-Inquiry-Set-for-Release-Today-by-Sunnyside-Records.html",
+      "source": "GlobeNewswire"
+    },
+    {
+      "title": "This Feels Bigger Than Another Event Cycle",
+      "url": "https://www.spinmagazine.com/2026/06/this-feels-bigger-than-another-event-cycle/",
+      "source": "Spinmagazine.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
