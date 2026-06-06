@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift fans think she'll win an OSCAR as she drops first country song in five years for Toy Story 5",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15875943/Taylor-Swift-OSCAR-country-song-Toy-Story.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Madonna Transforms Times Square Into a Dancefloor and Reminds Everyone Who The ‘Mother’ of Pop Is",
+      "url": "http://www.rollingstone.com/music/music-news/madonna-pride-times-square-new-york-confessions-ii-1235572723/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Clive Davis, 94, is discharged from hospital after spending week there following health scare",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15875661/clive-davis-hospital-health-scare.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Prada Mode lands in NYC with Hunter Schafer, Allison Williams and more celebrities",
+      "url": "https://pagesix.com/2026/06/04/style/prada-mode-new-york-see-hunter-schafer-and-more-celebrities-at-hotel-chelsea/",
+      "source": "Page Six"
+    },
+    {
+      "title": "JIM HENSON'S FRAGGLE ROCK: BACK TO THE ROCK LIVE KEEPS ROCKIN' FOR ITS SECOND NATIONAL TOUR",
+      "url": "https://www.prnewswire.com/news-releases/jim-hensons-fraggle-rock-back-to-the-rock-live-keeps-rockin-for-its-second-national-tour-302791974.html",
+      "source": "PRNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
