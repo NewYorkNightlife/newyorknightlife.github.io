@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Armen Donelian Crafts a Unique Pianistic Perspective on “Inquiry,” Set for Release Today by Sunnyside Records",
+      "url": "https://www.globenewswire.com/news-release/2026/06/05/3307383/0/en/Armen-Donelian-Crafts-a-Unique-Pianistic-Perspective-on-Inquiry-Set-for-Release-Today-by-Sunnyside-Records.html",
+      "source": "GlobeNewswire"
+    },
+    {
+      "title": "This Feels Bigger Than Another Event Cycle",
+      "url": "https://www.spinmagazine.com/2026/06/this-feels-bigger-than-another-event-cycle/",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "“Warehousing Human Beings”",
+      "url": "https://theintercept.com/2026/06/05/new-jersey-ice-delaney-hall-protests/",
+      "source": "The Intercept"
+    },
+    {
+      "title": "13 Black Icons Who Outsmarted the Music Industry",
+      "url": "https://www.theroot.com/13-black-icons-who-outsmarted-the-music-industry-2000108521",
+      "source": "The Root"
+    },
+    {
+      "title": "Taylor Swift fans think she'll win an OSCAR as she drops first country song in five years for Toy Story 5",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15875943/Taylor-Swift-OSCAR-country-song-Toy-Story.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
