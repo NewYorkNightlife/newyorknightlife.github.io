@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift and Travis Kelce are getting married at a 'MAJOR New York City venue'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15878181/Taylor-Swift-Travis-Kelce-wedding-venue.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "I talked to Chris Lake. He told us why you need to see him in Brooklyn",
+      "url": "https://nypost.com/2026/06/05/ticket-sales/chris-lake-exclusive-interview-under-the-k-bridge-brooklyn-concerts/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Kelsea Ballerini Is 'Reconnecting' With Her 'Independence' in New Chapter",
+      "url": "https://www.usmagazine.com/celebrity-news/news/kelsea-ballerini-is-reconnecting-with-her-independence/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "Traveling Record Fair VINYLCON! Makes NYC Debut in Brooklyn on June 13 and 14",
+      "url": "https://www.spinmagazine.com/2026/06/traveling-record-fair-vinylcon-makes-nyc-debut-in-brooklyn-on-june-13-and-14/",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "Governors Ball is this weekend, NYC: here is the full lineup and everything you should know",
+      "url": "https://www.timeout.com/newyork/news/governors-ball-is-this-weekend-nyc-here-is-the-full-lineup-and-everything-you-should-know-060526",
+      "source": "Time Out"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
