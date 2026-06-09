@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "‘Here I’m Alive’ Review: ‘Menashe’ Director Joshua Z. Weinstein Returns with a Microbudget ‘Magnolia’ for the Age of Hypernormalization",
+      "url": "https://www.indiewire.com/criticism/movies/here-im-alive-movie-review-joshua-z-weinstein-1235198853/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "Scott Ian Says This Is the 'Greatest Anthrax Song' in Our History",
+      "url": "https://loudwire.com/scott-ian-greatest-anthrax-song-edge-of-perfection/",
+      "source": "Loudwire"
+    },
+    {
+      "title": "An Oral History of VH1’s Golden Years",
+      "url": "https://www.spinmagazine.com/2026/06/an-oral-history-of-vh1s-golden-years/",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "The 2026 Tony Awards Red Carpet Was a Love Letter to Broadway (Exclusive)",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71517217/tony-awards-2026-red-carpet-romance/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "A$AP Rocky Closes Gov Ball 2026 With Surprise Guest Tokischa: Setlist",
+      "url": "http://www.billboard.com/music/music-news/asap-rocky-gov-ball-2026-setlist-dont-be-dumb-rihanna-1236266259/",
+      "source": "Billboard"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
