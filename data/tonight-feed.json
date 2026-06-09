@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Best Things We Saw at Governors Ball 2026: Recap + Photo Gallery",
+      "url": "https://consequence.net/2026/06/governors-ball-2026-festival-recap/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Gov Ball 2026: KATSEYE, Lorde, Dominic Fike, Other Best Moments",
+      "url": "http://www.billboard.com/lists/gov-ball-2026-best-moments-recap-lorde-katseye-asap-rocky/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Interviews: The Story of Playboy Manbaby",
+      "url": "https://www.punknews.org/article/88407/interviews-the-story-of-playboy-manbaby",
+      "source": "Punknews.org"
+    },
+    {
+      "title": "Charli XCX announces ‘Music Fashion Film Tour,’ two NYC shows. Get tickets",
+      "url": "https://nypost.com/2026/06/08/ticket-sales/get-tickets-for-charli-xcx-music-fashion-film-tour-2026/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Fashion Highlights from the Tony Awards",
+      "url": "https://www.laineygossip.com/stars-were-definitely-not-doing-too-much-on-tonys-red-carpet-during-pride-month/",
+      "source": "LaineyGossip"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
