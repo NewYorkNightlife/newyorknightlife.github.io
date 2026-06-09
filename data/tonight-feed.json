@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A$AP Rocky Closes Gov Ball 2026 With Surprise Guest Tokischa: Setlist",
+      "url": "http://www.billboard.com/music/music-news/asap-rocky-gov-ball-2026-setlist-dont-be-dumb-rihanna-1236266259/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Sarah Paulson, 51, cozies up to Warren Beatty and Annette Bening's daughter, 25, at Tony Awards... but no sign of partner Holland Taylor, 83",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15881679/Sarah-Paulson-Warren-Beatty-Annette-Bening-Tony-Awards.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "2026 Tony Awards Viewing Guide: When/Where to Watch, Nominees & More!",
+      "url": "https://bleedingcool.com/tv/2026-tony-awards-viewing-guide-when-where-to-watch-nominees-more/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "2026 Tony Awards: Act One: How to Check Out Pluto TV's Live Pre-Show",
+      "url": "https://bleedingcool.com/tv/2026-tony-awards-act-one-how-to-check-out-pluto-tvs-live-pre-show/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Hero NYC cop who nabbed killer behind Post’s famed ‘Headless body in topless bar’ headline dies",
+      "url": "https://nypost.com/2026/06/07/us-news/hero-nyc-cop-who-nabbed-headless-body-in-topless-bar-killer-dies/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
