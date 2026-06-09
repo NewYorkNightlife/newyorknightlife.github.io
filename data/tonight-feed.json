@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "2026 Tony Awards Viewing Guide: When/Where to Watch, Nominees & More!",
+      "url": "https://bleedingcool.com/tv/2026-tony-awards-viewing-guide-when-where-to-watch-nominees-more/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "2026 Tony Awards: Act One: How to Check Out Pluto TV's Live Pre-Show",
+      "url": "https://bleedingcool.com/tv/2026-tony-awards-act-one-how-to-check-out-pluto-tvs-live-pre-show/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Hero NYC cop who nabbed killer behind Post’s famed ‘Headless body in topless bar’ headline dies",
+      "url": "https://nypost.com/2026/06/07/us-news/hero-nyc-cop-who-nabbed-headless-body-in-topless-bar-killer-dies/",
+      "source": "New York Post"
+    },
+    {
+      "title": "What To Watch This Week: 50+ Premieres, Finales, And More",
+      "url": "https://www.tvline.com/2185105/what-to-watch-week-of-june-7-2026-tv-shows-movies/",
+      "source": "TVLine"
+    },
+    {
+      "title": "Knicks keep winning — games and fans. Now, New York City is about to get wild",
+      "url": "https://www.usatoday.com/story/sports/nba/playoffs/2026/06/06/knicks-fans-winning-new-york-city-comes-together/90433189007/",
+      "source": "USA Today"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
