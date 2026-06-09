@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Charli XCX announces ‘Music Fashion Film Tour,’ two NYC shows. Get tickets",
+      "url": "https://nypost.com/2026/06/08/ticket-sales/get-tickets-for-charli-xcx-music-fashion-film-tour-2026/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Fashion Highlights from the Tony Awards",
+      "url": "https://www.laineygossip.com/stars-were-definitely-not-doing-too-much-on-tonys-red-carpet-during-pride-month/",
+      "source": "LaineyGossip"
+    },
+    {
+      "title": "Jennie, Stray Kids, and Ravyn Lenae: All the Best Gov Ball 2026 Moments",
+      "url": "https://www.teenvogue.com/story/jennie-stray-kids-ravyn-lenae-best-gov-ball-2026-moments",
+      "source": "Teen Vogue"
+    },
+    {
+      "title": "‘Here I’m Alive’ Review: ‘Menashe’ Director Joshua Z. Weinstein Returns with a Microbudget ‘Magnolia’ for the Age of Hypernormalization",
+      "url": "https://www.indiewire.com/criticism/movies/here-im-alive-movie-review-joshua-z-weinstein-1235198853/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "Scott Ian Says This Is the 'Greatest Anthrax Song' in Our History",
+      "url": "https://loudwire.com/scott-ian-greatest-anthrax-song-edge-of-perfection/",
+      "source": "Loudwire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
