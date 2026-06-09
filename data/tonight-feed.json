@@ -5,7 +5,38 @@
     "summary": "clear sky",
     "temp_f": 67,
     "feels_like_f": 66,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Mon",
+        "summary": "Clear",
+        "high_f": 67,
+        "low_f": 64
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 71,
+        "low_f": 71
+      },
+      {
+        "day": "Wed",
+        "summary": "Rain",
+        "high_f": 75,
+        "low_f": 75
+      },
+      {
+        "day": "Thu",
+        "summary": "Rain",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 68,
+        "low_f": 68
+      }
+    ]
   },
   "headlines": [],
   "featured_tonight": [],
