@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Inside the rowdy street-side Knicks watch parties and private celebrations for Game 3 of the Finals: ‘Energy is off the charts’",
+      "url": "https://nypost.com/2026/06/09/lifestyle/inside-the-rowdy-knicks-street-parties/",
+      "source": "New York Post"
+    },
+    {
+      "title": "An Exact Timeline of Ariana Grande and Ethan Slater’s Pre-Split Relationship",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71534983/ariana-grande-ethan-slater-relationship-breakup-timeline/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Geese, Oklou Win Big at Libera Indie Awards",
+      "url": "https://variety.com/2026/music/news/geese-oklou-win-2026-libera-indie-awards-1236770198/",
+      "source": "Variety"
+    },
+    {
+      "title": "Joshua Jackson, model Olivia Burgess spark dating rumors with cozy NYC outing",
+      "url": "https://pagesix.com/2026/06/09/celebrity-news/joshua-jackson-model-olivia-burgess-spark-dating-rumors-with-nyc-outing/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Joshua Jackson sparks romance rumors with model Olivia Burgess as pair hold hands during NYC outing",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15884739/joshua-jackson-romance-rumors-model-olivia-burgess-hold-hands-nyc.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
