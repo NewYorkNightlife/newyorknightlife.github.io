@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Joshua Jackson, model Olivia Burgess spark dating rumors with cozy NYC outing",
+      "url": "https://pagesix.com/2026/06/09/celebrity-news/joshua-jackson-model-olivia-burgess-spark-dating-rumors-with-nyc-outing/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Joshua Jackson sparks romance rumors with model Olivia Burgess as pair hold hands during NYC outing",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15884739/joshua-jackson-romance-rumors-model-olivia-burgess-hold-hands-nyc.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Why a Taylor Swift-Travis Kelce MSG Wedding Is The Greatest Idea Ever",
+      "url": "http://www.hollywoodreporter.com/news/general-news/taylor-swift-travis-kelce-wedding-when-details-1236616713/",
+      "source": "Hollywood Reporter"
+    },
+    {
+      "title": "The Best Things We Saw at Governors Ball 2026: Recap + Photo Gallery",
+      "url": "https://consequence.net/2026/06/governors-ball-2026-festival-recap/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Gov Ball 2026: KATSEYE, Lorde, Dominic Fike, Other Best Moments",
+      "url": "http://www.billboard.com/lists/gov-ball-2026-best-moments-recap-lorde-katseye-asap-rocky/",
+      "source": "Billboard"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
