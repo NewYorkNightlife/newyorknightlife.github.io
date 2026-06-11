@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Loved-up Blake Lively and Ryan Reynolds shrug off ex-bestie Taylor Swift wedding snub rumors with piggyback ride in NYC...as insiders warn actress's absence will be 'impossible to ignore'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15889597/blake-lively-ryan-reynolds-taylor-swift-wedding-nyc.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Billionaire David Geffen, 83, has shock yacht reunion with boytoy ex, 33, after settling nasty divorce with no pre-nup",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15889733/Billionaire-David-Geffen-david-armstrong-spain-yacht.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Tom Hanks shares marriage advice for Taylor Swift and Travis Kelce at ‘Toy Story 5’ premiere",
+      "url": "https://pagesix.com/2026/06/10/entertainment/tom-hanks-shares-marriage-advice-for-taylor-swift-and-travis-kelce-at-toy-story-5-premiere/",
+      "source": "Page Six"
+    },
+    {
+      "title": "On the Set of ‘Not Suitable for Work,’ Where a New Crew of 20-Somethings Are Ready to Take Over NYC and Your Screens",
+      "url": "https://www.cosmopolitan.com/entertainment/tv/a71460252/not-suitable-for-work-set-visit-interviews/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Our Most Anticipated Queer Books for June 2026",
+      "url": "http://www.autostraddle.com/our-most-anticipated-queer-books-for-june-2026/",
+      "source": "Autostraddle.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
