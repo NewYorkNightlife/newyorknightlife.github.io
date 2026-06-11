@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "On the Set of ‘Not Suitable for Work,’ Where a New Crew of 20-Somethings Are Ready to Take Over NYC and Your Screens",
+      "url": "https://www.cosmopolitan.com/entertainment/tv/a71460252/not-suitable-for-work-set-visit-interviews/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Our Most Anticipated Queer Books for June 2026",
+      "url": "http://www.autostraddle.com/our-most-anticipated-queer-books-for-june-2026/",
+      "source": "Autostraddle.com"
+    },
+    {
+      "title": "Kelsea Ballerini Talks Her ‘In-Between Season,’ Moving to NYC, and Her ‘Rolling Stone’ Shoutout",
+      "url": "http://www.rollingstone.com/product-recommendations/lifestyle/kelsea-ballerini-cma-fest-2026-interview-1235574061/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Sara Bareilles extends ‘Good Grief Tour,’ adds second NYC show. Get tickets",
+      "url": "https://nypost.com/2026/06/09/ticket-sales/sara-bareilles-good-grief-tour-extended-2026-get-tickets-now/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Inside the rowdy street-side Knicks watch parties and private celebrations for Game 3 of the Finals: ‘Energy is off the charts’",
+      "url": "https://nypost.com/2026/06/09/lifestyle/inside-the-rowdy-knicks-street-parties/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
