@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "It’s Time to Deep Dive Into Taylor Swift and Haim’s 13-Year-Long Friendship",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71562836/taylor-swift-haim-sister-friendship-timeline/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Andrée Putman Studio Opens in New York City",
+      "url": "http://wwd.com/home-design/interior-design/andree-putman-studio-nyc-gallery-opening-1239006075/",
+      "source": "WWD"
+    },
+    {
+      "title": "The Strokes Push Back Album Release, Announce New York City Concert with Beach House and TV on the Radio",
+      "url": "https://consequence.net/2026/06/the-strokes-push-back-album-release-nyc-concert/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "What’s Going On in Donald Trump’s Head? We Don’t Have Brain Scans. We Do Have This.",
+      "url": "https://slate.com/news-and-politics/2026/06/donald-trump-news-age-birthday-ufc.html",
+      "source": "Slate Magazine"
+    },
+    {
+      "title": "Hugh Jackman puts on cozy display with girlfriend Sutton Foster on red carpet after THAT tense exchange",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15890857/hugh-jackman-sutton-foster-red-carpet.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
