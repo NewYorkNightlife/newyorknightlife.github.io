@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "What’s Going On in Donald Trump’s Head? We Don’t Have Brain Scans. We Do Have This.",
+      "url": "https://slate.com/news-and-politics/2026/06/donald-trump-news-age-birthday-ufc.html",
+      "source": "Slate Magazine"
+    },
+    {
+      "title": "Hugh Jackman puts on cozy display with girlfriend Sutton Foster on red carpet after THAT tense exchange",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15890857/hugh-jackman-sutton-foster-red-carpet.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Taylor Swift & Haim Sisters at NBA Finals Game 4: See Knicks Shirts",
+      "url": "http://www.billboard.com/music/pop/taylor-swift-nba-finals-game-4-haim-stevie-knicks-shirt-1236270180/",
+      "source": "Billboard"
+    },
+    {
+      "title": "New York City Declares West 8th Street as “Jimi Hendrix Way”",
+      "url": "https://consequence.net/2026/06/jimi-hendrix-way-street-rename-nyc/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "New York Music Month to host free shows by Kelsey Lu, The Antlers",
+      "url": "https://www.thefader.com/2026/06/10/new-york-music-month-to-host-free-shows-by-kelsey-lu-the-antlers",
+      "source": "The FADER"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
