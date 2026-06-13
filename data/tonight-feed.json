@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift wore Givenchy for her induction into the Songwriters Hall of Fame",
+      "url": "https://www.celebitchy.com/981676/taylor_swift_wore_givenchy_for_her_induction_into_the_songwriters_hall_of_fame/",
+      "source": "Celebitchy.com"
+    },
+    {
+      "title": "Chicago Cubs history unpacked — June 12",
+      "url": "https://www.bleedcubbieblue.com/chicago-cubs-history/220679/chicago-cubs-history-unpacked-june-12",
+      "source": "Bleed Cubbie Blue"
+    },
+    {
+      "title": "Hilarious moment Taylor Swift makes director Steven Spielberg record her and Travis Kelce DANCING during Songwriters Hall Of Fame Induction",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15894081/taylor-swift-steven-spielberg-record-travis-kelce-dancing.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Hilarious moment Taylor Swift makes director Steven Spielberg record her and Travis Kelce DANCING during Songwriters Hall Of Fame Induction",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15894081/taylor-swift-steven-spielberg-record-travis-kelce-dancing.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Travis Kelce jets from Kansas City Chiefs minicamp to NYC for Taylor Swift’s Songwriters Hall of Fame induction",
+      "url": "https://pagesix.com/2026/06/11/entertainment/travis-kelce-jets-from-chiefs-minicamp-to-nyc-for-taylor-swifts-songwriters-hall-of-fame-induction/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
