@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Hilarious moment Taylor Swift makes director Steven Spielberg record her and Travis Kelce DANCING during Songwriters Hall Of Fame Induction",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15894081/taylor-swift-steven-spielberg-record-travis-kelce-dancing.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Hilarious moment Taylor Swift makes director Steven Spielberg record her and Travis Kelce DANCING during Songwriters Hall Of Fame Induction",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15894081/taylor-swift-steven-spielberg-record-travis-kelce-dancing.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Travis Kelce jets from Kansas City Chiefs minicamp to NYC for Taylor Swift’s Songwriters Hall of Fame induction",
+      "url": "https://pagesix.com/2026/06/11/entertainment/travis-kelce-jets-from-chiefs-minicamp-to-nyc-for-taylor-swifts-songwriters-hall-of-fame-induction/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Rihanna & A$AP Rocky Take to The Streets of NYC to Celebrate Historic Knicks NBA Finals Win With Fans!",
+      "url": "https://www.justjared.com/2026/06/11/rihanna-aap-rocky-take-to-the-streets-of-nyc-to-celebrate-historic-knicks-nba-finals-win-with-fans/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "EDGE NYC DEBUTS ALL-NEW INDOOR IMMERSIVE EXPERIENCE",
+      "url": "https://www.prnewswire.com/news-releases/edge-nyc-debuts-all-new-indoor-immersive-experience-302798634.html",
+      "source": "PRNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
