@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Where Was \"Stupid Song\" Filmed? Olivia Rodrigo's NYC Spots, Revealed",
+      "url": "https://www.elitedaily.com/entertainment/olivia-rodrigo-stupid-song-filming-locations",
+      "source": "Elite Daily"
+    },
+    {
+      "title": "Olivia Rodrigo Unveils New Video for “stupid song,” Performs on Kimmel: Watch",
+      "url": "https://consequence.net/2026/06/olivia-rodrigo-stupid-song-video-kimmel-watch/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "In Honor of ‘You Seem Pretty Sad for a Girl So in Love’: Olivia Rodrigo and Louis Partridge’s Pre-Split Relationship Timeline",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71570359/olivia-rodrigo-louis-partridge-relationship-breakup-timeline/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Taylor Swift wore Givenchy for her induction into the Songwriters Hall of Fame",
+      "url": "https://www.celebitchy.com/981676/taylor_swift_wore_givenchy_for_her_induction_into_the_songwriters_hall_of_fame/",
+      "source": "Celebitchy.com"
+    },
+    {
+      "title": "Chicago Cubs history unpacked — June 12",
+      "url": "https://www.bleedcubbieblue.com/chicago-cubs-history/220679/chicago-cubs-history-unpacked-june-12",
+      "source": "Bleed Cubbie Blue"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
