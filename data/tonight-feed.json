@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Knicks hosting three NYC watch parties on Saturday as team looks to clinch NBA championship: All you need to know",
+      "url": "https://nypost.com/2026/06/13/sports/knicks-hosting-nyc-watch-parties-as-team-looks-to-clinch-nba-championship/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Monroe University Celebrates the Class of 2026 at Commencement",
+      "url": "https://www.prnewswire.com/news-releases/monroe-university-celebrates-the-class-of-2026-at-commencement-302799470.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "The Woman Whose Situationship Works Late",
+      "url": "http://www.thecut.com/article/new-sex-diaries-story-a-womans-situationship-works-late.html",
+      "source": "The Cut"
+    },
+    {
+      "title": "Where Was \"Stupid Song\" Filmed? Olivia Rodrigo's NYC Spots, Revealed",
+      "url": "https://www.elitedaily.com/entertainment/olivia-rodrigo-stupid-song-filming-locations",
+      "source": "Elite Daily"
+    },
+    {
+      "title": "Olivia Rodrigo Unveils New Video for “stupid song,” Performs on Kimmel: Watch",
+      "url": "https://consequence.net/2026/06/olivia-rodrigo-stupid-song-video-kimmel-watch/",
+      "source": "Consequence.net"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
