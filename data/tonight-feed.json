@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Last generation to use MetroCards gives them second life as ‘iconic’ NYC art",
+      "url": "https://nypost.com/2026/06/14/us-news/nyc-students-use-iconic-metrocards-as-canvases/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Conclave is the sound of a NYC summer block party",
+      "url": "https://www.theverge.com/entertainment/949621/conclave-nyc-summer-block-party-album-review",
+      "source": "The Verge"
+    },
+    {
+      "title": "NYC Puerto Rican Day Parade 2026 Draws Millions with Star Honorees, 5th Avenue Route and Cultural Celebration",
+      "url": "https://www.ibtimes.com.au/puerto-rican-day-parade-nyc-2026-1870626",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "Even More Black Films To Look Forward to in 2026",
+      "url": "https://www.theroot.com/even-more-black-films-to-look-forward-to-in-2026-2000079848",
+      "source": "The Root"
+    },
+    {
+      "title": "It’s My Favorite Sport. It’s Trump’s Too. But It’s Not As MAGA As He’d Have You Believe.",
+      "url": "https://slate.com/news-and-politics/2026/06/ufc-freedom-250-trump-white-house-lawn.html",
+      "source": "Slate Magazine"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
