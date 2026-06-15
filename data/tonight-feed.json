@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "It’s My Favorite Sport. It’s Trump’s Too. But It’s Not As MAGA As He’d Have You Believe.",
+      "url": "https://slate.com/news-and-politics/2026/06/ufc-freedom-250-trump-white-house-lawn.html",
+      "source": "Slate Magazine"
+    },
+    {
+      "title": "Kourtney Kardashian and Travis Barker walk first red carpet together in more than TWO YEARS as they attend rocker's documentary premiere in NYC",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15898503/kourtney-kardashian-travis-barker-red-carpet-years-documentary-premiere.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "CBS reporter loses it after Knicks fan fires off F-bomb during live report as NYC goes nuts",
+      "url": "https://nypost.com/2026/06/14/sports/cbs-reporter-loses-it-after-knicks-fan-fires-off-f-bomb-during-live-report/?utm_source=yahoo&amp;utm_campaign=nypost&amp;utm_medium=referral",
+      "source": "New York Post"
+    },
+    {
+      "title": "CBS reporter loses it after Knicks fan fires off F-bomb during live report as NYC goes nuts",
+      "url": "https://nypost.com/2026/06/14/sports/cbs-reporter-loses-it-after-knicks-fan-fires-off-f-bomb-during-live-report/",
+      "source": "New York Post"
+    },
+    {
+      "title": "NYC Mayor Zohran Mamdani urges Knicks fans to 'be responsible' ahead of pivotal NBA Finals Game 5",
+      "url": "https://www.foxnews.com/outkick-sports/nyc-mayor-zohran-mamdani-urges-knicks-fans-responsible-ahead-pivotal-nba-finals-game-5",
+      "source": "Fox News"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
