@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Caught in the moment: Paparazzi style photos document wedding days in a unique way",
+      "url": "https://nypost.com/2026/06/16/lifestyle/paparazzi-style-photos-document-the-day-in-a-unique-way/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift feeds Travis Kelce — complete with airplane noises — in playful home video",
+      "url": "https://pagesix.com/2026/06/16/entertainment/taylor-swift-feeds-travis-kelce-in-playful-home-video/",
+      "source": "Page Six"
+    },
+    {
+      "title": "NBA Champs New York Knicks Get the Party Started on The Tonight Show",
+      "url": "https://bleedingcool.com/tv/nba-champs-new-york-knicks-get-the-party-started-on-the-tonight-show/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Taylor Swift Fuels Rumors She’s Recording Her 13th Album With 9-Hour Electric Lady Studios Visit",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71600022/taylor-swift-13th-album-rumors-electric-lady/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Verizon Breaks Industry Mold to Put Customers First",
+      "url": "https://www.globenewswire.com/news-release/2026/06/16/3312412/0/en/Verizon-Breaks-Industry-Mold-to-Put-Customers-First.html",
+      "source": "GlobeNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
