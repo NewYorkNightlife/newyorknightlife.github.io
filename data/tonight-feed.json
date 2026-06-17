@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift turns heads for solo outing in NYC without fiance Travis Kelce as couple's wedding date vastly approaches",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15902863/taylor-swift-solo-outing-nyc-travis-kelce-wedding.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Lifeway® Foods Celebrates 40 Years and National Kefir Day with Coast-to-Coast Events and Lifeway Kefir Shop Pop-Up in SoHo",
+      "url": "https://www.prnewswire.com/news-releases/lifeway-foods-celebrates-40-years-and-national-kefir-day-with-coast-to-coast-events-and-lifeway-kefir-shop-pop-up-in-soho-302800870.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Sean Combs Wins Bid to Dismiss Dawn Richard’s Lawsuit",
+      "url": "http://www.rollingstone.com/music/music-news/sean-diddy-combs-dawn-richards-lawsuit-1235577799/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "West 8th Street in the West Village has now been named after Jimi Hendrix",
+      "url": "https://www.timeout.com/newyork/news/west-8th-street-in-the-west-village-has-now-been-named-after-jimi-hendrix-061526",
+      "source": "Time Out"
+    },
+    {
+      "title": "The New Hamptons Status Symbol Isn’t a Birkin. It’s Household Harmony",
+      "url": "https://thechalkboardmag.com/jess-asaro-fountain-of-youth-foods-home/",
+      "source": "thechalkboardmag.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
