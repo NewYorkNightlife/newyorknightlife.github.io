@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift Fuels Rumors She’s Recording Her 13th Album With 9-Hour Electric Lady Studios Visit",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71600022/taylor-swift-13th-album-rumors-electric-lady/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Verizon Breaks Industry Mold to Put Customers First",
+      "url": "https://www.globenewswire.com/news-release/2026/06/16/3312412/0/en/Verizon-Breaks-Industry-Mold-to-Put-Customers-First.html",
+      "source": "GlobeNewswire"
+    },
+    {
+      "title": "Justin Timberlake and Jessica Biel put on united front on rare NYC outing... two years after pop star's DWI arrest",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15902901/justin-timberlake-jessica-biel-nyc-dwi.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Taylor Swift turns heads for solo outing in NYC without fiance Travis Kelce as couple's wedding date vastly approaches",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15902863/taylor-swift-solo-outing-nyc-travis-kelce-wedding.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Lifeway® Foods Celebrates 40 Years and National Kefir Day with Coast-to-Coast Events and Lifeway Kefir Shop Pop-Up in SoHo",
+      "url": "https://www.prnewswire.com/news-releases/lifeway-foods-celebrates-40-years-and-national-kefir-day-with-coast-to-coast-events-and-lifeway-kefir-shop-pop-up-in-soho-302800870.html",
+      "source": "PRNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
