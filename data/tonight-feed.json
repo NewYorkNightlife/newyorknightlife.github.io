@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift Wedding Date: NYC Mayor Zohran Mamdani Appears to Confirm Swift and Kelce Weekend Wedding Date",
+      "url": "https://www.ibtimes.com.au/mayor-hints-taylor-swift-travis-kelce-wedding-nyc-1870723",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "Which One of These Celebs Will Perform Their NYC Anthem at the Knicks’ Parade? We Have An Idea",
+      "url": "https://www.theroot.com/which-one-of-these-celebs-will-perform-their-nyc-anthem-2000111596",
+      "source": "The Root"
+    },
+    {
+      "title": "Caught in the moment: Paparazzi style photos document wedding days in a unique way",
+      "url": "https://nypost.com/2026/06/16/lifestyle/paparazzi-style-photos-document-the-day-in-a-unique-way/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift feeds Travis Kelce — complete with airplane noises — in playful home video",
+      "url": "https://pagesix.com/2026/06/16/entertainment/taylor-swift-feeds-travis-kelce-in-playful-home-video/",
+      "source": "Page Six"
+    },
+    {
+      "title": "NBA Champs New York Knicks Get the Party Started on The Tonight Show",
+      "url": "https://bleedingcool.com/tv/nba-champs-new-york-knicks-get-the-party-started-on-the-tonight-show/",
+      "source": "Bleeding Cool News"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
