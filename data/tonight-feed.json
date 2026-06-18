@@ -5,9 +5,66 @@
     "summary": "broken clouds",
     "temp_f": 69,
     "feels_like_f": 70,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 69,
+        "low_f": 68
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 77,
+        "low_f": 77
+      },
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 73,
+        "low_f": 73
+      },
+      {
+        "day": "Sat",
+        "summary": "Clear",
+        "high_f": 71,
+        "low_f": 71
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 71,
+        "low_f": 71
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "YHWH Nailgun Are Taking Magazine on Tour",
+      "url": "https://pitchfork.com/news/yhwh-nailgun-are-taking-magazine-on-tour/",
+      "source": "Pitchfork"
+    },
+    {
+      "title": "Taylor Swift Wedding Date: NYC Mayor Zohran Mamdani Appears to Confirm Swift and Kelce Weekend Wedding Date",
+      "url": "https://www.ibtimes.com.au/mayor-hints-taylor-swift-travis-kelce-wedding-nyc-1870723",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "Which One of These Celebs Will Perform Their NYC Anthem at the Knicks’ Parade? We Have An Idea",
+      "url": "https://www.theroot.com/which-one-of-these-celebs-will-perform-their-nyc-anthem-2000111596",
+      "source": "The Root"
+    },
+    {
+      "title": "Caught in the moment: Paparazzi style photos document wedding days in a unique way",
+      "url": "https://nypost.com/2026/06/16/lifestyle/paparazzi-style-photos-document-the-day-in-a-unique-way/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift feeds Travis Kelce — complete with airplane noises — in playful home video",
+      "url": "https://pagesix.com/2026/06/16/entertainment/taylor-swift-feeds-travis-kelce-in-playful-home-video/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
