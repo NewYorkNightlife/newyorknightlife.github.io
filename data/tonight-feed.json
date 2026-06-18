@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "‘Mary Oliver: Saved by the Beauty of the World’ to Open NewportFilm Outdoors as Festival Unveils 2026 Summer Lineup (EXCLUSIVE)",
+      "url": "https://variety.com/2026/film/markets-festivals/newportfilm-outdoors-summer-2026-lineup-1236783678/",
+      "source": "Variety"
+    },
+    {
+      "title": "The Knicks’ win was a Trump exorcism",
+      "url": "https://www.salon.com/2026/06/17/the-knicks-win-was-a-trump-exorcism/",
+      "source": "Salon"
+    },
+    {
+      "title": "The Kardashian Sisters’ NBA Men: The Ones They Loved and Let Go",
+      "url": "https://www.theroot.com/the-kardashian-sisters-nba-men-the-ones-they-loved-an-2000111724",
+      "source": "The Root"
+    },
+    {
+      "title": "NYC elementary students make Broadway debut with a little magic from Disney Theatrical Group",
+      "url": "https://6abc.com/story/nyc-elementary-students-make-broadway-debut-little-magic-disney-theatrical-group/19310197/",
+      "source": "WPVI-TV"
+    },
+    {
+      "title": "This Week In Rust: This Week in Rust 656",
+      "url": "https://this-week-in-rust.org/blog/2026/06/17/this-week-in-rust-656/",
+      "source": "This-week-in-rust.org"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
