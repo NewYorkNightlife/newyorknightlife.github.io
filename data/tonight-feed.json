@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NYC elementary students make Broadway debut with a little magic from Disney Theatrical Group",
+      "url": "https://6abc.com/story/nyc-elementary-students-make-broadway-debut-little-magic-disney-theatrical-group/19310197/",
+      "source": "WPVI-TV"
+    },
+    {
+      "title": "This Week In Rust: This Week in Rust 656",
+      "url": "https://this-week-in-rust.org/blog/2026/06/17/this-week-in-rust-656/",
+      "source": "This-week-in-rust.org"
+    },
+    {
+      "title": "YHWH Nailgun Are Taking Magazine on Tour",
+      "url": "https://pitchfork.com/news/yhwh-nailgun-are-taking-magazine-on-tour/",
+      "source": "Pitchfork"
+    },
+    {
+      "title": "Taylor Swift Wedding Date: NYC Mayor Zohran Mamdani Appears to Confirm Swift and Kelce Weekend Wedding Date",
+      "url": "https://www.ibtimes.com.au/mayor-hints-taylor-swift-travis-kelce-wedding-nyc-1870723",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "Which One of These Celebs Will Perform Their NYC Anthem at the Knicks’ Parade? We Have An Idea",
+      "url": "https://www.theroot.com/which-one-of-these-celebs-will-perform-their-nyc-anthem-2000111596",
+      "source": "The Root"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
