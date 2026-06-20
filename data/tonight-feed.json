@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 69,
     "feels_like_f": 69,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sat",
+        "summary": "Clear",
+        "high_f": 69,
+        "low_f": 67
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 67,
+        "low_f": 67
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 72,
+        "low_f": 72
+      },
+      {
+        "day": "Tue",
+        "summary": "Rain",
+        "high_f": 70,
+        "low_f": 70
+      },
+      {
+        "day": "Wed",
+        "summary": "Clear",
+        "high_f": 68,
+        "low_f": 68
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Sydney Sweeney wishes boyfriend Scooter Braun a happy 45th birthday as she calls him a 'once in a lifetime' catch",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15913049/sydney-sweeney-scooter-braun-birthday.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "The Vampire Lestat Performs \"Long Face\" Live; \"Toledo\" Playlist",
+      "url": "https://bleedingcool.com/tv/the-vampire-lestat-performs-long-face-live-toledo-playlist/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "New York Knicks 2026 Championship Parade Guide: Here's How to Watch!",
+      "url": "https://bleedingcool.com/tv/new-york-knicks-2026-championship-parade-guide-heres-how-to-watch/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Inside Taylor Swift and Travis Kelce’s big day: How their wedding would work at Madison Square Garden",
+      "url": "https://pagesix.com/2026/06/18/celebrity-news/inside-taylor-swift-and-travis-kelces-big-day-how-their-wedding-would-work-at-madison-square-garden/",
+      "source": "Page Six"
+    },
+    {
+      "title": "He Spent Years Calling Out Women’s “Cottage Cheese Thighs”—and Worse. He Says He’s Sorry. I Met Him to Discover the Truth.",
+      "url": "https://slate.com/life/2026/06/britney-spears-lindsay-lohan-las-vegas-paparazzi-gossip.html",
+      "source": "Slate Magazine"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
