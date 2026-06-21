@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Charles Barkley on Sydney Sweeney Attending Game 5: ‘Come On, Man'",
+      "url": "https://www.complex.com/pop-culture/a/treyalston/charles-barkley-sydney-sweeney-nba-finals-knicks",
+      "source": "Complex"
+    },
+    {
+      "title": "More good news for Taylor Swift as her film Toy Story 5 is heading for a record-breaking opening weekend",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15914771/Taylor-Swift-Toy-Story-5-record-breaking.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Can AI have taste? That was the hot topic at Replit's NYC vibe-coding conference.",
+      "url": "https://www.businessinsider.com/inside-replit-vibe-coding-conference-and-party-in-nyc-2026-6#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "How to commemorate Juneteenth in every borough of New York City",
+      "url": "https://gothamist.com/news/how-to-commemorate-juneteenth-in-every-borough-of-new-york-city",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Sydney Sweeney wishes boyfriend Scooter Braun a happy 45th birthday as she calls him a 'once in a lifetime' catch",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15913049/sydney-sweeney-scooter-braun-birthday.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
