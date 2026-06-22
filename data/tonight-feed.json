@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 73,
     "feels_like_f": 73,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 73,
+        "low_f": 73
+      },
+      {
+        "day": "Tue",
+        "summary": "Rain",
+        "high_f": 69,
+        "low_f": 69
+      },
+      {
+        "day": "Wed",
+        "summary": "Clear",
+        "high_f": 79,
+        "low_f": 79
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 79,
+        "low_f": 79
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 70,
+        "low_f": 70
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "'Mr. Swift' Travis Kelce takes over DJ stage at concert as fans wish him a 'happy bachelor party'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15916257/Travis-Kelce-bachelor-party-Taylor-Swift.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "NYC principals union tells members not to speak with probers after The Post’s bombshell report",
+      "url": "https://nypost.com/2026/06/20/us-news/nyc-principals-union-tells-members-not-to-speak-with-probers-after-the-posts-bombshell-report/",
+      "source": "New York Post"
+    },
+    {
+      "title": "NYC ordered to pay $18 million in case of music teacher who molested student 50 years ago",
+      "url": "https://nypost.com/2026/06/20/us-news/nyc-ordered-to-pay-18-million-in-case-of-music-teacher-who-molested-student-50-years-ago/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Charles Barkley on Sydney Sweeney Attending Game 5: ‘Come On, Man'",
+      "url": "https://www.complex.com/pop-culture/a/treyalston/charles-barkley-sydney-sweeney-nba-finals-knicks",
+      "source": "Complex"
+    },
+    {
+      "title": "More good news for Taylor Swift as her film Toy Story 5 is heading for a record-breaking opening weekend",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15914771/Taylor-Swift-Toy-Story-5-record-breaking.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
