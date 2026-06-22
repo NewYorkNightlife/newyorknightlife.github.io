@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 73,
     "feels_like_f": 73,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 73,
+        "low_f": 73
+      },
+      {
+        "day": "Tue",
+        "summary": "Rain",
+        "high_f": 70,
+        "low_f": 70
+      },
+      {
+        "day": "Wed",
+        "summary": "Clear",
+        "high_f": 83,
+        "low_f": 83
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 81,
+        "low_f": 81
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 75,
+        "low_f": 75
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Travis Kelce’s dad, Ed, hard-launches new romance ahead of Taylor Swift wedding",
+      "url": "https://pagesix.com/2026/06/21/entertainment/travis-kelces-dad-ed-hard-launches-new-romance-ahead-of-taylor-swift-wedding/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Rock band Goose say they are ‘heartbroken’ after MSG concertgoer fell to his death during show",
+      "url": "https://www.the-independent.com/arts-entertainment/music/news/goose-msg-concert-fan-death-b2999919.html",
+      "source": "The-independent.com"
+    },
+    {
+      "title": "'Mr. Swift' Travis Kelce takes over DJ stage at concert as fans wish him a 'happy bachelor party'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15916257/Travis-Kelce-bachelor-party-Taylor-Swift.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "NYC principals union tells members not to speak with probers after The Post’s bombshell report",
+      "url": "https://nypost.com/2026/06/20/us-news/nyc-principals-union-tells-members-not-to-speak-with-probers-after-the-posts-bombshell-report/",
+      "source": "New York Post"
+    },
+    {
+      "title": "NYC ordered to pay $18 million in case of music teacher who molested student 50 years ago",
+      "url": "https://nypost.com/2026/06/20/us-news/nyc-ordered-to-pay-18-million-in-case-of-music-teacher-who-molested-student-50-years-ago/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
