@@ -5,9 +5,66 @@
     "summary": "moderate rain",
     "temp_f": 70,
     "feels_like_f": 71,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Tue",
+        "summary": "Rain",
+        "high_f": 70,
+        "low_f": 67
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 56,
+        "low_f": 56
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 70,
+        "low_f": 70
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 68,
+        "low_f": 68
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 69,
+        "low_f": 69
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Nashville becomes another pro-business hub poised to siphon jobs away from NYC, biz leader warns",
+      "url": "https://nypost.com/2026/06/21/us-news/nashville-becomes-another-pro-business-hub-poised-to-siphon-jobs-away-from-nyc-biz-leader-warns/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Travis Kelce’s dad, Ed, hard-launches new romance ahead of Taylor Swift wedding",
+      "url": "https://pagesix.com/2026/06/21/entertainment/travis-kelces-dad-ed-hard-launches-new-romance-ahead-of-taylor-swift-wedding/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Rock band Goose say they are ‘heartbroken’ after MSG concertgoer fell to his death during show",
+      "url": "https://www.the-independent.com/arts-entertainment/music/news/goose-msg-concert-fan-death-b2999919.html",
+      "source": "The-independent.com"
+    },
+    {
+      "title": "'Mr. Swift' Travis Kelce takes over DJ stage at concert as fans wish him a 'happy bachelor party'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15916257/Travis-Kelce-bachelor-party-Taylor-Swift.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "NYC principals union tells members not to speak with probers after The Post’s bombshell report",
+      "url": "https://nypost.com/2026/06/20/us-news/nyc-principals-union-tells-members-not-to-speak-with-probers-after-the-posts-bombshell-report/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
