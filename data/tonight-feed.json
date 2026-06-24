@@ -5,7 +5,38 @@
     "summary": "scattered clouds",
     "temp_f": 66,
     "feels_like_f": 66,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 66,
+        "low_f": 62
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 66,
+        "low_f": 66
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 67,
+        "low_f": 67
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 66,
+        "low_f": 66
+      },
+      {
+        "day": "Sun",
+        "summary": "Clear",
+        "high_f": 68,
+        "low_f": 68
+      }
+    ]
   },
   "headlines": [],
   "featured_tonight": [],
