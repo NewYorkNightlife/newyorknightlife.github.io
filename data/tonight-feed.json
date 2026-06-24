@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "New era for NYC nightlife? I went backstage with Black Coffee at Pacha to find out",
+      "url": "https://nypost.com/2026/06/23/ticket-sales/pacha-opened-in-brooklyn-heres-what-a-night-there-is-like/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Why I ❤️ New York!",
+      "url": "https://dianeravitch.net/2026/06/23/why-i-%e2%9d%a4%ef%b8%8f-new-york/",
+      "source": "Dianeravitch.net"
+    },
+    {
+      "title": "Zohran Mamdani Grew Up on Canadian Hip-Hop",
+      "url": "https://exclaim.ca/music/article/zohran-mamdani-grew-up-on-canadian-hip-hop",
+      "source": "Exclaim!"
+    },
+    {
+      "title": "Frost Children Announce Tweaker Poem EP, Share Lead Single “Satellites”: Watch",
+      "url": "https://consequence.net/2026/06/frost-children-ep-tweaker-poem-satellites/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Meet the billionaire power couple advocating ‘communism for landlords’ and a global welfare state — from their $30M Hamptons McMansion",
+      "url": "https://nypost.com/2026/06/23/us-news/billionaire-power-couple-bobby-and-carola-jain-advocating-communism-for-landlords/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
