@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 68,
     "feels_like_f": 69,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 66,
+        "low_f": 61
+      },
+      {
+        "day": "Thu",
+        "summary": "Clear",
+        "high_f": 61,
+        "low_f": 61
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 66,
+        "low_f": 66
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 66,
+        "low_f": 66
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 69,
+        "low_f": 69
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Roc Nation Announces NYC Pop-Ups For JÄY-Z ‘Reasonable Doubt’ 30th Anniversary",
+      "url": "https://hiphopwired.com/3057797/roc-nation-reasonable-doubt-pop-ups/",
+      "source": "Hip-Hop Wired"
+    },
+    {
+      "title": "Pete Davidson Joins Stars at Pacha NYC Opening With Solomun, Michael Bibi & Black Coffee: Guest List Revealed!",
+      "url": "https://www.justjared.com/2026/06/22/pete-davidson-joins-stars-at-pacha-nyc-opening-with-solomun-michael-bibi-black-coffee-guest-list-revealed/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "19 things we’re hoping to see on sale this Prime Day",
+      "url": "https://www.nbcnews.com/select/shopping/amazon-prime-day-deals-wishlist-2026-rcna350692",
+      "source": "NBC News"
+    },
+    {
+      "title": "Clive Davis dies at 94: Music executive titan responsible for careers of Whitney Houston and Bruce Springsteen passes away",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15920317/Clive-Davis-dies-94-Music-executive-titan-responsible-careers-Whitney-Houston-Bruce-Springsteen-passes-away.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Nashville becomes another pro-business hub poised to siphon jobs away from NYC, biz leader warns",
+      "url": "https://nypost.com/2026/06/21/us-news/nashville-becomes-another-pro-business-hub-poised-to-siphon-jobs-away-from-nyc-biz-leader-warns/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
