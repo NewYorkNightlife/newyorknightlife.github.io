@@ -5,9 +5,66 @@
     "summary": "few clouds",
     "temp_f": 67,
     "feels_like_f": 67,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 79,
+        "low_f": 71
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 82,
+        "low_f": 82
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 69,
+        "low_f": 69
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 75,
+        "low_f": 75
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 78,
+        "low_f": 78
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Meet the billionaire power couple advocating ‘communism for landlords’ and a global welfare state — from their $30M Hamptons McMansion",
+      "url": "https://nypost.com/2026/06/23/us-news/billionaire-power-couple-bobby-and-carola-jain-advocating-communism-for-landlords/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Roc Nation Announces NYC Pop-Ups For JÄY-Z ‘Reasonable Doubt’ 30th Anniversary",
+      "url": "https://hiphopwired.com/3057797/roc-nation-reasonable-doubt-pop-ups/",
+      "source": "Hip-Hop Wired"
+    },
+    {
+      "title": "Pete Davidson Joins Stars at Pacha NYC Opening With Solomun, Michael Bibi & Black Coffee: Guest List Revealed!",
+      "url": "https://www.justjared.com/2026/06/22/pete-davidson-joins-stars-at-pacha-nyc-opening-with-solomun-michael-bibi-black-coffee-guest-list-revealed/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "19 things we’re hoping to see on sale this Prime Day",
+      "url": "https://www.nbcnews.com/select/shopping/amazon-prime-day-deals-wishlist-2026-rcna350692",
+      "source": "NBC News"
+    },
+    {
+      "title": "Clive Davis dies at 94: Music executive titan responsible for careers of Whitney Houston and Bruce Springsteen passes away",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15920317/Clive-Davis-dies-94-Music-executive-titan-responsible-careers-Whitney-Houston-Bruce-Springsteen-passes-away.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
