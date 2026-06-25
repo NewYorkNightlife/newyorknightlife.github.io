@@ -5,9 +5,66 @@
     "summary": "broken clouds",
     "temp_f": 78,
     "feels_like_f": 78,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 79,
+        "low_f": 78
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 79,
+        "low_f": 79
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 69,
+        "low_f": 69
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Mon",
+        "summary": "Clear",
+        "high_f": 82,
+        "low_f": 82
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "You don't need more stuff. You can walk away.",
+      "url": "https://jennapark.substack.com/p/you-dont-need-more-stuff-you-can",
+      "source": "Substack.com"
+    },
+    {
+      "title": "Jack White's wife Olivia Jean files for divorce from the White Stripes artist citing 'inappropriate marital conduct'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15924295/jack-white-divorce-wife-olivia-jean.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Lin-Manuel Miranda Will Return to Broadway Next Year With New ‘Warriors’ Musical",
+      "url": "http://www.rollingstone.com/music/music-news/lin-manuel-miranda-broadway-warriors-musical-1235582777/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Buddy Guy announces 90th birthday concert in NYC with Eric Clapton. Get tickets",
+      "url": "https://nypost.com/2026/06/23/ticket-sales/get-tickets-for-buddy-guy-90th-birthday-concert-at-radio-city/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Andy Cohen kicked off Pride in New York City without boyfriend Kevin Sobieski",
+      "url": "https://pagesix.com/2026/06/23/society/andy-cohen-celebrates-pride-in-nyc-sans-boyfriend-kevin-sobieski/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
