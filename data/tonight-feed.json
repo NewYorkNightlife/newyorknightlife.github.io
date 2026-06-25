@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 68,
     "feels_like_f": 67,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Clear",
+        "high_f": 68,
+        "low_f": 64
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 68,
+        "low_f": 68
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 68,
+        "low_f": 68
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 69,
+        "low_f": 69
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 70,
+        "low_f": 70
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Jack White's wife Olivia Jean files for divorce from the White Stripes artist citing 'inappropriate marital conduct'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15924295/jack-white-divorce-wife-olivia-jean.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Lin-Manuel Miranda Will Return to Broadway Next Year With New ‘Warriors’ Musical",
+      "url": "http://www.rollingstone.com/music/music-news/lin-manuel-miranda-broadway-warriors-musical-1235582777/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Buddy Guy announces 90th birthday concert in NYC with Eric Clapton. Get tickets",
+      "url": "https://nypost.com/2026/06/23/ticket-sales/get-tickets-for-buddy-guy-90th-birthday-concert-at-radio-city/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Andy Cohen kicked off Pride in New York City without boyfriend Kevin Sobieski",
+      "url": "https://pagesix.com/2026/06/23/society/andy-cohen-celebrates-pride-in-nyc-sans-boyfriend-kevin-sobieski/",
+      "source": "Page Six"
+    },
+    {
+      "title": "New era for NYC nightlife? I went backstage with Black Coffee at Pacha to find out",
+      "url": "https://nypost.com/2026/06/23/ticket-sales/pacha-opened-in-brooklyn-heres-what-a-night-there-is-like/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
