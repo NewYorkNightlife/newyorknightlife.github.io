@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 81,
     "feels_like_f": 84,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 80,
+        "low_f": 78
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 75,
+        "low_f": 75
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 77,
+        "low_f": 77
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 79,
+        "low_f": 79
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "These NYC restaurants will transport you to Europe—no passport required",
+      "url": "https://www.timeout.com/newyork/news/these-nyc-restaurants-will-transport-you-to-europeno-passport-required-062526",
+      "source": "Time Out"
+    },
+    {
+      "title": "Mike D of Beastie Boys announces tour, NYC show. Get discounted tickets",
+      "url": "https://nypost.com/2026/06/25/ticket-sales/get-tickets-for-mike-d-solo-tour-2026-with-a-discount/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Pricey pre-game! Parents shell out upwards of $30K for elaborate pre and post-prom festivities: ‘Go all out for your kid’",
+      "url": "https://nypost.com/2026/06/25/lifestyle/rising-cost-of-the-modern-nyc-prom-experience/",
+      "source": "New York Post"
+    },
+    {
+      "title": "The Democratic Party Gets Its Populist Takeover",
+      "url": "https://theintercept.com/2026/06/25/mamdani-new-york-primaries-analysis-dsa/",
+      "source": "The Intercept"
+    },
+    {
+      "title": "FAO Schwarz opens NYC location for the first time in 100 years — this time in Nordstrom",
+      "url": "https://www.retaildive.com/news/nordstrom-fao-schwarz-partner-nyc-store/823742/",
+      "source": "Retail Dive"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
