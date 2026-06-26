@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 83,
     "feels_like_f": 86,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 86,
+        "low_f": 83
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 81,
+        "low_f": 81
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 79,
+        "low_f": 79
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 82,
+        "low_f": 82
+      },
+      {
+        "day": "Tue",
+        "summary": "Rain",
+        "high_f": 80,
+        "low_f": 80
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Pricey pre-game! Parents shell out upwards of $30K for elaborate pre and post-prom festivities: ‘Go all out for your kid’",
+      "url": "https://nypost.com/2026/06/25/lifestyle/rising-cost-of-the-modern-nyc-prom-experience/",
+      "source": "New York Post"
+    },
+    {
+      "title": "The Democratic Party Gets Its Populist Takeover",
+      "url": "https://theintercept.com/2026/06/25/mamdani-new-york-primaries-analysis-dsa/",
+      "source": "The Intercept"
+    },
+    {
+      "title": "FAO Schwarz opens NYC location for the first time in 100 years — this time in Nordstrom",
+      "url": "https://www.retaildive.com/news/nordstrom-fao-schwarz-partner-nyc-store/823742/",
+      "source": "Retail Dive"
+    },
+    {
+      "title": "The World’s Loudest Neil Young Cover Band Will Not Be Denied",
+      "url": "http://www.rollingstone.com/music/music-features/real-young-lazy-horse-neil-young-cover-band-1235583357/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Silly Nice Releases PRIDE Heart Tee for NYC Pride 2026",
+      "url": "https://www.globenewswire.com/news-release/2026/06/25/3317707/0/en/Silly-Nice-Releases-PRIDE-Heart-Tee-for-NYC-Pride-2026.html",
+      "source": "GlobeNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
