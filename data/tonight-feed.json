@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "ResortPass Unveils Summer's Most Bookable Hotel Daycations",
+      "url": "https://www.prnewswire.com/news-releases/resortpass-unveils-summers-most-bookable-hotel-daycations-302809957.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Everything editors added to their carts this Prime Day 2026",
+      "url": "https://www.nbcnews.com/select/shopping/amazon-prime-day-deals-editor-picks-2026-rcna351728",
+      "source": "NBC News"
+    },
+    {
+      "title": "Warner Music Group’s Quest To Recycle Vinyl & Not Compromise Quality",
+      "url": "http://www.billboard.com/pro/warner-music-group-recycled-vinyl-indie-record-store-help/",
+      "source": "Billboard"
+    },
+    {
+      "title": "The Comments Section: The Best BroBible Comments Of The Week (Vol. 4)",
+      "url": "https://brobible.com/culture/article/the-comments-section-the-best-brobible-comments-of-the-week-vol-4/",
+      "source": "BroBible"
+    },
+    {
+      "title": "‘Music City’ brings a slice of Nashville to the Big Apple",
+      "url": "https://nypost.com/2026/06/24/opinion/music-city-brings-a-slice-of-nashville-to-the-big-apple/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
