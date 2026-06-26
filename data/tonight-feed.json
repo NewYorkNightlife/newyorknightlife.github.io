@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Mike D of Beastie Boys announces tour, NYC show. Get discounted tickets",
+      "url": "https://nypost.com/2026/06/25/ticket-sales/get-tickets-for-mike-d-solo-tour-2026-with-a-discount/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Pricey pre-game! Parents shell out upwards of $30K for elaborate pre and post-prom festivities: ‘Go all out for your kid’",
+      "url": "https://nypost.com/2026/06/25/lifestyle/rising-cost-of-the-modern-nyc-prom-experience/",
+      "source": "New York Post"
+    },
+    {
+      "title": "The Democratic Party Gets Its Populist Takeover",
+      "url": "https://theintercept.com/2026/06/25/mamdani-new-york-primaries-analysis-dsa/",
+      "source": "The Intercept"
+    },
+    {
+      "title": "FAO Schwarz opens NYC location for the first time in 100 years — this time in Nordstrom",
+      "url": "https://www.retaildive.com/news/nordstrom-fao-schwarz-partner-nyc-store/823742/",
+      "source": "Retail Dive"
+    },
+    {
+      "title": "The World’s Loudest Neil Young Cover Band Will Not Be Denied",
+      "url": "http://www.rollingstone.com/music/music-features/real-young-lazy-horse-neil-young-cover-band-1235583357/",
+      "source": "Rolling Stone"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
