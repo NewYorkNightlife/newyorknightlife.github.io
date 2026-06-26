@@ -5,9 +5,66 @@
     "summary": "broken clouds",
     "temp_f": 76,
     "feels_like_f": 76,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 76,
+        "low_f": 76
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 77,
+        "low_f": 77
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 72,
+        "low_f": 72
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 76,
+        "low_f": 76
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 77,
+        "low_f": 77
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "‘Music City’ brings a slice of Nashville to the Big Apple",
+      "url": "https://nypost.com/2026/06/24/opinion/music-city-brings-a-slice-of-nashville-to-the-big-apple/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Brits’ beloved fast casual chain is coming to NYC — but it won’t last long",
+      "url": "https://nypost.com/2026/06/24/lifestyle/brits-beloved-nandos-is-coming-to-us-for-a-limited-time/",
+      "source": "New York Post"
+    },
+    {
+      "title": "INGERSOLL: It’s Certainly The One Percent That’s Driving American Misery. Just Not The Top One Percent",
+      "url": "https://dailycaller.com/2026/06/24/dsa-socialists-democrats-far-left-source-americas-problems-bottom-one-percent-quintile/",
+      "source": "The Daily Caller"
+    },
+    {
+      "title": "You don't need more stuff. You can walk away.",
+      "url": "https://jennapark.substack.com/p/you-dont-need-more-stuff-you-can",
+      "source": "Substack.com"
+    },
+    {
+      "title": "Jack White's wife Olivia Jean files for divorce from the White Stripes artist citing 'inappropriate marital conduct'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15924295/jack-white-divorce-wife-olivia-jean.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
