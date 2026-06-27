@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "More Black Actresses Who Are Proving That Beauty Gets Even Better Over 40!",
+      "url": "https://www.theroot.com/more-black-actresses-who-are-proving-that-beauty-gets-e-2000113104",
+      "source": "The Root"
+    },
+    {
+      "title": "These Black Actresses Over 40 Look Better Than Ever!",
+      "url": "https://www.theroot.com/these-black-actresses-over-40-look-better-than-ever-2000113104",
+      "source": "The Root"
+    },
+    {
+      "title": "At Body Hack, NYC ravers can also get dental checkups",
+      "url": "https://gothamist.com/arts-entertainment/at-body-hack-nyc-ravers-can-also-get-dental-checkups",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Taylor Swift wedding dress details revealed as star is expected to don MULTIPLE outfits for Travis Kelce nuptials",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15931313/taylor-swift-wedding-dress-details-multiple-outfits-travis-kelce.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "These NYC restaurants will transport you to Europe—no passport required",
+      "url": "https://www.timeout.com/newyork/news/these-nyc-restaurants-will-transport-you-to-europeno-passport-required-062526",
+      "source": "Time Out"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
