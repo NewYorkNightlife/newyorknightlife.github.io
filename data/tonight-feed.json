@@ -5,9 +5,66 @@
     "summary": "light rain",
     "temp_f": 72,
     "feels_like_f": 73,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 71,
+        "low_f": 71
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 76,
+        "low_f": 76
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 76,
+        "low_f": 76
+      },
+      {
+        "day": "Tue",
+        "summary": "Rain",
+        "high_f": 82,
+        "low_f": 82
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 93,
+        "low_f": 93
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Stars kick off Pride weekend at exclusive ‘Café Kallmeyer’ soirée in NYC",
+      "url": "https://pagesix.com/2026/06/26/society/inside-the-exclusive-and-star-studded-cafe-kallmeyer-soiree-in-nyc/",
+      "source": "Page Six"
+    },
+    {
+      "title": "A24 Betting On Laughs As It Rolls Out ‘The Invite’; Angelina Jolie In ‘Couture’ — Specialty Preview",
+      "url": "http://deadline.com/2026/06/indie-films-opening-comedy-the-invite-angelina-jolie-couture-1236968029/",
+      "source": "Deadline"
+    },
+    {
+      "title": "The Cherries Are Back: Inside Pacha New York’s Three-Night Brooklyn Arrival",
+      "url": "https://dancingastronaut.com/2026/06/the-cherries-are-back-inside-pacha-new-yorks-three-night-brooklyn-arrival/",
+      "source": "Dancing Astronaut"
+    },
+    {
+      "title": "8 LGBTQ+ love stories that inspire",
+      "url": "https://www.out.com/print-issue/8-inspiring-lgbtq-love-stories",
+      "source": "Out.com"
+    },
+    {
+      "title": "JAŸ-Z’s ‘Reasonable Doubt’ Turns 30 With Citywide NYC Celebrations",
+      "url": "https://hiphopwired.com/3058110/jay-z-reasonable-doubt-nyc-celebrations-popups/",
+      "source": "Hip-Hop Wired"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
