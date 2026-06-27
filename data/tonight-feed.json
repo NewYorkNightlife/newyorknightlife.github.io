@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "8 LGBTQ+ love stories that inspire",
+      "url": "https://www.out.com/print-issue/8-inspiring-lgbtq-love-stories",
+      "source": "Out.com"
+    },
+    {
+      "title": "JAŸ-Z’s ‘Reasonable Doubt’ Turns 30 With Citywide NYC Celebrations",
+      "url": "https://hiphopwired.com/3058110/jay-z-reasonable-doubt-nyc-celebrations-popups/",
+      "source": "Hip-Hop Wired"
+    },
+    {
+      "title": "These Black Actresses Over 40 Look Better Than Ever!",
+      "url": "https://www.theroot.com/these-black-actresses-over-40-look-better-than-ever-2000113104",
+      "source": "The Root"
+    },
+    {
+      "title": "More Black Actresses Who Are Proving That Beauty Gets Even Better Over 40!",
+      "url": "https://www.theroot.com/more-black-actresses-who-are-proving-that-beauty-gets-e-2000113104",
+      "source": "The Root"
+    },
+    {
+      "title": "At Body Hack, NYC ravers can also get dental checkups",
+      "url": "https://gothamist.com/arts-entertainment/at-body-hack-nyc-ravers-can-also-get-dental-checkups",
+      "source": "Gothamist"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
