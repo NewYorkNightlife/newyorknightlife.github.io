@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Stevie Nicks and Tim McGraw set to perform at Taylor Swift and Travis Kelce’s wedding — which will be ‘bigger than the Met Gala’",
+      "url": "https://pagesix.com/2026/06/27/entertainment/taylor-swift-and-travis-kelces-nuptials-bigger-than-the-met-gala/",
+      "source": "Page Six"
+    },
+    {
+      "title": "'100 Girlfriends Who Really, Really, Really, Really, Really Love You' Season 3's New Video Unveils Opening Song",
+      "url": "https://www.animenewsnetwork.com/news/2026-06-27/100-girlfriends-who-really-really-really-really-really-love-you-season-3-new-video-unveils-opening-/.239019",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Stars kick off Pride weekend at exclusive ‘Café Kallmeyer’ soirée in NYC",
+      "url": "https://pagesix.com/2026/06/26/society/inside-the-exclusive-and-star-studded-cafe-kallmeyer-soiree-in-nyc/",
+      "source": "Page Six"
+    },
+    {
+      "title": "A24 Betting On Laughs As It Rolls Out ‘The Invite’; Angelina Jolie In ‘Couture’ — Specialty Preview",
+      "url": "http://deadline.com/2026/06/indie-films-opening-comedy-the-invite-angelina-jolie-couture-1236968029/",
+      "source": "Deadline"
+    },
+    {
+      "title": "The Cherries Are Back: Inside Pacha New York’s Three-Night Brooklyn Arrival",
+      "url": "https://dancingastronaut.com/2026/06/the-cherries-are-back-inside-pacha-new-yorks-three-night-brooklyn-arrival/",
+      "source": "Dancing Astronaut"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
