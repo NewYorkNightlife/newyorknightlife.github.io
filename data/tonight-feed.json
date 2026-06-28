@@ -5,9 +5,66 @@
     "summary": "broken clouds",
     "temp_f": 70,
     "feels_like_f": 71,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 70,
+        "low_f": 70
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 75,
+        "low_f": 75
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 75,
+        "low_f": 75
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Thu",
+        "summary": "Clear",
+        "high_f": 84,
+        "low_f": 84
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "'100 Girlfriends Who Really, Really, Really, Really, Really Love You' Season 3's New Video Unveils Opening Song",
+      "url": "https://www.animenewsnetwork.com/news/2026-06-27/100-girlfriends-who-really-really-really-really-really-love-you-season-3-new-video-unveils-opening-/.239019",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Stars kick off Pride weekend at exclusive ‘Café Kallmeyer’ soirée in NYC",
+      "url": "https://pagesix.com/2026/06/26/society/inside-the-exclusive-and-star-studded-cafe-kallmeyer-soiree-in-nyc/",
+      "source": "Page Six"
+    },
+    {
+      "title": "A24 Betting On Laughs As It Rolls Out ‘The Invite’; Angelina Jolie In ‘Couture’ — Specialty Preview",
+      "url": "http://deadline.com/2026/06/indie-films-opening-comedy-the-invite-angelina-jolie-couture-1236968029/",
+      "source": "Deadline"
+    },
+    {
+      "title": "The Cherries Are Back: Inside Pacha New York’s Three-Night Brooklyn Arrival",
+      "url": "https://dancingastronaut.com/2026/06/the-cherries-are-back-inside-pacha-new-yorks-three-night-brooklyn-arrival/",
+      "source": "Dancing Astronaut"
+    },
+    {
+      "title": "8 LGBTQ+ love stories that inspire",
+      "url": "https://www.out.com/print-issue/8-inspiring-lgbtq-love-stories",
+      "source": "Out.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
