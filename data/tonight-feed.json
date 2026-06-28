@@ -5,9 +5,66 @@
     "summary": "broken clouds",
     "temp_f": 82,
     "feels_like_f": 84,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 82,
+        "low_f": 82
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 85,
+        "low_f": 85
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 82,
+        "low_f": 82
+      },
+      {
+        "day": "Wed",
+        "summary": "Rain",
+        "high_f": 91,
+        "low_f": 91
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 98,
+        "low_f": 98
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NYC vet reveals how to keep fur babies safe this Fourth of July",
+      "url": "https://nypost.com/2026/06/27/us-news/nyc-vet-reveals-how-to-keep-your-fur-baby-safe-this-fourth-of-july/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Stevie Nicks and Tim McGraw set to perform at Taylor Swift and Travis Kelce’s wedding — which will be ‘bigger than the Met Gala’",
+      "url": "https://pagesix.com/2026/06/27/entertainment/taylor-swift-and-travis-kelces-nuptials-bigger-than-the-met-gala/",
+      "source": "Page Six"
+    },
+    {
+      "title": "'100 Girlfriends Who Really, Really, Really, Really, Really Love You' Season 3's New Video Unveils Opening Song",
+      "url": "https://www.animenewsnetwork.com/news/2026-06-27/100-girlfriends-who-really-really-really-really-really-love-you-season-3-new-video-unveils-opening-/.239019",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Stars kick off Pride weekend at exclusive ‘Café Kallmeyer’ soirée in NYC",
+      "url": "https://pagesix.com/2026/06/26/society/inside-the-exclusive-and-star-studded-cafe-kallmeyer-soiree-in-nyc/",
+      "source": "Page Six"
+    },
+    {
+      "title": "A24 Betting On Laughs As It Rolls Out ‘The Invite’; Angelina Jolie In ‘Couture’ — Specialty Preview",
+      "url": "http://deadline.com/2026/06/indie-films-opening-comedy-the-invite-angelina-jolie-couture-1236968029/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
