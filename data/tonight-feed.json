@@ -5,9 +5,66 @@
     "summary": "broken clouds",
     "temp_f": 89,
     "feels_like_f": 91,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 89,
+        "low_f": 87
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 95,
+        "low_f": 95
+      },
+      {
+        "day": "Thu",
+        "summary": "Clear",
+        "high_f": 98,
+        "low_f": 98
+      },
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 103,
+        "low_f": 103
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 100,
+        "low_f": 100
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "22 Burning Questions About Taylor Swift’s Wedding",
+      "url": "http://www.rollingstone.com/music/music-features/taylor-swift-wedding-who-will-be-there-more-questions-1235586038/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Clive Davis Funeral – See All the Famous Guests in Attendance at NYC Service",
+      "url": "https://www.justjared.com/2026/06/29/clive-davis-funeral-see-all-the-famous-guests-in-attendance-at-nyc-service/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "Everything to know about Taylor Swift and Travis Kelce’s wedding",
+      "url": "https://pagesix.com/entertainment/everything-to-know-about-taylor-swift-travis-kelce-wedding/",
+      "source": "Page Six"
+    },
+    {
+      "title": "The best ways to watch the July 4th fireworks in NYC",
+      "url": "https://www.timeout.com/newyork/news/the-best-ways-to-watch-the-july-4th-fireworks-in-nyc-062926",
+      "source": "Time Out"
+    },
+    {
+      "title": "T LOunge for June 29th 2026",
+      "url": "https://tomandlorenzo.com/2026/06/t-lounge-for-june-29th-2026/",
+      "source": "tomandlorenzo.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
