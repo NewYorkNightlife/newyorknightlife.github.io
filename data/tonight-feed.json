@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "T LOunge for June 29th 2026",
+      "url": "https://tomandlorenzo.com/2026/06/t-lounge-for-june-29th-2026/",
+      "source": "tomandlorenzo.com"
+    },
+    {
+      "title": "Country Music Fans Turned On Taylor Swift During Surprise Appearance Amid Wedding Day Criticism",
+      "url": "https://brobible.com/culture/article/taylor-swift-booed-nashville-alan-jackson-surprise-appearance/",
+      "source": "BroBible"
+    },
+    {
+      "title": "Rare Summer Comedy ‘The Invite’ Banks A Top Limited Opening Of The Year – Specialty Box Office",
+      "url": "http://deadline.com/2026/06/indie-film-box-offiice-comedy-the-invite-top-limited-opening-1236969226/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Alicia Keys Earns A New Chart Hit — With Some Help From The Knicks",
+      "url": "https://www.forbes.com/sites/hughmcintyre/2026/06/28/alicia-keys-earns-a-new-chart-hit---with-some-help-from-the-knicks/",
+      "source": "Forbes"
+    },
+    {
+      "title": "New claims against NYC teacher accused of ‘suffocating’ third grader after $18M sex abuse verdict",
+      "url": "https://nypost.com/2026/06/28/us-news/new-claims-against-nyc-teacher-accused-of-suffocating-third-grader-after-18m-sex-abuse-verdict/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
