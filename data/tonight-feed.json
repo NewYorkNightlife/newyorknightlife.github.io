@@ -5,9 +5,66 @@
     "summary": "broken clouds",
     "temp_f": 86,
     "feels_like_f": 90,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 88,
+        "low_f": 87
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 94,
+        "low_f": 94
+      },
+      {
+        "day": "Thu",
+        "summary": "Clear",
+        "high_f": 99,
+        "low_f": 99
+      },
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 100,
+        "low_f": 100
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 99,
+        "low_f": 99
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The best ways to watch the July 4th fireworks in NYC",
+      "url": "https://www.timeout.com/newyork/news/the-best-ways-to-watch-the-july-4th-fireworks-in-nyc-062926",
+      "source": "Time Out"
+    },
+    {
+      "title": "T LOunge for June 29th 2026",
+      "url": "https://tomandlorenzo.com/2026/06/t-lounge-for-june-29th-2026/",
+      "source": "tomandlorenzo.com"
+    },
+    {
+      "title": "Country Music Fans Turned On Taylor Swift During Surprise Appearance Amid Wedding Day Criticism",
+      "url": "https://brobible.com/culture/article/taylor-swift-booed-nashville-alan-jackson-surprise-appearance/",
+      "source": "BroBible"
+    },
+    {
+      "title": "Rare Summer Comedy ‘The Invite’ Banks A Top Limited Opening Of The Year – Specialty Box Office",
+      "url": "http://deadline.com/2026/06/indie-film-box-offiice-comedy-the-invite-top-limited-opening-1236969226/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Alicia Keys Earns A New Chart Hit — With Some Help From The Knicks",
+      "url": "https://www.forbes.com/sites/hughmcintyre/2026/06/28/alicia-keys-earns-a-new-chart-hit---with-some-help-from-the-knicks/",
+      "source": "Forbes"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
