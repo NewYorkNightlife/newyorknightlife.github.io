@@ -5,9 +5,66 @@
     "summary": "few clouds",
     "temp_f": 72,
     "feels_like_f": 73,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 76,
+        "low_f": 73
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 77,
+        "low_f": 77
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 82,
+        "low_f": 82
+      },
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 87,
+        "low_f": 87
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 83,
+        "low_f": 83
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Country Music Fans Turned On Taylor Swift During Surprise Appearance Amid Wedding Day Criticism",
+      "url": "https://brobible.com/culture/article/taylor-swift-booed-nashville-alan-jackson-surprise-appearance/",
+      "source": "BroBible"
+    },
+    {
+      "title": "Rare Summer Comedy ‘The Invite’ Banks A Top Limited Opening Of The Year – Specialty Box Office",
+      "url": "http://deadline.com/2026/06/indie-film-box-offiice-comedy-the-invite-top-limited-opening-1236969226/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Alicia Keys Earns A New Chart Hit — With Some Help From The Knicks",
+      "url": "https://www.forbes.com/sites/hughmcintyre/2026/06/28/alicia-keys-earns-a-new-chart-hit---with-some-help-from-the-knicks/",
+      "source": "Forbes"
+    },
+    {
+      "title": "New claims against NYC teacher accused of ‘suffocating’ third grader after $18M sex abuse verdict",
+      "url": "https://nypost.com/2026/06/28/us-news/new-claims-against-nyc-teacher-accused-of-suffocating-third-grader-after-18m-sex-abuse-verdict/",
+      "source": "New York Post"
+    },
+    {
+      "title": "NYC vet reveals how to keep fur babies safe this Fourth of July",
+      "url": "https://nypost.com/2026/06/27/us-news/nyc-vet-reveals-how-to-keep-your-fur-baby-safe-this-fourth-of-july/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
