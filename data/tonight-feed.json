@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Everything to know about Taylor Swift and Travis Kelce’s wedding",
+      "url": "https://pagesix.com/entertainment/everything-to-know-about-taylor-swift-travis-kelce-wedding/",
+      "source": "Page Six"
+    },
+    {
+      "title": "The best ways to watch the July 4th fireworks in NYC",
+      "url": "https://www.timeout.com/newyork/news/the-best-ways-to-watch-the-july-4th-fireworks-in-nyc-062926",
+      "source": "Time Out"
+    },
+    {
+      "title": "T LOunge for June 29th 2026",
+      "url": "https://tomandlorenzo.com/2026/06/t-lounge-for-june-29th-2026/",
+      "source": "tomandlorenzo.com"
+    },
+    {
+      "title": "Country Music Fans Turned On Taylor Swift During Surprise Appearance Amid Wedding Day Criticism",
+      "url": "https://brobible.com/culture/article/taylor-swift-booed-nashville-alan-jackson-surprise-appearance/",
+      "source": "BroBible"
+    },
+    {
+      "title": "Rare Summer Comedy ‘The Invite’ Banks A Top Limited Opening Of The Year – Specialty Box Office",
+      "url": "http://deadline.com/2026/06/indie-film-box-offiice-comedy-the-invite-top-limited-opening-1236969226/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
