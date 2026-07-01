@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Are Kyle Cooke and Ava Dash Dating? Sources Reveal What Might Be Really Going On Between the Bravolebrities",
+      "url": "https://www.cosmopolitan.com/entertainment/tv/a71785159/are-kyle-cooke-ava-dash-dating/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "J-Pop Star Ado Signs With WME, Plus Russ, Ellie Goulding, Mya & More",
+      "url": "http://www.billboard.com/lists/j-pop-star-ado-signs-wme-russ-ellie-goulding-mya/",
+      "source": "Billboard"
+    },
+    {
+      "title": "MSG corporate employees banned from arena ahead of Taylor Swift, Travis Kelce wedding",
+      "url": "https://pagesix.com/2026/06/30/entertainment/msg-corporate-employees-banned-from-arena-ahead-of-taylor-swift-travis-kelce-wedding/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Commies And Socialists And Democrats, Oh My!!!",
+      "url": "https://crooksandliars.com/2026/06/commies-and-socialists-and-democrats-oh-my",
+      "source": "Crooksandliars.com"
+    },
+    {
+      "title": "Line-up Announced for World Hospitality Symposium's 50th Anniversary of Disco Celebration",
+      "url": "https://www.globenewswire.com/news-release/2026/06/30/3319716/0/en/Line-up-Announced-for-World-Hospitality-Symposium-s-50th-Anniversary-of-Disco-Celebration.html",
+      "source": "GlobeNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
