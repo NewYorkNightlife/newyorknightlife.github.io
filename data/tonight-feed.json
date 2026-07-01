@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 78,
     "feels_like_f": 78,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Rain",
+        "high_f": 75,
+        "low_f": 70
+      },
+      {
+        "day": "Thu",
+        "summary": "Clear",
+        "high_f": 76,
+        "low_f": 76
+      },
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 84,
+        "low_f": 84
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 77,
+        "low_f": 77
+      },
+      {
+        "day": "Sun",
+        "summary": "Rain",
+        "high_f": 75,
+        "low_f": 75
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "THEN AND NOW: Taylor Swift's star-studded 'squad' of friends",
+      "url": "https://www.businessinsider.com/taylor-swift-squad-where-are-they-now-friends-photos-2026-6#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "22 Burning Questions About Taylor Swift’s Wedding",
+      "url": "http://www.rollingstone.com/music/music-features/taylor-swift-wedding-who-will-be-there-more-questions-1235586038/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Clive Davis Funeral – See All the Famous Guests in Attendance at NYC Service",
+      "url": "https://www.justjared.com/2026/06/29/clive-davis-funeral-see-all-the-famous-guests-in-attendance-at-nyc-service/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "Everything to know about Taylor Swift and Travis Kelce’s wedding",
+      "url": "https://pagesix.com/entertainment/everything-to-know-about-taylor-swift-travis-kelce-wedding/",
+      "source": "Page Six"
+    },
+    {
+      "title": "The best ways to watch the July 4th fireworks in NYC",
+      "url": "https://www.timeout.com/newyork/news/the-best-ways-to-watch-the-july-4th-fireworks-in-nyc-062926",
+      "source": "Time Out"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
