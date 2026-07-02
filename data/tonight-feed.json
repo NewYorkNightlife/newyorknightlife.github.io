@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Travis Kelce Hints at Making Core Memories Over 4th of July Ahead of Wedding",
+      "url": "https://www.usmagazine.com/celebrity-news/news/travis-kelce-hints-at-4th-of-july-core-memories-before-wedding/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "This July in NYC you can see rap in the park, jazz in the clubs and guitars on the beach",
+      "url": "https://gothamist.com/arts-entertainment/this-july-in-nyc-you-can-see-rap-in-the-park-jazz-in-the-clubs-and-guitars-on-the-beach",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Breaking Down Easter Eggs of Taylor Swift and Travis Kelce's MSG Wedding",
+      "url": "https://www.usmagazine.com/celebrity-news/news/all-the-clues-of-taylor-swift-and-travis-kelces-msg-wedding/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce's wedding to cost eye-watering six-figures for police presence at Madison Square Garden",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15943755/taylor-swift-travis-kelce-wedding-police-nyc.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Best Experiential Marketing Agencies Luxury Brands 2026",
+      "url": "https://www.linkedin.com/pulse/best-experiential-marketing-agencies-luxury-brands-2026-marketing-l8szf",
+      "source": "Linkedin.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
