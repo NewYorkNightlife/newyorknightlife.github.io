@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift, Travis Kelce to Marry in NYC This Weekend",
+      "url": "https://biztoc.com/x/f7e638aa0bd72af6",
+      "source": "Biztoc.com"
+    },
+    {
+      "title": "The most iconic sandwich shop in every state",
+      "url": "https://www.businessinsider.com/most-iconic-famous-sandwich-shop-in-every-state#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "AP Entertainment SummaryBrief at 9:02 a.m. EDT",
+      "url": "https://www.rutlandherald.com/features/ap-entertainment/ap-entertainment-summarybrief-at-6-28-p-m-edt/article_d40a0651-265b-5d43-b3d3-c585c2b5aa3b.html",
+      "source": "Rutlandherald.com"
+    },
+    {
+      "title": "From lavish dinners to rooftop fireworks parties, these are NYC’s hottest 4th of July celebrations you can still snag tickets to",
+      "url": "https://nypost.com/2026/07/01/lifestyle/nycs-hottest-america-250-celebrations/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Travis Kelce Hints at Making Core Memories Over 4th of July Ahead of Wedding",
+      "url": "https://www.usmagazine.com/celebrity-news/news/travis-kelce-hints-at-4th-of-july-core-memories-before-wedding/",
+      "source": "Us Weekly"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
