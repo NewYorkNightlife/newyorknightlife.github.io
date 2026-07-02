@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift and Travis Kelce wedding rumors swirl: Everything we know about reported MSG ceremony",
+      "url": "https://www.cbssports.com/nfl/news/taylor-swift-travis-kelce-wedding-rumors-madison-square-garden/",
+      "source": "CBS Sports"
+    },
+    {
+      "title": "Ava Dash, 26, gives update on fling with Kyle Cooke, 43, after they’re seen kissing in the Hamptons",
+      "url": "https://pagesix.com/2026/07/01/celebrity-news/ava-dash-26-gives-update-on-fling-with-kyle-cooke-43/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Is Taylor Swift really getting married at Madison Square Garden?",
+      "url": "https://www.bbc.co.uk/news/videos/cj9g8xg8vy4o",
+      "source": "BBC News"
+    },
+    {
+      "title": "Now Hear This: July 2026",
+      "url": "https://www.spinmagazine.com/2026/07/now-hear-this-july-2026/",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "Taylor Swift, Travis Kelce to Marry in NYC This Weekend",
+      "url": "https://biztoc.com/x/f7e638aa0bd72af6",
+      "source": "Biztoc.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
