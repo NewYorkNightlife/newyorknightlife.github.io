@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Breaking Down Easter Eggs of Taylor Swift and Travis Kelce's MSG Wedding",
+      "url": "https://www.usmagazine.com/celebrity-news/news/all-the-clues-of-taylor-swift-and-travis-kelces-msg-wedding/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce's wedding to cost eye-watering six-figures for police presence at Madison Square Garden",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15943755/taylor-swift-travis-kelce-wedding-police-nyc.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Best Experiential Marketing Agencies Luxury Brands 2026",
+      "url": "https://www.linkedin.com/pulse/best-experiential-marketing-agencies-luxury-brands-2026-marketing-l8szf",
+      "source": "Linkedin.com"
+    },
+    {
+      "title": "What we know about Taylor Swift's rumoured NYC wedding celebrations",
+      "url": "https://www.bbc.co.uk/news/articles/c70yj1749j0o",
+      "source": "BBC News"
+    },
+    {
+      "title": "Hidden face in the crowd that proves the TRUTH about Taylor Swift's MSG wedding to Travis Kelce: As singer is hit by last-minute 'jitters' and can't even sleep, her private jet touches down... and her farcical 'bridezilla' behavior is exposed",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15942007/taylor-swift-travis-kelce-wedding-proof-pictures.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
