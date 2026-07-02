@@ -5,9 +5,66 @@
     "summary": "broken clouds",
     "temp_f": 86,
     "feels_like_f": 95,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 85,
+        "low_f": 84
+      },
+      {
+        "day": "Thu",
+        "summary": "Clear",
+        "high_f": 89,
+        "low_f": 89
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 80,
+        "low_f": 80
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Sun",
+        "summary": "Rain",
+        "high_f": 73,
+        "low_f": 73
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Are Kyle Cooke and Ava Dash Dating? Sources Reveal What Might Be Really Going On Between the Bravolebrities",
+      "url": "https://www.cosmopolitan.com/entertainment/tv/a71785159/are-kyle-cooke-ava-dash-dating/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "J-Pop Star Ado Signs With WME, Plus Russ, Ellie Goulding, Mya & More",
+      "url": "http://www.billboard.com/lists/j-pop-star-ado-signs-wme-russ-ellie-goulding-mya/",
+      "source": "Billboard"
+    },
+    {
+      "title": "MSG corporate employees banned from arena ahead of Taylor Swift, Travis Kelce wedding",
+      "url": "https://pagesix.com/2026/06/30/entertainment/msg-corporate-employees-banned-from-arena-ahead-of-taylor-swift-travis-kelce-wedding/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Commies And Socialists And Democrats, Oh My!!!",
+      "url": "https://crooksandliars.com/2026/06/commies-and-socialists-and-democrats-oh-my",
+      "source": "Crooksandliars.com"
+    },
+    {
+      "title": "How Italian Coffee Company, LAVAZZA, Is Taking Over Hollywood",
+      "url": "https://www.forbes.com/sites/laurasirikul/2026/06/30/how-coffee-brand-lavazza-is-taking-over-hollywood/",
+      "source": "Forbes"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
