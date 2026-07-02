@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 100,
     "feels_like_f": 109,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Clear",
+        "high_f": 100,
+        "low_f": 99
+      },
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 100,
+        "low_f": 100
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 97,
+        "low_f": 97
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 86,
+        "low_f": 86
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 75,
+        "low_f": 75
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Is Taylor Swift really getting married at Madison Square Garden?",
+      "url": "https://www.bbc.co.uk/news/videos/cj9g8xg8vy4o",
+      "source": "BBC News"
+    },
+    {
+      "title": "Now Hear This: July 2026",
+      "url": "https://www.spinmagazine.com/2026/07/now-hear-this-july-2026/",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "Taylor Swift, Travis Kelce to Marry in NYC This Weekend",
+      "url": "https://biztoc.com/x/f7e638aa0bd72af6",
+      "source": "Biztoc.com"
+    },
+    {
+      "title": "The most iconic sandwich shop in every state",
+      "url": "https://www.businessinsider.com/most-iconic-famous-sandwich-shop-in-every-state#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "AP Entertainment SummaryBrief at 9:02 a.m. EDT",
+      "url": "https://www.rutlandherald.com/features/ap-entertainment/ap-entertainment-summarybrief-at-6-28-p-m-edt/article_d40a0651-265b-5d43-b3d3-c585c2b5aa3b.html",
+      "source": "Rutlandherald.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
