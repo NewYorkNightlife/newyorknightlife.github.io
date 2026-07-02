@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 91,
     "feels_like_f": 100,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Clear",
+        "high_f": 93,
+        "low_f": 92
+      },
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 98,
+        "low_f": 98
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 93,
+        "low_f": 93
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 84,
+        "low_f": 84
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 78,
+        "low_f": 78
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift and Travis Kelce's wedding to cost eye-watering six-figures for police presence at Madison Square Garden",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15943755/taylor-swift-travis-kelce-wedding-police-nyc.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Best Experiential Marketing Agencies Luxury Brands 2026",
+      "url": "https://www.linkedin.com/pulse/best-experiential-marketing-agencies-luxury-brands-2026-marketing-l8szf",
+      "source": "Linkedin.com"
+    },
+    {
+      "title": "What we know about Taylor Swift's rumoured NYC wedding celebrations",
+      "url": "https://www.bbc.co.uk/news/articles/c70yj1749j0o",
+      "source": "BBC News"
+    },
+    {
+      "title": "Hidden face in the crowd that proves the TRUTH about Taylor Swift's MSG wedding to Travis Kelce: As singer is hit by last-minute 'jitters' and can't even sleep, her private jet touches down... and her farcical 'bridezilla' behavior is exposed",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15942007/taylor-swift-travis-kelce-wedding-proof-pictures.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Are Kyle Cooke and Ava Dash Dating? Sources Reveal What Might Be Really Going On Between the Bravolebrities",
+      "url": "https://www.cosmopolitan.com/entertainment/tv/a71785159/are-kyle-cooke-ava-dash-dating/",
+      "source": "Cosmopolitan.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
