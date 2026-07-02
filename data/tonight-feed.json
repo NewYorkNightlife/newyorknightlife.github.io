@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "What we know about Taylor Swift's rumoured NYC wedding celebrations",
+      "url": "https://www.bbc.co.uk/news/articles/c70yj1749j0o",
+      "source": "BBC News"
+    },
+    {
+      "title": "Hidden face in the crowd that proves the TRUTH about Taylor Swift's MSG wedding to Travis Kelce: As singer is hit by last-minute 'jitters' and can't even sleep, her private jet touches down... and her farcical 'bridezilla' behavior is exposed",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15942007/taylor-swift-travis-kelce-wedding-proof-pictures.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Are Kyle Cooke and Ava Dash Dating? Sources Reveal What Might Be Really Going On Between the Bravolebrities",
+      "url": "https://www.cosmopolitan.com/entertainment/tv/a71785159/are-kyle-cooke-ava-dash-dating/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "J-Pop Star Ado Signs With WME, Plus Russ, Ellie Goulding, Mya & More",
+      "url": "http://www.billboard.com/lists/j-pop-star-ado-signs-wme-russ-ellie-goulding-mya/",
+      "source": "Billboard"
+    },
+    {
+      "title": "MSG corporate employees banned from arena ahead of Taylor Swift, Travis Kelce wedding",
+      "url": "https://pagesix.com/2026/06/30/entertainment/msg-corporate-employees-banned-from-arena-ahead-of-taylor-swift-travis-kelce-wedding/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
