@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 98,
     "feels_like_f": 109,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 100,
+        "low_f": 98
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 102,
+        "low_f": 102
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 87,
+        "low_f": 87
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 83,
+        "low_f": 83
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift and Travis Kelce donate $26 million to various charities on wedding week",
+      "url": "https://pagesix.com/2026/07/02/entertainment/taylor-swift-travis-kelce-donate-26-million-to-charities-on-wedding-week/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Hip-hop began in the Bronx. One critic says it sounds best close to home.",
+      "url": "https://gothamist.com/arts-entertainment/hip-hop-began-in-the-bronx-one-critic-says-it-sounds-best-close-to-home",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Taylor Swift & Travis Kelce's Black Tie Wedding Dress Code, Explained",
+      "url": "https://www.elitedaily.com/entertainment/taylor-swift-travis-kelce-wedding-dress-code-black-tie",
+      "source": "Elite Daily"
+    },
+    {
+      "title": "The AP confirmed: Taylor Swift & Travis Kelce’s MSG wedding is happening on July 3",
+      "url": "https://www.celebitchy.com/984774/the_ap_confirmed_taylor_swift_travis_kelces_msg_wedding_is_happening_on_july_3/",
+      "source": "Celebitchy.com"
+    },
+    {
+      "title": "Inside an intimate soccer watch party in New York",
+      "url": "https://www.dazeddigital.com/dazedleague/article/70434/1/at-soccer-watch-parties-fandom-begins-around-the-table?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=inside-an-intimate-soccer-watch-party-in-new-york",
+      "source": "Dazed"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
