@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 91,
     "feels_like_f": 101,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 94,
+        "low_f": 92
+      },
+      {
+        "day": "Sat",
+        "summary": "Clear",
+        "high_f": 96,
+        "low_f": 96
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 84,
+        "low_f": 84
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 73,
+        "low_f": 73
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 75,
+        "low_f": 75
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The AP confirmed: Taylor Swift & Travis Kelce’s MSG wedding is happening on July 3",
+      "url": "https://www.celebitchy.com/984774/the_ap_confirmed_taylor_swift_travis_kelces_msg_wedding_is_happening_on_july_3/",
+      "source": "Celebitchy.com"
+    },
+    {
+      "title": "Inside an intimate soccer watch party in New York",
+      "url": "https://www.dazeddigital.com/dazedleague/article/70434/1/at-soccer-watch-parties-fandom-begins-around-the-table?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=inside-an-intimate-soccer-watch-party-in-new-york",
+      "source": "Dazed"
+    },
+    {
+      "title": "Taylor Swift's NYC wedding is the next chapter in a long Big Apple love story",
+      "url": "https://gothamist.com/news/taylor-swifts-nyc-wedding-is-the-next-chapter-in-a-long-big-apple-love-story",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Pacha New York’s Global Lineup Made Planet Pride ‘A Space Where Everyone Feels Welcome’",
+      "url": "https://www.forbes.com/sites/jeffbenjamin/2026/07/02/planet-prides-global-lineup-fills-pacha-new-york-a-space-where-everyone-feels-welcome/",
+      "source": "Forbes"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce's Wedding Will Be 'Whimsical': What Guests Know",
+      "url": "https://www.usmagazine.com/celebrity-news/news/what-guests-were-told-about-taylor-swift-travis-kelce-wedding/",
+      "source": "Us Weekly"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
