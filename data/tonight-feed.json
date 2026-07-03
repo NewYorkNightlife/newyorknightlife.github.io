@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 95,
     "feels_like_f": 104,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 93,
+        "low_f": 89
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 80,
+        "low_f": 80
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 76,
+        "low_f": 76
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 75,
+        "low_f": 75
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 74,
+        "low_f": 74
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "On our 250th, fight to save this Republic from socialist madness",
+      "url": "https://nypost.com/2026/07/01/opinion/fight-to-save-this-republic-from-socialist-madness/",
+      "source": "New York Post"
+    },
+    {
+      "title": "I masterminded JFK Jr and Carolyn Bessette's secret wedding. Here's the truth about Taylor Swift's nuptials",
+      "url": "https://www.dailymail.com/debate/article-15946185/taylor-swift-travis-kelce-wedding-kennedy-rosemarie-terenzio.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "The Cherries Are Back: Inside Pacha New York’s Three-Night Brooklyn Arrival",
+      "url": "https://dancingastronaut.com/2026/07/the-cherries-are-back-inside-pacha-new-yorks-three-night-brooklyn-arrival/",
+      "source": "Dancing Astronaut"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce wedding rumors swirl: Everything we know about reported MSG ceremony",
+      "url": "https://www.cbssports.com/nfl/news/taylor-swift-travis-kelce-wedding-rumors-madison-square-garden/",
+      "source": "CBS Sports"
+    },
+    {
+      "title": "Ava Dash, 26, gives update on fling with Kyle Cooke, 43, after they’re seen kissing in the Hamptons",
+      "url": "https://pagesix.com/2026/07/01/celebrity-news/ava-dash-26-gives-update-on-fling-with-kyle-cooke-43/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
