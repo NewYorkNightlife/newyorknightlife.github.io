@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift and Travis Kelce donate $26M to charities ahead of wedding",
+      "url": "https://www.seattlepi.com/entertainment/article/taylor-swift-and-travis-kelce-donate-26m-to-22330510.php",
+      "source": "seattlepi.com"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce Donate $26 Million to Charities Before Wedding",
+      "url": "https://www.usmagazine.com/celebrity-news/news/taylor-swift-and-travis-kelce-donate-26-million-to-charities/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "Taylor Swift, Travis Kelce Kick Off Wedding Week With $26 Million Charity Donation",
+      "url": "http://www.rollingstone.com/music/music-news/taylor-swift-travis-kelce-donate-26-million-charity-1235588245/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Where to play and party like it’s 1776 this weekend",
+      "url": "https://nypost.com/2026/07/02/lifestyle/where-to-play-and-party-like-its-1776-this-weekend/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce Donate $26 Million to 26 Charities Across US",
+      "url": "https://consequence.net/2026/07/taylor-swift-donations-wedding/",
+      "source": "Consequence.net"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
