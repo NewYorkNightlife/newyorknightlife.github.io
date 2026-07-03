@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift's NYC wedding is the next chapter in a long Big Apple love story",
+      "url": "https://gothamist.com/news/taylor-swifts-nyc-wedding-is-the-next-chapter-in-a-long-big-apple-love-story",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Pacha New York’s Global Lineup Made Planet Pride ‘A Space Where Everyone Feels Welcome’",
+      "url": "https://www.forbes.com/sites/jeffbenjamin/2026/07/02/planet-prides-global-lineup-fills-pacha-new-york-a-space-where-everyone-feels-welcome/",
+      "source": "Forbes"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce's Wedding Will Be 'Whimsical': What Guests Know",
+      "url": "https://www.usmagazine.com/celebrity-news/news/what-guests-were-told-about-taylor-swift-travis-kelce-wedding/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "On our 250th, fight to save this Republic from socialist madness",
+      "url": "https://nypost.com/2026/07/01/opinion/fight-to-save-this-republic-from-socialist-madness/",
+      "source": "New York Post"
+    },
+    {
+      "title": "I masterminded JFK Jr and Carolyn Bessette's secret wedding. Here's the truth about Taylor Swift's nuptials",
+      "url": "https://www.dailymail.com/debate/article-15946185/taylor-swift-travis-kelce-wedding-kennedy-rosemarie-terenzio.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
