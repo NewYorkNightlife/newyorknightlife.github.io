@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 87,
     "feels_like_f": 92,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 87,
+        "low_f": 82
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Sun",
+        "summary": "Rain",
+        "high_f": 77,
+        "low_f": 77
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 72,
+        "low_f": 72
+      },
+      {
+        "day": "Tue",
+        "summary": "Rain",
+        "high_f": 73,
+        "low_f": 73
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift and Travis Kelce's Wedding Will Be 'Whimsical': What Guests Know",
+      "url": "https://www.usmagazine.com/celebrity-news/news/what-guests-were-told-about-taylor-swift-travis-kelce-wedding/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "On our 250th, fight to save this Republic from socialist madness",
+      "url": "https://nypost.com/2026/07/01/opinion/fight-to-save-this-republic-from-socialist-madness/",
+      "source": "New York Post"
+    },
+    {
+      "title": "I masterminded JFK Jr and Carolyn Bessette's secret wedding. Here's the truth about Taylor Swift's nuptials",
+      "url": "https://www.dailymail.com/debate/article-15946185/taylor-swift-travis-kelce-wedding-kennedy-rosemarie-terenzio.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "The Cherries Are Back: Inside Pacha New York’s Three-Night Brooklyn Arrival",
+      "url": "https://dancingastronaut.com/2026/07/the-cherries-are-back-inside-pacha-new-yorks-three-night-brooklyn-arrival/",
+      "source": "Dancing Astronaut"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce wedding rumors swirl: Everything we know about reported MSG ceremony",
+      "url": "https://www.cbssports.com/nfl/news/taylor-swift-travis-kelce-wedding-rumors-madison-square-garden/",
+      "source": "CBS Sports"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
