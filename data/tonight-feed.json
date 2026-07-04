@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift and Travis Kelce donate US$26 million to charities ahead of wedding",
+      "url": "https://cnalifestyle.channelnewsasia.com/entertainment/taylor-swift-travis-kelce-donate-millions-charities-585471",
+      "source": "CNA"
+    },
+    {
+      "title": "Taylor Swift & Travis Kelce Donations: Charities React to Wedding Gift",
+      "url": "http://www.billboard.com/music/music-news/taylor-swift-travis-kelce-charities-react-wedding-donation-1236287100/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce ‘Already Got Legally Married,’ Sources Tell Page Six",
+      "url": "https://www.mediaite.com/media/entertainment/taylor-swift-and-travis-kelce-already-got-legally-married-sources-tell-page-six/",
+      "source": "Mediaite"
+    },
+    {
+      "title": "Swift, Kelce Donate $26M Ahead of Wedding",
+      "url": "https://www.newser.com/story/392161/swift-kelce-donate-26m-ahead-of-wedding.html",
+      "source": "Newser"
+    },
+    {
+      "title": "Swift and Kelce donate $26m to charities before wedding",
+      "url": "https://www.rte.ie/entertainment/2026/0702/1581497-swift-and-kelce-donate-26m-to-charities-before-wedding/",
+      "source": "RTE"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
