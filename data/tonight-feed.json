@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Comedy, tragedy, murder, birds: All at the movies this July in NYC",
+      "url": "https://gothamist.com/arts-entertainment/comedy-tragedy-murder-birds-all-at-the-movies-this-july-in-nyc",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Taylor Swift & Travis Kelce donated $26 million to charity ahead of their MSG wedding",
+      "url": "https://www.celebitchy.com/984922/taylor_swift_travis_kelce_donated_26_million_to_charity_ahead_of_their_msg_wedding/",
+      "source": "Celebitchy.com"
+    },
+    {
+      "title": "Madonna's 'Confessions II': All 16 Songs Ranked",
+      "url": "http://www.billboard.com/lists/madonna-confessions-ii-album-songs-ranked/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Taylor Swift & Travis Kelce’s Net Worth in 2026 Revealed Ahead of Their Wedding",
+      "url": "https://www.justjared.com/2026/07/02/taylor-swift-travis-kelces-net-worth-in-2026-revealed-ahead-of-their-wedding/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "Explosive behind-the-scenes drama rocks Taylor Swift's wedding: Travis Kelce's Bro Squad 'seethe' over intimate snubs",
+      "url": "https://www.dailymail.com/sport/nfl/article-15949543/taylor-swift-travis-kelce-wedding-new-york-drama.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
