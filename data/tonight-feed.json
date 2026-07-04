@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift looks better than ever before her big day as experts predict what her wedding glam will look like",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15951069/Taylor-Swift-looks-better-wedding-day.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "NYC Closing Streets For Taylor Swift’s Wedding: These Are The Celebrities Sighted (Live Updates)",
+      "url": "https://www.forbes.com/sites/maryroeloffs/2026/07/03/nyc-closing-streets-for-taylor-swifts-wedding-these-are-the-celebrities-sighted-live-updates/",
+      "source": "Forbes"
+    },
+    {
+      "title": "Mother of Taylor Swift Song Subject ‘Ronan’ Sends Her a Message Before Wedding",
+      "url": "https://www.usmagazine.com/celebrity-news/news/taylor-swift-song-subjects-mom-sends-message-before-wedding/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "Comedy, tragedy, murder, birds: All at the movies this July in NYC",
+      "url": "https://gothamist.com/arts-entertainment/comedy-tragedy-murder-birds-all-at-the-movies-this-july-in-nyc",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Taylor Swift & Travis Kelce donated $26 million to charity ahead of their MSG wedding",
+      "url": "https://www.celebitchy.com/984922/taylor_swift_travis_kelce_donated_26_million_to_charity_ahead_of_their_msg_wedding/",
+      "source": "Celebitchy.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
