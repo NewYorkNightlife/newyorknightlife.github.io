@@ -5,9 +5,66 @@
     "summary": "moderate rain",
     "temp_f": 78,
     "feels_like_f": 79,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 80,
+        "low_f": 78
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 76,
+        "low_f": 76
+      },
+      {
+        "day": "Sun",
+        "summary": "Rain",
+        "high_f": 72,
+        "low_f": 72
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 72,
+        "low_f": 72
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 68,
+        "low_f": 68
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift and Travis Kelce wedding live updates – Countdown is on",
+      "url": "https://www.centraloregondaily.com/news/nation-world/taylor-swift-and-travis-kelce-wedding-countdown-is-on-recap/article_613997c2-807e-50ed-9060-4ada4a451a99.html",
+      "source": "Centraloregondaily.com"
+    },
+    {
+      "title": "Dua Lipa ignites rumors she's attending Taylor Swift's wedding as she surfaces in NYC on the big day",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15949697/Dua-Lipa-ignites-rumors-shes-attending-Taylor-Swifts-wedding-surfaces-NYC-big-day.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Inside the FIFA World Cup 2026: Brands and Celebs Celebrate Soccer’s U.S. Invasion",
+      "url": "http://www.rollingstone.com/product-recommendations/lifestyle/fifa-world-cup-2026-celebrities-sofi-los-angeles-new-york-1235586479/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce donate US$26 million to charities ahead of wedding",
+      "url": "https://cnalifestyle.channelnewsasia.com/entertainment/taylor-swift-travis-kelce-donate-millions-charities-585471",
+      "source": "CNA"
+    },
+    {
+      "title": "Taylor Swift & Travis Kelce Donations: Charities React to Wedding Gift",
+      "url": "http://www.billboard.com/music/music-news/taylor-swift-travis-kelce-charities-react-wedding-donation-1236287100/",
+      "source": "Billboard"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
