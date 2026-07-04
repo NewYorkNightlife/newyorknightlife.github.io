@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Hollywood heavyweights assemble in NYC for party of the decade: Jay-Z and Steven Spielberg touch down for Taylor Swift and Travis Kelce's wedding celebration",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15951671/Taylor-Swift-guests-Jay-Z-Steven-Spielberg.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Dolly Parton Thanks Taylor Swift and Travis Kelce for $2 Million Donation to Her Imagination Library",
+      "url": "http://www.rollingstone.com/music/music-country/dolly-parton-thanks-taylor-swift-travis-kelce-donation-1235588909/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Zohran Mamdani Shares His Favorite Taylor Swift Songs Ahead of Singer’s NYC Wedding",
+      "url": "https://www.thewrap.com/culture-lifestyle/culture/taylor-swift-wedding-zohran-mamdani-favorite-songs-playlist/",
+      "source": "TheWrap"
+    },
+    {
+      "title": "Taylor Swift looks better than ever before her big day as experts predict what her wedding glam will look like",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15951069/Taylor-Swift-looks-better-wedding-day.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "NYC Closing Streets For Taylor Swift’s Wedding: These Are The Celebrities Sighted (Live Updates)",
+      "url": "https://www.forbes.com/sites/maryroeloffs/2026/07/03/nyc-closing-streets-for-taylor-swifts-wedding-these-are-the-celebrities-sighted-live-updates/",
+      "source": "Forbes"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
