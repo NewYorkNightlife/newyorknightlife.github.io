@@ -5,9 +5,66 @@
     "summary": "light rain",
     "temp_f": 74,
     "feels_like_f": 75,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sun",
+        "summary": "Rain",
+        "high_f": 74,
+        "low_f": 73
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 73,
+        "low_f": 73
+      },
+      {
+        "day": "Tue",
+        "summary": "Rain",
+        "high_f": 70,
+        "low_f": 70
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 64,
+        "low_f": 64
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 70,
+        "low_f": 70
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift's celebrity wedding guests FLEE lavish MSG reception early... as Travis Kelce extravaganza runs into the early hours",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15952353/Taylor-Swift-celebrity-wedding-guests-msg-travis-kelce.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce wed in NYC in ceremony officiated by Adam Sandler",
+      "url": "https://www.bbc.co.uk/news/articles/c982ry2pen3o",
+      "source": "BBC News"
+    },
+    {
+      "title": "Tourists stumble upon Taylor Swift, Travis Kelce’s MSG nuptials in ‘very cool’ NYC moment: ‘Wish they did this in Chicago’",
+      "url": "https://nypost.com/2026/07/03/us-news/tourists-stumble-upon-taylor-swift-travis-kelces-msg-nuptials-in-very-cool-nyc-moment/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift marries Travis Kelce as fans celebrate America's 'royal wedding'",
+      "url": "https://www.abc.net.au/news/2026-07-04/taylor-swift-wedding-attracts-fans-to-new-york/106875122",
+      "source": "ABC News (AU)"
+    },
+    {
+      "title": "It's a cruel summer heatwave: Taylor Swift and Travis Kelce wedding attracts small crowds as NYC temps spike",
+      "url": "https://www.businessinsider.com/taylor-swift-travis-kelce-wedding-fans-msg-heat-2026-7#article",
+      "source": "Business Insider"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
