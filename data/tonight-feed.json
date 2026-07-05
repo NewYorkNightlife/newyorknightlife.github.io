@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 80,
     "feels_like_f": 83,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 80,
+        "low_f": 74
+      },
+      {
+        "day": "Sun",
+        "summary": "Rain",
+        "high_f": 72,
+        "low_f": 72
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 70,
+        "low_f": 70
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 66,
+        "low_f": 66
+      },
+      {
+        "day": "Wed",
+        "summary": "Clear",
+        "high_f": 71,
+        "low_f": 71
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift and Travis Kelce wed in NYC in ceremony officiated by Adam Sandler",
+      "url": "https://www.bbc.co.uk/news/articles/c982ry2pen3o",
+      "source": "BBC News"
+    },
+    {
+      "title": "Tourists stumble upon Taylor Swift, Travis Kelce’s MSG nuptials in ‘very cool’ NYC moment: ‘Wish they did this in Chicago’",
+      "url": "https://nypost.com/2026/07/03/us-news/tourists-stumble-upon-taylor-swift-travis-kelces-msg-nuptials-in-very-cool-nyc-moment/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift marries Travis Kelce as fans celebrate America's 'royal wedding'",
+      "url": "https://www.abc.net.au/news/2026-07-04/taylor-swift-wedding-attracts-fans-to-new-york/106875122",
+      "source": "ABC News (AU)"
+    },
+    {
+      "title": "It's a cruel summer heatwave: Taylor Swift and Travis Kelce wedding attracts small crowds as NYC temps spike",
+      "url": "https://www.businessinsider.com/taylor-swift-travis-kelce-wedding-fans-msg-heat-2026-7#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Fans circle NYC stadium ahead of Taylor Swift's rumoured wedding",
+      "url": "https://www.abc.net.au/news/2026-07-04/taylor-swift-travis-kelce-wedding/106879258",
+      "source": "ABC News (AU)"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
