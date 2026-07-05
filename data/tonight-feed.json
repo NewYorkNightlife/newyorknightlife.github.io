@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 82,
     "feels_like_f": 87,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 84,
+        "low_f": 82
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 67,
+        "low_f": 67
+      },
+      {
+        "day": "Tue",
+        "summary": "Rain",
+        "high_f": 67,
+        "low_f": 67
+      },
+      {
+        "day": "Wed",
+        "summary": "Clear",
+        "high_f": 80,
+        "low_f": 80
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 87,
+        "low_f": 87
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Midnights in Midtown: The wedding that stopped NYC",
+      "url": "https://www.salon.com/2026/07/04/midnights-in-midtown-the-wedding-that-stopped-nyc/",
+      "source": "Salon"
+    },
+    {
+      "title": "Jessica Alba, the Woman Who Proves Millennials Don’t Age, Wore a Gold Sequin Dress to Taylor Swift’s Wedding Alongside Danny Ramirez",
+      "url": "https://thoughtcatalog.com/january-nelson/2026/07/jessica-alba-the-woman-who-proves-millennials-dont-age-wore-a-gold-sequin-dress-to-taylor-swifts-wedding-alongside-danny-ramirez/",
+      "source": "Thoughtcatalog.com"
+    },
+    {
+      "title": "Weary A-listers emerge from Taylor and Travis's wedding bash as superstars share cabs and desperately grab their confiscated phones... but who partied the hardest?",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15952797/taylor-swift-travis-kelce-wedding-celebrities-party.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Weary A-listers emerge from Taylor and Travis's wedding bash as superstars share cabs and desperately grab their confiscated phones... but who partied the hardest?",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15952797/taylor-swift-travis-kelce-wedding-celebrities-party.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Taylor Swift’s aunt gives intimate details from inside MSG wedding: ‘They cried’",
+      "url": "https://pagesix.com/2026/07/04/entertainment/taylor-swifts-aunt-gives-intimate-details-from-inside-msg-wedding/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
