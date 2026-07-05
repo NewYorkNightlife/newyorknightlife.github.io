@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 75,
     "feels_like_f": 76,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 75,
+        "low_f": 73
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 72,
+        "low_f": 72
+      },
+      {
+        "day": "Tue",
+        "summary": "Rain",
+        "high_f": 66,
+        "low_f": 66
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 65,
+        "low_f": 65
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 69,
+        "low_f": 69
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Inside Blake Lively's fury after Taylor Swift left her off wedding guest list… as sources say it's the final straw",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15952393/inside-blake-lively-fury-taylor-swift-left-wedding-guest-list-sources-final-straw.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Dolly Parton Thanked Taylor Swift and Travis Kelce for a $2 Million Donation to Her Imagination Library, Then Asked for Their Firstborn",
+      "url": "https://thoughtcatalog.com/january-nelson/2026/07/dolly-parton-thanked-taylor-swift-and-travis-kelce-for-a-2-million-donation-to-her-imagination-library-then-asked-for-their-firstborn/",
+      "source": "Thoughtcatalog.com"
+    },
+    {
+      "title": "Taylor Swift's celebrity wedding guests FLEE lavish MSG reception early... as Travis Kelce extravaganza runs into the early hours",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15952353/Taylor-Swift-celebrity-wedding-guests-msg-travis-kelce.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce wed in NYC in ceremony officiated by Adam Sandler",
+      "url": "https://www.bbc.co.uk/news/articles/c982ry2pen3o",
+      "source": "BBC News"
+    },
+    {
+      "title": "Tourists stumble upon Taylor Swift, Travis Kelce’s MSG nuptials in ‘very cool’ NYC moment: ‘Wish they did this in Chicago’",
+      "url": "https://nypost.com/2026/07/03/us-news/tourists-stumble-upon-taylor-swift-travis-kelces-msg-nuptials-in-very-cool-nyc-moment/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
