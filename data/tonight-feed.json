@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift marries Travis Kelce as fans celebrate America's 'royal wedding'",
+      "url": "https://www.abc.net.au/news/2026-07-04/taylor-swift-wedding-attracts-fans-to-new-york/106875122",
+      "source": "ABC News (AU)"
+    },
+    {
+      "title": "It's a cruel summer heatwave: Taylor Swift and Travis Kelce wedding attracts small crowds as NYC temps spike",
+      "url": "https://www.businessinsider.com/taylor-swift-travis-kelce-wedding-fans-msg-heat-2026-7#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Fans circle NYC stadium ahead of Taylor Swift's rumoured wedding",
+      "url": "https://www.abc.net.au/news/2026-07-04/taylor-swift-travis-kelce-wedding/106879258",
+      "source": "ABC News (AU)"
+    },
+    {
+      "title": "Hollywood heavyweights assemble in NYC for party of the decade: Jay-Z and Steven Spielberg touch down for Taylor Swift and Travis Kelce's wedding celebration",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15951671/Taylor-Swift-guests-Jay-Z-Steven-Spielberg.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Dolly Parton Thanks Taylor Swift and Travis Kelce for $2 Million Donation to Her Imagination Library",
+      "url": "http://www.rollingstone.com/music/music-country/dolly-parton-thanks-taylor-swift-travis-kelce-donation-1235588909/",
+      "source": "Rolling Stone"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
