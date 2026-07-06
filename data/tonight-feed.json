@@ -5,9 +5,66 @@
     "summary": "light rain",
     "temp_f": 69,
     "feels_like_f": 70,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 70,
+        "low_f": 69
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 64,
+        "low_f": 64
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 74,
+        "low_f": 74
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 75,
+        "low_f": 75
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 86,
+        "low_f": 86
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift and Travis Kelce Are Married: 15 Things You Must Know About the Wedding of the Century at MSG",
+      "url": "https://www.ibtimes.com.au/taylor-swift-travis-kelce-wedding-msg-1871825",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "'It was like living in the internet!' Taylor Swift's 1,000 guests share their post-wedding recaps as they reveal they danced all night and mingled with their superstar heroes before suffering 'the world's greatest hangover'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15954109/It-like-living-internet-Taylor-Swifts-1-000-guests-share-post-wedding-recaps-reveal-danced-night-mingled-superstar-heroes-suffering-worlds-greatest-hangover.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Enid Crow: American Values",
+      "url": "http://lenscratch.com/2026/07/enid-crow-american-values/",
+      "source": "Lenscratch.com"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce's MAGA wedding guest makes mad dash to Houston to cheer on Canada at World Cup after attending MSG ceremony with daughter",
+      "url": "https://www.dailymail.com/sport/football/article-15953403/taylor-swift-travis-kelce-wedding-wayne-gretzky-maga-trump.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Midnights in Midtown: The wedding that stopped NYC",
+      "url": "https://www.salon.com/2026/07/04/midnights-in-midtown-the-wedding-that-stopped-nyc/",
+      "source": "Salon"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
