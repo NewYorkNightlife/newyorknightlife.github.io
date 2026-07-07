@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 70,
     "feels_like_f": 70,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 70,
+        "low_f": 70
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 84,
+        "low_f": 84
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 89,
+        "low_f": 89
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 86,
+        "low_f": 86
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Rihanna is all smiles as she steps out in NYC with boyfriend A$AP Rocky after his crass sex confession",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15956709/Rihanna-smiles-AP-crass-sex-confession.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "800 Floating Porcelain Bowls Turn Water Into Music in Immersive Installation in NYC",
+      "url": "https://mymodernmet.com/celeste-boursier-mougenot-clinamen-park-avenue-armory-nyc/",
+      "source": "My Modern Met"
+    },
+    {
+      "title": "Greg James pokes fun at Leonardo DiCaprio for Taylor Swift wedding snub as he skips his Radio 1 Breakfast show to continue 'completely insane' weekend in NYC",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15955543/Greg-James-pokes-fun-Leonardo-DiCaprio-Taylor-Swift-wedding-snub-skips-Radio-1-Breakfast-continue-completely-insane-weekend-NYC.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Taylor Swift MAY have celebrated July 4th in Rhode Island as eyewitness reveals mysterious lights on at her mansion",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15954481/taylor-swift-rhode-island-home-lights-4th-july-travis-kelce-wedding.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce Are Married: 15 Things You Must Know About the Wedding of the Century at MSG",
+      "url": "https://www.ibtimes.com.au/taylor-swift-travis-kelce-wedding-msg-1871825",
+      "source": "Ibtimes.com.au"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
