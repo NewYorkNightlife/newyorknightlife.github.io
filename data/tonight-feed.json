@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift MAY have celebrated July 4th in Rhode Island as eyewitness reveals mysterious lights on at her mansion",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15954481/taylor-swift-rhode-island-home-lights-4th-july-travis-kelce-wedding.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce Are Married: 15 Things You Must Know About the Wedding of the Century at MSG",
+      "url": "https://www.ibtimes.com.au/taylor-swift-travis-kelce-wedding-msg-1871825",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "'It was like living in the internet!' Taylor Swift's 1,000 guests share their post-wedding recaps as they reveal they danced all night and mingled with their superstar heroes before suffering 'the world's greatest hangover'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15954109/It-like-living-internet-Taylor-Swifts-1-000-guests-share-post-wedding-recaps-reveal-danced-night-mingled-superstar-heroes-suffering-worlds-greatest-hangover.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Enid Crow: American Values",
+      "url": "http://lenscratch.com/2026/07/enid-crow-american-values/",
+      "source": "Lenscratch.com"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce's MAGA wedding guest makes mad dash to Houston to cheer on Canada at World Cup after attending MSG ceremony with daughter",
+      "url": "https://www.dailymail.com/sport/football/article-15953403/taylor-swift-travis-kelce-wedding-wayne-gretzky-maga-trump.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
