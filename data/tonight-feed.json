@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Black Dice Records launches a stacked screamo festival",
+      "url": "http://chicagoreader.com/music/black-dice-fest-great-big-lake-shady-rest-mastermind-mazurek-neo-reunion/",
+      "source": "Chicago Reader"
+    },
+    {
+      "title": "Bastian Bux Brings Petit Comité of House to NYC for the First Time",
+      "url": "https://dancingastronaut.com/2026/07/bastian-bux-brings-petit-comite-of-house-to-nyc-for-the-first-time/",
+      "source": "Dancing Astronaut"
+    },
+    {
+      "title": "Greg James says he has 'changed his mind on destination weddings' as he recaps Taylor Swift and Travis Kelce's nuptials",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15960157/Greg-James-weddings-Taylor-Swift-Travis-Kelce.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Inside the eight-seat family diner that’s set the Hamptons abuzz — where stars like Meg Ryan and Neil Patrick Harris wait in line for hours",
+      "url": "https://nypost.com/2026/07/07/lifestyle/inside-the-eight-seat-diner-thats-set-the-hamptons-abuzz/",
+      "source": "New York Post"
+    },
+    {
+      "title": "It’s Time O’Clock to Review Taylor Swift and Blake Lively’s Friendship (and Reported Feud) Timeline",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71842671/taylor-swift-blake-lively-friendship-timeline/",
+      "source": "Cosmopolitan.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
