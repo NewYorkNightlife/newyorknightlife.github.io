@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 85,
     "feels_like_f": 87,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Clear",
+        "high_f": 84,
+        "low_f": 83
+      },
+      {
+        "day": "Thu",
+        "summary": "Rain",
+        "high_f": 80,
+        "low_f": 80
+      },
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 80,
+        "low_f": 80
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 76,
+        "low_f": 76
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 74,
+        "low_f": 74
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "LGBTQ New Brunswick, Texas School Vaccination Rates, NYC Languages, More: Tuesday Afternoon ResearchBuzz, July 7, 2026",
+      "url": "https://researchbuzz.me/2026/07/07/lgbtq-new-brunswick-texas-school-vaccination-rates-nyc-languages-more-tuesday-afternoon-researchbuzz-july-7-2026/",
+      "source": "Researchbuzz.me"
+    },
+    {
+      "title": "Black Dice Records launches a stacked screamo festival",
+      "url": "http://chicagoreader.com/music/black-dice-fest-great-big-lake-shady-rest-mastermind-mazurek-neo-reunion/",
+      "source": "Chicago Reader"
+    },
+    {
+      "title": "Bastian Bux Brings Petit Comité of House to NYC for the First Time",
+      "url": "https://dancingastronaut.com/2026/07/bastian-bux-brings-petit-comite-of-house-to-nyc-for-the-first-time/",
+      "source": "Dancing Astronaut"
+    },
+    {
+      "title": "Greg James says he has 'changed his mind on destination weddings' as he recaps Taylor Swift and Travis Kelce's nuptials",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15960157/Greg-James-weddings-Taylor-Swift-Travis-Kelce.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Inside the eight-seat family diner that’s set the Hamptons abuzz — where stars like Meg Ryan and Neil Patrick Harris wait in line for hours",
+      "url": "https://nypost.com/2026/07/07/lifestyle/inside-the-eight-seat-diner-thats-set-the-hamptons-abuzz/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
