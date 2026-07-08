@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "WATCH: American Story: The Hands That Built the White House -- With Robin Roberts",
+      "url": "https://abcnews.com/video/134524894/",
+      "source": "Abcnews.com"
+    },
+    {
+      "title": "July Food Deals Over 100+ Restaurants and Deals in This Post To Feed Your Belly! (1 replies)",
+      "url": "https://slickdeals.net/f/19729815-july-food-deals-over-100-restaurants-and-deals-in-this-post-to-feed-your-belly",
+      "source": "Slickdeals.net"
+    },
+    {
+      "title": "Rihanna is all smiles as she steps out in NYC with boyfriend A$AP Rocky after his crass sex confession",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15956709/Rihanna-smiles-AP-crass-sex-confession.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "800 Floating Porcelain Bowls Turn Water Into Music in Immersive Installation in NYC",
+      "url": "https://mymodernmet.com/celeste-boursier-mougenot-clinamen-park-avenue-armory-nyc/",
+      "source": "My Modern Met"
+    },
+    {
+      "title": "Greg James pokes fun at Leonardo DiCaprio for Taylor Swift wedding snub as he skips his Radio 1 Breakfast show to continue 'completely insane' weekend in NYC",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15955543/Greg-James-pokes-fun-Leonardo-DiCaprio-Taylor-Swift-wedding-snub-skips-Radio-1-Breakfast-continue-completely-insane-weekend-NYC.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
