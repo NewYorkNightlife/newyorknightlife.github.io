@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 75,
     "feels_like_f": 76,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Clear",
+        "high_f": 76,
+        "low_f": 73
+      },
+      {
+        "day": "Thu",
+        "summary": "Rain",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 77,
+        "low_f": 77
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 76,
+        "low_f": 76
+      },
+      {
+        "day": "Sun",
+        "summary": "Clear",
+        "high_f": 73,
+        "low_f": 73
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "WATCH: Dramatic rescue from fiery wreck in Michigan",
+      "url": "https://abcnews.com/video/134566239/",
+      "source": "Abcnews.com"
+    },
+    {
+      "title": "WATCH: Childcare sued over toddler's injuries",
+      "url": "https://abcnews.com/video/134566105/",
+      "source": "Abcnews.com"
+    },
+    {
+      "title": "LGBTQ New Brunswick, Texas School Vaccination Rates, NYC Languages, More: Tuesday Afternoon ResearchBuzz, July 7, 2026",
+      "url": "https://researchbuzz.me/2026/07/07/lgbtq-new-brunswick-texas-school-vaccination-rates-nyc-languages-more-tuesday-afternoon-researchbuzz-july-7-2026/",
+      "source": "Researchbuzz.me"
+    },
+    {
+      "title": "Black Dice Records launches a stacked screamo festival",
+      "url": "http://chicagoreader.com/music/black-dice-fest-great-big-lake-shady-rest-mastermind-mazurek-neo-reunion/",
+      "source": "Chicago Reader"
+    },
+    {
+      "title": "Bastian Bux Brings Petit Comité of House to NYC for the First Time",
+      "url": "https://dancingastronaut.com/2026/07/bastian-bux-brings-petit-comite-of-house-to-nyc-for-the-first-time/",
+      "source": "Dancing Astronaut"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
