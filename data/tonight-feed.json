@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 71,
     "feels_like_f": 72,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Clear",
+        "high_f": 74,
+        "low_f": 72
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 76,
+        "low_f": 76
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 76,
+        "low_f": 76
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 71,
+        "low_f": 71
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 73,
+        "low_f": 73
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "WATCH: Family makes art with garden hose",
+      "url": "https://abcnews.com/video/134575476/",
+      "source": "Abcnews.com"
+    },
+    {
+      "title": "Taylor Swift's music idol reveals why he REJECTED Travis Kelce wedding invite",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15960997/james-taylor-swift-travis-kelce-wedding-invite.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "WATCH: Krispy Kreme launches Girl Scout cookie-inspired doughnut flavors",
+      "url": "https://abcnews.com/video/134569183/",
+      "source": "Abcnews.com"
+    },
+    {
+      "title": "WATCH: Dramatic rescue from fiery wreck in Michigan",
+      "url": "https://abcnews.com/video/134566239/",
+      "source": "Abcnews.com"
+    },
+    {
+      "title": "WATCH: Childcare sued over toddler's injuries",
+      "url": "https://abcnews.com/video/134566105/",
+      "source": "Abcnews.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
