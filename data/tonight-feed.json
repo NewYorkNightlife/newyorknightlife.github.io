@@ -1,70 +1,13 @@
 {
-  "generated_at": "2026-07-10T11:55:31.025Z",
+  "generated_at": "2026-07-10T12:55:31.032Z",
   "timezone": "America/New_York",
   "weather": {
-    "summary": "broken clouds",
-    "temp_f": 77,
-    "feels_like_f": 78,
-    "five_day": [
-      {
-        "day": "Fri",
-        "summary": "Clouds",
-        "high_f": 77,
-        "low_f": 75
-      },
-      {
-        "day": "Sat",
-        "summary": "Clouds",
-        "high_f": 72,
-        "low_f": 72
-      },
-      {
-        "day": "Sun",
-        "summary": "Clouds",
-        "high_f": 75,
-        "low_f": 75
-      },
-      {
-        "day": "Mon",
-        "summary": "Clear",
-        "high_f": 73,
-        "low_f": 73
-      },
-      {
-        "day": "Tue",
-        "summary": "Clouds",
-        "high_f": 77,
-        "low_f": 77
-      }
-    ]
+    "summary": "overcast clouds",
+    "temp_f": 80,
+    "feels_like_f": 80,
+    "five_day": []
   },
-  "headlines": [
-    {
-      "title": "TCCNY Marks 35th Anniversary with Cultural Reception in New York",
-      "url": "https://www.prnewswire.com/news-releases/tccny-marks-35th-anniversary-with-cultural-reception-in-new-york-302821524.html",
-      "source": "PRNewswire"
-    },
-    {
-      "title": "New Balance Announces Football House in NYC For World Cup",
-      "url": "https://bleedingcool.com/pop-culture/new-balance-announces-football-house-in-nyc-for-world-cup/",
-      "source": "Bleeding Cool News"
-    },
-    {
-      "title": "How to spend a weekend in Jersey City—NYC’s colorful neighbor",
-      "url": "https://www.nationalgeographic.com/travel/article/jersey-city-weekend-getaway",
-      "source": "National Geographic"
-    },
-    {
-      "title": "Every Single Detail About Jack Antonoff and Margaret Qualley’s Relationship Amid Their Reported Breakup",
-      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71870456/jack-antonoff-margaret-qualley-relationship-breakup-timeline/",
-      "source": "Cosmopolitan.com"
-    },
-    {
-      "title": "Fanatics & Complex present KAWS x MLB Collection",
-      "url": "https://www.prnewswire.com/news-releases/fanatics--complex-present-kaws-x-mlb-collection-302820909.html",
-      "source": "PRNewswire"
-    }
-  ],
+  "headlines": [],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
