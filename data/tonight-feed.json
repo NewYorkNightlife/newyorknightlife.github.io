@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "New Balance Announces Football House in NYC For World Cup",
+      "url": "https://bleedingcool.com/pop-culture/new-balance-announces-football-house-in-nyc-for-world-cup/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "How to spend a weekend in Jersey City—NYC’s colorful neighbor",
+      "url": "https://www.nationalgeographic.com/travel/article/jersey-city-weekend-getaway",
+      "source": "National Geographic"
+    },
+    {
+      "title": "Every Single Detail About Jack Antonoff and Margaret Qualley’s Relationship Amid Their Reported Breakup",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a71870456/jack-antonoff-margaret-qualley-relationship-breakup-timeline/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Fanatics & Complex present KAWS x MLB Collection",
+      "url": "https://www.prnewswire.com/news-releases/fanatics--complex-present-kaws-x-mlb-collection-302820909.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Margaret Qualley quietly wipes traces of husband Jack Antonoff from social media as split rumors swirl",
+      "url": "https://pagesix.com/2026/07/08/celebrity-news/margaret-qualley-wipes-traces-of-husband-jack-antonoff-from-social-media-as-split-rumors-swirl/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
