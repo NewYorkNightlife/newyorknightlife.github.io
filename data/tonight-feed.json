@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 86,
     "feels_like_f": 90,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 86,
+        "low_f": 83
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 73,
+        "low_f": 73
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 79,
+        "low_f": 79
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 94,
+        "low_f": 94
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "What you discover when you take absurdly long walks through NYC",
+      "url": "https://gothamist.com/arts-entertainment/what-you-discover-when-you-take-absurdly-long-walks-through-nyc",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Inside Jack Antonoff’s dating history: From Lena Dunham to estranged wife Margaret Qualley",
+      "url": "https://pagesix.com/celebrity-news/jack-antonoff-dating-history-lena-dunham-to-margaret-qualley/",
+      "source": "Page Six"
+    },
+    {
+      "title": "How Sunflower Bean’s Nick Kivlen Found a Mellow Psychedelic Groove of His Own",
+      "url": "http://www.rollingstone.com/music/music-features/sunflower-bean-nick-kivlen-solo-music-interview-1235590389/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "King Gizzard & the Lizard Wizard announce EDM album and NYC “rave shows”",
+      "url": "https://djmag.com/news/king-gizzard-lizard-wizard-announce-edm-album-and-nyc-rave-shows",
+      "source": "DJ Mag"
+    },
+    {
+      "title": "TCCNY Marks 35th Anniversary with Cultural Reception in New York",
+      "url": "https://www.prnewswire.com/news-releases/tccny-marks-35th-anniversary-with-cultural-reception-in-new-york-302821524.html",
+      "source": "PRNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
