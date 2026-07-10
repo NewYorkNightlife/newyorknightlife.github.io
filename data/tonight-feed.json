@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 86,
     "feels_like_f": 91,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 85,
+        "low_f": 83
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 74,
+        "low_f": 74
+      },
+      {
+        "day": "Sun",
+        "summary": "Clear",
+        "high_f": 82,
+        "low_f": 82
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 81,
+        "low_f": 81
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 93,
+        "low_f": 93
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "How Sunflower Bean’s Nick Kivlen Found a Mellow Psychedelic Groove of His Own",
+      "url": "http://www.rollingstone.com/music/music-features/sunflower-bean-nick-kivlen-solo-music-interview-1235590389/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "King Gizzard & the Lizard Wizard announce EDM album and NYC “rave shows”",
+      "url": "https://djmag.com/news/king-gizzard-lizard-wizard-announce-edm-album-and-nyc-rave-shows",
+      "source": "DJ Mag"
+    },
+    {
+      "title": "TCCNY Marks 35th Anniversary with Cultural Reception in New York",
+      "url": "https://www.prnewswire.com/news-releases/tccny-marks-35th-anniversary-with-cultural-reception-in-new-york-302821524.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "New Balance Announces Football House in NYC For World Cup",
+      "url": "https://bleedingcool.com/pop-culture/new-balance-announces-football-house-in-nyc-for-world-cup/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "How to spend a weekend in Jersey City—NYC’s colorful neighbor",
+      "url": "https://www.nationalgeographic.com/travel/article/jersey-city-weekend-getaway",
+      "source": "National Geographic"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
