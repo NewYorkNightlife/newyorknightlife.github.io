@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 76,
     "feels_like_f": 77,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 79,
+        "low_f": 76
+      },
+      {
+        "day": "Sun",
+        "summary": "Clear",
+        "high_f": 79,
+        "low_f": 79
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 80,
+        "low_f": 80
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 86,
+        "low_f": 86
+      },
+      {
+        "day": "Wed",
+        "summary": "Clear",
+        "high_f": 92,
+        "low_f": 92
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Ellie Goulding celebrates in a football shirt as she reveals she will perform at halftime during the England vs Norway World Cup match",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15967613/Ellie-Goulding-celebrates-football-shirt-reveals-perform-halftime-England-vs-Norway-World-Cup-match.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "LL Cool J Recalls Ol' Dirty Bastard Peeing on His Plaques",
+      "url": "http://www.billboard.com/music/rb-hip-hop/ll-cool-j-ol-dirty-bastard-urinating-plaques-1236290959/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Mamdani Erases Little Italy … and (Of Course) the Jews",
+      "url": "https://www.dailysignal.com/2026/07/09/mamdani-erases-little-italy-jews/",
+      "source": "Daily Signal"
+    },
+    {
+      "title": "What you discover when you take absurdly long walks through NYC",
+      "url": "https://gothamist.com/arts-entertainment/what-you-discover-when-you-take-absurdly-long-walks-through-nyc",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Inside Jack Antonoff’s dating history: From Lena Dunham to estranged wife Margaret Qualley",
+      "url": "https://pagesix.com/celebrity-news/jack-antonoff-dating-history-lena-dunham-to-margaret-qualley/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
