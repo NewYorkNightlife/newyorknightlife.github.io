@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "‘Gail Daughtry And The Celebrity Sex Pass‘ New In Theaters With ‘Remake’, ‘Baby Doe’ Docs & ‘Barrio Triste’ From Longtime Bad Bunny Collaborator – Specialty Preview",
+      "url": "http://deadline.com/2026/07/indie-films-july-10-gail-daughtry-and-the-celebrity-sex-pass-remake-1236979097/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Too Many Books?",
+      "url": "https://languagehat.com/too-many-books/",
+      "source": "Languagehat.com"
+    },
+    {
+      "title": "The best 10 places for a solo weekend getaway",
+      "url": "https://thepointsguy.com/travel/best-solo-weekend-getaway-destinations/",
+      "source": "The Points Guy"
+    },
+    {
+      "title": "Ellie Goulding celebrates in a football shirt as she reveals she will perform at halftime during the England vs Norway World Cup match",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15967613/Ellie-Goulding-celebrates-football-shirt-reveals-perform-halftime-England-vs-Norway-World-Cup-match.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "LL Cool J Recalls Ol' Dirty Bastard Peeing on His Plaques",
+      "url": "http://www.billboard.com/music/rb-hip-hop/ll-cool-j-ol-dirty-bastard-urinating-plaques-1236290959/",
+      "source": "Billboard"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
