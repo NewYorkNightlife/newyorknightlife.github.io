@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "‘Les Miserables’ is coming to Radio City — but don’t expect to see it on Broadway anytime soon",
+      "url": "https://nypost.com/2026/07/11/entertainment/les-miserables-is-coming-to-radio-city-but-dont-expect-to-see-it-on-broadway-anytime-soon/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift Paid Over $160,000 for Her New York City Wedding Permit and Police Security, Mayor Says",
+      "url": "https://www.ibtimes.com.au/taylor-swift-nyc-wedding-permit-costs-1872116",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "Andy Cohen and Boyfriend Kevin Sobieski’s Low-Key Relationship Timeline",
+      "url": "https://www.usmagazine.com/celebrity-news/news/andy-cohen-and-kevin-sobieskis-relationship-timeline/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "‘Gail Daughtry And The Celebrity Sex Pass‘ New In Theaters With ‘Remake’, ‘Baby Doe’ Docs & ‘Barrio Triste’ From Longtime Bad Bunny Collaborator – Specialty Preview",
+      "url": "http://deadline.com/2026/07/indie-films-july-10-gail-daughtry-and-the-celebrity-sex-pass-remake-1236979097/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Too Many Books?",
+      "url": "https://languagehat.com/too-many-books/",
+      "source": "Languagehat.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
