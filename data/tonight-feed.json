@@ -5,9 +5,66 @@
     "summary": "scattered clouds",
     "temp_f": 85,
     "feels_like_f": 84,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 85,
+        "low_f": 85
+      },
+      {
+        "day": "Mon",
+        "summary": "Clear",
+        "high_f": 83,
+        "low_f": 83
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 94,
+        "low_f": 94
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 100,
+        "low_f": 100
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 90,
+        "low_f": 90
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "How Much Did Taylor Swift Pay to Close NYC Streets for Her Wedding? Mayor Mamdani Reveals the Full Cost",
+      "url": "https://www.ibtimes.com.au/taylor-swift-nyc-wedding-permit-controversy-1872119",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "‘Les Miserables’ is coming to Radio City — but don’t expect to see it on Broadway anytime soon",
+      "url": "https://nypost.com/2026/07/11/entertainment/les-miserables-is-coming-to-radio-city-but-dont-expect-to-see-it-on-broadway-anytime-soon/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift Paid Over $160,000 for Her New York City Wedding Permit and Police Security, Mayor Says",
+      "url": "https://www.ibtimes.com.au/taylor-swift-nyc-wedding-permit-costs-1872116",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "Andy Cohen and Boyfriend Kevin Sobieski’s Low-Key Relationship Timeline",
+      "url": "https://www.usmagazine.com/celebrity-news/news/andy-cohen-and-kevin-sobieskis-relationship-timeline/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "‘Gail Daughtry And The Celebrity Sex Pass‘ New In Theaters With ‘Remake’, ‘Baby Doe’ Docs & ‘Barrio Triste’ From Longtime Bad Bunny Collaborator – Specialty Preview",
+      "url": "http://deadline.com/2026/07/indie-films-july-10-gail-daughtry-and-the-celebrity-sex-pass-remake-1236979097/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
