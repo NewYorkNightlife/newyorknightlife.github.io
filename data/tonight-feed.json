@@ -5,9 +5,66 @@
     "summary": "clear sky",
     "temp_f": 84,
     "feels_like_f": 85,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Mon",
+        "summary": "Clear",
+        "high_f": 84,
+        "low_f": 84
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 91,
+        "low_f": 91
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 98,
+        "low_f": 98
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 93,
+        "low_f": 93
+      },
+      {
+        "day": "Fri",
+        "summary": "Clear",
+        "high_f": 86,
+        "low_f": 86
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "JK Simmons & Titus Welliver Bring Irish-American Mob History To Life In MGM+'s The Westies",
+      "url": "https://screenrant.com/the-westies-season-1-set-visit-jk-simmon-titus-welliver/",
+      "source": "Screen Rant"
+    },
+    {
+      "title": "How Much Did Taylor Swift Pay to Close NYC Streets for Her Wedding? Mayor Mamdani Reveals the Full Cost",
+      "url": "https://www.ibtimes.com.au/taylor-swift-nyc-wedding-permit-controversy-1872119",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "‘Les Miserables’ is coming to Radio City — but don’t expect to see it on Broadway anytime soon",
+      "url": "https://nypost.com/2026/07/11/entertainment/les-miserables-is-coming-to-radio-city-but-dont-expect-to-see-it-on-broadway-anytime-soon/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Taylor Swift Paid Over $160,000 for Her New York City Wedding Permit and Police Security, Mayor Says",
+      "url": "https://www.ibtimes.com.au/taylor-swift-nyc-wedding-permit-costs-1872116",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "Andy Cohen and Boyfriend Kevin Sobieski’s Low-Key Relationship Timeline",
+      "url": "https://www.usmagazine.com/celebrity-news/news/andy-cohen-and-kevin-sobieskis-relationship-timeline/",
+      "source": "Us Weekly"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
