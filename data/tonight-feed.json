@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Jay-Z Addresses 4-Hour Delay at Final NYC Concert Stop",
+      "url": "https://www.eonline.com/news/1433909/jay-z-delays-nyc-concert-by-4-hours-due-to-safety-concerns",
+      "source": "Eonline.com"
+    },
+    {
+      "title": "New York City has the best stories. Read about them in these new books.",
+      "url": "https://gothamist.com/arts-entertainment/new-york-city-has-the-best-stories-read-about-them-in-these-new-books",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Netflix Adds Banana Fish Anime on August 12",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-12/netflix-adds-banana-fish-anime-on-august-12/.239519",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Mamdani Reminds NYC of 24/7 Soccer Fields Before USMNT Loses to Belgium",
+      "url": "https://www.complex.com/sports/a/markelibert/zohran-mamdani-24-7-soccer-fields",
+      "source": "Complex"
+    },
+    {
+      "title": "JK Simmons & Titus Welliver Bring Irish-American Mob History To Life In MGM+'s The Westies",
+      "url": "https://screenrant.com/the-westies-season-1-set-visit-jk-simmon-titus-welliver/",
+      "source": "Screen Rant"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
