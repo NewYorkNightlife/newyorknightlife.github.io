@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Rihanna Delivers Surprise Performance at Jay-Z's NYC Concert: 'I'm Rusty'",
+      "url": "https://www.usmagazine.com/celebrity-news/news/rihanna-delivers-surprise-performance-at-jay-zs-nyc-concert/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "Beyoncé & Rihanna on the same stage",
+      "url": "https://www.laineygossip.com/beyonce-rihannas-performance-together-during-jay-zs-weekend-residency-in-new-york-was-unicorn-event/",
+      "source": "LaineyGossip"
+    },
+    {
+      "title": "People Are Paying To Own Pieces Of Garbage From Outside Taylor Swift And Travis Kelce’s Wedding",
+      "url": "https://kotaku.com/taylor-swift-travis-kelce-wedding-trash-nyc-food-leftovers-2000715225",
+      "source": "Kotaku"
+    },
+    {
+      "title": "Inside first NYC edition of TCM host’s noir-themed film festival where attendees dressed in 1940s style",
+      "url": "https://pagesix.com/2026/07/13/hollywood/inside-the-first-nyc-edition-of-tcm-hosts-noir-themed-film-festival/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Jay-Z Addresses 4-Hour Delay at Final NYC Concert Stop",
+      "url": "https://www.eonline.com/news/1433909/jay-z-delays-nyc-concert-by-4-hours-due-to-safety-concerns",
+      "source": "Eonline.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
