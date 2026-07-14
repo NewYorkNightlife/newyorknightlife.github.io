@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "People Are Paying To Own Pieces Of Garbage From Outside Taylor Swift And Travis Kelce’s Wedding",
+      "url": "https://kotaku.com/taylor-swift-travis-kelce-wedding-trash-nyc-food-leftovers-2000715225",
+      "source": "Kotaku"
+    },
+    {
+      "title": "Inside first NYC edition of TCM host’s noir-themed film festival where attendees dressed in 1940s style",
+      "url": "https://pagesix.com/2026/07/13/hollywood/inside-the-first-nyc-edition-of-tcm-hosts-noir-themed-film-festival/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Jay-Z Addresses 4-Hour Delay at Final NYC Concert Stop",
+      "url": "https://www.eonline.com/news/1433909/jay-z-delays-nyc-concert-by-4-hours-due-to-safety-concerns",
+      "source": "Eonline.com"
+    },
+    {
+      "title": "New York City has the best stories. Read about them in these new books.",
+      "url": "https://gothamist.com/arts-entertainment/new-york-city-has-the-best-stories-read-about-them-in-these-new-books",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Netflix Adds Banana Fish Anime on August 12",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-12/netflix-adds-banana-fish-anime-on-august-12/.239519",
+      "source": "Anime News Network"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
