@@ -5,9 +5,66 @@
     "summary": "few clouds",
     "temp_f": 74,
     "feels_like_f": 75,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 74,
+        "low_f": 71
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 77,
+        "low_f": 77
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 83,
+        "low_f": 83
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 80,
+        "low_f": 80
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 79,
+        "low_f": 79
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Netflix Adds Banana Fish Anime on August 12",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-12/netflix-adds-banana-fish-anime-on-august-12/.239519",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Mamdani Reminds NYC of 24/7 Soccer Fields Before USMNT Loses to Belgium",
+      "url": "https://www.complex.com/sports/a/markelibert/zohran-mamdani-24-7-soccer-fields",
+      "source": "Complex"
+    },
+    {
+      "title": "JK Simmons & Titus Welliver Bring Irish-American Mob History To Life In MGM+'s The Westies",
+      "url": "https://screenrant.com/the-westies-season-1-set-visit-jk-simmon-titus-welliver/",
+      "source": "Screen Rant"
+    },
+    {
+      "title": "How Much Did Taylor Swift Pay to Close NYC Streets for Her Wedding? Mayor Mamdani Reveals the Full Cost",
+      "url": "https://www.ibtimes.com.au/taylor-swift-nyc-wedding-permit-controversy-1872119",
+      "source": "Ibtimes.com.au"
+    },
+    {
+      "title": "‘Les Miserables’ is coming to Radio City — but don’t expect to see it on Broadway anytime soon",
+      "url": "https://nypost.com/2026/07/11/entertainment/les-miserables-is-coming-to-radio-city-but-dont-expect-to-see-it-on-broadway-anytime-soon/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
