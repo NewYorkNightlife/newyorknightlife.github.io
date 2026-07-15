@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Quarter-End Close - jtimu - Heated Rivalry (TV) [Archive of Our Own]",
+      "url": "https://archiveofourown.org/works/88448936",
+      "source": "Archiveofourown.org"
+    },
+    {
+      "title": "MADONNA: CLUB CONFESSIONS NYC WITH MISTR",
+      "url": "https://www.globenewswire.com/news-release/2026/07/14/3326548/0/en/MADONNA-CLUB-CONFESSIONS-NYC-WITH-MISTR.html",
+      "source": "GlobeNewswire"
+    },
+    {
+      "title": "Rihanna Delivers Surprise Performance at Jay-Z's NYC Concert: 'I'm Rusty'",
+      "url": "https://www.usmagazine.com/celebrity-news/news/rihanna-delivers-surprise-performance-at-jay-zs-nyc-concert/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "Beyoncé & Rihanna on the same stage",
+      "url": "https://www.laineygossip.com/beyonce-rihannas-performance-together-during-jay-zs-weekend-residency-in-new-york-was-unicorn-event/",
+      "source": "LaineyGossip"
+    },
+    {
+      "title": "People Are Paying To Own Pieces Of Garbage From Outside Taylor Swift And Travis Kelce’s Wedding",
+      "url": "https://kotaku.com/taylor-swift-travis-kelce-wedding-trash-nyc-food-leftovers-2000715225",
+      "source": "Kotaku"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
