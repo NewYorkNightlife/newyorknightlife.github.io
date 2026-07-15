@@ -5,9 +5,66 @@
     "summary": "few clouds",
     "temp_f": 79,
     "feels_like_f": 80,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 79,
+        "low_f": 79
+      },
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 77,
+        "low_f": 77
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 72,
+        "low_f": 72
+      },
+      {
+        "day": "Sun",
+        "summary": "Rain",
+        "high_f": 74,
+        "low_f": 74
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "New York Comedy Festival 2026 Reveals Headliners, Show Schedule",
+      "url": "http://www.hollywoodreporter.com/news/general-news/new-york-comedy-festival-2026-lineup-schedule-1236647319/",
+      "source": "Hollywood Reporter"
+    },
+    {
+      "title": "Quarter-End Close - jtimu - Heated Rivalry (TV) [Archive of Our Own]",
+      "url": "https://archiveofourown.org/works/88448936",
+      "source": "Archiveofourown.org"
+    },
+    {
+      "title": "MADONNA: CLUB CONFESSIONS NYC WITH MISTR",
+      "url": "https://www.globenewswire.com/news-release/2026/07/14/3326548/0/en/MADONNA-CLUB-CONFESSIONS-NYC-WITH-MISTR.html",
+      "source": "GlobeNewswire"
+    },
+    {
+      "title": "Rihanna Delivers Surprise Performance at Jay-Z's NYC Concert: 'I'm Rusty'",
+      "url": "https://www.usmagazine.com/celebrity-news/news/rihanna-delivers-surprise-performance-at-jay-zs-nyc-concert/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "Beyoncé & Rihanna on the same stage",
+      "url": "https://www.laineygossip.com/beyonce-rihannas-performance-together-during-jay-zs-weekend-residency-in-new-york-was-unicorn-event/",
+      "source": "LaineyGossip"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
