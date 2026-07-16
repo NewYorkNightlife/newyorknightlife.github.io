@@ -5,9 +5,66 @@
     "summary": "overcast clouds",
     "temp_f": 88,
     "feels_like_f": 93,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 88,
+        "low_f": 84
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 77,
+        "low_f": 77
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 71,
+        "low_f": 71
+      },
+      {
+        "day": "Sun",
+        "summary": "Clear",
+        "high_f": 86,
+        "low_f": 86
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 79,
+        "low_f": 79
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Madonna & Jay-Z's Back-to-Back NYC Shows: What I Learned From Them",
+      "url": "http://www.billboard.com/music/features/madonna-jay-z-club-confessions-extra-innings-new-york-essay-1236294722/",
+      "source": "Billboard"
+    },
+    {
+      "title": "What NYC does when it's brutally, dangerously, disgustingly hot (like right now)",
+      "url": "https://gothamist.com/news/what-nyc-does-when-its-brutally-dangerously-disgustingly-hot-like-right-now",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Meet the vibe coders who want to be the 'MrBeast' of apps",
+      "url": "https://www.businessinsider.com/vibe-coders-danger-testing-los-marc-mrbeast-of-apps-2026-7#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "11,700 Free Photos from John Margolies’ Archive of Americana Architecture: Download, Use & Re-Mix",
+      "url": "https://www.openculture.com/2026/07/free-photos-from-john-margolies-archive-of-americana-architecture.html",
+      "source": "Openculture.com"
+    },
+    {
+      "title": "NYC Mayor Mandami Plans To ARREST & JAIL Jay Z Concert Crashers!",
+      "url": "https://mediatakeout.com/nyc-mayor-mandami-plans-to-arrest-jail-jay-z-concert-crashers/",
+      "source": "Mediatakeout.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
