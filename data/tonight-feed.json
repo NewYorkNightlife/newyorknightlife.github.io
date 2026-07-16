@@ -5,9 +5,66 @@
     "summary": "scattered clouds",
     "temp_f": 78,
     "feels_like_f": 78,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 82,
+        "low_f": 79
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 80,
+        "low_f": 80
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 81,
+        "low_f": 81
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 81,
+        "low_f": 81
+      },
+      {
+        "day": "Mon",
+        "summary": "Clear",
+        "high_f": 78,
+        "low_f": 78
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Meet the vibe coders who want to be the 'MrBeast' of apps",
+      "url": "https://www.businessinsider.com/vibe-coders-danger-testing-los-marc-mrbeast-of-apps-2026-7#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "11,700 Free Photos from John Margolies’ Archive of Americana Architecture: Download, Use & Re-Mix",
+      "url": "https://www.openculture.com/2026/07/free-photos-from-john-margolies-archive-of-americana-architecture.html",
+      "source": "Openculture.com"
+    },
+    {
+      "title": "NYC Mayor Mandami Plans To ARREST & JAIL Jay Z Concert Crashers!",
+      "url": "https://mediatakeout.com/nyc-mayor-mandami-plans-to-arrest-jail-jay-z-concert-crashers/",
+      "source": "Mediatakeout.com"
+    },
+    {
+      "title": "Charli XCX goes braless in a see-through top as she jets back to London after album listening party in New York",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15975777/Charli-XCX-goes-braless-jets-London-album-listening-party-New-York.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "New York Comedy Festival 2026 Reveals Headliners, Show Schedule",
+      "url": "http://www.hollywoodreporter.com/news/general-news/new-york-comedy-festival-2026-lineup-schedule-1236647319/",
+      "source": "Hollywood Reporter"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
