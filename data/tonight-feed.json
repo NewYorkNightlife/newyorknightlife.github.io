@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "GBK Brand Bar Celebrates ESPY Week with Annual Pre-ESPY Luxury Lounge & FIFA World Cup Semifinal Viewing Party in New York City",
+      "url": "https://www.prnewswire.com/news-releases/gbk-brand-bar-celebrates-espy-week-with-annual-pre-espy-luxury-lounge--fifa-world-cup-semifinal-viewing-party-in-new-york-city-302826898.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Early Closing Of ‘Cats: The Jellicle Ball’ Shines Spotlight On Risky Business Of Broadway Musicals",
+      "url": "http://deadline.com/2026/07/cats-jellicle-ball-broadway-closing-1236983195/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Madonna & Jay-Z's Back-to-Back NYC Shows: What I Learned From Them",
+      "url": "http://www.billboard.com/music/features/madonna-jay-z-club-confessions-extra-innings-new-york-essay-1236294722/",
+      "source": "Billboard"
+    },
+    {
+      "title": "What NYC does when it's brutally, dangerously, disgustingly hot (like right now)",
+      "url": "https://gothamist.com/news/what-nyc-does-when-its-brutally-dangerously-disgustingly-hot-like-right-now",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Meet the vibe coders who want to be the 'MrBeast' of apps",
+      "url": "https://www.businessinsider.com/vibe-coders-danger-testing-los-marc-mrbeast-of-apps-2026-7#article",
+      "source": "Business Insider"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
