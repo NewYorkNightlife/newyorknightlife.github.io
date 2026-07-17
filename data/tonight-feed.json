@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Odyssey rich list: From Zendaya and Anne Hathaway to Matt Damon and Charlize Theron - which Hollywood star from Christopher Nolan's new epic comes out on top",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15981957/The-Odyssey-rich-list-Zendaya-Anne-Hathaway.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Bundesliga Broadens Broadcast Accessibility for Fans in U.S. with New Deals with Versant's USA Sports and NBCUniversal's Telemundo",
+      "url": "https://www.prnewswire.com/news-releases/bundesliga-broadens-broadcast-accessibility-for-fans-in-us-with-new-deals-with-versants-usa-sports-and-nbcuniversals-telemundo-302827493.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Skullcandy and Bose reunite for a headphone full of firsts",
+      "url": "http://www.popsci.com/gear/skullcandy-crusher-1080-anc-sensory-bass-premium-sound-by-bose-quietcontrol-truespatial-waveform-tony-hawk-product-news/",
+      "source": "Popular Science"
+    },
+    {
+      "title": "GBK Brand Bar Celebrates ESPY Week with Annual Pre-ESPY Luxury Lounge & FIFA World Cup Semifinal Viewing Party in New York City",
+      "url": "https://www.prnewswire.com/news-releases/gbk-brand-bar-celebrates-espy-week-with-annual-pre-espy-luxury-lounge--fifa-world-cup-semifinal-viewing-party-in-new-york-city-302826898.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Early Closing Of ‘Cats: The Jellicle Ball’ Shines Spotlight On Risky Business Of Broadway Musicals",
+      "url": "http://deadline.com/2026/07/cats-jellicle-ball-broadway-closing-1236983195/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
