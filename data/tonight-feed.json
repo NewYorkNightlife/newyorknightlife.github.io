@@ -5,9 +5,66 @@
     "summary": "broken clouds",
     "temp_f": 83,
     "feels_like_f": 83,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 82,
+        "low_f": 79
+      },
+      {
+        "day": "Sat",
+        "summary": "Rain",
+        "high_f": 64,
+        "low_f": 64
+      },
+      {
+        "day": "Sun",
+        "summary": "Clear",
+        "high_f": 82,
+        "low_f": 82
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 80,
+        "low_f": 80
+      },
+      {
+        "day": "Tue",
+        "summary": "Rain",
+        "high_f": 75,
+        "low_f": 75
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Bundesliga Broadens Broadcast Accessibility for Fans in U.S. with New Deals with Versant's USA Sports and NBCUniversal's Telemundo",
+      "url": "https://www.prnewswire.com/news-releases/bundesliga-broadens-broadcast-accessibility-for-fans-in-us-with-new-deals-with-versants-usa-sports-and-nbcuniversals-telemundo-302827493.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Skullcandy and Bose reunite for a headphone full of firsts",
+      "url": "http://www.popsci.com/gear/skullcandy-crusher-1080-anc-sensory-bass-premium-sound-by-bose-quietcontrol-truespatial-waveform-tony-hawk-product-news/",
+      "source": "Popular Science"
+    },
+    {
+      "title": "GBK Brand Bar Celebrates ESPY Week with Annual Pre-ESPY Luxury Lounge & FIFA World Cup Semifinal Viewing Party in New York City",
+      "url": "https://www.prnewswire.com/news-releases/gbk-brand-bar-celebrates-espy-week-with-annual-pre-espy-luxury-lounge--fifa-world-cup-semifinal-viewing-party-in-new-york-city-302826898.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Early Closing Of ‘Cats: The Jellicle Ball’ Shines Spotlight On Risky Business Of Broadway Musicals",
+      "url": "http://deadline.com/2026/07/cats-jellicle-ball-broadway-closing-1236983195/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Madonna & Jay-Z's Back-to-Back NYC Shows: What I Learned From Them",
+      "url": "http://www.billboard.com/music/features/madonna-jay-z-club-confessions-extra-innings-new-york-essay-1236294722/",
+      "source": "Billboard"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
