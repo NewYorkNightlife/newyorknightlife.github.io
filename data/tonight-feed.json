@@ -5,9 +5,66 @@
     "summary": "scattered clouds",
     "temp_f": 74,
     "feels_like_f": 75,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 72,
+        "low_f": 69
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 69,
+        "low_f": 69
+      },
+      {
+        "day": "Mon",
+        "summary": "Clear",
+        "high_f": 69,
+        "low_f": 69
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 73,
+        "low_f": 73
+      },
+      {
+        "day": "Wed",
+        "summary": "Clouds",
+        "high_f": 71,
+        "low_f": 71
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Film Screening: In the Heights",
+      "url": "https://www.princeton.edu/events/2026/film-screening-heights",
+      "source": "Princeton University"
+    },
+    {
+      "title": "Taylor Swift parties with WAGs at NFL star’s wedding with Travis Kelce",
+      "url": "https://pagesix.com/2026/07/16/entertainment/taylor-swift-parties-with-wags-at-nfl-stars-wedding-with-travis-kelce/",
+      "source": "Page Six"
+    },
+    {
+      "title": "The Odyssey rich list: From Zendaya and Anne Hathaway to Matt Damon and Charlize Theron - which Hollywood star from Christopher Nolan's new epic comes out on top",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15981957/The-Odyssey-rich-list-Zendaya-Anne-Hathaway.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Bundesliga Broadens Broadcast Accessibility for Fans in U.S. with New Deals with Versant's USA Sports and NBCUniversal's Telemundo",
+      "url": "https://www.prnewswire.com/news-releases/bundesliga-broadens-broadcast-accessibility-for-fans-in-us-with-new-deals-with-versants-usa-sports-and-nbcuniversals-telemundo-302827493.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Skullcandy and Bose reunite for a headphone full of firsts",
+      "url": "http://www.popsci.com/gear/skullcandy-crusher-1080-anc-sensory-bass-premium-sound-by-bose-quietcontrol-truespatial-waveform-tony-hawk-product-news/",
+      "source": "Popular Science"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
