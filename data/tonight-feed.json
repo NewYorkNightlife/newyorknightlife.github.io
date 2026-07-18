@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Madison Square Garden sues media outlet over allegations of secret database tracking celebrity 'risk scores'",
+      "url": "https://www.foxnews.com/media/madison-square-garden-sues-media-outlet-allegations-secret-database-tracking-celebrity-risk-scores",
+      "source": "Fox News"
+    },
+    {
+      "title": "He’s the Tokyo mixology master Jeff Bezos flies in to mix his martinis — and now he’s ready to quietly disrupt NYC cocktail culture",
+      "url": "https://nypost.com/2026/07/17/lifestyle/jeff-bezos-favorite-tokyo-cocktail-bar-is-opening-in-nyc/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Man convicted in O’Shae Sibley hate crime killing sentenced to 20 years in prison",
+      "url": "https://www.advocate.com/news/crime/oshae-sibley-killer-sentenced",
+      "source": "Advocate.com"
+    },
+    {
+      "title": "7 stellar NYC date ideas for queer couples",
+      "url": "https://www.out.com/travel-nightlife/best-lgbtq-date-ideas-nyc",
+      "source": "Out.com"
+    },
+    {
+      "title": "New York issues health alert urging residents to 'limit outdoor activity' just days before World Cup final",
+      "url": "https://www.gbnews.com/sport/football/new-york-red-health-alert-world-cup-final",
+      "source": "Gbnews.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
