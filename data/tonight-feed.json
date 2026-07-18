@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "7 stellar NYC date ideas for queer couples",
+      "url": "https://www.out.com/travel-nightlife/best-lgbtq-date-ideas-nyc",
+      "source": "Out.com"
+    },
+    {
+      "title": "New York issues health alert urging residents to 'limit outdoor activity' just days before World Cup final",
+      "url": "https://www.gbnews.com/sport/football/new-york-red-health-alert-world-cup-final",
+      "source": "Gbnews.com"
+    },
+    {
+      "title": "Film Screening: In the Heights",
+      "url": "https://www.princeton.edu/events/2026/film-screening-heights",
+      "source": "Princeton University"
+    },
+    {
+      "title": "Taylor Swift parties with WAGs at NFL star’s wedding with Travis Kelce",
+      "url": "https://pagesix.com/2026/07/16/entertainment/taylor-swift-parties-with-wags-at-nfl-stars-wedding-with-travis-kelce/",
+      "source": "Page Six"
+    },
+    {
+      "title": "The Odyssey rich list: From Zendaya and Anne Hathaway to Matt Damon and Charlize Theron - which Hollywood star from Christopher Nolan's new epic comes out on top",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15981957/The-Odyssey-rich-list-Zendaya-Anne-Hathaway.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
