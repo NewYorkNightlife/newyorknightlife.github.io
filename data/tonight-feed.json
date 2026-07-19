@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Shakira Gifts Brooklyn Concert Tickets to Honorees & More Latin Music News",
+      "url": "http://www.billboard.com/music/latin/shakira-tickets-ximena-sarinana-hispanic-heritage-belicofest-1236296712/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Why ‘Call of Duty’ Is Making Its Fanatics Fest Debut With ‘Modern Warfare 4’ — And Bringing ‘Obsession’ Star Inde Navarrette Along for the Mission",
+      "url": "https://variety.com/2026/gaming/news/modern-warfare-4-call-of-duty-fanatics-fest-1236812530/",
+      "source": "Variety"
+    },
+    {
+      "title": "Argentina’s New York fans share hopes before 2026 World Cup final",
+      "url": "https://www.aljazeera.com/sports/2026/7/18/argentinas-new-york-fans-share-hopes-ahead-of-2026-world-cup-final",
+      "source": "Al Jazeera English"
+    },
+    {
+      "title": "DJ Khaled Talks Snipes’ Back-to-school Campaign, His Favorite Sneakers of 2026 and More",
+      "url": "http://wwd.com/footwear-news/shoe-trends/dj-khaled-snipes-back-to-school-campaign-interview-1239074291/",
+      "source": "WWD"
+    },
+    {
+      "title": "Madison Square Garden sues media outlet over allegations of secret database tracking celebrity 'risk scores'",
+      "url": "https://www.foxnews.com/media/madison-square-garden-sues-media-outlet-allegations-secret-database-tracking-celebrity-risk-scores",
+      "source": "Fox News"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
