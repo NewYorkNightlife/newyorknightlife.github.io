@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Argentina’s New York fans share hopes before 2026 World Cup final",
+      "url": "https://www.aljazeera.com/sports/2026/7/18/argentinas-new-york-fans-share-hopes-ahead-of-2026-world-cup-final",
+      "source": "Al Jazeera English"
+    },
+    {
+      "title": "DJ Khaled Talks Snipes’ Back-to-school Campaign, His Favorite Sneakers of 2026 and More",
+      "url": "http://wwd.com/footwear-news/shoe-trends/dj-khaled-snipes-back-to-school-campaign-interview-1239074291/",
+      "source": "WWD"
+    },
+    {
+      "title": "Madison Square Garden sues media outlet over allegations of secret database tracking celebrity 'risk scores'",
+      "url": "https://www.foxnews.com/media/madison-square-garden-sues-media-outlet-allegations-secret-database-tracking-celebrity-risk-scores",
+      "source": "Fox News"
+    },
+    {
+      "title": "He’s the Tokyo mixology master Jeff Bezos flies in to mix his martinis — and now he’s ready to quietly disrupt NYC cocktail culture",
+      "url": "https://nypost.com/2026/07/17/lifestyle/jeff-bezos-favorite-tokyo-cocktail-bar-is-opening-in-nyc/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Man convicted in O’Shae Sibley hate crime killing sentenced to 20 years in prison",
+      "url": "https://www.advocate.com/news/crime/oshae-sibley-killer-sentenced",
+      "source": "Advocate.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
