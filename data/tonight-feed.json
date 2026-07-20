@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Woman gunned down in NYC by uncle over property dispute was aspiring rapper who once performed with NY rap icon",
+      "url": "https://nypost.com/2026/07/18/us-news/woman-gunned-down-in-nyc-by-uncle-over-property-dispute-was-aspiring-rapper-who-once-performed-with-ny-rap-icon/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Justin Bieber Performs Shirtless During Surprise Fanatics Fest Appearance",
+      "url": "https://www.usmagazine.com/celebrity-news/news/justin-bieber-cameos-at-fanatics-fest-performs-shirtless/",
+      "source": "Us Weekly"
+    },
+    {
+      "title": "Shakira Gifts Brooklyn Concert Tickets to Honorees & More Latin Music News",
+      "url": "http://www.billboard.com/music/latin/shakira-tickets-ximena-sarinana-hispanic-heritage-belicofest-1236296712/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Why ‘Call of Duty’ Is Making Its Fanatics Fest Debut With ‘Modern Warfare 4’ — And Bringing ‘Obsession’ Star Inde Navarrette Along for the Mission",
+      "url": "https://variety.com/2026/gaming/news/modern-warfare-4-call-of-duty-fanatics-fest-1236812530/",
+      "source": "Variety"
+    },
+    {
+      "title": "Argentina’s New York fans share hopes before 2026 World Cup final",
+      "url": "https://www.aljazeera.com/sports/2026/7/18/argentinas-new-york-fans-share-hopes-ahead-of-2026-world-cup-final",
+      "source": "Al Jazeera English"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
