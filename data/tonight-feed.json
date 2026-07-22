@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Trinitarios gangbangers charged with killing NYC influencer who starred in Tekashi 6ix9ine music video",
+      "url": "https://nypost.com/2026/07/20/us-news/trinitarios-gangbangers-charged-with-5-murders-including-killing-of-nyc-influencer/",
+      "source": "New York Post"
+    },
+    {
+      "title": "I talked to Zeds Dead about their postponed NYC show and tour. Here’s what’s next",
+      "url": "https://nypost.com/2026/07/20/ticket-sales/zeds-dead-journey-of-a-lifetime-tour-interview-2026-get-tickets/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Links 7/20/2026",
+      "url": "https://www.nakedcapitalism.com/2026/07/links-7-20-2026.html",
+      "source": "Nakedcapitalism.com"
+    },
+    {
+      "title": "Colbo Expands With Womenswear, Japan Shop & Sperry Collab",
+      "url": "http://wwd.com/menswear-news/mens-retail-business/colbo-womenswear-japan-shop-sperry-collaboration-1239068314/",
+      "source": "WWD"
+    },
+    {
+      "title": "Celebrities who break the 'rules'! From smoking indoors, to parking fines and obnoxious dressing - the faux pas that have made headlines after JLo sported an outlandishly large hat to Wimbledon",
+      "url": "https://www.dailymail.com/tvshowbiz/article-15982831/Celebrities-break-rules-smoking-indoors-parking-fines-obnoxious-dressing-faux-pas-headlines-JLo-sported-outlandishly-large-hat-Wimbledon.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
