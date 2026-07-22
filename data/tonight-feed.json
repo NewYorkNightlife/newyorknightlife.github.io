@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Plan Your LAMC 2026 Week: Panels, Concerts & Showcases in NYC",
+      "url": "http://www.billboard.com/lists/lamc-2026-nyc-guide-panels-showcases-concerts-trueno-milo-j/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Trinitarios gangbangers charged with killing NYC influencer who starred in Tekashi 6ix9ine music video",
+      "url": "https://nypost.com/2026/07/20/us-news/trinitarios-gangbangers-charged-with-5-murders-including-killing-of-nyc-influencer/",
+      "source": "New York Post"
+    },
+    {
+      "title": "I talked to Zeds Dead about their postponed NYC show and tour. Here’s what’s next",
+      "url": "https://nypost.com/2026/07/20/ticket-sales/zeds-dead-journey-of-a-lifetime-tour-interview-2026-get-tickets/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Links 7/20/2026",
+      "url": "https://www.nakedcapitalism.com/2026/07/links-7-20-2026.html",
+      "source": "Nakedcapitalism.com"
+    },
+    {
+      "title": "Colbo Expands With Womenswear, Japan Shop & Sperry Collab",
+      "url": "http://wwd.com/menswear-news/mens-retail-business/colbo-womenswear-japan-shop-sperry-collaboration-1239068314/",
+      "source": "WWD"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
