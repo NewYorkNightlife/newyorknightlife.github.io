@@ -5,9 +5,66 @@
     "summary": "scattered clouds",
     "temp_f": 80,
     "feels_like_f": 80,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Thu",
+        "summary": "Clouds",
+        "high_f": 80,
+        "low_f": 80
+      },
+      {
+        "day": "Fri",
+        "summary": "Clouds",
+        "high_f": 84,
+        "low_f": 84
+      },
+      {
+        "day": "Sat",
+        "summary": "Clear",
+        "high_f": 82,
+        "low_f": 82
+      },
+      {
+        "day": "Sun",
+        "summary": "Clouds",
+        "high_f": 83,
+        "low_f": 83
+      },
+      {
+        "day": "Mon",
+        "summary": "Clouds",
+        "high_f": 81,
+        "low_f": 81
+      }
+    ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Zohran Mamdani Draws Both Praise and Criticism After Admitting He Can’t Arrest Netanyahu",
+      "url": "https://www.thewrap.com/media-platforms/politics/zohran-mamdani-clarifies-netanyahu-arrest-capabilities-sparks-debate/",
+      "source": "TheWrap"
+    },
+    {
+      "title": "Sing for Hope Welcomes Arts & Health Pioneer Dr. Jill Sonke to Board",
+      "url": "https://www.prnewswire.com/news-releases/sing-for-hope-welcomes-arts--health-pioneer-dr-jill-sonke-to-board-302831344.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "RUSH has four MSG concerts next week. Get the cheapest tickets with a discount",
+      "url": "https://nypost.com/2026/07/21/ticket-sales/get-the-cheapest-rush-msg-concert-tickets-with-a-discount/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Plan Your LAMC 2026 Week: Panels, Concerts & Showcases in NYC",
+      "url": "http://www.billboard.com/lists/lamc-2026-nyc-guide-panels-showcases-concerts-trueno-milo-j/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Trinitarios gangbangers charged with killing NYC influencer who starred in Tekashi 6ix9ine music video",
+      "url": "https://nypost.com/2026/07/20/us-news/trinitarios-gangbangers-charged-with-5-murders-including-killing-of-nyc-influencer/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
