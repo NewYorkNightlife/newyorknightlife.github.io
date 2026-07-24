@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Ex-NYC Mayor Eric Adams targeted in bonkers Chinese AI videos with fake voiceover claiming ‘I am Jesus Christ’",
+      "url": "https://nypost.com/2026/07/23/us-news/eric-adams-targeted-in-bonkers-chinese-ai-videos/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Survivor of Hamas terror attack in Israel slams Mamdani over 'dangerous' video about Netanyahu",
+      "url": "https://www.foxnews.com/politics/survivor-hamas-terror-attack-israel-slams-mamdani-over-dangerous-video-about-netanyahu",
+      "source": "Fox News"
+    },
+    {
+      "title": "Two risky $30 million musicals are battling on Broadway — ‘Dolly’ and ‘Paddington’",
+      "url": "https://nypost.com/2026/07/22/entertainment/two-risky-30-million-musicals-are-battling-on-broadway-dolly-and-paddington/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Zohran Mamdani Draws Both Praise and Criticism After Admitting He Can’t Arrest Netanyahu",
+      "url": "https://www.thewrap.com/media-platforms/politics/zohran-mamdani-clarifies-netanyahu-arrest-capabilities-sparks-debate/",
+      "source": "TheWrap"
+    },
+    {
+      "title": "Sing for Hope Welcomes Arts & Health Pioneer Dr. Jill Sonke to Board",
+      "url": "https://www.prnewswire.com/news-releases/sing-for-hope-welcomes-arts--health-pioneer-dr-jill-sonke-to-board-302831344.html",
+      "source": "PRNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
