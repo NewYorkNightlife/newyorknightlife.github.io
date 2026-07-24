@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Battle of the beaches: The Jersey Shore vs. Long Island",
+      "url": "https://gothamist.com/arts-entertainment/battle-of-the-beaches-the-jersey-shore-vs-long-island",
+      "source": "Gothamist"
+    },
+    {
+      "title": "The Rockettes Announce 2026 Christmas Spectacular: How to Get Tickets",
+      "url": "https://consequence.net/2026/07/the-rockettes-2026-christmas-spectacular-how-to-get-tickets/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Ex-NYC Mayor Eric Adams targeted in bonkers Chinese AI videos with fake voiceover claiming ‘I am Jesus Christ’",
+      "url": "https://nypost.com/2026/07/23/us-news/eric-adams-targeted-in-bonkers-chinese-ai-videos/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Survivor of Hamas terror attack in Israel slams Mamdani over 'dangerous' video about Netanyahu",
+      "url": "https://www.foxnews.com/politics/survivor-hamas-terror-attack-israel-slams-mamdani-over-dangerous-video-about-netanyahu",
+      "source": "Fox News"
+    },
+    {
+      "title": "Two risky $30 million musicals are battling on Broadway — ‘Dolly’ and ‘Paddington’",
+      "url": "https://nypost.com/2026/07/22/entertainment/two-risky-30-million-musicals-are-battling-on-broadway-dolly-and-paddington/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
