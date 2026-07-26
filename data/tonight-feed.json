@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Jon Bon Jovi, 64, abruptly stops NYC concert and tells audience he is 'hurt' before leaving the stage",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16001617/jon-bon-jovi-stops-nyc-concert-audience-hurt-stage.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Taylor Swift, Travis Kelce donate $2 million to families of fallen NYC first responders",
+      "url": "https://www.police1.com/entertainment/taylor-swift-travis-kelce-give-2m-to-families-of-fallen-nyc-first-responders",
+      "source": "Police1.com"
+    },
+    {
+      "title": "Battle of the beaches: The Jersey Shore vs. Long Island",
+      "url": "https://gothamist.com/arts-entertainment/battle-of-the-beaches-the-jersey-shore-vs-long-island",
+      "source": "Gothamist"
+    },
+    {
+      "title": "The Rockettes Announce 2026 Christmas Spectacular: How to Get Tickets",
+      "url": "https://consequence.net/2026/07/the-rockettes-2026-christmas-spectacular-how-to-get-tickets/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Ex-NYC Mayor Eric Adams targeted in bonkers Chinese AI videos with fake voiceover claiming ‘I am Jesus Christ’",
+      "url": "https://nypost.com/2026/07/23/us-news/eric-adams-targeted-in-bonkers-chinese-ai-videos/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
