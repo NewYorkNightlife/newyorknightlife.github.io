@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift and Travis Kelce receive touching notes from first responder families after $2M donation",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16007051/taylor-swift-travis-kelce-responder-families.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce get heartfelt notes from families of first responders after $2M donation",
+      "url": "https://pagesix.com/2026/07/26/entertainment/taylor-swift-and-travis-kelce-get-heartfelt-notes-from-families-of-first-responders-after-2m-donation/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Natanael Cano Offers 1M Pesos to Fan: Uplifting Moments in Latin Music",
+      "url": "http://www.billboard.com/music/latin/natanael-cano-treasure-hunt-uplifting-moments-latin-music-1236302693/",
+      "source": "Billboard"
+    },
+    {
+      "title": "LeBron's pick hurts more since he's going to ex's favorite team | Column",
+      "url": "https://www.beaconjournal.com/story/sports/nba/2026/07/25/lebron-james-decided-to-join-my-exs-favorite-team-in-the-sixers/90934005007/",
+      "source": "Akron Beacon Journal"
+    },
+    {
+      "title": "Anime Limited Licenses Banana Fish Anime",
+      "url": "https://www.animenewsnetwork.com/news/2026-07-25/anime-limited-licenses-banana-fish-anime/.239955",
+      "source": "Anime News Network"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
