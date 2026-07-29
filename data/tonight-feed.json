@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Tuesday: Hili dialogue",
+      "url": "https://whyevolutionistrue.com/2026/07/28/tuesday-hili-dialogue-590/",
+      "source": "Whyevolutionistrue.com"
+    },
+    {
+      "title": "Want to see RUSH at MSG this week? We found discounted last-minute tickets",
+      "url": "https://nypost.com/2026/07/27/ticket-sales/we-found-discounted-last-minute-tickets-to-see-rush-at-msg/",
+      "source": "New York Post"
+    },
+    {
+      "title": "I booked a roomette and a first-class seat on Amtrak trains. The cheaper ride was way more comfortable.",
+      "url": "https://www.businessinsider.com/amtrak-roomette-vs-first-class-acela-comparison#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Jalen Brunson Walks Straight Into NYC Club as Michael Porter Jr. Waits at Security",
+      "url": "https://wealthofgeeks.com/jalen-brunson-walks-straight-into-nyc-club-as-michael-porter-jr-waits-at-security/",
+      "source": "Wealthofgeeks.com"
+    },
+    {
+      "title": "Taylor Swift and Travis Kelce receive touching notes from first responder families after $2M donation",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16007051/taylor-swift-travis-kelce-responder-families.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
