@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Travis Kelce’s reaction to seeing Taylor Swift walk down the aisle revealed",
+      "url": "https://pagesix.com/2026/07/28/entertainment/travis-kelces-reaction-to-seeing-taylor-swift-walk-down-the-aisle-revealed/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Tragic family secret that haunts married elite NYC lawyer, 45, caught on camera passionately kissing underling, 29, in Central Park",
+      "url": "https://www.dailymail.com/news/article-16008333/nathaniel-cullerton-lawyer-central-park-tragic-family-secret.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "What's happening at New York's libraries this August",
+      "url": "https://gothamist.com/arts-entertainment/whats-happening-at-new-yorks-libraries-this-august",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Tuesday: Hili dialogue",
+      "url": "https://whyevolutionistrue.com/2026/07/28/tuesday-hili-dialogue-590/",
+      "source": "Whyevolutionistrue.com"
+    },
+    {
+      "title": "Want to see RUSH at MSG this week? We found discounted last-minute tickets",
+      "url": "https://nypost.com/2026/07/27/ticket-sales/we-found-discounted-last-minute-tickets-to-see-rush-at-msg/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
