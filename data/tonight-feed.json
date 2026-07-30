@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Five-Decades-Owned 1966 BMW R27 at No Reserve",
+      "url": "https://bringatrailer.com/listing/1966-bmw-r27-11/",
+      "source": "Bringatrailer.com"
+    },
+    {
+      "title": "Chase Sapphire Reserve and Highsnobiety Kicked It for the Final Watch Party",
+      "url": "https://www.highsnobiety.com/p/chase-world-cup-watch-party/",
+      "source": "Highsnobiety"
+    },
+    {
+      "title": "John Mulaney Takes Manhattan–Get tickets now for his 9 NYC shows",
+      "url": "https://nypost.com/2026/07/29/ticket-sales/john-mulaney-announces-9-nyc-shows-get-tickets-for-msg-more/",
+      "source": "New York Post"
+    },
+    {
+      "title": "The Square Plans to Turn Times Square Into the World’s Greatest Stage",
+      "url": "https://www.spinmagazine.com/2026/07/the-square-plans-to-turn-times-square-into-the-worlds-greatest-stage/",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "I Reconnected With A College Crush 30 Years Later. Then I Saw Something On His Social Media That Felt Like A Sucker Punch.",
+      "url": "https://www.huffpost.com/entry/college-crush-reconnect-messaging-online_n_6a691d1be4b01948ae991168",
+      "source": "HuffPost"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
