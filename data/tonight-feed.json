@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "I Reconnected With A College Crush 30 Years Later. Then I Saw Something On His Social Media That Felt Like A Sucker Punch.",
+      "url": "https://www.huffpost.com/entry/college-crush-reconnect-messaging-online_n_6a691d1be4b01948ae991168",
+      "source": "HuffPost"
+    },
+    {
+      "title": "A Peek Inside These Black Celebs’ New York City Homes",
+      "url": "https://www.theroot.com/a-peek-inside-these-black-celebs-new-york-city-homes-2000118535",
+      "source": "The Root"
+    },
+    {
+      "title": "‘Les Misérables’ review: Musical returns to NYC in massive Radio City concert",
+      "url": "https://nypost.com/2026/07/28/entertainment/les-miserables-review-musical-returns-to-nyc-in-massive-radio-city-concert/",
+      "source": "New York Post"
+    },
+    {
+      "title": "DJ Jesse De La Peña celebrates 40 years in music",
+      "url": "https://chicagoreader.com/music/gossip-wolf/jesse-de-la-pena-bookclub-blue-groove-song-beacon-ed-askew-geto-djz-house/",
+      "source": "Chicago Reader"
+    },
+    {
+      "title": "Little Island's Summer Season: How Programming the NYC Park Happens",
+      "url": "http://www.billboard.com/music/music-news/little-island-new-york-summer-programming-lineup-1236302614/",
+      "source": "Billboard"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
