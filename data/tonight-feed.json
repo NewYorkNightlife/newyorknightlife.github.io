@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "‘Les Misérables’ review: Musical returns to NYC in massive Radio City concert",
+      "url": "https://nypost.com/2026/07/28/entertainment/les-miserables-review-musical-returns-to-nyc-in-massive-radio-city-concert/",
+      "source": "New York Post"
+    },
+    {
+      "title": "DJ Jesse De La Peña celebrates 40 years in music",
+      "url": "https://chicagoreader.com/music/gossip-wolf/jesse-de-la-pena-bookclub-blue-groove-song-beacon-ed-askew-geto-djz-house/",
+      "source": "Chicago Reader"
+    },
+    {
+      "title": "Little Island's Summer Season: How Programming the NYC Park Happens",
+      "url": "http://www.billboard.com/music/music-news/little-island-new-york-summer-programming-lineup-1236302614/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Man accused of murdering suicidal woman in fetish killing sent pal chilling package before his arrest",
+      "url": "https://nypost.com/2026/07/28/us-news/man-accused-of-murdering-suicidal-woman-sent-pal-chilling-package-before-his-arrest/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Travis Kelce’s reaction to seeing Taylor Swift walk down the aisle revealed",
+      "url": "https://pagesix.com/2026/07/28/entertainment/travis-kelces-reaction-to-seeing-taylor-swift-walk-down-the-aisle-revealed/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
