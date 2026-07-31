@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The 8 best movies to see in theaters (and outside!) this August in NYC",
+      "url": "https://gothamist.com/arts-entertainment/the-8-best-movies-to-see-in-theaters-and-outside-this-august-in-nyc",
+      "source": "Gothamist"
+    },
+    {
+      "title": "We shall dwell amidst wonder and glory for ever: On weird fiction",
+      "url": "https://clereviewofbooks.com/we-shall-dwell-amidst-wonder-and-glory-for-ever-on-weird-fiction/",
+      "source": "Clereviewofbooks.com"
+    },
+    {
+      "title": "Trombonist Julian Priester elevated mainstream jazz with avant-garde soul",
+      "url": "https://chicagoreader.com/music/trombonist-julian-priester-elevated-mainstream-jazz-with-avant-garde-soul/",
+      "source": "Chicago Reader"
+    },
+    {
+      "title": "Five-Decades-Owned 1966 BMW R27 at No Reserve",
+      "url": "https://bringatrailer.com/listing/1966-bmw-r27-11/",
+      "source": "Bringatrailer.com"
+    },
+    {
+      "title": "Chase Sapphire Reserve and Highsnobiety Kicked It for the Final Watch Party",
+      "url": "https://www.highsnobiety.com/p/chase-world-cup-watch-party/",
+      "source": "Highsnobiety"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
