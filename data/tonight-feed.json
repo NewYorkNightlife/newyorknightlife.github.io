@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Best U.S. Cities for Indie Filmmakers in 2026",
+      "url": "https://www.indiewire.com/lists/best-us-cities-indie-filmmakers-2026/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "I paid $180 to sit in business class on a 9-hour Amtrak ride from Rochester to NYC. Next time, I'll stick to coach.",
+      "url": "https://www.businessinsider.com/amtrak-business-class-vs-coach-maple-leaf-train-new-york#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "The Strokes, Charli XCX, Jack White: who had the best album of July?",
+      "url": "https://www.abc.net.au/news/2026-07-31/charli-xcx-strokes-jack-white-willow-four-tet-best-albums-july/106972758",
+      "source": "ABC News (AU)"
+    },
+    {
+      "title": "Is Shaboozey Single? Let’s Take a Stroll Through His Dating History",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a73308846/shaboozey-dating-history/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "‘West Side Familia’: Taylor Hosking On Crafting A New West Side Story With Her Feature Debut About Puerto Rican Biker Gang",
+      "url": "http://deadline.com/2026/07/taylor-hosking-west-side-familia-blackstar-2026-1237013081/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
