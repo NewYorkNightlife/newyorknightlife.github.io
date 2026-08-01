@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Jordan Clarkson's Off-Court Rituals Go Overtime with LAB Series",
+      "url": "https://www.highsnobiety.com/p/jordan-clarksons-lab-series-event/",
+      "source": "Highsnobiety"
+    },
+    {
+      "title": "It's a gorgeous weather weekend in NYC: How to enjoy it",
+      "url": "https://gothamist.com/news/its-a-gorgeous-weather-weekend-in-nyc-how-to-enjoy-it",
+      "source": "Gothamist"
+    },
+    {
+      "title": "‘Spider-Man: Brand New Day’s $309 Million Promo Partner Campaign Is A Hollywood Record",
+      "url": "http://deadline.com/2026/07/spider-man-brand-new-day-marketing-campaign-record-bmw-1237013669/",
+      "source": "Deadline"
+    },
+    {
+      "title": "A Hotel in a 6th-Century Monastery, an Office Channeling 90s New York, and More",
+      "url": "https://www.sightunseen.com/2026/07/a-hotel-in-a-6th-century-monastery-an-office-channeling-90s-new-york-and-more/",
+      "source": "Sightunseen.com"
+    },
+    {
+      "title": "Jason Kelce reveals the one thing that surprised him most about Taylor Swift and Travis’ wedding",
+      "url": "https://pagesix.com/2026/07/30/entertainment/jason-kelce-reveals-the-one-thing-that-surprised-him-most-about-taylor-swift-and-travis-wedding/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
