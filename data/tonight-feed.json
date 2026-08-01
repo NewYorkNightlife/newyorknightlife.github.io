@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "‘Spider-Man: Brand New Day’s $309 Million Promo Partner Campaign Is A Hollywood Record",
+      "url": "http://deadline.com/2026/07/spider-man-brand-new-day-marketing-campaign-record-bmw-1237013669/",
+      "source": "Deadline"
+    },
+    {
+      "title": "A Hotel in a 6th-Century Monastery, an Office Channeling 90s New York, and More",
+      "url": "https://www.sightunseen.com/2026/07/a-hotel-in-a-6th-century-monastery-an-office-channeling-90s-new-york-and-more/",
+      "source": "Sightunseen.com"
+    },
+    {
+      "title": "Jason Kelce reveals the one thing that surprised him most about Taylor Swift and Travis’ wedding",
+      "url": "https://pagesix.com/2026/07/30/entertainment/jason-kelce-reveals-the-one-thing-that-surprised-him-most-about-taylor-swift-and-travis-wedding/",
+      "source": "Page Six"
+    },
+    {
+      "title": "The Best U.S. Cities for Indie Filmmakers in 2026",
+      "url": "https://www.indiewire.com/lists/best-us-cities-indie-filmmakers-2026/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "I paid $180 to sit in business class on a 9-hour Amtrak ride from Rochester to NYC. Next time, I'll stick to coach.",
+      "url": "https://www.businessinsider.com/amtrak-business-class-vs-coach-maple-leaf-train-new-york#article",
+      "source": "Business Insider"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
