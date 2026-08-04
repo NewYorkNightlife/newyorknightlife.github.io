@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Meatpacking District’s Retail Renaissance",
+      "url": "http://wwd.com/business-news/retail/meatpacking-retail-renaissance-newcomers-1239056092/",
+      "source": "WWD"
+    },
+    {
+      "title": "Revisiting Gigi Hadid and Bradley Cooper’s Relationship Timeline Amid Those Possible Marriage Rumors",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a73336249/gigi-hadid-and-bradley-cooper-relationship-timeline/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Fast and Curious: Midwest Bikes and NYC Bugs | Sophie’s ELECTRIC Road Trip #4",
+      "url": "https://www.pbs.org/wnet/nature/fast-and-curious-midwest-bikes-and-nyc-bugs-sophies-electric-road-trip-4/35028/",
+      "source": "PBS"
+    },
+    {
+      "title": "NYC ranked most romantic US city despite shaky reputation for singles — while this surprising Deep South city cracks the top 5",
+      "url": "https://nypost.com/2026/08/03/lifestyle/nyc-ranked-no-1-city-for-romance-among-more-surprising-cities/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Late-Night Noise Pushed Her To The Breaking Point—And She’s Thinking About Fighting Back",
+      "url": "http://twistedsifter.com/2026/08/late-night-noise-pushed-her-to-the-breaking-point-and-shes-thinking-about-fighting-back/",
+      "source": "Twistedsifter.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
