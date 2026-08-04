@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Fast and Curious: Midwest Bikes and NYC Bugs | Sophie’s ELECTRIC Road Trip #4",
+      "url": "https://www.pbs.org/wnet/nature/fast-and-curious-midwest-bikes-and-nyc-bugs-sophies-electric-road-trip-4/35028/",
+      "source": "PBS"
+    },
+    {
+      "title": "NYC ranked most romantic US city despite shaky reputation for singles — while this surprising Deep South city cracks the top 5",
+      "url": "https://nypost.com/2026/08/03/lifestyle/nyc-ranked-no-1-city-for-romance-among-more-surprising-cities/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Late-Night Noise Pushed Her To The Breaking Point—And She’s Thinking About Fighting Back",
+      "url": "http://twistedsifter.com/2026/08/late-night-noise-pushed-her-to-the-breaking-point-and-shes-thinking-about-fighting-back/",
+      "source": "Twistedsifter.com"
+    },
+    {
+      "title": "Dame Dash Borrows Money From Daughter … She Gets Evicted When He Doesn’t Pay Her Back!",
+      "url": "https://mediatakeout.com/dame-dash-borrows-money-from-daughter-she-gets-evicted-when-he-doesnt-pay-her-back/",
+      "source": "Mediatakeout.com"
+    },
+    {
+      "title": "Travis Scott May Score His First Oscar Nomination With ‘The Odyssey’",
+      "url": "https://www.forbes.com/sites/hughmcintyre/2026/08/01/travis-scott-may-score-his-first-oscar-nomination-with-the-odyssey/",
+      "source": "Forbes"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
