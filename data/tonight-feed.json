@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Shaboozey celebrates new album all over NYC, Terrell Owens hits the Hamptons and more sightings",
+      "url": "https://pagesix.com/2026/08/04/society/shaboozey-celebrates-new-album-all-over-nyc-terrell-owens-hits-the-hamptons-and-more-sightings/",
+      "source": "Page Six"
+    },
+    {
+      "title": "KATSEYE 'WILD' Listening Party, Performance Coming to NYC Ahead of Album",
+      "url": "http://www.billboard.com/music/pop/katseye-wild-party-performance-spotify-1236308232/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Inaugural Art Week NYC to Showcase Leading Galleries and Compelling Programming Across the City",
+      "url": "http://wwd.com/business-news/business-features/inaugural-art-week-nyc-showcase-leading-galleries-programming-nov-11-14-1239092565/",
+      "source": "WWD"
+    },
+    {
+      "title": "International J-Pop Star yama to Perform at Anime NYC 2026",
+      "url": "https://www.animenewsnetwork.com/press-release/2026-08-04/international-j-pop-star-yama-to-perform-at-anime-nyc-2026/.240266",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Inside New York’s medical fraud capital where often empty senior centers bill Medicaid $100M-a-year for patients",
+      "url": "https://freerepublic.com/focus/f-news/4390505/posts",
+      "source": "Freerepublic.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
