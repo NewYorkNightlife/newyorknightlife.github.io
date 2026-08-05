@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "International J-Pop Star yama to Perform at Anime NYC 2026",
+      "url": "https://www.animenewsnetwork.com/press-release/2026-08-04/international-j-pop-star-yama-to-perform-at-anime-nyc-2026/.240266",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Inside New York’s medical fraud capital where often empty senior centers bill Medicaid $100M-a-year for patients",
+      "url": "https://freerepublic.com/focus/f-news/4390505/posts",
+      "source": "Freerepublic.com"
+    },
+    {
+      "title": "Taylor Swift's newlywed 'bliss' as Mrs Kelce: Friends reveal extraordinarily intimate details from inside marital home... their mornings 'waking up together'… and Travis' pet name that makes her 'melt'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16020769/Taylor-Swift-travis-kelce-newlyweds.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "The Meatpacking District’s Retail Renaissance",
+      "url": "http://wwd.com/business-news/retail/meatpacking-retail-renaissance-newcomers-1239056092/",
+      "source": "WWD"
+    },
+    {
+      "title": "Revisiting Gigi Hadid and Bradley Cooper’s Relationship Timeline Amid Those Possible Marriage Rumors",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a73336249/gigi-hadid-and-bradley-cooper-relationship-timeline/",
+      "source": "Cosmopolitan.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
