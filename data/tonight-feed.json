@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Not the Same as it Ever Was, David Byrne Shares His Biking Playlist",
+      "url": "https://bikerumor.com/not-the-same-as-it-ever-was-david-byrne-shares-his-biking-playlist/",
+      "source": "Bikerumor.com"
+    },
+    {
+      "title": "Kaia Gerber denies resemblance to mom Cindy Crawford after lookalike red carpet appearance",
+      "url": "https://pagesix.com/2026/08/05/celebrity-news/kaia-gerber-denies-resemblance-to-mom-cindy-crawford/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Inside Gigi Hadid and Bradley Cooper's 20-year age gap romance after the low-key pair bonded over the 'everyday chaos of parenting' amid rumours they've secretly married",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16026787/Inside-Gigi-Hadid-Bradley-Coopers-20-year-age-gap-romance-low-key-pair-bonded-everyday-chaos-parenting-amid-rumours-theyve-secretly-married.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Shaboozey celebrates new album all over NYC, Terrell Owens hits the Hamptons and more sightings",
+      "url": "https://pagesix.com/2026/08/04/society/shaboozey-celebrates-new-album-all-over-nyc-terrell-owens-hits-the-hamptons-and-more-sightings/",
+      "source": "Page Six"
+    },
+    {
+      "title": "KATSEYE 'WILD' Listening Party, Performance Coming to NYC Ahead of Album",
+      "url": "http://www.billboard.com/music/pop/katseye-wild-party-performance-spotify-1236308232/",
+      "source": "Billboard"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
