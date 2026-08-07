@@ -5,7 +5,38 @@
     "summary": "heavy intensity rain",
     "temp_f": 78,
     "feels_like_f": 79,
-    "five_day": []
+    "five_day": [
+      {
+        "day": "Fri",
+        "summary": "Rain",
+        "high_f": 78,
+        "low_f": 78
+      },
+      {
+        "day": "Sat",
+        "summary": "Clouds",
+        "high_f": 83,
+        "low_f": 83
+      },
+      {
+        "day": "Sun",
+        "summary": "Clear",
+        "high_f": 89,
+        "low_f": 89
+      },
+      {
+        "day": "Mon",
+        "summary": "Rain",
+        "high_f": 86,
+        "low_f": 86
+      },
+      {
+        "day": "Tue",
+        "summary": "Clouds",
+        "high_f": 86,
+        "low_f": 86
+      }
+    ]
   },
   "headlines": [],
   "featured_tonight": [],
