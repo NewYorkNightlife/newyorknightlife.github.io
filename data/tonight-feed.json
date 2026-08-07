@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Joe Hisaishi is about to kick off his Radio City run. Get discounted tickets",
+      "url": "https://nypost.com/2026/08/06/ticket-sales/get-last-minute-tickets-for-joe-hisaishi-radio-city-concerts/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Deadlifting Our Way To a More Inclusive Strength Sports World",
+      "url": "http://www.autostraddle.com/deadlifting-our-way-to-a-more-inclusive-strength-sports-world/",
+      "source": "Autostraddle.com"
+    },
+    {
+      "title": "How an NYC Nightlife Legend Tracked Down the Pablo Escobar of Animal Trafficking",
+      "url": "https://variety.com/2026/tv/news/monsters-of-god-hbo-eric-goode-tiger-king-reptile-smuggling-joe-exotic-safdie-brothers-1236828803/",
+      "source": "Variety"
+    },
+    {
+      "title": "Hilary Duff Brings Out Good Charlotte for \"The Anthem\" Following Their Company's Mass Music Publication Layoffs",
+      "url": "https://exclaim.ca/music/article/hilary-duff-brings-out-good-charlotte-for-the-anthem-following-their-company-s-mass-music-publication-layoffs",
+      "source": "Exclaim!"
+    },
+    {
+      "title": "A+E Global Media Honors the 25th Anniversary of 9/11 with Two New Projects Executive Produced by Robin Roberts",
+      "url": "http://www.thefutoncritic.com/news/2026/08/06/apluse-global-media-honors-the-25th-anniversary-of-9-11-with-two-new-projects-executive-produced-by-robin-roberts-324313/20260806aande01/",
+      "source": "Thefutoncritic.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
