@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A+E Global Media Honors the 25th Anniversary of 9/11 with Two New Projects Executive Produced by Robin Roberts",
+      "url": "http://www.thefutoncritic.com/news/2026/08/06/apluse-global-media-honors-the-25th-anniversary-of-9-11-with-two-new-projects-executive-produced-by-robin-roberts-324313/20260806aande01/",
+      "source": "Thefutoncritic.com"
+    },
+    {
+      "title": "7 of Anthony Bourdain's Favorite Travel Destinations—And Why",
+      "url": "https://www.mentalfloss.com/geography/wanderlust/anthony-bourdain-favorite-travel-destinations",
+      "source": "Mental Floss"
+    },
+    {
+      "title": "Gracie Abrams’ Dating History Gives a Subtle Peek Into Her Songwriting Inspo",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a73356941/gracie-abrams-dating-history/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "It’s All About The Release Date: Diddy Gets More Prison Time After Dust-Up With Another Inmate In The Joint",
+      "url": "http://deadline.com/2026/08/diddy-jail-fight-longer-sentence-1237018908/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Now Hear This: August 2026",
+      "url": "https://www.spinmagazine.com/2026/08/now-hear-this-august-2026/",
+      "source": "Spinmagazine.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
