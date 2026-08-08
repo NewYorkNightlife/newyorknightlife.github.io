@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "I spent most of my 20s traveling all over the world. By 29, I was completely over it.",
+      "url": "https://www.businessinsider.com/traveled-full-time-downsides-challenges-stopped-went-home-2026-8#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Resurfaced Mamdani interview ignites internet frenzy over alleged 'fake' Ugandan accent",
+      "url": "https://www.foxnews.com/politics/resurfaced-mamdani-interview-ignites-internet-frenzy-alleged-fake-ugandan-accent",
+      "source": "Fox News"
+    },
+    {
+      "title": "Joe Hisaishi is about to kick off his Radio City run. Get discounted tickets",
+      "url": "https://nypost.com/2026/08/06/ticket-sales/get-last-minute-tickets-for-joe-hisaishi-radio-city-concerts/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Deadlifting Our Way To a More Inclusive Strength Sports World",
+      "url": "http://www.autostraddle.com/deadlifting-our-way-to-a-more-inclusive-strength-sports-world/",
+      "source": "Autostraddle.com"
+    },
+    {
+      "title": "How an NYC Nightlife Legend Tracked Down the Pablo Escobar of Animal Trafficking",
+      "url": "https://variety.com/2026/tv/news/monsters-of-god-hbo-eric-goode-tiger-king-reptile-smuggling-joe-exotic-safdie-brothers-1236828803/",
+      "source": "Variety"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
