@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "CORTIS' First Full US Concert in New York: Best Moments & Recap",
+      "url": "http://www.billboard.com/lists/cortis-put-your-phone-down-tour-nyc-best-moments-review/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Bus Riders Tell Mamdani: Don’t Wait for BRT to Get Illegal Parking Out of the Bus’s Way",
+      "url": "https://nyc.streetsblog.org/2026/08/07/mamdani-bus-town-hall-flatbush",
+      "source": "Streetsblog.org"
+    },
+    {
+      "title": "I took my first overnight Amtrak train from NYC to Miami. Here are 11 ways I made the 30-hour ride more bearable.",
+      "url": "https://www.businessinsider.com/amtrak-nyc-to-miami-overnight-train-tips#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "I spent most of my 20s traveling all over the world. By 29, I was completely over it.",
+      "url": "https://www.businessinsider.com/traveled-full-time-downsides-challenges-stopped-went-home-2026-8#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Resurfaced Mamdani interview ignites internet frenzy over alleged 'fake' Ugandan accent",
+      "url": "https://www.foxnews.com/politics/resurfaced-mamdani-interview-ignites-internet-frenzy-alleged-fake-ugandan-accent",
+      "source": "Fox News"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
