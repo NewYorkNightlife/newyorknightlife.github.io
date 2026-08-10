@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Anti-rent radical and Mamdani pal who is ‘squatting’ in Brooklyn is Grammy nepo baby",
+      "url": "https://nypost.com/2026/08/08/us-news/nyc-tenant-activist-who-calls-rent-ransom-is-daughter-of-grammy-winner/",
+      "source": "New York Post"
+    },
+    {
+      "title": "The Best TV Trivia Questions to See If All That Streaming Has Paid Off",
+      "url": "https://www.mentalfloss.com/entertainment/tv/tv-trivia-quiz-questions",
+      "source": "Mental Floss"
+    },
+    {
+      "title": "Resurfaced Mamdani interview sparks severe backlash over alleged ‘fake’ Ugandan accent",
+      "url": "https://www.foxnews.com/politics/resurfaced-mamdani-interview-ignites-internet-frenzy-alleged-fake-ugandan-accent.amp",
+      "source": "Fox News"
+    },
+    {
+      "title": "CORTIS' First Full US Concert in New York: Best Moments & Recap",
+      "url": "http://www.billboard.com/lists/cortis-put-your-phone-down-tour-nyc-best-moments-review/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Bus Riders Tell Mamdani: Don’t Wait for BRT to Get Illegal Parking Out of the Bus’s Way",
+      "url": "https://nyc.streetsblog.org/2026/08/07/mamdani-bus-town-hall-flatbush",
+      "source": "Streetsblog.org"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
