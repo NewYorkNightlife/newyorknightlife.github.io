@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Woke music heiress, 39, has been SQUATTING in Brooklyn apartment for last four years with her refusal to pay rent driving her black landlord into foreclosure, lawsuit claims",
+      "url": "https://www.dailymail.com/news/article-16044315/music-heiress-SQUATTING-brooklyn-apartment-rent.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "KATE SPADE NEW YORK TURNS NEW YORK CITY INTO A SPONTANEOUS SEARCH FOR JOY IN THE FALL CAMPAIGN FEATURING NEW GLOBAL BRAND AMBASSADOR, TYLA",
+      "url": "https://www.prnewswire.com/news-releases/kate-spade-new-york-turns-new-york-city-into-a-spontaneous-search-for-joy-in-the-fall-campaign-featuring-new-global-brand-ambassador-tyla-302847663.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "The Best U.S. Cities for Cafe Workers, Ranked (And Why NYC Didn't Make the Cut)",
+      "url": "https://www.mentalfloss.com/geography/cities/best-us-cities-cafe-workers",
+      "source": "Mental Floss"
+    },
+    {
+      "title": "NYC’s summer weather has been just like how we all feel — lousy",
+      "url": "https://nypost.com/2026/08/10/opinion/nycs-summer-weather-has-been-just-like-how-we-all-feel-lousy/",
+      "source": "New York Post"
+    },
+    {
+      "title": "I Lived Like An NYC Wellness Influencer For 1 Week & It Cost Almost $3K",
+      "url": "https://www.elitedaily.com/wellness/new-york-influencer-wellness-workouts-cost",
+      "source": "Elite Daily"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
