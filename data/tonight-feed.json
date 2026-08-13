@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Goodbye horses, welcome back Puppetworks: NYC businesses opening and closing",
+      "url": "https://gothamist.com/arts-entertainment/goodbye-horses-welcome-back-puppetworks-nyc-businesses-opening-and-closing",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Always Bet On Black (Women): 5 Bustling Businesses To Support This Black Business Month",
+      "url": "https://bossip.com/4614448/black-women-owned-businesses/",
+      "source": "Bossip"
+    },
+    {
+      "title": "Pop-Up Bagels and Bumble BFF are teaming up to help you make friends over free carbs this weekend",
+      "url": "https://www.timeout.com/newyork/news/pop-up-bagels-and-bumble-bff-are-teaming-up-to-help-you-make-friends-over-free-carbs-this-weekend-081126",
+      "source": "Time Out"
+    },
+    {
+      "title": "Woke music heiress, 39, has been SQUATTING in Brooklyn apartment for last four years with her refusal to pay rent driving her black landlord into foreclosure, lawsuit claims",
+      "url": "https://www.dailymail.com/news/article-16044315/music-heiress-SQUATTING-brooklyn-apartment-rent.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "KATE SPADE NEW YORK TURNS NEW YORK CITY INTO A SPONTANEOUS SEARCH FOR JOY IN THE FALL CAMPAIGN FEATURING NEW GLOBAL BRAND AMBASSADOR, TYLA",
+      "url": "https://www.prnewswire.com/news-releases/kate-spade-new-york-turns-new-york-city-into-a-spontaneous-search-for-joy-in-the-fall-campaign-featuring-new-global-brand-ambassador-tyla-302847663.html",
+      "source": "PRNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
