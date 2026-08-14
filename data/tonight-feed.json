@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "I went to three J Cole concerts in five days. Here are my thoughts",
+      "url": "https://nypost.com/2026/08/12/ticket-sales/j-cole-fall-off-tour-concert-review-2026-set-list-thoughts/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Goodbye horses, welcome back Puppetworks: NYC businesses opening and closing",
+      "url": "https://gothamist.com/arts-entertainment/goodbye-horses-welcome-back-puppetworks-nyc-businesses-opening-and-closing",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Always Bet On Black (Women): 5 Bustling Businesses To Support This Black Business Month",
+      "url": "https://bossip.com/4614448/black-women-owned-businesses/",
+      "source": "Bossip"
+    },
+    {
+      "title": "Pop-Up Bagels and Bumble BFF are teaming up to help you make friends over free carbs this weekend",
+      "url": "https://www.timeout.com/newyork/news/pop-up-bagels-and-bumble-bff-are-teaming-up-to-help-you-make-friends-over-free-carbs-this-weekend-081126",
+      "source": "Time Out"
+    },
+    {
+      "title": "Woke music heiress, 39, has been SQUATTING in Brooklyn apartment for last four years with her refusal to pay rent driving her black landlord into foreclosure, lawsuit claims",
+      "url": "https://www.dailymail.com/news/article-16044315/music-heiress-SQUATTING-brooklyn-apartment-rent.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
