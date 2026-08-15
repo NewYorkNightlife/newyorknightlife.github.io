@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Punketo: meet the Indigenous Gen-Z punks of Mexico City",
+      "url": "https://www.dazeddigital.com/fashion/article/70780/1/punketo-meet-the-indigenous-gen-z-punks-of-mexico-city-maxwell-vice?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=punketo-meet-the-indigenous-gen-z-punks-of-mexico-city",
+      "source": "Dazed"
+    },
+    {
+      "title": "30 Years Of The Fugees & More: Everything You Need To Know About The 2026 Global Citizen Festival Lineup",
+      "url": "https://bossip.com/4614979/global-citizen-festival-2026/",
+      "source": "Bossip"
+    },
+    {
+      "title": "Desperate Gen Zers turn to social media to find jobs — why experts say older workers should, too",
+      "url": "https://nypost.com/2026/08/14/lifestyle/why-gen-z-is-turning-to-tiktok-to-land-their-next-job/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Craving pie and a carriage ride? Here’s why Pennsylvania’s Lancaster County should be your next weekend getaway.",
+      "url": "https://www.timeout.com/newyork/news/craving-pie-and-a-carriage-ride-heres-why-pennsylvanias-lancaster-county-should-be-your-next-weekend-getaway-081426",
+      "source": "Time Out"
+    },
+    {
+      "title": "NYC high school students can get free Broadway tickets this summer—here's how",
+      "url": "https://www.timeout.com/newyork/news/nyc-high-school-students-can-get-free-broadway-tickets-this-summerheres-how-081326",
+      "source": "Time Out"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
