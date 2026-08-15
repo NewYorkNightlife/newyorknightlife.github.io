@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Desperate Gen Zers turn to social media to find jobs — why experts say older workers should, too",
+      "url": "https://nypost.com/2026/08/14/lifestyle/why-gen-z-is-turning-to-tiktok-to-land-their-next-job/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Craving pie and a carriage ride? Here’s why Pennsylvania’s Lancaster County should be your next weekend getaway.",
+      "url": "https://www.timeout.com/newyork/news/craving-pie-and-a-carriage-ride-heres-why-pennsylvanias-lancaster-county-should-be-your-next-weekend-getaway-081426",
+      "source": "Time Out"
+    },
+    {
+      "title": "NYC high school students can get free Broadway tickets this summer—here's how",
+      "url": "https://www.timeout.com/newyork/news/nyc-high-school-students-can-get-free-broadway-tickets-this-summerheres-how-081326",
+      "source": "Time Out"
+    },
+    {
+      "title": "I went to three J Cole concerts in five days. Here are my thoughts",
+      "url": "https://nypost.com/2026/08/12/ticket-sales/j-cole-fall-off-tour-concert-review-2026-set-list-thoughts/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Goodbye horses, welcome back Puppetworks: NYC businesses opening and closing",
+      "url": "https://gothamist.com/arts-entertainment/goodbye-horses-welcome-back-puppetworks-nyc-businesses-opening-and-closing",
+      "source": "Gothamist"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
