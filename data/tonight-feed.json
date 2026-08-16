@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Mark Rydell dead at 97: Director-actor famously helmed Bette Midler's The Rose and earned Oscar nom for On Golden Pond",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16054475/mark-rydell-dead-director-bette-midler-oscar-golden-pond.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Matthew McConaughey In ‘The Rivals Of Amziah King’; Green Day-Inspired Road Trip Comedy ‘Nimrods’ — Specialty Preview",
+      "url": "http://deadline.com/2026/08/indie-films-opening-matthew-mcconaughey-green-day-comedy-1237040791/",
+      "source": "Deadline"
+    },
+    {
+      "title": "New York City Lawmakers Push to ‘Ban the Scan’ at MSG",
+      "url": "https://www.wired.com/story/new-york-city-lawmakers-push-to-ban-the-scan-at-msg/",
+      "source": "Wired"
+    },
+    {
+      "title": "Punketo: meet the Indigenous Gen-Z punks of Mexico City",
+      "url": "https://www.dazeddigital.com/fashion/article/70780/1/punketo-meet-the-indigenous-gen-z-punks-of-mexico-city-maxwell-vice?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=punketo-meet-the-indigenous-gen-z-punks-of-mexico-city",
+      "source": "Dazed"
+    },
+    {
+      "title": "30 Years Of The Fugees & More: Everything You Need To Know About The 2026 Global Citizen Festival Lineup",
+      "url": "https://bossip.com/4614979/global-citizen-festival-2026/",
+      "source": "Bossip"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
