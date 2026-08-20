@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Man Reveals The Harsh Reality Of Living In A 90‑Square‑Foot NYC Apartment: “Urban Prison Cell”",
+      "url": "https://www.boredpanda.com/man-reveals-the-harsh-reality-of-living-in-a-90squarefoot-nyc-apartment/",
+      "source": "Boredpanda.com"
+    },
+    {
+      "title": "New York's largest food rescue organization needed urgent funding. Taylor Swift and Travis Kelce's surprise, quiet donation will help them feed millions of people this year",
+      "url": "https://economictimes.indiatimes.com/magazines/panache/new-yorks-largest-food-rescue-organization-needed-urgent-funding-taylor-swift-and-travis-kelces-surprise-quiet-donation-will-help-them-feed-millions-of-people-this-year/articleshow/133354507.cms",
+      "source": "The Times of India"
+    },
+    {
+      "title": "What It Really Costs to Live in Harry Styles’ Neighborhood",
+      "url": "https://www.redfin.com/blog/what-it-costs-to-live-in-harry-styles-neighborhood/",
+      "source": "Redfin.com"
+    },
+    {
+      "title": "Links 8/15/2026",
+      "url": "https://www.nakedcapitalism.com/2026/08/links-8-15-2026.html",
+      "source": "Nakedcapitalism.com"
+    },
+    {
+      "title": "‘A Chocolate Christmas,’ a Brazilian Holiday Romantic Drama, Set to Shoot in Gramado and New York From December",
+      "url": "https://variety.com/2026/film/global/paulo-nascimento-a-chocolate-christmas-gramado-new-york-1236835366/",
+      "source": "Variety"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
