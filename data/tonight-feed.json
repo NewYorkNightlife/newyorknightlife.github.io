@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "What It Really Costs to Live in Harry Styles’ Neighborhood",
+      "url": "https://www.redfin.com/blog/what-it-costs-to-live-in-harry-styles-neighborhood/",
+      "source": "Redfin.com"
+    },
+    {
+      "title": "Links 8/15/2026",
+      "url": "https://www.nakedcapitalism.com/2026/08/links-8-15-2026.html",
+      "source": "Nakedcapitalism.com"
+    },
+    {
+      "title": "‘A Chocolate Christmas,’ a Brazilian Holiday Romantic Drama, Set to Shoot in Gramado and New York From December",
+      "url": "https://variety.com/2026/film/global/paulo-nascimento-a-chocolate-christmas-gramado-new-york-1236835366/",
+      "source": "Variety"
+    },
+    {
+      "title": "Mark Rydell dead at 97: Director-actor famously helmed Bette Midler's The Rose and earned Oscar nom for On Golden Pond",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16054475/mark-rydell-dead-director-bette-midler-oscar-golden-pond.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Matthew McConaughey In ‘The Rivals Of Amziah King’; Green Day-Inspired Road Trip Comedy ‘Nimrods’ — Specialty Preview",
+      "url": "http://deadline.com/2026/08/indie-films-opening-matthew-mcconaughey-green-day-comedy-1237040791/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
