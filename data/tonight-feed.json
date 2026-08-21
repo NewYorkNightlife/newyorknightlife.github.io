@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Oso Oso Announce North American Tour",
+      "url": "https://pitchfork.com/story/oso-oso-announce-north-american-tour/",
+      "source": "Pitchfork"
+    },
+    {
+      "title": "Nita Noveno’s Book Notes music playlist for her memoir Mud on the Moon",
+      "url": "https://largeheartedboy.com/2026/08/19/nita-novenos-book-notes-music-playlist-for-her-memoir-mud-on-the-moon/",
+      "source": "Largeheartedboy.com"
+    },
+    {
+      "title": "Uber and Delta are offering Harry Styles-themed disco shuttles from NYC airports to the singer’s MSG residency",
+      "url": "https://www.timeout.com/newyork/news/uber-and-delta-are-offering-harry-styles-themed-disco-shuttles-from-nyc-airports-to-the-singers-msg-residency-081926",
+      "source": "Time Out"
+    },
+    {
+      "title": "Man Reveals The Harsh Reality Of Living In A 90‑Square‑Foot NYC Apartment: “Urban Prison Cell”",
+      "url": "https://www.boredpanda.com/man-reveals-the-harsh-reality-of-living-in-a-90squarefoot-nyc-apartment/",
+      "source": "Boredpanda.com"
+    },
+    {
+      "title": "New York's largest food rescue organization needed urgent funding. Taylor Swift and Travis Kelce's surprise, quiet donation will help them feed millions of people this year",
+      "url": "https://economictimes.indiatimes.com/magazines/panache/new-yorks-largest-food-rescue-organization-needed-urgent-funding-taylor-swift-and-travis-kelces-surprise-quiet-donation-will-help-them-feed-millions-of-people-this-year/articleshow/133354507.cms",
+      "source": "The Times of India"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
