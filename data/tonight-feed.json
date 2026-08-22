@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Woman on Vacation With Her Recent Ex, As Friends",
+      "url": "http://www.thecut.com/article/this-weeks-sex-story-the-woman-on-a-eurotrip-with-her-ex.html",
+      "source": "The Cut"
+    },
+    {
+      "title": "The Jordan Design Studio Seeks Greatness in New York City",
+      "url": "https://www.highsnobiety.com/p/jordan-design-studio-nyc/",
+      "source": "Highsnobiety"
+    },
+    {
+      "title": "Boxing Mailbag: Rolly-Teofimo, Fury-Joshua in America, Inoue’s future, women’s boxing, and more",
+      "url": "https://www.badlefthook.com/boxing-commentary-opinion/118030/boxing-mailbag-rolly-teofimo-fury-joshua-in-america-inoues-future-womens-boxing-and-more",
+      "source": "Bad Left Hook"
+    },
+    {
+      "title": "This New York supper club comes together in the group chat",
+      "url": "https://www.timeout.com/newyork/news/this-new-york-supper-club-comes-together-in-the-group-chat-082026",
+      "source": "Time Out"
+    },
+    {
+      "title": "DJ Suzy announces debut album, Kira Krash",
+      "url": "https://www.thelineofbestfit.com/news/dj-suzy-announces-debut-album-kira-krash",
+      "source": "Thelineofbestfit.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
