@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Boxing Mailbag: Rolly-Teofimo, Fury-Joshua in America, Inoue’s future, women’s boxing, and more",
+      "url": "https://www.badlefthook.com/boxing-commentary-opinion/118030/boxing-mailbag-rolly-teofimo-fury-joshua-in-america-inoues-future-womens-boxing-and-more",
+      "source": "Bad Left Hook"
+    },
+    {
+      "title": "This New York supper club comes together in the group chat",
+      "url": "https://www.timeout.com/newyork/news/this-new-york-supper-club-comes-together-in-the-group-chat-082026",
+      "source": "Time Out"
+    },
+    {
+      "title": "DJ Suzy announces debut album, Kira Krash",
+      "url": "https://www.thelineofbestfit.com/news/dj-suzy-announces-debut-album-kira-krash",
+      "source": "Thelineofbestfit.com"
+    },
+    {
+      "title": "Oso Oso Announce Fall 2026 North American Tour",
+      "url": "https://consequence.net/2026/08/oso-oso-2026-tour-dates/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Oso Oso Schedule North American Tour",
+      "url": "https://exclaim.ca/music/article/oso-oso-schedule-north-american-tour",
+      "source": "Exclaim!"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
