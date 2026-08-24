@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "US Open Fan Week starts Sunday. Here are the other NYC streets closing this weekend.",
+      "url": "https://gothamist.com/news/us-open-fan-week-starts-sunday-here-are-the-other-nyc-streets-closing-this-weekend",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Why does everything feel like a scam?",
+      "url": "https://freerepublic.com/focus/f-bloggers/4392686/posts",
+      "source": "Freerepublic.com"
+    },
+    {
+      "title": "The Woman on Vacation With Her Recent Ex, As Friends",
+      "url": "http://www.thecut.com/article/this-weeks-sex-story-the-woman-on-a-eurotrip-with-her-ex.html",
+      "source": "The Cut"
+    },
+    {
+      "title": "The Jordan Design Studio Seeks Greatness in New York City",
+      "url": "https://www.highsnobiety.com/p/jordan-design-studio-nyc/",
+      "source": "Highsnobiety"
+    },
+    {
+      "title": "Boxing Mailbag: Rolly-Teofimo, Fury-Joshua in America, Inoue’s future, women’s boxing, and more",
+      "url": "https://www.badlefthook.com/boxing-commentary-opinion/118030/boxing-mailbag-rolly-teofimo-fury-joshua-in-america-inoues-future-womens-boxing-and-more",
+      "source": "Bad Left Hook"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
