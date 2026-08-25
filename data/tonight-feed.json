@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "These two NYC eateries are among America’s best new restaurants, says Bon Appétit",
+      "url": "https://www.timeout.com/newyork/news/these-two-nyc-eateries-are-among-americas-best-new-restaurants-says-bon-appetit-082426",
+      "source": "Time Out"
+    },
+    {
+      "title": "The Most Anticipated Pop Tours of Fall 2026",
+      "url": "https://consequence.net/2026/08/most-anticipated-pop-tours-fall-2026/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Why Goo Goo Dolls’ ‘Iris’ Is Having A 28-Year-Long Moment",
+      "url": "https://www.forbes.com/sites/desjahaltvater/2026/08/24/why-goo-goo-dolls-iris-is-having-a-28-year-long-moment/",
+      "source": "Forbes"
+    },
+    {
+      "title": "Walking The Length of Manhattan — Ridgeline issue 232",
+      "url": "https://craigmod.com/ridgeline/232/",
+      "source": "Craigmod.com"
+    },
+    {
+      "title": "US Open Fan Week starts Sunday. Here are the other NYC streets closing this weekend.",
+      "url": "https://gothamist.com/news/us-open-fan-week-starts-sunday-here-are-the-other-nyc-streets-closing-this-weekend",
+      "source": "Gothamist"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
