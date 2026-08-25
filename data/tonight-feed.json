@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Walking The Length of Manhattan — Ridgeline issue 232",
+      "url": "https://craigmod.com/ridgeline/232/",
+      "source": "Craigmod.com"
+    },
+    {
+      "title": "US Open Fan Week starts Sunday. Here are the other NYC streets closing this weekend.",
+      "url": "https://gothamist.com/news/us-open-fan-week-starts-sunday-here-are-the-other-nyc-streets-closing-this-weekend",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Why does everything feel like a scam?",
+      "url": "https://freerepublic.com/focus/f-bloggers/4392686/posts",
+      "source": "Freerepublic.com"
+    },
+    {
+      "title": "The Woman on Vacation With Her Recent Ex, As Friends",
+      "url": "http://www.thecut.com/article/this-weeks-sex-story-the-woman-on-a-eurotrip-with-her-ex.html",
+      "source": "The Cut"
+    },
+    {
+      "title": "The Jordan Design Studio Seeks Greatness in New York City",
+      "url": "https://www.highsnobiety.com/p/jordan-design-studio-nyc/",
+      "source": "Highsnobiety"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
