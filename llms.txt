@@ -1,0 +1,46 @@
+# NY Nightlife (nynightlife.com)
+
+> Decide your NYC night in 5 minutes. Verified, dated facts about New York City nightlife: cover charges, dress codes, door policies, hours, and what tonight actually costs. Every venue fact carries a "Last verified" date and sources; unverifiable claims are marked as reported or unverified.
+
+## Live pages (refreshed daily/weekly)
+- [Tonight in NYC](https://nynightlife.com/tonight/): real ticketable events tonight, weather-aware, refreshed daily
+- [This weekend](https://nynightlife.com/weekend/nyc-nightlife-this-weekend.html): real events with real prices, refreshed every Thursday
+
+## Venue fact pages (the core dataset)
+- [230 Fifth Rooftop — NoMad / Flatiron](https://nynightlife.com/venues/230-fifth-rooftop.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Attaboy — Lower East Side](https://nynightlife.com/venues/attaboy.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Beauty &amp; Essex — Lower East Side](https://nynightlife.com/venues/beauty-and-essex.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Bossa Nova Civic Club — Bushwick](https://nynightlife.com/venues/bossa-nova-civic-club.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Brooklyn Mirage — East Williamsburg](https://nynightlife.com/venues/brooklyn-mirage.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Death &amp; Co — East Village](https://nynightlife.com/venues/death-and-co.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Elsewhere — Bushwick](https://nynightlife.com/venues/elsewhere.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Employees Only — West Village](https://nynightlife.com/venues/employees-only.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Good Room — Greenpoint](https://nynightlife.com/venues/good-room.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Harriet&#x27;s Rooftop — Dumbo](https://nynightlife.com/venues/harriets-rooftop.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [House of Yes — Bushwick](https://nynightlife.com/venues/house-of-yes.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Knockdown Center — Maspeth](https://nynightlife.com/venues/knockdown-center.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Le Bain — Meatpacking District](https://nynightlife.com/venues/le-bain.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Magic Hour Rooftop Bar &amp; Lounge — Times Square](https://nynightlife.com/venues/magic-hour-rooftop.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Marquee New York — Chelsea](https://nynightlife.com/venues/marquee-new-york.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Mr. Purple — Lower East Side](https://nynightlife.com/venues/mr-purple.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Musica Club NYC — Hell&#x27;s Kitchen](https://nynightlife.com/venues/musica-club.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Nebula — Midtown / Times Square](https://nynightlife.com/venues/nebula.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Nowadays — Ridgewood](https://nynightlife.com/venues/nowadays.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Ophelia Lounge — Midtown East](https://nynightlife.com/venues/ophelia-lounge.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Pacha New York — East Williamsburg](https://nynightlife.com/venues/pacha-new-york.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Paragon — Bushwick](https://nynightlife.com/venues/paragon.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [PHD Rooftop Lounge — Chelsea](https://nynightlife.com/venues/phd-rooftop-lounge.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Please Don&#x27;t Tell (PDT) — East Village](https://nynightlife.com/venues/please-dont-tell.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Public Records — Gowanus](https://nynightlife.com/venues/public-records.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Somewhere Nowhere — Chelsea](https://nynightlife.com/venues/somewhere-nowhere.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [The Back Room — Lower East Side](https://nynightlife.com/venues/the-back-room.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [The Box — Lower East Side](https://nynightlife.com/venues/the-box.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [The Dead Rabbit — Financial District](https://nynightlife.com/venues/the-dead-rabbit.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+- [Westlight — Williamsburg](https://nynightlife.com/venues/westlight.html): covers, dress code, age policy, hours, how to get in (dated, sourced)
+
+## Hubs
+- [All venue facts](https://nynightlife.com/venues/)
+- [Neighborhood guides](https://nynightlife.com/neighborhoods/)
+- [Guides](https://nynightlife.com/guides/)
+- [Budget planner](https://nynightlife.com/tools/budget-planner.html)
+- [Methodology / how facts are verified](https://nynightlife.com/methodology/)

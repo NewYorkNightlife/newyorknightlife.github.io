@@ -118,6 +118,13 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>(function(){const map=L.map('wv-map-canvas',{scrollWheelZoom:true}).setView([40.734,-74.003],14);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);const spots=[['Dante NYC','Dante',40.72886,-74.00158],['Employees Only NYC','Employees Only',40.73383,-74.00606],['The Garret West Village NYC','The Garret',40.73345,-74.00294],['Little Branch NYC','Little Branch',40.73645,-74.00589],['Katana Kitten NYC','Katana Kitten',40.73856,-74.00522],['The Up and Up NYC','The Up & Up',40.73015,-74.00257],['Analogue NYC','Analogue',40.73531,-74.00237],['Wilfie and Nell NYC','Wilfie & Nell',40.73575,-74.00363],['Via Carota NYC','Via Carota',40.73368,-74.00531],['Don Angie NYC','Don Angie',40.73501,-74.00490],['I Sodi NYC','I Sodi',40.73353,-74.00517],['Buvette NYC','Buvette',40.73295,-74.00424],['Joseph Leonard NYC','Joseph Leonard',40.73332,-74.00159],['LArtusi NYC','L\'Artusi',40.73387,-74.00473],['Pastis NYC','Pastis',40.73953,-74.00614],['Minetta Tavern NYC','Minetta Tavern',40.72999,-74.00066],['Blue Note Jazz Club NYC','Blue Note',40.73087,-74.00023],['Village Vanguard NYC','Village Vanguard',40.73603,-74.00167],['Comedy Cellar NYC','Comedy Cellar',40.73040,-74.00010],['Stonewall Inn NYC','Stonewall Inn',40.73382,-74.00209],['Smalls Jazz Club NYC','Smalls',40.73467,-74.00089],['Mezzrow Jazz Club NYC','Mezzrow',40.73476,-74.00065],['The Bitter End NYC','The Bitter End',40.72995,-74.00088],['Washington Square Park NYC','Washington Square Park',40.73082,-73.99733]];const m=new Map(),b=L.latLngBounds();spots.forEach(s=>{const mk=L.marker([s[2],s[3]]).addTo(map).bindPopup(`<strong>${s[1]}</strong>`);m.set(s[0],mk);b.extend([s[2],s[3]])});if(b.isValid())map.fitBounds(b.pad(.16));document.querySelectorAll('.map-jump[data-place]').forEach(a=>a.addEventListener('click',()=>{const mk=m.get(a.dataset.place);setTimeout(()=>map.invalidateSize(),100);if(mk){map.setView(mk.getLatLng(),Math.max(map.getZoom(),15),{animate:true});mk.openPopup();}}));})();</script>
   <script src="/js/main.js"></script>
+
+<section class="nyn-venue-mesh" style="max-width:1100px;margin:30px auto;padding:24px 22px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.02);">
+  <h2 style="margin-top:0;">Verified venue facts in this area</h2>
+  <p style="color:#b7b3ab;">Every fact dated and sourced — covers, dress codes, age policy, and how to actually get in.</p>
+  <ul><li><a href="/venues/employees-only.html"><strong>Employees Only</strong></a> — speakeasy with a 4am kitchen; no cover. <a href="/venues/employees-only.html">Covers, dress code &amp; door policy →</a></li></ul>
+  <p><a href="/venues/">All 30 venue fact pages →</a></p>
+</section>
 <footer class="nyn-footer">
   <div class="nyn-footer-inner">
     <div class="nyn-footer-top">
@@ -150,9 +157,9 @@
       <div>
         <h4>Site</h4>
         <a href="/about.html">About</a>
-        <a href="/start-here.html">Start Here</a>
+        <a href="/visitor-start-here.html">Start Here</a>
         <a href="/contact.html">Contact</a>
-        <a href="/methodology.html">Methodology</a>
+        <a href="/methodology/">Methodology</a>
       </div>
     </div>
     <div class="nyn-footer-bottom">

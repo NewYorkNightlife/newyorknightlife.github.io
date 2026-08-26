@@ -74,7 +74,14 @@
 </main>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>(function(){const map=L.map('ch-map-canvas',{scrollWheelZoom:true}).setView([40.746,-74.003],14);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);const spots=[['The Press Lounge NYC','The Press Lounge',40.76483,-73.98877],['The Tippler NYC','The Tippler',40.74233,-74.00632],['Bathtub Gin NYC','Bathtub Gin',40.74518,-73.99574],['Porchlight NYC','Porchlight',40.75224,-74.00271],['The Lobos NYC','The Lobos',40.74391,-73.99959],['Slate NYC','Slate',40.74902,-73.99243],['Bar Siena NYC','Bar Siena',40.74114,-74.00655],['The Copper Still NYC','The Copper Still',40.74730,-74.00177],['Cookshop NYC','Cookshop',40.74461,-74.00570],['Shukette NYC','Shukette',40.74657,-74.00122],['Miznon Chelsea Market NYC','Miznon',40.74269,-74.00618],['Los Tacos No 1 Chelsea Market NYC','Los Tacos No.1',40.74233,-74.00617],['Buddakan NYC','Buddakan',40.74261,-74.00574],['Chelsea Square Diner NYC','Chelsea Square Diner',40.74386,-73.99676],['Friedmans Chelsea Market NYC','Friedmans',40.74244,-74.00614],['Empire Diner NYC','Empire Diner',40.74566,-74.00535],['The High Line NYC','The High Line',40.74097,-74.00772],['Chelsea Market NYC','Chelsea Market',40.74244,-74.00614],['Little Island NYC','Little Island',40.74204,-74.01077],['Whitney Museum NYC','Whitney Museum',40.73959,-74.00886],['Le Bain NYC','Le Bain',40.74088,-74.00645],['The Rooftop at Gansevoort NYC','Gansevoort Rooftop',40.73985,-74.00818],['The Edge Hudson Yards NYC','The Edge',40.75387,-74.00057],['Rubin Museum NYC','Rubin Museum Area',40.74086,-73.99810]];const m=new Map(),b=L.latLngBounds();spots.forEach(s=>{const mk=L.marker([s[2],s[3]]).addTo(map).bindPopup(`<strong>${s[1]}</strong>`);m.set(s[0],mk);b.extend([s[2],s[3]])});if(b.isValid())map.fitBounds(b.pad(.16));document.querySelectorAll('.map-jump[data-place]').forEach(a=>a.addEventListener('click',()=>{const mk=m.get(a.dataset.place);setTimeout(()=>map.invalidateSize(),100);if(mk){map.setView(mk.getLatLng(),Math.max(map.getZoom(),15),{animate:true});mk.openPopup();}}));})();</script>
-<script src="/js/main.js"></script><footer class="nyn-footer">
+<script src="/js/main.js"></script>
+<section class="nyn-venue-mesh" style="max-width:1100px;margin:30px auto;padding:24px 22px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.02);">
+  <h2 style="margin-top:0;">Verified venue facts in this area</h2>
+  <p style="color:#b7b3ab;">Every fact dated and sourced — covers, dress codes, age policy, and how to actually get in.</p>
+  <ul><li><a href="/venues/marquee-new-york.html"><strong>Marquee New York</strong></a> — big-room club; ~$30–$70. <a href="/venues/marquee-new-york.html">Covers, dress code &amp; door policy →</a></li><li><a href="/venues/somewhere-nowhere.html"><strong>Somewhere Nowhere</strong></a> — rooftop club + lounge; tiered entry. <a href="/venues/somewhere-nowhere.html">Covers, dress code &amp; door policy →</a></li><li><a href="/venues/phd-rooftop-lounge.html"><strong>PHD Rooftop Lounge</strong></a> — Dream Downtown rooftop; GA from ~$50. <a href="/venues/phd-rooftop-lounge.html">Covers, dress code &amp; door policy →</a></li></ul>
+  <p><a href="/venues/">All 30 venue fact pages →</a></p>
+</section>
+<footer class="nyn-footer">
   <div class="nyn-footer-inner">
     <div class="nyn-footer-top">
       <div class="nyn-footer-brand">
@@ -106,9 +113,9 @@
       <div>
         <h4>Site</h4>
         <a href="/about.html">About</a>
-        <a href="/start-here.html">Start Here</a>
+        <a href="/visitor-start-here.html">Start Here</a>
         <a href="/contact.html">Contact</a>
-        <a href="/methodology.html">Methodology</a>
+        <a href="/methodology/">Methodology</a>
       </div>
     </div>
     <div class="nyn-footer-bottom">

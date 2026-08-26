@@ -76,7 +76,14 @@
 </main>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>(function(){const map=L.map('mt-map-canvas',{scrollWheelZoom:true}).setView([40.758,-73.9855],14);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);const spots=[['The Rum House NYC','The Rum House',40.76033,-73.98576],['Dear Irving on Hudson NYC','Dear Irving on Hudson',40.75934,-73.99269],['Ophelia Lounge NYC','Ophelia Lounge',40.74980,-73.97591],['Pebble Bar NYC','Pebble Bar',40.75977,-73.97971],['The Press Lounge NYC','The Press Lounge',40.76483,-73.98877],['St Cloud Rooftop NYC','St. Cloud Rooftop',40.75759,-73.98612],['Valerie NYC','Valerie',40.75651,-73.98357],['Nothing Really Matters NYC','Nothing Really Matters',40.75861,-73.98423],['Keens Steakhouse NYC','Keens Steakhouse',40.75064,-73.98643],['The Smith Midtown NYC','The Smith Midtown',40.75084,-73.98490],['Sakagura NYC','Sakagura',40.74998,-73.97474],['The Lambs Club NYC','The Lambs Club',40.75868,-73.98536],['Tonchin NYC','Tonchin',40.75157,-73.98526],['Le Rock NYC','Le Rock',40.75843,-73.97858],['Monkey Bar NYC','Monkey Bar',40.76176,-73.97258],['Quality Italian NYC','Quality Italian',40.76197,-73.98148],['Radio City Music Hall NYC','Radio City Music Hall',40.75998,-73.97998],['Rockefeller Center NYC','Rockefeller Center',40.75874,-73.97867],['Bryant Park NYC','Bryant Park',40.75360,-73.98323],['Grand Central Terminal NYC','Grand Central Terminal',40.75272,-73.97723],['MoMA NYC','MoMA',40.76144,-73.97762],['St Patricks Cathedral NYC','St. Patrick\'s Cathedral',40.75847,-73.97658],['Times Square NYC','Times Square',40.75800,-73.98550],['Theater District NYC','Theater District',40.75901,-73.98447]];const m=new Map(),b=L.latLngBounds();spots.forEach(s=>{const mk=L.marker([s[2],s[3]]).addTo(map).bindPopup(`<strong>${s[1]}</strong>`);m.set(s[0],mk);b.extend([s[2],s[3]])});if(b.isValid())map.fitBounds(b.pad(.16));document.querySelectorAll('.map-jump[data-place]').forEach(a=>a.addEventListener('click',()=>{const mk=m.get(a.dataset.place);setTimeout(()=>map.invalidateSize(),100);if(mk){map.setView(mk.getLatLng(),Math.max(map.getZoom(),15),{animate:true});mk.openPopup();}}));})();</script>
-<script src="/js/main.js"></script><footer class="nyn-footer">
+<script src="/js/main.js"></script>
+<section class="nyn-venue-mesh" style="max-width:1100px;margin:30px auto;padding:24px 22px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.02);">
+  <h2 style="margin-top:0;">Verified venue facts in this area</h2>
+  <p style="color:#b7b3ab;">Every fact dated and sourced — covers, dress codes, age policy, and how to actually get in.</p>
+  <ul><li><a href="/venues/nebula.html"><strong>Nebula</strong></a> — Times Square mega-club; $20–$60. <a href="/venues/nebula.html">Covers, dress code &amp; door policy →</a></li><li><a href="/venues/magic-hour-rooftop.html"><strong>Magic Hour Rooftop</strong></a> — Moxy rooftop; no cover, minimums after 9pm. <a href="/venues/magic-hour-rooftop.html">Covers, dress code &amp; door policy →</a></li><li><a href="/venues/ophelia-lounge.html"><strong>Ophelia Lounge</strong></a> — art-deco tower lounge; no cover. <a href="/venues/ophelia-lounge.html">Covers, dress code &amp; door policy →</a></li><li><a href="/venues/230-fifth-rooftop.html"><strong>230 Fifth Rooftop</strong></a> — iconic Empire State view; $15 cover Fri/Sat. <a href="/venues/230-fifth-rooftop.html">Covers, dress code &amp; door policy →</a></li></ul>
+  <p><a href="/venues/">All 30 venue fact pages →</a></p>
+</section>
+<footer class="nyn-footer">
   <div class="nyn-footer-inner">
     <div class="nyn-footer-top">
       <div class="nyn-footer-brand">
@@ -108,9 +115,9 @@
       <div>
         <h4>Site</h4>
         <a href="/about.html">About</a>
-        <a href="/start-here.html">Start Here</a>
+        <a href="/visitor-start-here.html">Start Here</a>
         <a href="/contact.html">Contact</a>
-        <a href="/methodology.html">Methodology</a>
+        <a href="/methodology/">Methodology</a>
       </div>
     </div>
     <div class="nyn-footer-bottom">

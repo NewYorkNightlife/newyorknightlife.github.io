@@ -91,6 +91,13 @@
 (function(){const map=L.map('ev-map-canvas',{scrollWheelZoom:true}).setView([40.7277,-73.9855],14);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);const spots=[{k:'Death and Co NYC',n:'Death & Co',a:[40.72544,-73.98466]},{k:'Please Dont Tell NYC',n:'PDT',a:[40.72621,-73.98308]},{k:'Amor y Amargo NYC',n:'Amor y Amargo',a:[40.72568,-73.98355]},{k:'Holiday Cocktail Lounge NYC',n:'Holiday Cocktail Lounge',a:[40.72813,-73.98563]},{k:'Doc Hollidays NYC',n:"Doc Holliday's",a:[40.72924,-73.98527]},{k:'Niagara NYC',n:'Niagara',a:[40.72110,-73.98792]},{k:'Josies NYC',n:"Josie's",a:[40.72693,-73.98545]},{k:'The Library East Village NYC',n:'The Library',a:[40.72870,-73.98630]},{k:'Momofuku Noodle Bar NYC',n:'Momofuku Noodle Bar',a:[40.72901,-73.98458]},{k:'Veselka NYC',n:'Veselka',a:[40.73018,-73.98460]},{k:'Ippudo East Village NYC',n:'Ippudo East Village',a:[40.73086,-73.98906]},{k:'Suprema Provisions NYC',n:'Suprema Provisions',a:[40.72890,-73.98373]},{k:'LoveMama NYC',n:'LoveMama',a:[40.72727,-73.98634]},{k:'Supper NYC',n:'Supper',a:[40.72297,-73.98574]},{k:'Thursday Kitchen NYC',n:'Thursday Kitchen',a:[40.72666,-73.98531]},{k:'Cafe Mogador NYC',n:'Cafe Mogador',a:[40.72695,-73.98485]},{k:'Bowery Ballroom NYC',n:'Bowery Ballroom',a:[40.72049,-73.99393]},{k:'Mercury Lounge NYC',n:'Mercury Lounge',a:[40.72200,-73.98684]},{k:'Nuyorican Poets Cafe NYC',n:'Nuyorican Poets Cafe',a:[40.72167,-73.98479]},{k:'Village East by Angelika NYC',n:'Village East by Angelika',a:[40.73089,-73.98660]},{k:'Comedy Cellar NYC',n:'Comedy Cellar',a:[40.73040,-74.00010]},{k:'Webster Hall NYC',n:'Webster Hall',a:[40.73198,-73.98937]},{k:'Tompkins Square Park NYC',n:'Tompkins Square Park',a:[40.72648,-73.98153]},{k:'St Marks Place NYC',n:"St. Mark's Place",a:[40.72851,-73.98669]}];const m=new Map(),b=L.latLngBounds();spots.forEach(s=>{const mk=L.marker(s.a).addTo(map).bindPopup(`<strong>${s.n}</strong>`);m.set(s.k,mk);b.extend(s.a)});if(b.isValid())map.fitBounds(b.pad(.16));document.querySelectorAll('.map-jump[data-place]').forEach(a=>a.addEventListener('click',()=>{const mk=m.get(a.dataset.place);setTimeout(()=>map.invalidateSize(),100);if(mk){map.setView(mk.getLatLng(),Math.max(map.getZoom(),15),{animate:true});mk.openPopup();}}));})();
 </script>
 <script src="/js/main.js"></script>
+
+<section class="nyn-venue-mesh" style="max-width:1100px;margin:30px auto;padding:24px 22px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.02);">
+  <h2 style="margin-top:0;">Verified venue facts in this area</h2>
+  <p style="color:#b7b3ab;">Every fact dated and sourced — covers, dress codes, age policy, and how to actually get in.</p>
+  <ul><li><a href="/venues/please-dont-tell.html"><strong>Please Don’t Tell (PDT)</strong></a> — phone-booth speakeasy; reservations. <a href="/venues/please-dont-tell.html">Covers, dress code &amp; door policy →</a></li><li><a href="/venues/death-and-co.html"><strong>Death & Co</strong></a> — pioneering cocktail den; walk-in list. <a href="/venues/death-and-co.html">Covers, dress code &amp; door policy →</a></li></ul>
+  <p><a href="/venues/">All 30 venue fact pages →</a></p>
+</section>
 <footer class="nyn-footer">
   <div class="nyn-footer-inner">
     <div class="nyn-footer-top">
@@ -123,9 +130,9 @@
       <div>
         <h4>Site</h4>
         <a href="/about.html">About</a>
-        <a href="/start-here.html">Start Here</a>
+        <a href="/visitor-start-here.html">Start Here</a>
         <a href="/contact.html">Contact</a>
-        <a href="/methodology.html">Methodology</a>
+        <a href="/methodology/">Methodology</a>
       </div>
     </div>
     <div class="nyn-footer-bottom">
