@@ -1,0 +1,214 @@
+/* NYBot — Nyla, the NY Nightlife concierge. Rules-based, answers only from site data. */
+(function () {
+  'use strict';
+  var VENUES = null, FEED = null;
+  var AVATAR_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="nybg" cx="50%" cy="35%" r="80%"><stop offset="0%" stop-color="#232746"/><stop offset="100%" stop-color="#0d0f1c"/></radialGradient></defs><rect width="100" height="100" fill="url(#nybg)"/><g><path d="M50 18c-14 0-23 9-24 21-1 9 1 15-3 22-2 4 1 6 3 6h48c2 0 5-2 3-6-4-7-2-13-3-22-1-12-10-21-24-21z" fill="#2a2136"/><ellipse cx="50" cy="44" rx="13" ry="15" fill="#b07d52"/><path d="M37 40c0-9 6-15 13-15s13 6 13 15c-2-6-6-8-13-8s-11 2-13 8z" fill="#231a2e"/><path d="M32 88c2-14 9-20 18-20s16 6 18 20z" fill="#191325"/><circle cx="41" cy="58" r="1.6" fill="#d4af37"/><circle cx="59" cy="58" r="1.6" fill="#d4af37"/></g></svg>';
+
+  function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function track(n) { try { if (window.gtag) gtag('event', n, { event_category: 'nybot' }); } catch (e) {} }
+
+  // ---------- UI ----------
+  var bubble = el('button', 'nyb-bubble');
+  bubble.setAttribute('aria-label', 'Chat with Nyla, the nightlife concierge');
+  var img = new Image();
+  img.src = '/assets/nybot-avatar.jpg';
+  img.alt = '';
+  img.onerror = function () { bubble.innerHTML = AVATAR_SVG; };
+  bubble.appendChild(img);
+
+  var panel = el('div', 'nyb-panel');
+  panel.setAttribute('role', 'dialog');
+  panel.setAttribute('aria-label', 'Nightlife concierge chat');
+  panel.innerHTML =
+    '<div class="nyb-head">' +
+      '<div class="nyb-head-ava"><img src="/assets/nybot-avatar.jpg" alt="" onerror="this.parentNode.innerHTML=window.__nybSvg"></div>' +
+      '<div><div class="nyb-head-name">Nyla</div><div class="nyb-head-sub"><span class="nyb-dot"></span>NYC night concierge</div></div>' +
+      '<button class="nyb-close" aria-label="Close chat">&times;</button>' +
+    '</div>' +
+    '<div class="nyb-msgs" aria-live="polite"></div>' +
+    '<div class="nyb-typing">Nyla is typing…</div>' +
+    '<div class="nyb-chips"></div>' +
+    '<form class="nyb-inrow"><input class="nyb-in" type="text" placeholder="Ask about tonight, a venue, covers…" aria-label="Message" /><button class="nyb-send" type="submit">Ask</button></form>';
+  window.__nybSvg = AVATAR_SVG;
+
+  var msgs, chipsEl, input, typing;
+
+  function say(html, who) {
+    var m = el('div', 'nyb-m ' + (who || 'bot'), html);
+    msgs.appendChild(m); msgs.scrollTop = msgs.scrollHeight;
+  }
+  function botSay(html, delay) {
+    typing.style.display = 'block';
+    setTimeout(function () { typing.style.display = 'none'; say(html, 'bot'); }, delay || 450);
+  }
+  function setChips(list) {
+    chipsEl.innerHTML = '';
+    list.forEach(function (c) {
+      var b = el('button', 'nyb-chip', esc(c));
+      b.type = 'button';
+      b.addEventListener('click', function () { handle(c); });
+      chipsEl.appendChild(b);
+    });
+  }
+  var DEFAULT_CHIPS = ["What's on tonight?", 'Cover charges', 'Rooftops', 'Free & cheap', 'This weekend'];
+
+  // ---------- data ----------
+  function loadVenues(cb) {
+    if (VENUES) return cb();
+    fetch('/data/venues.json').then(function (r) { return r.json(); }).then(function (d) { VENUES = d.venues || []; cb(); }).catch(function () { VENUES = []; cb(); });
+  }
+  function loadFeed(cb) {
+    if (FEED) return cb();
+    fetch('/data/tonight-feed.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) { FEED = d; cb(); }).catch(function () { FEED = null; cb(); });
+  }
+
+  // ---------- intents ----------
+  function venueCard(v, focus) {
+    var rows = [];
+    if (focus === 'dress') rows.push('<b>Dress code:</b> ' + esc(v.dress));
+    else if (focus === 'age') rows.push('<b>Age policy:</b> ' + esc(v.age));
+    else if (focus === 'hours') rows.push('<b>Nights &amp; hours:</b> ' + esc(v.hours));
+    else if (focus === 'howto') rows.push('<b>How to get in:</b> ' + esc(v.howto));
+    else if (focus === 'honest') rows.push('<b>Honest take:</b> ' + esc(v.honest));
+    else rows.push('<b>Cover:</b> ' + esc(v.cover));
+    if (!focus) { rows.push('<b>Dress:</b> ' + esc(v.dress)); rows.push('<b>Age:</b> ' + esc(v.age)); }
+    return '<b>' + esc(v.name) + '</b> (' + esc(v.hood) + ')<br>' + rows.join('<br>') +
+      '<br><a href="' + v.url + '">Full facts — verified ' + esc(v.verified) + ' →</a>';
+  }
+  function findVenue(q) {
+    q = q.toLowerCase();
+    var best = null;
+    (VENUES || []).forEach(function (v) {
+      var n = v.name.toLowerCase();
+      if (q.indexOf(n) !== -1 || q.indexOf(v.slug.replace(/-/g, ' ')) !== -1) { best = v; return; }
+      var words = n.split(/[^a-z0-9]+/).filter(function (w) { return w.length > 3; });
+      var hits = words.filter(function (w) { return q.indexOf(w) !== -1; }).length;
+      if (words.length && hits >= Math.max(1, words.length - 1) && (!best || hits > best._h)) { v._h = hits; best = v; }
+    });
+    return best;
+  }
+  function listVenues(filter, title, empty) {
+    var hits = (VENUES || []).filter(filter).slice(0, 6);
+    if (!hits.length) return empty || 'Nothing matched — browse <a href="/venues/">all venue facts</a>.';
+    return '<b>' + title + '</b><ul>' + hits.map(function (v) {
+      return '<li><a href="' + v.url + '">' + esc(v.name) + '</a> — ' + esc((v.cover || '').split('.')[0]).slice(0, 70) + '</li>';
+    }).join('') + '</ul><a href="/venues/">All 30 venue fact pages →</a>';
+  }
+
+  function answerTonight() {
+    loadFeed(function () {
+      if (!FEED) return botSay('The live feed is napping — check <a href="/tonight/">Tonight</a> directly.');
+      var w = FEED.weather || {};
+      var head = (w.summary ? esc((w.icon || '') + ' ' + w.summary + (w.temp_f != null ? ', ' + w.temp_f + '°F' : '')) + '. ' : '');
+      var picks = (FEED.picks_from_sources || []).filter(function (p) {
+        var t = ((p.title || '') + ' ' + (p.venue || '')).toLowerCase();
+        var cat = String(p.category || '').toLowerCase();
+        return (p.url || p.source_url) && cat !== 'theater' && !/theatre|theater/.test(t);
+      }).slice(0, 3);
+      var list = picks.length ? '<ul>' + picks.map(function (p) {
+        return '<li><a href="' + esc(p.url || p.source_url) + '" target="_blank" rel="noopener">' + esc(p.title) + '</a>' + (p.venue ? ' — ' + esc(p.venue) : '') + '</li>';
+      }).join('') + '</ul>' : '';
+      botSay(head + 'Here’s what’s real tonight:' + list + '<a href="/tonight/">Full tonight feed →</a>');
+      setChips(['Free & cheap', 'Rooftops', 'This weekend', 'Cover charges']);
+    });
+  }
+
+  var exchanges = 0, offeredMail = false;
+  function maybeOfferMail() {
+    exchanges++;
+    if (exchanges === 3 && !offeredMail && !localStorage.getItem('nyb_subscribed')) {
+      offeredMail = true;
+      setTimeout(function () {
+        botSay('By the way — I send the best of the weekend (with real prices) every Thursday. Type your email if you want it. No spam, promise.');
+      }, 1800);
+    }
+  }
+  function trySubscribe(q) {
+    var m = q.match(/[^\s@]+@[^\s@]+\.[^\s@]{2,}/);
+    if (!m) return false;
+    fetch('https://formsubmit.co/ajax/a650e221f3f7706184623e4558d53fdd', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ email: m[0], source: 'nybot:' + location.pathname })
+    }).then(function () {
+      localStorage.setItem('nyb_subscribed', '1');
+      botSay('Done — you’re on the list. First brief lands Thursday. 🥂');
+      track('nybot_subscribe');
+    }).catch(function () { botSay('Hmm, that didn’t go through — try the form in the footer.'); });
+    return true;
+  }
+
+  function handle(q) {
+    say(esc(q), 'user');
+    input.value = '';
+    track('nybot_message');
+    var t = q.toLowerCase();
+    maybeOfferMail();
+
+    if (trySubscribe(q)) return;
+
+    loadVenues(function () {
+      // venue-specific
+      var v = findVenue(t);
+      var focus = /dress|wear|outfit/.test(t) ? 'dress' : /age|18|21|id\b|old/.test(t) ? 'age' : /hour|open|close|when/.test(t) ? 'hours' : /get in|door|entry|line|queue/.test(t) ? 'howto' : /worth|honest|good\?|review/.test(t) ? 'honest' : (/cover|price|cost|much/.test(t) ? '' : null);
+      if (v) return botSay(venueCard(v, focus === null ? '' : focus));
+
+      if (/tonight|now|happening/.test(t)) return answerTonight();
+      if (/weekend|saturday|friday|sunday/.test(t)) return botSay('The weekend page has real events with real prices, refreshed every Thursday: <a href="/weekend/nyc-nightlife-this-weekend.html">NYC nightlife this weekend →</a>');
+      if (/free|cheap|broke|budget under|\$20/.test(t)) return botSay(listVenues(function (v) { return /no cover|free/i.test(v.cover); }, 'No-cover spots (verified):'));
+      if (/rooftop|view|skyline/.test(t)) return botSay(listVenues(function (v) { return /rooftop|penthouse/i.test(v.type + ' ' + v.name); }, 'Rooftops with verified facts:'));
+      if (/speakeasy|cocktail|date|romantic/.test(t)) return botSay(listVenues(function (v) { return /speakeasy|cocktail/i.test(v.type); }, 'Cocktail dens &amp; speakeasies:'));
+      if (/club|dance|techno|house music|dj|rave/.test(t)) return botSay(listVenues(function (v) { return /club/i.test(v.type) && !/cocktail/i.test(v.type); }, 'Real dance floors:'));
+      if (/budget|cost|spend|money|price/.test(t)) return botSay('Rough NYC math: lean night $60–$120, balanced $120–$250, premium $250+. Price your exact night with the <a href="/tools/budget-planner.html">Budget Planner →</a>');
+      if (/bushwick|williamsburg|ridgewood|greenpoint|manhattan|brooklyn|queens|village|midtown|chelsea|harlem|les|lower east/.test(t)) return botSay('Neighborhood first is the right instinct. Browse the <a href="/neighborhoods/">neighborhood guides</a> — each lists its verified venues, prices, and late-night logistics.');
+      if (/subscribe|newsletter|email|brief/.test(t)) return botSay('Drop your email right here in the chat and I’ll add you to the Thursday brief.');
+      if (/hi|hello|hey|yo\b|sup/.test(t)) return botSay('Hey 🥂 I’m Nyla. Ask me what’s on tonight, what a venue costs, dress codes, rooftops — anything on this site, I know it.');
+      if (/thank|thanks|ty\b/.test(t)) return botSay('Anytime. Have a great night out — and pace yourself. 😉');
+      botSay('I answer from this site’s verified data — try a venue name ("cover at House of Yes"), <b>tonight</b>, <b>rooftops</b>, <b>free &amp; cheap</b>, or <b>this weekend</b>. Or browse <a href="/venues/">all venue facts</a>.');
+    });
+  }
+
+  // ---------- boot ----------
+  function open() {
+    panel.classList.add('open');
+    bubble.style.display = 'none';
+    teaserGone();
+    if (!msgs.children.length) {
+      botSay('Hey, I’m <b>Nyla</b> — the night concierge. Every answer comes from this site’s verified, dated facts. What kind of night are we planning?', 250);
+      setChips(DEFAULT_CHIPS);
+    }
+    track('nybot_open');
+    setTimeout(function () { input.focus(); }, 300);
+  }
+  function close() { panel.classList.remove('open'); bubble.style.display = ''; }
+
+  var teaser;
+  function teaserGone() { if (teaser && teaser.parentNode) teaser.parentNode.removeChild(teaser); }
+
+  function init() {
+    document.body.appendChild(bubble);
+    document.body.appendChild(panel);
+    msgs = panel.querySelector('.nyb-msgs');
+    chipsEl = panel.querySelector('.nyb-chips');
+    input = panel.querySelector('.nyb-in');
+    typing = panel.querySelector('.nyb-typing');
+    bubble.addEventListener('click', open);
+    panel.querySelector('.nyb-close').addEventListener('click', close);
+    panel.querySelector('.nyb-inrow').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var q = input.value.trim();
+      if (q) handle(q);
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    if (!localStorage.getItem('nyb_teased')) {
+      setTimeout(function () {
+        if (panel.classList.contains('open')) return;
+        teaser = el('div', 'nyb-teaser', 'psst — want to know what’s actually good tonight?');
+        teaser.addEventListener('click', function () { localStorage.setItem('nyb_teased', '1'); open(); });
+        document.body.appendChild(teaser);
+        setTimeout(function () { teaserGone(); try { localStorage.setItem('nyb_teased', '1'); } catch (e) {} }, 9000);
+      }, 5000);
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
