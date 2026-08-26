@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Return of the Teen Crime Panic",
+      "url": "https://www.nybooks.com/online/2026/08/25/the-return-of-the-teen-crime-panic-raise-the-age/",
+      "source": "The New York Review of Books"
+    },
+    {
+      "title": "Heading to Queens for the US Open? Here are 5 non-tennis things to do in Flushing Meadows.",
+      "url": "https://gothamist.com/arts-entertainment/heading-to-queens-for-the-us-open-here-are-5-non-tennis-things-to-do-in-flushing-meadows",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Margaret Qualley puts on leggy display in pink dress as she joins Aubrey Plaza and her newborn for NYC stroll",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16077063/Margaret-Qualley-Aubrey-Plaza-newborn-NYC.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "These two NYC eateries are among America’s best new restaurants, says Bon Appétit",
+      "url": "https://www.timeout.com/newyork/news/these-two-nyc-eateries-are-among-americas-best-new-restaurants-says-bon-appetit-082426",
+      "source": "Time Out"
+    },
+    {
+      "title": "The Most Anticipated Pop Tours of Fall 2026",
+      "url": "https://consequence.net/2026/08/most-anticipated-pop-tours-fall-2026/",
+      "source": "Consequence.net"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
