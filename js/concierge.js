@@ -1,21 +1,33 @@
-/* NYBot — Nyla, the NY Nightlife concierge. Rules-based, answers only from site data. */
+/* NYBot v2 — Nyla, the NY Nightlife concierge. Rules-based, answers only from site data.
+   v2: speech bubble above avatar (4s delay, page-aware lines, re-shows after 45 min), multi-pose avatar. */
 (function () {
   'use strict';
   var VENUES = null, FEED = null;
+  var POSES = ['/assets/nybot-avatar.jpg', '/assets/nybot-avatar-2.jpg', '/assets/nybot-avatar-3.jpg'];
+  var poseOk = [false, false, false];
+  POSES.forEach(function (src, i) {
+    var t = new Image();
+    t.onload = function () { poseOk[i] = true; };
+    t.src = src;
+  });
+  function pose(i) { return poseOk[i] ? POSES[i] : POSES[0]; }
+
   var AVATAR_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="nybg" cx="50%" cy="35%" r="80%"><stop offset="0%" stop-color="#232746"/><stop offset="100%" stop-color="#0d0f1c"/></radialGradient></defs><rect width="100" height="100" fill="url(#nybg)"/><g><path d="M50 18c-14 0-23 9-24 21-1 9 1 15-3 22-2 4 1 6 3 6h48c2 0 5-2 3-6-4-7-2-13-3-22-1-12-10-21-24-21z" fill="#2a2136"/><ellipse cx="50" cy="44" rx="13" ry="15" fill="#b07d52"/><path d="M37 40c0-9 6-15 13-15s13 6 13 15c-2-6-6-8-13-8s-11 2-13 8z" fill="#231a2e"/><path d="M32 88c2-14 9-20 18-20s16 6 18 20z" fill="#191325"/><circle cx="41" cy="58" r="1.6" fill="#d4af37"/><circle cx="59" cy="58" r="1.6" fill="#d4af37"/></g></svg>';
 
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
   function track(n) { try { if (window.gtag) gtag('event', n, { event_category: 'nybot' }); } catch (e) {} }
+  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 
   // ---------- UI ----------
   var bubble = el('button', 'nyb-bubble');
   bubble.setAttribute('aria-label', 'Chat with Nyla, the nightlife concierge');
-  var img = new Image();
-  img.src = '/assets/nybot-avatar.jpg';
-  img.alt = '';
-  img.onerror = function () { bubble.innerHTML = AVATAR_SVG; };
-  bubble.appendChild(img);
+  var bubbleImg = new Image();
+  bubbleImg.src = POSES[0];
+  bubbleImg.alt = '';
+  bubbleImg.onerror = function () { bubble.innerHTML = AVATAR_SVG; bubbleImg = null; };
+  bubble.appendChild(bubbleImg);
 
   var panel = el('div', 'nyb-panel');
   panel.setAttribute('role', 'dialog');
@@ -117,7 +129,7 @@
   var exchanges = 0, offeredMail = false;
   function maybeOfferMail() {
     exchanges++;
-    if (exchanges === 3 && !offeredMail && !localStorage.getItem('nyb_subscribed')) {
+    if (exchanges === 3 && !offeredMail && !lsGet('nyb_subscribed')) {
       offeredMail = true;
       setTimeout(function () {
         botSay('By the way — I send the best of the weekend (with real prices) every Thursday. Type your email if you want it. No spam, promise.');
@@ -131,7 +143,7 @@
       method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({ email: m[0], source: 'nybot:' + location.pathname })
     }).then(function () {
-      localStorage.setItem('nyb_subscribed', '1');
+      lsSet('nyb_subscribed', '1');
       botSay('Done — you’re on the list. First brief lands Thursday. 🥂');
       track('nybot_subscribe');
     }).catch(function () { botSay('Hmm, that didn’t go through — try the form in the footer.'); });
@@ -148,7 +160,6 @@
     if (trySubscribe(q)) return;
 
     loadVenues(function () {
-      // venue-specific
       var v = findVenue(t);
       var focus = /dress|wear|outfit/.test(t) ? 'dress' : /age|18|21|id\b|old/.test(t) ? 'age' : /hour|open|close|when/.test(t) ? 'hours' : /get in|door|entry|line|queue/.test(t) ? 'howto' : /worth|honest|good\?|review/.test(t) ? 'honest' : (/cover|price|cost|much/.test(t) ? '' : null);
       if (v) return botSay(venueCard(v, focus === null ? '' : focus));
@@ -168,11 +179,53 @@
     });
   }
 
+  // ---------- teaser (speech bubble above Nyla) ----------
+  function teaserLine() {
+    var p = location.pathname;
+    var m = p.match(/^\/venues\/([a-z0-9-]+)\.html/);
+    if (m && m[1] !== 'index') {
+      var h1 = document.querySelector('h1');
+      var name = h1 ? h1.textContent.split('—')[0].trim() : 'this spot';
+      return 'psst — I know the door secrets for ' + esc(name) + '. wanna hear?';
+    }
+    if (p.indexOf('/venues') === 0) return 'ask me any venue’s cover, dress code, or door odds';
+    if (p.indexOf('/weekend') === 0) return 'want my weekend shortlist? real prices only';
+    if (p.indexOf('/tonight') === 0) return 'I can tell you what’s actually good tonight';
+    if (p.indexOf('/tools') === 0) return 'need help doing the math on tonight?';
+    if (p.indexOf('/blog') === 0) return 'want the short version? just ask me';
+    if (p.indexOf('/neighborhoods') === 0) return 'I know every one of these blocks after dark 😉';
+    var pool = [
+      'psst — want to know what’s actually good tonight?',
+      'planning a night out? I know all 30 venues cold',
+      'covers, dress codes, door odds — ask me anything'
+    ];
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
+  var teaser;
+  function teaserGone() {
+    if (teaser && teaser.parentNode) teaser.parentNode.removeChild(teaser);
+    teaser = null;
+    if (bubbleImg) bubbleImg.src = pose(0);
+  }
+  function showTeaser() {
+    if (panel.classList.contains('open') || teaser) return;
+    teaser = el('div', 'nyb-teaser', '<span class="nyb-teaser-txt">' + teaserLine() + '</span>');
+    teaser.setAttribute('role', 'status');
+    teaser.addEventListener('click', function () { open(); });
+    document.body.appendChild(teaser);
+    if (bubbleImg) bubbleImg.src = pose(1); // she perks up while "talking"
+    lsSet('nyb_teased_at', String(Date.now()));
+    setTimeout(teaserGone, 12000);
+  }
+
   // ---------- boot ----------
   function open() {
     panel.classList.add('open');
     bubble.style.display = 'none';
     teaserGone();
+    var headImg = panel.querySelector('.nyb-head-ava img');
+    if (headImg) headImg.src = pose(2);
     if (!msgs.children.length) {
       botSay('Hey, I’m <b>Nyla</b> — the night concierge. Every answer comes from this site’s verified, dated facts. What kind of night are we planning?', 250);
       setChips(DEFAULT_CHIPS);
@@ -181,9 +234,6 @@
     setTimeout(function () { input.focus(); }, 300);
   }
   function close() { panel.classList.remove('open'); bubble.style.display = ''; }
-
-  var teaser;
-  function teaserGone() { if (teaser && teaser.parentNode) teaser.parentNode.removeChild(teaser); }
 
   function init() {
     document.body.appendChild(bubble);
@@ -200,14 +250,11 @@
       if (q) handle(q);
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
-    if (!localStorage.getItem('nyb_teased')) {
-      setTimeout(function () {
-        if (panel.classList.contains('open')) return;
-        teaser = el('div', 'nyb-teaser', 'psst — want to know what’s actually good tonight?');
-        teaser.addEventListener('click', function () { localStorage.setItem('nyb_teased', '1'); open(); });
-        document.body.appendChild(teaser);
-        setTimeout(function () { teaserGone(); try { localStorage.setItem('nyb_teased', '1'); } catch (e) {} }, 9000);
-      }, 5000);
+
+    // speech bubble: 4s delay, re-shows if 45+ minutes since last time
+    var last = parseInt(lsGet('nyb_teased_at') || '0', 10);
+    if (Date.now() - last > 45 * 60 * 1000) {
+      setTimeout(showTeaser, 4000);
     }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
