@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Dolly Parton’s health battles — as icon dies at 80",
+      "url": "https://nypost.com/health/dolly-partons-health-struggles-over-the-years/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Ben Musser performs songs promoting new album in Salt Lake City",
+      "url": "https://dailyutahchronicle.com/2026/08/25/ben-musser-performs-songs-promoting-new-album-in-salt-lake-city/",
+      "source": "Dailyutahchronicle.com"
+    },
+    {
+      "title": "Jack Harlow's Shoes Are Made For Walkin' (EXCLUSIVE)",
+      "url": "https://www.highsnobiety.com/p/jack-harlow-new-balance-interview/",
+      "source": "Highsnobiety"
+    },
+    {
+      "title": "Stella Lefty announces ‘Long Way Home Tour,’ three NYC shows. Get tickets",
+      "url": "https://nypost.com/2026/08/25/ticket-sales/get-tickets-for-stella-lefty-long-way-home-tour-with-a-discount/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Go Ask Alex: Does living in NYC make it harder to find gay love?",
+      "url": "https://www.out.com/relationships/go-ask-alex-gay-dating-nyc",
+      "source": "Out.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
