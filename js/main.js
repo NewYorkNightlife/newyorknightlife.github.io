@@ -1,6 +1,6 @@
 // NYC Nightlife Platform — Main JavaScript
 
-const DEFAULT_EMAIL_ENDPOINT = 'https://formsubmit.co/ajax/nynightlifeguide@gmail.com'; // FormSubmit: leads land in the nynightlifeguide inbox (activation: click the confirm link FormSubmit emails on first submission)
+const DEFAULT_EMAIL_ENDPOINT = 'https://formsubmit.co/ajax/a650e221f3f7706184623e4558d53fdd'; // FormSubmit: leads land in the nynightlifeguide inbox (activation: click the confirm link FormSubmit emails on first submission)
 
 document.addEventListener('DOMContentLoaded', function() {
   setupPremiumNav();
