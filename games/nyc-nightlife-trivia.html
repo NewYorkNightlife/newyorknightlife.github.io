@@ -3,21 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NYC Nightlife Trivia | Test Your Insider Knowledge</title>
-  <meta name="description" content="NYC nightlife trivia game covering neighborhoods, scene strategy, and practical planning knowledge." />
+  <title>NYC Nightlife Trivia | 12 Questions on Real Club &amp; Bar History</title>
+  <meta name="description" content="Play 12 questions of real NYC nightlife trivia — Studio 54, CBGB, Prohibition speakeasies, 4 a.m. last call — with instant answers and a final grade." />
   <link rel="canonical" href="https://nynightlife.com/games/nyc-nightlife-trivia.html" />
   <link rel="stylesheet" href="../css/main.css" />
-  <meta property="og:title" content="NYC Nightlife Trivia | Test Your Insider Knowledge" />
-  <meta property="og:description" content="NYC nightlife trivia game covering neighborhoods, scene strategy, and practical planning knowledge." />
+  <style>
+    .wrap{max-width:980px;margin:0 auto;padding:2rem 1rem;color:#f4f1ea}
+    .hero{background:linear-gradient(145deg,#10131d,#1b1727);border:1px solid #3f3753;border-radius:16px;padding:1rem}
+    .hero p{color:#c7c0b5}
+    .quiz-card{background:#121212;border:1px solid #2b2b2b;border-radius:14px;padding:1rem;margin:1rem 0}
+    .quiz-q{margin:0 0 .75rem 0;font-size:1.1rem}
+    .quiz-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+    .opt-btn{border:1px solid #3a3a3a;border-radius:10px;padding:.75rem;background:#171717;color:#f5f5f5;text-align:left;cursor:pointer;transition:.2s ease}
+    .opt-btn:hover{border-color:#8d6a2f;transform:translateY(-1px)}
+    .opt-btn:disabled{cursor:default;transform:none}
+    .opt-btn.correct{border-color:#4caf50;background:#12240f}
+    .opt-btn.wrong{border-color:#e05252;background:#2a1212}
+    .btn{border:0;border-radius:10px;padding:.7rem 1rem;cursor:pointer;font-weight:600}
+    .btn-primary{background:#d2a54a;color:#111}
+    .btn-secondary{background:#2a2a2a;color:#eee}
+    .scorebar{display:flex;gap:.6rem;flex-wrap:wrap;margin:.6rem 0}
+    .kpi{display:inline-block;border:1px solid #565c78;border-radius:999px;padding:.25rem .6rem;font-size:.85rem}
+    .explain{border-left:4px solid #d2a54a;background:#181510;border-radius:0 10px 10px 0;padding:.75rem;margin-top:.85rem}
+    .explain p{margin:.25rem 0;color:#e8e2d6}
+    .result{border:1px solid #4a4e67;border-radius:12px;padding:1rem;background:#111422;margin-top:1rem}
+    .muted{color:#b7b3ab}
+    @media(max-width:700px){.quiz-grid{grid-template-columns:1fr}}
+  </style>
+  <meta property="og:title" content="NYC Nightlife Trivia | 12 Questions on Real Club &amp; Bar History" />
+  <meta property="og:description" content="Play 12 questions of real NYC nightlife trivia — Studio 54, CBGB, Prohibition speakeasies, 4 a.m. last call — with instant answers and a final grade." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nynightlife.com/games/nyc-nightlife-trivia.html" />
   <meta property="og:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NYC Nightlife Trivia | Test Your Insider Knowledge" />
-  <meta name="twitter:description" content="NYC nightlife trivia game covering neighborhoods, scene strategy, and practical planning knowledge." />
+  <meta name="twitter:title" content="NYC Nightlife Trivia | 12 Questions on Real Club &amp; Bar History" />
+  <meta name="twitter:description" content="Play 12 questions of real NYC nightlife trivia — Studio 54, CBGB, Prohibition speakeasies, 4 a.m. last call — with instant answers and a final grade." />
   <meta name="twitter:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "NYC Nightlife Trivia | Test Your Insider Knowledge", "url": "https://nynightlife.com/games/nyc-nightlife-trivia.html", "description": "NYC nightlife trivia game covering neighborhoods, scene strategy, and practical planning knowledge.", "inLanguage": "en-US", "isPartOf": {"@type": "WebSite", "name": "NYNightlife", "url": "https://nynightlife.com/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "NYC Nightlife Trivia: 12 Questions on Real Club and Bar History", "url": "https://nynightlife.com/games/nyc-nightlife-trivia.html", "description": "Play 12 questions of real NYC nightlife trivia — Studio 54, CBGB, Prohibition speakeasies, 4 a.m. last call — with instant answers and a final grade.", "inLanguage": "en-US", "dateModified": "2026-08-26", "author": {"@type": "Organization", "name": "NY Nightlife"}, "publisher": {"@type": "Organization", "name": "NY Nightlife", "url": "https://nynightlife.com/"}, "isPartOf": {"@type": "WebSite", "name": "NYNightlife", "url": "https://nynightlife.com/"}}
   </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3007723856138381" crossorigin="anonymous"></script>
@@ -64,34 +87,211 @@
   </div>
 </header>
 
-  
+  <main id="nyn-main" class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Nightlife Games</p>
+      <h1>NYC Nightlife Trivia: 12 Questions, Real History</h1>
+      <p>Every question below is drawn from documented NYC nightlife history — Studio 54, CBGB, the speakeasy era, the Cabaret Law, and more. Answer, get an instant explanation, and earn your title at the end.</p>
+      <div class="scorebar">
+        <span class="kpi">Question: <b id="qNum">1</b>/12</span>
+        <span class="kpi">Score: <b id="scoreNum">0</b></span>
+      </div>
+    </section>
 
-  <main id="nyn-main" class="container" style="padding:2rem 1rem; max-width:1040px;">
-    <p class="eyebrow">Nightlife Games</p>
-    <h1>NYC Nightlife Trivia: Test Your Insider IQ</h1>
-    <p>Use this interactive to make faster, better nightlife decisions without overthinking. It’s built for NYC conditions, real constraints, and real outcomes.</p>
-    <h2>Trivia categories</h2><p>Neighborhood identity, route strategy, budget math, nightlife culture, and practical execution.</p>
-    
-<h2>Why this game matters</h2>
-<p>Games are not filler—they increase return visits and help readers make better real-world nightlife decisions.</p>
-<h2>How to use results</h2>
-<ul>
-  <li>Use game output to pick your route objective</li>
-  <li>Set a realistic spend lane before committing</li>
-  <li>Choose one anchor + one backup neighborhood</li>
-</ul>
-<h2>Turn this into a real plan</h2>
-<ul>
-  <li><a href="/tools/nyc-night-planner.html">NYC Night Planner</a></li>
-  <li><a href="/tools/venue-compare-nyc.html">Venue Compare</a></li>
-  <li><a href="/tonight/">Tonight Live Feed</a></li>
-</ul>
+    <div id="game"></div>
+    <section id="result" class="result" hidden aria-live="polite"></section>
 
-    <h2>Bottom line</h2>
-    <p>This game should help readers move from indecision to a confident plan in under five minutes.</p>
-    <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
+    <section class="quiz-card" style="margin-top:1.5rem;">
+      <h2>A Short History of New York After Dark</h2>
+      <p>New York's nightlife identity was forged by prohibition, not permission. When the Volstead Act shut the taps in 1920, the city responded with an estimated tens of thousands of speakeasies — and a handful of those rooms are still pouring. <a href="/venues/the-back-room.html">The Back Room</a> on Norfolk Street, which operated through Prohibition and still serves cocktails in teacups, is the most direct living link to that era. The modern wave of hidden bars — from <a href="/venues/please-dont-tell.html">PDT's</a> phone booth to <a href="/venues/attaboy.html">Attaboy's</a> unmarked door — is a tribute act to that original scene. Our <a href="/categories/speakeasies-nyc.html">speakeasy guide</a> maps the ones worth finding today.</p>
+      <p>The decades after Prohibition each left their own architecture on the night. The 1960s and '70s made downtown a proving ground for liberation and loud guitars: the 1966 Sip-In at Julius' and the 1969 Stonewall uprising reshaped who could gather where — a legacy that lives on across the city's <a href="/categories/lgbtq-nightlife-nyc.html">LGBTQ+ nightlife</a>. A few blocks east, Hilly Kristal opened CBGB on the Bowery in 1973 expecting country, bluegrass, and blues, and instead incubated the Ramones, Blondie, Television, and Talking Heads before the club closed in 2006.</p>
+      <p>Uptown and downtown split the disco years. Studio 54 turned a former CBS television studio into the most famous door in the world in 1977; the Paradise Garage, in a King Street parking garage, mattered more musically — Larry Levan's marathon sets there named an entire genre and laid the blueprint for modern club sound systems. That lineage runs straight to today's Brooklyn rooms like <a href="/venues/good-room.html">Good Room</a> and <a href="/venues/nowadays.html">Nowadays</a>.</p>
+      <p>What makes NYC nightlife structurally different is the plumbing underneath it: a 4 a.m. legal last call, a subway that runs all night, and — since the Cabaret Law's repeal in 2017 — the legal right to dance almost anywhere. Few cities on earth combine all three. If the quiz put you in the mood to use that knowledge, check <a href="/tonight/">what's on tonight</a>, browse the <a href="/categories/after-hours-nyc.html">after-hours scene</a>, or play the next round: our <a href="/games/secret-spot-hunt.html">Secret Spot Hunt</a> tests whether you can find the city's hidden bars from three clues. More games live on the <a href="/games/">games hub</a>.</p>
+      <p class="muted">Last updated: 2026-08-26</p>
+    </section>
   </main>
+
   <script src="../js/main.js"></script>
+  <script>
+    const questions = [
+      {
+        q:'How late can bars in New York City legally serve alcohol?',
+        options:['Midnight','2:00 AM','4:00 AM','6:00 AM'],
+        correct:2,
+        explain:'New York State law allows on-premise alcohol service in NYC until 4:00 AM — one of the latest last calls in America. Many bars actually ring last call around 3:45 AM to stay compliant.'
+      },
+      {
+        q:'The initials "CBGB" famously stood for what?',
+        options:['City Bowery Garage Band','Country, BlueGrass, and Blues','Chaos, Bedlam, Guitars, Bass','Corner Bar & Grill, Bowery'],
+        correct:1,
+        explain:'Owner Hilly Kristal named his 1973 Bowery club for the music he planned to book: country, bluegrass, and blues. Punk had other plans.'
+      },
+      {
+        q:'And the "OMFUG" in the club’s full name, CBGB & OMFUG?',
+        options:['Other Music For Uplifting Gormandizers','One More For Underground Guitars','Original Music From Unsigned Groups','Open Mic Fridays, Underground Gigs'],
+        correct:0,
+        explain:'"Other Music For Uplifting Gormandizers." Kristal said a gormandizer is a voracious eater — here, a voracious consumer of music.'
+      },
+      {
+        q:'Who headlined CBGB’s final show when it closed in October 2006?',
+        options:['Blondie','The Ramones','Talking Heads','Patti Smith'],
+        correct:3,
+        explain:'Patti Smith closed the club on October 15, 2006, playing over three hours and reading aloud the names of punk figures who had died before the Bowery institution went dark.'
+      },
+      {
+        q:'The Back Room on the Lower East Side serves cocktails in teacups. Why?',
+        options:['A quirky British theme','A nod to its real Prohibition speakeasy past','A fire-code loophole','The owner collects porcelain'],
+        correct:1,
+        explain:'The Back Room is one of the very few NYC bars that actually operated as a speakeasy during Prohibition and still pours today — teacups and paper-bagged bottles once disguised the goods.'
+      },
+      {
+        q:'Which Greenwich Village bar — NYC’s oldest gay bar — was the site of the 1966 "Sip-In"?',
+        options:['Stonewall Inn','Marie’s Crisis','Julius’','The Monster'],
+        correct:2,
+        explain:'Members of the Mattachine Society staged the Sip-In at Julius’ on April 21, 1966, challenging rules used to close bars that served gay patrons — three years before Stonewall.'
+      },
+      {
+        q:'Before it became the world’s most famous disco in 1977, the Studio 54 space was…',
+        options:['A CBS television studio','A meatpacking warehouse','A savings bank','A subway powerhouse'],
+        correct:0,
+        explain:'The West 54th Street building opened as the Gallo Opera House in 1927 and later became CBS’s Studio 52. Steve Rubell and Ian Schrager opened Studio 54 there on April 26, 1977.'
+      },
+      {
+        q:'Why did Studio 54’s legendary original run end in February 1980?',
+        options:['A dance-floor fire','The owners went to prison for tax evasion','Its lease expired','The disco backlash killed attendance'],
+        correct:1,
+        explain:'Rubell and Schrager were convicted of skimming club receipts to evade taxes and served prison time. The club later reopened under new ownership, but the era was over.'
+      },
+      {
+        q:'Which DJ’s residency at the Paradise Garage was so influential that a genre took the club’s name?',
+        options:['Frankie Knuckles','David Mancuso','Junior Vasquez','Larry Levan'],
+        correct:3,
+        explain:'Larry Levan’s marathon sets at the King Street club (1977–1987) defined a sound so tied to the room that "garage" music is named after it. The club’s custom sound system set the standard clubs still chase.'
+      },
+      {
+        q:'NYC’s notorious "Cabaret Law," repealed in 2017, did what?',
+        options:['Banned live jazz after midnight','Set a 2 AM curfew for clubs','Required a license for dancing in bars','Taxed cover charges'],
+        correct:2,
+        explain:'The 1926 law made it illegal to allow dancing without a hard-to-get cabaret license. When it was repealed in 2017, only about 97 of roughly 25,000 eligible venues held one.'
+      },
+      {
+        q:'McSorley’s Old Ale House, pouring since the 1850s, did not admit women until…',
+        options:['1919','1945','1970','1986'],
+        correct:2,
+        explain:'McSorley’s admitted its first women in August 1970 — after a National Organization for Women lawsuit and a city ordinance barring sex discrimination in public places.'
+      },
+      {
+        q:'The Limelight, the infamous ’80s–’90s megaclub, operated inside what kind of building?',
+        options:['A deconsecrated Episcopal church','A former bank vault','A disused subway station','A converted pier shed'],
+        correct:0,
+        explain:'Peter Gatien opened the Limelight in 1983 inside the deconsecrated Church of the Holy Communion at Sixth Avenue and 20th Street — stained glass and all.'
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+    let answered = false;
+
+    const gameEl = document.getElementById('game');
+    const resultEl = document.getElementById('result');
+    const qNumEl = document.getElementById('qNum');
+    const scoreNumEl = document.getElementById('scoreNum');
+
+    function renderQuestion(){
+      answered = false;
+      const item = questions[current];
+      qNumEl.textContent = current + 1;
+      scoreNumEl.textContent = score;
+      gameEl.innerHTML = `
+        <section class="quiz-card">
+          <h2 class="quiz-q">${current + 1}) ${item.q}</h2>
+          <div class="quiz-grid" id="opts"></div>
+          <div id="feedback"></div>
+        </section>`;
+      const optsEl = document.getElementById('opts');
+      item.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'opt-btn';
+        btn.type = 'button';
+        btn.textContent = opt;
+        btn.addEventListener('click', () => answer(idx));
+        optsEl.appendChild(btn);
+      });
+    }
+
+    function answer(idx){
+      if(answered) return;
+      answered = true;
+      const item = questions[current];
+      const correct = idx === item.correct;
+      if(correct) score += 1;
+      scoreNumEl.textContent = score;
+
+      const btns = gameEl.querySelectorAll('.opt-btn');
+      btns.forEach((b, i) => {
+        b.disabled = true;
+        if(i === item.correct) b.classList.add('correct');
+        else if(i === idx) b.classList.add('wrong');
+      });
+
+      const last = current === questions.length - 1;
+      document.getElementById('feedback').innerHTML = `
+        <div class="explain">
+          <p><strong>${correct ? '✅ Correct!' : '❌ Not quite.'}</strong></p>
+          <p>${item.explain}</p>
+        </div>
+        <div style="margin-top:.85rem;">
+          <button class="btn btn-primary" id="nextBtn">${last ? 'See My Result' : 'Next Question'}</button>
+        </div>`;
+      document.getElementById('nextBtn').addEventListener('click', next);
+    }
+
+    function grade(){
+      if(score === 12) return ['🗽 Certified Night Mayor','Perfect score. You could give walking tours of the Bowery at 3 AM.'];
+      if(score >= 10) return ['🥃 Velvet Rope Regular','You know this city after dark better than most bartenders.'];
+      if(score >= 7)  return ['🍸 Solid Barfly','Respectable. A couple more late nights and you’re expert-tier.'];
+      if(score >= 4)  return ['🚕 Weekend Visitor','You’ve seen the highlights — time to go deeper than the big names.'];
+      return ['🗺️ Times Square Tourist','Everyone starts somewhere. The history section below is your cheat sheet — then replay.'];
+    }
+
+    function next(){
+      if(current < questions.length - 1){
+        current += 1;
+        renderQuestion();
+        window.scrollTo({top:0, behavior:'smooth'});
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult(){
+      const [title, blurb] = grade();
+      gameEl.innerHTML = '';
+      resultEl.hidden = false;
+      resultEl.innerHTML = `
+        <h2>${title}</h2>
+        <p><span class="kpi">Final score: <b>${score}/12</b></span></p>
+        <p>${blurb}</p>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem;">
+          <button class="btn btn-primary" id="replayBtn">Play Again</button>
+          <a class="btn btn-secondary" href="/games/secret-spot-hunt.html" style="text-decoration:none;display:inline-block;">Try Secret Spot Hunt</a>
+        </div>
+        <p style="margin-top:.8rem;"><a href="/games/">More nightlife games</a> · <a href="/categories/speakeasies-nyc.html">NYC speakeasy guide</a> · <a href="/tonight/">What’s on tonight</a></p>`;
+      document.getElementById('replayBtn').addEventListener('click', replay);
+      resultEl.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    function replay(){
+      current = 0;
+      score = 0;
+      resultEl.hidden = true;
+      resultEl.innerHTML = '';
+      renderQuestion();
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+
+    renderQuestion();
+  </script>
 <footer class="nyn-footer">
   <div class="nyn-footer-inner">
     <div class="nyn-footer-top">

@@ -3,21 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cover Charge Calculator NYC | NYNightlife</title>
-  <meta name="description" content="Planning page for Cover Charge Calculator NYC. Practical NYC planning guide with actionable tips, logistics, and smart next steps." />
+  <title>Cover Charge Calculator NYC — What Tonight Really Costs | NYNightlife</title>
+  <meta name="description" content="Pick a venue type, night, and group size — get a realistic per-person estimate for cover, drinks, tip, and subway, built from verified 2026 NYC prices." />
   <link rel="canonical" href="https://nynightlife.com/tools/cover-charge-calculator-nyc.html" />
   <link rel="stylesheet" href="../css/main.css" />
-  <meta property="og:title" content="Cover Charge Calculator NYC | NYNightlife" />
-  <meta property="og:description" content="Planning page for Cover Charge Calculator NYC. Practical NYC planning guide with actionable tips, logistics, and smart next steps." />
+  <style>
+    .tool-panel { background: var(--secondary); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; margin: 1.5rem 0; }
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin: 1rem 0; }
+    .tool-grid label { display: flex; flex-direction: column; gap: .4rem; font-weight: 600; color: var(--text); }
+    .tool-grid select, .tool-grid input { background: #0f1020; color: var(--text); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 1rem; width: 100%; }
+    .tool-result { background: var(--panel); border: 1px solid var(--gold); border-radius: 16px; padding: 1.25rem 1.5rem; margin-top: 1.25rem; }
+    .tool-result table { width: 100%; margin: .75rem 0; border-collapse: collapse; }
+    .tool-result td { padding: .5rem .6rem; border-bottom: 1px solid var(--line); }
+    .tool-total { font-size: 1.3rem; color: var(--gold); font-weight: 800; margin: .75rem 0 .25rem; }
+    .tool-note { color: var(--muted); font-size: .92rem; }
+    .price-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .price-table th, .price-table td { padding: .6rem .7rem; text-align: left; border-bottom: 1px solid var(--line); }
+    .price-table th { color: var(--gold); }
+  </style>
+  <meta property="og:title" content="Cover Charge Calculator NYC — What Tonight Really Costs | NYNightlife" />
+  <meta property="og:description" content="Pick a venue type, night, and group size — get a realistic per-person estimate for cover, drinks, tip, and subway, built from verified 2026 NYC prices." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nynightlife.com/tools/cover-charge-calculator-nyc.html" />
   <meta property="og:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cover Charge Calculator NYC | NYNightlife" />
-  <meta name="twitter:description" content="Planning page for Cover Charge Calculator NYC. Practical NYC planning guide with actionable tips, logistics, and smart next steps." />
+  <meta name="twitter:title" content="Cover Charge Calculator NYC — What Tonight Really Costs | NYNightlife" />
+  <meta name="twitter:description" content="Pick a venue type, night, and group size — get a realistic per-person estimate for cover, drinks, tip, and subway, built from verified 2026 NYC prices." />
   <meta name="twitter:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "Cover Charge Calculator NYC | NYNightlife", "url": "https://nynightlife.com/tools/cover-charge-calculator-nyc.html", "description": "Planning page for Cover Charge Calculator NYC. Practical NYC planning guide with actionable tips, logistics, and smart next steps.", "inLanguage": "en-US", "isPartOf": {"@type": "WebSite", "name": "NYNightlife", "url": "https://nynightlife.com/"}}
+{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Cover Charge Calculator NYC — What Tonight Really Costs","description":"Interactive calculator that estimates a realistic per-person cost for a NYC night out — cover, drinks, tip, and subway — from verified venue prices.","url":"https://nynightlife.com/tools/cover-charge-calculator-nyc.html","mainEntityOfPage":"https://nynightlife.com/tools/cover-charge-calculator-nyc.html","datePublished":"2026-03-11","dateModified":"2026-08-26","author":{"@type":"Organization","name":"NYNightlife","url":"https://nynightlife.com/"},"publisher":{"@type":"Organization","name":"NYNightlife","url":"https://nynightlife.com/"},"inLanguage":"en-US"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is cover at NYC clubs in 2026?","acceptedAnswer":{"@type":"Answer","text":"Regular clubs run about $20–$60 (Nebula GA is $20–$60 by event; House of Yes presales run $0–$40). Mega-club covers at Marquee are reported at $30–$70, and Pacha New York GA runs $50–$130 on headliner nights. Dives charge $0–$15, and most cocktail bars have no cover at all."}},{"@type":"Question","name":"Do you tip on a cover charge in NYC?","acceptedAnswer":{"@type":"Answer","text":"No — covers and tickets are not tipped. Tip on drinks instead: about 20% on cocktails, or $1–$2 per beer at a dive. Bottle-service checks usually add roughly 20% service automatically, so check before double-tipping."}},{"@type":"Question","name":"How do I avoid paying cover in NYC?","acceptedAnswer":{"@type":"Answer","text":"Buy presale tickets (nearly always cheaper than the door), use free guestlists and arrive before the cutoff, go on weeknights, or pick no-cover venues — cocktail bars, most regular bars, and many rooftops before the evening switch."}},{"@type":"Question","name":"Is bottle service cheaper than paying cover for a big group?","acceptedAnswer":{"@type":"Answer","text":"Rarely. A reported $1,500 minimum plus tax and 20% service comes to about $1,950 — roughly $245 each for 8 people. Eight people paying a $40 cover plus drinks spend about half that. A table buys guaranteed entry and space, not savings."}}]}]}
   </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3007723856138381" crossorigin="anonymous"></script>
@@ -69,59 +83,196 @@
     <main id="nyn-main" class="container" style="padding:2rem 1rem;">
     <section>
       <h1>Cover Charge Calculator NYC</h1>
-      <p>Cover Charge Calculator NYC is a high-intent NYC planning topic. Use this page to make fast decisions on route, timing, budget, and backup options so your night doesn’t break after the first venue pivot.</p>
-      <p>NYC rewards people who plan in sequences, not random lists. Pick a primary objective, choose one neighborhood cluster, and lock one fallback in the same zone before you leave.</p>
+      <p>Pick a venue type, the night, and your group — get an honest per-person estimate for cover, drinks, tip, and the ride home, built from the prices on our <a href="/venues/">verified venue fact pages</a>. You get ranges, not fake precision, because NYC doors price by night and DJ.</p>
+      <p class="tool-note">Last updated: 2026-08-26 &middot; Price assumptions last verified: 2026-08-26</p>
+    </section>
+
+    <section class="tool-panel">
+      <h2 style="margin-top:0;">Estimate tonight</h2>
+      <div class="tool-grid">
+        <label for="cc-tier">Venue type
+          <select id="cc-tier">
+            <option value="dive">Dive bar</option>
+            <option value="bar">Cocktail bar / lounge</option>
+            <option value="club" selected>Club</option>
+            <option value="mega">Mega-club</option>
+            <option value="rooftop">Rooftop lounge</option>
+          </select>
+        </label>
+        <label for="cc-night">Night
+          <select id="cc-night">
+            <option value="thu">Thursday</option>
+            <option value="fri">Friday</option>
+            <option value="sat" selected>Saturday</option>
+            <option value="other">Sunday&ndash;Wednesday</option>
+          </select>
+        </label>
+        <label for="cc-group">Group size
+          <input type="number" id="cc-group" min="1" max="20" value="4" inputmode="numeric">
+        </label>
+        <label for="cc-bottle">Bottle service?
+          <select id="cc-bottle">
+            <option value="no" selected>No &mdash; GA / at the bar</option>
+            <option value="yes">Yes &mdash; table for the group</option>
+          </select>
+        </label>
+      </div>
+      <button type="button" onclick="calcCover()">Calculate my night</button>
+      <p id="cc-cta" class="tool-note" style="margin-top:1rem;">Set your night above and hit <strong>Calculate</strong> &mdash; you get a per-person range with the full math shown, not one suspiciously exact number.</p>
+      <div id="cc-result" class="tool-result" hidden></div>
+    </section>
+
+    <script>
+    (function () {
+      var TIERS = {
+        dive: { label: "Dive bar", cover: [0, 15], drink: [6, 9], bottle: null,
+          note: "Modeled on Bossa Nova Civic Club ($0–$15 cash at the door) and classic no-cover dives." },
+        bar: { label: "Cocktail bar / lounge", cover: [0, 0], drink: [16, 22], bottle: null,
+          note: "Cocktail rooms like Attaboy and The Back Room charge no cover — the $16–$22 drinks are the cover." },
+        club: { label: "Club", cover: [20, 60], drink: [15, 20], bottle: [1000, 2000],
+          note: "Modeled on Nebula GA ($20–$60 by event) and House of Yes presales ($0–$40)." },
+        mega: { label: "Mega-club", cover: [30, 70], drink: [18, 25], bottle: [1500, 2500],
+          note: "Modeled on Marquee (reported $30–$70) and Pacha New York GA ($50–$130 on headliner nights)." },
+        rooftop: { label: "Rooftop lounge", cover: [0, 50], drink: [18, 26], bottle: [600, 1500],
+          note: "Modeled on 230 Fifth ($15 cover Fri–Sat from 8pm) and Somewhere Nowhere tickets (~$20–$50, reported)." }
+      };
+      var NIGHTS = {
+        thu: { f: 0.7, label: "Thursday" },
+        fri: { f: 0.9, label: "Friday" },
+        sat: { f: 1, label: "Saturday" },
+        other: { f: 0.55, label: "Sun–Wed" }
+      };
+      var DRINKS = 3, TIP = 0.2, TAX = 0.08875, SERVICE = 0.2, SUBWAY = 6;
+      function r5(n) { return Math.round(n / 5) * 5; }
+      function money(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+      function range(lo, hi) { return Math.round(lo) === Math.round(hi) ? money(lo) : money(lo) + "–" + money(hi); }
+      window.calcCover = function () {
+        var tier = TIERS[document.getElementById("cc-tier").value];
+        var night = NIGHTS[document.getElementById("cc-night").value];
+        var group = parseInt(document.getElementById("cc-group").value, 10);
+        if (isNaN(group) || group < 1) { group = 1; }
+        if (group > 20) { group = 20; }
+        document.getElementById("cc-group").value = group;
+        var wantBottle = document.getElementById("cc-bottle").value === "yes";
+        var rows = [], notes = [tier.note];
+        var perLo = 0, perHi = 0;
+        var bottleMode = wantBottle && tier.bottle;
+        if (wantBottle && !tier.bottle) {
+          notes.push("This venue type doesn’t sell bottle service — which is honestly the good news. We priced it as a normal night at the bar.");
+        }
+        if (bottleMode) {
+          var allInLo = tier.bottle[0] * (1 + TAX) * (1 + SERVICE);
+          var allInHi = tier.bottle[1] * (1 + TAX) * (1 + SERVICE);
+          var shareLo = allInLo / group, shareHi = allInHi / group;
+          rows.push(["Table minimum (reported, unverified)", money(tier.bottle[0]) + "–" + money(tier.bottle[1]) + " total"]);
+          rows.push(["+ 8.875% tax + 20% service", money(allInLo) + "–" + money(allInHi) + " total"]);
+          rows.push(["Your share (÷ " + group + ")", range(shareLo, shareHi) + " each"]);
+          perLo += shareLo; perHi += shareHi;
+          notes.push("A table usually covers entry for the group and the bottles are your drinks. Minimums are rarely published — get yours in writing when you book.");
+        } else {
+          var covLo = r5(tier.cover[0] * night.f), covHi = r5(tier.cover[1] * night.f);
+          var dLo = tier.drink[0] * DRINKS, dHi = tier.drink[1] * DRINKS;
+          var tipLo = dLo * TIP, tipHi = dHi * TIP;
+          rows.push(["Cover / ticket (" + night.label + ")", range(covLo, covHi)]);
+          rows.push([DRINKS + " drinks", range(dLo, dHi)]);
+          rows.push(["20% tip on drinks", range(tipLo, tipHi)]);
+          perLo += covLo + dLo + tipLo; perHi += covHi + dHi + tipHi;
+        }
+        rows.push(["Subway round trip", money(SUBWAY)]);
+        perLo += SUBWAY; perHi += SUBWAY;
+        if (!bottleMode && night.f <= 0.7) {
+          notes.push("Weeknights, many big rooms are dark or close to free — check the venue page before building the night around one.");
+        }
+        var html = "<h3 style=\"margin-top:0;\">" + tier.label + " · " + night.label + " · group of " + group + "</h3><table><tbody>";
+        for (var i = 0; i < rows.length; i++) {
+          html += "<tr><td>" + rows[i][0] + "</td><td style=\"text-align:right;white-space:nowrap;\">" + rows[i][1] + "</td></tr>";
+        }
+        html += "</tbody></table>";
+        html += "<p class=\"tool-total\">≈ " + range(perLo, perHi) + " per person</p>";
+        html += "<p><strong>Group total:</strong> " + range(perLo * group, perHi * group) + "</p>";
+        for (var j = 0; j < notes.length; j++) { html += "<p class=\"tool-note\">" + notes[j] + "</p>"; }
+        var box = document.getElementById("cc-result");
+        box.innerHTML = html;
+        box.hidden = false;
+        document.getElementById("cc-cta").hidden = true;
+      };
+    })();
+    </script>
+
+    <section>
+      <h2>How to use this calculator</h2>
+      <p>Choose the kind of room you're aiming for, the night you're going, how many of you there are, and whether anyone is seriously talking about a table. The calculator returns a per-person range and a group total, with every line of the math visible: entry, three drinks, tip, and the subway there and back. If your crew drinks more than three rounds — and on a Saturday, someone will — nudge the total up by the drink price shown for that tier.</p>
+      <p>It's deliberately a range. The same club that charges $25 for a Tuesday local charges $60 for a Saturday headliner, and doors quote whatever the line lets them. Treat the low end as "early, weeknight, presale" and the high end as "peak Saturday, big DJ, paid at the door."</p>
     </section>
 
     <section>
-      <h2>Who This Page Helps Most</h2>
+      <h2>The honest math behind the numbers</h2>
       <ul>
-        <li>Visitors who want a practical plan without wasting half the night in transit.</li>
-        <li>Locals coordinating a group where budget and timing matter.</li>
-        <li>Anyone comparing options and trying to avoid weak last-minute decisions.</li>
+        <li><strong>Covers by tier:</strong> pulled from our venue pages — <a href="/venues/nebula.html">Nebula</a> GA at $20&ndash;$60, <a href="/venues/marquee-new-york.html">Marquee</a> reported at $30&ndash;$70, <a href="/venues/house-of-yes.html">House of Yes</a> presales at $0&ndash;$40, <a href="/venues/bossa-nova-civic-club.html">Bossa Nova Civic Club</a> at $0&ndash;$15, <a href="/venues/230-fifth-rooftop.html">230 Fifth</a> at $15 on weekend nights.</li>
+        <li><strong>Night multiplier:</strong> Saturday is full price, Friday runs about 90% of it, Thursday about 70%, and Sunday&ndash;Wednesday roughly half — when the room is open at all.</li>
+        <li><strong>Drinks:</strong> three per person, at $6&ndash;$9 in a dive, $15&ndash;$25 in clubs, $16&ndash;$26 at cocktail bars and rooftops (Harriet's runs $26&ndash;$31; we cap the model below that outlier).</li>
+        <li><strong>Tip:</strong> 20% on drinks, never on the cover.</li>
+        <li><strong>Subway:</strong> two rides at $3.00 = $6. A 3am rideshare from Bushwick to Manhattan replaces that with $30&ndash;$50 — budget accordingly.</li>
+        <li><strong>Bottle service:</strong> minimum &times; 1.08875 sales tax &times; 1.20 service, split by your group. A $1,500 minimum lands near $1,950 all-in — about $245 each for 8. Minimums at Nebula and Marquee aren't published; third-party quotes of $1,000&ndash;$2,500 are marked unverified for a reason.</li>
       </ul>
-      <p>If this is a same-day decision, prioritize execution speed over endless option hunting. The best plan is usually one strong route with a realistic fallback nearby.</p>
     </section>
 
     <section>
-      <h2>Execution Framework (Use This Before You Go)</h2>
-      <ol>
-        <li><strong>Define the objective:</strong> social energy, date night, music-first, or premium experience.</li>
-        <li><strong>Set spend limits:</strong> include entry, drinks, rides, and late-night food.</li>
-        <li><strong>Choose zone + backup:</strong> keep both options within a short transit window.</li>
-        <li><strong>Set a pivot rule:</strong> if line, wait time, or pricing exceeds your threshold, move immediately.</li>
-        <li><strong>Set the return plan:</strong> decide how the night ends while everyone still has battery and clarity.</li>
-      </ol>
+      <h2>What real venues charge right now</h2>
+      <div style="overflow-x:auto;">
+      <table class="price-table">
+        <thead><tr><th>Venue</th><th>Entry</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/venues/bossa-nova-civic-club.html">Bossa Nova Civic Club</a></td><td>$0&ndash;$15, cash door</td><td>Verified 2026-08-25</td></tr>
+          <tr><td><a href="/venues/house-of-yes.html">House of Yes</a></td><td>$0&ndash;$40+ tiered presale</td><td>Verified 2026-08-25</td></tr>
+          <tr><td><a href="/venues/nebula.html">Nebula</a></td><td>$20&ndash;$60 GA by event</td><td>Verified 2026-08-25</td></tr>
+          <tr><td><a href="/venues/marquee-new-york.html">Marquee</a></td><td>$30&ndash;$70 (reported)</td><td>Verified 2026-08-25</td></tr>
+          <tr><td><a href="/venues/pacha-new-york.html">Pacha New York</a></td><td>$50&ndash;$130 GA</td><td>Verified 2026-08-25</td></tr>
+          <tr><td><a href="/venues/somewhere-nowhere.html">Somewhere Nowhere</a></td><td>~$20&ndash;$50 tickets (reported)</td><td>Verified 2026-08-25</td></tr>
+          <tr><td><a href="/venues/230-fifth-rooftop.html">230 Fifth</a></td><td>$15 Fri&ndash;Sat from 8pm</td><td>Verified 2026-08-25</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="tool-note">Full door policies, hours, and booking details live on each <a href="/venues/">venue fact page</a>.</p>
     </section>
 
     <section>
-      <h2>Budget and Logistics Benchmarks</h2>
+      <h2>How to pay less</h2>
+      <p>Presale beats the door almost everywhere — ticketed rooms like Nebula and House of Yes tier their pricing, so buying the week before can halve your entry. Free guestlists are real at big clubs but conditional: arrive before the cutoff (often midnight) and expect ratio checks; our <a href="/guides/vip-club-access-nyc.html">VIP club access guide</a> covers how they actually work. And the cheapest great night in NYC skips cover entirely — see <a href="/rankings/best-nightlife-under-50-nyc.html">the best nightlife under $50</a> for full plans.</p>
+    </section>
+
+    <section>
+      <h2>FAQ</h2>
+      <h3>How much is cover at NYC clubs in 2026?</h3>
+      <p>Regular clubs run about $20&ndash;$60 (Nebula GA $20&ndash;$60 by event; House of Yes presales $0&ndash;$40). Mega-club covers at Marquee are reported at $30&ndash;$70, and Pacha New York GA runs $50&ndash;$130 on headliner nights. Dives charge $0&ndash;$15, and most cocktail bars have no cover at all.</p>
+      <h3>Do you tip on a cover charge?</h3>
+      <p>No — covers and tickets aren't tipped. Tip on drinks: about 20% on cocktails, $1&ndash;$2 per beer at a dive. Bottle-service checks usually add roughly 20% service automatically, so read the bill before double-tipping.</p>
+      <h3>How do I avoid paying cover?</h3>
+      <p>Buy presale tickets, use free guestlists before their cutoff, go on weeknights, or pick no-cover venues — cocktail bars, most regular bars, and many rooftops before the evening switch to ticketed entry.</p>
+      <h3>Is bottle service cheaper than cover for a big group?</h3>
+      <p>Rarely. A reported $1,500 minimum plus tax and service is about $1,950 — roughly $245 each for 8 people. Eight people paying $40 cover plus drinks spend about half that. A table buys guaranteed entry and space, not savings.</p>
+    </section>
+
+    <section>
+      <h2>Sources</h2>
       <ul>
-        <li><strong>Lean plan ($60–$120):</strong> one paid anchor plus practical transit control.</li>
-        <li><strong>Balanced plan ($120–$250):</strong> one premium stop + one flexible backup.</li>
-        <li><strong>Premium plan ($250+):</strong> reservation-first routing with shorter pivots and fewer misses.</li>
+        <li>NYNightlife venue fact pages, last verified 2026-08-25: <a href="/venues/nebula.html">Nebula</a>, <a href="/venues/marquee-new-york.html">Marquee</a>, <a href="/venues/bossa-nova-civic-club.html">Bossa Nova Civic Club</a>, <a href="/venues/house-of-yes.html">House of Yes</a>, <a href="/venues/somewhere-nowhere.html">Somewhere Nowhere</a>, <a href="/venues/pacha-new-york.html">Pacha New York</a>, <a href="/venues/230-fifth-rooftop.html">230 Fifth</a>.</li>
+        <li>MTA base subway fare ($3.00 per ride as of January 2026), $6 round trip.</li>
+        <li>NYC sales tax on food and drink: 8.875%; 20% service on bottle minimums is the standard reported practice.</li>
       </ul>
-      <p>The biggest planning error in NYC nightlife is unplanned movement. Every extra cross-borough jump adds cost and kills momentum. Keep your route tight and your fallback close.</p>
+      <p class="tool-note">Third-party table-minimum quotes are marked unverified. Spotted a price that moved? <a href="/contact.html">Tell us</a> and we'll re-verify.</p>
     </section>
 
     <section>
-      <h2>Common Mistakes to Avoid</h2>
+      <h2>Keep planning</h2>
       <ul>
-        <li>Overbuilding the itinerary with too many disconnected stops.</li>
-        <li>No backup option when lines spike or crowd fit is wrong.</li>
-        <li>Ignoring return-route timing until the end of the night.</li>
-        <li>Confusing hype with fit; optimize for your group’s objective, not generic top-10 lists.</li>
+        <li><a href="/tools/">All planning tools</a></li>
+        <li><a href="/tools/budget-planner.html">Budget Planner — what your total budget buys</a></li>
+        <li><a href="/tools/group-night-out-planner.html">Group Night Out Planner — a full 3-stop plan</a></li>
+        <li><a href="/tools/dress-code-checker-nyc.html">Dress Code Checker — will the door let you in?</a></li>
+        <li><a href="/rankings/best-clubs-in-nyc.html">Best clubs in NYC, ranked</a></li>
       </ul>
-    </section>
-
-    <section>
-      <h2>Related Planning Pages</h2>
-      <ul>
-        <li><a href="/tools/nyc-night-planner.html">Primary companion guide</a></li>
-        <li><a href="/tools/venue-compare-nyc.html">Execution and comparison support</a></li>
-        <li><a href="/tools/nyc-trip-cost-calculator.html">Backup logistics and next step</a></li>
-      </ul>
-      <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
+      <p style="color:#b7b3ab;">Last updated: 2026-08-26 (America/New_York)</p>
     </section>
   </main>
   <script src="../js/main.js"></script>

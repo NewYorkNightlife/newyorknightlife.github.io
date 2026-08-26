@@ -3,21 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NYC Trip Cost Calculator (2026) | Nightlife Budget Estimator</title>
-  <meta name="description" content="Estimate realistic NYC nightlife costs by area, venue type, rides, and fallback moves to avoid overspending and plan cleaner nights." />
+  <title>NYC Trip Cost Calculator (2026) — Itemized Trip Estimate | NYNightlife</title>
+  <meta name="description" content="Pick nights, hotel tier, nightlife intensity, and dining style — get an itemized NYC trip estimate with lodging, food, OMNY transit, and airport transfers." />
   <link rel="canonical" href="https://nynightlife.com/tools/nyc-trip-cost-calculator.html" />
   <link rel="stylesheet" href="../css/main.css" />
-  <meta property="og:title" content="NYC Trip Cost Calculator (2026) | Nightlife Budget Estimator" />
-  <meta property="og:description" content="Estimate realistic NYC nightlife costs by area, venue type, rides, and fallback moves to avoid overspending and plan cleaner nights." />
+  <style>
+    .tool-panel { background: var(--secondary); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; margin: 1.5rem 0; }
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1rem 0; }
+    .tool-grid label { display: flex; flex-direction: column; gap: .4rem; font-weight: 600; color: var(--text); }
+    .tool-grid select, .tool-grid input { background: #0f1020; color: var(--text); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 1rem; width: 100%; }
+    .tool-result { background: var(--panel); border: 1px solid var(--gold); border-radius: 16px; padding: 1.25rem 1.5rem; margin-top: 1.25rem; }
+    .tool-result table { width: 100%; margin: .75rem 0; border-collapse: collapse; }
+    .tool-result td { padding: .5rem .6rem; border-bottom: 1px solid var(--line); }
+    .tool-total { font-size: 1.3rem; color: var(--gold); font-weight: 800; margin: .75rem 0 .25rem; }
+    .tool-note { color: var(--muted); font-size: .92rem; }
+    .price-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .price-table th, .price-table td { padding: .6rem .7rem; text-align: left; border-bottom: 1px solid var(--line); }
+    .price-table th { color: var(--gold); }
+  </style>
+  <meta property="og:title" content="NYC Trip Cost Calculator (2026) — Itemized Trip Estimate | NYNightlife" />
+  <meta property="og:description" content="Pick nights, hotel tier, nightlife intensity, and dining style — get an itemized NYC trip estimate with lodging, food, OMNY transit, and airport transfers." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nynightlife.com/tools/nyc-trip-cost-calculator.html" />
   <meta property="og:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NYC Trip Cost Calculator (2026) | Nightlife Budget Estimator" />
-  <meta name="twitter:description" content="Estimate realistic NYC nightlife costs by area, venue type, rides, and fallback moves to avoid overspending and plan cleaner nights." />
+  <meta name="twitter:title" content="NYC Trip Cost Calculator (2026) — Itemized Trip Estimate | NYNightlife" />
+  <meta name="twitter:description" content="Pick nights, hotel tier, nightlife intensity, and dining style — get an itemized NYC trip estimate with lodging, food, OMNY transit, and airport transfers." />
   <meta name="twitter:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "NYC Trip Cost Calculator (2026) | Nightlife Budget Estimator", "url": "https://nynightlife.com/tools/nyc-trip-cost-calculator.html", "description": "Estimate realistic NYC nightlife costs by area, venue type, rides, and fallback moves to avoid overspending and plan cleaner nights.", "inLanguage": "en-US", "isPartOf": {"@type": "WebSite", "name": "NYNightlife", "url": "https://nynightlife.com/"}}
+{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"NYC Trip Cost Calculator — Itemized Trip Estimate","description":"Interactive calculator that itemizes a NYC trip — lodging by tier, food, nightlife intensity, OMNY transit with the $35 weekly cap, and airport transfers — from verified 2026 figures.","url":"https://nynightlife.com/tools/nyc-trip-cost-calculator.html","mainEntityOfPage":"https://nynightlife.com/tools/nyc-trip-cost-calculator.html","datePublished":"2026-03-11","dateModified":"2026-08-26","author":{"@type":"Organization","name":"NYNightlife","url":"https://nynightlife.com/"},"publisher":{"@type":"Organization","name":"NYNightlife","url":"https://nynightlife.com/"},"inLanguage":"en-US"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a 3-night NYC trip cost per person in 2026?","acceptedAnswer":{"@type":"Answer","text":"Using verified 2026 daily bands: a backpacker runs about $110–$200 a day all-in (hostel dorm, street food, dive-bar nights), mid-range about $320–$550 (budget hotel, one sit-down meal, a cocktail bar plus a club), and comfort $740+. Three nights lands roughly at $330–$600 backpacker, $960–$1,650 mid-range, $2,200+ comfort — before flights."}},{"@type":"Question","name":"What is the cheapest way from JFK to Manhattan?","acceptedAnswer":{"@type":"Answer","text":"AirTrain plus the subway — about $11.65 total, versus $70–$90+ for a yellow cab once the JFK flat fare, tolls, and tip are added. The train takes 50–75 minutes to most of Manhattan."}},{"@type":"Question","name":"How does the $35 OMNY weekly fare cap work?","acceptedAnswer":{"@type":"Answer","text":"Subway and local bus rides cost $3.00 (as of January 2026), paid by tapping the same contactless card or phone. Once you've spent $35 in a rolling 7-day window, every further ride that week is free — automatically, with no pass to buy. The subway also runs 24 hours, which is the biggest nightlife budget weapon in NYC."}},{"@type":"Question","name":"How much should I budget per night for NYC nightlife?","acceptedAnswer":{"@type":"Answer","text":"About $25–$50 a night for happy hours and dive bars with no cover, $60–$120 for a cocktail bar plus a show or club, and $150–$300+ for covers, big rooms, and late-night cars. Covers alone run $0–$15 at dives and $20–$70+ at clubs."}}]}]}
   </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3007723856138381" crossorigin="anonymous"></script>
@@ -69,65 +83,201 @@
     <main id="nyn-main" class="container" style="padding:2rem 1rem;">
     <section>
       <h1>NYC Trip Cost Calculator</h1>
-      <p>This page targets <strong>nyc nightlife budget calculator</strong> and is built for one outcome: help you make cleaner decisions fast. Treat it like an operator brief, not a generic list.</p>
-      <p>Best workflow: choose one objective (cost forecasting), one primary zone (citywide planning), and one nearby fallback before you leave. That alone removes most NYC nightlife failure points.</p>
+      <p>Set five dials — nights, where you'll sleep, how hard you'll go out, how you'll eat, and how you're getting in from the airport — and get an itemized trip estimate with the math shown. Every number comes from the verified 2026 figures in our <a href="/things-to-do/nyc-on-a-budget-guide.html">NYC on a budget guide</a>. You get ranges, not fake precision, because NYC prices swing hard by season and by night.</p>
+      <p class="tool-note">Last updated: 2026-08-26 &middot; Price assumptions last verified: 2026-08-26</p>
+    </section>
+
+    <section class="tool-panel">
+      <h2 style="margin-top:0;">Estimate the trip</h2>
+      <div class="tool-grid">
+        <label for="tc-nights">Nights in NYC (1&ndash;7)
+          <input type="number" id="tc-nights" min="1" max="7" value="3" inputmode="numeric">
+        </label>
+        <label for="tc-hotel">Where you'll sleep
+          <select id="tc-hotel">
+            <option value="hostel">Hostel dorm</option>
+            <option value="budget" selected>Budget hotel</option>
+            <option value="mid">Mid-range Manhattan hotel</option>
+            <option value="lux">Luxury hotel</option>
+          </select>
+        </label>
+        <label for="tc-nightlife">Nightlife intensity
+          <select id="tc-nightlife">
+            <option value="light">Light &mdash; happy hours &amp; dives</option>
+            <option value="mod" selected>Moderate &mdash; cocktail bar + club</option>
+            <option value="full">Full send &mdash; covers &amp; big rooms</option>
+          </select>
+        </label>
+        <label for="tc-food">Dining style
+          <select id="tc-food">
+            <option value="street">Slices, carts &amp; bodegas</option>
+            <option value="casual" selected>One sit-down + cheap eats</option>
+            <option value="resto">Restaurant meals daily</option>
+          </select>
+        </label>
+        <label for="tc-air">Airport transfers
+          <select id="tc-air">
+            <option value="train" selected>AirTrain + subway (JFK)</option>
+            <option value="taxi">Taxi / car both ways</option>
+            <option value="none">None &mdash; not flying in</option>
+          </select>
+        </label>
+      </div>
+      <button type="button" onclick="calcTrip()">Calculate my trip</button>
+      <p id="tc-cta" class="tool-note" style="margin-top:1rem;">Set the dials and hit <strong>Calculate</strong> &mdash; you get lodging &times; nights, food and nightlife per day, subway with the $35 weekly cap, and the airport math, itemized.</p>
+      <div id="tc-result" class="tool-result" hidden></div>
+    </section>
+
+    <script>
+    (function () {
+      var HOTELS = {
+        hostel: { label: "Hostel dorm", r: [60, 110],
+          note: "Dorm beds average roughly $60–$110/night in 2026 with hard seasonality — about $52 in January, $175+ in September. Winter is the cheat code." },
+        budget: { label: "Budget hotel", r: [180, 280],
+          note: "Outer-borough or budget Manhattan rooms. Long Island City and downtown Brooklyn keep you 15 subway minutes from the action for less." },
+        mid: { label: "Mid-range Manhattan hotel", r: [350, 500],
+          note: "The citywide hotel average sits well above $400 in peak months — September, October, and December are the worst offenders." },
+        lux: { label: "Luxury hotel", r: [500, 800],
+          note: "This band sits above our verified $350–$500 comfort tier; five-star Manhattan runs well past $800 in peak season, so treat it as a floor." }
+      };
+      var NIGHTLIFE = {
+        light: { label: "happy hours + dives, no cover", r: [25, 50] },
+        mod: { label: "cocktail bar + a show or club", r: [60, 120] },
+        full: { label: "covers, big rooms, late cars", r: [150, 300] }
+      };
+      var DINING = {
+        street: { label: "slices, halal carts, bodegas", r: [20, 35] },
+        casual: { label: "one sit-down + cheap eats", r: [50, 80] },
+        resto: { label: "restaurant meals", r: [120, 160] }
+      };
+      var AIR = {
+        none: { c: [0, 0], label: null, note: null },
+        train: { c: [23, 23], label: "AirTrain + subway (JFK), round trip",
+          note: "About $11.65 each way — AirTrain plus a $3.00 subway tap. Slower than a cab by 20–30 minutes, cheaper by about $60 each way." },
+        taxi: { c: [140, 180], label: "Taxi from JFK, round trip",
+          note: "The JFK yellow-cab flat fare plus tolls and tip lands around $70–$90+ each way. LaGuardia metered rides run somewhat less; surge rideshare can run more." }
+      };
+      var RIDE = 3, TAPS = 4, CAP = 35;
+      function money(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+      function range(lo, hi) { return Math.round(lo) === Math.round(hi) ? money(lo) : money(lo) + "–" + money(hi); }
+      window.calcTrip = function () {
+        var nights = parseInt(document.getElementById("tc-nights").value, 10);
+        if (isNaN(nights) || nights < 1) { nights = 1; }
+        if (nights > 7) { nights = 7; }
+        document.getElementById("tc-nights").value = nights;
+        var hotel = HOTELS[document.getElementById("tc-hotel").value] || HOTELS.budget;
+        var nl = NIGHTLIFE[document.getElementById("tc-nightlife").value] || NIGHTLIFE.mod;
+        var food = DINING[document.getElementById("tc-food").value] || DINING.casual;
+        var air = AIR[document.getElementById("tc-air").value] || AIR.none;
+        var rows = [], notes = [];
+        var lodgeLo = hotel.r[0] * nights, lodgeHi = hotel.r[1] * nights;
+        rows.push(["Lodging — " + hotel.label + " × " + nights + " nights (" + money(hotel.r[0]) + "–" + money(hotel.r[1]) + "/night)", range(lodgeLo, lodgeHi)]);
+        var foodLo = food.r[0] * nights, foodHi = food.r[1] * nights;
+        rows.push(["Food — " + food.label + " (" + money(food.r[0]) + "–" + money(food.r[1]) + "/day × " + nights + ")", range(foodLo, foodHi)]);
+        var nlLo = nl.r[0] * nights, nlHi = nl.r[1] * nights;
+        rows.push(["Nightlife — " + nl.label + " (" + money(nl.r[0]) + "–" + money(nl.r[1]) + "/night × " + nights + ")", range(nlLo, nlHi)]);
+        var transitRaw = nights * TAPS * RIDE;
+        var transit = Math.min(transitRaw, CAP);
+        var capped = transitRaw > CAP;
+        rows.push(["Subway — ~" + TAPS + " OMNY taps/day at $3.00" + (capped ? ", capped at $35/week" : ""), money(transit)]);
+        if (capped) {
+          notes.push("You hit the $35 OMNY fare cap: after $35 of taps in a rolling 7-day window, every further subway and local bus ride is free — automatically, same card or phone every tap.");
+        }
+        var airLo = air.c[0], airHi = air.c[1];
+        if (air.label) { rows.push([air.label, range(airLo, airHi)]); }
+        if (air.note) { notes.push(air.note); }
+        notes.push(hotel.note);
+        if (nl === NIGHTLIFE.full) {
+          notes.push("Full-send math assumes covers and a late car most nights. Price a specific door with the cover charge calculator before committing the budget.");
+        }
+        var totLo = lodgeLo + foodLo + nlLo + transit + airLo;
+        var totHi = lodgeHi + foodHi + nlHi + transit + airHi;
+        var perLo = totLo / nights, perHi = totHi / nights;
+        var mid = (perLo + perHi) / 2;
+        var band = mid <= 250 ? "backpacker (~$110–$200/day)" : (mid <= 600 ? "mid-range (~$320–$550/day)" : "comfort (~$740+/day)");
+        var html = "<h3 style=\"margin-top:0;\">" + nights + " night" + (nights > 1 ? "s" : "") + " · " + hotel.label + " · " + nl.label + "</h3><table><tbody>";
+        for (var i = 0; i < rows.length; i++) {
+          html += "<tr><td>" + rows[i][0] + "</td><td style=\"text-align:right;white-space:nowrap;\">" + rows[i][1] + "</td></tr>";
+        }
+        html += "</tbody></table>";
+        html += "<p class=\"tool-total\">≈ " + range(totLo, totHi) + " for the trip</p>";
+        html += "<p><strong>Per day:</strong> " + range(perLo, perHi) + " — that lands in our verified <strong>" + band + "</strong> band. Flights not included.</p>";
+        for (var j = 0; j < notes.length; j++) { html += "<p class=\"tool-note\">" + notes[j] + "</p>"; }
+        var box = document.getElementById("tc-result");
+        box.innerHTML = html;
+        box.hidden = false;
+        document.getElementById("tc-cta").hidden = true;
+      };
+    })();
+    </script>
+
+    <section>
+      <h2>How the estimate works</h2>
+      <p>Every line is a range pulled from prices we verify, not a national travel average. Lodging multiplies your tier's nightly rate by your nights; food and nightlife apply a verified per-day band for each style; transit assumes about four subway taps a day at $3.00 and applies the OMNY fare cap — once you've spent $35 in a rolling 7-day window, the rest of that week's rides are free, automatically. That cap is why the subway line flattens at $35 from day three: on any trip up to a week, transit simply cannot cost more than $35 if you tap the same card every ride.</p>
+      <p>Treat the low end of the result as the disciplined version of your trip — presale tickets, happy-hour timing, January hotel rates — and the high end as the September-Saturday version with a third round and a 3am car. Both are real; which one you get is mostly decided before you leave the hotel.</p>
     </section>
 
     <section>
-      <h2>High-Probability Planning Framework</h2>
-      <ol>
-        <li><strong>Define your win condition:</strong> social vibe, music quality, low-friction logistics, or premium experience.</li>
-        <li><strong>Lock budget bands:</strong> include entry, drinks, transport, and late food as a single all-in number.</li>
-        <li><strong>Sequence your route:</strong> opener → anchor venue → closeout option near transit.</li>
-        <li><strong>Set pivot triggers:</strong> if wait/line/price mismatch hits your threshold, move immediately.</li>
-        <li><strong>Pre-plan your return:</strong> final transit decision should be made before 11:30 PM, not at 2:00 AM.</li>
-      </ol>
+      <h2>The verified daily bands behind it</h2>
+      <div style="overflow-x:auto;">
+      <table class="price-table">
+        <thead><tr><th>Line item</th><th>Backpacker</th><th>Mid-range</th><th>Comfort</th></tr></thead>
+        <tbody>
+          <tr><td>Sleep</td><td>$60&ndash;110 hostel dorm</td><td>$180&ndash;280 budget hotel</td><td>$350&ndash;500+ Manhattan hotel</td></tr>
+          <tr><td>Food</td><td>$20&ndash;35</td><td>$50&ndash;80</td><td>$120+</td></tr>
+          <tr><td>Nightlife</td><td>$25&ndash;50</td><td>$60&ndash;120</td><td>$150&ndash;300+</td></tr>
+          <tr><td>Transit</td><td colspan="3">$3.00/ride on OMNY, capped at $35 per rolling week</td></tr>
+          <tr><td><strong>Daily total</strong></td><td><strong>~$110&ndash;200</strong></td><td><strong>~$320&ndash;550</strong></td><td><strong>~$740+</strong></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The backpacker column is genuinely livable because NYC is unusually good at free daytime activities — that playbook lives in our <a href="/things-to-do/nyc-free-things-to-do-guide.html">free things to do guide</a>. What your nightly number actually buys, venue by venue, is the job of the <a href="/tools/budget-planner.html">budget planner</a>.</p>
     </section>
 
     <section>
-      <h2>Execution Benchmarks (NYC Reality)</h2>
+      <h2>Where trips blow the budget</h2>
       <ul>
-        <li><strong>Lean plan ($60–$120):</strong> one paid anchor, fewer hops, hard spend cap.</li>
-        <li><strong>Balanced plan ($120–$250):</strong> one reservation-quality stop + one tactical backup.</li>
-        <li><strong>Premium plan ($250+):</strong> guaranteed-entry strategy, shorter transfers, quality over volume.</li>
+        <li><strong>The airport cab, twice.</strong> AirTrain + subway from JFK is about $11.65; a cab with tolls and tip is $70&ndash;$90+. That one choice, made both ways, swings the trip by roughly $120&ndash;$150.</li>
+        <li><strong>Booking the wrong month.</strong> The same hostel dorm averages ~$52 in January and $175+ in September. Hotels follow the same curve. If your dates are flexible, this is the single biggest lever on the whole estimate.</li>
+        <li><strong>Late-night cars instead of the 24-hour subway.</strong> A $3 ride home at 3am versus a $35&ndash;$60 surge-priced car, several nights running. Which lines are reliable at that hour is covered in our <a href="/plan/nyc-subway-for-nightlife.html">subway for nightlife guide</a>.</li>
+        <li><strong>Paying the door instead of presale.</strong> Ticketed rooms tier their pricing — buying the week before can halve your entry. Run any specific club through the <a href="/tools/cover-charge-calculator-nyc.html">cover charge calculator</a>.</li>
+        <li><strong>Sleeping far from where you go out.</strong> A hotel 15 minutes from your nightlife zone saves both money and momentum — our <a href="/guides/stay-near-nightlife.html">where to stay for nightlife guide</a> maps the trade-offs.</li>
       </ul>
-      <p>Most nights fail from over-travel and indecision. Keep everything inside one practical movement radius and protect momentum.</p>
     </section>
 
     <section>
-      <h2>Common Mistakes We See</h2>
+      <h2>FAQ</h2>
+      <h3>How much does a 3-night NYC trip cost per person in 2026?</h3>
+      <p>By the verified bands: roughly $330&ndash;$600 all-in as a backpacker, $960&ndash;$1,650 mid-range, and $2,200+ in the comfort tier — before flights. Run your own dials above for the itemized version.</p>
+      <h3>What's the cheapest way from JFK to Manhattan?</h3>
+      <p>AirTrain + subway, about $11.65 total, versus $70&ndash;$90+ for a cab with the flat fare, tolls, and tip. Budget 50&ndash;75 minutes for the train to most of Manhattan.</p>
+      <h3>How does the $35 OMNY weekly cap work?</h3>
+      <p>Tap the same contactless card or phone for every $3.00 ride; once you've spent $35 in a rolling 7-day window, further subway and local bus rides are free. Nothing to buy in advance — it just happens. MetroCards are being retired; don't buy one.</p>
+      <h3>How much should I budget per night for nightlife?</h3>
+      <p>$25&ndash;$50 for happy hours and no-cover dives, $60&ndash;$120 for a cocktail bar plus a show or club, $150&ndash;$300+ once big-room covers and late cars enter the night. Covers alone run $0&ndash;$15 at dives and $20&ndash;$70+ at clubs — see the <a href="/venues/">venue fact pages</a> for specific doors.</p>
+    </section>
+
+    <section>
+      <h2>Sources</h2>
       <ul>
-        <li>Overloading the night with too many borough jumps.</li>
-        <li>No backup when capacity or door policy changes.</li>
-        <li>Confusing social hype with your actual night objective.</li>
-        <li>Leaving transportation decisions for the end of the night.</li>
+        <li><a href="/things-to-do/nyc-on-a-budget-guide.html">NYC on a Budget guide</a> — verified 2026 daily bands, hostel seasonality, food and nightlife pricing (last verified 2026-08-26).</li>
+        <li>MTA: $3.00 base subway/local bus fare and the $35 rolling 7-day OMNY fare cap, as of January 2026.</li>
+        <li>JFK AirTrain + subway combined fare (~$11.65) and the JFK yellow-cab flat fare plus tolls/tip ($70&ndash;$90+), as cited in the budget guide.</li>
+        <li>NYNightlife <a href="/venues/">venue fact pages</a> — cover and drink ranges behind the nightlife bands.</li>
       </ul>
+      <p class="tool-note">Spotted a price that moved? <a href="/contact.html">Tell us</a> and we'll re-verify.</p>
     </section>
 
     <section>
-      <h2>NYC Entity Snapshot</h2>
-      <p>For better outcomes, treat NYC nightlife as a systems problem: venue type, neighborhood density, transit constraints, and price volatility all interact. Most users get better results by minimizing long transfers, prioritizing one strong anchor decision, and protecting optionality with one nearby backup.</p>
-      <p>Use major corridors and known station routes, keep group decision rules simple, and avoid high-friction pivots after midnight unless the upgrade quality is obvious.</p>
-    </section>
-
-    <section>
-      <h2>Quick FAQ</h2>
-      <h3>How far should I travel between nightlife stops in NYC?</h3>
-      <p>As a default, keep transfers short and inside one practical movement radius. Long hops usually reduce conversion, increase spend, and create group drop-off.</p>
-      <h3>When should I pivot to a backup plan?</h3>
-      <p>If line time, cover, or crowd fit breaks your preset threshold, pivot fast. Waiting without a rule is usually the most expensive decision.</p>
-      <h3>What improves odds the most?</h3>
-      <p>Choosing neighborhood first, then sequencing one opener + one anchor + one closeout option. Structure beats randomness in NYC at night.</p>
-    </section>
-
-    <section>
-      <h2>Next Best Pages</h2>
+      <h2>Keep planning</h2>
       <ul>
-        <li><a href="/tools/cover-charge-calculator-nyc.html">Primary companion page</a></li>
-        <li><a href="/tools/nyc-night-planner.html">Decision support tool</a></li>
-        <li><a href="/visit-essentials/best-cards-for-nyc-travel.html">Backup logistics page</a></li>
+        <li><a href="/tools/">All planning tools</a></li>
+        <li><a href="/tools/budget-planner.html">Budget Planner &mdash; what one night's budget buys</a></li>
+        <li><a href="/tools/cover-charge-calculator-nyc.html">Cover Charge Calculator &mdash; price a specific door</a></li>
+        <li><a href="/tools/nyc-night-planner.html">NYC Night Planner &mdash; build the actual night</a></li>
+        <li><a href="/visit-essentials/best-cards-for-nyc-travel.html">Best cards for NYC travel</a></li>
       </ul>
-      <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
+      <p style="color:#b7b3ab;">Last updated: 2026-08-26 (America/New_York)</p>
     </section>
   </main>
   <script src="../js/main.js"></script>

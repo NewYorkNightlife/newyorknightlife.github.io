@@ -3,24 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NYC Night Planner (2026) | Full Framework for High-Probability Nights</title>
-  <meta name="description" content="Deep NYC Night Planner framework with route templates, budget controls, and execution checklists for better nightlife outcomes." />
+  <title>NYC Night Planner — Timed 3-Stop Plans by Day &amp; Vibe | NYNightlife</title>
+  <meta name="description" content="Pick the day, start time, group size, budget, and vibe — get a timed 3-stop NYC night plan from verified venues, with weekday and weekend routes to copy." />
   <link rel="canonical" href="https://nynightlife.com/tools/nyc-night-planner.html" />
   <link rel="stylesheet" href="../css/main.css" />
-  <meta property="og:title" content="NYC Night Planner (2026) | Full Framework for High-Probability Nights" />
-  <meta property="og:description" content="Deep NYC Night Planner framework with route templates, budget controls, and execution checklists for better nightlife outcomes." />
+  <style>
+    .tool-panel { background: var(--secondary); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; margin: 1.5rem 0; }
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin: 1rem 0; }
+    .tool-grid label { display: flex; flex-direction: column; gap: .4rem; font-weight: 600; color: var(--text); }
+    .tool-grid select, .tool-grid input { background: #0f1020; color: var(--text); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 1rem; width: 100%; }
+    .tool-result { background: var(--panel); border: 1px solid var(--gold); border-radius: 16px; padding: 1.25rem 1.5rem; margin-top: 1.25rem; }
+    .tool-note { color: var(--muted); font-size: .92rem; }
+    .tool-total { font-size: 1.3rem; color: var(--gold); font-weight: 800; margin: .75rem 0 .25rem; }
+    .stop-card { border: 1px solid var(--line); border-radius: 12px; padding: .9rem 1.1rem; margin: .7rem 0; background: var(--panel-soft); }
+    .stop-card .stop-time { color: var(--gold); font-weight: 800; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
+    .stop-card h4 { margin: .25rem 0 .3rem; font-size: 1.05rem; }
+    .stop-card p { margin: 0; font-size: .95rem; }
+    #np-copytext { width: 100%; min-height: 130px; margin-top: .75rem; background: #0f1020; color: var(--text); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; font-size: .9rem; font-family: inherit; }
+  </style>
+  <meta property="og:title" content="NYC Night Planner — Timed 3-Stop Plans by Day &amp; Vibe | NYNightlife" />
+  <meta property="og:description" content="Pick the day, start time, group size, budget, and vibe — get a timed 3-stop NYC night plan from verified venues, with weekday and weekend routes to copy." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nynightlife.com/tools/nyc-night-planner.html" />
   <meta property="og:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NYC Night Planner (2026) | Full Framework for High-Probability Nights" />
-  <meta name="twitter:description" content="Deep NYC Night Planner framework with route templates, budget controls, and execution checklists for better nightlife outcomes." />
+  <meta name="twitter:title" content="NYC Night Planner — Timed 3-Stop Plans by Day &amp; Vibe | NYNightlife" />
+  <meta name="twitter:description" content="Pick the day, start time, group size, budget, and vibe — get a timed 3-stop NYC night plan from verified venues, with weekday and weekend routes to copy." />
   <meta name="twitter:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "NYC Night Planner (2026) | Full Framework for High-Probability Nights", "url": "https://nynightlife.com/tools/nyc-night-planner.html", "description": "Deep NYC Night Planner framework with route templates, budget controls, and execution checklists for better nightlife outcomes.", "inLanguage": "en-US", "isPartOf": {"@type": "WebSite", "name": "NYNightlife", "url": "https://nynightlife.com/"}}
-  </script>
-  <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What’s the fastest way to plan this night in NYC?", "acceptedAnswer": {"@type": "Answer", "text": "Pick a neighborhood cluster first, then pick a primary venue and one backup within a short ride."}}, {"@type": "Question", "name": "Should I book in advance or decide same day?", "acceptedAnswer": {"@type": "Answer", "text": "Book high-demand experiences in advance, but keep at least one flexible option for weather, lines, and crowd shifts."}}, {"@type": "Question", "name": "How do I reduce late-night transit risk?", "acceptedAnswer": {"@type": "Answer", "text": "Use major station corridors, avoid last-minute cross-borough jumps, and set a clear end-of-night pickup plan."}}]}
+{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"NYC Night Planner — Timed 3-Stop Plans by Day & Vibe","description":"Interactive planner that builds a timed 3-stop NYC night — pregame, main event, late food — from verified venues, with different routes for weeknights and weekends and a copyable itinerary.","url":"https://nynightlife.com/tools/nyc-night-planner.html","mainEntityOfPage":"https://nynightlife.com/tools/nyc-night-planner.html","datePublished":"2026-03-11","dateModified":"2026-08-26","author":{"@type":"Organization","name":"NYNightlife","url":"https://nynightlife.com/"},"publisher":{"@type":"Organization","name":"NYNightlife","url":"https://nynightlife.com/"},"inLanguage":"en-US"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's the best weeknight for going out in NYC?","acceptedAnswer":{"@type":"Answer","text":"There's real programming most weeknights if you know where to look: Nebula Tuesdays in Midtown, Eli Escobar's Wednesday residency and Susanne Bartsch's Thursdays at Le Bain, Marquee's Wednesday industry night, free Monday jazz at The Back Room, and Dead Rabbit happy hour Sunday–Thursday. Weeknights mean cheaper covers and shorter lines."}},{"@type":"Question","name":"How many stops should a night out in NYC have?","acceptedAnswer":{"@type":"Answer","text":"Three: a pregame with seats and conversation, one main event you commit to, and food before the ride home. Every five-stop plan becomes a two-stop plan with an argument in the middle."}},{"@type":"Question","name":"Should I book ahead or decide the same day?","acceptedAnswer":{"@type":"Answer","text":"Ticketed rooms — Nebula, Marquee, House of Yes, Good Room, Public Records, Knockdown Center, Pacha — sell tiered presales that beat door prices, so buy those ahead. Cocktail bars, dives, and most rooftops are walk-in and can be decided the same day."}},{"@type":"Question","name":"Does a solo night out in NYC work?","acceptedAnswer":{"@type":"Answer","text":"Yes — solo is the easy mode. Bar seats at walk-in cocktail rooms like Attaboy, friendly techno floors like Bossa Nova Civic Club, and 24-hour food counters all work better alone than in a pack. Start early and take the bar seat."}}]}]}
   </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3007723856138381" crossorigin="anonymous"></script>
@@ -71,74 +82,299 @@
 
   <main id="nyn-main" class="container" style="padding:2rem 1rem; max-width:1040px;">
     <p class="eyebrow">Tools</p>
-    <h1>NYC Night Planner: Full Route Framework for Better Outcomes</h1>
-    
-<p>This is the core planning engine for the site. The goal is simple: increase hit rate by controlling sequence, spend, and fallback quality before the night starts.</p>
-<h2>Step-by-step planner</h2>
-<ol>
-<li><strong>Define objective:</strong> date, social, music-first, or VIP.</li>
-<li><strong>Set spend lane:</strong> lean, balanced, premium.</li>
-<li><strong>Select core zone + fallback zone:</strong> no random map-wide roaming.</li>
-<li><strong>Assign time windows:</strong> opener, anchor, close-out.</li>
-<li><strong>Set transport cutoff:</strong> decide your final movement rule early.</li>
-</ol>
+    <h1>NYC Night Planner: A Timed 3-Stop Plan for Any Night of the Week</h1>
 
-<h2>Pre-game checklist (15 minutes)</h2>
-<ul>
-<li>Confirm venue hours and any ticket/entry requirements.</li>
-<li>Share one map pin for meetup and one fallback pin.</li>
-<li>Agree on a "pivot trigger" (line too long, crowd mismatch, price mismatch).</li>
-<li>Set max ride distance between stops before midnight.</li>
-<li>Set end-of-night return strategy while everyone still has battery.</li>
-</ul>
-
-<h2>Route templates</h2>
-<div class="card"><p><strong>Template A (Social):</strong> 7:30 opener → 10:00 anchor → 12:30 fallback near transport.</p><p><strong>Template B (Music-first):</strong> 8:30 warmup → 11:00 main set → 1:30 selective closeout.</p><p><strong>Template C (Premium):</strong> reservation opener → controlled pivot → high-confidence finish.</p></div>
-<h2>Budget controls</h2>
-<ul>
-<li>Set per-person cap before venue selection.</li>
-<li>Track all-in cost: covers, drinks, rideshare, late food.</li>
-<li>Reserve premium spend for one deliberate anchor, not multiple guesses.</li>
-</ul>
-
-<h2>Scenario planning (so the night doesn’t break)</h2>
-<p><strong>If weather turns:</strong> move to indoor-first route and compress travel distance.</p>
-<p><strong>If first venue fails:</strong> execute fallback immediately in the same district.</p>
-<p><strong>If budget drifts:</strong> cut one paid stop and preserve your strongest anchor.</p>
-<p><strong>If group splits:</strong> define one regroup point and one hard regroup time.</p>
-
-<h2>Failure points to eliminate</h2>
-<ul>
-<li>No backup venue when line conditions turn bad.</li>
-<li>Overcommitting across far neighborhoods.</li>
-<li>No agreed group decision rule for pivots.</li>
-</ul>
-<h2>Connected tools</h2>
-<ul>
-<li><a href="/tools/venue-compare-nyc.html">Venue Compare</a></li>
-<li><a href="/tools/cover-charge-calculator-nyc.html">Cover Charge Calculator</a></li>
-<li><a href="/tools/nyc-trip-cost-calculator.html">Trip Cost Calculator</a></li>
-</ul>
-
-    <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
-  
     <section>
-      <h2>Entity-Rich NYC Planning Notes</h2>
-      <p>High-intent visitors usually compare these NYC zones first: <strong>Midtown, LES, Williamsburg, Long Island City</strong>. Use this page to choose one primary zone and one backup zone before you leave.</p>
+      <p>Tell it five things — the day, when you're starting, how many of you, the budget, and the vibe — and it builds a timed 3-stop night: pregame, main event, late food. It knows the difference between a Tuesday and a Saturday, because NYC does: every route comes from our <a href="/venues/">verified venue pages</a>, matched to the nights those rooms actually run. Solo and duo nights welcome — for 8+ people, the <a href="/tools/group-night-out-planner.html">group planner</a> handles the herd.</p>
+      <p class="tool-note">Last updated: 2026-08-26 &middot; Venues and prices last verified: 2026-08-26</p>
+    </section>
+
+    <section class="tool-panel">
+      <h2 style="margin-top:0;">Plan the night</h2>
+      <div class="tool-grid">
+        <label for="np-day">Day of week
+          <select id="np-day">
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+            <option value="fri" selected>Friday</option>
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
+          </select>
+        </label>
+        <label for="np-start">Start time
+          <select id="np-start">
+            <option value="19">Early — 7:00pm</option>
+            <option value="21" selected>Prime — 9:00pm</option>
+            <option value="23">Late — 11:00pm</option>
+          </select>
+        </label>
+        <label for="np-group">Group size
+          <input type="number" id="np-group" min="1" max="12" value="2" inputmode="numeric">
+        </label>
+        <label for="np-budget">Budget per person
+          <select id="np-budget">
+            <option value="60">Under $60</option>
+            <option value="120" selected>$60–$120</option>
+            <option value="250">$120–$250</option>
+            <option value="9999">$250+</option>
+          </select>
+        </label>
+        <label for="np-vibe">Vibe
+          <select id="np-vibe">
+            <option value="club" selected>Big-room club</option>
+            <option value="techno">Techno / warehouse</option>
+            <option value="cocktail">Cocktails &amp; conversation</option>
+            <option value="rooftop">Rooftops &amp; views</option>
+            <option value="show">A show / something different</option>
+          </select>
+        </label>
+      </div>
+      <button type="button" onclick="planNight()">Build my night</button>
+      <p id="np-cta" class="tool-note" style="margin-top:1rem;">Set the five dials and hit <strong>Build my night</strong> &mdash; you get a timed pregame &rarr; main &rarr; food route with per-person costs and a copyable itinerary.</p>
+      <div id="np-result" class="tool-result" hidden></div>
+    </section>
+
+    <script>
+    (function () {
+      function V(n, u) { return u ? "<a href=\"" + u + "\">" + n + "</a>" : n; }
+      var DAY_LABEL = { mon: "Monday", tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday", sat: "Saturday", sun: "Sunday" };
+      var VIBE_LABEL = { club: "big-room club", techno: "techno / warehouse", cocktail: "cocktail", rooftop: "rooftop", show: "show" };
+      var PLANS = [
+        { v: "club", d: ["fri", "sat"], cost: [120, 190], sm: 1,
+          s: [{ n: "The Back Room", u: "/venues/the-back-room.html", t: "Teacup cocktails in a real LES speakeasy — no cover, ever. Two rounds max." },
+              { n: "Nebula", u: "/venues/nebula.html", t: "Midtown's 800-cap big room. GA presale $20–$60; dress code enforced; arrive before midnight." },
+              { n: "BCD Tofu House, K-town", u: null, t: "Bubbling soondubu until ~5am Fri–Sat, a 10-minute walk from the club." }],
+          bd: "2 pregame cocktails w/ tip (~$38–$53) + Nebula GA ($20–$60) + 2 club drinks w/ tip (~$36–$48) + stew ($22–$30) + subway ($6)" },
+        { v: "club", d: ["tue"], cost: [105, 150], sm: 1,
+          s: [{ n: "Attaboy", u: "/venues/attaboy.html", t: "No-menu bespoke cocktails; walk-ins move fast on a Tuesday." },
+              { n: "Nebula — Nebula Tuesdays", u: "/venues/nebula.html", t: "The weekly open-format party in Midtown's big room. GA at the cheap end of $20–$60; 21+, dress up anyway." },
+              { n: "BCD Tofu House, K-town", u: null, t: "Korean tofu stew nearby; open very late (to ~5am on weekends — confirm weeknight close)." }],
+          bd: "1 bespoke cocktail (~$24) + Tuesday GA ($20–$40) + 2 club drinks (~$36–$48) + stew ($22–$30) + subway ($6)" },
+        { v: "club", d: ["wed"], cost: [130, 200],
+          s: [{ n: "Le Bain", u: "/venues/le-bain.html", t: "Eli Escobar's Wednesday residency over the Hudson — no cover for standing room, dress to impress." },
+              { n: "Marquee", u: "/venues/marquee-new-york.html", t: "Wednesday is the industry night at the Chelsea mega-club. Reported $30–$70; buy Tao presale tickets." },
+              { n: "Empanada Mama, Hell's Kitchen", u: null, t: "24/7 empanadas on the ride home." }],
+          bd: "2 drinks at Le Bain (~$40–$55) + Marquee ticket ($30–$70) + 2 club drinks (~$43–$60) + empanadas ($10) + subway ($6)" },
+        { v: "club", d: ["thu"], cost: [60, 95],
+          s: [{ n: "The Dead Rabbit", u: "/venues/the-dead-rabbit.html", t: "Happy hour runs Sun–Thu: $8 Guinness, $2 oysters (3–6pm and again 11pm–2am)." },
+              { n: "Le Bain", u: "/venues/le-bain.html", t: "Susanne Bartsch's Thursday party — free entry for standing room, discretionary dress-to-impress door." },
+              { n: "The Donut Pub, 14th St", u: null, t: "24-hour counter, 10 minutes from the Standard." }],
+          bd: "Happy-hour round ($10–$20) + free entry + 2 drinks at Le Bain (~$40–$55) + donuts ($6) + subway ($6)" },
+        { v: "club", d: ["sun"], cost: [100, 125],
+          s: [{ n: "Attaboy", u: "/venues/attaboy.html", t: "Early bar seats — Sundays are the calm window at the no-menu room." },
+              { n: "Le Bain — Sunday session", u: "/venues/le-bain.html", t: "François K's deep-house Sunday institution, 2pm–midnight. No cover for standing room." },
+              { n: "The Donut Pub, 14th St", u: null, t: "Open 24 hours — the midnight close means a civilized Monday." }],
+          note: "Sunday at Le Bain ends at midnight — this is the rare NYC club night that leaves you functional tomorrow.",
+          bd: "2 bespoke cocktails (~$48) + free entry + 2 drinks (~$43–$62) + donuts ($6) + subway ($6)" },
+        { v: "techno", d: ["fri", "sat"], cost: [50, 75],
+          s: [{ n: "Elsewhere", u: "/venues/elsewhere.html", t: "A round on the seasonal rooftop or in Zone One before the main event." },
+              { n: "Bossa Nova Civic Club", u: "/venues/bossa-nova-civic-club.html", t: "Bushwick's fog-machine techno bunker — $0–$15 cash at the door, peaks 1–4am." },
+              { n: "Artichoke Basille's, Bushwick", u: null, t: "Fat slices by the Jefferson L until ~4am weekends (confirm)." }],
+          bd: "Rooftop round (~$14) + Bossa cover ($0–$15, cash) + 2 drinks (~$22–$28) + slice ($8) + subway ($6)" },
+        { v: "techno", d: ["fri", "sat"], cost: [120, 165], sm: 1,
+          s: [{ n: "Westlight", u: "/venues/westlight.html", t: "22nd-floor Williamsburg views for golden hour; reserve ahead." },
+              { n: "Good Room", u: "/venues/good-room.html", t: "Greenpoint's house-and-disco room — RA tickets ~$10–$30, peaks midnight–3am." },
+              { n: "Kellogg's Diner, Williamsburg", u: null, t: "24-hour diner — the classic Brooklyn landing pad." }],
+          bd: "2 rooftop cocktails (~$50–$58) + ticket ($10–$30) + 2 drinks (~$30–$40) + diner ($22–$30) + subway ($6)" },
+        { v: "techno", d: ["fri", "sat"], cost: [175, 290],
+          s: [{ n: "Westlight", u: "/venues/westlight.html", t: "Skyline cocktails before the big room." },
+              { n: "Pacha New York", u: "/venues/pacha-new-york.html", t: "The East Williamsburg mega-complex — GA $50–$130 by headliner via the official site; open-air June–Oct." },
+              { n: "Kellogg's Diner, Williamsburg", u: null, t: "24 hours, one neighborhood over." }],
+          bd: "2 cocktails (~$50–$58) + Pacha GA ($50–$130) + 2 drinks (~$40–$55) + diner ($22–$30) + car ($12–$15)" },
+        { v: "techno", d: ["wed", "thu", "sun"], cost: [105, 150],
+          s: [{ n: "Public Records — Atrium", u: "/venues/public-records.html", t: "The pregame is in the building: the hi-fi restaurant up front feeds you first." },
+              { n: "Public Records — Sound Room", u: "/venues/public-records.html", t: "Audiophile Gowanus room, events roughly Wed–Sun. Dice tickets mostly $22–$32; friendly, no-drama door." },
+              { n: "Kellogg's Diner, Williamsburg", u: null, t: "A 12-minute car — worth it at 2am." }],
+          note: "Public Records runs events roughly Wed–Sun — check the Dice listing for tonight before heading out.",
+          bd: "Snacks + drink up front (~$35–$50) + ticket ($22–$32) + 2 drinks (~$28–$38) + diner ($25) + car ($10)" },
+        { v: "techno", d: ["mon", "tue"], cost: [60, 100],
+          s: [{ n: "The Back Room", u: "/venues/the-back-room.html", t: "No-cover speakeasy start on the LES before the L train east." },
+              { n: "Bossa Nova Civic Club", u: "/venues/bossa-nova-civic-club.html", t: "Open roughly 7 nights, about 7pm–4am — weeknights are often free, and the locals' sets are the good ones." },
+              { n: "Artichoke Basille's, Bushwick", u: null, t: "Slices near the Jefferson L on the way back." }],
+          bd: "1–2 teacup cocktails (~$22–$44) + Bossa door ($0–$15, often free weeknights) + 2 drinks (~$22–$28) + slice ($8) + subway ($6)" },
+        { v: "cocktail", d: ["sun", "mon", "tue", "wed", "thu"], cost: [65, 100], sm: 1,
+          s: [{ n: "The Back Room", u: "/venues/the-back-room.html", t: "Cocktails in teacups, beer in paper bags — no cover, and Monday means free live jazz." },
+              { n: "Attaboy", u: "/venues/attaboy.html", t: "Tell the bartender what you like; there's no menu. Weeknights skip the 30–60 minute weekend wait." },
+              { n: "The Dead Rabbit", u: "/venues/the-dead-rabbit.html", t: "Finish at the late happy hour: $8 Guinness and $2 oysters, 11pm–2am Sun–Thu." }],
+          bd: "1 teacup cocktail (~$22) + 1–2 bespoke cocktails ($24–$48) + late-HH Guinness &amp; oysters ($12–$20) + subway ($6)" },
+        { v: "cocktail", d: ["fri", "sat"], cost: [90, 115], sm: 1,
+          s: [{ n: "The Dead Rabbit", u: "/venues/the-dead-rabbit.html", t: "Start in the Parlor upstairs — book a slot; cocktails in the high teens." },
+              { n: "The Back Room", u: "/venues/the-back-room.html", t: "DJs Thu–Sat from 9pm turn the speakeasy up; still no cover." },
+              { n: "Scarr's Pizza, LES", u: null, t: "Best slice downtown, Fri–Sat to 2am." }],
+          bd: "2 Parlor cocktails (~$40–$45) + 2 teacup cocktails (~$44) + slice + drink ($8–$15) + subway ($6)" },
+        { v: "rooftop", d: ["fri", "sat"], cost: [110, 145],
+          s: [{ n: "230 Fifth Rooftop", u: "/venues/230-fifth-rooftop.html", t: "NYC's largest rooftop; $15 cover Fri–Sat from 8pm, igloos in winter. That Empire State view." },
+              { n: "Le Bain", u: "/venues/le-bain.html", t: "Ride down to Meatpacking for the rooftop-disco — no cover standing, dress sharp." },
+              { n: "The Donut Pub, 14th St", u: null, t: "24 hours, on the walk to the train." }],
+          bd: "$15 cover + 2 cocktails (~$43–$53) + 2 drinks at Le Bain (~$43–$62) + donuts ($6) + subway ($6)" },
+        { v: "rooftop", d: ["mon", "tue", "wed", "thu"], cost: [80, 110],
+          s: [{ n: "230 Fifth Rooftop", u: "/venues/230-fifth-rooftop.html", t: "Free on weeknights, lounge-paced — walk in, take the skyline, no cover until the weekend." },
+              { n: "The Back Room", u: "/venues/the-back-room.html", t: "Down to the LES for the speakeasy hour; open every night." },
+              { n: "Ray's Candy Store, Ave A", u: null, t: "Deep-fried Oreos to ~4am. A rite of passage." }],
+          bd: "1–2 rooftop cocktails (~$22–$53) + 2 teacup cocktails (~$44) + Ray's ($8) + subway ($6)" },
+        { v: "rooftop", d: ["sun"], cost: [105, 130],
+          s: [{ n: "Westlight", u: "/venues/westlight.html", t: "Opens at noon on Sundays — 22nd-floor golden hour without the weekend crush." },
+              { n: "Le Bain — Sunday session", u: "/venues/le-bain.html", t: "François K's deep-house Sunday, 2pm–midnight, no cover for standing room." },
+              { n: "The Donut Pub, 14th St", u: null, t: "24-hour counter on the way home." }],
+          note: "Sunday at Le Bain wraps at midnight — a full night that still respects your Monday.",
+          bd: "2 cocktails at Westlight (~$50–$58) + free entry + 2 drinks (~$43–$62) + donuts ($6) + subway ($6)" },
+        { v: "show", d: ["fri", "sat"], cost: [90, 125],
+          s: [{ n: "Bossa Nova Civic Club", u: "/venues/bossa-nova-civic-club.html", t: "Cheap first drinks in the fog — $0–$15 cash to get in." },
+              { n: "House of Yes", u: "/venues/house-of-yes.html", t: "Circus acts, burlesque, themed parties — presales $0–$40+; costumes beat cover charges here." },
+              { n: "Artichoke Basille's, Bushwick", u: null, t: "By the Jefferson L until ~4am weekends (confirm)." }],
+          bd: "Cover + drink (~$22–$29) + HoY ticket ($25–$40) + 2 drinks (~$30–$42) + slice ($8) + subway ($6)" },
+        { v: "show", d: ["mon"], cost: [60, 105], sm: 1,
+          s: [{ n: "The Back Room — Monday jazz", u: "/venues/the-back-room.html", t: "Free live jazz in a genuine Prohibition room, music 9pm–12:30am." },
+              { n: "Attaboy", u: "/venues/attaboy.html", t: "Bespoke nightcaps two blocks away, open to 3am even on a Monday." },
+              { n: "Ray's Candy Store, Ave A", u: null, t: "Egg creams and fried Oreos to ~4am." }],
+          bd: "1–2 teacup cocktails ($22–$44) + free jazz + 1–2 bespoke cocktails ($24–$48) + Ray's ($8) + subway ($6)" },
+        { v: "show", d: ["thu", "sun"], cost: [90, 155],
+          s: [{ n: "Bossa Nova Civic Club", u: "/venues/bossa-nova-civic-club.html", t: "Early fog-room drinks in Bushwick before the ride east." },
+              { n: "Knockdown Center", u: "/venues/knockdown-center.html", t: "Maspeth's factory venue — concerts, raves, the Ruins courtyard. All tickets via Dice, ~$25–$70; buy the early tier." },
+              { n: "Artichoke Basille's, Bushwick", u: null, t: "Slices on the way back to the L." }],
+          note: "Knockdown Center is event-driven (concentrated Thu–Sun) — confirm tonight's Dice listing before building the night on it.",
+          bd: "Cover + drink (~$22–$29) + Knockdown ticket ($25–$70) + 2 drinks (~$28–$40) + slice ($8) + car/subway ($8)" }
+      ];
+      function fmtTime(h) {
+        h = h % 24;
+        var m = Math.round((h - Math.floor(h)) * 60);
+        var hh = Math.floor(h);
+        var ap = (hh >= 12 && hh < 24) ? "pm" : "am";
+        var h12 = hh % 12; if (h12 === 0) { h12 = 12; }
+        return h12 + ":" + (m < 10 ? "0" : "") + m + ap;
+      }
+      window.planNight = function () {
+        var day = document.getElementById("np-day").value;
+        if (!DAY_LABEL[day]) { day = "fri"; }
+        var start = parseInt(document.getElementById("np-start").value, 10);
+        if (isNaN(start) || (start !== 19 && start !== 21 && start !== 23)) { start = 21; }
+        var group = parseInt(document.getElementById("np-group").value, 10);
+        if (isNaN(group) || group < 1) { group = 1; }
+        if (group > 12) { group = 12; }
+        document.getElementById("np-group").value = group;
+        var budget = parseInt(document.getElementById("np-budget").value, 10);
+        if (isNaN(budget)) { budget = 120; }
+        var vibe = document.getElementById("np-vibe").value;
+        if (!VIBE_LABEL[vibe]) { vibe = "club"; }
+        var notes = [];
+        var pool = PLANS.filter(function (p) { return p.v === vibe && p.d.indexOf(day) !== -1; });
+        if (pool.length === 0) {
+          pool = PLANS.filter(function (p) { return p.d.indexOf(day) !== -1; });
+          notes.push("No verified " + VIBE_LABEL[vibe] + " route runs on a " + DAY_LABEL[day] + " — the big rooms go dark early in the week. This is the strongest " + DAY_LABEL[day] + " night instead.");
+        }
+        var mid = function (p) { return (p.cost[0] + p.cost[1]) / 2; };
+        pool.sort(function (a, b) { return mid(a) - mid(b); });
+        var pick = null;
+        for (var i = pool.length - 1; i >= 0; i--) {
+          if (mid(pool[i]) <= budget * 1.15) { pick = pool[i]; break; }
+        }
+        if (!pick) {
+          pick = pool[0];
+          notes.push("Heads up: the cheapest route we trust for this night runs over that budget — trim a round or skip the pregame to bring it in.");
+        }
+        if (pick.note) { notes.push(pick.note); }
+        if (start === 23) {
+          notes.push("An 11pm start compresses the night — cut the pregame to one round and go straight to the main event's peak hours.");
+        }
+        if (group === 1) {
+          notes.push("Solo? Take the bar seat at every stop — it's the fastest service and the best conversation in the room.");
+        }
+        if (group >= 7 && pick.sm) {
+          notes.push("At " + group + " people, the small rooms on this route can't seat you together. Split into two waves 15 minutes apart, or use the group planner for volume-friendly venues.");
+        }
+        if (group >= 10) {
+          notes.push("10+ people is group-planner territory — presale every ticket in one order and name one navigator.");
+        }
+        var times = [start, start + 2.5, start + 5];
+        var labels = ["Pregame", "Main event", "Refuel"];
+        var html = "<h3 style=\"margin-top:0;\">" + DAY_LABEL[day] + " · " + fmtTime(start) + " start · " + VIBE_LABEL[vibe] + "</h3>";
+        var txt = "NYC night plan — " + DAY_LABEL[day] + ", " + fmtTime(start) + " start (" + VIBE_LABEL[vibe] + ")\n";
+        for (var k = 0; k < 3; k++) {
+          var st = pick.s[k];
+          html += "<div class=\"stop-card\"><span class=\"stop-time\">" + fmtTime(times[k]) + " — " + labels[k] + "</span><h4>" + V(st.n, st.u) + "</h4><p>" + st.t + "</p></div>";
+          txt += (k + 1) + ") " + fmtTime(times[k]) + " — " + st.n + ". " + st.t.replace(/&amp;/g, "&") + "\n";
+        }
+        html += "<p class=\"tool-total\">&asymp; $" + pick.cost[0] + "&ndash;$" + pick.cost[1] + " per person</p>";
+        html += "<p class=\"tool-note\"><strong>The math:</strong> " + pick.bd + ".</p>";
+        for (var j = 0; j < notes.length; j++) { html += "<p class=\"tool-note\">" + notes[j] + "</p>"; }
+        txt += "Budget: ~$" + pick.cost[0] + "-$" + pick.cost[1] + " per person all-in.\n";
+        txt += "Built with nynightlife.com/tools/nyc-night-planner.html";
+        html += "<textarea id=\"np-copytext\" readonly aria-label=\"Copyable plan text\"></textarea>";
+        html += "<p style=\"margin:.6rem 0 0;\"><button type=\"button\" id=\"np-copybtn\" onclick=\"copyPlan()\">Copy plan to clipboard</button></p>";
+        var box = document.getElementById("np-result");
+        box.innerHTML = html;
+        document.getElementById("np-copytext").value = txt;
+        box.hidden = false;
+        document.getElementById("np-cta").hidden = true;
+      };
+      window.copyPlan = function () {
+        var ta = document.getElementById("np-copytext");
+        var btn = document.getElementById("np-copybtn");
+        if (!ta) { return; }
+        function done() {
+          if (btn) { btn.textContent = "Copied ✓"; setTimeout(function () { btn.textContent = "Copy plan to clipboard"; }, 2000); }
+        }
+        function fallback() {
+          ta.focus(); ta.select();
+          try { document.execCommand("copy"); done(); } catch (e) { /* selection stays for manual copy */ }
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(ta.value).then(done, fallback);
+        } else { fallback(); }
+      };
+    })();
+    </script>
+
+    <section>
+      <h2>Why the day of the week is the first dial</h2>
+      <p>Most night-planning advice pretends every night is Saturday. It isn't. Nebula runs Tuesday, Friday, and Saturday — and the Tuesday party is real. Marquee's week peaks twice: Saturday for headliners, Wednesday for the industry crowd. Le Bain hides three genuine residencies on "off" nights: Eli Escobar on Wednesdays, Susanne Bartsch's Thursdays, and François K's Sunday session that ends at a merciful midnight. Bossa Nova is open roughly seven nights and often free before the weekend. A planner that ignores all that sends you to locked doors on Monday and sold-out ones on Saturday — so this one checks the calendar first.</p>
+      <p>The structure never changes, though: a pregame with seats until the main event's peak window, one main event you commit to, and food before the ride home. Three stops is the ceiling. Every five-stop plan becomes a two-stop plan with an argument in the middle.</p>
+    </section>
+
+    <section>
+      <h2>Before you walk out the door</h2>
       <ul>
-        <li><strong>Transit backbone:</strong> L, 7, F/M, N/W</li>
-        <li><strong>Execution rule:</strong> keep stops within one practical transfer window after 10:30 PM.</li>
-        <li><strong>Conversion move:</strong> lock one primary plan and one fallback route.</li>
+        <li><strong>Confirm the event exists.</strong> Event-driven rooms (Public Records, Knockdown Center, Elsewhere) publish on Dice, RA, or Eventbrite — thirty seconds of checking beats an hour of standing outside a dark building.</li>
+        <li><strong>Buy presale where it's ticketed.</strong> Tiered pricing means the same door costs less on your phone right now than it will at midnight. The <a href="/tools/cover-charge-calculator-nyc.html">cover charge calculator</a> shows the full damage either way.</li>
+        <li><strong>Check the dress code once.</strong> Nebula and Marquee refuse athletic wear and distressed sneakers; Le Bain's door is discretionary and gets harder late. The <a href="/tools/dress-code-checker-nyc.html">dress code checker</a> settles arguments before they start.</li>
+        <li><strong>Decide the ride home early.</strong> The subway runs 24 hours and costs $3.00; a 3am surge car runs $35&ndash;$60. Our <a href="/plan/nyc-subway-for-nightlife.html">subway for nightlife guide</a> covers which lines to trust at that hour.</li>
       </ul>
     </section>
+
     <section>
       <h2>FAQ</h2>
-      <h3>What’s the fastest way to plan this night in NYC?</h3>
-      <p>Pick a neighborhood cluster first, then pick a primary venue and one backup within a short ride. That’s the highest-win workflow for NYC nightlife.</p>
-      <h3>Should I book in advance or decide same day?</h3>
-      <p>Book high-demand experiences in advance, but keep at least one flexible option for weather, lines, and crowd shifts.</p>
-      <h3>How do I reduce late-night transit risk?</h3>
-      <p>Use major station corridors, avoid last-minute cross-borough jumps, and set a clear end-of-night pickup plan.</p>
+      <h3>What's the best weeknight for going out in NYC?</h3>
+      <p>There's real programming most weeknights: Nebula Tuesdays, Eli Escobar's Wednesdays and Susanne Bartsch's Thursdays at Le Bain, Marquee's Wednesday industry night, free Monday jazz at The Back Room, and Dead Rabbit happy hour Sun&ndash;Thu. Weeknights buy you cheaper covers and shorter lines.</p>
+      <h3>How many stops should a night have?</h3>
+      <p>Three: pregame with seats, one main event, food before the ride. More than that and the plan starts planning you.</p>
+      <h3>Should I book ahead or decide the same day?</h3>
+      <p>Ticketed rooms (Nebula, Marquee, House of Yes, Good Room, Public Records, Knockdown, Pacha) sell tiered presales that beat the door — buy ahead. Cocktail bars, dives, and most rooftops are walk-in and can stay a same-day call.</p>
+      <h3>Does a solo night out in NYC work?</h3>
+      <p>Solo is the easy mode. Bar seats at walk-in rooms like <a href="/venues/attaboy.html">Attaboy</a>, friendly floors like <a href="/venues/bossa-nova-civic-club.html">Bossa Nova</a>, and 24-hour counters all work better alone than in a pack. Start early, take the bar seat, talk to the bartender.</p>
+    </section>
+
+    <section>
+      <h2>Sources</h2>
+      <ul>
+        <li>NYNightlife venue fact pages (verified 2026-08-25&ndash;26): <a href="/venues/nebula.html">Nebula</a>, <a href="/venues/marquee-new-york.html">Marquee</a>, <a href="/venues/le-bain.html">Le Bain</a>, <a href="/venues/bossa-nova-civic-club.html">Bossa Nova Civic Club</a>, <a href="/venues/elsewhere.html">Elsewhere</a>, <a href="/venues/good-room.html">Good Room</a>, <a href="/venues/public-records.html">Public Records</a>, <a href="/venues/knockdown-center.html">Knockdown Center</a>, <a href="/venues/pacha-new-york.html">Pacha New York</a>, <a href="/venues/house-of-yes.html">House of Yes</a>, <a href="/venues/westlight.html">Westlight</a>, <a href="/venues/230-fifth-rooftop.html">230 Fifth</a>, <a href="/venues/attaboy.html">Attaboy</a>, <a href="/venues/the-back-room.html">The Back Room</a>, <a href="/venues/the-dead-rabbit.html">The Dead Rabbit</a>.</li>
+        <li><a href="/rankings/best-late-night-food-near-clubs-nyc.html">Best late-night food near NYC clubs</a> — hours for BCD, Empanada Mama, Donut Pub, Kellogg's, Scarr's, Ray's, Artichoke.</li>
+        <li>MTA base fare $3.00 (January 2026); cost math includes 20% tips and transit.</li>
+      </ul>
+      <p class="tool-note">A residency moved or a room closed? <a href="/contact.html">Tell us</a> — day-of-week data rots fastest of all.</p>
+    </section>
+
+    <section>
+      <h2>Keep planning</h2>
+      <ul>
+        <li><a href="/tools/">All planning tools</a></li>
+        <li><a href="/tools/group-night-out-planner.html">Group Night Out Planner &mdash; for 8+ people</a></li>
+        <li><a href="/tools/venue-compare-nyc.html">Venue Compare &mdash; torn between two rooms?</a></li>
+        <li><a href="/tools/nyc-trip-cost-calculator.html">Trip Cost Calculator &mdash; the whole visit, itemized</a></li>
+        <li><a href="/tonight/">What's on tonight</a></li>
+      </ul>
+      <p style="color:#b7b3ab;">Last updated: 2026-08-26 (America/New_York)</p>
     </section>
 
   </main>

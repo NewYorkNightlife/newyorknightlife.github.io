@@ -3,21 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hotel Neighborhood Matcher NYC | NYNightlife</title>
-  <meta name="description" content="Planning page for Hotel Neighborhood Matcher NYC. Practical NYC planning guide with actionable tips, logistics, and smart next steps." />
+  <title>Hotel Neighborhood Matcher NYC | Find Your Nightlife Base</title>
+  <meta name="description" content="Answer four quick questions and get the three NYC hotel neighborhoods that fit your nightlife plans, budget, and sleep needs — with honest noise ratings." />
   <link rel="canonical" href="https://nynightlife.com/tools/hotel-neighborhood-matcher-nyc.html" />
   <link rel="stylesheet" href="../css/main.css" />
-  <meta property="og:title" content="Hotel Neighborhood Matcher NYC | NYNightlife" />
-  <meta property="og:description" content="Planning page for Hotel Neighborhood Matcher NYC. Practical NYC planning guide with actionable tips, logistics, and smart next steps." />
+  <style>
+    .tool-panel { background: var(--secondary); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+    .tool-panel h2 { margin-top: 0; }
+    .tool-q { margin: 1.25rem 0; }
+    .tool-q label { display: block; font-weight: 700; color: var(--gold); margin-bottom: 0.4rem; }
+    .tool-q select { width: 100%; max-width: 420px; padding: 0.7rem; font-size: 1rem; border-radius: 6px; border: 1px solid var(--border); background: var(--accent); color: inherit; }
+    .tool-btn { display: inline-block; padding: 0.8rem 1.6rem; font-size: 1.05rem; font-weight: 700; border-radius: 6px; border: none; background: var(--gold); color: #1a1a1a; cursor: pointer; margin-top: 0.5rem; }
+    .tool-btn:hover { opacity: 0.9; }
+    .match-card { background: var(--accent); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin: 1rem 0; }
+    .match-card h3 { margin: 0 0 0.5rem; }
+    .match-rank { color: var(--gold); font-weight: 700; }
+    .match-bar-track { background: var(--secondary); border-radius: 4px; height: 10px; margin: 0.5rem 0 0.75rem; overflow: hidden; }
+    .match-bar { background: var(--gold); height: 10px; border-radius: 4px; }
+    .match-meta { font-size: 0.95rem; margin: 0.25rem 0; }
+    .tool-note { font-size: 0.9rem; color: #b7b3ab; margin-top: 1rem; }
+    .zone-table-wrap { overflow-x: auto; }
+    .zone-table-wrap table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .zone-table-wrap th, .zone-table-wrap td { padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border); text-align: left; }
+    .zone-table-wrap th { color: var(--gold); }
+  </style>
+  <meta property="og:title" content="Hotel Neighborhood Matcher NYC | Find Your Nightlife Base" />
+  <meta property="og:description" content="Answer four quick questions and get the three NYC hotel neighborhoods that fit your nightlife plans, budget, and sleep needs — with honest noise ratings." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nynightlife.com/tools/hotel-neighborhood-matcher-nyc.html" />
   <meta property="og:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Hotel Neighborhood Matcher NYC | NYNightlife" />
-  <meta name="twitter:description" content="Planning page for Hotel Neighborhood Matcher NYC. Practical NYC planning guide with actionable tips, logistics, and smart next steps." />
+  <meta name="twitter:title" content="Hotel Neighborhood Matcher NYC | Find Your Nightlife Base" />
+  <meta name="twitter:description" content="Answer four quick questions and get the three NYC hotel neighborhoods that fit your nightlife plans, budget, and sleep needs — with honest noise ratings." />
   <meta name="twitter:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "Hotel Neighborhood Matcher NYC | NYNightlife", "url": "https://nynightlife.com/tools/hotel-neighborhood-matcher-nyc.html", "description": "Planning page for Hotel Neighborhood Matcher NYC. Practical NYC planning guide with actionable tips, logistics, and smart next steps.", "inLanguage": "en-US", "isPartOf": {"@type": "WebSite", "name": "NYNightlife", "url": "https://nynightlife.com/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Hotel Neighborhood Matcher NYC: Find Your Nightlife Base", "description": "Interactive matcher that scores ten NYC neighborhoods on nightlife density, street noise, hotel price, and subway access to recommend where to stay.", "url": "https://nynightlife.com/tools/hotel-neighborhood-matcher-nyc.html", "datePublished": "2026-08-26", "dateModified": "2026-08-26", "author": {"@type": "Organization", "name": "NY Nightlife"}, "publisher": {"@type": "Organization", "name": "NY Nightlife", "url": "https://nynightlife.com/"}, "mainEntityOfPage": "https://nynightlife.com/tools/hotel-neighborhood-matcher-nyc.html", "inLanguage": "en-US"}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+{"@type": "Question", "name": "What is the best NYC neighborhood to stay in for nightlife?", "acceptedAnswer": {"@type": "Answer", "text": "For pure bar density, the Lower East Side and East Village let you walk home from the densest bar grid in the city. Williamsburg is the best Brooklyn base, and Meatpacking suits club-and-rooftop trips with bigger budgets. If you want nightlife access without sleeping over a bar, Hell's Kitchen or Midtown East put most zones within 20-30 minutes by subway."}},
+{"@type": "Question", "name": "Which NYC neighborhoods are quietest for sleeping?", "acceptedAnswer": {"@type": "Answer", "text": "Midtown East (east of Third Avenue), the Upper West Side, and the Financial District are reliably quiet after 10-11pm. New York bars can legally serve until 4am, so the loud zones — Lower East Side, East Village, Meatpacking, Hell's Kitchen's Ninth Avenue, and Williamsburg's Bedford-Grand corridor — stay noisy nearly that late on weekends."}},
+{"@type": "Question", "name": "Is it cheaper to stay in Brooklyn or Queens for an NYC nightlife trip?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes. Long Island City and Downtown Brooklyn typically run cheaper than comparable Manhattan hotels, with strong subway access — the 7 train reaches Midtown in about 10 minutes from LIC. The trade-off is a longer late-night ride home unless your nights are in Williamsburg or Bushwick, where a Brooklyn base actually wins."}},
+{"@type": "Question", "name": "How far from the bars should my hotel be?", "acceptedAnswer": {"@type": "Answer", "text": "Target 20-25 minutes maximum from your primary nightlife zone, on one direct subway line if possible. Closer than that, you trade sleep for convenience; farther, you burn money on late-night rideshares. Light sleepers should stay one or two subway stops outside a bar corridor rather than inside it."}}
+]}
   </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3007723856138381" crossorigin="anonymous"></script>
@@ -64,65 +92,211 @@
   </div>
 </header>
 
-  
-
     <main id="nyn-main" class="container" style="padding:2rem 1rem;">
     <section>
-      <h1>Hotel Neighborhood Matcher NYC</h1>
-      <p>Hotel Neighborhood Matcher NYC is a high-intent NYC planning topic. Use this page to make fast decisions on route, timing, budget, and backup options so your night doesn’t break after the first venue pivot.</p>
-      <p>NYC rewards people who plan in sequences, not random lists. Pick a primary objective, choose one neighborhood cluster, and lock one fallback in the same zone before you leave.</p>
+      <h1>Hotel Neighborhood Matcher: Where Should You Stay in NYC?</h1>
+      <p>Answer four questions and this matcher scores ten NYC neighborhoods on nightlife density, street noise, typical hotel price, and subway access — then recommends your top three bases. Ratings match our <a href="/visit/where-to-stay-for-nightlife-nyc.html">where-to-stay strategy guide</a> and the noise table in our <a href="/visit/family-vs-party-zones-nyc.html">family vs. party zones guide</a>.</p>
+    </section>
+
+    <section class="tool-panel" aria-label="Neighborhood matcher tool">
+      <h2>Match My Neighborhood</h2>
+      <div class="tool-q">
+        <label for="q-nightlife">How central is nightlife to this trip?</label>
+        <select id="q-nightlife">
+          <option value="walk">I want to walk home from the bars</option>
+          <option value="big" selected>Big part — out most nights</option>
+          <option value="some">Some nights out, some quiet</option>
+          <option value="minimal">Minimal — sights by day, sleep by night</option>
+        </select>
+      </div>
+      <div class="tool-q">
+        <label for="q-budget">Hotel budget per night?</label>
+        <select id="q-budget">
+          <option value="low">Under $200</option>
+          <option value="mid" selected>$200&ndash;$350</option>
+          <option value="high">$350+</option>
+        </select>
+      </div>
+      <div class="tool-q">
+        <label for="q-sleep">How much does quiet sleep matter?</label>
+        <select id="q-sleep">
+          <option value="light">A lot — I'm a light sleeper</option>
+          <option value="normal" selected>Somewhat — normal sleeper</option>
+          <option value="heavy">Not much — I can sleep through anything</option>
+        </select>
+      </div>
+      <div class="tool-q">
+        <label for="q-party">Who's traveling?</label>
+        <select id="q-party">
+          <option value="solo">Just me</option>
+          <option value="couple" selected>A couple</option>
+          <option value="friends">Friends group</option>
+          <option value="family">Family with kids</option>
+          <option value="mixed">Mixed group (family + partiers)</option>
+        </select>
+      </div>
+      <button type="button" class="tool-btn" id="match-btn">Match my neighborhood</button>
+      <div id="match-results" aria-live="polite"></div>
+      <p class="tool-note">Booking.com links below are affiliate links — see our <a href="/affiliate-disclosure.html">affiliate disclosure</a>. Ratings are editorial reads of bar density, closing patterns, and typical rates, not measurements.</p>
     </section>
 
     <section>
-      <h2>Who This Page Helps Most</h2>
+      <h2>How the Matcher Scores</h2>
+      <p>Each of the ten zones carries four ratings on a 1&ndash;5 scale. Nightlife measures walkable bar and club density — the Lower East Side and East Village top it, because nothing else in the city matches the Ludlow&ndash;Orchard and Avenue A grids. Noise tracks how late the sidewalks stay loud: New York bars can legally serve until 4am, and in the densest corridors the crowds, smokers, and idling rideshares run nearly that late on weekends. Price reflects typical nightly hotel rates for the zone, and subway scores how many practical lines get you home after midnight, when trains still run 24/7 but headways stretch to roughly 20 minutes.</p>
+      <p>Your answers reweight those ratings. Say nightlife is the whole trip and you sleep like a rock, and the matcher pushes you into the loud zones where you can walk home. Say you're a light sleeper traveling with kids, and it flips — quiet, well-connected zones like Midtown East and the Upper West Side rise to the top, exactly the bases our family vs. party guide recommends. A mixed group gets a hedge: well-connected middle-ground zones, plus a pointer to the two-hotel strategy that usually beats any single compromise hotel.</p>
+      <div class="zone-table-wrap">
+        <table>
+          <thead>
+            <tr><th>Zone</th><th>Nightlife</th><th>Night noise</th><th>Price level</th><th>Subway</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Lower East Side</td><td>5/5</td><td>5/5 — loud until 4am Thu&ndash;Sat</td><td>$$$</td><td>3/5 (F, J, 6 nearby)</td></tr>
+            <tr><td>East Village</td><td>5/5</td><td>5/5 — loud along Avenue A</td><td>$$$</td><td>3/5 (L, 6)</td></tr>
+            <tr><td>Meatpacking</td><td>4/5</td><td>5/5 — club surges 1&ndash;4am</td><td>$$$$$</td><td>4/5 (A/C/E, L)</td></tr>
+            <tr><td>Hell's Kitchen</td><td>4/5</td><td>4/5 — loud on Ninth Ave</td><td>$$$</td><td>5/5 (A/C/E, 1)</td></tr>
+            <tr><td>Midtown East</td><td>2/5</td><td>1/5 — quiet after office hours</td><td>$$$</td><td>5/5 (4/5/6, E/M, 7)</td></tr>
+            <tr><td>Upper West Side</td><td>1/5</td><td>1/5 — silent by 11pm</td><td>$$$</td><td>5/5 (1/2/3, A/B/C)</td></tr>
+            <tr><td>Williamsburg</td><td>5/5</td><td>4/5 — loud on corridors</td><td>$$$$</td><td>3/5 (L, G, ferry)</td></tr>
+            <tr><td>Downtown Brooklyn</td><td>2/5</td><td>2/5 — mostly residential/office</td><td>$$</td><td>5/5 (A/C/F, 2/3, 4/5, R)</td></tr>
+            <tr><td>Long Island City</td><td>2/5</td><td>2/5 — quiet towers, bar pockets</td><td>$$</td><td>4/5 (7, E/M/G)</td></tr>
+            <tr><td>Financial District</td><td>2/5</td><td>1/5 — weekend-quiet</td><td>$$</td><td>5/5 (Fulton St hub)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Booking Rules That Beat Any Algorithm</h2>
       <ul>
-        <li>Visitors who want a practical plan without wasting half the night in transit.</li>
-        <li>Locals coordinating a group where budget and timing matter.</li>
-        <li>Anyone comparing options and trying to avoid weak last-minute decisions.</li>
+        <li><strong>Pay for location before amenities.</strong> On a nightlife trip, a cheap room far from your zone usually costs more overall once late rideshares stack up — the room is your reset station, the city is the product.</li>
+        <li><strong>Check the block, not just the zone.</strong> A quiet zone can still have one loud bar downstairs. Before booking, map bars within 500 feet of the specific hotel.</li>
+        <li><strong>The 20-minute rule.</strong> Keep your hotel within about 20 minutes of your primary nightlife zone on one direct line. Our <a href="/plan/nyc-subway-for-nightlife.html">subway-for-nightlife guide</a> covers which lines actually run well after midnight.</li>
+        <li><strong>Plan the 3am trip home before you book.</strong> Skim <a href="/plan/safe-late-night-transport-nyc.html">safe late-night transport</a> — if your hotel's line is a weekend track-work repeat offender, budget for rides.</li>
+        <li><strong>First trip?</strong> Read the <a href="/visit/first-time-nyc-nightlife-guide.html">first-time NYC nightlife guide</a> and our <a href="/guides/stay-near-nightlife.html">stay-near-nightlife guide</a>, then sanity-check total spend in the <a href="/tools/nyc-trip-cost-calculator.html">trip cost calculator</a>.</li>
       </ul>
-      <p>If this is a same-day decision, prioritize execution speed over endless option hunting. The best plan is usually one strong route with a realistic fallback nearby.</p>
     </section>
 
     <section>
-      <h2>Execution Framework (Use This Before You Go)</h2>
-      <ol>
-        <li><strong>Define the objective:</strong> social energy, date night, music-first, or premium experience.</li>
-        <li><strong>Set spend limits:</strong> include entry, drinks, rides, and late-night food.</li>
-        <li><strong>Choose zone + backup:</strong> keep both options within a short transit window.</li>
-        <li><strong>Set a pivot rule:</strong> if line, wait time, or pricing exceeds your threshold, move immediately.</li>
-        <li><strong>Set the return plan:</strong> decide how the night ends while everyone still has battery and clarity.</li>
-      </ol>
+      <h2>FAQ</h2>
+      <h3>What is the best NYC neighborhood to stay in for nightlife?</h3>
+      <p>For pure bar density, the Lower East Side and East Village let you walk home from the densest bar grid in the city. Williamsburg is the best Brooklyn base, and Meatpacking suits club-and-rooftop trips with bigger budgets. If you want access without sleeping over a bar, Hell's Kitchen or Midtown East put most zones within 20&ndash;30 minutes by subway.</p>
+      <h3>Which NYC neighborhoods are quietest for sleeping?</h3>
+      <p>Midtown East (east of Third Avenue), the Upper West Side, and the Financial District are reliably quiet after 10&ndash;11pm. Bars can legally serve until 4am, so the loud zones — LES, East Village, Meatpacking, Ninth Avenue in Hell's Kitchen, and Williamsburg's Bedford&ndash;Grand corridor — stay noisy nearly that late on weekends.</p>
+      <h3>Is it cheaper to stay in Brooklyn or Queens?</h3>
+      <p>Usually yes. Long Island City and Downtown Brooklyn typically undercut comparable Manhattan hotels, with strong subway access — the 7 reaches Midtown in about 10 minutes from LIC. The trade-off is a longer late-night ride home unless your nights are in Williamsburg or Bushwick, where a Brooklyn base actually wins.</p>
+      <h3>How far from the bars should my hotel be?</h3>
+      <p>Target 20&ndash;25 minutes maximum from your primary zone, on one direct subway line. Light sleepers should stay one or two stops outside a bar corridor rather than inside it — close enough to get home cheap, far enough to sleep.</p>
     </section>
 
     <section>
-      <h2>Budget and Logistics Benchmarks</h2>
+      <h2>Keep Planning</h2>
       <ul>
-        <li><strong>Lean plan ($60–$120):</strong> one paid anchor plus practical transit control.</li>
-        <li><strong>Balanced plan ($120–$250):</strong> one premium stop + one flexible backup.</li>
-        <li><strong>Premium plan ($250+):</strong> reservation-first routing with shorter pivots and fewer misses.</li>
-      </ul>
-      <p>The biggest planning error in NYC nightlife is unplanned movement. Every extra cross-borough jump adds cost and kills momentum. Keep your route tight and your fallback close.</p>
-    </section>
-
-    <section>
-      <h2>Common Mistakes to Avoid</h2>
-      <ul>
-        <li>Overbuilding the itinerary with too many disconnected stops.</li>
-        <li>No backup option when lines spike or crowd fit is wrong.</li>
-        <li>Ignoring return-route timing until the end of the night.</li>
-        <li>Confusing hype with fit; optimize for your group’s objective, not generic top-10 lists.</li>
+        <li><a href="/visit/where-to-stay-for-nightlife-nyc.html">Where to stay for nightlife: full area strategy</a></li>
+        <li><a href="/visit/family-vs-party-zones-nyc.html">Family vs. party zones (and the two-hotel strategy)</a></li>
+        <li><a href="/tools/nyc-3-day-itinerary-builder.html">Build a 3-day nightlife itinerary</a></li>
+        <li><a href="/neighborhoods/">All neighborhood nightlife guides</a></li>
       </ul>
     </section>
 
     <section>
-      <h2>Related Planning Pages</h2>
+      <h2>Sources</h2>
       <ul>
-        <li><a href="/tools/nyc-night-planner.html">Primary companion guide</a></li>
-        <li><a href="/tools/venue-compare-nyc.html">Execution and comparison support</a></li>
-        <li><a href="/tools/nyc-trip-cost-calculator.html">Backup logistics and next step</a></li>
+        <li><a href="https://portal.311.nyc.gov/" rel="noopener">NYC 311 — noise and quality-of-life complaints</a></li>
+        <li><a href="https://sla.ny.gov/" rel="noopener">New York State Liquor Authority — hours of sale</a></li>
+        <li><a href="https://www.mta.info/fares" rel="noopener">MTA — subway fares and service</a></li>
       </ul>
-      <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
+      <p>Zone ratings are editorial, based on bar density, closing patterns, and typical rates. <em>Last verified: 2026-08-26.</em> Some links on this page are affiliate links; see our <a href="/affiliate-disclosure.html">affiliate disclosure</a>.</p>
+      <p style="color:#b7b3ab;">Last updated: 2026-08-26 (America/New_York)</p>
     </section>
+
+    <script>
+    (function () {
+      var ZONES = [
+        { name: "Lower East Side", nightlife: 5, noise: 5, price: 3, subway: 3, lines: "F, J, 6 nearby", guide: "/neighborhoods/lower-east-side-nightlife.html", booking: "https://www.booking.com/searchresults.html?ss=Lower+East+Side%2C+New+York", blurb: "Walk home from the densest bar grid in the city. Loud until 4am Thursday-Saturday.", priceNote: "$250-$400 typical" },
+        { name: "East Village", nightlife: 5, noise: 5, price: 3, subway: 3, lines: "L, 6", guide: "/neighborhoods/east-village-nightlife.html", booking: "https://www.booking.com/searchresults.html?ss=East+Village%2C+New+York", blurb: "Dive bars, cocktail dens, and speakeasies on every block. Limited hotel stock, loud along Avenue A.", priceNote: "$250-$400 typical" },
+        { name: "Meatpacking District", nightlife: 4, noise: 5, price: 5, subway: 4, lines: "A/C/E, L", guide: "/neighborhoods/meatpacking-nightlife.html", booking: "https://www.booking.com/searchresults.html?ss=Meatpacking+District%2C+New+York", blurb: "Big-format clubs and rooftops at your door. Expensive, dressy, and loud at closing time.", priceNote: "$400-$700 typical" },
+        { name: "Hell's Kitchen", nightlife: 4, noise: 4, price: 3, subway: 5, lines: "A/C/E, 1", guide: "/neighborhoods/hells-kitchen-nightlife.html", booking: "https://www.booking.com/searchresults.html?ss=Hell%27s+Kitchen%2C+New+York", blurb: "Ninth Avenue bar strip plus walkable Midtown sights. Loud along Ninth until 2-4am.", priceNote: "$250-$400 typical" },
+        { name: "Midtown East", nightlife: 2, noise: 1, price: 3, subway: 5, lines: "4/5/6, E/M, 7 at Grand Central", guide: "/neighborhoods/midtown-nightlife.html", booking: "https://www.booking.com/searchresults.html?ss=Midtown+East%2C+New+York", blurb: "Quiet after office hours with big hotel inventory - the best family-room value in Manhattan.", priceNote: "$200-$350 typical" },
+        { name: "Upper West Side", nightlife: 1, noise: 1, price: 3, subway: 5, lines: "1/2/3, A/B/C", guide: "/neighborhoods/upper-west-side-nightlife.html", booking: "https://www.booking.com/searchresults.html?ss=Upper+West+Side%2C+New+York", blurb: "Brownstone side streets go silent by 11pm; downtown is 20-25 minutes on the 1/2/3.", priceNote: "$220-$380 typical" },
+        { name: "Williamsburg", nightlife: 5, noise: 4, price: 4, subway: 3, lines: "L, G, ferry", guide: "/neighborhoods/williamsburg-nightlife.html", booking: "https://www.booking.com/searchresults.html?ss=Williamsburg%2C+Brooklyn%2C+New+York", blurb: "The best all-round party base outside Manhattan - bars, music rooms, and an easy L-train shot to Bushwick's clubs.", priceNote: "$280-$450 typical" },
+        { name: "Downtown Brooklyn", nightlife: 2, noise: 2, price: 2, subway: 5, lines: "A/C/F, 2/3, 4/5, R", guide: "/neighborhoods/downtown-brooklyn-nightlife.html", booking: "https://www.booking.com/searchresults.html?ss=Downtown+Brooklyn%2C+New+York", blurb: "Chain-hotel value with a huge subway hub. Quiet nights, and Williamsburg is one hop away.", priceNote: "$180-$300 typical" },
+        { name: "Long Island City", nightlife: 2, noise: 2, price: 2, subway: 4, lines: "7, E/M/G", guide: "/neighborhoods/long-island-city-nightlife.html", booking: "https://www.booking.com/searchresults.html?ss=Long+Island+City%2C+New+York", blurb: "Budget-friendly swing zone: quiet towers, skyline views, and Midtown in about 10 minutes on the 7.", priceNote: "$170-$280 typical" },
+        { name: "Financial District", nightlife: 2, noise: 1, price: 2, subway: 5, lines: "Fulton St hub: A, J, 2/3, 4/5, R", guide: "/neighborhoods/financial-district-nightlife.html", booking: "https://www.booking.com/searchresults.html?ss=Financial+District%2C+New+York", blurb: "Weekend-quiet with frequent hotel deals. Dead after dark locally, but the Fulton St hub reaches everything.", priceNote: "$180-$320 typical" }
+      ];
+
+      function scoreZone(z, a) {
+        var s = 0;
+        var reasons = [];
+        var nlWeight = { walk: 3, big: 2, some: 1, minimal: 0 }[a.nightlife];
+        s += z.nightlife * nlWeight;
+        if (a.nightlife === "walk" && z.nightlife >= 5) { reasons.push("walk-home bar density"); }
+        if (a.nightlife === "big" && z.nightlife >= 4) { reasons.push("strong nightlife at the door"); }
+        if (a.nightlife === "minimal") {
+          s += z.subway * 2 + (5 - z.noise) * 2;
+          if (z.noise <= 2) { reasons.push("calm base with fast subway access"); }
+        }
+        if (a.nightlife === "some") {
+          s += z.subway * 1;
+          if (z.subway >= 4) { reasons.push("easy rides to the bar zones"); }
+        }
+        var sleepFactor = { light: 2.5, normal: 1, heavy: 0.25 }[a.sleep];
+        s -= z.noise * sleepFactor;
+        if (a.sleep === "light" && z.noise <= 2) { reasons.push("quiet block for light sleepers"); }
+        var ceiling = { low: 2, mid: 3, high: 5 }[a.budget];
+        if (z.price > ceiling) { s -= (z.price - ceiling) * 3; }
+        else if (a.budget === "low") { s += (ceiling - z.price) * 0.5; }
+        if (z.price <= ceiling) { reasons.push("fits your nightly budget"); }
+        if (a.party === "family" || a.party === "mixed") {
+          s += (5 - z.noise) * 1.5 + z.subway * 0.5;
+          if (a.party === "family" && z.noise <= 2) { reasons.push("family-friendly quiet at night"); }
+        }
+        if (a.party === "friends") { s += z.nightlife * 0.5; }
+        if (a.party === "solo") { s += z.subway * 0.5; }
+        return { score: s, reasons: reasons };
+      }
+
+      function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+      function runMatch() {
+        var a = {
+          nightlife: document.getElementById("q-nightlife").value,
+          budget: document.getElementById("q-budget").value,
+          sleep: document.getElementById("q-sleep").value,
+          party: document.getElementById("q-party").value
+        };
+        var scored = ZONES.map(function (z) {
+          var r = scoreZone(z, a);
+          return { zone: z, score: r.score, reasons: r.reasons };
+        });
+        scored.sort(function (x, y) { return y.score - x.score; });
+        var top = scored.slice(0, 3);
+        var minS = scored[scored.length - 1].score;
+        var maxS = scored[0].score;
+        var range = (maxS - minS) || 1;
+        var html = "<h3 style='margin-top:1.5rem;'>Your top 3 neighborhoods</h3>";
+        top.forEach(function (item, i) {
+          var pct = Math.round(40 + 60 * ((item.score - minS) / range));
+          if (!isFinite(pct) || pct < 0) { pct = 40; }
+          if (pct > 100) { pct = 100; }
+          var why = item.reasons.length ? "Why: " + esc(item.reasons.slice(0, 3).join("; ")) + ". " : "";
+          html += "<div class='match-card'>" +
+            "<h3><span class='match-rank'>#" + (i + 1) + "</span> " + esc(item.zone.name) + "</h3>" +
+            "<div class='match-bar-track'><div class='match-bar' style='width:" + pct + "%;'></div></div>" +
+            "<p class='match-meta'>" + why + esc(item.zone.blurb) + "</p>" +
+            "<p class='match-meta'><strong>Subway:</strong> " + esc(item.zone.lines) + " &middot; <strong>Hotels:</strong> " + esc(item.zone.priceNote) + "</p>" +
+            "<p class='match-meta'><a href='" + item.zone.guide + "'>Read the nightlife guide</a> &middot; <a href='" + item.zone.booking + "' rel='nofollow sponsored noopener'>Search hotels on Booking.com</a></p>" +
+            "</div>";
+        });
+        if (a.party === "mixed") {
+          html += "<p class='match-meta'><strong>Mixed group?</strong> One hotel rarely serves everyone. See the <a href='/visit/family-vs-party-zones-nyc.html'>two-hotel strategy</a>: family in a quiet zone, partiers within 20 minutes of the bars.</p>";
+        }
+        document.getElementById("match-results").innerHTML = html;
+      }
+
+      document.getElementById("match-btn").addEventListener("click", runMatch);
+      document.getElementById("match-results").innerHTML = "<p class='match-meta'>Pick your answers and hit the button - results appear here.</p>";
+    })();
+    </script>
   </main>
   <script src="../js/main.js"></script>
 <footer class="nyn-footer">

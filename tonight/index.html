@@ -524,6 +524,9 @@
       generic city-feed items, and stale records so the featured section stays useful for an actual NYC night out.
     </p>
     <p class="tonight-updated">Last refreshed: <strong id="tonight-updated-at">Loading...</strong></p>
+    <noscript>
+      <p class="tonight-updated">The live feed needs JavaScript. No problem &mdash; the evergreen picks and guides below work every night: start with the <a class="tonight-link" href="/tonight/things-to-do-in-nyc-tonight.html">tonight decision tree</a> or the <a class="tonight-link" href="/weekend/nyc-nightlife-this-weekend.html">weekend guide</a>.</p>
+    </noscript>
   </section>
 
   <section class="tonight-grid" aria-label="Tonight live modules">
@@ -532,18 +535,31 @@
       <p class="tonight-panel-subtitle">
         Automatically selected from the live feed using real event links, same-day timing, and stronger click potential.
       </p>
-      <div id="tonight-featured" class="tonight-featured-grid"></div>
+      <div id="tonight-featured" class="tonight-featured-grid">
+        <div class="tonight-card">
+          <p class="tonight-empty">Feed loading &mdash; meanwhile, tonight's reliable picks:</p>
+          <ul class="tonight-list">
+            <li><a class="tonight-link" href="/venues/nebula.html">Nebula</a> &mdash; Manhattan's flagship big room, Fri/Sat 11pm&ndash;4am with headliner bookings.</li>
+            <li><a class="tonight-link" href="/venues/house-of-yes.html">House of Yes</a> &mdash; dancing guaranteed every Friday and Saturday in Bushwick; ticket in advance.</li>
+            <li><a class="tonight-link" href="/venues/elsewhere.html">Elsewhere</a> &mdash; multi-room Bushwick club; if one party misses, walk one flight to the next.</li>
+            <li><a class="tonight-link" href="/venues/public-records.html">Public Records</a> &mdash; the best-sounding room in the city, most nights of the week.</li>
+            <li>Jazz tonight &mdash; late sets are the same-day play; see the <a class="tonight-link" href="/tonight/things-to-do-in-nyc-tonight.html">tonight decision tree</a> for the strategy.</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="tonight-side-stack">
       <aside class="tonight-panel">
         <h2>NYC Weather</h2>
-        <div id="tonight-weather"></div>
+        <div id="tonight-weather"><p class="tonight-empty">Forecast loading&hellip; If it doesn't appear, plan around the season: rooftops in warm months, cocktail rooms and basement clubs the rest of the year.</p></div>
       </aside>
 
       <aside class="tonight-panel">
         <h2>Nightlife Headlines</h2>
-        <ul id="tonight-headlines" class="tonight-list"></ul>
+        <ul id="tonight-headlines" class="tonight-list">
+          <li>Headlines load with the live feed. Meanwhile, the evergreen reads: <a class="tonight-link" href="/rankings/best-saturday-night-spots-nyc.html">Saturday rankings</a> and <a class="tonight-link" href="/rankings/best-friday-night-spots-nyc.html">Friday rankings</a>.</li>
+        </ul>
       </aside>
 
       <aside class="tonight-panel">
@@ -565,14 +581,35 @@
       <p class="tonight-panel-subtitle">
         Broader live feed for discovery. The featured section above is stricter; this section can stay wider for browsing.
       </p>
-      <div id="tonight-picks" class="tonight-picks-grid"></div>
+      <div id="tonight-picks" class="tonight-picks-grid">
+        <div class="tonight-card">
+          <h3>While the feed loads: evergreen plans that work tonight</h3>
+          <p>Pick a branch on the <a class="tonight-link" href="/tonight/things-to-do-in-nyc-tonight.html">tonight decision tree</a> (solo, date, group, or budget), or go weekend-specific with the <a class="tonight-link" href="/tonight/friday-night-nyc.html">Friday</a> and <a class="tonight-link" href="/tonight/saturday-night-nyc.html">Saturday</a> playbooks. Price the night with the <a class="tonight-link" href="/tools/budget-planner.html">budget planner</a> and end it right with <a class="tonight-link" href="/rankings/best-late-night-food-near-clubs-nyc.html">late-night food near the clubs</a>.</p>
+        </div>
+      </div>
     </div>
   </section>
+
+  <noscript>
+    <section class="tonight-section">
+      <div class="tonight-panel">
+        <h2>Tonight's Reliable Picks (No Feed Needed)</h2>
+        <ul class="tonight-list">
+          <li><a class="tonight-link" href="/venues/nebula.html">Nebula</a> &mdash; Manhattan's flagship club, Fri/Sat 11pm&ndash;4am.</li>
+          <li><a class="tonight-link" href="/venues/house-of-yes.html">House of Yes</a> &mdash; dancing every Friday and Saturday in Bushwick.</li>
+          <li><a class="tonight-link" href="/venues/elsewhere.html">Elsewhere</a> &mdash; three rooms, one ticket, built-in backup plan.</li>
+          <li><a class="tonight-link" href="/venues/public-records.html">Public Records</a> &mdash; the city's best-sounding room.</li>
+          <li><a class="tonight-link" href="/rankings/best-late-night-food-near-clubs-nyc.html">Late-night food near the clubs</a> &mdash; plan the finish before you leave.</li>
+        </ul>
+        <p class="tonight-muted">Start with the <a class="tonight-link" href="/tonight/things-to-do-in-nyc-tonight.html">tonight decision tree</a> for a full plan in three minutes.</p>
+      </div>
+    </section>
+  </noscript>
 
   <section class="tonight-section">
     <p class="tonight-muted">
       For sources and trust standards, see
-      <a class="tonight-link" href="/docs/EDITORIAL-TRUTH-POLICY.md">Editorial Truth Policy</a>
+      <a class="tonight-link" href="/methodology/editorial-policy.html">Editorial Truth Policy</a>
       and
       <a class="tonight-link" href="/methodology/">Methodology</a>.
     </p>

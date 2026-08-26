@@ -3,21 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NYC Nightlife Map | NYNightlife</title>
-  <meta name="description" content="Planning page for NYC Nightlife Map. Practical NYC planning guide with actionable tips, logistics, and smart next steps." />
+  <title>NYC Nightlife Map | Clickable District Decision Map</title>
+  <meta name="description" content="A clickable decision map of NYC's nine nightlife districts — venue picks, typical costs, subway lines, and Google Maps links for every zone. No app needed." />
   <link rel="canonical" href="https://nynightlife.com/tools/nyc-nightlife-map.html" />
   <link rel="stylesheet" href="../css/main.css" />
-  <meta property="og:title" content="NYC Nightlife Map | NYNightlife" />
-  <meta property="og:description" content="Planning page for NYC Nightlife Map. Practical NYC planning guide with actionable tips, logistics, and smart next steps." />
+  <style>
+    .zone-map-wrap { margin: 1.5rem 0; }
+    .zone-map { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
+    .zone-cell { background: var(--secondary); border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem 0.6rem; font-size: 0.9rem; font-weight: 700; color: inherit; cursor: pointer; text-align: center; min-height: 72px; display: flex; align-items: center; justify-content: center; transition: border-color 0.15s; font-family: inherit; }
+    .zone-cell:hover { border-color: var(--gold); }
+    .zone-cell.active { border-color: var(--gold); background: var(--accent); color: var(--gold); }
+    .zone-cell.brooklyn { border-left: 3px double var(--gold); }
+    .map-legend { display: flex; justify-content: space-between; font-size: 0.8rem; color: #b7b3ab; margin: 0.4rem 0.2rem; }
+    #district-panel { background: var(--accent); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin-top: 1rem; }
+    #district-panel h3 { margin: 0 0 0.5rem; color: var(--gold); }
+    #district-panel ul { margin: 0.5rem 0 0.5rem 1.2rem; padding: 0; }
+    #district-panel li { margin: 0.35rem 0; }
+    .panel-meta { font-size: 0.95rem; margin: 0.4rem 0; }
+    .tool-note { font-size: 0.9rem; color: #b7b3ab; margin-top: 1rem; }
+    @media (max-width: 560px) {
+      .zone-cell { font-size: 0.78rem; padding: 0.7rem 0.35rem; min-height: 60px; }
+    }
+  </style>
+  <meta property="og:title" content="NYC Nightlife Map | Clickable District Decision Map" />
+  <meta property="og:description" content="A clickable decision map of NYC's nine nightlife districts — venue picks, typical costs, subway lines, and Google Maps links for every zone. No app needed." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nynightlife.com/tools/nyc-nightlife-map.html" />
   <meta property="og:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NYC Nightlife Map | NYNightlife" />
-  <meta name="twitter:description" content="Planning page for NYC Nightlife Map. Practical NYC planning guide with actionable tips, logistics, and smart next steps." />
+  <meta name="twitter:title" content="NYC Nightlife Map | Clickable District Decision Map" />
+  <meta name="twitter:description" content="A clickable decision map of NYC's nine nightlife districts — venue picks, typical costs, subway lines, and Google Maps links for every zone. No app needed." />
   <meta name="twitter:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "NYC Nightlife Map | NYNightlife", "url": "https://nynightlife.com/tools/nyc-nightlife-map.html", "description": "Planning page for NYC Nightlife Map. Practical NYC planning guide with actionable tips, logistics, and smart next steps.", "inLanguage": "en-US", "isPartOf": {"@type": "WebSite", "name": "NYNightlife", "url": "https://nynightlife.com/"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "NYC Nightlife Map: A Clickable District Decision Map", "description": "A stylized, clickable map of New York's nine main nightlife districts with venue picks, typical costs, and the subway lines that serve each zone.", "url": "https://nynightlife.com/tools/nyc-nightlife-map.html", "datePublished": "2026-08-26", "dateModified": "2026-08-26", "author": {"@type": "Organization", "name": "NY Nightlife"}, "publisher": {"@type": "Organization", "name": "NY Nightlife", "url": "https://nynightlife.com/"}, "mainEntityOfPage": "https://nynightlife.com/tools/nyc-nightlife-map.html", "inLanguage": "en-US"}
+  </script>
+  <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+{"@type": "Question", "name": "Which NYC nightlife district is best for first-timers?", "acceptedAnswer": {"@type": "Answer", "text": "The East Village and Lower East Side. It's the densest bar grid in the city, everything is walkable, covers are rare, and the range runs from $7 dive beers to world-class cocktail rooms like Attaboy. If your night goes sideways, the next option is always a block away."}},
+{"@type": "Question", "name": "Where are NYC's big dance clubs?", "acceptedAnswer": {"@type": "Answer", "text": "Two main clusters: Bushwick and Ridgewood in Brooklyn/Queens (House of Yes, Elsewhere, Bossa Nova Civic Club, Nowadays) for warehouse and underground rooms, and Midtown West/Chelsea (Nebula, Musica, Marquee) for big-production clubs. East Williamsburg adds the open-air Brooklyn Mirage complex in season."}},
+{"@type": "Question", "name": "Do I need a car or rideshare to get between nightlife districts?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not before midnight — the subway connects every district on this map for $3.00 a ride, and the L train alone links the East Village, Williamsburg, and Bushwick. After midnight, trains run every 20 minutes or so; budget $30-$50 for a late rideshare back from Brooklyn if you outlast the convenient trains."}},
+{"@type": "Question", "name": "What is the cheapest nightlife area in NYC?", "acceptedAnswer": {"@type": "Answer", "text": "The East Village/Lower East Side and Bushwick. Dive beers run $7-$9, most bars have no cover, and Bushwick club covers often stay under $20 before midnight. The most expensive zones are Meatpacking and Midtown's big clubs, where covers hit $20-$60 and cocktails $18-$25."}}
+]}
   </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3007723856138381" crossorigin="anonymous"></script>
@@ -64,65 +90,171 @@
   </div>
 </header>
 
-  
-
     <main id="nyn-main" class="container" style="padding:2rem 1rem;">
     <section>
-      <h1>NYC Nightlife Map</h1>
-      <p>NYC Nightlife Map is a high-intent NYC planning topic. Use this page to make fast decisions on route, timing, budget, and backup options so your night doesn’t break after the first venue pivot.</p>
-      <p>NYC rewards people who plan in sequences, not random lists. Pick a primary objective, choose one neighborhood cluster, and lock one fallback in the same zone before you leave.</p>
+      <h1>NYC Nightlife Map: Pick Your District</h1>
+      <p>This is a <strong>decision map</strong>, not a GPS map: nine nightlife districts laid out roughly west-to-east, Manhattan on the left, Brooklyn and Queens on the right of the double line. Tap a zone to see what it's for, three venue picks, typical costs, and the subway lines that serve it — with a Google Maps link when you want real streets.</p>
+    </section>
+
+    <section class="zone-map-wrap" aria-label="Clickable nightlife district map">
+      <div class="map-legend"><span>&larr; Manhattan (west &rarr; east)</span><span>&#124;&#124; = East River &middot; Brooklyn/Queens &rarr;</span></div>
+      <div class="zone-map" id="zone-map"></div>
+      <div id="district-panel" aria-live="polite"></div>
+      <p class="tool-note">Stylized and not to scale — relative positions only. Venue details match our <a href="/venues/">venue fact pages</a>, verified 2026-08-26.</p>
     </section>
 
     <section>
-      <h2>Who This Page Helps Most</h2>
+      <h2>How to Use This Map</h2>
+      <p>NYC nightlife is not one scene — it's nine, and they don't feel remotely alike. The fastest way to plan a good night is to pick <em>one</em> district that matches your objective, commit to it, and keep a backup within the same zone. That's the whole method behind our <a href="/tools/nyc-night-planner.html">night planner</a>, and this map is the district-picking step made visual.</p>
+      <p>The one-line version of each column: Manhattan's west side (Hell's Kitchen, Chelsea&ndash;Meatpacking, West Village) runs from big-room clubs down to polished cocktail rooms; the east side (Flatiron rooftops, then the East Village&ndash;Lower East Side grid, then weekend-quiet FiDi) is where bar-hopping actually works on foot; and across the river, Williamsburg&ndash;Greenpoint does music-forward bars, while Bushwick&ndash;Ridgewood is the city's warehouse club capital and Downtown Brooklyn&ndash;Dumbo is the calm skyline-view outlier.</p>
+      <p>Districts also pair well when you want a two-act night. East Village to Williamsburg is two stops on the L; the Lower East Side to Williamsburg is one stop on the J across the bridge; Chelsea flows into Meatpacking on foot; and a Flatiron rooftop at sunset feeds naturally into an East Village speakeasy round. What doesn't work is stringing three districts in one night — every extra hop costs 30&ndash;45 minutes and usually a member of your group. The <a href="/plan/nyc-subway-for-nightlife.html">subway-for-nightlife guide</a> covers the lines in detail, and our <a href="/tools/subway-safe-route-night.html">night-route cheat sheet</a> handles the trip home.</p>
+      <p>Budget swings hard by district. The same night out — three drinks and a cover — can run $50 in the East Village or $150 in Meatpacking. If cost is the deciding factor, start with the <a href="/rankings/best-nightlife-under-50-nyc.html">best nightlife under $50</a> ranking and the <a href="/tools/budget-planner.html">budget planner</a>. And if you're choosing where to <em>sleep</em> rather than where to party, that's a different question with different answers — use the <a href="/tools/hotel-neighborhood-matcher-nyc.html">hotel neighborhood matcher</a>.</p>
+    </section>
+
+    <section>
+      <h2>FAQ</h2>
+      <h3>Which district is best for first-timers?</h3>
+      <p>The East Village and Lower East Side: the densest bar grid in the city, everything walkable, covers rare, and the range runs from $7 dive beers to world-class cocktail rooms. If your night goes sideways, the next option is a block away.</p>
+      <h3>Where are the big dance clubs?</h3>
+      <p>Two clusters: Bushwick&ndash;Ridgewood for warehouse and underground rooms (<a href="/venues/house-of-yes.html">House of Yes</a>, <a href="/venues/elsewhere.html">Elsewhere</a>, <a href="/venues/nowadays.html">Nowadays</a>) and Midtown West&ndash;Chelsea for big-production clubs (<a href="/venues/nebula.html">Nebula</a>, <a href="/venues/marquee-new-york.html">Marquee</a>). East Williamsburg adds the open-air <a href="/venues/brooklyn-mirage.html">Brooklyn Mirage</a> complex in season.</p>
+      <h3>Do I need a rideshare between districts?</h3>
+      <p>Usually not before midnight — the subway connects every district here for $3.00 a ride, and the L alone links the East Village, Williamsburg, and Bushwick. After midnight, trains come every ~20 minutes; budget $30&ndash;$50 for a late ride back from Brooklyn if you outlast them. <em>Last verified: 2026-08-26.</em></p>
+      <h3>What's the cheapest nightlife area?</h3>
+      <p>East Village/LES and Bushwick: $7&ndash;$9 dive beers, mostly no covers, and Bushwick covers often under $20 before midnight. Priciest: Meatpacking and Midtown's big clubs, at $20&ndash;$60 covers and $18&ndash;$25 cocktails.</p>
+    </section>
+
+    <section>
+      <h2>Keep Planning</h2>
       <ul>
-        <li>Visitors who want a practical plan without wasting half the night in transit.</li>
-        <li>Locals coordinating a group where budget and timing matter.</li>
-        <li>Anyone comparing options and trying to avoid weak last-minute decisions.</li>
-      </ul>
-      <p>If this is a same-day decision, prioritize execution speed over endless option hunting. The best plan is usually one strong route with a realistic fallback nearby.</p>
-    </section>
-
-    <section>
-      <h2>Execution Framework (Use This Before You Go)</h2>
-      <ol>
-        <li><strong>Define the objective:</strong> social energy, date night, music-first, or premium experience.</li>
-        <li><strong>Set spend limits:</strong> include entry, drinks, rides, and late-night food.</li>
-        <li><strong>Choose zone + backup:</strong> keep both options within a short transit window.</li>
-        <li><strong>Set a pivot rule:</strong> if line, wait time, or pricing exceeds your threshold, move immediately.</li>
-        <li><strong>Set the return plan:</strong> decide how the night ends while everyone still has battery and clarity.</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>Budget and Logistics Benchmarks</h2>
-      <ul>
-        <li><strong>Lean plan ($60–$120):</strong> one paid anchor plus practical transit control.</li>
-        <li><strong>Balanced plan ($120–$250):</strong> one premium stop + one flexible backup.</li>
-        <li><strong>Premium plan ($250+):</strong> reservation-first routing with shorter pivots and fewer misses.</li>
-      </ul>
-      <p>The biggest planning error in NYC nightlife is unplanned movement. Every extra cross-borough jump adds cost and kills momentum. Keep your route tight and your fallback close.</p>
-    </section>
-
-    <section>
-      <h2>Common Mistakes to Avoid</h2>
-      <ul>
-        <li>Overbuilding the itinerary with too many disconnected stops.</li>
-        <li>No backup option when lines spike or crowd fit is wrong.</li>
-        <li>Ignoring return-route timing until the end of the night.</li>
-        <li>Confusing hype with fit; optimize for your group’s objective, not generic top-10 lists.</li>
+        <li><a href="/neighborhoods/">All neighborhood nightlife guides</a></li>
+        <li><a href="/rankings/best-bars-in-nyc.html">Best bars in NYC</a> and <a href="/rankings/best-clubs-in-nyc.html">best clubs in NYC</a></li>
+        <li><a href="/weekend/nyc-nightlife-this-weekend.html">What's on this weekend</a></li>
+        <li><a href="/safety/late-night-safety-by-borough.html">Late-night safety by borough</a></li>
       </ul>
     </section>
 
     <section>
-      <h2>Related Planning Pages</h2>
+      <h2>Sources</h2>
       <ul>
-        <li><a href="/tools/nyc-night-planner.html">Primary companion guide</a></li>
-        <li><a href="/tools/venue-compare-nyc.html">Execution and comparison support</a></li>
-        <li><a href="/tools/nyc-trip-cost-calculator.html">Backup logistics and next step</a></li>
+        <li><a href="https://www.mta.info/maps" rel="noopener">MTA — official subway map and line service</a></li>
+        <li><a href="https://sla.ny.gov/" rel="noopener">New York State Liquor Authority — hours of sale</a></li>
+        <li>Venue details: cross-checked against each venue's official site and our <a href="/venues/">venue fact pages</a>.</li>
       </ul>
-      <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
+      <p><em>Last verified: 2026-08-26.</em></p>
+      <p style="color:#b7b3ab;">Last updated: 2026-08-26 (America/New_York)</p>
     </section>
+
+    <script>
+    (function () {
+      var DISTRICTS = [
+        { id: "hk", name: "Hell's Kitchen & Times Sq", col: "manhattan",
+          blurb: "Broadway crowds early, Ninth Avenue bars all night, and big-production clubs on the western edge. Loud, easy, and the best-connected district on the map.",
+          picks: [["Musica (Latin & open-format club)", "/venues/musica-club.html"], ["Magic Hour Rooftop (Moxy Times Square)", "/venues/magic-hour-rooftop.html"], ["Nebula (big-room club, W 41st)", "/venues/nebula.html"]],
+          costs: "Club covers $20-$60; rooftop cocktails $18-$25; Ninth Ave bar beers $8-$10.",
+          subway: "A/C/E at 42 St-Port Authority; 1/2/3, N/Q/R/W at Times Sq. (C and W don't run overnight.)",
+          guide: "/neighborhoods/hells-kitchen-nightlife.html",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=Hell%27s+Kitchen+nightlife+New+York" },
+        { id: "flatiron", name: "Flatiron, NoMad & Midtown East", col: "manhattan",
+          blurb: "Skyline rooftops over dance floors: after-work polish that turns date-night after dark. The quietest Manhattan district to sleep in, per our family vs. party guide.",
+          picks: [["230 Fifth (rooftop, no cover)", "/venues/230-fifth-rooftop.html"], ["Somewhere Nowhere (rooftop club, W 25th)", "/venues/somewhere-nowhere.html"], ["Ophelia Lounge (Beekman Tower views)", "/venues/ophelia-lounge.html"]],
+          costs: "Rooftop cocktails $18-$25; most rooftops no cover early, lines after 9pm weekends.",
+          subway: "N/R/W at 28 St; 6 at 28/33 St; 4/6, 7, E/M around Grand Central. (M is a Brooklyn shuttle overnight.)",
+          guide: "/neighborhoods/midtown-nightlife.html",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=rooftop+bars+Flatiron+NoMad+New+York" },
+        { id: "wbg", name: "Williamsburg & Greenpoint", col: "brooklyn",
+          blurb: "The best all-round party base outside Manhattan: music-forward bars, mid-size dance rooms, and skyline rooftops, minus the tourist baseline.",
+          picks: [["Westlight (22nd-floor skyline views)", "/venues/westlight.html"], ["Good Room (Greenpoint dance room)", "/venues/good-room.html"], ["Brooklyn Mirage (open-air mega-venue, seasonal)", "/venues/brooklyn-mirage.html"]],
+          costs: "Cocktails $14-$18; covers $10-$30; Mirage tickets $40-$100+ by lineup.",
+          subway: "L at Bedford/Lorimer; G at Metropolitan & Nassau Av; NYC Ferry by day. (G runs infrequently late.)",
+          guide: "/neighborhoods/williamsburg-nightlife.html",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=Williamsburg+Brooklyn+nightlife" },
+        { id: "chelsea", name: "Chelsea & Meatpacking", col: "manhattan",
+          blurb: "The dressiest district: big-format clubs, hotel rooftops, and bottle-service energy. Expensive and proud of it — doors judge groups here.",
+          picks: [["Le Bain (The Standard, High Line)", "/venues/le-bain.html"], ["Marquee (the classic big club)", "/venues/marquee-new-york.html"], ["PhD Rooftop Lounge (Dream Downtown)", "/venues/phd-rooftop-lounge.html"]],
+          costs: "Covers $20-$60; cocktails $18-$25; tables run several hundred and up.",
+          subway: "A/C/E and L at 14 St-8 Av; 1 at 14/18/23 St. (C doesn't run overnight.)",
+          guide: "/neighborhoods/meatpacking-nightlife.html",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=Meatpacking+District+nightlife+New+York" },
+        { id: "evles", name: "East Village & Lower East Side", col: "manhattan",
+          blurb: "The densest bar grid in the city — dive bars, speakeasies, and cocktail dens stacked block after block on Ludlow, Orchard, and Avenue A. Loud until 4am Thursday-Saturday.",
+          picks: [["Attaboy (walk-in speakeasy, no menu)", "/venues/attaboy.html"], ["PDT (behind the Crif Dogs phone booth)", "/venues/please-dont-tell.html"], ["The Back Room (Prohibition-era teacups)", "/venues/the-back-room.html"]],
+          costs: "Dive beers $7-$9; cocktails $14-$24; covers rare. Cheapest quality night in Manhattan.",
+          subway: "F at 2 Av & Delancey; J/M/Z at Essex; 6 at Astor Pl; L at 1/3 Av. (Z rush hours only; M reduced overnight.)",
+          guide: "/neighborhoods/lower-east-side-nightlife.html",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=Lower+East+Side+bars+New+York" },
+        { id: "bushwick", name: "Bushwick & Ridgewood", col: "brooklyn",
+          blurb: "NYC's warehouse club capital. Floors fill after midnight and run past 4am; themed parties, techno rooms, and day-into-night listening bars.",
+          picks: [["House of Yes (circus-cabaret-club hybrid)", "/venues/house-of-yes.html"], ["Elsewhere (multi-room warehouse)", "/venues/elsewhere.html"], ["Bossa Nova Civic Club (small techno room)", "/venues/bossa-nova-civic-club.html"]],
+          costs: "Covers $0-$40 by event; beers $7-$9. Advance tickets strongly advised on weekends.",
+          subway: "L at Jefferson St & Morgan Av; J/M at Myrtle-Broadway. (L runs all night; check weekend work.)",
+          guide: "/neighborhoods/bushwick-nightlife.html",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=Bushwick+clubs+Brooklyn" },
+        { id: "wv", name: "West Village", col: "manhattan",
+          blurb: "Cocktail rooms, wine bars, and jazz dens on crooked, walkable streets. Grown-up energy — great dates, weak dance floors.",
+          picks: [["Employees Only (cocktail-nerd institution)", "/venues/employees-only.html"], ["West Village nightlife guide", "/neighborhoods/west-village-nightlife.html"], ["Best bars in NYC ranking", "/rankings/best-bars-in-nyc.html"]],
+          costs: "Cocktails $16-$22; no covers; kitchens run late.",
+          subway: "1 at Christopher St; A/C/E, B/D/F/M at W 4 St. (B and C don't run overnight.)",
+          guide: "/neighborhoods/west-village-nightlife.html",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=West+Village+cocktail+bars+New+York" },
+        { id: "fidi", name: "FiDi & Seaport", col: "manhattan",
+          blurb: "Weekend-quiet with a handful of world-class rooms and after-work energy Tuesday-Thursday. Sleep-cheap district with a giant subway hub.",
+          picks: [["The Dead Rabbit (world-famous Irish bar)", "/venues/the-dead-rabbit.html"], ["Financial District nightlife guide", "/neighborhoods/financial-district-nightlife.html"], ["The Box (late-night theatrical venue, Bowery edge)", "/venues/the-box.html"]],
+          costs: "Cocktails $16-$22; hotel deals on weekends when the suits go home.",
+          subway: "Fulton St hub: A/C, J/Z, 2/3, 4/5; 1 at South Ferry; R/W at Whitehall. (C, W, Z out overnight.)",
+          guide: "/neighborhoods/financial-district-nightlife.html",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=Financial+District+bars+New+York" },
+        { id: "dbk", name: "Downtown Brooklyn & Dumbo", col: "brooklyn",
+          blurb: "The calm outlier: skyline-view rooftops and dinner-forward evenings that wind down by midnight. Pairs with a Williamsburg or Bushwick finish one hop away.",
+          picks: [["Harriet's Rooftop (1 Hotel Brooklyn Bridge)", "/venues/harriets-rooftop.html"], ["Dumbo nightlife guide", "/neighborhoods/dumbo-nightlife.html"], ["Downtown Brooklyn nightlife guide", "/neighborhoods/downtown-brooklyn-nightlife.html"]],
+          costs: "Cocktails $16-$20; no covers; quiet by 11pm-midnight most nights.",
+          subway: "A/C/F at Jay St-MetroTech; 2/3, 4/5 at Borough Hall; F at York St for Dumbo. (C out overnight.)",
+          guide: "/neighborhoods/downtown-brooklyn-nightlife.html",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=Dumbo+Brooklyn+bars" }
+      ];
+
+      var GRID_ORDER = ["hk", "flatiron", "wbg", "chelsea", "evles", "bushwick", "wv", "fidi", "dbk"];
+
+      function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+      function byId(id) {
+        for (var i = 0; i < DISTRICTS.length; i++) { if (DISTRICTS[i].id === id) { return DISTRICTS[i]; } }
+        return DISTRICTS[0];
+      }
+
+      function renderMap() {
+        var mapEl = document.getElementById("zone-map");
+        var html = "";
+        GRID_ORDER.forEach(function (id) {
+          var d = byId(id);
+          var cls = "zone-cell" + (d.col === "brooklyn" ? " brooklyn" : "");
+          html += "<button type='button' class='" + cls + "' data-zone='" + d.id + "'>" + esc(d.name) + "</button>";
+        });
+        mapEl.innerHTML = html;
+        mapEl.addEventListener("click", function (e) {
+          var btn = e.target.closest("button[data-zone]");
+          if (!btn) { return; }
+          showDistrict(btn.getAttribute("data-zone"));
+        });
+      }
+
+      function showDistrict(id) {
+        var d = byId(id);
+        var cells = document.querySelectorAll(".zone-cell");
+        cells.forEach(function (c) { c.classList.toggle("active", c.getAttribute("data-zone") === d.id); });
+        var picksHtml = d.picks.map(function (p) { return "<li><a href='" + p[1] + "'>" + esc(p[0]) + "</a></li>"; }).join("");
+        var html = "<h3>" + esc(d.name) + "</h3>" +
+          "<p class='panel-meta'>" + esc(d.blurb) + "</p>" +
+          "<p class='panel-meta'><strong>Three picks:</strong></p><ul>" + picksHtml + "</ul>" +
+          "<p class='panel-meta'><strong>Typical costs:</strong> " + esc(d.costs) + "</p>" +
+          "<p class='panel-meta'><strong>Subway:</strong> " + esc(d.subway) + "</p>" +
+          "<p class='panel-meta'><a href='" + d.guide + "'>Full district guide</a> &middot; <a href='" + d.gmaps + "' rel='noopener' target='_blank'>Open in Google Maps</a></p>";
+        document.getElementById("district-panel").innerHTML = html;
+      }
+
+      renderMap();
+      document.getElementById("district-panel").innerHTML = "<p class='panel-meta'>Tap any district above to see its personality, three venue picks, typical costs, and subway lines.</p>";
+    })();
+    </script>
   </main>
   <script src="../js/main.js"></script>
 <footer class="nyn-footer">

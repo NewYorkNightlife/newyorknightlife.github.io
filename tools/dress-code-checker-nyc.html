@@ -3,21 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dress Code Checker NYC | NYNightlife</title>
-  <meta name="description" content="Planning page for Dress Code Checker NYC. Practical NYC planning guide with actionable tips, logistics, and smart next steps." />
+  <title>NYC Dress Code Checker — Will the Door Let You In? | NYNightlife</title>
+  <meta name="description" content="Pick a venue type and what you're wearing — get an instant in / risky / bounced verdict based on real 2026 door policies at Marquee, Nebula, and more." />
   <link rel="canonical" href="https://nynightlife.com/tools/dress-code-checker-nyc.html" />
   <link rel="stylesheet" href="../css/main.css" />
-  <meta property="og:title" content="Dress Code Checker NYC | NYNightlife" />
-  <meta property="og:description" content="Planning page for Dress Code Checker NYC. Practical NYC planning guide with actionable tips, logistics, and smart next steps." />
+  <style>
+    .tool-panel { background: var(--secondary); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; margin: 1.5rem 0; }
+    .tool-panel select { background: #0f1020; color: var(--text); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 1rem; max-width: 100%; }
+    .dc-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .5rem; margin: 1rem 0; }
+    .dc-items label { display: flex; align-items: center; gap: .55rem; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: .65rem .8rem; cursor: pointer; color: var(--text); }
+    .dc-items input { accent-color: #d8ae5a; width: 1.1rem; height: 1.1rem; }
+    .tool-result { border-radius: 16px; padding: 1.25rem 1.5rem; margin-top: 1.25rem; background: var(--panel); border: 1px solid var(--line); }
+    .tool-result.v-in { border-color: #3ddc84; }
+    .tool-result.v-risky { border-color: #e8c67a; }
+    .tool-result.v-out { border-color: #ff5c5c; }
+    .verdict-word { font-size: 1.4rem; font-weight: 800; margin: 0 0 .5rem; }
+    .v-in .verdict-word { color: #3ddc84; }
+    .v-risky .verdict-word { color: #e8c67a; }
+    .v-out .verdict-word { color: #ff5c5c; }
+    .tool-note { color: var(--muted); font-size: .92rem; }
+    .dc-reason { margin: .35rem 0; }
+    .rules-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .rules-table th, .rules-table td { padding: .6rem .7rem; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .rules-table th { color: var(--gold); }
+  </style>
+  <meta property="og:title" content="NYC Dress Code Checker — Will the Door Let You In? | NYNightlife" />
+  <meta property="og:description" content="Pick a venue type and what you're wearing — get an instant in / risky / bounced verdict based on real 2026 door policies at Marquee, Nebula, and more." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nynightlife.com/tools/dress-code-checker-nyc.html" />
   <meta property="og:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dress Code Checker NYC | NYNightlife" />
-  <meta name="twitter:description" content="Planning page for Dress Code Checker NYC. Practical NYC planning guide with actionable tips, logistics, and smart next steps." />
+  <meta name="twitter:title" content="NYC Dress Code Checker — Will the Door Let You In? | NYNightlife" />
+  <meta name="twitter:description" content="Pick a venue type and what you're wearing — get an instant in / risky / bounced verdict based on real 2026 door policies at Marquee, Nebula, and more." />
   <meta name="twitter:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "Dress Code Checker NYC | NYNightlife", "url": "https://nynightlife.com/tools/dress-code-checker-nyc.html", "description": "Planning page for Dress Code Checker NYC. Practical NYC planning guide with actionable tips, logistics, and smart next steps.", "inLanguage": "en-US", "isPartOf": {"@type": "WebSite", "name": "NYNightlife", "url": "https://nynightlife.com/"}}
+{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"NYC Dress Code Checker — Will the Door Let You In?","description":"Interactive checker that turns real NYC door policies into an in / risky / bounced verdict for what you're planning to wear, by venue type.","url":"https://nynightlife.com/tools/dress-code-checker-nyc.html","mainEntityOfPage":"https://nynightlife.com/tools/dress-code-checker-nyc.html","datePublished":"2026-03-11","dateModified":"2026-08-26","author":{"@type":"Organization","name":"NYNightlife","url":"https://nynightlife.com/"},"publisher":{"@type":"Organization","name":"NYNightlife","url":"https://nynightlife.com/"},"inLanguage":"en-US"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are sneakers OK at NYC clubs?","acceptedAnswer":{"@type":"Answer","text":"Clean, fashion-forward sneakers usually pass at most doors, including many clubs — it's beat-up or obviously athletic sneakers that get flagged. Nebula's reported code bars distressed sneakers specifically, and Somewhere Nowhere's published rules do the same. At mega-clubs the safest floor is dress shoes or spotless designer sneakers."}},{"@type":"Question","name":"Can I wear jeans to a nightclub in NYC?","acceptedAnswer":{"@type":"Answer","text":"Yes — dark, well-fitting jeans with a collared shirt or a dressed-up top are the default NYC club uniform. Ripped or baggy jeans are riskier at strict doors like Marquee and Nebula."}},{"@type":"Question","name":"Can I wear shorts to a rooftop bar in summer?","acceptedAnswer":{"@type":"Answer","text":"Daytime, usually yes. At night the strict rooftops say no — Somewhere Nowhere's published dress code bans shorts at night along with athletic wear, team logos, pool slides, distressed sneakers, and tank tops. Casual rooftops like 230 Fifth are far more relaxed."}},{"@type":"Question","name":"Do NYC dress codes apply to women too?","acceptedAnswer":{"@type":"Answer","text":"Formally yes, practically less strictly — enforcement lands hardest on men's athletic wear, shorts, jerseys, and shoes. Women are rarely bounced for footwear, though gym clothes and pool slides get flagged at strict doors regardless of gender."}}]}]}
   </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3007723856138381" crossorigin="anonymous"></script>
@@ -68,60 +88,213 @@
 
     <main id="nyn-main" class="container" style="padding:2rem 1rem;">
     <section>
-      <h1>Dress Code Checker NYC</h1>
-      <p>Dress Code Checker NYC is a high-intent NYC planning topic. Use this page to make fast decisions on route, timing, budget, and backup options so your night doesn’t break after the first venue pivot.</p>
-      <p>NYC rewards people who plan in sequences, not random lists. Pick a primary objective, choose one neighborhood cluster, and lock one fallback in the same zone before you leave.</p>
+      <h1>NYC Dress Code Checker</h1>
+      <p>Pick where you're headed and check off what you're planning to wear. You get one of three verdicts — <strong>you're in</strong>, <strong>risky</strong>, or <strong>bounced</strong> — built from the door policies on our <a href="/venues/">verified venue pages</a>: Somewhere Nowhere's published rules, Nebula's and Marquee's reported codes, and the blissful indifference of dives and warehouses.</p>
+      <p class="tool-note">Last updated: 2026-08-26 &middot; Door policies last verified: 2026-08-26</p>
+    </section>
+
+    <section class="tool-panel">
+      <h2 style="margin-top:0;">Check your outfit</h2>
+      <label for="dc-venue" style="display:block;font-weight:600;margin-bottom:.4rem;">Where are you going?</label>
+      <select id="dc-venue">
+        <option value="mega" selected>Mega-club (Marquee, Nebula, Pacha NY)</option>
+        <option value="rooftop">Upscale rooftop (Somewhere Nowhere, PHD, Le Bain)</option>
+        <option value="cocktail">Cocktail bar / speakeasy (Attaboy, PDT, Death &amp; Co)</option>
+        <option value="warehouse">Warehouse / DIY club (House of Yes, Elsewhere, Bossa Nova)</option>
+        <option value="dive">Dive bar</option>
+      </select>
+      <p style="font-weight:600;margin:1rem 0 .25rem;">What are you wearing? (check all that apply)</p>
+      <div class="dc-items" id="dc-items">
+        <label><input type="checkbox" value="sneakers_clean"> Clean sneakers</label>
+        <label><input type="checkbox" value="sneakers_beat"> Beat-up / distressed sneakers</label>
+        <label><input type="checkbox" value="athletic"> Athletic wear / gym clothes</label>
+        <label><input type="checkbox" value="jersey"> Sports jersey / team logo</label>
+        <label><input type="checkbox" value="shorts"> Shorts</label>
+        <label><input type="checkbox" value="tank"> Tank top</label>
+        <label><input type="checkbox" value="slides"> Flip-flops / pool slides</label>
+        <label><input type="checkbox" value="cap"> Baseball cap</label>
+        <label><input type="checkbox" value="boots"> Boots</label>
+        <label><input type="checkbox" value="jeans"> Dark jeans</label>
+        <label><input type="checkbox" value="collared"> Collared shirt / dressy top</label>
+        <label><input type="checkbox" value="dress_shoes"> Dress shoes / heels</label>
+        <label><input type="checkbox" value="blazer"> Blazer / dress / smart-casual layer</label>
+        <label><input type="checkbox" value="costume"> Costume / festival wear</label>
+      </div>
+      <button type="button" onclick="checkDress()">Check the door</button>
+      <p id="dc-cta" class="tool-note" style="margin-top:1rem;">Pick your venue, check your outfit, and hit <strong>Check the door</strong> for the verdict and the why.</p>
+      <div id="dc-result" class="tool-result" hidden></div>
+    </section>
+
+    <script>
+    (function () {
+      var NAMES = {
+        sneakers_clean: "Clean sneakers", sneakers_beat: "Beat-up sneakers", athletic: "Athletic wear",
+        jersey: "Sports jersey", shorts: "Shorts", tank: "Tank top", slides: "Flip-flops / slides",
+        cap: "Baseball cap", boots: "Boots", jeans: "Dark jeans", collared: "Collared shirt / dressy top",
+        dress_shoes: "Dress shoes / heels", blazer: "Smart-casual layer", costume: "Costume / festival wear"
+      };
+      var RULES = {
+        mega: {
+          label: "Mega-club",
+          intro: "Marquee and Nebula run selective, enforced doors. Neither publishes a full code, but the reported rules are consistent: upscale attire, no athletic anything.",
+          hard: {
+            athletic: "Nebula's reported code bars athletic wear outright; Marquee's door reads it the same way.",
+            jersey: "Jerseys and team logos are a reported hard no at Nebula and get turned away at big-room doors generally.",
+            shorts: "Shorts on club nights are a reported no at Nebula and a bad bet at any Manhattan mega-club door.",
+            slides: "Open shoes don't clear a bottle-service door, full stop.",
+            sneakers_beat: "Distressed sneakers are specifically named in Nebula's reported code.",
+            tank: "Tank tops read as beachwear at these doors — expect a turn-away."
+          },
+          risky: {
+            cap: "Caps often get a 'lose the hat' at the rope — doorman's call.",
+            sneakers_clean: "Spotless designer sneakers pass more often than not, but on a packed Saturday the door can use them as the excuse. Dress shoes are the safe floor.",
+            costume: "Unless it's a themed event, costume pieces read wrong at a bottle-service door."
+          },
+          plus: { collared: 1, dress_shoes: 1, blazer: 1, jeans: 1 }
+        },
+        rooftop: {
+          label: "Upscale rooftop",
+          intro: "Somewhere Nowhere publishes its code and enforces it: smart casual, strictly. That's the model for Manhattan's dressy rooftops after dark.",
+          hard: {
+            shorts: "Somewhere Nowhere's published code: no shorts at night.",
+            athletic: "Published rule — no athletic wear.",
+            jersey: "Published rule — no team logos.",
+            slides: "Published rule — no pool slides (yes, even with a pool upstairs).",
+            sneakers_beat: "Published rule — no distressed sneakers.",
+            tank: "Published rule — no tank tops."
+          },
+          risky: {
+            cap: "Not in the published list, but dressy rooftops routinely ask for hats off inside.",
+            costume: "Fine on a themed night, side-eye otherwise."
+          },
+          plus: { collared: 1, dress_shoes: 1, blazer: 1, jeans: 1, sneakers_clean: 1 }
+        },
+        cocktail: {
+          label: "Cocktail bar / speakeasy",
+          intro: "Attaboy, PDT, and Death & Co have no formal dress codes — the barrier is the wait, not the wardrobe.",
+          hard: {},
+          risky: {
+            athletic: "Nobody will bounce you, but full gym kit will feel out of place in a $20-cocktail room.",
+            slides: "Legal, but you'll feel underdressed the moment the door closes behind you."
+          },
+          plus: { blazer: 1, collared: 1, dress_shoes: 1 }
+        },
+        warehouse: {
+          label: "Warehouse / DIY club",
+          intro: "House of Yes, Elsewhere, Bossa Nova, Nowadays: no dress codes, friendly doors. Public Records' door is famously drama-free. Effort and self-expression beat polish here.",
+          hard: {},
+          risky: {},
+          plus: { costume: 1, boots: 1, sneakers_clean: 1 }
+        },
+        dive: {
+          label: "Dive bar",
+          intro: "It's a dive. If you're wearing clothes and can pay cash, you're in.",
+          hard: {},
+          risky: {},
+          plus: {}
+        }
+      };
+      window.checkDress = function () {
+        var venueKey = document.getElementById("dc-venue").value;
+        var rules = RULES[venueKey];
+        var boxes = document.querySelectorAll("#dc-items input:checked");
+        var box = document.getElementById("dc-result");
+        document.getElementById("dc-cta").hidden = true;
+        if (boxes.length === 0) {
+          box.className = "tool-result v-risky";
+          box.innerHTML = "<p class=\"verdict-word\">Hold on</p><p>Check at least one item so the door has something to judge. (Showing up in nothing is a different problem.)</p>";
+          box.hidden = false;
+          return;
+        }
+        var fails = [], warns = [], helps = [];
+        for (var i = 0; i < boxes.length; i++) {
+          var v = boxes[i].value;
+          if (rules.hard[v]) { fails.push("<p class=\"dc-reason\">&#10060; <strong>" + NAMES[v] + ":</strong> " + rules.hard[v] + "</p>"); }
+          else if (rules.risky[v]) { warns.push("<p class=\"dc-reason\">&#9888;&#65039; <strong>" + NAMES[v] + ":</strong> " + rules.risky[v] + "</p>"); }
+          else if (rules.plus[v]) { helps.push(NAMES[v]); }
+        }
+        var cls, word, summary;
+        if (fails.length > 0) {
+          cls = "v-out"; word = "Bounced";
+          summary = "At a " + rules.label.toLowerCase() + " door, at least one of these is a turn-away. Swap the flagged items or pick a venue that doesn't care.";
+        } else if (warns.length > 0) {
+          cls = "v-risky"; word = "Risky";
+          summary = "Nothing here is an automatic no, but on a busy night the door has discretion — and discretion goes against whoever's easiest to skip.";
+        } else {
+          cls = "v-in"; word = "You're in";
+          summary = "Nothing in this outfit trips the " + rules.label.toLowerCase() + " rules. Walk up like you belong.";
+        }
+        var html = "<p class=\"verdict-word\">" + word + "</p><p>" + summary + "</p>" + fails.join("") + warns.join("");
+        if (helps.length > 0 && cls !== "v-in") {
+          html += "<p class=\"dc-reason\">&#10003; Working in your favor: " + helps.join(", ").toLowerCase() + ". Doors judge the whole outfit.</p>";
+        }
+        html += "<p class=\"tool-note\">" + rules.intro + "</p>";
+        if (venueKey === "warehouse") {
+          html += "<p class=\"tool-note\">One flip: at House of Yes themed parties, costume effort is expected — check the event listing before showing up in street clothes.</p>";
+        }
+        box.className = "tool-result " + cls;
+        box.innerHTML = html;
+        box.hidden = false;
+      };
+    })();
+    </script>
+
+    <section>
+      <h2>The rules, venue by venue</h2>
+      <div style="overflow-x:auto;">
+      <table class="rules-table">
+        <thead><tr><th>Venue type</th><th>Hard no</th><th>Safe uniform</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/venues/marquee-new-york.html">Marquee</a> / <a href="/venues/nebula.html">Nebula</a> (mega-club)</td><td>Athletic wear, jerseys, shorts, tanks, slides, distressed sneakers (reported)</td><td>Collared shirt or dressy top, dark jeans, dress shoes or spotless sneakers</td></tr>
+          <tr><td><a href="/venues/somewhere-nowhere.html">Somewhere Nowhere</a> (rooftop)</td><td>Published: no shorts at night, athletic wear, team logos, pool slides, distressed sneakers, tank tops</td><td>Smart casual, strictly — their words</td></tr>
+          <tr><td><a href="/venues/attaboy.html">Attaboy</a> / speakeasies</td><td>Nothing formal</td><td>Whatever you'd wear to a nice dinner</td></tr>
+          <tr><td><a href="/venues/house-of-yes.html">House of Yes</a> / <a href="/venues/bossa-nova-civic-club.html">Bossa Nova</a> (warehouse)</td><td>Nothing</td><td>Comfortable shoes you can dance in; costumes welcome</td></tr>
+          <tr><td>Dive bars</td><td>Nothing</td><td>Clothes</td></tr>
+        </tbody>
+      </table>
+      </div>
     </section>
 
     <section>
-      <h2>Who This Page Helps Most</h2>
+      <h2>Door reality: how it actually gets enforced</h2>
+      <p>Published dress codes are the minority in NYC — Somewhere Nowhere spelling out "no pool slides" on its official FAQ is the exception. Most clubs run the Marquee model instead: no written code anywhere, plus a selective door that enforces one anyway. That vagueness is the point. A dress code that lives in the doorman's head can flex with the night — strict when the room is at capacity and the promoter wants a photogenic crowd, forgiving on a slow Wednesday when your money is as good as anyone's.</p>
+      <p>Three patterns worth knowing. First, enforcement is asymmetric: the rules land hardest on men, and hardest of all on men's feet. Second, "no sneakers" has quietly become "no bad sneakers" — clean designer pairs walk into most rooms without comment, while the same silhouette in beat-up condition gets stopped. Third, a hard "no" at the rope is almost never really about the shorts; it's the easiest legal reason to filter whoever the door was going to filter anyway. Groups of six guys in perfect outfits still get held for ratio — the checker above can't fix that, and neither can a blazer.</p>
+      <p>The cheat code is picking the room to match the effort you feel like making. Bushwick's warehouse scene — <a href="/venues/house-of-yes.html">House of Yes</a>, <a href="/venues/elsewhere.html">Elsewhere</a>, <a href="/venues/bossa-nova-civic-club.html">Bossa Nova</a>, <a href="/venues/public-records.html">Public Records</a> — genuinely does not care what's on your feet, and comfortable shoes are the smarter play for a six-hour dance floor anyway. If you're set on a strict room, the uniform that clears every Manhattan door is boring and reliable: dark intact jeans, a collared shirt or dressed-up top, real shoes. Check what entry will cost you while you're at it with our <a href="/tools/cover-charge-calculator-nyc.html">cover charge calculator</a>, or let the <a href="/tools/group-night-out-planner.html">group night-out planner</a> pick a route where the door matches your wardrobe. Browsing options first? Start with the <a href="/rankings/best-clubs-in-nyc.html">best clubs in NYC</a>.</p>
+    </section>
+
+    <section>
+      <h2>FAQ</h2>
+      <h3>Are sneakers OK at NYC clubs?</h3>
+      <p>Clean, fashion-forward sneakers usually pass, even at big clubs. It's beat-up or obviously athletic pairs that get flagged — Nebula's reported code and Somewhere Nowhere's published one both name distressed sneakers specifically. At mega-clubs, dress shoes or spotless designer sneakers are the safe floor.</p>
+      <h3>Can I wear jeans to a nightclub?</h3>
+      <p>Yes. Dark, intact, well-fitting jeans with a collared shirt or dressed-up top are the default NYC club uniform. Ripped or baggy jeans are the risky version at strict doors.</p>
+      <h3>What about shorts in summer?</h3>
+      <p>Daytime rooftop, usually fine. After dark at a dressy venue, no — Somewhere Nowhere's published code bans shorts at night, and mega-club doors treat them the same year-round. Dives and warehouses don't care.</p>
+      <h3>Do dress codes apply to women too?</h3>
+      <p>Formally yes, practically less strictly. Enforcement concentrates on men's athletic wear, jerseys, shorts, and shoes. Gym clothes and pool slides get flagged at strict doors regardless of gender.</p>
+    </section>
+
+    <section>
+      <h2>Sources</h2>
       <ul>
-        <li>Visitors who want a practical plan without wasting half the night in transit.</li>
-        <li>Locals coordinating a group where budget and timing matter.</li>
-        <li>Anyone comparing options and trying to avoid weak last-minute decisions.</li>
+        <li><a href="/venues/somewhere-nowhere.html">Somewhere Nowhere venue page</a> — published dress code from the official FAQ (fetched 2026-08-25).</li>
+        <li><a href="/venues/nebula.html">Nebula venue page</a> — reported code: collared shirts/dress shoes; no athletic wear, shorts, jerseys, or distressed sneakers.</li>
+        <li><a href="/venues/marquee-new-york.html">Marquee venue page</a> — upscale attire, selective door (reported; Tao publishes no code).</li>
+        <li><a href="/venues/house-of-yes.html">House of Yes</a> and <a href="/venues/public-records.html">Public Records</a> venue pages — no-dress-code door culture, verified 2026-08-25.</li>
       </ul>
-      <p>If this is a same-day decision, prioritize execution speed over endless option hunting. The best plan is usually one strong route with a realistic fallback nearby.</p>
+      <p class="tool-note">Doors change with management. If a venue tightened up on you, <a href="/contact.html">tell us</a> and we'll re-verify.</p>
     </section>
 
     <section>
-      <h2>Execution Framework (Use This Before You Go)</h2>
-      <ol>
-        <li><strong>Define the objective:</strong> social energy, date night, music-first, or premium experience.</li>
-        <li><strong>Set spend limits:</strong> include entry, drinks, rides, and late-night food.</li>
-        <li><strong>Choose zone + backup:</strong> keep both options within a short transit window.</li>
-        <li><strong>Set a pivot rule:</strong> if line, wait time, or pricing exceeds your threshold, move immediately.</li>
-        <li><strong>Set the return plan:</strong> decide how the night ends while everyone still has battery and clarity.</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>Budget and Logistics Benchmarks</h2>
+      <h2>Keep planning</h2>
       <ul>
-        <li><strong>Lean plan ($60–$120):</strong> one paid anchor plus practical transit control.</li>
-        <li><strong>Balanced plan ($120–$250):</strong> one premium stop + one flexible backup.</li>
-        <li><strong>Premium plan ($250+):</strong> reservation-first routing with shorter pivots and fewer misses.</li>
+        <li><a href="/tools/">All planning tools</a></li>
+        <li><a href="/tools/cover-charge-calculator-nyc.html">Cover Charge Calculator — what entry really costs</a></li>
+        <li><a href="/tools/group-night-out-planner.html">Group Night Out Planner — a full 3-stop route</a></li>
+        <li><a href="/guides/vip-club-access-nyc.html">VIP club access — guestlists vs. tables</a></li>
+        <li><a href="/rankings/best-clubs-in-nyc.html">Best clubs in NYC, ranked</a></li>
       </ul>
-      <p>The biggest planning error in NYC nightlife is unplanned movement. Every extra cross-borough jump adds cost and kills momentum. Keep your route tight and your fallback close.</p>
-    </section>
-
-    <section>
-      <h2>Common Mistakes to Avoid</h2>
-      <ul>
-        <li>Overbuilding the itinerary with too many disconnected stops.</li>
-        <li>No backup option when lines spike or crowd fit is wrong.</li>
-        <li>Ignoring return-route timing until the end of the night.</li>
-        <li>Confusing hype with fit; optimize for your group’s objective, not generic top-10 lists.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Related Planning Pages</h2>
-      <ul>
-        <li><a href="/tools/nyc-night-planner.html">Primary companion guide</a></li>
-        <li><a href="/tools/venue-compare-nyc.html">Execution and comparison support</a></li>
-        <li><a href="/tools/nyc-trip-cost-calculator.html">Backup logistics and next step</a></li>
-      </ul>
-      <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
+      <p style="color:#b7b3ab;">Last updated: 2026-08-26 (America/New_York)</p>
     </section>
   </main>
   <script src="../js/main.js"></script>

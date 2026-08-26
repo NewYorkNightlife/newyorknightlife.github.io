@@ -3,24 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Venue Compare NYC (2026) | Detailed Scoring Framework for Nightlife Decisions</title>
-  <meta name="description" content="Deep Venue Compare guide with practical scoring model across vibe fit, entry friction, spend efficiency, and route compatibility." />
+  <title>Venue Compare NYC — 15 Clubs, Bars &amp; Rooftops Side by Side | NYNightlife</title>
+  <meta name="description" content="Compare 15 real NYC venues side by side — cover, neighborhood, dress strictness, door difficulty, music, and best night — from verified venue fact pages." />
   <link rel="canonical" href="https://nynightlife.com/tools/venue-compare-nyc.html" />
   <link rel="stylesheet" href="../css/main.css" />
-  <meta property="og:title" content="Venue Compare NYC (2026) | Detailed Scoring Framework for Nightlife Decisions" />
-  <meta property="og:description" content="Deep Venue Compare guide with practical scoring model across vibe fit, entry friction, spend efficiency, and route compatibility." />
+  <style>
+    .tool-panel { background: var(--secondary); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; margin: 1.5rem 0; }
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1rem 0; }
+    .tool-grid label { display: flex; flex-direction: column; gap: .4rem; font-weight: 600; color: var(--text); }
+    .tool-grid select { background: #0f1020; color: var(--text); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 1rem; width: 100%; }
+    .tool-result { background: var(--panel); border: 1px solid var(--gold); border-radius: 16px; padding: 1.25rem 1.5rem; margin-top: 1.25rem; }
+    .tool-note { color: var(--muted); font-size: .92rem; }
+    .cmp-wrap { overflow-x: auto; }
+    .cmp-table { width: 100%; border-collapse: collapse; margin: .75rem 0; min-width: 560px; }
+    .cmp-table th, .cmp-table td { padding: .55rem .6rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .cmp-table thead th { color: var(--gold); font-size: 1.05rem; }
+    .cmp-table th[scope="row"] { white-space: nowrap; color: var(--muted); font-weight: 600; }
+    .cmp-verdict { font-size: 1.05rem; font-weight: 700; margin: .75rem 0 .25rem; }
+    .cmp-dots { letter-spacing: .12em; }
+  </style>
+  <meta property="og:title" content="Venue Compare NYC — 15 Clubs, Bars &amp; Rooftops Side by Side | NYNightlife" />
+  <meta property="og:description" content="Compare 15 real NYC venues side by side — cover, neighborhood, dress strictness, door difficulty, music, and best night — from verified venue fact pages." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nynightlife.com/tools/venue-compare-nyc.html" />
   <meta property="og:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Venue Compare NYC (2026) | Detailed Scoring Framework for Nightlife Decisions" />
-  <meta name="twitter:description" content="Deep Venue Compare guide with practical scoring model across vibe fit, entry friction, spend efficiency, and route compatibility." />
+  <meta name="twitter:title" content="Venue Compare NYC — 15 Clubs, Bars &amp; Rooftops Side by Side | NYNightlife" />
+  <meta name="twitter:description" content="Compare 15 real NYC venues side by side — cover, neighborhood, dress strictness, door difficulty, music, and best night — from verified venue fact pages." />
   <meta name="twitter:image" content="https://nynightlife.com/assets/og-default.jpg" />
   <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "Venue Compare NYC (2026) | Detailed Scoring Framework for Nightlife Decisions", "url": "https://nynightlife.com/tools/venue-compare-nyc.html", "description": "Deep Venue Compare guide with practical scoring model across vibe fit, entry friction, spend efficiency, and route compatibility.", "inLanguage": "en-US", "isPartOf": {"@type": "WebSite", "name": "NYNightlife", "url": "https://nynightlife.com/"}}
-  </script>
-  <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What’s the fastest way to plan this night in NYC?", "acceptedAnswer": {"@type": "Answer", "text": "Pick a neighborhood cluster first, then pick a primary venue and one backup within a short ride."}}, {"@type": "Question", "name": "Should I book in advance or decide same day?", "acceptedAnswer": {"@type": "Answer", "text": "Book high-demand experiences in advance, but keep at least one flexible option for weather, lines, and crowd shifts."}}, {"@type": "Question", "name": "How do I reduce late-night transit risk?", "acceptedAnswer": {"@type": "Answer", "text": "Use major station corridors, avoid last-minute cross-borough jumps, and set a clear end-of-night pickup plan."}}]}
+{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Venue Compare NYC — 15 Clubs, Bars & Rooftops Side by Side","description":"Interactive comparison tool covering 15 verified NYC venues — cover charges, neighborhoods, dress strictness, door difficulty, music, and best nights — with a plain-language verdict.","url":"https://nynightlife.com/tools/venue-compare-nyc.html","mainEntityOfPage":"https://nynightlife.com/tools/venue-compare-nyc.html","datePublished":"2026-03-11","dateModified":"2026-08-26","author":{"@type":"Organization","name":"NYNightlife","url":"https://nynightlife.com/"},"publisher":{"@type":"Organization","name":"NYNightlife","url":"https://nynightlife.com/"},"inLanguage":"en-US"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which NYC clubs have the strictest dress codes?","acceptedAnswer":{"@type":"Answer","text":"Marquee and Nebula — upscale attire enforced (collared shirts and dress shoes for men, no athletic wear or distressed sneakers, per reports), with selective doors. Le Bain runs a dress-to-impress discretionary door that gets harder late. Bushwick rooms like House of Yes, Bossa Nova, and Elsewhere have no formal dress code."}},{"@type":"Question","name":"Which good NYC venues have no cover charge?","acceptedAnswer":{"@type":"Answer","text":"Attaboy, The Back Room ('Always Free' per the official site), The Dead Rabbit, and Westlight charge no cover; Le Bain states in writing there's no cover for standing room, and 230 Fifth is free except a $15 cover Friday–Saturday from 8pm. You pay in $16–$22+ cocktails instead."}},{"@type":"Question","name":"Should I book in advance or decide same day?","acceptedAnswer":{"@type":"Answer","text":"Ticketed rooms — Pacha New York, Knockdown Center (Dice), Good Room (RA), Public Records (Dice), House of Yes — sell tiered presales that beat door prices, so book those ahead. Walk-in rooms like the cocktail bars and most rooftops stay flexible for a same-day call."}},{"@type":"Question","name":"How do I reduce late-night transit risk?","acceptedAnswer":{"@type":"Answer","text":"Compare venues in the same borough when you can, use major station corridors, avoid last-minute cross-borough jumps, and set a clear end-of-night plan before midnight."}}]}]}
   </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3007723856138381" crossorigin="anonymous"></script>
@@ -71,72 +83,250 @@
 
   <main id="nyn-main" class="container" style="padding:2rem 1rem; max-width:1040px;">
     <p class="eyebrow">Tools</p>
-    <h1>Venue Compare NYC: Detailed Scoring for Better Venue Choices</h1>
-    
-<p>When two or three venues seem equally good, you need structure. Venue Compare is designed to remove guesswork and improve decision confidence under time pressure.</p>
-<h2>The 4-score model</h2>
-<ul>
-<li><strong>Vibe Fit (1–5):</strong> how well the venue matches your objective tonight.</li>
-<li><strong>Entry Friction (1–5):</strong> line volatility and policy strictness for your time window.</li>
-<li><strong>Spend Efficiency (1–5):</strong> expected outcome per dollar.</li>
-<li><strong>Route Utility (1–5):</strong> nearby fallback density + transport reliability.</li>
-</ul>
-<h2>How to score fast</h2>
-<ol>
-<li>Score each candidate in under 60 seconds.</li>
-<li>Auto-remove any venue under 3 in Route Utility.</li>
-<li>If tied, pick the venue with stronger fallback environment.</li>
-</ol>
+    <h1>Venue Compare NYC: 15 Real Venues, Side by Side</h1>
 
-<h2>Weighting by night objective</h2>
-<p><strong>Date night:</strong> weight Vibe Fit and Spend Efficiency higher than hype signals.</p>
-<p><strong>Group social:</strong> weight Entry Friction and Route Utility higher to protect momentum.</p>
-<p><strong>Music-first night:</strong> weight Vibe Fit and Route Utility, then use Spend Efficiency as tiebreaker.</p>
-<p>This keeps scoring aligned with your actual outcome goal, not generic popularity.</p>
-
-<h2>Sample decision scenario</h2>
-<p>Venue A has higher hype but low route utility. Venue B has slightly lower hype but better entry predictability and nearby options. In most real nights, Venue B outperforms because optionality protects momentum.</p>
-<h2>Group decision protocol</h2>
-<ul>
-<li>Nominate one decision owner per stop.</li>
-<li>Set a maximum wait threshold.</li>
-<li>Trigger fallback once threshold is hit—no debate loops.</li>
-</ul>
-
-<h2>Fast compare template (copy this)</h2>
-<p><strong>Venue A:</strong> Vibe 5 / Entry 2 / Spend 3 / Route 2</p>
-<p><strong>Venue B:</strong> Vibe 4 / Entry 4 / Spend 4 / Route 4</p>
-<p>Even with lower hype, Venue B often wins because it preserves optionality and reduces failure risk.</p>
-
-<h2>When to override the score</h2>
-<p>If a venue has a strong score but obvious real-time issues (unexpected closure, policy shift, severe weather impact), trust live conditions and switch. Scoring is a decision aid, not a rigid rule.</p>
-
-<h2>Use with these pages</h2>
-<ul>
-<li><a href="/tools/nyc-night-planner.html">NYC Night Planner</a></li>
-<li><a href="/rankings/best-clubs-in-nyc.html">Best Clubs in NYC</a></li>
-<li><a href="/rankings/best-bars-in-nyc.html">Best Bars in NYC</a></li>
-</ul>
-
-    <p style="color:#b7b3ab;">Last updated: 2026-03-11 (America/New_York)</p>
-  
     <section>
-      <h2>Entity-Rich NYC Planning Notes</h2>
-      <p>High-intent visitors usually compare these NYC zones first: <strong>Lower Manhattan, Midtown, Brooklyn North</strong>. Use this page to choose one primary zone and one backup zone before you leave.</p>
-      <ul>
-        <li><strong>Transit backbone:</strong> 4/5, N/Q/R/W, L, G</li>
-        <li><strong>Execution rule:</strong> keep stops within one practical transfer window after 10:30 PM.</li>
-        <li><strong>Conversion move:</strong> lock one primary plan and one fallback route.</li>
-      </ul>
+      <p>Torn between two rooms? Pick any two of the 15 venues below and get a side-by-side comparison — cover, neighborhood, dress strictness, door difficulty, music, best night — plus a plain-language verdict. Every fact is pulled from our <a href="/venues/">verified venue fact pages</a>, not vibes.</p>
+      <p class="tool-note">Last updated: 2026-08-26 &middot; Venue facts last verified: 2026-08-25&ndash;26</p>
     </section>
+
+    <section class="tool-panel">
+      <h2 style="margin-top:0;">Compare two venues</h2>
+      <div class="tool-grid">
+        <label for="vc-a">Venue A
+          <select id="vc-a">
+            <option value="nebula" selected>Nebula (club, Midtown)</option>
+            <option value="marquee">Marquee (mega-club, Chelsea)</option>
+            <option value="pacha">Pacha New York (mega-club, E. Williamsburg)</option>
+            <option value="hoy">House of Yes (performance club, Bushwick)</option>
+            <option value="elsewhere">Elsewhere (live + club, Bushwick)</option>
+            <option value="bossa">Bossa Nova Civic Club (techno bar, Bushwick)</option>
+            <option value="goodroom">Good Room (club, Greenpoint)</option>
+            <option value="publicrecords">Public Records (hi-fi club, Gowanus)</option>
+            <option value="knockdown">Knockdown Center (warehouse venue, Maspeth)</option>
+            <option value="lebain">Le Bain (rooftop disco, Meatpacking)</option>
+            <option value="westlight">Westlight (rooftop bar, Williamsburg)</option>
+            <option value="fifth">230 Fifth Rooftop (rooftop, NoMad)</option>
+            <option value="attaboy">Attaboy (cocktail bar, LES)</option>
+            <option value="backroom">The Back Room (speakeasy, LES)</option>
+            <option value="deadrabbit">The Dead Rabbit (pub + cocktails, FiDi)</option>
+          </select>
+        </label>
+        <label for="vc-b">Venue B
+          <select id="vc-b">
+            <option value="nebula">Nebula (club, Midtown)</option>
+            <option value="marquee">Marquee (mega-club, Chelsea)</option>
+            <option value="pacha">Pacha New York (mega-club, E. Williamsburg)</option>
+            <option value="hoy" selected>House of Yes (performance club, Bushwick)</option>
+            <option value="elsewhere">Elsewhere (live + club, Bushwick)</option>
+            <option value="bossa">Bossa Nova Civic Club (techno bar, Bushwick)</option>
+            <option value="goodroom">Good Room (club, Greenpoint)</option>
+            <option value="publicrecords">Public Records (hi-fi club, Gowanus)</option>
+            <option value="knockdown">Knockdown Center (warehouse venue, Maspeth)</option>
+            <option value="lebain">Le Bain (rooftop disco, Meatpacking)</option>
+            <option value="westlight">Westlight (rooftop bar, Williamsburg)</option>
+            <option value="fifth">230 Fifth Rooftop (rooftop, NoMad)</option>
+            <option value="attaboy">Attaboy (cocktail bar, LES)</option>
+            <option value="backroom">The Back Room (speakeasy, LES)</option>
+            <option value="deadrabbit">The Dead Rabbit (pub + cocktails, FiDi)</option>
+          </select>
+        </label>
+      </div>
+      <button type="button" onclick="compareVenues()">Compare</button>
+      <p id="vc-cta" class="tool-note" style="margin-top:1rem;">Pick two rooms and hit <strong>Compare</strong> &mdash; the verdict line tells you which to choose for which kind of night.</p>
+      <div id="vc-result" class="tool-result" hidden></div>
+    </section>
+
+    <script>
+    (function () {
+      var VENUES = {
+        nebula: { n: "Nebula", u: "/venues/nebula.html", boro: "Manhattan",
+          type: "Big-room nightclub (~800 cap, 11,000 sq ft)", hood: "Midtown / Times Square",
+          cover: "GA $20–$60 by event", cmid: 40, dress: 5, door: 4,
+          music: "EDM & house headliners Fri–Sat; open-format Tuesdays",
+          best: "Friday–Saturday (Tuesday for the weekly party)",
+          pick: "a polished, Vegas-style big room steps from Times Square" },
+        marquee: { n: "Marquee", u: "/venues/marquee-new-york.html", boro: "Manhattan",
+          type: "Flagship Tao Group mega-club", hood: "Chelsea",
+          cover: "$30–$70 (reported)", cmid: 50, dress: 5, door: 5,
+          music: "EDM & open-format headliner DJs; Wed leans hip-hop",
+          best: "Saturday (Wednesday is the industry night)",
+          pick: "the archetypal Chelsea mega-club night with headliner DJs" },
+        pacha: { n: "Pacha New York", u: "/venues/pacha-new-york.html", boro: "Brooklyn",
+          type: "Mega-club — open-air main stage + indoor Great Hall", hood: "East Williamsburg",
+          cover: "GA $50–$130; VIP $175–$850 published", cmid: 90, dress: 2, door: 3,
+          music: "Big-room house, tech house, melodic techno, EDM",
+          best: "Saturday; open-air season June–October",
+          pick: "the biggest outdoor stage and headliners in the five boroughs" },
+        hoy: { n: "House of Yes", u: "/venues/house-of-yes.html", boro: "Brooklyn",
+          type: "Performance nightclub & art space", hood: "Bushwick",
+          cover: "$0–$40+ tiered presale", cmid: 20, dress: 2, door: 2,
+          music: "House, disco, eclectic DJ sets; circus & themed parties",
+          best: "Friday–Saturday (the only regular party nights)",
+          pick: "circus acts, costumes, and the friendliest weird door in Brooklyn" },
+        elsewhere: { n: "Elsewhere", u: "/venues/elsewhere.html", boro: "Brooklyn",
+          type: "Multi-room live venue + club, seasonal rooftop", hood: "Bushwick",
+          cover: "$15–$40 via Eventbrite", cmid: 27, dress: 1, door: 2,
+          music: "Indie live acts + house, techno, bass, global club nights",
+          best: "Friday–Saturday (4am close)",
+          pick: "a live show that turns into a club night under one roof" },
+        bossa: { n: "Bossa Nova Civic Club", u: "/venues/bossa-nova-civic-club.html", boro: "Brooklyn",
+          type: "~140-cap fog-heavy techno bar/club", hood: "Bushwick",
+          cover: "$0–$15 cash at the door", cmid: 8, dress: 1, door: 2,
+          music: "Underground techno, house, electro — no EDM",
+          best: "Friday–Saturday, 1–4am peak",
+          pick: "real underground techno for the price of one Manhattan cocktail" },
+        goodroom: { n: "Good Room", u: "/venues/good-room.html", boro: "Brooklyn",
+          type: "Two-room club with d&b audiotechnik sound", hood: "Greenpoint",
+          cover: "$10–$30 via Resident Advisor", cmid: 20, dress: 1, door: 2,
+          music: "House, disco, techno, indie-dance; strong residencies",
+          best: "Friday–Saturday, midnight–3am",
+          pick: "a beloved local house-and-disco room with zero attitude" },
+        publicrecords: { n: "Public Records", u: "/venues/public-records.html", boro: "Brooklyn",
+          type: "Hi-fi Sound Room + restaurant + listening bar", hood: "Gowanus",
+          cover: "Free–$42 on Dice; most nights $22–$32", cmid: 27, dress: 2, door: 1,
+          music: "Deep/dub techno, house, ambient, jazz",
+          best: "Friday–Saturday; Nursery Sundays in summer",
+          pick: "audiophile sound and a friendly, no-drama door" },
+        knockdown: { n: "Knockdown Center", u: "/venues/knockdown-center.html", boro: "Queens",
+          type: "Massive factory events venue (+ Basement club)", hood: "Maspeth",
+          cover: "$25–$70 via Dice", cmid: 47, dress: 1, door: 2,
+          music: "House/techno marquee bookings + live rock and hip-hop",
+          best: "Thursday–Sunday events; Ruins courtyard by day",
+          pick: "festival-scale raves in a former glass factory" },
+        lebain: { n: "Le Bain", u: "/venues/le-bain.html", boro: "Manhattan",
+          type: "Penthouse discothèque + rooftop (hot tub included)", hood: "Meatpacking District",
+          cover: "No cover for standing room (in writing)", cmid: 0, dress: 4, door: 4,
+          music: "House & disco residencies (Eli Escobar, François K)",
+          best: "Wednesday–Saturday from 10pm; rooftop sunsets",
+          pick: "a free-entry disco with a skyline — if you dress for the door" },
+        westlight: { n: "Westlight", u: "/venues/westlight.html", boro: "Brooklyn",
+          type: "22nd-floor rooftop cocktail bar", hood: "Williamsburg",
+          cover: "No cover; reservations recommended", cmid: 0, dress: 3, door: 2,
+          music: "Occasional DJ events; conversation-first",
+          best: "Sunset and weekend evenings; year-round indoors",
+          pick: "skyline cocktails you can actually talk over" },
+        fifth: { n: "230 Fifth Rooftop", u: "/venues/230-fifth-rooftop.html", boro: "Manhattan",
+          type: "NYC's largest rooftop (33,000 sq ft); winter igloos", hood: "NoMad / Flatiron",
+          cover: "Free; $15 cover Fri–Sat from 8pm", cmid: 8, dress: 2, door: 2,
+          music: "DJs Thu–Sat (80s/90s/house); lounge-paced weeknights",
+          best: "Summer sunsets; Saturday",
+          pick: "the Empire State Building view with the lowest barrier to entry" },
+        attaboy: { n: "Attaboy", u: "/venues/attaboy.html", boro: "Manhattan",
+          type: "No-menu bespoke cocktail bar (~28 seats)", hood: "Lower East Side",
+          cover: "No cover; cocktails ~$20", cmid: 0, dress: 1, door: 3,
+          music: "Low-key bar atmosphere",
+          best: "Weeknights; early evening or late-late (open to 3am daily)",
+          pick: "world-class bespoke cocktails, walk-in only" },
+        backroom: { n: "The Back Room", u: "/venues/the-back-room.html", boro: "Manhattan",
+          type: "Genuine Prohibition-era speakeasy", hood: "Lower East Side",
+          cover: "No cover — 'Always Free' (official)", cmid: 0, dress: 2, door: 2,
+          music: "DJs Thu–Sat; free Monday night jazz",
+          best: "Monday jazz, or weekend DJ nights",
+          pick: "teacup cocktails in a real speakeasy without a ticket" },
+        deadrabbit: { n: "The Dead Rabbit", u: "/venues/the-dead-rabbit.html", boro: "Manhattan",
+          type: "Multi-floor Irish pub + world's-best cocktail bar", hood: "Financial District",
+          cover: "No cover; HH $8 Guinness, $2 oysters (reported)", cmid: 0, dress: 1, door: 1,
+          music: "Pub energy downstairs; refined Parlor upstairs",
+          best: "Sun–Thu happy hour (3–6pm & 11pm–2am)",
+          pick: "a world's-best bar at pub prices during happy hour" }
+      };
+      function dots(n) {
+        var s = "";
+        for (var i = 1; i <= 5; i++) { s += (i <= n) ? "●" : "○"; }
+        return "<span class=\"cmp-dots\">" + s + "</span> (" + n + "/5)";
+      }
+      window.compareVenues = function () {
+        var a = VENUES[document.getElementById("vc-a").value] || VENUES.nebula;
+        var b = VENUES[document.getElementById("vc-b").value] || VENUES.hoy;
+        var box = document.getElementById("vc-result");
+        if (a === b) {
+          box.innerHTML = "<p class=\"tool-note\" style=\"margin:0;\">That's the same venue twice — it wins the comparison, but pick two different rooms for an actual answer.</p>";
+          box.hidden = false;
+          document.getElementById("vc-cta").hidden = true;
+          return;
+        }
+        var rows = [
+          ["Type", a.type, b.type],
+          ["Neighborhood", a.hood + ", " + a.boro, b.hood + ", " + b.boro],
+          ["Typical cover / entry", a.cover, b.cover],
+          ["Dress strictness", dots(a.dress), dots(b.dress)],
+          ["Door difficulty", dots(a.door), dots(b.door)],
+          ["Music", a.music, b.music],
+          ["Best night", a.best, b.best],
+          ["Full facts", "<a href=\"" + a.u + "\">" + a.n + " venue page</a>", "<a href=\"" + b.u + "\">" + b.n + " venue page</a>"]
+        ];
+        var html = "<div class=\"cmp-wrap\"><table class=\"cmp-table\"><thead><tr><th></th><th>" + a.n + "</th><th>" + b.n + "</th></tr></thead><tbody>";
+        for (var i = 0; i < rows.length; i++) {
+          html += "<tr><th scope=\"row\">" + rows[i][0] + "</th><td>" + rows[i][1] + "</td><td>" + rows[i][2] + "</td></tr>";
+        }
+        html += "</tbody></table></div>";
+        html += "<p class=\"cmp-verdict\">Pick " + a.n + " if you want " + a.pick + "; pick " + b.n + " if you want " + b.pick + ".</p>";
+        var notes = [];
+        if (a.cmid === 0 && b.cmid === 0) {
+          notes.push("Neither charges a cover — the money goes to the drinks instead.");
+        } else if (a.cmid === 0 || b.cmid === 0) {
+          var free = a.cmid === 0 ? a : b, paid = a.cmid === 0 ? b : a;
+          notes.push(free.n + " gets you in free; " + paid.n + " runs " + paid.cover + ".");
+        } else if (a.cmid !== b.cmid) {
+          var cheap = a.cmid < b.cmid ? a : b;
+          notes.push("On entry alone, " + cheap.n + " is usually the cheaper door.");
+        }
+        if (Math.abs(a.dress - b.dress) >= 2) {
+          var strict = a.dress > b.dress ? a : b;
+          notes.push(strict.n + "'s door cares much more about what you wear — check its dress code before committing the night.");
+        }
+        if (a.boro !== b.boro) {
+          notes.push("They're in different boroughs (" + a.boro + " vs " + b.boro + ") — budget a 30–45 minute transfer if you're tempted to do both.");
+        }
+        for (var j = 0; j < notes.length; j++) { html += "<p class=\"tool-note\">" + notes[j] + "</p>"; }
+        box.innerHTML = html;
+        box.hidden = false;
+        document.getElementById("vc-cta").hidden = true;
+      };
+    })();
+    </script>
+
+    <section>
+      <h2>How to read the scores</h2>
+      <p><strong>Dress strictness (1&ndash;5)</strong> runs from &ldquo;wear whatever&rdquo; (Bossa Nova, Elsewhere, Good Room) to enforced upscale codes (Nebula and Marquee, where reports consistently describe collared shirts and dress shoes for men and refusals for athletic wear). <strong>Door difficulty (1&ndash;5)</strong> is your realistic chance of friction: a 1 means walk in (The Dead Rabbit, Public Records), a 3 means waits or ticket-timing games (Attaboy's 30&ndash;60 minute weekend queue, Pacha's headliner sellouts), and a 5 means a genuinely selective door (Marquee). Both scores are our editorial reading of the verified facts on each venue page — the pages themselves carry the sourcing.</p>
+      <p>Cover figures are the ranges each venue actually charges: ticketed rooms tier their presales, so the low end means buying early and the high end means Saturday at the door. Where a venue publishes its policy — The Back Room's &ldquo;Always Free,&rdquo; Le Bain's written no-cover-for-standing-room line, 230 Fifth's $15 weekend cover — we quote it directly.</p>
+    </section>
+
+    <section>
+      <h2>How to actually decide</h2>
+      <p>When two venues survive the comparison, weight the criteria by what tonight is for. <strong>Date night:</strong> dress strictness and music matter more than size — a 4/5-dress room your date didn't sign up for kills momentum at the door. <strong>Group night:</strong> door difficulty is everything; a selective door that admits six of eight people is a failed night, so favor ticketed rooms where presales guarantee entry. <strong>Music-first night:</strong> ignore the glamour scores entirely and compare music and best-night rows — a Tuesday at the &ldquo;wrong&rdquo; venue with the right resident beats a Saturday anywhere else.</p>
+      <p>And override the table when live conditions demand it: an unexpected closure, a weather-killed rooftop, or a line around the block beats any score. The comparison is a decision aid, not a rigid rule — keep one backup within a short ride of your first choice, ideally from the same borough column.</p>
+    </section>
+
     <section>
       <h2>FAQ</h2>
-      <h3>What’s the fastest way to plan this night in NYC?</h3>
-      <p>Pick a neighborhood cluster first, then pick a primary venue and one backup within a short ride. That’s the highest-win workflow for NYC nightlife.</p>
+      <h3>Which NYC clubs have the strictest dress codes?</h3>
+      <p>Marquee and Nebula — upscale attire enforced (collared shirts, dress shoes, no athletic wear or distressed sneakers, per reports) with selective doors. Le Bain runs a dress-to-impress discretionary door that gets harder late. The Bushwick rooms — House of Yes, Bossa Nova, Elsewhere — have no formal code; effort and costumes beat labels there.</p>
+      <h3>Which good venues have no cover?</h3>
+      <p>Attaboy, The Back Room (&ldquo;Always Free&rdquo; per the official site), The Dead Rabbit, and Westlight; Le Bain has no cover for standing room, and 230 Fifth is free outside its $15 Fri&ndash;Sat evening cover. You pay in $16&ndash;$22+ cocktails instead — the drinks are the cover.</p>
       <h3>Should I book in advance or decide same day?</h3>
-      <p>Book high-demand experiences in advance, but keep at least one flexible option for weather, lines, and crowd shifts.</p>
+      <p>Ticketed rooms (Pacha, Knockdown Center, Good Room, Public Records, House of Yes) sell tiered presales that beat the door — book those ahead. Cocktail bars and most rooftops stay walk-in flexible for a same-day call.</p>
       <h3>How do I reduce late-night transit risk?</h3>
-      <p>Use major station corridors, avoid last-minute cross-borough jumps, and set a clear end-of-night pickup plan.</p>
+      <p>Compare venues within one borough when you can, use major station corridors, avoid last-minute cross-borough jumps, and settle the end-of-night plan before midnight — the tool flags cross-borough pairs for exactly this reason.</p>
+    </section>
+
+    <section>
+      <h2>Sources</h2>
+      <p>All facts come from our venue fact pages, checked against official sites and listings (verified 2026-08-25&ndash;26): <a href="/venues/nebula.html">Nebula</a>, <a href="/venues/marquee-new-york.html">Marquee</a>, <a href="/venues/pacha-new-york.html">Pacha New York</a>, <a href="/venues/house-of-yes.html">House of Yes</a>, <a href="/venues/elsewhere.html">Elsewhere</a>, <a href="/venues/bossa-nova-civic-club.html">Bossa Nova Civic Club</a>, <a href="/venues/good-room.html">Good Room</a>, <a href="/venues/public-records.html">Public Records</a>, <a href="/venues/knockdown-center.html">Knockdown Center</a>, <a href="/venues/le-bain.html">Le Bain</a>, <a href="/venues/westlight.html">Westlight</a>, <a href="/venues/230-fifth-rooftop.html">230 Fifth Rooftop</a>, <a href="/venues/attaboy.html">Attaboy</a>, <a href="/venues/the-back-room.html">The Back Room</a>, <a href="/venues/the-dead-rabbit.html">The Dead Rabbit</a>.</p>
+      <p class="tool-note">Dress and door scores are our editorial ratings of those verified facts. Spotted a change at a door? <a href="/contact.html">Tell us</a> and we'll re-verify.</p>
+    </section>
+
+    <section>
+      <h2>Keep planning</h2>
+      <ul>
+        <li><a href="/tools/">All planning tools</a></li>
+        <li><a href="/tools/nyc-night-planner.html">NYC Night Planner &mdash; build the full night around your pick</a></li>
+        <li><a href="/tools/cover-charge-calculator-nyc.html">Cover Charge Calculator &mdash; what that door costs all-in</a></li>
+        <li><a href="/tools/dress-code-checker-nyc.html">Dress Code Checker &mdash; will they let you in?</a></li>
+        <li><a href="/rankings/best-clubs-in-nyc.html">Best Clubs in NYC</a> &middot; <a href="/rankings/best-bars-in-nyc.html">Best Bars in NYC</a></li>
+      </ul>
+      <p style="color:#b7b3ab;">Last updated: 2026-08-26 (America/New_York)</p>
     </section>
 
   </main>
