@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NYC works 9 to 5, then lights up pink for Dolly",
+      "url": "https://gothamist.com/news/nyc-works-9-to-5-then-lights-up-for-dolly",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Stream It Or Skip It: ‘Stamptown’ On Netflix, A Comedy Variety Showcase Unlike Anything You’ll Ever See On Netflix",
+      "url": "https://decider.com/2026/08/25/stamptown-netflix-review-stream-it-or-skip-it/",
+      "source": "Decider"
+    },
+    {
+      "title": "The Empire State Building will glow pink tonight in memory of Dolly Parton",
+      "url": "https://www.timeout.com/newyork/news/the-empire-state-building-will-glow-pink-tonight-in-memory-of-dolly-parton-082526",
+      "source": "Time Out"
+    },
+    {
+      "title": "Dolly Parton’s health battles — as icon dies at 80",
+      "url": "https://nypost.com/health/dolly-partons-health-struggles-over-the-years/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Ben Musser performs songs promoting new album in Salt Lake City",
+      "url": "https://dailyutahchronicle.com/2026/08/25/ben-musser-performs-songs-promoting-new-album-in-salt-lake-city/",
+      "source": "Dailyutahchronicle.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
