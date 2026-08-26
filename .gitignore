@@ -1,0 +1,32 @@
+# Sandbox / FUSE artifacts (orphaned copies left when a mounted file is rewritten
+# while still open — these appeared during the 2026-08 Cowork rebuild)
+.fuse_hidden*
+
+# OS cruft
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+._*
+
+# Editor / tooling
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Secrets — belt and braces. The real .env lives OUTSIDE this repo at the project
+# root and must never be copied in. Everything committed here is published publicly
+# at nynightlife.com.
+.env
+.env.*
+*.key
+*.pem
+credentials*
+*-secret*
+*_secret*
+
+# Local scratch
+/tmp/
+*.log.local

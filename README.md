@@ -1,288 +1,151 @@
-# NYC Nightlife Platform
-**Expert guide to New York City nightlife. Bars, clubs, events, and experiences.**
+# NYNightlife.com
 
-![Status](https://img.shields.io/badge/status-live-green) ![License](https://img.shields.io/badge/license-private-red)
+**Decide your NYC night in 5 minutes.**
 
-## Overview
+A fast, honest, always-current guide to New York City nightlife — real prices, real door policies,
+and honest downsides. Static HTML on GitHub Pages.
 
-This is a **complete, autonomous revenue-generating NYC nightlife platform** built on GitHub Pages. 
+![Status](https://img.shields.io/badge/status-live-green)
+![License](https://img.shields.io/badge/license-private-red)
 
-**Key Features:**
-- ✅ Multi-guide architecture (venues, hotels, events)
-- ✅ Interactive tools (spinner, budget planner, neighborhood quiz)
-- ✅ Email capture system (lead magnets)
-- ✅ Affiliate monetization (Booking.com, GetYourGuide, Amazon, Eventbrite, Viator)
-- ✅ Blog infrastructure (ready for content)
-- ✅ Mobile-optimized responsive design
-- ✅ SEO optimized with schema markup
-- ✅ Fast loading (static HTML/CSS/JS)
-- ✅ Privacy-first (no tracking, no cookies)
-
-## Getting Started
-
-### Live Site
-https://nynightlife.com/
-
-### File Structure
-```
-├── index.html                    # Homepage
-├── css/main.css                 # Master stylesheet
-├── js/main.js                   # Core functionality
-├── guides/                      # Expert guides
-├── tools/                       # Interactive tools
-├── blog/                        # Blog hub
-├── docs/                        # Documentation
-│   ├── SITE-ARCHITECTURE.md    # Technical design
-│   ├── MONETIZATION.md         # Revenue strategy
-│   └── AUTOMATION.md           # Update workflow
-└── [legal pages]               # Privacy, terms, contact
-```
-
-## Documentation
-
-**Read these first:**
-1. [SITE-ARCHITECTURE.md](docs/SITE-ARCHITECTURE.md) — How the site is built
-2. [MONETIZATION.md](docs/MONETIZATION.md) — How it makes money
-3. [AUTOMATION.md](docs/AUTOMATION.md) — How to maintain it
-4. [EMAIL-CAPTURE.md](docs/EMAIL-CAPTURE.md) — How to connect forms to your email provider
-5. [ANALYTICS.md](docs/ANALYTICS.md) — Event tracking + GA4/Plausible setup
-6. [INTERNAL-LINKING.md](docs/INTERNAL-LINKING.md) — Session depth and recommendation links
-7. [AFFILIATE-MODULE.md](docs/AFFILIATE-MODULE.md) — Affiliate block + disclosure standard
-8. [CONTENT-STANDARDS.md](docs/CONTENT-STANDARDS.md) — Template lock + publishing QA
-9. [PERFORMANCE-MEDIA-PIPELINE.md](docs/PERFORMANCE-MEDIA-PIPELINE.md) — Image/performance standards
-10. [TRUST-POLICY.md](docs/TRUST-POLICY.md) — Trust and policy completeness
-11. [SCHEMA-STANDARDS.md](docs/SCHEMA-STANDARDS.md) — Structured data rollout standards
-12. [CONVERSION-CTA.md](docs/CONVERSION-CTA.md) — Reusable high-intent CTA module
-13. [BREADCRUMBS.md](docs/BREADCRUMBS.md) — Reusable breadcrumb navigation module
-14. [MONEY-PAGES.md](docs/MONEY-PAGES.md) — Priority page module for execution focus
-15. [AFFILIATE-OPS.md](docs/AFFILIATE-OPS.md) — Affiliate application and launch operations
-16. [CONTENT-BASELINE-PASS.md](docs/CONTENT-BASELINE-PASS.md) — Baseline content fill workflow
-17. [AFFILIATE-APPLICATION-RUNBOOK.md](docs/AFFILIATE-APPLICATION-RUNBOOK.md) — Step-by-step affiliate application plan
-18. [EDITORIAL-TRUTH-POLICY.md](docs/EDITORIAL-TRUTH-POLICY.md) — Permanent factual publishing + audit cadence policy
-19. [WEEKLY-BLOG-WORKFLOW.md](docs/WEEKLY-BLOG-WORKFLOW.md) — Friday 2 PM ET source-backed blog workflow
-20. [MONETIZATION-SPRINT.md](docs/MONETIZATION-SPRINT.md) — 14-day affiliate monetization execution plan
-21. [ops/affiliate-status.html](ops/affiliate-status.html) — visual affiliate ops dashboard
-
-## Features
-
-### Guides
-Four comprehensive pillar guides with internal linking:
-- **Best NYC Nightlife Experiences** (1,500+ words) — Venues, neighborhoods, dress codes, pricing
-- **Bar Crawl Guide** (1,200+ words) — Strategy, routes, booking
-- **Stay Near NYC Nightlife** (1,200+ words) — Hotel recommendations by neighborhood
-- **Events This Weekend** (1,000+ words) — Real-time events and ticketing
-
-### Tools
-Three interactive, functional tools:
-- **Night Out Spinner** — Random nightlife ideas
-- **Budget Planner** — Budget-to-venue mapping
-- **Neighborhood Quiz** — Vibe-based recommendations
-
-### Blog
-Extensible blog system with:
-- Hub page for discovery
-- Template ready for new posts
-- Affiliate link integration points
-- Email CTAs
-
-### Email Capture
-- Lead magnets (free PDFs)
-- Signup forms on every page
-- Integration-ready (MailerLite, ConvertKit)
-- Email disclosure in privacy policy
-
-## Monetization
-
-**Multiple revenue streams:**
-1. **Affiliate Commissions** (60% of revenue)
-   - Booking.com (hotels) — 5-7%
-   - GetYourGuide (bar crawls) — 15-20%
-   - Amazon Associates (products) — 1-3%
-   - Eventbrite (events) — varies
-   - Viator (tours) — 15-20%
-
-2. **Google AdSense** (30% of revenue)
-   - Contextual ads on content pages
-   - Non-intrusive placement
-
-3. **Digital Products** (10% of revenue)
-   - Free lead magnets for email capture
-   - Paid products (future): Guides, playbooks, databases
-
-4. **Sponsorships** (future)
-   - Venue partnerships
-   - Brand collaborations
-
-**Financial Model:**
-- Month 1-2: $35-90/month
-- Month 3-4: $105-250/month
-- Month 5-6: $240-470/month
-- Year 1 average: $200-400/month
-- Year 2+: $750-1,600+/month
-
-See [MONETIZATION.md](docs/MONETIZATION.md) for detailed projections.
-
-## Design & Architecture
-
-### Design System
-- **Colors:** Dark navy/blue primary, gold accents
-- **Typography:** System fonts, responsive sizing
-- **Layout:** CSS Grid, mobile-first
-- **Performance:** <200KB total site
-
-### Responsive
-- Mobile-first design
-- Tablet & desktop optimization
-- Touch-friendly interactive elements
-
-### Accessibility
-- Semantic HTML
-- WCAG AA color contrast
-- Keyboard navigation
-- Screen reader friendly
-
-### SEO
-- Guide schema markup
-- Internal linking strategy
-- Meta descriptions
-- Clean URLs
-
-## Maintenance
-
-**Weekly (2-3 hours):**
-- Update events page
-- Publish one blog post
-- Send email newsletter
-
-**Monthly (1-2 hours):**
-- Review analytics
-- Audit content
-- Verify affiliate links
-
-**Quarterly (2-3 hours):**
-- Major content review
-- Technical audit
-- Strategic planning
-
-See [AUTOMATION.md](docs/AUTOMATION.md) for detailed workflow.
-
-## Development
-
-### Stack
-- **Static HTML5**
-- **CSS3** (with variables, Grid, Flexbox)
-- **Vanilla JavaScript** (ES6+)
-- **GitHub Pages** (hosting)
-- **Git** (version control)
-
-### No Dependencies
-- No JavaScript frameworks
-- No build process
-- No database required
-- No server-side code
-
-### Local Development
-```bash
-git clone https://github.com/NewYorkNightlife/nynightlife.com.git
-cd newyorknightlife-site
-
-# Open in browser
-open index.html
-# or
-python -m http.server 8000
-```
-
-### Adding Content
-1. Create new HTML file in appropriate folder
-2. Use standard header/footer/main structure
-3. Link from relevant hub pages
-4. Add to blog/guides index if needed
-5. Commit and push
-
-## Affiliate Disclosure
-
-All pages with affiliate links include clear disclosures:
-- Link labeling
-- How commissions work
-- No additional cost to users
-- Full policy in [privacy-policy.html](privacy-policy.html)
-
-We recommend only products/services we genuinely believe in.
-
-## Privacy & Legal
-
-- [Privacy Policy](privacy-policy.html) — Data practices, affiliate disclosure
-- [Terms of Service](terms.html) — Legal terms
-- [Contact](contact.html) — Business inquiries
-
-**We do NOT:**
-- Sell user data
-- Use intrusive tracking
-- Show deceptive ads
-- Recommend bad venues for commission
-
-## Analytics
-
-Tracking (privacy-first approach):
-- Basic page analytics (Plausible or Google Analytics)
-- Affiliate partner dashboards
-- Manual email metrics
-- No personal data collection
-
-## Performance
-
-**Site Stats:**
-- Total size: ~150-200KB
-- Page load: <1 second
-- Mobile score: 90+
-- SEO score: 95+
-
-**Hosts:**
-- GitHub Pages (global CDN)
-- Automatic HTTPS
-- Free hosting
-- 99.99% uptime
-
-## Future Roadmap
-
-**Phase 2 (Months 3-6):**
-- [ ] Expand blog (50+ posts)
-- [ ] Add images/photography
-- [ ] Implement email automation
-- [ ] Launch digital products
-- [ ] Create YouTube content
-
-**Phase 3 (Months 6-12):**
-- [ ] Venue partnerships
-- [ ] Sponsorship program
-- [ ] Social media integration
-- [ ] Premium membership tier
-- [ ] Mobile app (future)
-
-**Phase 4 (Year 2+):**
-- [ ] Expand to other US cities
-- [ ] Booking integration
-- [ ] Community features
-- [ ] Advanced analytics
-
-## Contributing
-
-This is a private project. For questions or contributions:
-Email: hello@nynightlife.com
-
-## License
-
-Private project. All rights reserved.
-
-## Support
-
-**Questions?**
-- Email: hello@nynightlife.com
-- Partnership inquiries: partnerships@nynightlife.com
-- Technical issues: issues@nynightlife.com
+**Live site:** https://nynightlife.com
 
 ---
 
-**Built by:** NYC Nightlife Team  
-**Last Updated:** February 2026  
-**Status:** Live & Revenue-Generating
+## What this is
+
+NYNightlife.com is a **decision-layer utility with an editorial layer**. Most NYC nightlife coverage
+is article-shaped: listicles that go stale the week they publish. This site is built around
+structured, dated, verifiable facts — what a night will actually cost, whether you'll get in, and
+what's genuinely worth it — with deep editorial guides alongside.
+
+**The editorial stance is the product:**
+
+- Every venue fact carries a visible `Last verified: YYYY-MM-DD` stamp and a source.
+- We name real prices and real downsides. "Skip it: $40 cover for a dead room" is the point.
+- No pay-to-play, no fake scarcity, no fabricated facts. Unverifiable means unpublished.
+
+Full strategy lives outside this repo in `CONTENT-OPERATING-PLAN.md`. The binding editorial rules
+are in [docs/EDITORIAL-TRUTH-POLICY.md](docs/EDITORIAL-TRUTH-POLICY.md).
+
+## Site contents
+
+*Counts verified 2026-08-26.*
+
+| Section | Count | What it is |
+|---|---:|---|
+| `venues/` | 30 | **The Venue Fact Base** — cover charges, dress codes, door reality, verification stamps. The moat. |
+| `neighborhoods/` | 30 | Nightlife by neighborhood, Manhattan through Queens |
+| `rankings/` | 15 | Ranked "best of" pages with `ItemList` schema matching visible order |
+| `tools/` | 14 | Working vanilla-JS utilities — cover calculator, dress checker, night planners, trip-cost calculator |
+| `categories/` | 12 | Rooftops, speakeasies, LGBTQ+, live music, Latin, EDM, after-hours, and more |
+| `games/` | 10 | Playable nightlife games (trivia, secret-spot hunt, quizzes) |
+| `guides/` | 6 | Long-form pillar guides |
+| **Total pages** | **262** | 196 in `sitemap.xml`; 57 archived weekly briefs are intentionally `noindex` |
+
+Plus `tonight/` (daily automated feed), `weekend/`, `boroughs/`, `seasonal/`, `plan/`, `visit/`,
+`visit-essentials/`, `things-to-do/`, `transport/`, `safety/`, `blog/`, and `methodology/`.
+
+## How it's built
+
+- **Static HTML5 + CSS3 + vanilla ES6 JavaScript.** No framework, no build step, no database,
+  no server-side code.
+- **GitHub Pages** hosting with automatic HTTPS and a global CDN. `CNAME` points at nynightlife.com.
+- **Shared chrome** on every page: unified header/nav/footer, `css/chrome.css` + `css/main.css`,
+  and the Nyla concierge widget (`js/concierge.js`).
+- **Structured data** on every content page: `Article` + `FAQPage` JSON-LD matching visible content,
+  `ItemList` on ranked pages, `LocalBusiness`/`NightClub`/`BarOrPub` on venue pages.
+
+### The tonight feed (automated)
+
+An n8n workflow commits `data/tonight-feed.json` to `main` on an hourly cycle, which `/tonight/`
+renders client-side.
+
+> **Do not hand-edit `data/`, the feed logic in `js/`, or `.ops-logs/`.** The automation owns those
+> paths and pushes frequently. Always `git pull --rebase --autostash origin main` before pushing.
+
+### Local development
+
+```bash
+git clone git@github.com:NewYorkNightlife/newyorknightlife.github.io.git
+cd newyorknightlife.github.io
+python -m http.server 8000
+```
+
+Then open http://localhost:8000. There is no build step — what's in the repo is what ships.
+
+> **Everything committed here is published publicly**, including Markdown. `docs/` and `ops/` are
+> reader-reachable. Never commit secrets, credentials, or private planning notes.
+
+## Documentation
+
+**Start here:**
+
+1. [docs/EDITORIAL-TRUTH-POLICY.md](docs/EDITORIAL-TRUTH-POLICY.md) — the non-negotiable factual publishing rules
+2. [docs/CONTENT-STANDARDS.md](docs/CONTENT-STANDARDS.md) — page templates + publishing QA
+3. [docs/SITE-ARCHITECTURE.md](docs/SITE-ARCHITECTURE.md) — how the site is put together
+4. [docs/SCHEMA-STANDARDS.md](docs/SCHEMA-STANDARDS.md) — structured-data rules
+5. [docs/INTERNAL-LINKING.md](docs/INTERNAL-LINKING.md) — linking requirements
+
+**Content and editorial:** [BLOG_HARD_RULES.md](docs/BLOG_HARD_RULES.md) ·
+[WEEKLY-BLOG-WORKFLOW.md](docs/WEEKLY-BLOG-WORKFLOW.md) ·
+[NEIGHBORHOOD_PAGE_TEMPLATE.md](docs/NEIGHBORHOOD_PAGE_TEMPLATE.md) ·
+[CONTENT-BASELINE-PASS.md](docs/CONTENT-BASELINE-PASS.md) ·
+[CHANGE_REVIEW_CHECKLIST.md](docs/CHANGE_REVIEW_CHECKLIST.md)
+
+**Monetization:** [MONETIZATION.md](docs/MONETIZATION.md) · [AFFILIATE-OPS.md](docs/AFFILIATE-OPS.md) ·
+[AFFILIATE-MODULE.md](docs/AFFILIATE-MODULE.md) ·
+[AFFILIATE-APPLICATION-RUNBOOK.md](docs/AFFILIATE-APPLICATION-RUNBOOK.md) ·
+[MONEY-PAGES.md](docs/MONEY-PAGES.md) · [CONVERSION-CTA.md](docs/CONVERSION-CTA.md)
+
+**Technical:** [ANALYTICS.md](docs/ANALYTICS.md) · [AUTOMATION.md](docs/AUTOMATION.md) ·
+[BREADCRUMBS.md](docs/BREADCRUMBS.md) · [EMAIL-CAPTURE.md](docs/EMAIL-CAPTURE.md) ·
+[PERFORMANCE-MEDIA-PIPELINE.md](docs/PERFORMANCE-MEDIA-PIPELINE.md) ·
+[TRUST-POLICY.md](docs/TRUST-POLICY.md)
+
+## Monetization status
+
+Honest current state, verified **2026-08-26**:
+
+| Stream | Status |
+|---|---|
+| Affiliate commissions | **No programs approved yet.** Booking.com, Viator and GetYourGuide are pending submission; Eventbrite and OpenTable routes are still being confirmed. See [docs/affiliate-program-tracker.csv](docs/affiliate-program-tracker.csv). |
+| Google AdSense | **Not currently serving.** Application was rejected 2026-03-20 ("low value content"); `ads.txt` is in place and re-review is pending. |
+| Email list | Capture forms are live; list is in its earliest stage. |
+| Sponsorships / partnerships | Future — not active. |
+
+**Until a program is approved, outbound booking links are plain URLs with no tracking IDs.** Once
+approved, links carry `rel="nofollow sponsored noopener"` plus a visible disclosure linking
+[affiliate-disclosure.html](affiliate-disclosure.html), deployed per
+[docs/AFFILIATE-OPS.md](docs/AFFILIATE-OPS.md).
+
+## Privacy and analytics
+
+This site **does** run analytics and advertising:
+
+- **Google Analytics 4** — property `G-YWT237CDDX`
+- **Google AdSense** — publisher `pub-3007723856138381` (see `ads.txt`)
+
+Both use cookies. This is disclosed in the [privacy policy](privacy-policy.html), which is the
+authoritative statement of data practices.
+
+**What we don't do:** sell user data, run deceptive ads, or recommend venues we don't rate because
+a commission is attached.
+
+## Accessibility and performance
+
+- Semantic HTML with skip links; WCAG AA colour contrast; keyboard navigable
+- Mobile-first responsive layout (CSS Grid + Flexbox)
+- Wide tables scroll inside `overflow-x:auto` wrappers rather than breaking the page
+- No render-blocking frameworks; static assets served from the GitHub Pages CDN
+
+## Legal
+
+[Privacy Policy](privacy-policy.html) · [Terms](terms.html) ·
+[Affiliate Disclosure](affiliate-disclosure.html) · [Contact](contact.html)
+
+Private project. All rights reserved.
+
+---
+
+**Last updated:** 2026-08-26

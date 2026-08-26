@@ -1,7 +1,7 @@
 # NYC Nightlife Platform — Site Architecture & Design
 
 ## Overview
-This is a complete, autonomous revenue-generating NYC nightlife platform built on GitHub Pages. Static HTML/CSS/JS with no backend required.
+A decision-layer NYC nightlife guide built on GitHub Pages — static HTML/CSS/JS with no backend required. Monetization (affiliates, AdSense) is planned but not yet active; see [MONETIZATION.md](MONETIZATION.md) for current status.
 
 ## Directory Structure
 
@@ -171,7 +171,7 @@ Each tool page includes:
 - Static HTML/CSS/JS (no database)
 - GitHub Pages hosting (fast CDN)
 - Minimal JavaScript (only for tools + email)
-- No tracking scripts (privacy-first)
+- Analytics: GA4 (`G-YWT237CDDX`) + Google AdSense — disclosed in the privacy policy
 - ~200KB total site size
 
 ## Accessibility

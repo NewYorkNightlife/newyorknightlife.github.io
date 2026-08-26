@@ -1,5 +1,8 @@
 # NYNightlife — Website Skeleton Blueprint V1
 
+> **Historical record.** This is the Phase-1 build specification from early 2026. The build it describes is complete — see the live site and `SITE-ARCHITECTURE.md` for current structure. Kept for provenance; not a current work instruction.
+
+
 Date: 2026-02-20
 Status: Approved direction draft (build-first, content-light initially)
 

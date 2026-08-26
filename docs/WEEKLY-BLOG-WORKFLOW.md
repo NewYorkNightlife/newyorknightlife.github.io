@@ -1,7 +1,7 @@
-# Weekly Blog Workflow (Friday 3:00 PM ET)
+# Weekly Blog Workflow (Friday 2:00 PM ET)
 
 ## Objective
-Publish one source-backed NYC Weekend Brief every Friday at **3:00 PM America/New_York** that is event-first, reader-friendly, and fully rule-compliant.
+Publish one source-backed NYC Weekend Brief every Friday at **2:00 PM America/New_York** that is event-first, reader-friendly, and fully rule-compliant.
 
 ## Weekly runbook
 1. Collect weekly NYC signals from trusted sources.

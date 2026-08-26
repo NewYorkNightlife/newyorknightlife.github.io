@@ -1,11 +1,15 @@
 # Monetization Strategy — NYC Nightlife Platform
 
+> **Current status (2026-08-26): this plan is not yet earning.** No affiliate program is approved,
+> and AdSense is not serving. Every percentage and figure below is a **planning target**, not
+> reported performance. Live status: [affiliate-program-tracker.csv](affiliate-program-tracker.csv).
+
 ## Revenue Model Overview
 This is a **multi-channel monetization** platform designed for **fast proof-of-concept** revenue with long-term scaling.
 
 ## Revenue Streams
 
-### 1. Affiliate Commission (Primary: 60% of revenue)
+### 1. Affiliate Commission (Primary — target: 60% of revenue)
 
 #### Booking.com (Hotels)
 - **Where:** `stay-near-nightlife.html` guide pages
@@ -47,7 +51,7 @@ This is a **multi-channel monetization** platform designed for **fast proof-of-c
 - **Commission:** Varies
 - **Strategy:** Add as needed for additional partners
 
-### 2. AdSense (Secondary: 30% of revenue)
+### 2. AdSense (Secondary — target: 30% of revenue)
 
 #### Google AdSense Placement
 - **Where:** Sidebar (if added), content gaps, bottom of pages
@@ -62,7 +66,7 @@ This is a **multi-channel monetization** platform designed for **fast proof-of-c
 - Mobile-optimized ads
 - Focus on impression over clicks
 
-### 3. Digital Products (Tertiary: 10% of revenue)
+### 3. Digital Products (Tertiary — target: 10% of revenue)
 
 #### Free Lead Magnets
 - **PDF:** NYC Nightlife Cheat Sheet (free, email capture)
@@ -193,7 +197,7 @@ Every page with affiliate links includes:
 
 ### Tools
 - Affiliate dashboards (Booking, GetYourGuide, Amazon, Eventbrite)
-- Google Analytics (free, privacy-first)
+- Google Analytics 4 (`G-YWT237CDDX`)
 - Simple Excel tracking
 
 ### Optimization
@@ -203,7 +207,7 @@ Every page with affiliate links includes:
 - Expand successful content types
 - Test ad placements
 
-## Revenue Diversification
+## Revenue Diversification (target mix)
 - No single stream > 50% of revenue
 - Affiliate (60%) — mix of partners
 - AdSense (30%) — passive

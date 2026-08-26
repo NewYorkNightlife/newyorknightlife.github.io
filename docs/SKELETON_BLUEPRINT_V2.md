@@ -1,5 +1,8 @@
 # NYNightlife — SKELETON BLUEPRINT V2 (FROZEN)
 
+> **Historical record (frozen 2026-02-20).** The structure described here has been built and the canonical domain is connected. Kept for provenance; not a current work instruction.
+
+
 Date: 2026-02-20
 Status: Frozen for build execution
 
