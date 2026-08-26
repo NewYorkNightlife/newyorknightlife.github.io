@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Internal operating documents and ops dashboards. These are working files, not
+# reader content — they should never appear in search results.
+Disallow: /docs/
+Disallow: /ops/
+
 Sitemap: https://nynightlife.com/sitemap.xml
