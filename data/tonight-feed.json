@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Stella Lefty announces ‘Long Way Home Tour,’ three NYC shows. Get tickets",
+      "url": "https://nypost.com/2026/08/25/ticket-sales/get-tickets-for-stella-lefty-long-way-home-tour-with-a-discount/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Go Ask Alex: Does living in NYC make it harder to find gay love?",
+      "url": "https://www.out.com/relationships/go-ask-alex-gay-dating-nyc",
+      "source": "Out.com"
+    },
+    {
+      "title": "Thousands of jumpsuit-clad partiers boogie to 1970s hits at annual Gimme Gimme party: ‘I just keep coming back’",
+      "url": "https://nypost.com/2026/08/25/lifestyle/thousands-of-partiers-boogie-to-1970s-hits-at-annual-gimme-gimme-party/",
+      "source": "New York Post"
+    },
+    {
+      "title": "‘30 Rock’ Cast To Gather For One-Night-Only Benefit Reunion In NYC",
+      "url": "http://deadline.com/2026/08/30-rock-cast-reunion-1237049740/",
+      "source": "Deadline"
+    },
+    {
+      "title": "The Return of the Teen Crime Panic",
+      "url": "https://www.nybooks.com/online/2026/08/25/the-return-of-the-teen-crime-panic-raise-the-age/",
+      "source": "The New York Review of Books"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
