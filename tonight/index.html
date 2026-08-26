@@ -877,7 +877,8 @@
         const title = escapeHtml(item.title || 'Untitled event');
         const venue = escapeHtml(item.venue || 'Venue TBA');
         const borough = escapeHtml(item.borough || 'NYC');
-        const category = escapeHtml(item.category || 'Event');
+        const rawCat = String(item.category || '').trim();
+        const category = escapeHtml(/^(undefined|null|)$/i.test(rawCat) ? 'Event' : rawCat);
         const timeText = escapeHtml(item.time_window || formatEventTime(item.start_iso));
         const sourceName = escapeHtml(item.source_name || 'Source');
         const url = item.url || item.source_url || '#';
@@ -1006,7 +1007,8 @@
         const title = escapeHtml(item.title || 'Untitled event');
         const venue = escapeHtml(item.venue || 'Venue TBA');
         const borough = escapeHtml(item.borough || 'NYC');
-        const category = escapeHtml(item.category || 'Event');
+        const rawCat = String(item.category || '').trim();
+        const category = escapeHtml(/^(undefined|null|)$/i.test(rawCat) ? 'Event' : rawCat);
         const sourceName = escapeHtml(item.source_name || 'Source');
         const timeText = escapeHtml(item.time_window || formatEventTime(item.start_iso));
         const cleanedPrice = cleanPriceLabel(item.price);
