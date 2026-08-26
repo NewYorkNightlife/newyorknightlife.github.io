@@ -976,7 +976,12 @@
         return;
       }
 
-      wrap.innerHTML = headlines.slice(0, 6).map(item => {
+      const cleanHeadlines = headlines.filter(nynHeadlineAllowed);
+      if (cleanHeadlines.length === 0) {
+        wrap.innerHTML = '<li>No nightlife headlines right now.</li>';
+        return;
+      }
+      wrap.innerHTML = cleanHeadlines.slice(0, 6).map(item => {
         const title = escapeHtml(item.title || 'Untitled');
         const source = escapeHtml(item.source || 'Source');
         const url = item.url || '#';
