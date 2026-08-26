@@ -478,59 +478,44 @@
 
   gtag('config', 'G-YWT237CDDX');
 </script>
+<link rel="stylesheet" href="/css/chrome.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 </head>
 <body>
-<header class="site-header site-header--premium">
-  <div class="header-container">
-    <a class="brand" href="/" aria-label="NYNightlife home">
-      <span class="brand-icon" aria-hidden="true">🗽</span>
-      <span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span>
-      <span class="brand-tagline">NYC Nightlife</span>
+<a class="nyn-skip" href="#nyn-main">Skip to content</a>
+<header class="nyn-header">
+  <div class="nyn-header-inner">
+    <a class="nyn-brand" href="/" aria-label="NY Nightlife home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="34" height="34" aria-hidden="true"><circle cx="50" cy="50" r="45" fill="none" stroke="#d4af37" stroke-width="4"/><g stroke="#d4af37" stroke-width="2.4"><line x1="50" y1="9" x2="50" y2="17"/><line x1="50" y1="83" x2="50" y2="91"/><line x1="9" y1="50" x2="17" y2="50"/><line x1="83" y1="50" x2="91" y2="50"/><line x1="21" y1="21" x2="26.5" y2="26.5"/><line x1="73.5" y1="73.5" x2="79" y2="79"/><line x1="79" y1="21" x2="73.5" y2="26.5"/><line x1="26.5" y1="73.5" x2="21" y2="79"/></g><text x="50" y="66" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" fill="#f0d278">NY</text></svg>
+      <span class="nyn-brand-name"><b>NY</b>&thinsp;Nightlife</span>
     </a>
-
-    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="nav-desktop" aria-label="Primary">
+    <nav class="nyn-nav" aria-label="Primary">
       <a href="/tonight/">Tonight</a>
-
-      <div class="nav-item has-dropdown">
-        <button class="dropdown-toggle" aria-expanded="false" aria-controls="guides-menu" type="button">Guides</button>
-        <div id="guides-menu" class="dropdown-menu">
-          <a href="/boroughs/manhattan-nightlife.html">Manhattan</a>
-          <a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a>
-          <a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a>
-          <a href="/guides/vip-club-access-nyc.html">VIP Club Access</a>
-          <a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a>
-        </div>
-      </div>
-
+      <a href="/venues/">Venues</a>
+      <a href="/guides/">Guides</a>
+      <a href="/tools/">Tools</a>
       <a href="/blog/">Blog</a>
-      <a href="/about.html">About</a>
-      <a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a>
+      <a class="nyn-cta" href="/tools/nyc-night-planner.html">Plan My Night</a>
     </nav>
+    <details class="nyn-menu">
+      <summary aria-label="Open menu">&#9776;</summary>
+      <nav class="nyn-menu-panel" aria-label="Mobile">
+        <a href="/tonight/">Tonight</a>
+      <a href="/venues/">Venues</a>
+      <a href="/guides/">Guides</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a class="nyn-cta" href="/tools/nyc-night-planner.html">Plan My Night</a>
+      </nav>
+    </details>
   </div>
-
-  <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile Primary" hidden>
-    <a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a>
-    <a href="/tonight/">Tonight</a>
-
-    <button class="mobile-accordion-toggle" aria-expanded="false" aria-controls="mobile-guides" type="button">Guides</button>
-    <div id="mobile-guides" class="mobile-accordion" hidden>
-      <a href="/boroughs/manhattan-nightlife.html">Manhattan</a>
-      <a href="/boroughs/brooklyn-nightlife.html">Brooklyn</a>
-      <a href="/rankings/best-rooftops-in-nyc.html">Rooftop Bars</a>
-      <a href="/guides/vip-club-access-nyc.html">VIP Club Access</a>
-      <a href="/guides/luxury-experiences-nyc.html">Luxury Experiences</a>
-    </div>
-
-    <a href="/blog/">Blog</a>
-    <a href="/about.html">About</a>
-  </nav>
 </header>
 
-<main class="tonight-shell">
+
+
+
+<main id="nyn-main" class="tonight-shell">
   <section class="tonight-page-intro" aria-label="Tonight intro">
     <p class="tonight-kicker">Tonight in New York City</p>
     <h1>Things to Do in NYC Tonight</h1>
@@ -754,7 +739,20 @@
         title.includes('broadway real estate') ||
         title.includes('new broadway plays');
 
-      return hasAllowedDomain && !isCityFeed && !isEditorial;
+      const isBroadwayTheater =
+        category === 'theater' ||
+        venue.includes('theatre') || venue.includes('theater') ||
+        ['hamilton', 'wicked', 'the lion king', 'chicago the musical', 'great gatsby', 'stranger things: the first shadow', 'harry potter and the cursed child'].some(t => title.includes(t));
+
+      return hasAllowedDomain && !isCityFeed && !isEditorial && !isBroadwayTheater;
+    }
+
+    function cleanPriceLabel(raw) {
+      if (!raw) return '';
+      const p = String(raw).trim();
+      if (!p || /nan|undefined|null/i.test(p)) return '';
+      if (/^\$?0(\.0+)?\s*[–-]\s*\$?0(\.0+)?$/.test(p) || /^\$?0(\.0+)?$/.test(p) || /free/i.test(p)) return 'Free';
+      return p.replace(/\$(\d+)(\.00)?\s*[–-]\s*\$(\d+)(\.00)?/, '$$$1–$$$3');
     }
 
     function scoreFeaturedEvent(item, currentHour) {
@@ -775,24 +773,19 @@
       else if (hour >= Math.max(0, currentHour - 6)) score += 20;
       else if (hour >= 0) score -= 20;
 
-      if (category === 'music') score += 18;
-      if (category === 'theater') score += 14;
-      if (category === 'nightlife') score += 10;
-      if (category === 'experience') score += 6;
+      if (category === 'nightlife') score += 28;
+      if (category === 'music') score += 22;
+      if (category === 'experience') score += 8;
+      if (category === 'theater') score -= 30;
 
-      if (title.includes('hamilton')) score += 14;
-      if (title.includes('wicked')) score += 14;
-      if (title.includes('chicago')) score += 12;
-      if (title.includes('lion king')) score += 12;
-      if (title.includes('harlem gospel')) score += 12;
-      if (title.includes('great gatsby')) score += 10;
-      if (title.includes('stranger things')) score += 10;
+      const nightlifeSignals = ['dj', 'club', 'dance', 'party', 'rooftop', 'rave', 'techno', 'house', 'disco', 'hip-hop', 'hip hop', 'latin night', 'reggaeton', 'afrobeats', 'burlesque', 'karaoke', 'comedy', 'jazz', 'salsa', 'drag'];
+      if (nightlifeSignals.some(sig => title.includes(sig) || venue.includes(sig))) score += 22;
+      if (item._eventHour >= 20) score += 15;
 
       if (venue.includes('blue note')) score += 12;
       if (venue.includes('birdland')) score += 12;
       if (venue.includes('gramercy')) score += 10;
       if (venue.includes('mercury lounge')) score += 10;
-      if (venue.includes('theatre') || venue.includes('theater')) score += 6;
 
       if (price.includes('$0') || price.includes('free')) score += 3;
 
@@ -889,7 +882,8 @@
         const sourceName = escapeHtml(item.source_name || 'Source');
         const url = item.url || item.source_url || '#';
         const imageUrl = item._imageUrl || '';
-        const price = item.price ? `<span class="tonight-pill">${escapeHtml(item.price)}</span>` : '';
+        const cleanedPrice = cleanPriceLabel(item.price);
+        const price = cleanedPrice ? `<span class="tonight-pill">${escapeHtml(cleanedPrice)}</span>` : '';
         const blurb = escapeHtml(buildFeaturedBlurb(item));
 
         return `
@@ -964,6 +958,15 @@
       `;
     }
 
+        var NYN_BLOCKED_HEADLINE_SOURCES = /dailymail|tmz|pagesix|page six|usmagazine|us weekly|people\.com|hollywoodlife|the sun|mirror\.co|etonline|justjared/i;
+    var NYN_BLOCKED_HEADLINE_TOPICS = /leggy|baby bump|newborn|romance|dating|divorce|split|engaged|red carpet|shows off|flaunts|stuns in|puts on.*display|sighting|spotted (with|leaving)/i;
+    function nynHeadlineAllowed(h) {
+    if (!h) return false;
+      var t = String(h.title || '');
+      var src = String(h.source || '') + ' ' + String(h.url || '');
+    return !(NYN_BLOCKED_HEADLINE_SOURCES.test(src) || NYN_BLOCKED_HEADLINE_TOPICS.test(t));
+  }
+
     function renderHeadlines(headlines) {
       const wrap = document.getElementById('tonight-headlines');
       if (!wrap) return;
@@ -1001,7 +1004,8 @@
         const category = escapeHtml(item.category || 'Event');
         const sourceName = escapeHtml(item.source_name || 'Source');
         const timeText = escapeHtml(item.time_window || formatEventTime(item.start_iso));
-        const price = item.price ? `<span class="tonight-pill">${escapeHtml(item.price)}</span>` : '';
+        const cleanedPrice = cleanPriceLabel(item.price);
+        const price = cleanedPrice ? `<span class="tonight-pill">${escapeHtml(cleanedPrice)}</span>` : '';
         const url = item.url || item.source_url || '#';
 
         return `
@@ -1052,5 +1056,49 @@
 
     loadTonightFeed();
 </script>
+<footer class="nyn-footer">
+  <div class="nyn-footer-inner">
+    <div class="nyn-footer-top">
+      <div class="nyn-footer-brand">
+        <a class="nyn-brand" href="/" aria-label="NY Nightlife home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="30" height="30" aria-hidden="true"><circle cx="50" cy="50" r="45" fill="none" stroke="#d4af37" stroke-width="4"/><g stroke="#d4af37" stroke-width="2.4"><line x1="50" y1="9" x2="50" y2="17"/><line x1="50" y1="83" x2="50" y2="91"/><line x1="9" y1="50" x2="17" y2="50"/><line x1="83" y1="50" x2="91" y2="50"/><line x1="21" y1="21" x2="26.5" y2="26.5"/><line x1="73.5" y1="73.5" x2="79" y2="79"/><line x1="79" y1="21" x2="73.5" y2="26.5"/><line x1="26.5" y1="73.5" x2="21" y2="79"/></g><text x="50" y="66" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" fill="#f0d278">NY</text></svg><span class="nyn-brand-name"><b>NY</b>&thinsp;Nightlife</span></a>
+        <p>Decide your NYC night in 5 minutes. Real prices, real door policies, verified weekly.</p>
+        <form class="email-form nyn-footer-form" action="https://formsubmit.co/nynightlifeguide@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="NYNightlife signup" />
+          <input type="hidden" name="_next" value="https://nynightlife.com/?subscribed=1" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="email" name="email" placeholder="you@domain.com" required aria-label="Email address" />
+          <button type="submit">Get the Brief</button>
+        </form>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/tonight/">Tonight</a>
+        <a href="/weekend/nyc-nightlife-this-weekend.html">This Weekend</a>
+        <a href="/venues/">Venue Facts</a>
+        <a href="/neighborhoods/">Neighborhoods</a>
+        <a href="/guides/">Guides</a>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <a href="/tools/budget-planner.html">Budget Planner</a>
+        <a href="/tools/nyc-night-planner.html">Night Planner</a>
+        <a href="/tools/venue-compare-nyc.html">Venue Compare</a>
+        <a href="/blog/">Blog</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="/about.html">About</a>
+        <a href="/start-here.html">Start Here</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/methodology.html">Methodology</a>
+      </div>
+    </div>
+    <div class="nyn-footer-bottom">
+      <span>&copy; 2026 NY Nightlife &middot; Made in NYC</span>
+      <span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/affiliate-disclosure.html">Affiliate Disclosure</a></span>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

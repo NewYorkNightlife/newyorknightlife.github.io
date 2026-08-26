@@ -25,9 +25,42 @@
 
   gtag('config', 'G-YWT237CDDX');
 </script>
+<link rel="stylesheet" href="/css/chrome.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 </head><body>
-<header class="site-header site-header--premium"><div class="header-container"><a class="brand" href="/"><span class="brand-icon">🗽</span><span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span><span class="brand-tagline">NYC Nightlife</span></a><button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button><nav class="nav-desktop" aria-label="Primary"><a href="/tonight/">Tonight</a><a href="/guides/">Guides</a><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a></nav></div><nav id="mobile-nav" class="nav-mobile" hidden><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a><a href="/tonight/">Tonight</a><a href="/blog/">Blog</a><a href="/about.html">About</a></nav></header>
-<main class="mt-shell">
+<a class="nyn-skip" href="#nyn-main">Skip to content</a>
+<header class="nyn-header">
+  <div class="nyn-header-inner">
+    <a class="nyn-brand" href="/" aria-label="NY Nightlife home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="34" height="34" aria-hidden="true"><circle cx="50" cy="50" r="45" fill="none" stroke="#d4af37" stroke-width="4"/><g stroke="#d4af37" stroke-width="2.4"><line x1="50" y1="9" x2="50" y2="17"/><line x1="50" y1="83" x2="50" y2="91"/><line x1="9" y1="50" x2="17" y2="50"/><line x1="83" y1="50" x2="91" y2="50"/><line x1="21" y1="21" x2="26.5" y2="26.5"/><line x1="73.5" y1="73.5" x2="79" y2="79"/><line x1="79" y1="21" x2="73.5" y2="26.5"/><line x1="26.5" y1="73.5" x2="21" y2="79"/></g><text x="50" y="66" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" fill="#f0d278">NY</text></svg>
+      <span class="nyn-brand-name"><b>NY</b>&thinsp;Nightlife</span>
+    </a>
+    <nav class="nyn-nav" aria-label="Primary">
+      <a href="/tonight/">Tonight</a>
+      <a href="/venues/">Venues</a>
+      <a href="/guides/">Guides</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a class="nyn-cta" href="/tools/nyc-night-planner.html">Plan My Night</a>
+    </nav>
+    <details class="nyn-menu">
+      <summary aria-label="Open menu">&#9776;</summary>
+      <nav class="nyn-menu-panel" aria-label="Mobile">
+        <a href="/tonight/">Tonight</a>
+      <a href="/venues/">Venues</a>
+      <a href="/guides/">Guides</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a class="nyn-cta" href="/tools/nyc-night-planner.html">Plan My Night</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+
+
+<main id="nyn-main" class="mt-shell">
 <section class="mt-hero"><div class="mt-hero-content"><p class="eyebrow">Neighborhood Playbook</p><h1>Midtown Nightlife: Big Energy, Big Density, Big Swing Potential</h1><p>Midtown offers scale and variety, but wins come from tight sequencing: one anchor, one fallback, one close based on live conditions.</p><div class="hero-actions"><a class="btn btn-gold" href="/tools/nyc-night-planner.html">Build a Midtown Plan</a><a class="btn btn-ghost" href="/weekend/nyc-nightlife-this-weekend.html">See Weekend Signals</a></div><div class="chip-row"><span class="chip">Best for: Rooftops + lounge mix</span><span class="chip">Route style: Avenue corridors</span><span class="chip">Risk: Overtravel + time burn</span></div></div></section>
 <section class="mt-section grid-2"><article class="panel"><h2>How to Win Midtown in 4 Moves</h2><ol class="list-tight"><li>Choose lane: rooftop, cocktail, club, or mixed.</li><li>Anchor a corridor: 5th / 6th / Broadway cluster.</li><li>Set line/cover threshold and pivot fast.</li><li>Finish near your final transport route.</li></ol></article><aside class="panel"><h3>Quick Midtown Snapshot</h3><ul class="list-tight"><li><strong>Energy:</strong> high-volume, mixed crowd</li><li><strong>Start window:</strong> 8:00–10:30 PM</li><li><strong>Group size:</strong> 2–8</li><li><strong>Main fail:</strong> too many far pivots</li></ul></aside></section>
 <section class="mt-section"><img class="mt-img-inline" src="https://images.unsplash.com/photo-1750077807597-49d411681f05?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1800" alt="Grand Central Terminal interior in Midtown Manhattan" loading="lazy"/></section>
@@ -43,4 +76,48 @@
 </main>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>(function(){const map=L.map('mt-map-canvas',{scrollWheelZoom:true}).setView([40.758,-73.9855],14);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);const spots=[['The Rum House NYC','The Rum House',40.76033,-73.98576],['Dear Irving on Hudson NYC','Dear Irving on Hudson',40.75934,-73.99269],['Ophelia Lounge NYC','Ophelia Lounge',40.74980,-73.97591],['Pebble Bar NYC','Pebble Bar',40.75977,-73.97971],['The Press Lounge NYC','The Press Lounge',40.76483,-73.98877],['St Cloud Rooftop NYC','St. Cloud Rooftop',40.75759,-73.98612],['Valerie NYC','Valerie',40.75651,-73.98357],['Nothing Really Matters NYC','Nothing Really Matters',40.75861,-73.98423],['Keens Steakhouse NYC','Keens Steakhouse',40.75064,-73.98643],['The Smith Midtown NYC','The Smith Midtown',40.75084,-73.98490],['Sakagura NYC','Sakagura',40.74998,-73.97474],['The Lambs Club NYC','The Lambs Club',40.75868,-73.98536],['Tonchin NYC','Tonchin',40.75157,-73.98526],['Le Rock NYC','Le Rock',40.75843,-73.97858],['Monkey Bar NYC','Monkey Bar',40.76176,-73.97258],['Quality Italian NYC','Quality Italian',40.76197,-73.98148],['Radio City Music Hall NYC','Radio City Music Hall',40.75998,-73.97998],['Rockefeller Center NYC','Rockefeller Center',40.75874,-73.97867],['Bryant Park NYC','Bryant Park',40.75360,-73.98323],['Grand Central Terminal NYC','Grand Central Terminal',40.75272,-73.97723],['MoMA NYC','MoMA',40.76144,-73.97762],['St Patricks Cathedral NYC','St. Patrick\'s Cathedral',40.75847,-73.97658],['Times Square NYC','Times Square',40.75800,-73.98550],['Theater District NYC','Theater District',40.75901,-73.98447]];const m=new Map(),b=L.latLngBounds();spots.forEach(s=>{const mk=L.marker([s[2],s[3]]).addTo(map).bindPopup(`<strong>${s[1]}</strong>`);m.set(s[0],mk);b.extend([s[2],s[3]])});if(b.isValid())map.fitBounds(b.pad(.16));document.querySelectorAll('.map-jump[data-place]').forEach(a=>a.addEventListener('click',()=>{const mk=m.get(a.dataset.place);setTimeout(()=>map.invalidateSize(),100);if(mk){map.setView(mk.getLatLng(),Math.max(map.getZoom(),15),{animate:true});mk.openPopup();}}));})();</script>
-<script src="/js/main.js"></script></body></html>
+<script src="/js/main.js"></script><footer class="nyn-footer">
+  <div class="nyn-footer-inner">
+    <div class="nyn-footer-top">
+      <div class="nyn-footer-brand">
+        <a class="nyn-brand" href="/" aria-label="NY Nightlife home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="30" height="30" aria-hidden="true"><circle cx="50" cy="50" r="45" fill="none" stroke="#d4af37" stroke-width="4"/><g stroke="#d4af37" stroke-width="2.4"><line x1="50" y1="9" x2="50" y2="17"/><line x1="50" y1="83" x2="50" y2="91"/><line x1="9" y1="50" x2="17" y2="50"/><line x1="83" y1="50" x2="91" y2="50"/><line x1="21" y1="21" x2="26.5" y2="26.5"/><line x1="73.5" y1="73.5" x2="79" y2="79"/><line x1="79" y1="21" x2="73.5" y2="26.5"/><line x1="26.5" y1="73.5" x2="21" y2="79"/></g><text x="50" y="66" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" fill="#f0d278">NY</text></svg><span class="nyn-brand-name"><b>NY</b>&thinsp;Nightlife</span></a>
+        <p>Decide your NYC night in 5 minutes. Real prices, real door policies, verified weekly.</p>
+        <form class="email-form nyn-footer-form" action="https://formsubmit.co/nynightlifeguide@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="NYNightlife signup" />
+          <input type="hidden" name="_next" value="https://nynightlife.com/?subscribed=1" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="email" name="email" placeholder="you@domain.com" required aria-label="Email address" />
+          <button type="submit">Get the Brief</button>
+        </form>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/tonight/">Tonight</a>
+        <a href="/weekend/nyc-nightlife-this-weekend.html">This Weekend</a>
+        <a href="/venues/">Venue Facts</a>
+        <a href="/neighborhoods/">Neighborhoods</a>
+        <a href="/guides/">Guides</a>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <a href="/tools/budget-planner.html">Budget Planner</a>
+        <a href="/tools/nyc-night-planner.html">Night Planner</a>
+        <a href="/tools/venue-compare-nyc.html">Venue Compare</a>
+        <a href="/blog/">Blog</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="/about.html">About</a>
+        <a href="/start-here.html">Start Here</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/methodology.html">Methodology</a>
+      </div>
+    </div>
+    <div class="nyn-footer-bottom">
+      <span>&copy; 2026 NY Nightlife &middot; Made in NYC</span>
+      <span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/affiliate-disclosure.html">Affiliate Disclosure</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

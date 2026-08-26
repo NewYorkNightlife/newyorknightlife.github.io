@@ -1,7 +1,14 @@
 // Micro-interactions for redesigned homepage
 (function () {
   const topbar = document.querySelector('.topbar');
-  const sections = document.querySelectorAll('.section, .hero');
+  const allSections = document.querySelectorAll('.section');
+  // Never animate the hero or anything already in the viewport at load: content must be readable instantly.
+  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const vh = window.innerHeight || 800;
+  const sections = prefersReduced ? [] : Array.from(allSections).filter(el => {
+    const r = el.getBoundingClientRect();
+    return r.top > vh; // only below-the-fold sections take part in the reveal
+  });
 
   document.addEventListener('scroll', () => {
     if (!topbar) return;

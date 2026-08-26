@@ -66,7 +66,8 @@ main {
   padding: 26px 22px 54px;
 }
 
-.container { max-width: 100%; }
+.container { max-width: 1100px; margin-left: auto; margin-right: auto; }
+.container > section > p, .container article > p, .container section li { max-width: 72ch; }
 
 h1, h2, h3, h4 {
   color: var(--text);

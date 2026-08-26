@@ -25,9 +25,42 @@
 
   gtag('config', 'G-YWT237CDDX');
 </script>
+<link rel="stylesheet" href="/css/chrome.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 </head><body>
-<header class="site-header site-header--premium"><div class="header-container"><a class="brand" href="/"><span class="brand-icon">🗽</span><span class="brand-name">NY</span><span class="brand-name brand-name--gold">Nightlife</span><span class="brand-tagline">NYC Nightlife</span></a><button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button><nav class="nav-desktop" aria-label="Primary"><a href="/tonight/">Tonight</a><a href="/guides/">Guides</a><a href="/blog/">Blog</a><a href="/about.html">About</a><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a></nav></div><nav id="mobile-nav" class="nav-mobile" hidden><a class="cta-btn" href="/tools/night-out-spinner.html">Plan My Night</a><a href="/tonight/">Tonight</a><a href="/blog/">Blog</a><a href="/about.html">About</a></nav></header>
-<main class="ch-shell">
+<a class="nyn-skip" href="#nyn-main">Skip to content</a>
+<header class="nyn-header">
+  <div class="nyn-header-inner">
+    <a class="nyn-brand" href="/" aria-label="NY Nightlife home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="34" height="34" aria-hidden="true"><circle cx="50" cy="50" r="45" fill="none" stroke="#d4af37" stroke-width="4"/><g stroke="#d4af37" stroke-width="2.4"><line x1="50" y1="9" x2="50" y2="17"/><line x1="50" y1="83" x2="50" y2="91"/><line x1="9" y1="50" x2="17" y2="50"/><line x1="83" y1="50" x2="91" y2="50"/><line x1="21" y1="21" x2="26.5" y2="26.5"/><line x1="73.5" y1="73.5" x2="79" y2="79"/><line x1="79" y1="21" x2="73.5" y2="26.5"/><line x1="26.5" y1="73.5" x2="21" y2="79"/></g><text x="50" y="66" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" fill="#f0d278">NY</text></svg>
+      <span class="nyn-brand-name"><b>NY</b>&thinsp;Nightlife</span>
+    </a>
+    <nav class="nyn-nav" aria-label="Primary">
+      <a href="/tonight/">Tonight</a>
+      <a href="/venues/">Venues</a>
+      <a href="/guides/">Guides</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a class="nyn-cta" href="/tools/nyc-night-planner.html">Plan My Night</a>
+    </nav>
+    <details class="nyn-menu">
+      <summary aria-label="Open menu">&#9776;</summary>
+      <nav class="nyn-menu-panel" aria-label="Mobile">
+        <a href="/tonight/">Tonight</a>
+      <a href="/venues/">Venues</a>
+      <a href="/guides/">Guides</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a class="nyn-cta" href="/tools/nyc-night-planner.html">Plan My Night</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+
+
+<main id="nyn-main" class="ch-shell">
 <section class="ch-hero"><div class="ch-hero-content"><p class="eyebrow">Neighborhood Playbook</p><h1>Chelsea Nightlife: Gallery District by Day, Multi-Lane Social Engine by Night</h1><p>Chelsea rewards structured nights: one anchor corridor, one backup nearby, one clean close.</p><div class="hero-actions"><a class="btn btn-gold" href="/tools/nyc-night-planner.html">Build a Chelsea Plan</a><a class="btn btn-ghost" href="/weekend/nyc-nightlife-this-weekend.html">See Weekend Signals</a></div><div class="chip-row"><span class="chip">Best for: Rooftop + dinner nights</span><span class="chip">Route style: West-side lanes</span><span class="chip">Risk: Long late pivots</span></div></div></section>
 <section class="ch-section grid-2"><article class="panel"><h2>How to Win Chelsea in 4 Moves</h2><ol class="list-tight"><li>Pick lane: rooftop, dining-social, or lounge-heavy.</li><li>Anchor one zone: Chelsea Market / High Line / 10th Ave.</li><li>Set wait threshold and pivot quickly.</li><li>Close near transit to protect the finish.</li></ol></article><aside class="panel"><h3>Quick Chelsea Snapshot</h3><ul class="list-tight"><li><strong>Energy:</strong> polished, mixed crowd</li><li><strong>Start window:</strong> 8:00–10:00 PM</li><li><strong>Group size:</strong> 2–6</li><li><strong>Main fail:</strong> overextending routes</li></ul></aside></section>
 <section class="ch-section"><img class="ch-img-inline" src="https://images.unsplash.com/photo-1624553348093-ed95c718f37b?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1800" alt="The High Line in Chelsea Manhattan" loading="lazy"/></section>
@@ -41,4 +74,48 @@
 </main>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>(function(){const map=L.map('ch-map-canvas',{scrollWheelZoom:true}).setView([40.746,-74.003],14);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);const spots=[['The Press Lounge NYC','The Press Lounge',40.76483,-73.98877],['The Tippler NYC','The Tippler',40.74233,-74.00632],['Bathtub Gin NYC','Bathtub Gin',40.74518,-73.99574],['Porchlight NYC','Porchlight',40.75224,-74.00271],['The Lobos NYC','The Lobos',40.74391,-73.99959],['Slate NYC','Slate',40.74902,-73.99243],['Bar Siena NYC','Bar Siena',40.74114,-74.00655],['The Copper Still NYC','The Copper Still',40.74730,-74.00177],['Cookshop NYC','Cookshop',40.74461,-74.00570],['Shukette NYC','Shukette',40.74657,-74.00122],['Miznon Chelsea Market NYC','Miznon',40.74269,-74.00618],['Los Tacos No 1 Chelsea Market NYC','Los Tacos No.1',40.74233,-74.00617],['Buddakan NYC','Buddakan',40.74261,-74.00574],['Chelsea Square Diner NYC','Chelsea Square Diner',40.74386,-73.99676],['Friedmans Chelsea Market NYC','Friedmans',40.74244,-74.00614],['Empire Diner NYC','Empire Diner',40.74566,-74.00535],['The High Line NYC','The High Line',40.74097,-74.00772],['Chelsea Market NYC','Chelsea Market',40.74244,-74.00614],['Little Island NYC','Little Island',40.74204,-74.01077],['Whitney Museum NYC','Whitney Museum',40.73959,-74.00886],['Le Bain NYC','Le Bain',40.74088,-74.00645],['The Rooftop at Gansevoort NYC','Gansevoort Rooftop',40.73985,-74.00818],['The Edge Hudson Yards NYC','The Edge',40.75387,-74.00057],['Rubin Museum NYC','Rubin Museum Area',40.74086,-73.99810]];const m=new Map(),b=L.latLngBounds();spots.forEach(s=>{const mk=L.marker([s[2],s[3]]).addTo(map).bindPopup(`<strong>${s[1]}</strong>`);m.set(s[0],mk);b.extend([s[2],s[3]])});if(b.isValid())map.fitBounds(b.pad(.16));document.querySelectorAll('.map-jump[data-place]').forEach(a=>a.addEventListener('click',()=>{const mk=m.get(a.dataset.place);setTimeout(()=>map.invalidateSize(),100);if(mk){map.setView(mk.getLatLng(),Math.max(map.getZoom(),15),{animate:true});mk.openPopup();}}));})();</script>
-<script src="/js/main.js"></script></body></html>
+<script src="/js/main.js"></script><footer class="nyn-footer">
+  <div class="nyn-footer-inner">
+    <div class="nyn-footer-top">
+      <div class="nyn-footer-brand">
+        <a class="nyn-brand" href="/" aria-label="NY Nightlife home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="30" height="30" aria-hidden="true"><circle cx="50" cy="50" r="45" fill="none" stroke="#d4af37" stroke-width="4"/><g stroke="#d4af37" stroke-width="2.4"><line x1="50" y1="9" x2="50" y2="17"/><line x1="50" y1="83" x2="50" y2="91"/><line x1="9" y1="50" x2="17" y2="50"/><line x1="83" y1="50" x2="91" y2="50"/><line x1="21" y1="21" x2="26.5" y2="26.5"/><line x1="73.5" y1="73.5" x2="79" y2="79"/><line x1="79" y1="21" x2="73.5" y2="26.5"/><line x1="26.5" y1="73.5" x2="21" y2="79"/></g><text x="50" y="66" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" fill="#f0d278">NY</text></svg><span class="nyn-brand-name"><b>NY</b>&thinsp;Nightlife</span></a>
+        <p>Decide your NYC night in 5 minutes. Real prices, real door policies, verified weekly.</p>
+        <form class="email-form nyn-footer-form" action="https://formsubmit.co/nynightlifeguide@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="NYNightlife signup" />
+          <input type="hidden" name="_next" value="https://nynightlife.com/?subscribed=1" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="email" name="email" placeholder="you@domain.com" required aria-label="Email address" />
+          <button type="submit">Get the Brief</button>
+        </form>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/tonight/">Tonight</a>
+        <a href="/weekend/nyc-nightlife-this-weekend.html">This Weekend</a>
+        <a href="/venues/">Venue Facts</a>
+        <a href="/neighborhoods/">Neighborhoods</a>
+        <a href="/guides/">Guides</a>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <a href="/tools/budget-planner.html">Budget Planner</a>
+        <a href="/tools/nyc-night-planner.html">Night Planner</a>
+        <a href="/tools/venue-compare-nyc.html">Venue Compare</a>
+        <a href="/blog/">Blog</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="/about.html">About</a>
+        <a href="/start-here.html">Start Here</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/methodology.html">Methodology</a>
+      </div>
+    </div>
+    <div class="nyn-footer-bottom">
+      <span>&copy; 2026 NY Nightlife &middot; Made in NYC</span>
+      <span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/affiliate-disclosure.html">Affiliate Disclosure</a></span>
+    </div>
+  </div>
+</footer>
+
+</body></html>

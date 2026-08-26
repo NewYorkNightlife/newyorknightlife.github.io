@@ -36,6 +36,9 @@ body::before {
   /* Keep the top of the source image visible when cover-cropping */
   background-position: center top;
   background-size: cover;
+  /* Soften + darken: hides the low-res source and drops contrast for readability */
+  filter: blur(6px) brightness(.62) saturate(.65);
+  transform: scale(1.04); /* hide blur edge fringe */
   z-index: -2;
   pointer-events: none;
 }
@@ -47,7 +50,7 @@ body::after {
   width: 100vw;
   height: 100vh;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.80) 48%, rgba(0, 0, 0, 0.88) 100%),
+    linear-gradient(180deg, rgba(5, 6, 12, 0.82) 0%, rgba(5, 6, 12, 0.88) 45%, rgba(9, 9, 16, 0.95) 100%),
     radial-gradient(1200px 600px at 10% -10%, rgba(34, 24, 56, 0.34) 0%, transparent 60%),
     radial-gradient(1100px 500px at 90% -20%, rgba(15, 46, 64, 0.24) 0%, transparent 55%);
   z-index: -1;
@@ -482,3 +485,11 @@ body > * {
   .site-header--premium .nav-mobile:not([hidden]) { display: block; }
 }
 /* PREMIUM_NAV_V2_END */
+
+
+/* Motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .marquee .track { animation: none !important; }
+  * { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+.marquee:hover .track, .marquee:focus-within .track { animation-play-state: paused; }

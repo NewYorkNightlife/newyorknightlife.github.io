@@ -42,10 +42,19 @@
     `;
   }
 
+  var NYN_BLOCKED_HEADLINE_SOURCES = /dailymail|tmz|pagesix|page six|usmagazine|us weekly|people\.com|hollywoodlife|the sun|mirror\.co|etonline|justjared/i;
+  var NYN_BLOCKED_HEADLINE_TOPICS = /leggy|baby bump|newborn|romance|dating|divorce|split|engaged|red carpet|shows off|flaunts|stuns in|puts on.*display|sighting|spotted (with|leaving)/i;
+  function nynHeadlineAllowed(h) {
+    if (!h) return false;
+    var t = String(h.title || '');
+    var src = String(h.source || '') + ' ' + String(h.url || '');
+    return !(NYN_BLOCKED_HEADLINE_SOURCES.test(src) || NYN_BLOCKED_HEADLINE_TOPICS.test(t));
+  }
+
   function renderHeadlines(headlines) {
     const el = document.getElementById('tonight-headlines');
     if (!el) return;
-    const items = Array.isArray(headlines) ? headlines.slice(0, 3) : [];
+    const items = (Array.isArray(headlines) ? headlines.filter(nynHeadlineAllowed) : []).slice(0, 3);
     if (!items.length) {
       el.innerHTML = '<li>No live headlines available yet.</li>';
       return;
