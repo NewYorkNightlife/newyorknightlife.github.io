@@ -35,7 +35,14 @@
     'bed-stuy':          mascot('bed-stuy', 'Zora'),
     'red-hook':          mascot('red-hook', 'Quinn'),
     'bronx':             mascot('bronx', 'Lena'),
-    'downtown-brooklyn': mascot('downtown-brooklyn', 'Robin')
+    'downtown-brooklyn': mascot('downtown-brooklyn', 'Robin'),
+    // Borough-level mascots. These stand for a whole borough rather than one
+    // neighbourhood, so they are deliberately broader in character than the
+    // neighbourhood cast and never duplicate one of them.
+    'manhattan':         mascot('manhattan', 'Ava'),
+    'brooklyn':          mascot('brooklyn', 'Sadie'),
+    'queens':            mascot('queens', 'Winnie'),
+    'staten-island':     mascot('staten-island', 'Marlowe')
   };
 
   // Path pattern -> slug, per MASCOT-ROSTER.md "Pages served". Anchored and
@@ -61,8 +68,12 @@
     [/^\/neighborhoods\/bronx-nightlife-guide\.html$/,                      'bronx'],
     [/^\/boroughs\/bronx-nightlife\.html$/,                                 'bronx'],
     [/^\/neighborhoods\/downtown-brooklyn-nightlife\.html$/,                'downtown-brooklyn'],
-    [/^\/neighborhoods\/staten-island-nightlife-guide\.html$/,              'downtown-brooklyn'],
-    [/^\/boroughs\/staten-island-nightlife\.html$/,                         'downtown-brooklyn']
+    [/^\/neighborhoods\/staten-island-nightlife-guide\.html$/,              'staten-island'],
+    [/^\/boroughs\/staten-island-nightlife\.html$/,                         'staten-island'],
+    // Borough hubs
+    [/^\/boroughs\/manhattan-nightlife\.html$/,                             'manhattan'],
+    [/^\/boroughs\/brooklyn-nightlife\.html$/,                              'brooklyn'],
+    [/^\/boroughs\/queens-nightlife\.html$/,                                'queens']
   ];
 
   function pickMascot() {
