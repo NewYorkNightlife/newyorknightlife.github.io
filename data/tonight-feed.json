@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A Harry Styles guide to NYC: Where to eat, where to stay and what to do ahead of the singer’s MSG residency",
+      "url": "https://www.timeout.com/newyork/news/a-harry-styles-guide-to-nyc-where-to-eat-where-to-stay-and-what-to-do-ahead-of-the-singers-msg-residency-082626",
+      "source": "Time Out"
+    },
+    {
+      "title": "Harry Styles at Madison Square Garden 2026: stage times, last-minute tickets and ultimate guide",
+      "url": "https://www.timeout.com/newyork/news/harry-styles-at-madison-square-garden-2026-stage-times-last-minute-tickets-and-ultimate-guide-082626",
+      "source": "Time Out"
+    },
+    {
+      "title": "American Medinas: Turning U.S. Cities Into 'Beachheads' for Islam",
+      "url": "https://www.realclearinvestigations.com/articles/2026/08/26/american_medinas_turning_us_cities_into_beachheads_for_islam_1202481.html",
+      "source": "Realclearinvestigations.com"
+    },
+    {
+      "title": "Empire State Building lights up in ‘pink sparkle’ to honor Dolly Parton",
+      "url": "https://pagesix.com/2026/08/25/celebrity-news/empire-state-building-lights-up-in-pink-sparkle-to-honor-dolly-parton/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Watch: Dolly Parton Recounts Pulling Gun from Purse to Stop NYC Aggressor",
+      "url": "https://www.breitbart.com/2nd-amendment/2026/08/25/dolly-parton-recounts-pulling-gun-purse-stop-new-york-city-aggressor/",
+      "source": "Breitbart News"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
