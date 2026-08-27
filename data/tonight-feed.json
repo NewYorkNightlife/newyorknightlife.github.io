@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "American Medinas: Turning U.S. Cities Into 'Beachheads' for Islam",
+      "url": "https://www.realclearinvestigations.com/articles/2026/08/26/american_medinas_turning_us_cities_into_beachheads_for_islam_1202481.html",
+      "source": "Realclearinvestigations.com"
+    },
+    {
+      "title": "Empire State Building lights up in ‘pink sparkle’ to honor Dolly Parton",
+      "url": "https://pagesix.com/2026/08/25/celebrity-news/empire-state-building-lights-up-in-pink-sparkle-to-honor-dolly-parton/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Watch: Dolly Parton Recounts Pulling Gun from Purse to Stop NYC Aggressor",
+      "url": "https://www.breitbart.com/2nd-amendment/2026/08/25/dolly-parton-recounts-pulling-gun-purse-stop-new-york-city-aggressor/",
+      "source": "Breitbart News"
+    },
+    {
+      "title": "NYC works 9 to 5, then lights up pink for Dolly",
+      "url": "https://gothamist.com/news/nyc-works-9-to-5-then-lights-up-for-dolly",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Stream It Or Skip It: ‘Stamptown’ On Netflix, A Comedy Variety Showcase Unlike Anything You’ll Ever See On Netflix",
+      "url": "https://decider.com/2026/08/25/stamptown-netflix-review-stream-it-or-skip-it/",
+      "source": "Decider"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
