@@ -104,7 +104,77 @@
         <button class="cta-button secondary" onclick="selectQuiz('dance')" style="width: 100%; margin: 0.5rem 0;">💃 Dancing, clubs, DJ scene</button>
         <button class="cta-button secondary" onclick="selectQuiz('craft')" style="width: 100%; margin: 0.5rem 0;">🍻 Craft beer, trendy, hipster</button>
       </div>
-      <div id="quiz-result"></div>
+      <div id="quiz-result" role="status" aria-live="polite"></div>
+      <script>
+        const QUIZ_RECS = {
+          rooftop: {
+            name: 'Midtown (with a Williamsburg backup)',
+            desc: 'The densest skyline-view cluster in the city. Drinks run $15–$20, most rooftops skip covers early, and lines build after 9pm on weekends.',
+            venues: [
+              ['230 Fifth Rooftop', '/venues/230-fifth-rooftop.html'],
+              ['Ophelia Lounge', '/venues/ophelia-lounge.html'],
+              ['Westlight (Williamsburg)', '/venues/westlight.html']
+            ],
+            guide: '/neighborhoods/midtown-nightlife.html'
+          },
+          dive: {
+            name: 'East Village',
+            desc: 'Classic dive-bar grid: $7–$9 beers, almost no covers, everything walkable, and a cocktail room a block away when you want to upgrade mid-night.',
+            venues: [
+              ['Please Don’t Tell (PDT)', '/venues/please-dont-tell.html'],
+              ['The Back Room (LES)', '/venues/the-back-room.html']
+            ],
+            guide: '/neighborhoods/east-village-nightlife.html'
+          },
+          upscale: {
+            name: 'SoHo & West Village',
+            desc: 'Polished cocktail rooms and wine bars at $14–$18 a drink, no covers — the move is two great rooms, not five average ones.',
+            venues: [
+              ['Employees Only', '/venues/employees-only.html'],
+              ['Attaboy (LES, worth the walk)', '/venues/attaboy.html'],
+              ['Death & Co (East Village)', '/venues/death-and-co.html']
+            ],
+            guide: '/neighborhoods/soho-nightlife.html'
+          },
+          dance: {
+            name: 'Meatpacking & Chelsea (or Bushwick for warehouse rooms)',
+            desc: 'Big-production clubs with $20–$60 covers and strict doors. Prefer underground over bottle service? Bushwick is the other answer.',
+            venues: [
+              ['Marquee', '/venues/marquee-new-york.html'],
+              ['Nebula (Midtown)', '/venues/nebula.html'],
+              ['House of Yes (Bushwick)', '/venues/house-of-yes.html']
+            ],
+            guide: '/neighborhoods/meatpacking-nightlife.html'
+          },
+          craft: {
+            name: 'Williamsburg & Greenpoint',
+            desc: 'Craft beer, music-forward bars, and mid-size dance rooms at $10–$14 a drink — the best all-round party base outside Manhattan.',
+            venues: [
+              ['Good Room (Greenpoint)', '/venues/good-room.html'],
+              ['Westlight', '/venues/westlight.html'],
+              ['Elsewhere (Bushwick)', '/venues/elsewhere.html']
+            ],
+            guide: '/neighborhoods/williamsburg-nightlife.html'
+          }
+        };
+        function selectQuiz(vibe) {
+          const rec = QUIZ_RECS[vibe];
+          const box = document.getElementById('quiz-result');
+          if (!rec || !box) return;
+          box.innerHTML =
+            '<div class="card" style="margin-top:1rem;">' +
+            '<h3>Your neighborhood: ' + rec.name + '</h3>' +
+            '<p>' + rec.desc + '</p>' +
+            '<p><strong>Start with:</strong> ' + rec.venues.map(v => '<a href="' + v[1] + '">' + v[0] + '</a>').join(' · ') + '</p>' +
+            '<p><a href="' + rec.guide + '">Read the full neighborhood guide →</a> · <a href="/tools/nyc-night-planner.html">Turn it into a 3-stop plan →</a></p>' +
+            '<p class="muted" style="font-size:.9em;">Pick another vibe above to compare.</p>' +
+            '</div>';
+          box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          if (typeof trackEvent === 'function') {
+            trackEvent('tool_neighborhood_quiz_complete', { source: window.location.pathname, vibe: vibe, recommendation: rec.name });
+          }
+        }
+      </script>
     </section>
 
     <section>
@@ -115,45 +185,47 @@
           <p><strong>Vibe:</strong> Eclectic, dive bars, speakeasies, live music</p>
           <p><strong>Best For:</strong> Bar crawls, diverse crowd, classic NYC</p>
           <p><strong>Price:</strong> $8-12 per drink</p>
-          <a href="/guides/best-nightlife-experiences.html">Explore →</a>
+          <a href="/neighborhoods/lower-east-side-nightlife.html">Explore the LES guide →</a>
         </div>
         <div class="card">
           <h3>SoHo</h3>
           <p><strong>Vibe:</strong> Upscale, cocktails, wine bars, lounge scene</p>
           <p><strong>Best For:</strong> Sophisticated night out, quality drinks</p>
           <p><strong>Price:</strong> $14-18 per drink</p>
-          <a href="/guides/best-nightlife-experiences.html">Explore →</a>
+          <a href="/neighborhoods/soho-nightlife.html">Explore the SoHo guide →</a>
         </div>
         <div class="card">
           <h3>Midtown</h3>
           <p><strong>Vibe:</strong> Rooftop bars, networking, business casual</p>
           <p><strong>Best For:</strong> Skyline views, cocktails, after-work crowd</p>
           <p><strong>Price:</strong> $15-20 per drink</p>
-          <a href="/guides/best-nightlife-experiences.html">Explore →</a>
+          <a href="/neighborhoods/midtown-nightlife.html">Explore the Midtown guide →</a>
         </div>
         <div class="card">
           <h3>Meatpacking District</h3>
           <p><strong>Vibe:</strong> Nightclubs, dancing, high-energy, VIP</p>
           <p><strong>Best For:</strong> Club nights, dancing, special events</p>
           <p><strong>Price:</strong> $12-16 per drink + cover</p>
-          <a href="/guides/events-this-weekend.html">Find Events →</a>
+          <a href="/neighborhoods/meatpacking-nightlife.html">Explore the Meatpacking guide →</a>
         </div>
         <div class="card">
           <h3>Williamsburg, Brooklyn</h3>
           <p><strong>Vibe:</strong> Craft beer, trendy, rooftop, hipster</p>
           <p><strong>Best For:</strong> Younger crowd, best value, rooftop lounges</p>
           <p><strong>Price:</strong> $10-14 per drink</p>
-          <a href="/guides/best-nightlife-experiences.html">Explore →</a>
+          <a href="/neighborhoods/williamsburg-nightlife.html">Explore the Williamsburg guide →</a>
         </div>
         <div class="card">
           <h3>Park Slope, Brooklyn</h3>
           <p><strong>Vibe:</strong> Relaxed, neighborhood bars, live music, casual</p>
           <p><strong>Best For:</strong> Budget nightlife, local feel, groups</p>
           <p><strong>Price:</strong> $8-12 per drink</p>
-          <a href="/guides/stay-near-nightlife.html">Find Hotels →</a>
+          <a href="/neighborhoods/park-slope-nightlife.html">Explore the Park Slope guide →</a>
         </div>
       </div>
     </section>
+
+    <p class="muted" style="font-size:.9em;">Price bands reflect typical ranges from our <a href="/venues/">verified venue pages</a>. Last updated: 2026-08-26</p>
 
     <section>
       <h2>How to Use This</h2>
@@ -179,8 +251,8 @@
 
     <section>
       <div class="email-capture">
-        <h3>Get a Neighborhood Map</h3>
-        <p>Free PDF map of all NYC nightlife neighborhoods with venue types and recommendations.</p>
+        <h3>Get the Weekly Brief</h3>
+        <p>New openings, this-weekend winners, and real prices — one short email a week.</p>
         <form class="email-form">
           <input type="email" placeholder="your@email.com" required>
           <button type="submit">Send Map</button>
