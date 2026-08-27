@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NYC was just ranked the best city for nightlife in America, according to Time Out",
+      "url": "https://www.timeout.com/newyork/news/nyc-was-just-ranked-the-best-city-for-nightlife-in-america-according-to-time-out-082626",
+      "source": "Time Out"
+    },
+    {
+      "title": "Magnolia Sets 4K Theatrical Reissue Of Documentary ‘End Of The Century: The Story Of The Ramones’",
+      "url": "http://deadline.com/2026/08/end-of-the-century-the-story-of-the-ramones-re-release-1237051742/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Harry Styles at MSG: How to Get Last-Minute Tickets to His “Together, Together” NYC Residency",
+      "url": "https://consequence.net/2026/08/harry-styles-msg-nyc-residency-last-minute-tickets/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Inside the lavish NYC penthouse that Dolly Parton shared with her former manager: ‘He’s gay … We were like Will and Grace’",
+      "url": "https://nypost.com/2026/08/26/real-estate/inside-dolly-partons-nyc-home-on-fifth-avenue/",
+      "source": "New York Post"
+    },
+    {
+      "title": "A Harry Styles guide to NYC: Where to eat, where to stay and what to do ahead of the singer’s MSG residency",
+      "url": "https://www.timeout.com/newyork/news/a-harry-styles-guide-to-nyc-where-to-eat-where-to-stay-and-what-to-do-ahead-of-the-singers-msg-residency-082626",
+      "source": "Time Out"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
