@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Harry Styles at MSG: How to Get Last-Minute Tickets to His “Together, Together” NYC Residency",
+      "url": "https://consequence.net/2026/08/harry-styles-msg-nyc-residency-last-minute-tickets/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Inside the lavish NYC penthouse that Dolly Parton shared with her former manager: ‘He’s gay … We were like Will and Grace’",
+      "url": "https://nypost.com/2026/08/26/real-estate/inside-dolly-partons-nyc-home-on-fifth-avenue/",
+      "source": "New York Post"
+    },
+    {
+      "title": "A Harry Styles guide to NYC: Where to eat, where to stay and what to do ahead of the singer’s MSG residency",
+      "url": "https://www.timeout.com/newyork/news/a-harry-styles-guide-to-nyc-where-to-eat-where-to-stay-and-what-to-do-ahead-of-the-singers-msg-residency-082626",
+      "source": "Time Out"
+    },
+    {
+      "title": "Harry Styles at Madison Square Garden 2026: stage times, last-minute tickets and ultimate guide",
+      "url": "https://www.timeout.com/newyork/news/harry-styles-at-madison-square-garden-2026-stage-times-last-minute-tickets-and-ultimate-guide-082626",
+      "source": "Time Out"
+    },
+    {
+      "title": "American Medinas: Turning U.S. Cities Into 'Beachheads' for Islam",
+      "url": "https://www.realclearinvestigations.com/articles/2026/08/26/american_medinas_turning_us_cities_into_beachheads_for_islam_1202481.html",
+      "source": "Realclearinvestigations.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
