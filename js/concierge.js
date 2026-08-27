@@ -1,28 +1,118 @@
-/* NYBot v2 — Nyla, the NY Nightlife concierge. Rules-based, answers only from site data.
-   v2: speech bubble above avatar (4s delay, page-aware lines, re-shows after 45 min), multi-pose avatar. */
+/* NYBot v3 — the NY Nightlife concierge cast. Rules-based, answers only from site data.
+   v2: speech bubble above avatar (4s delay, page-aware lines, re-shows after 45 min), multi-pose avatar.
+   v3: per-page mascot routing — neighbourhood pages get their own mascot, everything else gets Nyla. */
 (function () {
   'use strict';
   var VENUES = null, FEED = null;
-  var POSES = ['/assets/nybot-avatar.jpg', '/assets/nybot-avatar-2.jpg', '/assets/nybot-avatar-3.jpg'];
-  var poseOk = [false, false, false];
-  POSES.forEach(function (src, i) {
-    var t = new Image();
-    t.onload = function () { poseOk[i] = true; };
-    t.src = src;
-  });
-  function pose(i) { return poseOk[i] ? POSES[i] : POSES[0]; }
+
+  // ---------- mascot cast ----------
+  // Full-body 3D renders, transparent PNG so she stands free on the page.
+  // Art lives at /assets/mascots/<slug>.png (full body) + <slug>-head.png (256² crop).
+  // Nyla is the default and the ONLY cast member whose files are guaranteed to
+  // exist — her two originals predate the mascots folder, so she doubles as the
+  // fallback for every mascot whose PNGs have not been produced yet.
+  var DEFAULT_SLUG = 'nyla';
+  function mascot(slug, name) {
+    return { name: name, body: '/assets/mascots/' + slug + '.png', head: '/assets/mascots/' + slug + '-head.png' };
+  }
+  var MASCOTS = {
+    'nyla':              { name: 'Nyla', body: '/assets/nyla-full-welcome.png', head: '/assets/nyla-head.png' },
+    'bushwick':          mascot('bushwick', 'Nika'),
+    'williamsburg':      mascot('williamsburg', 'Frankie'),
+    'meatpacking':       mascot('meatpacking', 'Simone'),
+    'upper-east-side':   mascot('upper-east-side', 'Margot'),
+    'upper-west-side':   mascot('upper-west-side', 'Eleanor'),
+    'harlem':            mascot('harlem', 'Josephine'),
+    'east-village':      mascot('east-village', 'Joan'),
+    'west-village':      mascot('west-village', 'Colette'),
+    'hells-kitchen':     mascot('hells-kitchen', 'Birdie'),
+    'midtown':           mascot('midtown', 'Sloane'),
+    'astoria':           mascot('astoria', 'Thea'),
+    'flushing':          mascot('flushing', 'June'),
+    'jackson-heights':   mascot('jackson-heights', 'Alma'),
+    'long-island-city':  mascot('long-island-city', 'Iris'),
+    'park-slope':        mascot('park-slope', 'Nora'),
+    'bed-stuy':          mascot('bed-stuy', 'Zora'),
+    'red-hook':          mascot('red-hook', 'Quinn'),
+    'bronx':             mascot('bronx', 'Lena'),
+    'downtown-brooklyn': mascot('downtown-brooklyn', 'Robin')
+  };
+
+  // Path pattern -> slug, per MASCOT-ROSTER.md "Pages served". Anchored and
+  // tested in order; anything that matches nothing falls through to Nyla.
+  var ROUTES = [
+    [/^\/neighborhoods\/(bushwick|ridgewood)-nightlife\.html$/,             'bushwick'],
+    [/^\/neighborhoods\/(williamsburg|greenpoint)-nightlife\.html$/,        'williamsburg'],
+    [/^\/neighborhoods\/(meatpacking|chelsea)-nightlife\.html$/,            'meatpacking'],
+    [/^\/neighborhoods\/upper-east-side-nightlife\.html$/,                  'upper-east-side'],
+    [/^\/neighborhoods\/upper-west-side-nightlife\.html$/,                  'upper-west-side'],
+    [/^\/neighborhoods\/harlem-nightlife\.html$/,                           'harlem'],
+    [/^\/neighborhoods\/(east-village|lower-east-side)-nightlife\.html$/,   'east-village'],
+    [/^\/neighborhoods\/(west-village|soho)-nightlife\.html$/,              'west-village'],
+    [/^\/neighborhoods\/hells-kitchen-nightlife\.html$/,                    'hells-kitchen'],
+    [/^\/neighborhoods\/(midtown|financial-district)-nightlife\.html$/,     'midtown'],
+    [/^\/neighborhoods\/astoria-nightlife\.html$/,                          'astoria'],
+    [/^\/neighborhoods\/flushing-nightlife\.html$/,                         'flushing'],
+    [/^\/neighborhoods\/jackson-heights-nightlife\.html$/,                  'jackson-heights'],
+    [/^\/neighborhoods\/(long-island-city|dumbo)-nightlife\.html$/,         'long-island-city'],
+    [/^\/neighborhoods\/(park-slope|cobble-hill|forest-hills)-nightlife\.html$/, 'park-slope'],
+    [/^\/neighborhoods\/(bed-stuy|crown-heights)-nightlife\.html$/,         'bed-stuy'],
+    [/^\/neighborhoods\/red-hook-nightlife\.html$/,                         'red-hook'],
+    [/^\/neighborhoods\/bronx-nightlife-guide\.html$/,                      'bronx'],
+    [/^\/boroughs\/bronx-nightlife\.html$/,                                 'bronx'],
+    [/^\/neighborhoods\/downtown-brooklyn-nightlife\.html$/,                'downtown-brooklyn'],
+    [/^\/neighborhoods\/staten-island-nightlife-guide\.html$/,              'downtown-brooklyn'],
+    [/^\/boroughs\/staten-island-nightlife\.html$/,                         'downtown-brooklyn']
+  ];
+
+  function pickMascot() {
+    var p = String(location.pathname || '').toLowerCase();
+    for (var i = 0; i < ROUTES.length; i++) {
+      if (ROUTES[i][0].test(p) && MASCOTS[ROUTES[i][1]]) return ROUTES[i][1];
+    }
+    return DEFAULT_SLUG;
+  }
+
+  // ART is what the widget actually renders. It starts as Nyla — the one cast
+  // member we know is on disk — and only upgrades to the routed mascot once both
+  // of her PNGs have genuinely loaded. A 404 therefore costs nothing: no broken
+  // image, no name/face mismatch, just Nyla. Drop bushwick.png + bushwick-head.png
+  // into site/assets/mascots/ and Nika lights up on the next page view.
+  var SLUG = pickMascot();
+  var WANTED = MASCOTS[SLUG] || MASCOTS[DEFAULT_SLUG];
+  var ART = MASCOTS[DEFAULT_SLUG];
+  window.__nybMascot = DEFAULT_SLUG;
+
+  // Same preload-then-commit pattern as poseOk below, but all-or-nothing across
+  // the pair so the head crop and the body are never from different mascots.
+  function preloadAll(srcs, cb) {
+    var left = srcs.length, ok = true;
+    if (!left) return cb(false);
+    srcs.forEach(function (src) {
+      var t = new Image();
+      t.onload = function () { if (!--left) cb(ok); };
+      t.onerror = function () { ok = false; if (!--left) cb(ok); };
+      t.src = src;
+    });
+  }
+
+  // Poses for the active mascot. Only `welcome` (the body render) exists today;
+  // add more here as they are produced — missing files fall back to POSES[0].
+  var POSES = [ART.body];
+  var poseOk = [true];
+  function pose(i) { return (POSES[i] && poseOk[i]) ? POSES[i] : POSES[0]; }
 
   var AVATAR_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="nybg" cx="50%" cy="35%" r="80%"><stop offset="0%" stop-color="#232746"/><stop offset="100%" stop-color="#0d0f1c"/></radialGradient></defs><rect width="100" height="100" fill="url(#nybg)"/><g><path d="M50 18c-14 0-23 9-24 21-1 9 1 15-3 22-2 4 1 6 3 6h48c2 0 5-2 3-6-4-7-2-13-3-22-1-12-10-21-24-21z" fill="#2a2136"/><ellipse cx="50" cy="44" rx="13" ry="15" fill="#b07d52"/><path d="M37 40c0-9 6-15 13-15s13 6 13 15c-2-6-6-8-13-8s-11 2-13 8z" fill="#231a2e"/><path d="M32 88c2-14 9-20 18-20s16 6 18 20z" fill="#191325"/><circle cx="41" cy="58" r="1.6" fill="#d4af37"/><circle cx="59" cy="58" r="1.6" fill="#d4af37"/></g></svg>';
 
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
-  function track(n) { try { if (window.gtag) gtag('event', n, { event_category: 'nybot' }); } catch (e) {} }
+  function track(n) { try { if (window.gtag) gtag('event', n, { event_category: 'nybot', event_label: window.__nybMascot }); } catch (e) {} }
   function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 
   // ---------- UI ----------
   var bubble = el('button', 'nyb-bubble');
-  bubble.setAttribute('aria-label', 'Chat with Nyla, the nightlife concierge');
+  bubble.setAttribute('aria-label', 'Chat with ' + ART.name + ', the nightlife concierge');
   var bubbleImg = new Image();
   bubbleImg.src = POSES[0];
   bubbleImg.alt = '';
@@ -34,15 +124,35 @@
   panel.setAttribute('aria-label', 'Nightlife concierge chat');
   panel.innerHTML =
     '<div class="nyb-head">' +
-      '<div class="nyb-head-ava"><img src="/assets/nybot-avatar.jpg" alt="" onerror="this.parentNode.innerHTML=window.__nybSvg"></div>' +
-      '<div><div class="nyb-head-name">Nyla</div><div class="nyb-head-sub"><span class="nyb-dot"></span>NYC night concierge</div></div>' +
+      // the header always uses the HEAD crop — a full-body render is unreadable at 44px
+      '<div class="nyb-head-ava"><img src="' + ART.head + '" alt="" onerror="this.parentNode.innerHTML=window.__nybSvg"></div>' +
+      '<div><div class="nyb-head-name">' + esc(ART.name) + '</div><div class="nyb-head-sub"><span class="nyb-dot"></span>NYC night concierge</div></div>' +
       '<button class="nyb-close" aria-label="Close chat">&times;</button>' +
     '</div>' +
     '<div class="nyb-msgs" aria-live="polite"></div>' +
-    '<div class="nyb-typing">Nyla is typing…</div>' +
+    '<div class="nyb-typing">' + esc(ART.name) + ' is typing…</div>' +
     '<div class="nyb-chips"></div>' +
     '<form class="nyb-inrow"><input class="nyb-in" type="text" placeholder="Ask about tonight, a venue, covers…" aria-label="Message" /><button class="nyb-send" type="submit">Ask</button></form>';
   window.__nybSvg = AVATAR_SVG;
+
+  // Commit the routed mascot only if her art really loaded (see ART above).
+  function applyMascot(m) {
+    ART = m;
+    window.__nybMascot = SLUG;
+    POSES[0] = m.body;
+    if (bubbleImg) bubbleImg.src = m.body;
+    bubble.setAttribute('aria-label', 'Chat with ' + m.name + ', the nightlife concierge');
+    var headImg = panel.querySelector('.nyb-head-ava img');
+    if (headImg) headImg.src = m.head;
+    var nameEl = panel.querySelector('.nyb-head-name');
+    if (nameEl) nameEl.textContent = m.name;
+    if (typing) typing.textContent = m.name + ' is typing…';
+  }
+  if (WANTED !== ART) {
+    preloadAll([WANTED.body, WANTED.head], function (ok) {
+      if (ok) applyMascot(WANTED);
+    });
+  }
 
   var msgs, chipsEl, input, typing;
 
@@ -173,7 +283,7 @@
       if (/budget|cost|spend|money|price/.test(t)) return botSay('Rough NYC math: lean night $60–$120, balanced $120–$250, premium $250+. Price your exact night with the <a href="/tools/budget-planner.html">Budget Planner →</a>');
       if (/bushwick|williamsburg|ridgewood|greenpoint|manhattan|brooklyn|queens|village|midtown|chelsea|harlem|les|lower east/.test(t)) return botSay('Neighborhood first is the right instinct. Browse the <a href="/neighborhoods/">neighborhood guides</a> — each lists its verified venues, prices, and late-night logistics.');
       if (/subscribe|newsletter|email|brief/.test(t)) return botSay('Drop your email right here in the chat and I’ll add you to the Thursday brief.');
-      if (/hi|hello|hey|yo\b|sup/.test(t)) return botSay('Hey 🥂 I’m Nyla. Ask me what’s on tonight, what a venue costs, dress codes, rooftops — anything on this site, I know it.');
+      if (/hi|hello|hey|yo\b|sup/.test(t)) return botSay('Hey 🥂 I’m ' + esc(ART.name) + '. Ask me what’s on tonight, what a venue costs, dress codes, rooftops — anything on this site, I know it.');
       if (/thank|thanks|ty\b/.test(t)) return botSay('Anytime. Have a great night out — and pace yourself. 😉');
       botSay('I answer from this site’s verified data — try a venue name ("cover at House of Yes"), <b>tonight</b>, <b>rooftops</b>, <b>free &amp; cheap</b>, or <b>this weekend</b>. Or browse <a href="/venues/">all venue facts</a>.');
     });
@@ -210,13 +320,15 @@
   }
   function showTeaser() {
     if (panel.classList.contains('open') || teaser) return;
-    teaser = el('div', 'nyb-teaser', '<span class="nyb-teaser-txt">' + teaserLine() + '</span>');
+    teaser = el('div', 'nyb-teaser',
+      '<span class="nyb-teaser-txt">' + teaserLine() + '</span>' +
+      '<span class="nyb-teaser-cta">Tap me to ask anything &rarr;</span>');
     teaser.setAttribute('role', 'status');
     teaser.addEventListener('click', function () { open(); });
     document.body.appendChild(teaser);
     if (bubbleImg) bubbleImg.src = pose(1); // she perks up while "talking"
     lsSet('nyb_teased_at', String(Date.now()));
-    setTimeout(teaserGone, 12000);
+    setTimeout(teaserGone, 20000);
   }
 
   // ---------- boot ----------
@@ -224,10 +336,9 @@
     panel.classList.add('open');
     bubble.style.display = 'none';
     teaserGone();
-    var headImg = panel.querySelector('.nyb-head-ava img');
-    if (headImg) headImg.src = pose(2);
+    // header keeps the head crop — a full-body render would be unreadable at 44px
     if (!msgs.children.length) {
-      botSay('Hey, I’m <b>Nyla</b> — the night concierge. Every answer comes from this site’s verified, dated facts. What kind of night are we planning?', 250);
+      botSay('Hey, I’m <b>' + esc(ART.name) + '</b> — the night concierge. Every answer comes from this site’s verified, dated facts. What kind of night are we planning?', 250);
       setChips(DEFAULT_CHIPS);
     }
     track('nybot_open');
@@ -242,6 +353,7 @@
     chipsEl = panel.querySelector('.nyb-chips');
     input = panel.querySelector('.nyb-in');
     typing = panel.querySelector('.nyb-typing');
+    typing.textContent = ART.name + ' is typing…';
     bubble.addEventListener('click', open);
     panel.querySelector('.nyb-close').addEventListener('click', close);
     panel.querySelector('.nyb-inrow').addEventListener('submit', function (e) {
