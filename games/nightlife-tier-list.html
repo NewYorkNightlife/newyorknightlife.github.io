@@ -22,6 +22,7 @@
     .c{background:#14532d;color:#fff}
     .chip{background:#1f2233;border:1px solid #565d7a;border-radius:999px;padding:.45rem .65rem;cursor:grab;font-size:.9rem;user-select:none}
     .chip:active{cursor:grabbing}
+    .chip.selected{outline:2px solid #d4af37;background:#2a2d44}
     .drop-over{outline:2px solid #d2a54a}
     .btn{border:0;border-radius:10px;padding:.7rem 1rem;font-weight:700;cursor:pointer}
     .btn-primary{background:#d2a54a;color:#111}
@@ -95,7 +96,7 @@
     <section class="hero">
       <p class="eyebrow">Nightlife Games · One Core Mechanic (Drag & Drop)</p>
       <h1>Nightlife Tier List — NYC Strategy Edition</h1>
-      <p>Drag priorities into S/A/B/C tiers. We’ll generate a nightlife route strategy based on what you value most.</p>
+      <p>Drag priorities into S/A/B/C tiers — or on a phone, tap a chip, then tap the tier you want it in. We’ll generate a nightlife route strategy based on what you value most.</p>
     </section>
 
     <section class="layout">
@@ -149,6 +150,13 @@
       el.textContent=text;
       el.addEventListener('dragstart', e=>{ e.dataTransfer.setData('text/plain', text); setTimeout(()=>el.classList.add('dragging'),0); });
       el.addEventListener('dragend', ()=> el.classList.remove('dragging'));
+      // Tap-to-place fallback: HTML5 drag-and-drop doesn't exist on touch screens.
+      el.addEventListener('click', e=>{
+        e.stopPropagation();
+        const was = el.classList.contains('selected');
+        document.querySelectorAll('.chip.selected').forEach(c=>c.classList.remove('selected'));
+        if(!was) el.classList.add('selected');
+      });
       return el;
     }
 
@@ -160,6 +168,10 @@
         const text = e.dataTransfer.getData('text/plain');
         const old = [...document.querySelectorAll('.chip')].find(c=>c.textContent===text);
         if(old) zone.appendChild(old);
+      });
+      zone.addEventListener('click', ()=>{
+        const sel = document.querySelector('.chip.selected');
+        if(sel){ if(sel.parentElement!==zone) zone.appendChild(sel); sel.classList.remove('selected'); }
       });
     }
 
