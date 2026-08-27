@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Sonic the Hedgehog's Club Chaos is Coming to NYC",
+      "url": "https://bleedingcool.com/pop-culture/sonic-the-hedgehogs-club-chaos-is-coming-to-nyc/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Ava Dash Says She’s Done with Timelines and Just “Vibing” After the Kyle Cooke Romance Rumors",
+      "url": "https://thoughtcatalog.com/xstockton/2026/08/ava-dash-says-shes-done-with-timelines-and-just-vibing-after-the-kyle-cooke-romance-rumors/",
+      "source": "Thoughtcatalog.com"
+    },
+    {
+      "title": "American Medinas: Turning U.S. cities into ‘beachheads’ for Islam",
+      "url": "https://www.wnd.com/2026/08/american-medinas-turning-u-s-cities-beachheads-islam/",
+      "source": "Wnd.com"
+    },
+    {
+      "title": "NYC was just ranked the best city for nightlife in America, according to Time Out",
+      "url": "https://www.timeout.com/newyork/news/nyc-was-just-ranked-the-best-city-for-nightlife-in-america-according-to-time-out-082626",
+      "source": "Time Out"
+    },
+    {
+      "title": "Magnolia Sets 4K Theatrical Reissue Of Documentary ‘End Of The Century: The Story Of The Ramones’",
+      "url": "http://deadline.com/2026/08/end-of-the-century-the-story-of-the-ramones-re-release-1237051742/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
