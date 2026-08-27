@@ -55,3 +55,26 @@
 /* Skip link (a11y) */
 .nyn-skip { position: absolute; left: -9999px; top: 0; background: var(--nyn-gold); color: #14100a; padding: 10px 16px; z-index: 2000; border-radius: 0 0 8px 0; font-weight: 700; }
 .nyn-skip:focus { left: 0; }
+
+/* ---------------------------------------------------------------------------
+   Heading scale — added 2026-08-27.
+   chrome.css loads on all 262 pages and always AFTER revival.css/main.css,
+   so this is the one place a site-wide type scale can land without touching
+   every file. Fixes: no bare h1/h3/h4 size existed anywhere, so venue-page
+   H1s rendered at the UA default (32px) while `.section h2` rendered up to
+   44.8px — hierarchy was inverted, and h4 was identical in size to body copy.
+   `.hero h1` (revival.css) keeps its own size via higher specificity.
+--------------------------------------------------------------------------- */
+h1 {
+  font-size: clamp(2.125rem, 4.5vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.5em;
+}
+h2, .section h2 {
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+h3 { font-size: 1.25rem; line-height: 1.3; }
+h4 { font-size: 1.0625rem; line-height: 1.35; }
