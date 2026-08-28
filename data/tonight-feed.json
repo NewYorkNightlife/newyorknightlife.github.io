@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "In Focus: The MFA Review: University of Houston",
+      "url": "https://lenscratch.com/2026/08/in-focus-the-mfa-review-university-of-houston/",
+      "source": "Lenscratch.com"
+    },
+    {
+      "title": "Harry Styles' New Together, Together Tour NYC Setlist: First U.S. Show",
+      "url": "http://www.billboard.com/lists/harry-styles-together-together-nyc-new-setlist-first-show/",
+      "source": "Billboard"
+    },
+    {
+      "title": "NYC ‘Rocky Horror’ fans do the 'Time Warp' again for Tim Curry",
+      "url": "https://gothamist.com/news/nyc-rocky-horror-fans-do-the-time-warp-again-for-tim-curry",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Sonic the Hedgehog's Club Chaos is Coming to NYC",
+      "url": "https://bleedingcool.com/pop-culture/sonic-the-hedgehogs-club-chaos-is-coming-to-nyc/",
+      "source": "Bleeding Cool News"
+    },
+    {
+      "title": "Ava Dash Says She’s Done with Timelines and Just “Vibing” After the Kyle Cooke Romance Rumors",
+      "url": "https://thoughtcatalog.com/xstockton/2026/08/ava-dash-says-shes-done-with-timelines-and-just-vibing-after-the-kyle-cooke-romance-rumors/",
+      "source": "Thoughtcatalog.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
