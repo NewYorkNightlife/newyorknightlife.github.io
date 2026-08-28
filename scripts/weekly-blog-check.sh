@@ -263,7 +263,7 @@ fi
 # Tunables: LINKCHECK_HOST_GAP (default 8s), LINKCHECK_JITTER_MAX (default 2.5s)
 # ---------------------------------------------------------------------------
 link_report=$("$PY" - <<'PY' "$LATEST"
-import re,sys,os,time,random,requests
+import re,sys,os,time,random,shutil,subprocess,requests
 from urllib.parse import urlparse
 from collections import defaultdict, deque
 from requests.adapters import HTTPAdapter
@@ -324,18 +324,43 @@ def hit(u):
     except Exception:
         return None
 
+CURL=shutil.which('curl')
+def hit_curl(u):
+    # Some WAFs (Akamai) fingerprint the TLS handshake and reject python-requests
+    # with 403/406 no matter what headers are sent, while the same URL is fine in
+    # a browser. curl presents a different TLS fingerprint, so it settles these.
+    if not CURL:
+        return None
+    try:
+        out=subprocess.run([CURL,'-s','-o','/dev/null','-w','%{http_code}','-L',
+                            '--max-time','25','-A',UA,u],
+                           capture_output=True,text=True,timeout=40)
+        return int(out.stdout.strip() or 0)
+    except Exception:
+        return None
+
+WAF=(403,406,429,999)
 bad=[]; blocked=[]
 for u in order:
     host=urlparse(u).netloc
     pace(host)
     code=hit(u)
-    if code in (403,429):
+    if code in WAF:
         time.sleep(random.uniform(12,25))
         last_hit[host]=time.time()
         code=hit(u)
+    if code is None or code in WAF or code<200 or code>=400:
+        # second opinion from curl before condemning the link
+        time.sleep(random.uniform(2,5))
+        c=hit_curl(u)
+        last_hit[host]=time.time()
+        if c is not None and 200<=c<400:
+            continue
+        if c is not None:
+            code=c
     if code is None:
         bad.append((u,'ERR'))
-    elif code in (403,429):
+    elif code in WAF:
         blocked.append((u,code))
     elif code<200 or code>=400:
         bad.append((u,code))
