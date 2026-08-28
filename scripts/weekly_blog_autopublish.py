@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# RETIRED 2026-08-28 — DO NOT RUN.
+# This auto-publisher generated briefs that could never satisfy weekly-blog-check.sh;
+# it looped every 5 min failing the same checks and killed the Friday cadence for 21 weeks.
+# It ran in WSL under nybotenv; WSL is no longer installed. Briefs are now hand-written
+# by the nynightlife-friday-brief scheduled task. Kept for reference only.
 import datetime as dt
 import html
 import os

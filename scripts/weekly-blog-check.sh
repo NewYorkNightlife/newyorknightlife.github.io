@@ -11,6 +11,29 @@ fi
 
 echo "Latest weekly brief: $LATEST"
 
+# ---------------------------------------------------------------------------
+# Interpreter detection.
+# On Windows/Git Bash `python3` usually resolves to the Microsoft Store stub,
+# which EXISTS on PATH but exits non-zero on any real invocation. So probe each
+# candidate by actually running it rather than trusting `command -v`.
+# ---------------------------------------------------------------------------
+PY=""
+for cand in python3 python py; do
+  if command -v "$cand" >/dev/null 2>&1 && "$cand" -c "import sys" >/dev/null 2>&1; then
+    PY="$cand"; break
+  fi
+done
+if [[ -z "$PY" ]]; then
+  echo "ERROR: no working Python interpreter found (tried python3, python, py)."
+  exit 2
+fi
+if ! "$PY" -c "import requests" >/dev/null 2>&1; then
+  echo "ERROR: Python module 'requests' is not installed for $PY."
+  echo "       Run: $PY -m pip install requests"
+  exit 2
+fi
+echo "Python interpreter: $PY ($("$PY" --version 2>&1))"
+
 # previous weekly brief for comparison gates
 prev=$(ls "$ROOT"/blog/weekly/weekend-brief-*.html 2>/dev/null | sort | tail -n 2 | head -n 1 || true)
 
@@ -74,7 +97,7 @@ if ! grep -q 'rel="noopener' "$LATEST"; then
 fi
 
 # word count range
-words=$(python3 - <<'PY' "$LATEST"
+words=$("$PY" - <<'PY' "$LATEST"
 import re,sys
 t=open(sys.argv[1],encoding='utf-8').read()
 t=re.sub(r'<script[\s\S]*?</script>',' ',t)
@@ -91,7 +114,7 @@ if [[ "$words" -lt 2000 || "$words" -gt 3000 ]]; then
 fi
 
 # source count
-src_count=$(python3 - <<'PY' "$LATEST"
+src_count=$("$PY" - <<'PY' "$LATEST"
 import re,sys
 t=open(sys.argv[1],encoding='utf-8').read().lower()
 i=t.find('<h2>sources</h2>')
@@ -106,7 +129,7 @@ if [[ "$src_count" -lt 4 ]]; then
 fi
 
 # event count + direct-link rule in Live Event Signals
-event_report=$(python3 - <<'PY' "$LATEST"
+event_report=$("$PY" - <<'PY' "$LATEST"
 import re,sys
 t=open(sys.argv[1],encoding='utf-8').read()
 m=re.search(r'<h2>Live Event Signals</h2>([\s\S]*?)(<h2>|$)',t,re.I)
@@ -128,7 +151,7 @@ if grep -q 'FAIL' <<< "$event_report"; then
 fi
 
 # ban internal/template language in reader-facing output
-template_hits=$(python3 - <<'PY' "$LATEST"
+template_hits=$("$PY" - <<'PY' "$LATEST"
 import re,sys
 t=open(sys.argv[1],encoding='utf-8').read().lower()
 plain=re.sub(r'<script[\s\S]*?</script>',' ',t)
@@ -162,7 +185,7 @@ if grep -Eqi 'weekly event signal [0-9]|city context [0-9]|additional weekly cit
 fi
 
 # repeated paragraph boilerplate check
-repeat_report=$(python3 - <<'PY' "$LATEST"
+repeat_report=$("$PY" - <<'PY' "$LATEST"
 import re,sys,collections
 h=open(sys.argv[1],encoding='utf-8').read().lower()
 paras=[re.sub(r'\s+',' ',re.sub(r'<[^>]+>',' ',p)).strip() for p in re.findall(r'<p>([\s\S]*?)</p>',h)]
@@ -192,7 +215,7 @@ fi
 
 # image uniqueness vs previous week
 if [[ -n "$prev" && -f "$prev" ]]; then
-  img_cmp=$(python3 - <<'PY' "$LATEST" "$prev"
+  img_cmp=$("$PY" - <<'PY' "$LATEST" "$prev"
 import re,sys
 n=open(sys.argv[1],encoding='utf-8').read().lower()
 p=open(sys.argv[2],encoding='utf-8').read().lower()
@@ -209,36 +232,119 @@ PY
   fi
 fi
 
-# external link validation
-link_report=$(python3 - <<'PY' "$LATEST"
-import re,sys,requests
+# ---------------------------------------------------------------------------
+# External link validation -- deliberately SLOW and polite.
+#
+# Venue/ticketing WAFs (Mercury East, Bowery Presents, LPR, dice.fm,
+# Ticketmaster, Pier 17, City Parks Foundation) will 403 a burst of requests
+# from a single IP even when every link is perfectly good. The old fast checker
+# produced rotating false failures on a different host each run, which looks
+# identical to a real broken link and wasted publishing time chasing ghosts.
+#
+# Mitigations:
+#   * real browser User-Agent (the default python-requests UA is widely blocked)
+#   * GET with stream=True instead of HEAD-then-GET: halves the request count,
+#     and many WAFs reject HEAD outright. Body is never downloaded.
+#   * round-robin across hosts so consecutive requests hit different domains
+#   * randomised jitter before every request
+#   * enforced minimum gap between two hits on the SAME host
+#   * one slow randomised retry on 403/429 before giving up
+#
+# Classification:
+#   OK       2xx/3xx
+#   BLOCKED  403/429 after retry. Bot protection, NOT proof of a broken link.
+#            Listed for manual review; does NOT fail the gate.
+#   BAD      404/410/5xx/connection error. Genuinely broken -> FAILS the gate.
+#
+# The page's own canonical / og:url is skipped: a brand-new brief has not been
+# deployed yet, so its own URL always 404s pre-publish. Checking it made a clean
+# pre-publish run impossible and forced publishing on a known-failing gate.
+#
+# Tunables: LINKCHECK_HOST_GAP (default 8s), LINKCHECK_JITTER_MAX (default 2.5s)
+# ---------------------------------------------------------------------------
+link_report=$("$PY" - <<'PY' "$LATEST"
+import re,sys,os,time,random,requests
+from urllib.parse import urlparse
+from collections import defaultdict, deque
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 html=open(sys.argv[1],encoding='utf-8').read()
 urls=sorted(set(re.findall(r'href="(https?://[^"]+)"', html)))
 
+self_urls=set(re.findall(r'<link[^>]+rel="canonical"[^>]+href="([^"]+)"',html))
+self_urls|=set(re.findall(r'<meta[^>]+property="og:url"[^>]+content="([^"]+)"',html))
+skipped=[u for u in urls if u in self_urls]
+urls=[u for u in urls if u not in self_urls]
+
+HOST_GAP=float(os.environ.get('LINKCHECK_HOST_GAP','8'))
+JITTER=float(os.environ.get('LINKCHECK_JITTER_MAX','2.5'))
+UA=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
+
 s=requests.Session()
-retries=Retry(total=2, backoff_factor=0.3, status_forcelist=[429,500,502,503,504], allowed_methods=["HEAD","GET"])
+s.headers.update({
+ "User-Agent":UA,
+ "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+ "Accept-Language":"en-US,en;q=0.9",
+ "Upgrade-Insecure-Requests":"1",
+})
+retries=Retry(total=2, backoff_factor=1.5, status_forcelist=[500,502,503,504],
+              allowed_methods=["GET"], respect_retry_after_header=True)
 s.mount('http://', HTTPAdapter(max_retries=retries))
 s.mount('https://', HTTPAdapter(max_retries=retries))
 
-bad=[]
+# round-robin across hosts so we never hit one domain twice in a row
+by_host=defaultdict(deque)
 for u in urls:
-    try:
-        r=s.head(u, allow_redirects=True, timeout=12)
-        code=r.status_code
-        if code>=400 or code<200:
-            r=s.get(u, allow_redirects=True, timeout=12)
-            code=r.status_code
-        if code<200 or code>=400:
-            bad.append((u,code))
-    except Exception:
-        bad.append((u,'ERR'))
+    by_host[urlparse(u).netloc].append(u)
+order=[]
+while by_host:
+    for h in list(by_host.keys()):
+        order.append(by_host[h].popleft())
+        if not by_host[h]:
+            del by_host[h]
 
-print(f"external_urls={len(urls)} bad={len(bad)}")
+last_hit={}
+def pace(host):
+    prev=last_hit.get(host)
+    if prev is not None:
+        gap=HOST_GAP-(time.time()-prev)
+        if gap>0:
+            time.sleep(gap)
+    time.sleep(random.uniform(0.6,JITTER))
+    last_hit[host]=time.time()
+
+def hit(u):
+    try:
+        r=s.get(u, allow_redirects=True, timeout=25, stream=True)
+        code=r.status_code
+        r.close()
+        return code
+    except Exception:
+        return None
+
+bad=[]; blocked=[]
+for u in order:
+    host=urlparse(u).netloc
+    pace(host)
+    code=hit(u)
+    if code in (403,429):
+        time.sleep(random.uniform(12,25))
+        last_hit[host]=time.time()
+        code=hit(u)
+    if code is None:
+        bad.append((u,'ERR'))
+    elif code in (403,429):
+        blocked.append((u,code))
+    elif code<200 or code>=400:
+        bad.append((u,code))
+
+print(f"external_urls={len(urls)} bad={len(bad)} blocked={len(blocked)} skipped_self={len(skipped)}")
 for u,c in bad[:10]:
     print(f"BAD {c} {u}")
+for u,c in blocked[:10]:
+    print(f"BLOCKED {c} {u}")
 if bad:
     print('FAIL')
 else:
@@ -246,15 +352,20 @@ else:
 PY
 )
 echo "Link check: ${link_report%%$'\n'*}"
+if grep -q '^BLOCKED' <<< "$link_report"; then
+  echo "$link_report" | grep '^BLOCKED'
+  echo "NOTE: BLOCKED = bot protection (403/429), not a broken link. Open each in a"
+  echo "      browser to confirm before publishing. This does not fail the gate."
+fi
 if grep -q 'FAIL' <<< "$link_report"; then
-  echo "$link_report" | sed -n '2,12p'
+  echo "$link_report" | grep '^BAD'
   echo "WARN: one or more external links failed validation"
   warn=1
 fi
 
 # uniqueness check against previous weekly brief
 if [[ -n "$prev" && -f "$prev" ]]; then
-  uniq_report=$(python3 - <<'PY' "$LATEST" "$prev"
+  uniq_report=$("$PY" - <<'PY' "$LATEST" "$prev"
 import re,sys
 new=open(sys.argv[1],encoding='utf-8').read().lower()
 old=open(sys.argv[2],encoding='utf-8').read().lower()
