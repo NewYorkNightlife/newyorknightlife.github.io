@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Alden Hellmuth – Tether (2026)",
+      "url": "https://exystence.net/blog/2026/08/27/alden-hellmuth-tether-2026/",
+      "source": "Exystence.net"
+    },
+    {
+      "title": "30 Nights Of Harry Styles And A New York Spending Boom",
+      "url": "https://www.forbes.com/sites/katehardcastle/2026/08/27/30-nights-of-harry-styles-and-a-new-york-spending-boom/",
+      "source": "Forbes"
+    },
+    {
+      "title": "New York Comic Con Unveils 2026 Professional Schedule Lineup, Including ‘Dungeon Crawler Carl’ Author-NBCUniversal TV Panel (EXCLUSIVE)",
+      "url": "https://variety.com/2026/tv/news/new-york-comic-con-2026-professional-schedule-1236845262/",
+      "source": "Variety"
+    },
+    {
+      "title": "KPEX: Korean Pop Culture Expo Launches in 2027 in New York City",
+      "url": "https://www.animenewsnetwork.com/press-release/2026-08-27/kpex-korean-pop-culture-expo-launches-in-2027-in-new-york-city/.241043",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Taste of Iceland Festival Arrives in New York City October 1-3",
+      "url": "https://www.prnewswire.com/news-releases/taste-of-iceland-festival-arrives-in-new-york-city-october-1-3-302862000.html",
+      "source": "PRNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
