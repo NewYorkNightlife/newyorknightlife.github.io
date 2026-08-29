@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Dark Comedy ‘Buddy’, Thriller ‘Colony’, John Boorman Doc Hit Theaters – Specialty Preview",
+      "url": "http://deadline.com/2026/08/indie-films-opening-buddy-colony-boorman-and-the-devil-1237062088/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Rest In Rock",
+      "url": "https://www.spinmagazine.com/2026/08/rest-in-rock/",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "The best way to experience NYC fall foliage is on these scenic Hudson River cruises, and tickets are on sale right now",
+      "url": "https://www.timeout.com/newyork/news/the-best-way-to-experience-nyc-fall-foliage-is-on-these-scenic-hudson-river-cruises-and-tickets-are-on-sale-right-now-082826",
+      "source": "Time Out"
+    },
+    {
+      "title": "Celebrate Dolly Parton in New York this weekend with dancing and drag",
+      "url": "https://gothamist.com/arts-entertainment/celebrate-dolly-parton-in-new-york-this-weekend-with-dancing-and-drag",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Master Blaster: the Dave Marsh Experience",
+      "url": "https://www.counterpunch.org/2026/08/28/master-blaster-the-dave-marsh-experience/",
+      "source": "CounterPunch"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
