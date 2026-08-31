@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Trump's empire hinges on his name — but four others threaten to devour it whole",
+      "url": "https://www.rawstory.com/raw-investigates/dolly-parton/",
+      "source": "Raw Story"
+    },
+    {
+      "title": "Taylor Swift donates $50,000 to brave woman injured while helping accident victims",
+      "url": "https://www.nzherald.co.nz/entertainment/taylor-swift-donates-50000-to-brave-woman-injured-while-helping-accident-victims/BSHFOZ6H6FADXLKPURPOYYZDLE/",
+      "source": "New Zealand Herald"
+    },
+    {
+      "title": "Meltdown over influencer duo Halley Kate and Jaz's 'third wheel' Greta: Insiders reveal ugly whispers about model's ulterior motive for befriending pair... as evidence that she's REPLACING Jaz mounts",
+      "url": "https://www.dailymail.com/lifestyle/article-16076921/tiktok-halley-kate-jaz-greta-louise-tome.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Dark Comedy ‘Buddy’, Thriller ‘Colony’, John Boorman Doc Hit Theaters – Specialty Preview",
+      "url": "http://deadline.com/2026/08/indie-films-opening-buddy-colony-boorman-and-the-devil-1237062088/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Rest In Rock",
+      "url": "https://www.spinmagazine.com/2026/08/rest-in-rock/",
+      "source": "Spinmagazine.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
