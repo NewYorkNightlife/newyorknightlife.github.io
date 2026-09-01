@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Harry Styles, King of Flat Shoes, Laces Up Celine Sneakers in NYC",
+      "url": "http://wwd.com/footwear-news/sneaker-news/harry-styles-celine-sneakers-nyc-msg-residency-1239175816/",
+      "source": "WWD"
+    },
+    {
+      "title": "'Frustrated' Taylor Swift and Travis Kelce are hardly seeing each other: 'She knew the honeymoon would be short. She knew what she signed up for'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16085663/taylor-swift-travis-kelce-honeymoon-frustration.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "A high old time! More than half of NYC senior citizens now use weed simply ‘to get high’: study",
+      "url": "https://nypost.com/2026/08/30/us-news/more-than-half-of-nyc-senior-citizens-use-weed-simply-to-get-high-study/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Trump's empire hinges on his name — but four others threaten to devour it whole",
+      "url": "https://www.rawstory.com/raw-investigates/dolly-parton/",
+      "source": "Raw Story"
+    },
+    {
+      "title": "Taylor Swift donates $50,000 to brave woman injured while helping accident victims",
+      "url": "https://www.nzherald.co.nz/entertainment/taylor-swift-donates-50000-to-brave-woman-injured-while-helping-accident-victims/BSHFOZ6H6FADXLKPURPOYYZDLE/",
+      "source": "New Zealand Herald"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
