@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Over 100 New Yorkers are coming together to create a live album in Central Park",
+      "url": "https://www.timeout.com/newyork/news/over-100-new-yorkers-are-coming-together-to-create-a-live-album-in-central-park-090126",
+      "source": "Time Out"
+    },
+    {
+      "title": "Tennis stars take over NYC, Bebe Rexha celebrates her birthday and more sightings",
+      "url": "https://pagesix.com/2026/08/31/society/tennis-stars-take-over-nyc-bebe-rexha-celebrates-her-birthday-and-more-sightings/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Everything New on Streaming in September: Netflix, HBO Max and More",
+      "url": "https://www.thewrap.com/creative-content/what-to-watch/everything-new-on-streaming-september-2026/",
+      "source": "TheWrap"
+    },
+    {
+      "title": "Harry Styles, King of Flat Shoes, Laces Up Celine Sneakers in NYC",
+      "url": "http://wwd.com/footwear-news/sneaker-news/harry-styles-celine-sneakers-nyc-msg-residency-1239175816/",
+      "source": "WWD"
+    },
+    {
+      "title": "'Frustrated' Taylor Swift and Travis Kelce are hardly seeing each other: 'She knew the honeymoon would be short. She knew what she signed up for'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16085663/taylor-swift-travis-kelce-honeymoon-frustration.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
