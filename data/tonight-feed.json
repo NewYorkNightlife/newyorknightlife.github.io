@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Nutjob threatens singer Pink in deranged email sent to NYC hotel: sources",
+      "url": "https://nypost.com/2026/09/01/us-news/nutjob-threatens-singer-pink-deranged-email-sent-nyc-hotel/",
+      "source": "New York Post"
+    },
+    {
+      "title": "September at the movies in NYC: Occult scenes, concrete dreams",
+      "url": "https://gothamist.com/arts-entertainment/september-at-the-movies-in-nyc-occult-scenes-concrete-dreams",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Oso Oso Announces New Album an exchange of information, Reveals “know you know me better”: Stream",
+      "url": "https://consequence.net/2026/09/oso-oso-new-album-an-exchange-of-information-new-song-know-you-know-me-better-stream/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Invisible Companies",
+      "url": "https://colossus.com/article/invisible-companies/",
+      "source": "Colossus.com"
+    },
+    {
+      "title": "Where Sherri McMullen Finds Style Inspiration in NYC",
+      "url": "http://www.thecut.com/article/sherri-mcmullen-tastemakers.html",
+      "source": "The Cut"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
