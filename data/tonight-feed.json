@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Archtober, New York City's architecture and design festival, launches 16th edition with newsstand collaboration",
+      "url": "https://archinect.com/news/article/150559951/archtober-new-york-city-s-architecture-and-design-festival-launches-16th-edition-with-newsstand-collaboration",
+      "source": "Archinect"
+    },
+    {
+      "title": "Gorillaz House of Kong in NYC: Everything to know",
+      "url": "https://www.thefader.com/2026/09/03/gorillaz-house-of-kong-in-nyc-everything-to-know",
+      "source": "The FADER"
+    },
+    {
+      "title": "The Longreads Questionnaire, Featuring Jon Ronson",
+      "url": "https://longreads.com/2026/09/03/longreads-questionnaire-jon-ronson/",
+      "source": "Longreads.com"
+    },
+    {
+      "title": "Moncler Celebrates NYC With Retrospective Exhibition",
+      "url": "http://wwd.com/fashion-news/designer-luxury/moncler-celebratess-new-york-city-retrospective-exhibition-1239194125/",
+      "source": "WWD"
+    },
+    {
+      "title": "One Source, Two Centuries: Frances Tiafoe and Evian’s 200 Years Young",
+      "url": "http://coolhunting.com/culture/one-source-two-centuries-frances-tiafoe-and-evians-200-years-young/",
+      "source": "Cool Hunting"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
