@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Grammy-winning jazz musician Cassandra Wilson dead at 70",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16100955/cassandra-wilson-death-jazz-grammy.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Cassandra Wilson Dead: Grammy-Winning Jazz Musician Was 70",
+      "url": "http://deadline.com/2026/09/cassandra-wilson-dead-1237066244/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Now Hear This: September 2026",
+      "url": "https://www.spinmagazine.com/2026/09/now-hear-this-september-2026/",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "The ‘Unexpected Alchemy’ and NYC Ghosts Behind Interpol’s Return",
+      "url": "http://www.rollingstone.com/music/music-features/interpol-new-music-nyc-interview-1235618913/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Nutjob threatens singer Pink in deranged email sent to NYC hotel: sources",
+      "url": "https://nypost.com/2026/09/01/us-news/nutjob-threatens-singer-pink-deranged-email-sent-nyc-hotel/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
