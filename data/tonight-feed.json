@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Longreads Questionnaire, Featuring Jon Ronson",
+      "url": "https://longreads.com/2026/09/03/longreads-questionnaire-jon-ronson/",
+      "source": "Longreads.com"
+    },
+    {
+      "title": "Moncler Celebrates NYC With Retrospective Exhibition",
+      "url": "http://wwd.com/fashion-news/designer-luxury/moncler-celebratess-new-york-city-retrospective-exhibition-1239194125/",
+      "source": "WWD"
+    },
+    {
+      "title": "One Source, Two Centuries: Frances Tiafoe and Evian’s 200 Years Young",
+      "url": "http://coolhunting.com/culture/one-source-two-centuries-frances-tiafoe-and-evians-200-years-young/",
+      "source": "Cool Hunting"
+    },
+    {
+      "title": "Grammy-winning jazz musician Cassandra Wilson dead at 70",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16100955/cassandra-wilson-death-jazz-grammy.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Cassandra Wilson Dead: Grammy-Winning Jazz Musician Was 70",
+      "url": "http://deadline.com/2026/09/cassandra-wilson-dead-1237066244/",
+      "source": "Deadline"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
