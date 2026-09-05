@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Broadway Stars to Transform Iconic Showtunes Into Punk & Rock Anthems for Special Concert Series",
+      "url": "https://www.justjared.com/2026/09/04/broadway-stars-to-transform-iconic-showtunes-into-punk-rock-anthems-for-special-concert-series/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "The 5 best fun runs in New York this fall",
+      "url": "https://www.timeout.com/newyork/news/the-5-best-fun-runs-in-new-york-this-fall-090326",
+      "source": "Time Out"
+    },
+    {
+      "title": "The 10 best things to do over Labor Day Weekend in NYC",
+      "url": "https://www.timeout.com/newyork/news/the-10-best-things-to-do-over-labor-day-weekend-in-nyc-090326",
+      "source": "Time Out"
+    },
+    {
+      "title": "Archtober, New York City's architecture and design festival, launches 16th edition with newsstand collaboration",
+      "url": "https://archinect.com/news/article/150559951/archtober-new-york-city-s-architecture-and-design-festival-launches-16th-edition-with-newsstand-collaboration",
+      "source": "Archinect"
+    },
+    {
+      "title": "Gorillaz House of Kong in NYC: Everything to know",
+      "url": "https://www.thefader.com/2026/09/03/gorillaz-house-of-kong-in-nyc-everything-to-know",
+      "source": "The FADER"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
