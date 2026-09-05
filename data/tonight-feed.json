@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Fallen by Louise Brangan on $75,000 Cundill History Prize shortlist",
+      "url": "https://www.irishtimes.com/culture/books/2026/09/04/the-fallen-by-louise-brangan-on-75000-cundill-history-prize-shortlist/",
+      "source": "The Irish Times"
+    },
+    {
+      "title": "Broadway Stars to Transform Iconic Showtunes Into Punk & Rock Anthems for Special Concert Series",
+      "url": "https://www.justjared.com/2026/09/04/broadway-stars-to-transform-iconic-showtunes-into-punk-rock-anthems-for-special-concert-series/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "The 5 best fun runs in New York this fall",
+      "url": "https://www.timeout.com/newyork/news/the-5-best-fun-runs-in-new-york-this-fall-090326",
+      "source": "Time Out"
+    },
+    {
+      "title": "The 10 best things to do over Labor Day Weekend in NYC",
+      "url": "https://www.timeout.com/newyork/news/the-10-best-things-to-do-over-labor-day-weekend-in-nyc-090326",
+      "source": "Time Out"
+    },
+    {
+      "title": "Archtober, New York City's architecture and design festival, launches 16th edition with newsstand collaboration",
+      "url": "https://archinect.com/news/article/150559951/archtober-new-york-city-s-architecture-and-design-festival-launches-16th-edition-with-newsstand-collaboration",
+      "source": "Archinect"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
