@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A lost archive of NYC 9/11 street art memorials comes back online",
+      "url": "https://gothamist.com/arts-entertainment/a-lost-archive-of-nyc-911-street-art-memorials-comes-back-online",
+      "source": "Gothamist"
+    },
+    {
+      "title": "This Labor Day, It’s Time for a New Social Contract With Workers",
+      "url": "https://observer.com/2026/09/labor-day-independent-workers-social-contract/",
+      "source": "Observer"
+    },
+    {
+      "title": "Garmin vs. Coros: Which running watch has the legs for marathon day?",
+      "url": "https://nypost.com/shopping/garmin-vs-coros-running-watch-review/",
+      "source": "New York Post"
+    },
+    {
+      "title": "In 2015, NYC crews cut 11,000 love locks from the Brooklyn Bridge after their weight snapped a lamp wire; 2016 signs brought a $100 fine",
+      "url": "https://timesofindia.indiatimes.com/world/us/in-2015-nyc-crews-cut-11000-love-locks-from-the-brooklyn-bridge-after-their-weight-snapped-a-lamp-wire-2016-signs-brought-a-100-fine/articleshow/133879930.cms",
+      "source": "The Times of India"
+    },
+    {
+      "title": "The Art of NYC Streets",
+      "url": "https://www.printmag.com/creative-voices/the-art-of-nyc-streets/",
+      "source": "Printmag.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
