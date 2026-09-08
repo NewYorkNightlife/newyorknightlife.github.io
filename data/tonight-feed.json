@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "I left Austin for NYC 7 years ago. Here are 9 things I still miss about my old life, and 3 reminders of why I moved.",
+      "url": "https://www.businessinsider.com/moving-from-austin-to-new-york-city-pros-cons-2026-9#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Sick of that NYC ice cream truck jingle? Here’s when it breaks the rules.",
+      "url": "https://gothamist.com/news/sick-of-that-nyc-ice-cream-truck-jingle-heres-when-it-breaks-the-rules",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Woke 1 was about identity. Woke 2 is about class",
+      "url": "https://www.nrc.nl/nieuws/2026/09/04/woke-1-was-about-identity-woke-2-is-about-class-a4935902",
+      "source": "Www.nrc.nl"
+    },
+    {
+      "title": "NYC’s hottest Caribbean chefs dish on where to enjoy a taste of the islands ahead of the West Indian Day Parade",
+      "url": "https://nypost.com/2026/09/04/lifestyle/nycs-hottest-caribbean-chefs-dish-on-where-to-eat/",
+      "source": "New York Post"
+    },
+    {
+      "title": "The Fallen by Louise Brangan on $75,000 Cundill History Prize shortlist",
+      "url": "https://www.irishtimes.com/culture/books/2026/09/04/the-fallen-by-louise-brangan-on-75000-cundill-history-prize-shortlist/",
+      "source": "The Irish Times"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
