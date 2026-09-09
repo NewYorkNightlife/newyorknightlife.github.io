@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A Sweaty Scrapbook of New Yorkers Going Out This Summer",
+      "url": "http://www.thecut.com/article/new-yorkers-going-out-this-summer.html",
+      "source": "The Cut"
+    },
+    {
+      "title": "Newlyweds Taylor Swift and Travis Kelce step out for romantic date night in NYC: See the pics",
+      "url": "https://pagesix.com/2026/09/07/entertainment/newlyweds-taylor-swift-and-travis-kelce-step-out-for-romantic-date-night-in-nyc/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Mamdani, Hochul march in NYC’s West Indian Day Parade as revelers whine about beefed-up security",
+      "url": "https://nypost.com/2026/09/07/us-news/mamdani-hochul-march-in-west-indian-day-parade-in-nyc/",
+      "source": "New York Post"
+    },
+    {
+      "title": "A lost archive of NYC 9/11 street art memorials comes back online",
+      "url": "https://gothamist.com/arts-entertainment/a-lost-archive-of-nyc-911-street-art-memorials-comes-back-online",
+      "source": "Gothamist"
+    },
+    {
+      "title": "This Labor Day, It’s Time for a New Social Contract With Workers",
+      "url": "https://observer.com/2026/09/labor-day-independent-workers-social-contract/",
+      "source": "Observer"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
