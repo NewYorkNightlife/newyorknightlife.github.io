@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Artist and downtown darling, Lucien Smith, dead at 37",
+      "url": "https://pagesix.com/2026/09/08/society/artist-and-downtown-darling-lucien-smith-dead-at-37/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Joe Hisaishi Presents his new DG Album The Boy and the Heron Symphonic Suite for Piano and Orchestra",
+      "url": "https://www.animenewsnetwork.com/press-release/2026-09-08/joe-hisaishi-presents-his-new-dg-album-the-boy-and-the-heron-symphonic-suite-for-piano-and-orchestra/.241535",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Erykah Badu, H.E.R. & Kwn to Perform at R&B X Live in Dallas",
+      "url": "http://www.billboard.com/music/rb-hip-hop/erykah-badu-her-kwn-spotify-rb-x-live-dallas-lineup-1236335345/",
+      "source": "Billboard"
+    },
+    {
+      "title": "The Wasian Generation",
+      "url": "http://www.vulture.com/article/the-wasian-generation.html",
+      "source": "Vulture"
+    },
+    {
+      "title": "A Sweaty Scrapbook of New Yorkers Going Out This Summer",
+      "url": "http://www.thecut.com/article/new-yorkers-going-out-this-summer.html",
+      "source": "The Cut"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
