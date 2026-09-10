@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Alexandra Pechman Came of Age in Pre-#MeToo New York — Her First Feature ‘Magazine’ Tackles the Time with a Light Touch",
+      "url": "https://www.indiewire.com/features/interviews/alexandra-pechman-magazine-pre-metoo-interview-cast-tiff-1235214837/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "Sun Shines on Revelers at 59th Annual West Indian Day Parade",
+      "url": "http://www.brownstoner.com/brooklyn-life/west-indian-day-carnival-parade-caribbean-2026/",
+      "source": "Brownstoner.com"
+    },
+    {
+      "title": "Apoorva Mukhija seen cosying up to DJ Amin. Who is her rumoured new man, Amin Jaz? His education, career and net worth",
+      "url": "https://economictimes.indiatimes.com/magazines/panache/apoorva-mukhija-seen-cosying-up-to-dj-amin-who-is-her-rumoured-new-man-amin-jaz-his-education-career-and-net-worth/articleshow/133963914.cms",
+      "source": "The Times of India"
+    },
+    {
+      "title": "Homeschooling explodes 200% in NYC as frustrated families reject Big Apple’s failing public school system",
+      "url": "https://nypost.com/2026/09/09/lifestyle/why-nyc-parents-are-homeschooling-their-kids-in-2026/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Rushes | Remembering Dolly Parton, A24 Teases Nathan Fielder's Elizabeth Holmes Doc, the 100 Most-Screened Films in NYC",
+      "url": "https://mubi.com/en/notebook/posts/rushes-remembering-dolly-parton-a24-teases-nathan-fielder-s-elizabeth-holmes-doc-the-100-most-screened-films-in-nyc",
+      "source": "Mubi.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
