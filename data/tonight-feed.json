@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Rushes | Remembering Dolly Parton, A24 Teases Nathan Fielder's Elizabeth Holmes Doc, the 100 Most-Screened Films in NYC",
+      "url": "https://mubi.com/en/notebook/posts/rushes-remembering-dolly-parton-a24-teases-nathan-fielder-s-elizabeth-holmes-doc-the-100-most-screened-films-in-nyc",
+      "source": "Mubi.com"
+    },
+    {
+      "title": "Westlife in Dublin, Harry Styles in NYC: Ireland loses out as major acts favour residencies",
+      "url": "https://www.irishtimes.com/culture/music/2026/09/09/westlife-in-dublin-harry-styles-in-nyc-ireland-will-be-the-big-loser-in-major-acts-performing-long-runs-in-one-place/",
+      "source": "The Irish Times"
+    },
+    {
+      "title": "Artist and downtown darling, Lucien Smith, dead at 37",
+      "url": "https://pagesix.com/2026/09/08/society/artist-and-downtown-darling-lucien-smith-dead-at-37/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Joe Hisaishi Presents his new DG Album The Boy and the Heron Symphonic Suite for Piano and Orchestra",
+      "url": "https://www.animenewsnetwork.com/press-release/2026-09-08/joe-hisaishi-presents-his-new-dg-album-the-boy-and-the-heron-symphonic-suite-for-piano-and-orchestra/.241535",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Erykah Badu, H.E.R. & Kwn to Perform at R&B X Live in Dallas",
+      "url": "http://www.billboard.com/music/rb-hip-hop/erykah-badu-her-kwn-spotify-rb-x-live-dallas-lineup-1236335345/",
+      "source": "Billboard"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
