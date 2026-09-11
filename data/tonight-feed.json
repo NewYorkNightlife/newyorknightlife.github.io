@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Alicia Keys ‘and Friends,’ Victoria Monet, More Join Global Citizen Festival Lineup",
+      "url": "https://variety.com/2026/music/news/alicia-keys-victoria-monet-2026-global-citizen-festival-lineup-1236857295/",
+      "source": "Variety"
+    },
+    {
+      "title": "New Lower East Side Restaurant is a Hallmark of China's Resurgent Rust Belt",
+      "url": "https://www.prnewswire.com/news-releases/new-lower-east-side-restaurant-is-a-hallmark-of-chinas-resurgent-rust-belt-302874695.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Harry Styles faces backlash for tour imagery ahead of 9/11 anniversary",
+      "url": "https://www.thepinknews.com/2026/09/10/harry-styles-new-york-tour-ticket-backlash/",
+      "source": "Thepinknews.com"
+    },
+    {
+      "title": "COACH CELEBRATES 85TH ANNIVERSARY WITH SPRING 2027 COLLECTION",
+      "url": "https://www.prnewswire.com/news-releases/coach-celebrates-85th-anniversary-with-spring-2027-collection-302874651.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Fans outraged at Harry Styles over ‘insane’ NYC concert ticket with eerie nod to 9/11 — 2 days before 25th anniversary: ‘Who approved this?’",
+      "url": "https://pagesix.com/2026/09/09/celebrity-news/fans-outraged-at-harry-styles-over-insane-nyc-concert-ticket-with-eerie-nod-to-9-11/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
