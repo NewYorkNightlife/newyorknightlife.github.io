@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Fans outraged at Harry Styles over ‘insane’ NYC concert ticket with eerie nod to 9/11 — 2 days before 25th anniversary: ‘Who approved this?’",
+      "url": "https://pagesix.com/2026/09/09/celebrity-news/fans-outraged-at-harry-styles-over-insane-nyc-concert-ticket-with-eerie-nod-to-9-11/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Bank of America exec killed in random Times Square stabbing laid to rest as hundreds mourn young mom",
+      "url": "https://www.foxnews.com/us/bank-of-america-exec-killed-random-times-square-stabbing-laid-rest-hundreds-mourn-young-mom",
+      "source": "Fox News"
+    },
+    {
+      "title": "Battery Park City just announced its fall 2026 programming, including the return of New York’s most stunning light-art festival",
+      "url": "https://www.timeout.com/newyork/news/battery-park-city-just-announced-its-fall-2026-programming-including-the-return-of-new-yorks-most-stunning-light-art-festival-090926",
+      "source": "Time Out"
+    },
+    {
+      "title": "Alexandra Pechman Came of Age in Pre-#MeToo New York — Her First Feature ‘Magazine’ Tackles the Time with a Light Touch",
+      "url": "https://www.indiewire.com/features/interviews/alexandra-pechman-magazine-pre-metoo-interview-cast-tiff-1235214837/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "Sun Shines on Revelers at 59th Annual West Indian Day Parade",
+      "url": "http://www.brownstoner.com/brooklyn-life/west-indian-day-carnival-parade-caribbean-2026/",
+      "source": "Brownstoner.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
