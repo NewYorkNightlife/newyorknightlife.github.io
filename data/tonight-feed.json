@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "New Lower East Side Restaurant is a Hallmark of China's Resurgent Rust Belt",
+      "url": "https://www.prnewswire.com/news-releases/new-lower-east-side-restaurant-is-a-hallmark-of-chinas-resurgent-rust-belt-302874695.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Harry Styles faces backlash for tour imagery ahead of 9/11 anniversary",
+      "url": "https://www.thepinknews.com/2026/09/10/harry-styles-new-york-tour-ticket-backlash/",
+      "source": "Thepinknews.com"
+    },
+    {
+      "title": "COACH CELEBRATES 85TH ANNIVERSARY WITH SPRING 2027 COLLECTION",
+      "url": "https://www.prnewswire.com/news-releases/coach-celebrates-85th-anniversary-with-spring-2027-collection-302874651.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Fans outraged at Harry Styles over ‘insane’ NYC concert ticket with eerie nod to 9/11 — 2 days before 25th anniversary: ‘Who approved this?’",
+      "url": "https://pagesix.com/2026/09/09/celebrity-news/fans-outraged-at-harry-styles-over-insane-nyc-concert-ticket-with-eerie-nod-to-9-11/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Bank of America exec killed in random Times Square stabbing laid to rest as hundreds mourn young mom",
+      "url": "https://www.foxnews.com/us/bank-of-america-exec-killed-random-times-square-stabbing-laid-rest-hundreds-mourn-young-mom",
+      "source": "Fox News"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
