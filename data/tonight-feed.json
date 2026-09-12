@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Dionne Warwick to Be Honored at 2026 Angel Ball in NYC",
+      "url": "http://www.billboard.com/music/music-news/dionne-warwick-to-be-honored-2026-angel-ball-in-nyc-1236337996/",
+      "source": "Billboard"
+    },
+    {
+      "title": "Wet Leg’s Rhian Teasdale is the star of Milk Makeup’s NYC-set short film",
+      "url": "https://www.thefader.com/2026/09/10/wet-leg-rhian-teasdale-milk-makeup-short-film-announcement",
+      "source": "The FADER"
+    },
+    {
+      "title": "A Week of Outfits: Ameerah Omar",
+      "url": "https://cupofjo.com/2026/09/10/a-week-of-outfits-ameerah-omar/",
+      "source": "Cupofjo.com"
+    },
+    {
+      "title": "Alicia Keys ‘and Friends,’ Victoria Monet, More Join Global Citizen Festival Lineup",
+      "url": "https://variety.com/2026/music/news/alicia-keys-victoria-monet-2026-global-citizen-festival-lineup-1236857295/",
+      "source": "Variety"
+    },
+    {
+      "title": "New Lower East Side Restaurant is a Hallmark of China's Resurgent Rust Belt",
+      "url": "https://www.prnewswire.com/news-releases/new-lower-east-side-restaurant-is-a-hallmark-of-chinas-resurgent-rust-belt-302874695.html",
+      "source": "PRNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
