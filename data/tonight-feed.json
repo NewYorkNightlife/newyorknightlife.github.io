@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Inside Taylor Swift's secret struggle as she weathers rare 'backlash' from fans... critics dub her 'Marie Antoinette'... and Travis 'falls in line'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16117817/taylor-swift-travis-kelce-secret-struggle.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Anna Wintour talks tennis, and more items from the column",
+      "url": "https://pagesix.com/2026/09/11/society/anna-wintour-talks-tennis-and-more-items-from-the-column/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Wet Leg’s Rhian Teasdale is the star of Milk Makeup’s NYC-set short film",
+      "url": "https://www.thefader.com/2026/09/11/wet-leg-rhian-teasdale-milk-makeup-short-film-announcement",
+      "source": "The FADER"
+    },
+    {
+      "title": "South Korean Monster Thriller ‘Hope’, Andrew Garfield In ‘The Uprising’, Doc ‘Black Zombie’ & Comedy ‘On A String’ — Specialty Preview",
+      "url": "http://deadline.com/2026/09/indie-films-opening-monster-thriller-hope-the-uprising-1237099382/",
+      "source": "Deadline"
+    },
+    {
+      "title": "It’s still summer — And this beach tent is perfect for your weekend adventure",
+      "url": "https://nypost.com/2026/09/11/shopping/shop-this-shady-beach-tent-perfect-for-your-weekend-adventure/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
