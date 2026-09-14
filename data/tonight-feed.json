@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "BIGBANG Celebrate 20 Years at MetLife Stadium Concert: Best Moments",
+      "url": "http://www.billboard.com/lists/bigbang-xx-cosmos-new-york-metlife-stadium-best-moments/",
+      "source": "Billboard"
+    },
+    {
+      "title": "All the signs that Lady Gaga secretly welcomed baby with fiancé: From months-long mystery disappearance to THOSE motherhood remarks",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16125407/Lady-Gaga-signs-secretly-welcomed-baby-fianc-long-motherhood.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Why We Can’t Look Away: The Mental Health Fallout of Tupac’s Death",
+      "url": "https://voicesforvoices.buzzsprout.com/1887594/episodes/19792193-why-we-can-t-look-away-the-mental-health-fallout-of-tupac-s-death-ep-579",
+      "source": "Buzzsprout.com"
+    },
+    {
+      "title": "Inside Taylor Swift's secret struggle as she weathers rare 'backlash' from fans... critics dub her 'Marie Antoinette'... and Travis 'falls in line'",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16117817/taylor-swift-travis-kelce-secret-struggle.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Anna Wintour talks tennis, and more items from the column",
+      "url": "https://pagesix.com/2026/09/11/society/anna-wintour-talks-tennis-and-more-items-from-the-column/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
