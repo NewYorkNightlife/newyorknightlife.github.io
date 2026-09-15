@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "A Complete Timeline of Lady Gaga and Michael Polansky’s Relationship Now That They’re Reportedly Parents (!!)",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a73721242/lady-gaga-and-michael-polansky-relationship-timeline/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "25 years after 9/11, AI sparks a math debate as data center pollution concerns grow",
+      "url": "https://www.scientificamerican.com/podcast/episode/25-years-after-9-11-ai-sparks-a-math-debate-as-data-center-pollution-concerns-grow/",
+      "source": "Scientific American"
+    },
+    {
+      "title": "Taylor Swift's pal Mariska Hargitay says she's 'still floating' from the singer's wedding to Travis Kelce",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16128503/Mariska-Hargitay-Taylor-Swifts-wedding.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "BIGBANG Celebrate 20 Years at MetLife Stadium Concert: Best Moments",
+      "url": "http://www.billboard.com/lists/bigbang-xx-cosmos-new-york-metlife-stadium-best-moments/",
+      "source": "Billboard"
+    },
+    {
+      "title": "All the signs that Lady Gaga secretly welcomed baby with fiancé: From months-long mystery disappearance to THOSE motherhood remarks",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16125407/Lady-Gaga-signs-secretly-welcomed-baby-fianc-long-motherhood.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
