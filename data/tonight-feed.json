@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Pigeon Comes to Boston! A Mo Willems Exhibit Makes Debut at Boston Children's Museum",
+      "url": "https://www.prnewswire.com/news-releases/the-pigeon-comes-to-boston-a-mo-willems-exhibit-makes-debut-at-boston-childrens-museum-302872784.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Emily St. John Mandel on Writing a Novel of Dystopian Counterlives",
+      "url": "https://lithub.com/emily-st-john-mandel-on-writing-a-novel-of-dystopian-counterlives/",
+      "source": "Lithub.com"
+    },
+    {
+      "title": "Iconic NYC guitar teacher known for his no-frills flyers lands Times Square billboard after 30 years",
+      "url": "https://nypost.com/2026/09/14/lifestyle/iconic-nyc-guitar-teacher-dan-smith-lands-times-square-billboard/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Third annual Yale @ Climate Week NYC summit to explore solutions for planet in crisis",
+      "url": "https://news.yale.edu/2026/09/14/third-annual-yale-climate-week-nyc-summit-explore-solutions-planet-crisis",
+      "source": "Yale.edu"
+    },
+    {
+      "title": "Yale @ Climate Week NYC summit to explore solutions for a planet in crisis",
+      "url": "https://news.yale.edu/2026/09/14/yale-climate-week-nyc-summit-explore-solutions-planet-crisis",
+      "source": "Yale.edu"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
