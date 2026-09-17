@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Pink is seen for the first time after Macklemore was cut from Ed Sheeran tour amid row over 'Free Palestine' speech",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16134257/pink-macklemore-ed-sheeran-palestine.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Watch Rhian Teasdale star in Milk Makeup’s short film New York Found Me",
+      "url": "https://www.thefader.com/2026/09/15/rhian-teasdale-wet-leg-star-milk-makeup-short-film-new-york-found-me",
+      "source": "The FADER"
+    },
+    {
+      "title": "The Pigeon Comes to Boston! A Mo Willems Exhibit Makes Debut at Boston Children's Museum",
+      "url": "https://www.prnewswire.com/news-releases/the-pigeon-comes-to-boston-a-mo-willems-exhibit-makes-debut-at-boston-childrens-museum-302872784.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Emily St. John Mandel on Writing a Novel of Dystopian Counterlives",
+      "url": "https://lithub.com/emily-st-john-mandel-on-writing-a-novel-of-dystopian-counterlives/",
+      "source": "Lithub.com"
+    },
+    {
+      "title": "Iconic NYC guitar teacher known for his no-frills flyers lands Times Square billboard after 30 years",
+      "url": "https://nypost.com/2026/09/14/lifestyle/iconic-nyc-guitar-teacher-dan-smith-lands-times-square-billboard/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
