@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Meet 12 Dazed Club creatives featured in The Autumn 2026 Issue",
+      "url": "https://www.dazeddigital.com/life-culture/article/70945/1/meet-12-dazed-club-creatives-featured-in-the-autumn-2026-issue?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=meet-12-dazed-club-creatives-featured-in-the-autumn-2026-issue",
+      "source": "Dazed"
+    },
+    {
+      "title": "NewFest Lineup Showcases ‘La Bola Negra’ NYC Premiere, Plus ‘Elsinore,’ ‘Club Kid,’ and More",
+      "url": "https://www.indiewire.com/news/festivals/newfest-2026-lineup-la-bola-negra-nyc-premiere-1235217368/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "In Broadway’s highly anticipated ‘Other Desert Cities,’ Lily Rabe unpacks dark family secrets",
+      "url": "https://nypost.com/2026/09/16/lifestyle/in-broadways-highly-anticipated-other-desert-cities-lily-rabe-unpacks-dark-family-secrets/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Selena Gomez Grabs Dinner in NYC with Husband Benny Blanco After Going Solo at Emmy Awards 2026",
+      "url": "https://www.justjared.com/2026/09/16/selena-gomez-grabs-dinner-in-nyc-with-husband-benny-blanco-after-going-solo-at-emmy-awards-2026/",
+      "source": "Just Jared"
+    },
+    {
+      "title": "Pink is seen for the first time after Macklemore was cut from Ed Sheeran tour amid row over 'Free Palestine' speech",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16134257/pink-macklemore-ed-sheeran-palestine.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
