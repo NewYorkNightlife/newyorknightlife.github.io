@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "14 Books to Add to Your TBR List: Fall 2026",
+      "url": "https://www.writersdigest.com/14-books-to-add-to-your-tbr-list-fall-2026#article",
+      "source": "Writersdigest.com"
+    },
+    {
+      "title": "Dallas, meet the Dominican day-party posing as brunch in Deep Ellum",
+      "url": "http://www.dallasobserver.com/food-drink/dominican-brunch-party-in-deep-ellum-40715055/",
+      "source": "Dallas Observer"
+    },
+    {
+      "title": "NYC Wine & Food Festival Returns for Four Days of Food, Drinks, and Culinary Stars",
+      "url": "https://imbibemagazine.com/nyc-wine-food-festival-returns-for-four-days-of-food-drinks-and-culinary-stars/",
+      "source": "Imbibemagazine.com"
+    },
+    {
+      "title": "Around the U.S., Small Rock Clubs Are Supporting Thriving Local Scenes",
+      "url": "http://www.rollingstone.com/music/music-features/rock-clubs-local-scenes-brooklyn-los-angeles-1235620952/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Meet 12 Dazed Club creatives featured in The Autumn 2026 Issue",
+      "url": "https://www.dazeddigital.com/life-culture/article/70945/1/meet-12-dazed-club-creatives-featured-in-the-autumn-2026-issue?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=meet-12-dazed-club-creatives-featured-in-the-autumn-2026-issue",
+      "source": "Dazed"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
