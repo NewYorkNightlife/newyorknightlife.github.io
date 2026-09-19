@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "They’re the Greatest Political Villains in America. Trump Can’t Stop Talking About Them. I Went Into Their Shadowy Lair.",
+      "url": "https://slate.com/news-and-politics/2026/09/donald-trump-republicans-communism-new-york.html",
+      "source": "Slate Magazine"
+    },
+    {
+      "title": "DOT Commissioner Floats ‘Capital-Light’ Projects to Speed Up Permanent Street Changes",
+      "url": "https://nyc.streetsblog.org/2026/09/18/mike-flynn-capital-light",
+      "source": "Streetsblog.org"
+    },
+    {
+      "title": "14 Books to Add to Your TBR List: Fall 2026",
+      "url": "https://www.writersdigest.com/14-books-to-add-to-your-tbr-list-fall-2026#article",
+      "source": "Writersdigest.com"
+    },
+    {
+      "title": "Dallas, meet the Dominican day-party posing as brunch in Deep Ellum",
+      "url": "http://www.dallasobserver.com/food-drink/dominican-brunch-party-in-deep-ellum-40715055/",
+      "source": "Dallas Observer"
+    },
+    {
+      "title": "NYC Wine & Food Festival Returns for Four Days of Food, Drinks, and Culinary Stars",
+      "url": "https://imbibemagazine.com/nyc-wine-food-festival-returns-for-four-days-of-food-drinks-and-culinary-stars/",
+      "source": "Imbibemagazine.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
