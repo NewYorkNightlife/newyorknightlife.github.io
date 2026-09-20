@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "John Wilson Lays Down ‘The History of Concrete’ With ‘The Weight’, ‘Sean The Sheep’ In Packed Indie Weekend – Specialty Preview",
+      "url": "http://deadline.com/2026/09/indie-films-opening-the-weight-history-of-concrete-aardman-1237108082/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Viz Media, Japan Society Screen World Premiere of Hirayasumi Anime on October 7",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-18/viz-media-japan-society-screen-world-premiere-of-hirayasumi-anime-on-october-7/.241950",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Duncan Sheik dead at 56: Grammy-nominated singer passes away being rushed to hospital - as cause of death is revealed",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16142515/Duncan-Sheik-dead-Grammy-singer-barely-breathing.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "They’re the Greatest Political Villains in America. Trump Can’t Stop Talking About Them. I Went Into Their Shadowy Lair.",
+      "url": "https://slate.com/news-and-politics/2026/09/donald-trump-republicans-communism-new-york.html",
+      "source": "Slate Magazine"
+    },
+    {
+      "title": "DOT Commissioner Floats ‘Capital-Light’ Projects to Speed Up Permanent Street Changes",
+      "url": "https://nyc.streetsblog.org/2026/09/18/mike-flynn-capital-light",
+      "source": "Streetsblog.org"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
