@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NEW YORK IS CALLING AS YSL BEAUTY CONTINUES ITS ICONIC BLOCK PARTY SERIES",
+      "url": "https://www.prnewswire.com/news-releases/new-york-is-calling-as-ysl-beauty-continues-its-iconic-block-party-series-302883867.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Going on a first date? Here are the best NYC options to start your quest for love: survey",
+      "url": "https://nypost.com/2026/09/19/us-news/west-village-claims-4-of-nycs-top-15-first-date-restaurants-survey/",
+      "source": "New York Post"
+    },
+    {
+      "title": "John Wilson Lays Down ‘The History of Concrete’ With ‘The Weight’, ‘Sean The Sheep’ In Packed Indie Weekend – Specialty Preview",
+      "url": "http://deadline.com/2026/09/indie-films-opening-the-weight-history-of-concrete-aardman-1237108082/",
+      "source": "Deadline"
+    },
+    {
+      "title": "Viz Media, Japan Society Screen World Premiere of Hirayasumi Anime on October 7",
+      "url": "https://www.animenewsnetwork.com/news/2026-09-18/viz-media-japan-society-screen-world-premiere-of-hirayasumi-anime-on-october-7/.241950",
+      "source": "Anime News Network"
+    },
+    {
+      "title": "Duncan Sheik dead at 56: Grammy-nominated singer passes away being rushed to hospital - as cause of death is revealed",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16142515/Duncan-Sheik-dead-Grammy-singer-barely-breathing.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
