@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Yale @ Climate Week NYC summit to explore solutions for a planet in crisis",
+      "url": "https://news.yale.edu/2026/09/28/yale-climate-week-nyc-summit-explore-solutions-planet-crisis",
+      "source": "Yale.edu"
+    },
+    {
+      "title": "Yale @ Climate Week NYC summit to explore solutions for a planet in crisis",
+      "url": "https://news.yale.edu/2026/09/21/yale-climate-week-nyc-summit-explore-solutions-planet-crisis",
+      "source": "Yale.edu"
+    },
+    {
+      "title": "Contraceptive Access Maps, AgInsights, World Cinema Atlas, More: Sunday ResearchBuzz, September 20, 2026",
+      "url": "https://researchbuzz.me/2026/09/20/contraceptive-access-maps-aginsights-world-cinema-atlas-more-sunday-researchbuzz-september-20-2026/",
+      "source": "Researchbuzz.me"
+    },
+    {
+      "title": "Harry Styles and fiancée Zoe Kravitz passionately kiss and hold hands in NYC as wedding plans are revealed",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16145013/harry-styles-zoe-kravitz-kiss-hold-hands-wedding-plans.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "NEW YORK IS CALLING AS YSL BEAUTY CONTINUES ITS ICONIC BLOCK PARTY SERIES",
+      "url": "https://www.prnewswire.com/news-releases/new-york-is-calling-as-ysl-beauty-continues-its-iconic-block-party-series-302883867.html",
+      "source": "PRNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
