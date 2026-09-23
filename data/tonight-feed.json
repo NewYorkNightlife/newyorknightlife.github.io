@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Pigeons & Pleasers: An NYC Punk Elopement",
+      "url": "https://www.rocknrollbride.com/2026/09/pigeons-pleasers-an-nyc-punk-elopement/",
+      "source": "Rocknrollbride.com"
+    },
+    {
+      "title": "These 6 NYC hotels just earned new or upgraded Michelin Keys",
+      "url": "https://www.timeout.com/newyork/news/these-6-nyc-hotels-just-earned-new-or-upgraded-michelin-keys-092126",
+      "source": "Time Out"
+    },
+    {
+      "title": "Yale @ Climate Week NYC summit to explore solutions for a planet in crisis",
+      "url": "https://news.yale.edu/2026/09/28/yale-climate-week-nyc-summit-explore-solutions-planet-crisis",
+      "source": "Yale.edu"
+    },
+    {
+      "title": "Yale @ Climate Week NYC summit to explore solutions for a planet in crisis",
+      "url": "https://news.yale.edu/2026/09/21/yale-climate-week-nyc-summit-explore-solutions-planet-crisis",
+      "source": "Yale.edu"
+    },
+    {
+      "title": "Contraceptive Access Maps, AgInsights, World Cinema Atlas, More: Sunday ResearchBuzz, September 20, 2026",
+      "url": "https://researchbuzz.me/2026/09/20/contraceptive-access-maps-aginsights-world-cinema-atlas-more-sunday-researchbuzz-september-20-2026/",
+      "source": "Researchbuzz.me"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
