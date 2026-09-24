@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Ms. Rachel, the “Mr. Rogers of Today,” Stars in Best Episode of SubwayTakes Yet",
+      "url": "https://consequence.net/2026/09/ms-rachel-subwaytakes-interview-video/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "New York’s New Public Toilets Give You 10 Minutes, a 30-Second Grace Period, Then Open the Door",
+      "url": "https://thoughtcatalog.com/jeremy-london/2026/09/new-yorks-new-public-toilets-give-you-10-minutes-a-30-second-grace-period-then-open-the-door/",
+      "source": "Thoughtcatalog.com"
+    },
+    {
+      "title": "Pigeons & Pleasers: An NYC Punk Elopement",
+      "url": "https://www.rocknrollbride.com/2026/09/pigeons-pleasers-an-nyc-punk-elopement/",
+      "source": "Rocknrollbride.com"
+    },
+    {
+      "title": "These 6 NYC hotels just earned new or upgraded Michelin Keys",
+      "url": "https://www.timeout.com/newyork/news/these-6-nyc-hotels-just-earned-new-or-upgraded-michelin-keys-092126",
+      "source": "Time Out"
+    },
+    {
+      "title": "Yale @ Climate Week NYC summit to explore solutions for a planet in crisis",
+      "url": "https://news.yale.edu/2026/09/28/yale-climate-week-nyc-summit-explore-solutions-planet-crisis",
+      "source": "Yale.edu"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
