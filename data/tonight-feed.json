@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Tim Kent’s New Show Is About Rest But He Can’t Stop Working",
+      "url": "https://observer.com/2026/09/art-tim-kent-artist-interview-opening-new-york-city-hollis-taggart-chelsea/",
+      "source": "Observer"
+    },
+    {
+      "title": "Baby’s All Right co-founder Billy Jones gets NYC street named after him",
+      "url": "https://www.thefader.com/2026/09/24/babys-all-right-billy-jones-nyc-street-dedication",
+      "source": "The FADER"
+    },
+    {
+      "title": "Where to Stay, Play, and Dine in New York City This Fall",
+      "url": "http://robbreport.com/travel/destinations/new-york-city-fall-2026-hotels-broadway-dining-1238666350/",
+      "source": "Robb Report"
+    },
+    {
+      "title": "The Address Where NYC Music Lives",
+      "url": "http://www.rollingstone.com/music/music-features/the-music-building-new-york-madonna-1235626862/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "I’ve tested 25+ headphones — These early October Prime Day deals are worth it",
+      "url": "https://nypost.com/shopping/early-amazon-prime-big-deal-days-headphone-deals-2026/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
