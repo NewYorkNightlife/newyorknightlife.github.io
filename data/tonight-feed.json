@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "John Summit just proved partying isn’t dead at his NYC Experts Only Festival",
+      "url": "https://nypost.com/2026/09/23/ticket-sales/john-summit-2026-experts-only-festival-review-and-observations/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Ayra Starr Talks 'Starrgirl,' 'Children of Blood & Bone' & New York",
+      "url": "http://www.billboard.com/music/features/ayra-starr-talks-starrgirl-children-blood-bone-afrobeats-1236345512/",
+      "source": "Billboard"
+    },
+    {
+      "title": "20-hour days, thousands of sandwiches made — the blood, sweat and tears it takes to put on the century-old San Gennaro Feast",
+      "url": "https://nypost.com/2026/09/23/lifestyle/what-it-takes-to-put-on-the-century-old-san-gennaro-feast/",
+      "source": "New York Post"
+    },
+    {
+      "title": "“Revenge Is Sweet”: 22 Petty Revenge Stories So Satisfying, You’ll Almost Forget How Petty They Are",
+      "url": "https://pleated-jeans.com/2026/09/23/petty-revenge-stories-satisfying-payback/",
+      "source": "Pleated-jeans.com"
+    },
+    {
+      "title": "Ms. Rachel, the “Mr. Rogers of Today,” Stars in Best Episode of SubwayTakes Yet",
+      "url": "https://consequence.net/2026/09/ms-rachel-subwaytakes-interview-video/",
+      "source": "Consequence.net"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
