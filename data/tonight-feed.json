@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "The Tim Ferriss Show Transcripts: How to Spot 10-Year Trends and Build Billion-Dollar Companies — Kevin Ryan of DoubleClick, MongoDB, Business Insider, and Many More (#884)",
+      "url": "https://tim.blog/2026/09/25/kevin-ryan-transcript/",
+      "source": "Tim.blog"
+    },
+    {
+      "title": "This week on \"Sunday Morning\" (Sept. 27)",
+      "url": "https://www.cbsnews.com/news/this-week-on-sunday-morning-sept-27-2026/",
+      "source": "CBS News"
+    },
+    {
+      "title": "Tim Kent’s New Show Is About Rest But He Can’t Stop Working",
+      "url": "https://observer.com/2026/09/art-tim-kent-artist-interview-opening-new-york-city-hollis-taggart-chelsea/",
+      "source": "Observer"
+    },
+    {
+      "title": "Baby’s All Right co-founder Billy Jones gets NYC street named after him",
+      "url": "https://www.thefader.com/2026/09/24/babys-all-right-billy-jones-nyc-street-dedication",
+      "source": "The FADER"
+    },
+    {
+      "title": "Where to Stay, Play, and Dine in New York City This Fall",
+      "url": "http://robbreport.com/travel/destinations/new-york-city-fall-2026-hotels-broadway-dining-1238666350/",
+      "source": "Robb Report"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
