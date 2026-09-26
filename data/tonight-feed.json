@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Taylor Swift issues brutal warning about toxic ex in scathing ‘Patient Zero’ lyrics",
+      "url": "https://pagesix.com/2026/09/25/entertainment/taylor-swift-issues-brutal-warning-about-toxic-ex-in-scathing-patient-zero-lyrics/",
+      "source": "Page Six"
+    },
+    {
+      "title": "The Tim Ferriss Show Transcripts: How to Spot 10-Year Trends and Build Billion-Dollar Companies — Kevin Ryan of DoubleClick, MongoDB, Business Insider, and Many More (#884)",
+      "url": "https://tim.blog/2026/09/25/kevin-ryan-transcript/",
+      "source": "Tim.blog"
+    },
+    {
+      "title": "This week on \"Sunday Morning\" (Sept. 27)",
+      "url": "https://www.cbsnews.com/news/this-week-on-sunday-morning-sept-27-2026/",
+      "source": "CBS News"
+    },
+    {
+      "title": "Tim Kent’s New Show Is About Rest But He Can’t Stop Working",
+      "url": "https://observer.com/2026/09/art-tim-kent-artist-interview-opening-new-york-city-hollis-taggart-chelsea/",
+      "source": "Observer"
+    },
+    {
+      "title": "Baby’s All Right co-founder Billy Jones gets NYC street named after him",
+      "url": "https://www.thefader.com/2026/09/24/babys-all-right-billy-jones-nyc-street-dedication",
+      "source": "The FADER"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
