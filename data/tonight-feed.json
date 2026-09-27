@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "We moved from NYC to a rural beach town and struggled with isolation. We sold less than 2 years later.",
+      "url": "https://www.businessinsider.com/moved-nyc-maryland-regret-not-ready-to-settle-down-2026-9#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Dangerous storm forecast cancels Global Citizen, All Things Go, major NYC events",
+      "url": "https://gothamist.com/news/dangerous-storm-forecast-cancels-global-citizen-all-things-go-major-nyc-events",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Nor’easter takes aim at East Coast, canceling concerts and shifting MLB games",
+      "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_cf038cef-a50e-4277-85b7-73fbe041c261",
+      "source": "Yahoo Entertainment"
+    },
+    {
+      "title": "Nor’easter Knocks Out Three New York Festivals: All Things Go, CBGB, and Global Citizen All Canceled",
+      "url": "https://consequence.net/2026/09/all-things-go-cbgb-global-citizens-new-york-canceled/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Ticker: Kara Swisher Confirms CNN Exit After Paramount-WBD Merger Is Complete",
+      "url": "https://www.adweek.com/tvnewser/ticker-kara-swisher-confirms-cnn-exit-after-paramount-wbd-merger-is-complete/",
+      "source": "Adweek"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
