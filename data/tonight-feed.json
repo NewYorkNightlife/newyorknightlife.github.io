@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NYC braces for two days of rain and wind as coastal flooding threat grows",
+      "url": "https://gothamist.com/news/nyc-braces-for-two-days-of-rain-and-wind-as-coastal-flooding-threat-grows",
+      "source": "Gothamist"
+    },
+    {
+      "title": "I ditched my big-bucks corporate job for a dreamily simple new life in a national park. Now my rent is just $96 a month",
+      "url": "https://www.dailymail.com/yourmoney/article-16154591/yellowstone-national-park-seamstress-job-cheap-living.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "We moved from NYC to a rural beach town and struggled with isolation. We sold less than 2 years later.",
+      "url": "https://www.businessinsider.com/moved-nyc-maryland-regret-not-ready-to-settle-down-2026-9#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Dangerous storm forecast cancels Global Citizen, All Things Go, major NYC events",
+      "url": "https://gothamist.com/news/dangerous-storm-forecast-cancels-global-citizen-all-things-go-major-nyc-events",
+      "source": "Gothamist"
+    },
+    {
+      "title": "Nor’easter takes aim at East Coast, canceling concerts and shifting MLB games",
+      "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_cf038cef-a50e-4277-85b7-73fbe041c261",
+      "source": "Yahoo Entertainment"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
