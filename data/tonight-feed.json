@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Harry Styles and fiancee Zoe Kravitz are seen slipping out of the same luxury car in NYC",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16167805/Harry-Styles-Zoe-Kravitz-NYC.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Mamdani's latest freebie sets off online fury as critics rip city priorities: 'Opera socialism'",
+      "url": "https://www.foxnews.com/politics/mamdanis-latest-freebie-sets-off-online-fury-critics-rip-city-priorities-opera-socialism",
+      "source": "Fox News"
+    },
+    {
+      "title": "The Mp3 Experiment 21",
+      "url": "https://improveverywhere.com/2026/09/27/the-mp3-experiment-21/",
+      "source": "Improveverywhere.com"
+    },
+    {
+      "title": "Protesters brave nor’easter outside premiere of anti-Israel documentary at NYC film festival",
+      "url": "https://nypost.com/2026/09/26/us-news/protesters-brave-noreaster-outside-premiere-of-anti-israel-documentary-at-nyc-film-festival/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Lana Del Rey shares never-before-seen footage from wedding to swamp tour guide Jeremy Dufrene as she marks second anniversary",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16163387/lana-del-rey-never-seen-footage-wedding-jeremy-dufrene-second-anniversary.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
