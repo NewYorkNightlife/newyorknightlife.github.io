@@ -124,6 +124,8 @@ approved, links carry `rel="nofollow sponsored noopener"` plus a visible disclos
 This site **does** run analytics and advertising:
 
 - **Google Analytics 4** — property `G-YWT237CDDX`
+- **PostHog** — page views, heatmaps and privacy-masked session recordings via `/analytics.js` (loaded on every page;
+  the Nyla chat area is excluded from recordings). Visit any page with `?notrack=1` to exclude your own browser.
 - **Google AdSense** — publisher `pub-3007723856138381` (see `ads.txt`)
 
 Both use cookies. This is disclosed in the [privacy policy](privacy-policy.html), which is the
