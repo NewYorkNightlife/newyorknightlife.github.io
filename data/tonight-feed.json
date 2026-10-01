@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Nearly 1,400 Scholars from Low-Income High Schools Earn National Academic Distinction for Performance in College Courses",
+      "url": "https://www.prnewswire.com/news-releases/nearly-1-400-scholars-from-low-income-high-schools-earn-national-academic-distinction-for-performance-in-college-courses-302893577.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "How the 'Floating Carousel' Directors Shot NYC on Favors",
+      "url": "https://nofilmschool.com/floating-carousel-napier-powers",
+      "source": "Nofilmschool.com"
+    },
+    {
+      "title": "Immanuel Wilkins is upholding NYC's jazz history. He's also dreaming up its future.",
+      "url": "https://gothamist.com/arts-entertainment/immanuel-wilkins-is-upholding-nycs-jazz-history-hes-also-dreaming-up-its-future",
+      "source": "Gothamist"
+    },
+    {
+      "title": "TV on the Radio Dust Off “Wolf Like Me” on Kimmel: Watch",
+      "url": "https://consequence.net/2026/09/tv-on-the-radio-wolf-like-me-kimmel-watch/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Harry Styles and fiancee Zoe Kravitz are seen slipping out of the same luxury car in NYC",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16167805/Harry-Styles-Zoe-Kravitz-NYC.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
