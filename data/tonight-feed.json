@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "LCD Soundsystem Announce 2026 NYC Residency",
+      "url": "https://consequence.net/2026/09/lcd-soundsystem-2026-nyc-residency/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Pete Davidson Grows Up: On Leaving ‘SNL,’ Famous Exes, the Joys of Fatherhood and Why He’s Keeping His Hillary Clinton Tattoo",
+      "url": "https://variety.com/2026/film/features/pete-davidson-interview-ariana-grande-kim-kardashian-fatherhood-1236877622/",
+      "source": "Variety"
+    },
+    {
+      "title": "General Manager, Campus and Event Operations – The Apollo via TOC Arts Partners",
+      "url": "https://www.artsjournal.com/2026/09/general-manager-campus-and-event-operations-the-apollo-via-toc-arts-partners.html",
+      "source": "Artsjournal.com"
+    },
+    {
+      "title": "Nearly 1,400 Scholars from Low-Income High Schools Earn National Academic Distinction for Performance in College Courses",
+      "url": "https://www.prnewswire.com/news-releases/nearly-1-400-scholars-from-low-income-high-schools-earn-national-academic-distinction-for-performance-in-college-courses-302893577.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "How the 'Floating Carousel' Directors Shot NYC on Favors",
+      "url": "https://nofilmschool.com/floating-carousel-napier-powers",
+      "source": "Nofilmschool.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
