@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Variety's New York Legends Power List: Mamdani, Matt Damon, the Knicks and the People Who Rule NYC",
+      "url": "https://variety.com/lists/variety-new-york-legends-power-list-zohran-mamdani-matt-damon-knicks-bari-weiss-fox-news/",
+      "source": "Variety"
+    },
+    {
+      "title": "Ari Abdul embraces the darkness on the road to her debut album, 'The Void' [Interview]",
+      "url": "https://earmilk.com/2026/10/01/ari-abdul-interview/",
+      "source": "Earmilk.com"
+    },
+    {
+      "title": "HILARITY FOR CHARITY COMEDY NIGHT RETURNS TO NEW YORK CITY OCTOBER 2 TO RAISE AWARENESS AND SUPPORT FOR FAMILIES IMPACTED BY ALZHEIMER'S",
+      "url": "https://www.prnewswire.com/news-releases/hilarity-for-charity-comedy-night-returns-to-new-york-city-october-2-to-raise-awareness-and-support-for-families-impacted-by-alzheimers-302894902.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "When Care Gets a Charter",
+      "url": "https://urbanomnibus.net/2026/09/when-care-gets-a-charter/",
+      "source": "Urbanomnibus.net"
+    },
+    {
+      "title": "LCD Soundsystem Announce 2026 NYC Residency",
+      "url": "https://consequence.net/2026/09/lcd-soundsystem-2026-nyc-residency/",
+      "source": "Consequence.net"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
