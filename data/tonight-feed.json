@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Carly Rae Jepsen announces Day And Night Tour, MSG concert. Get tickets",
+      "url": "https://nypost.com/2026/10/01/ticket-sales/carly-rae-jepsen-announces-day-and-night-tour-get-tickets-now/",
+      "source": "New York Post"
+    },
+    {
+      "title": "NYC Wine & Food Festival set to feature Sylvester Stallone, Bryan Cranston — and alcohol-free events",
+      "url": "https://nypost.com/2026/10/01/business/nyc-wine-food-festival-set-to-feature-sylvester-stallone-bryan-cranston-and-alcohol-free-events/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Real-life warrior princess fights subway slimeballs with street smarts: ‘Jab them in the eyes and run.’",
+      "url": "https://nypost.com/2026/10/01/lifestyle/viral-nyc-martial-artist-shares-subawy-self-defense-tips/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Variety's New York Legends Power List: Mamdani, Matt Damon, the Knicks and the People Who Rule NYC",
+      "url": "https://variety.com/lists/variety-new-york-legends-power-list-zohran-mamdani-matt-damon-knicks-bari-weiss-fox-news/",
+      "source": "Variety"
+    },
+    {
+      "title": "Ari Abdul embraces the darkness on the road to her debut album, 'The Void' [Interview]",
+      "url": "https://earmilk.com/2026/10/01/ari-abdul-interview/",
+      "source": "Earmilk.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
