@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Have you heard the Higher Word? NYC grown Catholic orchestra going from strength to strength",
+      "url": "https://nypost.com/2026/10/01/lifestyle/have-you-heard-the-higher-word-nyc-grown-catholic-orchestra-going-from-strength-to-strength/",
+      "source": "New York Post"
+    },
+    {
+      "title": "How to cancel a subscription: Just-launched NYC rule aims to make it easy now",
+      "url": "https://www.newsday.com/news/new-york/one-click-cancel-subscriptions-nyc-g1ajt2ij",
+      "source": "Newsday"
+    },
+    {
+      "title": "Carly Rae Jepsen announces Day And Night Tour, MSG concert. Get tickets",
+      "url": "https://nypost.com/2026/10/01/ticket-sales/carly-rae-jepsen-announces-day-and-night-tour-get-tickets-now/",
+      "source": "New York Post"
+    },
+    {
+      "title": "NYC Wine & Food Festival set to feature Sylvester Stallone, Bryan Cranston — and alcohol-free events",
+      "url": "https://nypost.com/2026/10/01/business/nyc-wine-food-festival-set-to-feature-sylvester-stallone-bryan-cranston-and-alcohol-free-events/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Real-life warrior princess fights subway slimeballs with street smarts: ‘Jab them in the eyes and run.’",
+      "url": "https://nypost.com/2026/10/01/lifestyle/viral-nyc-martial-artist-shares-subawy-self-defense-tips/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
