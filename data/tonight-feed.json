@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "This Green and White Tented Wedding Had Custom Magnolia Drapery and Real Magnolia Trees",
+      "url": "https://www.stylemepretty.com/2026/10/02/this-green-and-white-tented-wedding-had-custom-magnolia-drapery-and-real-magnolia-trees/",
+      "source": "Stylemepretty.com"
+    },
+    {
+      "title": "Tone Deaf Opens First Store on New York’s Lower East Side",
+      "url": "http://wwd.com/menswear-news/mens-retail-business/tone-deaf-store-lower-east-side-mustafa-ahmed-pakistan-1239304213/",
+      "source": "WWD"
+    },
+    {
+      "title": "Fall is here! The best foliage, apple picking and spooky season day trips from NYC —no car required",
+      "url": "https://nypost.com/2026/10/02/lifestyle/nycs-best-fall-and-spooky-season-day-trips-without-a-car/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Force Majeure",
+      "url": "https://www.spinmagazine.com/?p=671898",
+      "source": "Spinmagazine.com"
+    },
+    {
+      "title": "Would you have gone through the cockpit door?",
+      "url": "https://www.americanthinker.com/blog/2026/10/would-you-have-gone-through-the-cockpit-door/",
+      "source": "Americanthinker.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
