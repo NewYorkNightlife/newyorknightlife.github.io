@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Prague Post, Carbon Impacts Tracker, Apple Product Colors, More: Saturday ResearchBuzz, October 3, 2026",
+      "url": "https://researchbuzz.me/2026/10/03/prague-post-carbon-impacts-tracker-apple-product-colors-more-saturday-researchbuzz-october-3-2026/",
+      "source": "Researchbuzz.me"
+    },
+    {
+      "title": "Now that her love story is complete, are we over Taylor Swift?",
+      "url": "https://pagesix.com/2026/10/03/entertainment/taylor-swifts-music-fans-struggling-after-marriage/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Saturday: Hili dialogue",
+      "url": "https://whyevolutionistrue.com/2026/10/03/saturday-hili-dialogue-602/",
+      "source": "Whyevolutionistrue.com"
+    },
+    {
+      "title": "This Green and White Tented Wedding Had Custom Magnolia Drapery and Real Magnolia Trees",
+      "url": "https://www.stylemepretty.com/2026/10/02/this-green-and-white-tented-wedding-had-custom-magnolia-drapery-and-real-magnolia-trees/",
+      "source": "Stylemepretty.com"
+    },
+    {
+      "title": "Tone Deaf Opens First Store on New York’s Lower East Side",
+      "url": "http://wwd.com/menswear-news/mens-retail-business/tone-deaf-store-lower-east-side-mustafa-ahmed-pakistan-1239304213/",
+      "source": "WWD"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
