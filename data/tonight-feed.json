@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Dakota Johnson rings in 37th birthday at NYC hotspot with A-list pal Jennifer Lawrence",
+      "url": "https://pagesix.com/2026/10/05/photos/dakota-johnson-rings-in-37th-birthday-at-nyc-hotspot-with-a-list-pal-jennifer-lawrence/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Lola Young Announces “Everything Begins” 2027 North American Tour",
+      "url": "https://consequence.net/2026/10/lola-young-2027-north-american-tour/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Black Celebs Who Popped Out at CultureCon 2026",
+      "url": "https://www.theroot.com/black-celebs-who-popped-out-at-culturecon-2026-2000129132",
+      "source": "The Root"
+    },
+    {
+      "title": "Mike Myers Flaunts 'FIGHT FASCISM' Shirt at NYC Concert Introduced by AOC and Bernie Sanders",
+      "url": "https://www.breitbart.com/entertainment/2026/10/05/mike-myers-flaunts-fight-fascism-shirt-at-nyc-concert-introduced-by-aoc-and-bernie-sanders/",
+      "source": "Breitbart News"
+    },
+    {
+      "title": "LeBron James Leaves Sixers Camp by Helicopter for New York",
+      "url": "https://www.complex.com/sports/a/markelibert/lebron-james-helicopter-commute-76ers-new-york",
+      "source": "Complex"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
