@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Black Celebs Who Popped Out at CultureCon 2026",
+      "url": "https://www.theroot.com/black-celebs-who-popped-out-at-culturecon-2026-2000129132",
+      "source": "The Root"
+    },
+    {
+      "title": "Mike Myers Flaunts 'FIGHT FASCISM' Shirt at NYC Concert Introduced by AOC and Bernie Sanders",
+      "url": "https://www.breitbart.com/entertainment/2026/10/05/mike-myers-flaunts-fight-fascism-shirt-at-nyc-concert-introduced-by-aoc-and-bernie-sanders/",
+      "source": "Breitbart News"
+    },
+    {
+      "title": "LeBron James Leaves Sixers Camp by Helicopter for New York",
+      "url": "https://www.complex.com/sports/a/markelibert/lebron-james-helicopter-commute-76ers-new-york",
+      "source": "Complex"
+    },
+    {
+      "title": "Taylor Swift is mad for plaid on ‘SNL’ with Dakota Johnson",
+      "url": "https://pagesix.com/2026/10/04/style/taylor-swift-is-mad-for-plaid-on-snl-with-dakota-johnson/",
+      "source": "Page Six"
+    },
+    {
+      "title": "NYC Mayor Mandami Now Paying People $10K To Become RAPPERS!",
+      "url": "https://mediatakeout.com/nyc-mayor-mandami-now-paying-people-10k-to-become-rappers/",
+      "source": "Mediatakeout.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
