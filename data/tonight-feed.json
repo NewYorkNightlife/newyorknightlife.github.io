@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "NYC with Claire as Our Tour Guide: Three Days of the Best of the City",
+      "url": "https://71toes.com/things-to-do-nyc-with-claire/",
+      "source": "71toes.com"
+    },
+    {
+      "title": "NYC to have its largest Halloween celebration yet, with 160 car-free open streets and city plazas",
+      "url": "https://www.timeout.com/newyork/news/nyc-to-have-its-largest-halloween-celebration-yet-with-160-car-free-open-streets-and-city-plazas-100526",
+      "source": "Time Out"
+    },
+    {
+      "title": "Lola Young Announces 2027 North American Tour",
+      "url": "http://www.rollingstone.com/music/music-news/lola-young-2027-north-american-tour-1235636781/",
+      "source": "Rolling Stone"
+    },
+    {
+      "title": "Dakota Johnson rings in 37th birthday at NYC hotspot with A-list pal Jennifer Lawrence",
+      "url": "https://pagesix.com/2026/10/05/photos/dakota-johnson-rings-in-37th-birthday-at-nyc-hotspot-with-a-list-pal-jennifer-lawrence/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Lola Young Announces “Everything Begins” 2027 North American Tour",
+      "url": "https://consequence.net/2026/10/lola-young-2027-north-american-tour/",
+      "source": "Consequence.net"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
