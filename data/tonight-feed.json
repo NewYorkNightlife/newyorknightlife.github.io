@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "LeBron James Leaves Sixers Camp by Helicopter for New York",
+      "url": "https://www.complex.com/sports/a/markelibert/lebron-james-helicopter-commute-76ers-new-york",
+      "source": "Complex"
+    },
+    {
+      "title": "Taylor Swift is mad for plaid on ‘SNL’ with Dakota Johnson",
+      "url": "https://pagesix.com/2026/10/04/style/taylor-swift-is-mad-for-plaid-on-snl-with-dakota-johnson/",
+      "source": "Page Six"
+    },
+    {
+      "title": "NYC Mayor Mandami Now Paying People $10K To Become RAPPERS!",
+      "url": "https://mediatakeout.com/nyc-mayor-mandami-now-paying-people-10k-to-become-rappers/",
+      "source": "Mediatakeout.com"
+    },
+    {
+      "title": "The Strokes’ Homecoming Concert in NYC with Beach House, TV on the Radio, and Fcukers Was Indie Music Heaven: Recap + Videos",
+      "url": "https://consequence.net/2026/10/the-strokes-nyc-beach-house-tv-on-the-radio-recap/",
+      "source": "Consequence.net"
+    },
+    {
+      "title": "Prague Post, Carbon Impacts Tracker, Apple Product Colors, More: Saturday ResearchBuzz, October 3, 2026",
+      "url": "https://researchbuzz.me/2026/10/03/prague-post-carbon-impacts-tracker-apple-product-colors-more-saturday-researchbuzz-october-3-2026/",
+      "source": "Researchbuzz.me"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
