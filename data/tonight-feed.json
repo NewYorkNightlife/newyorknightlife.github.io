@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "I Didn't Realize Why LL Cool J Was So Pumped His New NCIS Show Films In New York",
+      "url": "https://www.cinemablend.com/television/ll-cool-j-talks-filming-ncis-new-york-spinoff-hometown",
+      "source": "CinemaBlend"
+    },
+    {
+      "title": "Alice Cooper on 'Devil On My Shoulder' Book: 'I Want People to See'",
+      "url": "http://www.billboard.com/music/rock/alice-cooper-devil-on-my-shoulder-book-1236354581/",
+      "source": "Billboard"
+    },
+    {
+      "title": "AI Agent Insurance, Frankenstein Recipes, Data Centers, More: ResearchBuzz AI Update, October 6, 2026",
+      "url": "https://researchbuzz.me/2026/10/06/ai-agent-insurance-frankenstein-recipes-data-centers-more-researchbuzz-ai-update-october-6-2026/",
+      "source": "Researchbuzz.me"
+    },
+    {
+      "title": "See All the Pics of Taylor Swift and Travis Kelce’s Birthday Date Night in NYC",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a74047013/every-picture-taylor-swift-travis-kelce-birthday-date-nyc/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "Las Vegas outpost of The Corner Store — favorite of Taylor Swift, Sabrina Carpenter — coming this fall",
+      "url": "https://nypost.com/2026/10/05/business/las-vegas-outpost-of-the-corner-store-coming-this-fall/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
