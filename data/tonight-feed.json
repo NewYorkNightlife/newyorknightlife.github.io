@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Time to Meet the 9 Finalists Still in the Running to Become a Victoria’s Secret Angel on ‘Angels Among Us’",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a74056284/victorias-secret-angels-among-us-finalists/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "A night at Girl Noise, an NYC festival ‘for girls by girls’",
+      "url": "https://www.dazeddigital.com/music/article/71132/1/a-night-at-girl-noise-an-nyc-festival-for-girls-by-girls-simone-lipkin?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=a-night-at-girl-noise-an-nyc-festival-for-girls-by-girls",
+      "source": "Dazed"
+    },
+    {
+      "title": "BIPOC Climate Justice Summit Centers Community Power, Public Trust and Accountability as Supreme Court Considers Major Climate Case",
+      "url": "https://www.prnewswire.com/news-releases/bipoc-climate-justice-summit-centers-community-power-public-trust-and-accountability-as-supreme-court-considers-major-climate-case-302900854.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "A Court Ruling Killed ‘Click to Cancel.’ NYC Just Brought It Back",
+      "url": "https://www.cnet.com/services/a-court-ruling-killed-click-to-cancel-but-nyc-just-brought-it-back/",
+      "source": "CNET"
+    },
+    {
+      "title": "I Didn't Realize Why LL Cool J Was So Pumped His New NCIS Show Films In New York",
+      "url": "https://www.cinemablend.com/television/ll-cool-j-talks-filming-ncis-new-york-spinoff-hometown",
+      "source": "CinemaBlend"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
