@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "BIPOC Climate Justice Summit Centers Community Power, Public Trust and Accountability as Supreme Court Considers Major Climate Case",
+      "url": "https://www.prnewswire.com/news-releases/bipoc-climate-justice-summit-centers-community-power-public-trust-and-accountability-as-supreme-court-considers-major-climate-case-302900854.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "A Court Ruling Killed ‘Click to Cancel.’ NYC Just Brought It Back",
+      "url": "https://www.cnet.com/services/a-court-ruling-killed-click-to-cancel-but-nyc-just-brought-it-back/",
+      "source": "CNET"
+    },
+    {
+      "title": "I Didn't Realize Why LL Cool J Was So Pumped His New NCIS Show Films In New York",
+      "url": "https://www.cinemablend.com/television/ll-cool-j-talks-filming-ncis-new-york-spinoff-hometown",
+      "source": "CinemaBlend"
+    },
+    {
+      "title": "Alice Cooper on 'Devil On My Shoulder' Book: 'I Want People to See'",
+      "url": "http://www.billboard.com/music/rock/alice-cooper-devil-on-my-shoulder-book-1236354581/",
+      "source": "Billboard"
+    },
+    {
+      "title": "AI Agent Insurance, Frankenstein Recipes, Data Centers, More: ResearchBuzz AI Update, October 6, 2026",
+      "url": "https://researchbuzz.me/2026/10/06/ai-agent-insurance-frankenstein-recipes-data-centers-more-researchbuzz-ai-update-october-6-2026/",
+      "source": "Researchbuzz.me"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
