@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Let’s Get Physical: Key Takeaways From The IRL Advantage, Variety’s Experience and Culture Summit",
+      "url": "https://variety.com/2026/biz/news/takeaways-variety-experience-culture-summit-irl-advantage-1236903302/",
+      "source": "Variety"
+    },
+    {
+      "title": "‘Rent,’ Reborn: How Star Gaten Matarazzo, Director Luke Sheppard and a Perfectly Cast West End Ensemble Are Giving the Musical Its Biggest Revival Yet",
+      "url": "https://variety.com/2026/theater/global/rent-revival-gaten-matarazzo-luke-sheppard-west-end-musical-1236902190/",
+      "source": "Variety"
+    },
+    {
+      "title": "Opinion: Mamdani’s October 7 statement betrays the victims and rewrites history",
+      "url": "https://www.israelnationalnews.com/news/434295",
+      "source": "Israelnationalnews.com"
+    },
+    {
+      "title": "Jessica Biel set to play Hugh Hefner's wife in Playboy Mansion movie Playmates",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16189091/jessica-biel-playmates-movie-role.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Time to Meet the 9 Finalists Still in the Running to Become a Victoria’s Secret Angel on ‘Angels Among Us’",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a74056284/victorias-secret-angels-among-us-finalists/",
+      "source": "Cosmopolitan.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
