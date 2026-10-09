@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Opinion: Mamdani’s October 7 statement betrays the victims and rewrites history",
+      "url": "https://www.israelnationalnews.com/news/434295",
+      "source": "Israelnationalnews.com"
+    },
+    {
+      "title": "Jessica Biel set to play Hugh Hefner's wife in Playboy Mansion movie Playmates",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16189091/jessica-biel-playmates-movie-role.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Time to Meet the 9 Finalists Still in the Running to Become a Victoria’s Secret Angel on ‘Angels Among Us’",
+      "url": "https://www.cosmopolitan.com/entertainment/celebs/a74056284/victorias-secret-angels-among-us-finalists/",
+      "source": "Cosmopolitan.com"
+    },
+    {
+      "title": "A night at Girl Noise, an NYC festival ‘for girls by girls’",
+      "url": "https://www.dazeddigital.com/music/article/71132/1/a-night-at-girl-noise-an-nyc-festival-for-girls-by-girls-simone-lipkin?utm_source=Link&utm_medium=Link&utm_campaign=RSSFeed&utm_term=a-night-at-girl-noise-an-nyc-festival-for-girls-by-girls",
+      "source": "Dazed"
+    },
+    {
+      "title": "BIPOC Climate Justice Summit Centers Community Power, Public Trust and Accountability as Supreme Court Considers Major Climate Case",
+      "url": "https://www.prnewswire.com/news-releases/bipoc-climate-justice-summit-centers-community-power-public-trust-and-accountability-as-supreme-court-considers-major-climate-case-302900854.html",
+      "source": "PRNewswire"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
