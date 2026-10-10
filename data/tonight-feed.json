@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Three Years After Hamas’s October 7 Massacre, New York Mayor Zohran Mamdani Hijacks the Day to Attack Israel",
+      "url": "https://freerepublic.com/focus/f-chat/4398542/posts",
+      "source": "Freerepublic.com"
+    },
+    {
+      "title": "‘We want them out’: Mamdani demands ICE leave NYC after agent shoots man whose 5-year-old was in car",
+      "url": "https://timesofindia.indiatimes.com/world/us/we-want-them-out-mamdani-demands-ice-leave-nyc-after-agent-shoots-man-whose-5-year-old-was-in-car/articleshow/134833620.cms",
+      "source": "The Times of India"
+    },
+    {
+      "title": "5 Classic TV Shows That Always Feel Like Fall",
+      "url": "https://www.mentalfloss.com/entertainment/tv/classic-tv-shows-feel-like-fall",
+      "source": "Mental Floss"
+    },
+    {
+      "title": "Trump says U.S. won't attack Iran before midterms. And, And, ICE agent shoots man in NYC",
+      "url": "https://www.npr.org/2026/10/09/g-s1-147455/up-first-newsletter-hurricane-isaias-ukraine-russia-trump-iran-ice-shooting",
+      "source": "NPR"
+    },
+    {
+      "title": "‘Next Gen NYC’ star Shai Fruchter calls out Kyle Cooke over Ava Dash hookup at 2026 VRT Awards",
+      "url": "https://pagesix.com/2026/10/08/entertainment/next-gen-nyc-star-shai-fruchter-calls-out-kyle-cooke-over-ava-dash-hookup-at-2026-vrt-awards/",
+      "source": "Page Six"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
