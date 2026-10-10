@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "5 Classic TV Shows That Always Feel Like Fall",
+      "url": "https://www.mentalfloss.com/entertainment/tv/classic-tv-shows-feel-like-fall",
+      "source": "Mental Floss"
+    },
+    {
+      "title": "Trump says U.S. won't attack Iran before midterms. And, And, ICE agent shoots man in NYC",
+      "url": "https://www.npr.org/2026/10/09/g-s1-147455/up-first-newsletter-hurricane-isaias-ukraine-russia-trump-iran-ice-shooting",
+      "source": "NPR"
+    },
+    {
+      "title": "‘Next Gen NYC’ star Shai Fruchter calls out Kyle Cooke over Ava Dash hookup at 2026 VRT Awards",
+      "url": "https://pagesix.com/2026/10/08/entertainment/next-gen-nyc-star-shai-fruchter-calls-out-kyle-cooke-over-ava-dash-hookup-at-2026-vrt-awards/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Let’s Get Physical: Key Takeaways From The IRL Advantage, Variety’s Experience and Culture Summit",
+      "url": "https://variety.com/2026/biz/news/takeaways-variety-experience-culture-summit-irl-advantage-1236903302/",
+      "source": "Variety"
+    },
+    {
+      "title": "‘Rent,’ Reborn: How Star Gaten Matarazzo, Director Luke Sheppard and a Perfectly Cast West End Ensemble Are Giving the Musical Its Biggest Revival Yet",
+      "url": "https://variety.com/2026/theater/global/rent-revival-gaten-matarazzo-luke-sheppard-west-end-musical-1236902190/",
+      "source": "Variety"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
