@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Zoe Kravitz and fiancé Harry Styles step out on separate strolls in NYC as wedding rumors swirl",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16200693/Zoe-Kravitz-Harry-Styles-separate-strolls-NYC.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Atlanta Dream star Angel Reese splurges on teammates during lavish celebration dinner in NYC after WNBA semifinals win",
+      "url": "https://pagesix.com/2026/10/11/celebrity-news/atlanta-dream-star-angel-reese-treats-teammates-to-celebration-dinner-in-nyc-after-semifinals-win/",
+      "source": "Page Six"
+    },
+    {
+      "title": "Taylor Swift’s $4 million education pledge, $50,000 donation and $26 million charity gift with Travis Kelce: How world's richest female musician helps people",
+      "url": "https://economictimes.indiatimes.com/news/international/world-news/taylor-swifts-4-million-education-pledge-50000-donation-and-26-million-charity-gift-with-travis-kelce-how-american-popstar-helps-people/articleshow/134876222.cms",
+      "source": "The Times of India"
+    },
+    {
+      "title": "Mamdani Demands Immediate Release of Criminal Illegal Alien Gang Member Shot by ICE",
+      "url": "https://legalinsurrection.com/2026/10/mamdani-demands-immediate-release-of-criminal-illegal-alien-gang-member-shot-by-ice/",
+      "source": "Legalinsurrection.com"
+    },
+    {
+      "title": "Jeremy Allen White, 35, confirms hot new romance with model Lulu Tenney 25, as they pack on the PDA during date night in NYC park",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16197325/Jeremy-Allen-White-PDA-model-Lulu-Tenney.html",
+      "source": "Dailymail.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
