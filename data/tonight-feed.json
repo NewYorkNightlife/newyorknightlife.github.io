@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Kelly Clarkson’s NYC home has a room she shuts away after Christmas, but there’s a quirky twist",
+      "url": "https://economictimes.indiatimes.com/magazines/panache/kelly-clarksons-nyc-home-has-a-room-she-shuts-away-after-christmas-but-theres-a-quirky-twist/articleshow/134932348.cms",
+      "source": "The Times of India"
+    },
+    {
+      "title": "Jaguar Type 01: What really happened when the wraps came off?",
+      "url": "https://www.autocar.co.uk/car-news/features/jaguar-type-01-what-really-happened-when-wraps-came",
+      "source": "Autocar"
+    },
+    {
+      "title": "Meet billionaire Clara Wu Tsai, who built the Liberty into a $600 million team and now plans to fund guaranteed income for new moms",
+      "url": "https://fortune.com/2026/10/13/clara-wu-tsai-liberty-guaranteed-income-brooklyn-moms/",
+      "source": "Fortune"
+    },
+    {
+      "title": "Renovation Will Turn Long Vacant Former Cobble Hill Firehouse Into Music School",
+      "url": "http://www.brownstoner.com/interiors-renovation/cobble-hill-engine-company-4-299-degraw-street-music-school/",
+      "source": "Brownstoner.com"
+    },
+    {
+      "title": "30 Rock’s Unsung Secret Weapon",
+      "url": "https://slate.com/culture/2026/10/30-rock-anniversary-music-songs-soundtrack-jeff-richmond.html",
+      "source": "Slate Magazine"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
