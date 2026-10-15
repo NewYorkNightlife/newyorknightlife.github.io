@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Japanese Restaurant Udon Shin to Open First NYC Restaurant at 37 West 17th Street",
+      "url": "http://commercialobserver.com/2026/10/udon-shin-lease-restaurant-37-west-17th-street/",
+      "source": "Commercial Observer"
+    },
+    {
+      "title": "The Future of Cinema Is the Cinema Itself",
+      "url": "https://www.indiewire.com/criticism/movies/cinema-deserts-rockaway-film-festival-sam-fleischner-1235221876/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "‘American Doctor,’ ‘NAZA,’ ‘Musk,’ Elizabeth Holmes Doc And More Make DOC NYC’s Prestigious Short List",
+      "url": "http://deadline.com/2026/10/doc-nyc-2026-short-lists-announcement-1237156501/",
+      "source": "Deadline"
+    },
+    {
+      "title": "From ’You Can See Everything’ to ’14th’ and ‘Musk,’ DOC NYC 2026 Reveals Influential Awards Short List",
+      "url": "https://www.indiewire.com/awards/industry/doc-nyc-2026-awards-short-list-you-can-see-everything-musk-1235221889/",
+      "source": "IndieWire"
+    },
+    {
+      "title": "PTA's Concert Doc 'Cameron Winter at Carnegie Hall' Official Trailer",
+      "url": "https://www.firstshowing.net/2026/ptas-concert-doc-cameron-winter-at-carnegie-hall-official-trailer/",
+      "source": "First Showing"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
