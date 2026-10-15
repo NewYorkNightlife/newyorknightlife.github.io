@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Jaguar Type 01: What really happened when the wraps came off?",
+      "url": "https://www.autocar.co.uk/car-news/features/jaguar-type-01-what-really-happened-when-wraps-came",
+      "source": "Autocar"
+    },
+    {
+      "title": "Meet billionaire Clara Wu Tsai, who built the Liberty into a $600 million team and now plans to fund guaranteed income for new moms",
+      "url": "https://fortune.com/2026/10/13/clara-wu-tsai-liberty-guaranteed-income-brooklyn-moms/",
+      "source": "Fortune"
+    },
+    {
+      "title": "Renovation Will Turn Long Vacant Former Cobble Hill Firehouse Into Music School",
+      "url": "http://www.brownstoner.com/interiors-renovation/cobble-hill-engine-company-4-299-degraw-street-music-school/",
+      "source": "Brownstoner.com"
+    },
+    {
+      "title": "30 Rock’s Unsung Secret Weapon",
+      "url": "https://slate.com/culture/2026/10/30-rock-anniversary-music-songs-soundtrack-jeff-richmond.html",
+      "source": "Slate Magazine"
+    },
+    {
+      "title": "Details emerge from Angel Reese’s WNBA Finals celebration dinner in NYC with Dream teammates",
+      "url": "https://www.hitc.com/details-emerge-from-angel-reeses-wnba-finals-celebration-dinner-in-nyc-with-dream-teammates/",
+      "source": "HITC - Football, Gaming, Movies, TV, Music"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
