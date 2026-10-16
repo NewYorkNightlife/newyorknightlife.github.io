@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "7 LGBTQ+ actors we want to see in the Girls revival",
+      "url": "https://www.out.com/gay-entertainment/girls-reboot-lgbtq-actors-cast",
+      "source": "Out.com"
+    },
+    {
+      "title": "I’m an NYC tour guide and food writer—these are the places I take visiting friends and family",
+      "url": "https://www.timeout.com/newyork/news/im-an-nyc-tour-guide-and-food-writerthese-are-the-places-i-take-visiting-friends-and-family-101426",
+      "source": "Time Out"
+    },
+    {
+      "title": "Ultimate NYC Tradition: Tompkins Square Halloween Dog Parade",
+      "url": "https://radio.foxnews.com/2026/10/14/ultimate-nyc-tradition-tompkins-square-halloween-dog-parade/",
+      "source": "Fox News"
+    },
+    {
+      "title": "Bulleit Frontier Whiskey and Mike's Hot Honey Collab On The Ultimate Pairing: A Drizzle + A Pour",
+      "url": "https://www.prnewswire.com/news-releases/bulleit-frontier-whiskey-and-mikes-hot-honey-collab-on-the-ultimate-pairing-a-drizzle--a-pour-302909157.html",
+      "source": "PRNewswire"
+    },
+    {
+      "title": "Japanese Restaurant Udon Shin to Open First NYC Restaurant at 37 West 17th Street",
+      "url": "http://commercialobserver.com/2026/10/udon-shin-lease-restaurant-37-west-17th-street/",
+      "source": "Commercial Observer"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
