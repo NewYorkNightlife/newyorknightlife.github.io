@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Great Menswear Can Come From Cleveland, Too",
+      "url": "https://www.highsnobiety.com/p/william-frederick-interview/",
+      "source": "Highsnobiety"
+    },
+    {
+      "title": "A cheapskate’s guide to NYC Halloween fun: Bat school, dog parades and ‘Thriller’ dances",
+      "url": "https://nypost.com/2026/10/16/lifestyle/free-halloween-events-in-nyc-spooky-fun-on-a-budget/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Harry Styles steps out in a pair of short shorts during stroll before greeting a friend with a hug on NYC outing",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16213957/Harry-Styles-steps-pair-short-shorts-stroll-greeting-friend-hug-NYC-outing.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Don’t hibernate just yet! NYC’s fall street fairs are back — here’s where to find them",
+      "url": "https://nypost.com/2026/10/16/lifestyle/10-nyc-fall-street-fairs-to-visit-in-october-and-november/",
+      "source": "New York Post"
+    },
+    {
+      "title": "A Sicko’s Guide to Every Bloody Friday the 13th Movie",
+      "url": "https://www.menshealth.com/entertainment/a74147599/friday-the-13th-movies-viewing-guide-in-order/",
+      "source": "menshealth.com"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
