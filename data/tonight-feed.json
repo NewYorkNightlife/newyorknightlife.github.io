@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Don’t hibernate just yet! NYC’s fall street fairs are back — here’s where to find them",
+      "url": "https://nypost.com/2026/10/16/lifestyle/10-nyc-fall-street-fairs-to-visit-in-october-and-november/",
+      "source": "New York Post"
+    },
+    {
+      "title": "A Sicko’s Guide to Every Bloody Friday the 13th Movie",
+      "url": "https://www.menshealth.com/entertainment/a74147599/friday-the-13th-movies-viewing-guide-in-order/",
+      "source": "menshealth.com"
+    },
+    {
+      "title": "Matchbox Twenty announces 2027 anniversary tour, two NY shows. Get tickets",
+      "url": "https://nypost.com/2026/10/15/ticket-sales/get-tickets-for-matchbox-twenty-30th-anniversary-tour-2027/",
+      "source": "New York Post"
+    },
+    {
+      "title": "7 LGBTQ+ actors we want to see in the Girls revival",
+      "url": "https://www.out.com/gay-entertainment/girls-reboot-lgbtq-actors-cast",
+      "source": "Out.com"
+    },
+    {
+      "title": "I’m an NYC tour guide and food writer—these are the places I take visiting friends and family",
+      "url": "https://www.timeout.com/newyork/news/im-an-nyc-tour-guide-and-food-writerthese-are-the-places-i-take-visiting-friends-and-family-101426",
+      "source": "Time Out"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
