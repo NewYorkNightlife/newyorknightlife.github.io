@@ -38,7 +38,33 @@
       }
     ]
   },
-  "headlines": [],
+  "headlines": [
+    {
+      "title": "Los Tacos No. 1 serves 1,200 NYC customers a day. Its CEO is betting private equity can help it scale.",
+      "url": "https://www.businessinsider.com/los-tacos-restaurant-new-york-ceo-private-equity-investment-why-2026-10#article",
+      "source": "Business Insider"
+    },
+    {
+      "title": "Britney Spears covers her face with a scarf for lunch in NYC... after dropping collaboration with ex Justin Timberlake",
+      "url": "https://www.dailymail.com/tvshowbiz/article-16215755/britney-spears-justin-timberlake-nyc-collaboration.html",
+      "source": "Dailymail.com"
+    },
+    {
+      "title": "Man who drugged and raped dead NYC college student texted nude pics of her instead of calling 911: feds",
+      "url": "https://nypost.com/2026/10/16/us-news/man-who-drugged-and-raped-dead-nyc-college-student-texted-nude-pics-of-her-instead-of-calling-911-feds/",
+      "source": "New York Post"
+    },
+    {
+      "title": "Great Menswear Can Come From Cleveland, Too",
+      "url": "https://www.highsnobiety.com/p/william-frederick-interview/",
+      "source": "Highsnobiety"
+    },
+    {
+      "title": "A cheapskate’s guide to NYC Halloween fun: Bat school, dog parades and ‘Thriller’ dances",
+      "url": "https://nypost.com/2026/10/16/lifestyle/free-halloween-events-in-nyc-spooky-fun-on-a-budget/",
+      "source": "New York Post"
+    }
+  ],
   "featured_tonight": [],
   "featured_verified": [],
   "picks_from_sources": [],
