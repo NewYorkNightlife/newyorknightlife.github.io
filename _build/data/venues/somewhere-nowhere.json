@@ -1,0 +1,142 @@
+{
+ "slug": "somewhere-nowhere",
+ "name": "Somewhere Nowhere",
+ "type": "rooftop bar",
+ "neighborhood": "Chelsea",
+ "borough": "Manhattan",
+ "address": "112 W 25th St, 38th–39th floors (Renaissance New York Chelsea Hotel), New York, NY 10001",
+ "phone": "212-404-7969",
+ "website": "https://www.somewherenowherenyc.com/",
+ "instagram": "",
+ "status": "open",
+ "status_note": "Official site lists events for Oct 18–Nov 7, 2026. Hours changed since August: Thursday is now listed as closed (was 12pm–11pm). Instagram handle not confirmed from an official page.",
+ "dress": {
+  "answer": "Smart casual, strictly enforced",
+  "detail": "The official FAQ calls nightlife 'smart casual' and bans shorts, athletic wear, team logos, pool slides/flip-flops, distressed sneakers and tank tops; shorts are allowed only at Daylife events.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Somewhere Nowhere official FAQ",
+    "url": "https://www.somewherenowherenyc.com/faq"
+   },
+   {
+    "name": "OpenTable listing",
+    "url": "https://www.opentable.hk/r/somewhere-nowhere-nyc-new-york"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+ (government ID required)",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Somewhere Nowhere official FAQ",
+    "url": "https://www.somewherenowherenyc.com/faq"
+   }
+  ]
+ },
+ "cover": {
+  "value": "Ticketed: GA (entry before 1am) or Bar Reservation (entry + 4 drink tickets, before 3am); prices vary by event and aren't published",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Somewhere Nowhere official FAQ",
+    "url": "https://www.somewherenowherenyc.com/faq"
+   },
+   {
+    "name": "Discotech tickets page",
+    "url": "https://app.discotech.me/new-york/somewhere-nowhere/tickets"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Buy GA or a bar reservation via the venue's Weekly Events page (opens 30 days ahead, non-refundable); bottle service by email or phone. Late-night entry after 12:30am depends on capacity. Some dinner and show packages are on OpenTable.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Somewhere Nowhere official FAQ",
+    "url": "https://www.somewherenowherenyc.com/faq"
+   },
+   {
+    "name": "OpenTable listing",
+    "url": "https://www.opentable.hk/r/somewhere-nowhere-nyc-new-york"
+   },
+   {
+    "name": "The Infatuation review (2022)",
+    "url": "https://www.theinfatuation.com/new-york/reviews/somewhere-nowhere"
+   }
+  ],
+  "booking_platform": "venue site",
+  "booking_url": "https://www.somewherenowherenyc.com/"
+ },
+ "hours": {
+  "value": "Wed 5pm–1am; Thu closed; Fri–Sun 12pm–4am (official; events vary)",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Somewhere Nowhere official site",
+    "url": "https://www.somewherenowherenyc.com/"
+   },
+   {
+    "name": "Somewhere Nowhere official FAQ",
+    "url": "https://www.somewherenowherenyc.com/faq"
+   }
+  ]
+ },
+ "price": {
+  "value": "Very expensive ($$$$). Minimum spends are common: about $50–100 per person for seated and show bookings. Martini Power Hour specials are $12, 5–7pm (reported).",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "OpenTable listing",
+    "url": "https://www.opentable.hk/r/somewhere-nowhere-nyc-new-york"
+   },
+   {
+    "name": "The Infatuation review (2022)",
+    "url": "https://www.theinfatuation.com/new-york/reviews/somewhere-nowhere"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "On the 38th–39th floors of a hotel, reached by elevator; no accessibility policy is published",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Somewhere Nowhere official FAQ",
+    "url": "https://www.somewherenowherenyc.com/faq"
+   }
+  ]
+ },
+ "subway": {
+  "value": "23 St (F/M) at 6th Ave, ~4 min walk; 28 St (1) at 7th Ave, ~5 min (estimated from the address)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Somewhere Nowhere official FAQ",
+    "url": "https://www.somewherenowherenyc.com/faq"
+   }
+  ]
+ },
+ "skip_if": [
+  "You hate waiting: bouncers can hold you downstairs, and late night is loud bottle-service EDM (Infatuation)",
+  "You want value: OpenTable reviewers call it pricey for what you get and criticize the bench seating"
+ ],
+ "hotel_bar": true,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "rooftop",
+   "club",
+   "ticketed",
+   "dress_rule"
+  ],
+  "aliases": [
+   "somewhere nowhere"
+  ]
+ }
+}

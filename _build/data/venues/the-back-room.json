@@ -1,0 +1,141 @@
+{
+ "slug": "the-back-room",
+ "name": "The Back Room",
+ "type": "cocktail bar",
+ "neighborhood": "Lower East Side",
+ "borough": "Manhattan",
+ "address": "102 Norfolk St (between Delancey & Rivington), New York, NY 10002",
+ "phone": "212-228-5098",
+ "website": "https://www.backroomnyc.com/",
+ "instagram": "@thebackroomnyc",
+ "status": "open",
+ "status_note": "Official site is current. It lists closures for private events on 10/21, 10/24 and 10/28–10/31, so check before Halloween week. Haute Living's July 2026 guide also lists it as operating.",
+ "dress": {
+  "answer": "No hats, flip-flops, men's tanks or real fur",
+  "detail": "The official site bans baseball hats, flip-flops, tank tops on men and real fur (faux fur, leather and suede are fine); Time Out repeats the same rules.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "The Back Room official site",
+    "url": "https://www.backroomnyc.com/"
+   },
+   {
+    "name": "Time Out review (Sept 2025)",
+    "url": "https://www.timeout.com/newyork/bars/the-back-room"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+ Sun–Thu; 25+ Fri–Sat",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "The Back Room official site",
+    "url": "https://www.backroomnyc.com/"
+   },
+   {
+    "name": "The Back Room official reservations page",
+    "url": "https://www.backroomnyc.com/reservations"
+   },
+   {
+    "name": "Time Out review (Sept 2025)",
+    "url": "https://www.timeout.com/newyork/bars/the-back-room"
+   }
+  ]
+ },
+ "cover": {
+  "value": "None (\"always free\")",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "The Back Room official site",
+    "url": "https://www.backroomnyc.com/"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Walk-ins welcome. Reserve through the venue site (taken until 11:30pm, Tue–Sun). Small-group reservations have a bar minimum, large groups need bottle service Fri–Sat, and bachelor/bachelorette parties aren't allowed. Enter through the 'Lower East Side Toy Company' gate.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "The Back Room official reservations page",
+    "url": "https://www.backroomnyc.com/reservations"
+   },
+   {
+    "name": "Haute Living speakeasy guide (July 2026)",
+    "url": "https://hauteliving.com/2026/07/the-12-best-speakeasies-in-new-york-city-worth-the-visit/792535/"
+   }
+  ],
+  "booking_platform": "venue site",
+  "booking_url": "https://www.backroomnyc.com/reservations"
+ },
+ "hours": {
+  "value": "Sun–Mon 6pm–1am; Tue–Thu 6pm–2am; Fri–Sat 6pm–3am",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "The Back Room official site",
+    "url": "https://www.backroomnyc.com/"
+   },
+   {
+    "name": "Time Out review (Sept 2025)",
+    "url": "https://www.timeout.com/newyork/bars/the-back-room"
+   }
+  ]
+ },
+ "price": {
+  "value": "Moderate (Time Out $$ of 4); exact cocktail prices aren't published, and some reviewers call the drinks small or pricey",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Time Out review (Sept 2025)",
+    "url": "https://www.timeout.com/newyork/bars/the-back-room"
+   },
+   {
+    "name": "Wanderlog review roundup",
+    "url": "https://wanderlog.com/place/details/369572/"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "Entrance is down an alley passage and covered staircase; not described as step-free",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Difford's Guide",
+    "url": "https://www.diffordsguide.com/bars/g7oVpz/the-back-room-bar"
+   }
+  ]
+ },
+ "subway": {
+  "value": "Delancey St / Essex St (F, J, M, Z), ~3 min walk",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Time Out review (Sept 2025)",
+    "url": "https://www.timeout.com/newyork/bars/the-back-room"
+   }
+  ]
+ },
+ "skip_if": [
+  "You want inventive cocktails: Time Out calls them crowd-pleasing classics and the teacup service a gimmick",
+  "You're under 25 on a weekend: the Fri–Sat age floor is 25"
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "cocktail",
+   "no_cover",
+   "dress_rule"
+  ],
+  "aliases": [
+   "back room"
+  ]
+ }
+}

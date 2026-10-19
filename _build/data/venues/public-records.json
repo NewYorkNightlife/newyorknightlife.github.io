@@ -1,0 +1,106 @@
+{
+ "slug": "public-records",
+ "name": "Public Records",
+ "type": "venue",
+ "neighborhood": "Gowanus",
+ "borough": "Brooklyn",
+ "address": "233 Butler St, Brooklyn, NY 11217",
+ "phone": "",
+ "website": "https://publicrecords.nyc/",
+ "instagram": "",
+ "status": "open",
+ "status_note": "Open. The official site lists current campus hours and events, with no closure notice. Songkick and JamBase list Oct 2026 shows (Oct 9, Oct 24). It's a multi-space campus: the Atrium restaurant, the Sound Room (live music and club, ~200 capacity), UPSTAIRS listening bar, Cafe Public and the open-air Nursery. Commercial Observer has a headline on a new Public Records live venue in Sunset Park; no details or opening date were verified.",
+ "dress": {
+  "answer": "None published",
+  "detail": "The official site and the reviews checked (The Infatuation, Xceed) mention no dress code.",
+  "status": "unknown",
+  "sources": [
+   {
+    "name": "Public Records official site",
+    "url": "https://publicrecords.nyc/"
+   }
+  ]
+ },
+ "age": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "cover": {
+  "value": "The restaurant, cafe and bar charge no entry fee. Sound Room shows and club nights are ticketed on DICE, e.g. a jazz show on Oct 24, 2026 from ~$32.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Public Records official site (DICE ticket links)",
+    "url": "https://publicrecords.nyc/"
+   },
+   {
+    "name": "Songkick (Mark Guiliana, Oct 24, 2026)",
+    "url": "https://songkick.com/concerts/43332824-mark-guiliana-at-public-records"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Book Atrium and UPSTAIRS tables on Resy. Buy Sound Room and Nursery event tickets on DICE (a few events go through partner pages).",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Public Records official site",
+    "url": "https://publicrecords.nyc/"
+   },
+   {
+    "name": "DICE venue page",
+    "url": "https://dice.fm/venue/public-records-w2qg"
+   }
+  ],
+  "booking_platform": "dice",
+  "booking_url": "https://dice.fm/venue/public-records-w2qg"
+ },
+ "hours": {
+  "value": "Campus hours: Wed-Thu 6-10pm, Fri 6pm-4am, Sat 10am-4am, Sun 10am-9pm; closed Mon-Tue. Event times vary.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Public Records official site",
+    "url": "https://publicrecords.nyc/"
+   }
+  ]
+ },
+ "price": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "Union St (R) is the likely nearest stop, a short walk; Carroll St (F/G) is also nearby. No source confirmed this.",
+  "status": "unconfirmed",
+  "sources": []
+ },
+ "skip_if": [
+  "You want spontaneous late-night dancing: the club nights are ticketed and the Sound Room holds only ~200.",
+  "You want a dressy cocktail-bar night: it's a casual, music-first, mostly vegan-food campus."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/The_Westerlies_at_Public_Records%2C_June_2025.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "Spaghettifier / Wikimedia Commons"
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "live",
+   "club",
+   "no_cover",
+   "ticketed"
+  ],
+  "aliases": [
+   "public records"
+  ]
+ }
+}

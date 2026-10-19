@@ -1,0 +1,125 @@
+{
+ "slug": "knockdown-center",
+ "name": "Knockdown Center",
+ "type": "venue",
+ "neighborhood": "Maspeth",
+ "borough": "Queens",
+ "address": "52-19 Flushing Ave, Maspeth, NY 11378",
+ "phone": "(718) 418-5576",
+ "website": "https://knockdown.center",
+ "instagram": "",
+ "status": "open",
+ "status_note": "Event listings run through Oct-Nov 2026 (Animal Collective Oct 21-22, Horse Meat Disco Halloween Oct 31, Boy Harsher Nov 5, MPH Nov 28). Official site blocked automated fetches (Vercel checkpoint), so status comes from listings, not the official page. Wikipedia notes it also houses the BASEMENT techno club (opened 2019, second room STUDIO 2022). Instagram handle not verified this pass.",
+ "dress": {
+  "answer": "None published",
+  "detail": "No source found states a dress code; none of the listing pages checked mention one.",
+  "status": "unknown",
+  "sources": []
+ },
+ "age": {
+  "value": "Varies by event (mostly 21+, some 18+); valid photo ID required",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Consequence venue page",
+    "url": "https://concerts.consequence.net/venues/knockdown-center"
+   },
+   {
+    "name": "Dice event page (accepts US state photo ID or original passport)",
+    "url": "https://dice.fm/event/k6dxe8-ship-wrek-with-twin-diplomacy-jengi-b2b-n2n-19th-jun-knockdown-center-new-york-tickets"
+   },
+   {
+    "name": "RA event (21+)",
+    "url": "https://ra.co/events/2466485"
+   }
+  ]
+ },
+ "cover": {
+  "value": "Ticketed per event; prices vary by act (e.g. ~$59 listed for Cortex & Adrian Younge, Oct 12 2026)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Songkick (Cortex, Oct 12 2026)",
+    "url": "https://www.songkick.com/concerts/43311059-cortex-at-knockdown-center"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Buy advance tickets per event; Dice tickets are stored in the app. No re-entry; bag size limits; no outside food or drink.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Dice event page",
+    "url": "https://dice.fm/event/k6dxe8-ship-wrek-with-twin-diplomacy-jengi-b2b-n2n-19th-jun-knockdown-center-new-york-tickets"
+   },
+   {
+    "name": "Consequence venue page",
+    "url": "https://concerts.consequence.net/venues/knockdown-center"
+   }
+  ],
+  "booking_platform": "dice",
+  "booking_url": "https://dice.fm/venue/knockdown-center-ybbx"
+ },
+ "hours": {
+  "value": "Event-driven: concerts usually 6-8pm starts; club nights 10-11pm to as late as 5am",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Consequence venue page (event times)",
+    "url": "https://concerts.consequence.net/venues/knockdown-center"
+   },
+   {
+    "name": "RA event (22:00-05:00)",
+    "url": "https://ra.co/events/2466485"
+   }
+  ]
+ },
+ "price": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "accessibility": {
+  "value": "Wheelchair-accessible spaces (limited number) with ramps and ground-level entry; notify the venue in advance",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Consequence venue page",
+    "url": "https://concerts.consequence.net/venues/knockdown-center"
+   }
+  ]
+ },
+ "subway": {
+  "value": "No station close by; one listing names the M to Metropolitan Ave and recommends rideshare. Walk time not confirmed.",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Consequence / listing search results",
+    "url": "https://concerts.consequence.net/venues/knockdown-center-tickets"
+   }
+  ]
+ },
+ "skip_if": [
+  "You don't want a trek: it is in industrial Maspeth with no subway stop close by, and listings suggest rideshare.",
+  "You like to step out and come back: listings say there is no re-entry."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/KdC_main_interior.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "Jimmyfever1978, via Wikimedia Commons"
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club",
+   "live",
+   "ticketed",
+   "under21"
+  ],
+  "aliases": [
+   "knockdown",
+   "knock down center"
+  ]
+ }
+}

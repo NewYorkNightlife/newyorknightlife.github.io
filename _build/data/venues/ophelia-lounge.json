@@ -1,0 +1,119 @@
+{
+ "slug": "ophelia-lounge",
+ "name": "Ophelia Lounge",
+ "type": "rooftop bar",
+ "neighborhood": "Midtown East (Beekman / Turtle Bay)",
+ "borough": "Manhattan",
+ "address": "3 Mitchell Pl, 26th Floor (Beekman Tower, 49th St & 1st Ave), New York, NY 10017",
+ "phone": "(212) 980-4796",
+ "website": "https://www.opheliany.com/",
+ "instagram": "@opheliany",
+ "status": "open",
+ "status_note": "The official site is current: autumn installation, Halloween Weekend, Omacocktail tasting, a $60 prix-fixe dinner and live OpenTable booking. Sunday now opens at 5pm, not noon. The site's own meta description still shows the old Sunday 12pm opening, but the posted hours and The Rooftop Guide both say 5pm.",
+ "dress": {
+  "answer": "Smart casual",
+  "detail": "The official site publishes no dress code. The Rooftop Guide lists smart casual, and OpenTable reviewers describe the room as elegant and classic.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "The Rooftop Guide - Ophelia",
+    "url": "https://www.therooftopguide.com/rooftop-bars-in-new-york/ophelia.html"
+   }
+  ]
+ },
+ "age": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "cover": {
+  "value": "None listed",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Ophelia official site",
+    "url": "https://www.opheliany.com/"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Reservations on OpenTable, recommended for the best (window) seating. Social Hour is at the bar, Mon-Fri 5-7pm.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Ophelia official site",
+    "url": "https://www.opheliany.com/"
+   },
+   {
+    "name": "Ophelia official - Social Hour",
+    "url": "https://www.opheliany.com/social-club/"
+   },
+   {
+    "name": "OpenTable - Ophelia",
+    "url": "https://www.opentable.com/r/ophelia-new-york"
+   }
+  ],
+  "booking_platform": "opentable",
+  "booking_url": "https://www.opentable.com/booking/restref/availability?rid=995113"
+ },
+ "hours": {
+  "value": "Sun-Wed 5pm-11pm; Thu 5pm-12am; Fri-Sat 5pm-2am",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Ophelia official - Hours",
+    "url": "https://www.opheliany.com/hours/"
+   },
+   {
+    "name": "The Rooftop Guide - Ophelia",
+    "url": "https://www.therooftopguide.com/rooftop-bars-in-new-york/ophelia.html"
+   }
+  ]
+ },
+ "price": {
+  "value": "Social Hour cocktail tasting flight (three mini cocktails) $30, Mon-Fri 5-7pm; three-course prix-fixe dinner $60pp. Single-cocktail prices not found.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Ophelia official - Social Hour",
+    "url": "https://www.opheliany.com/social-club/"
+   },
+   {
+    "name": "Ophelia official - Menus",
+    "url": "https://www.opheliany.com/menus/"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "skip_if": [
+  "You want late-night partying early in the week: it closes at 11pm Sunday through Wednesday.",
+  "You want a fully open-air rooftop: much of the terrace is a covered greenhouse with only some open sections."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Beekman_Panhellenic_Tower_May_2021_14.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "Epicgenius / Wikimedia Commons (Beekman Tower exterior)"
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "rooftop",
+   "cocktail",
+   "no_cover",
+   "dress_rule"
+  ],
+  "aliases": [
+   "ophelia"
+  ]
+ }
+}

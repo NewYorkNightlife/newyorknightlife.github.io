@@ -1,0 +1,135 @@
+{
+ "slug": "westlight",
+ "name": "Westlight",
+ "type": "rooftop bar",
+ "neighborhood": "Williamsburg",
+ "borough": "Brooklyn",
+ "address": "111 N 12th St, 22nd Floor (The William Vale), Brooklyn, NY 11249",
+ "phone": "718-307-7100",
+ "website": "https://westlightnyc.com/",
+ "instagram": "@westlightnyc",
+ "status": "open",
+ "status_note": "Official site is current. Changes since August: Friday now closes at 1am (was 2am), and reservations now go through Tablz (app.tablz.com/westlight), not OpenTable.",
+ "dress": {
+  "answer": "Casual (nothing official)",
+  "detail": "The official site publishes no dress code; OpenTable and Gayot both list the dress code as casual.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "OpenTable listing",
+    "url": "https://www.opentable.ie/r/westlight-brooklyn"
+   },
+   {
+    "name": "Gayot listing",
+    "url": "https://www.gayot.com/restaurants/westlight-brooklyn-ny-11249_1ny160902-02.html"
+   }
+  ]
+ },
+ "age": {
+  "value": "All ages until 6pm; 21+ after 6pm daily",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Westlight official Hours & Location",
+    "url": "https://westlightnyc.com/location/westlight-/"
+   },
+   {
+    "name": "Westlight official reservations page",
+    "url": "https://westlightnyc.com/reservations/"
+   }
+  ]
+ },
+ "cover": {
+  "value": "None listed; tables may carry a food-and-drink minimum",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "The Better Vacation rooftop guide",
+    "url": "https://thebettervacation.com/new-york/best-rooftop-bars-in-nyc/amp/"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Reserve on Tablz via the official site. Walk-ins face elevator lines from opening, and weekend nights after 9pm are busiest.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Westlight official reservations page",
+    "url": "https://westlightnyc.com/reservations/"
+   },
+   {
+    "name": "Brooklyn Paper",
+    "url": "https://www.brooklynpaper.com/getting-high-we-visit-three-new-rooftop-bars"
+   }
+  ],
+  "booking_platform": "venue site",
+  "booking_url": "https://app.tablz.com/westlight/"
+ },
+ "hours": {
+  "value": "Mon–Thu 4pm–12am; Fri 4pm–1am; Sat 12pm–2am; Sun 12pm–12am",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Westlight official Hours & Location",
+    "url": "https://westlightnyc.com/location/westlight-/"
+   }
+  ]
+ },
+ "price": {
+  "value": "Cocktails $22–42 (spirit-free $19–20); beer $11; small plates $11–32",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Westlight official menus",
+    "url": "https://westlightnyc.com/menus/"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "22nd-floor rooftop reached by hotel elevator; no accessibility details published",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Westlight official Hours & Location",
+    "url": "https://westlightnyc.com/location/westlight-/"
+   },
+   {
+    "name": "Brooklyn Paper",
+    "url": "https://www.brooklynpaper.com/getting-high-we-visit-three-new-rooftop-bars"
+   }
+  ]
+ },
+ "subway": {
+  "value": "Bedford Av (L), ~10 min walk; Nassau Av (G) ~12 min (estimated from the address)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Westlight official Hours & Location",
+    "url": "https://westlightnyc.com/location/westlight-/"
+   }
+  ]
+ },
+ "skip_if": [
+  "You won't book: elevator lines start at opening and the bar gets packed (Brooklyn Paper)",
+  "You're price-sensitive: cocktails start at $22"
+ ],
+ "hotel_bar": true,
+ "photo": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/William_Vale_Hotel_2_jeh.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "Jim.henderson via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:William_Vale_Hotel_2_jeh.jpg); shows The William Vale building"
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "rooftop",
+   "no_cover",
+   "under21"
+  ],
+  "aliases": [
+   "westlight",
+   "west light",
+   "westlite"
+  ]
+ }
+}

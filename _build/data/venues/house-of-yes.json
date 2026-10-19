@@ -1,0 +1,143 @@
+{
+ "slug": "house-of-yes",
+ "name": "House of Yes",
+ "type": "club",
+ "neighborhood": "Bushwick",
+ "borough": "Brooklyn",
+ "address": "2 Wyckoff Ave, Brooklyn, NY 11237 (entrance around the corner at 408 Jefferson St)",
+ "phone": "646-838-4937",
+ "website": "https://houseofyes.org",
+ "instagram": "@houseofyesnyc",
+ "status": "open",
+ "status_note": "Official calendar lists events through Oct 2026 (Halloween run incl. Dirty Circus, Vampire Ball) and into Dec 2026. Venue notes it sometimes closes for private events.",
+ "dress": {
+  "answer": "No formal code; costumes encouraged",
+  "detail": "The official FAQ says Friday and Saturday parties are themed and to 'dress to express'; other nights, wear what makes you feel fun and fabulous. Time Out notes guests are known for elaborate costumes.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "House of Yes FAQ (official)",
+    "url": "https://houseofyes.org/faq"
+   },
+   {
+    "name": "Time Out New York",
+    "url": "https://www.timeout.com/newyork/bars/house-of-yes"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+ with government photo ID (except events marked All Ages)",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "House of Yes FAQ (official)",
+    "url": "https://houseofyes.org/faq"
+   }
+  ]
+ },
+ "cover": {
+  "value": "Ticketed per event; Dirty Circus GA ~$43, cabaret table for 2 ~$77; party tickets tiered and rise closer to the date",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "House of Yes FAQ (official, prices rise closer to date)",
+    "url": "https://houseofyes.org/faq"
+   },
+   {
+    "name": "Fever listing (Dirty Circus, Nov 28 2026)",
+    "url": "https://feverup.com/m/776481"
+   },
+   {
+    "name": "Ticketfairy guide",
+    "url": "https://www.ticketfairy.com/events-in-new-york-city/house-of-yes"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Buy advance tickets on the official calendar; limited door sales first-come, first-served until capacity. Some tickets require arrival before 11pm or 1:30am.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "House of Yes FAQ (official)",
+    "url": "https://houseofyes.org/faq"
+   },
+   {
+    "name": "House of Yes calendar (official)",
+    "url": "https://calendar.houseofyes.org/"
+   }
+  ],
+  "booking_platform": "venue site",
+  "booking_url": "https://calendar.houseofyes.org/"
+ },
+ "hours": {
+  "value": "Event-driven: shows usually start 6:30pm (Thu-Sat), dance parties 9-10:30pm onward Thu-Sat and some Wednesdays; end times not published",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "House of Yes calendar (official)",
+    "url": "https://calendar.houseofyes.org/"
+   }
+  ]
+ },
+ "price": {
+  "value": "Mid-range ($$ of $$$$); cocktails were ~$13 in older press, current prices not published",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Time Out New York (price 2 of 4)",
+    "url": "https://www.timeout.com/newyork/bars/house-of-yes"
+   },
+   {
+    "name": "amNY (older feature)",
+    "url": "https://www.amny.com/entertainment/things-to-do/house-of-yes-in-brooklyn-a-magical-bushwick-space-that-merges-aerialists-dance-and-brunch-1-12308845/"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "Official: all entrances and spaces are single-level and wheelchair accessible; reserved seating for guests with physical disabilities; strobe lights often used",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "House of Yes FAQ (official)",
+    "url": "https://houseofyes.org/faq"
+   }
+  ]
+ },
+ "subway": {
+  "value": "Jefferson St (L), about 1 minute walk",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "House of Yes FAQ (official)",
+    "url": "https://houseofyes.org/faq"
+   },
+   {
+    "name": "Time Out New York",
+    "url": "https://www.timeout.com/newyork/bars/house-of-yes"
+   }
+  ]
+ },
+ "skip_if": [
+  "You hate lines: Time Out says the entry queue often runs down the block, so buy tickets ahead and arrive early.",
+  "Strobes or sensory overload are a problem: the venue warns strobe lights are often used."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/A_performance_at_the_House_of_Yes_in_Bushwick%2C_Brooklyn.jpg",
+  "license": "CC BY 2.0",
+  "credit": "Raffi Asdourian (Flickr: rasdourian), via Wikimedia Commons"
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club",
+   "live",
+   "ticketed",
+   "under21"
+  ],
+  "aliases": [
+   "house of yes",
+   "hoy"
+  ]
+ }
+}

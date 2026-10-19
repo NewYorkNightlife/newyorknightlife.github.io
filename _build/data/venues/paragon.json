@@ -1,0 +1,121 @@
+{
+ "slug": "paragon",
+ "name": "Paragon",
+ "type": "club",
+ "neighborhood": "Bushwick (Bed-Stuy border)",
+ "borough": "Brooklyn",
+ "address": "990 Broadway, Brooklyn, NY 11221",
+ "phone": "",
+ "website": "https://paragonbroadway.com/",
+ "instagram": "https://www.instagram.com/paragonbroadway",
+ "status": "open",
+ "status_note": "Open. It closed in April 2025 over finances and reopened Aug 1, 2025 with Kevin Saunderson as partner and resident (RA). Songkick lists events on Oct 23, 24, 30 and 31 and Nov 12, 2026. The official site is paragonbroadway.com; the old paragon.nyc domain now redirects to an unrelated security company, so don't link it.",
+ "dress": {
+  "answer": "None published",
+  "detail": "The official site and the sources checked don't publish a dress code.",
+  "status": "unknown",
+  "sources": [
+   {
+    "name": "Paragon official site",
+    "url": "https://paragonbroadway.com/"
+   }
+  ]
+ },
+ "age": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "cover": {
+  "value": "Ticketed, roughly $20-50. Recent 2026 nights were listed at about $28 all-in.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Songkick (Sep 11, 2026 event, $28.33)",
+    "url": "https://songkick.com/concerts/43336219-dj-g2g-at-paragon"
+   },
+   {
+    "name": "Time Out New York (2025, $20-50)",
+    "url": "https://www.timeout.com/newyork/nightlife/dance-planet-at-paragon-1"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Buy tickets in advance on Resident Advisor (the official site's Tickets link goes to RA). Some nights are also sold on DICE.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Paragon official site",
+    "url": "https://paragonbroadway.com/"
+   },
+   {
+    "name": "RA news (Jul 2025)",
+    "url": "https://ra.co/news/83202"
+   },
+   {
+    "name": "DICE venue page",
+    "url": "https://dice.fm/venue/paragon-n958"
+   }
+  ],
+  "booking_platform": "ra",
+  "booking_url": "https://ra.co/clubs/195815"
+ },
+ "hours": {
+  "value": "Weekend event nights, mainly Fri and Sat (some Thursday nights). Doors around 9:30-11:30pm. Times vary by event.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Paragon official site ('weekend events')",
+    "url": "https://paragonbroadway.com/"
+   },
+   {
+    "name": "RA news (Fri/Sat schedule)",
+    "url": "https://ra.co/news/83202"
+   },
+   {
+    "name": "Songkick",
+    "url": "https://songkick.com/venues/4453649-paragon"
+   }
+  ]
+ },
+ "price": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "Myrtle Av (J/M/Z), a few minutes' walk. Time Out places the club at Myrtle-Broadway.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Time Out New York",
+    "url": "https://www.timeout.com/newyork/nightlife/dance-planet-at-paragon-1"
+   }
+  ]
+ },
+ "skip_if": [
+  "You want a sure thing on any night: it's events only, mostly Fri/Sat, and it shut down once already for financial reasons (Apr-Jul 2025).",
+  "You want a polished, upscale club: it's a raw, two-level underground dance room."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club",
+   "ticketed"
+  ],
+  "aliases": [
+   "!paragon"
+  ]
+ }
+}

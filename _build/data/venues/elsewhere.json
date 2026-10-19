@@ -1,0 +1,125 @@
+{
+ "slug": "elsewhere",
+ "name": "Elsewhere",
+ "type": "venue",
+ "neighborhood": "Bushwick",
+ "borough": "Brooklyn",
+ "address": "599 Johnson Ave, Brooklyn, NY 11237",
+ "phone": "",
+ "website": "https://www.elsewhere.club",
+ "instagram": "https://www.instagram.com/elsewherespace",
+ "status": "open",
+ "status_note": "Official FAQ live; Songkick/TickPick list shows through Oct–Nov 2026. Official site has moved from elsewherebrooklyn.com to elsewhere.club (old domain redirects). No public phone; email info@elsewhere.club.",
+ "dress": {
+  "answer": "None published",
+  "detail": "The official FAQ lists no dress code; one third-party listing describes it as casual.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Elsewhere FAQ (official)",
+    "url": "https://www.elsewhere.club/faq"
+   },
+   {
+    "name": "En Primeur Club",
+    "url": "https://www.enprimeurclub.com/bars/elsewhere-new-york-city-bar"
+   }
+  ]
+ },
+ "age": {
+  "value": "16+ to 21+ depending on event; under-16 never admitted. Scannable US government photo ID or passport required (internationals: passport only); no expired IDs or photocopies",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Elsewhere FAQ (official)",
+    "url": "https://www.elsewhere.club/faq"
+   }
+  ]
+ },
+ "cover": {
+  "value": "Ticketed per event; Oct 2026 listings ran about $10–36, with some headliner tiers up to ~$100. Door tickets after the event starts have no fees",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Elsewhere FAQ (official) - door tickets fee-free",
+    "url": "https://www.elsewhere.club/faq"
+   },
+   {
+    "name": "Songkick - Franc Moody, 23 Oct 2026",
+    "url": "https://www.songkick.com/concerts/43328647-franc-moody-at-elsewhere"
+   },
+   {
+    "name": "Songkick - Dev Lemons, 30 Oct 2026",
+    "url": "https://songkick.com/concerts/43325244-dev-lemons-at-hall-elsewhere"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Buy tickets on Eventbrite or at the door; bags inspected, mandatory bag check at big events. Zone One/Loft/Rooftop use the left courtyard entrance; Hall uses the right corridor entrance",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Elsewhere FAQ (official)",
+    "url": "https://www.elsewhere.club/faq"
+   }
+  ],
+  "booking_platform": "eventbrite",
+  "booking_url": "https://www.eventbrite.com/o/elsewhere-105655500371"
+ },
+ "hours": {
+  "value": "Varies by event; usually closes around midnight Mon–Thu, 4am Fri–Sat, 11pm Sun",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Elsewhere FAQ (official)",
+    "url": "https://www.elsewhere.club/faq"
+   }
+  ]
+ },
+ "price": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "accessibility": {
+  "value": "Fully wheelchair accessible including the rooftop; some elevator areas need a staff escort. Reserved seating can be arranged via info@elsewhere.club or security at the door",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Elsewhere FAQ (official)",
+    "url": "https://www.elsewhere.club/faq"
+   }
+  ]
+ },
+ "subway": {
+  "value": "L to Jefferson St (~5 min walk) or Morgan Ave (~10 min); B57 bus stops at Flushing/Johnson Aves",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Elsewhere FAQ (official)",
+    "url": "https://www.elsewhere.club/faq"
+   }
+  ]
+ },
+ "skip_if": [
+  "You dislike lines and crowds: reviewers advise queuing early for weekend rooftop parties, and the Hall holds about 600.",
+  "You want a polished cocktail experience: it is a loud, large warehouse venue with drinks served in plastic cups."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club",
+   "live",
+   "ticketed",
+   "under21"
+  ],
+  "aliases": [
+   "!elsewhere"
+  ]
+ }
+}

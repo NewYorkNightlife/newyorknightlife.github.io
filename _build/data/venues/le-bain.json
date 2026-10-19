@@ -1,0 +1,133 @@
+{
+ "slug": "le-bain",
+ "name": "Le Bain",
+ "type": "club",
+ "neighborhood": "Meatpacking District",
+ "borough": "Manhattan",
+ "address": "The Standard, High Line (top floor), 848 Washington St, New York, NY 10014 (Standard's Le Bain page lists 444 W 13th St)",
+ "phone": "212-645-4646",
+ "website": "https://www.lebainnewyork.com/",
+ "instagram": "@lebainnyc",
+ "status": "open",
+ "status_note": "Official site lists events through Halloween 2026 (Dirty Mag Halloween Oct 29, Susanne Bartsch Boom! Oct 30, Halloween on the 18th Floor Oct 31). Penthouse club plus The Rooftop bar on the top floor of The Standard, High Line.",
+ "dress": {
+  "answer": "None published",
+  "detail": "Neither official page states a dress code; two third-party nightlife listings describe it as smart and elegant.",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "alotea listing",
+    "url": "https://alotea.com/new-york-city/nightclubs/le-bain"
+   },
+   {
+    "name": "NOX agency listing",
+    "url": "https://nox-agency.com/new-york-city/le-bain"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "The Standard - Le Bain (official)",
+    "url": "https://www.standardhotels.com/new-york/features/le-bain"
+   },
+   {
+    "name": "The Standard, High Line hotel page (official)",
+    "url": "https://www.standardhotels.com/new-york/properties/high-line"
+   }
+  ]
+ },
+ "cover": {
+  "value": "No cover for standing/dancing room and bar service; tables carry a minimum spend",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Le Bain (official)",
+    "url": "https://www.lebainnewyork.com/"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Walk-ins welcome; table reservations optional on Resy (minimum spend). Hotel guests are not guaranteed entry. Reviewers say arrive early, as the line can wrap the block.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Le Bain (official)",
+    "url": "https://www.lebainnewyork.com/"
+   },
+   {
+    "name": "The Standard, High Line hotel page (official)",
+    "url": "https://www.standardhotels.com/new-york/properties/high-line"
+   },
+   {
+    "name": "The Infatuation",
+    "url": "https://www.theinfatuation.com/new-york/reviews/le-bain"
+   }
+  ],
+  "booking_platform": "resy",
+  "booking_url": "https://resy.com/cities/new-york-ny/venues/le-bain"
+ },
+ "hours": {
+  "value": "Wed-Fri 4pm-4am; Sat 2pm-4am; Sun 2pm-12am. Mon-Tue conflicting: Standard pages say closed, lebainnewyork.com says 4pm-12am.",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "The Standard - Le Bain (official)",
+    "url": "https://www.standardhotels.com/new-york/features/le-bain"
+   },
+   {
+    "name": "Le Bain (official)",
+    "url": "https://www.lebainnewyork.com/"
+   }
+  ]
+ },
+ "price": {
+  "value": "Pricey: reviewers call the drinks on the expensive end (no current menu prices found)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "The Infatuation",
+    "url": "https://www.theinfatuation.com/new-york/reviews/le-bain"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "14 St / 8 Av (A/C/E, L); walk time not confirmed",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Loving New York guide",
+    "url": "https://loving-newyork.com/le-bain-nyc/"
+   }
+  ]
+ },
+ "skip_if": [
+  "You hate lines: The Infatuation says the line can wrap around the block, so arrive early.",
+  "You want cheap drinks: reviewers say prices run on the expensive end, and a Wanderlog reviewer mentions a mandatory coat check."
+ ],
+ "hotel_bar": true,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club",
+   "rooftop",
+   "no_cover"
+  ],
+  "aliases": [
+   "le bain",
+   "lebain"
+  ]
+ }
+}

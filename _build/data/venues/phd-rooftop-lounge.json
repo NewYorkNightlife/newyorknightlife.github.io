@@ -1,0 +1,127 @@
+{
+ "slug": "phd-rooftop-lounge",
+ "name": "PHD Rooftop Lounge",
+ "type": "rooftop bar",
+ "neighborhood": "Chelsea",
+ "borough": "Manhattan",
+ "address": "Dream Downtown, 355 W 16th St (12th floor), New York, NY 10011",
+ "phone": "(212) 317-2071",
+ "website": "https://taogroup.com/venues/phd-rooftop-lounge-new-york/",
+ "instagram": "https://instagram.com/phdrooftopny",
+ "status": "open",
+ "status_note": "Appears open. The Tao Group official page still lists regular Wed-Sat hours and SevenRooms VIP booking. The Rooftop Guide updated its listing Apr 27, 2026, and a New Year's Eve 2026 ticket page is live. The Tao page also shows a generic 'Closed for the Season' pop-up that doesn't name a venue; ambiguous, so the status rests on the hours listing. The hotel is now branded 'Dream Downtown, by Hyatt'.",
+ "dress": {
+  "answer": "Smart casual",
+  "detail": "The Rooftop Guide (updated Apr 2026) calls it smart casual. Alotea describes a stricter smart/elegant code. Tao Group's official page publishes no dress code.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "The Rooftop Guide",
+    "url": "http://www.therooftopguide.com/rooftop-bars-in-new-york/ph-d-rooftop-lounge.html"
+   },
+   {
+    "name": "Alotea",
+    "url": "https://alotea.com/new-york-city/rooftops/phd-rooftop"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+ with photo ID",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "NYE 2026 at PHD ticket terms (Ticketsauce)",
+    "url": "https://iconmarketing.ticketsauce.com/e/new-years-eve-at-phd-dream-hotel-downtown-nyc-2026"
+   }
+  ]
+ },
+ "cover": {
+  "value": "Not published officially. A concierge site reports cover from ~$50 at management's discretion.",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Club Bookers (concierge)",
+    "url": "https://clubbookers.com/phd-downtown-new-york-faq/"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "VIP tables and bottle service are booked ahead on SevenRooms (a deposit may be required). Otherwise it's at the door's discretion, with a heavy promoter/table culture.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Tao Group official",
+    "url": "https://taogroup.com/venues/phd-rooftop-lounge-new-york/"
+   },
+   {
+    "name": "Club Bookers (concierge)",
+    "url": "https://clubbookers.com/phd-downtown-new-york-faq/"
+   }
+  ],
+  "booking_platform": "sevenrooms",
+  "booking_url": "https://www.sevenrooms.com/events/phd"
+ },
+ "hours": {
+  "value": "Wed-Sat 10pm-4am; closed Sun-Tue",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Tao Group official",
+    "url": "https://taogroup.com/venues/phd-rooftop-lounge-new-york/"
+   },
+   {
+    "name": "The Rooftop Guide",
+    "url": "http://www.therooftopguide.com/rooftop-bars-in-new-york/ph-d-rooftop-lounge.html"
+   }
+  ]
+ },
+ "price": {
+  "value": "Steep. No cocktail prices published.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "The Rooftop Guide",
+    "url": "http://www.therooftopguide.com/rooftop-bars-in-new-york/ph-d-rooftop-lounge.html"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "14 St (A/C/E) / 8 Av (L), about a 3-minute walk (the hotel is on W 16th between 8th and 9th Aves)",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Time Out New York",
+    "url": "https://www.timeout.com/newyork/bars/ph-d"
+   },
+   {
+    "name": "Club Bookers",
+    "url": "https://clubbookers.com/new-york/clubs/phd-downtown-new-york/"
+   }
+  ]
+ },
+ "skip_if": [
+  "You want a relaxed rooftop drink: after 10pm it turns into a loud, club-style, bottle-service room.",
+  "You're on a budget: prices are steep and entry is at the door's discretion."
+ ],
+ "hotel_bar": true,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "rooftop",
+   "dress_rule"
+  ],
+  "aliases": [
+   "phd"
+  ]
+ }
+}

@@ -1,0 +1,127 @@
+{
+ "slug": "attaboy",
+ "name": "Attaboy",
+ "type": "cocktail bar",
+ "neighborhood": "Lower East Side",
+ "borough": "Manhattan",
+ "address": "134 Eldridge St, New York, NY 10002",
+ "phone": "",
+ "website": "https://attaboy.us/visit-us",
+ "instagram": "@attaboy134",
+ "status": "open",
+ "status_note": "Official site and OpenTable listing current; open 7 days. Official site lists email only (info@attaboynyc.com), no phone.",
+ "dress": {
+  "answer": "None published",
+  "detail": "Neither the official site nor guides (Time Out, OpenTable, NYC Tourism) mention a dress code.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Attaboy official Visit Us page",
+    "url": "https://attaboy.us/visit-us"
+   },
+   {
+    "name": "Time Out New York",
+    "url": "https://timeout.com/newyork/bars/attaboy"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+, valid physical government-issued ID required",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Attaboy official Visit Us page",
+    "url": "https://attaboy.us/visit-us"
+   }
+  ]
+ },
+ "cover": {
+  "value": "None listed",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Time Out New York",
+    "url": "https://timeout.com/newyork/bars/attaboy"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Limited reservations on OpenTable (parties of 6 and under); everyone else first-come, first-served; ring the buzzer at the unmarked 'AB 134' door; expect a wait late and on weekends",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Attaboy official Visit Us page",
+    "url": "https://attaboy.us/visit-us"
+   },
+   {
+    "name": "OpenTable",
+    "url": "https://www.opentable.com/r/attaboy-new-york"
+   },
+   {
+    "name": "NYC Tourism: best LES bars",
+    "url": "https://www.nyctourism.com/articles/best-lower-east-side-bars/"
+   }
+  ],
+  "booking_platform": "opentable",
+  "booking_url": "https://www.opentable.com/r/attaboy-new-york"
+ },
+ "hours": {
+  "value": "Daily 5pm–3am",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Attaboy official Visit Us page",
+    "url": "https://attaboy.us/visit-us"
+   },
+   {
+    "name": "OpenTable",
+    "url": "https://www.opentable.com/r/attaboy-new-york"
+   }
+  ]
+ },
+ "price": {
+  "value": "Cocktails ~$20 (bartender's choice, no menu)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Time Out New York",
+    "url": "https://timeout.com/newyork/bars/attaboy"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "Grand St (B, D) ~2–3 min walk; Delancey St–Essex St (F, J, M, Z) ~4 min walk",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "StreetEasy: 135 Eldridge St transit (building across the street)",
+    "url": "https://streeteasy.com/building/135-eldridge-street-new_york/3e"
+   }
+  ]
+ },
+ "skip_if": [
+  "You don't want to wait: the room is tiny (~28 seats) and Time Out says a wait is guaranteed late night and on weekends.",
+  "You want food or a menu to browse: there is no food and no drink menu, just a conversation with the bartender."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "cocktail",
+   "no_cover"
+  ],
+  "aliases": [
+   "attaboy"
+  ]
+ }
+}

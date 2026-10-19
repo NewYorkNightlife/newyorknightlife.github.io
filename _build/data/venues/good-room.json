@@ -1,0 +1,118 @@
+{
+ "slug": "good-room",
+ "name": "Good Room",
+ "type": "club",
+ "neighborhood": "Greenpoint",
+ "borough": "Brooklyn",
+ "address": "98 Meserole Ave, Brooklyn, NY 11222",
+ "phone": "(718) 349-2373",
+ "website": "https://www.goodroombk.com",
+ "instagram": "https://instagram.com/goodroombk/",
+ "status": "open",
+ "status_note": "Official calendar lists Good Room / Bad Room parties most Thu–Sat from 10/22 through 12/18/2026 (plus 2/9/2027), ticketed via Resident Advisor. Note: the official site's SSL certificate had expired on 2026-10-18 (browsers may show a warning). A Time Out listing calling it 'currently closed' appears stale.",
+ "dress": {
+  "answer": "None published",
+  "detail": "The official site lists no dress code and calls the club an open, inclusive space; The Infatuation (2018) says there is no dress code and no bouncer judging who gets in outside ticketed events.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Good Room About (official)",
+    "url": "https://www.goodroombk.com/about/"
+   },
+   {
+    "name": "The Infatuation (2018)",
+    "url": "https://www.theinfatuation.com/new-york/reviews/good-room"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Resident Advisor event listing, 1 Oct 2026 (21+)",
+    "url": "https://de.ra.co/events/2521118"
+   }
+  ]
+ },
+ "cover": {
+  "value": "Ticketed per party; a recent RA listing was $10–20",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Resident Advisor event listing, 1 Oct 2026",
+    "url": "https://de.ra.co/events/2521118"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Buy tickets through the Resident Advisor links on the official calendar; entry screening at ticketed events",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Good Room calendar (official, links to RA)",
+    "url": "https://www.goodroombk.com/"
+   },
+   {
+    "name": "The Infatuation (2018)",
+    "url": "https://www.theinfatuation.com/new-york/reviews/good-room"
+   }
+  ],
+  "booking_platform": "ra",
+  "booking_url": "https://www.goodroombk.com/"
+ },
+ "hours": {
+  "value": "Party nights mostly Thu–Sat (occasional Sun/Tue); a recent RA listing ran 10pm–4am",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Good Room calendar (official)",
+    "url": "https://www.goodroombk.com/"
+   },
+   {
+    "name": "Resident Advisor event listing, 1 Oct 2026",
+    "url": "https://de.ra.co/events/2521118"
+   }
+  ]
+ },
+ "price": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "G to Nassau Ave",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Songkick venue page",
+    "url": "https://www.songkick.com/venues/2818918-good-room"
+   }
+  ]
+ },
+ "skip_if": [
+  "You want conversation: reviewers describe very loud house music in a mini-warehouse club setting.",
+  "You want a non-ticketed drop-in: most nights are ticketed RA parties, so check the calendar first."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club",
+   "ticketed"
+  ],
+  "aliases": [
+   "good room"
+  ]
+ }
+}

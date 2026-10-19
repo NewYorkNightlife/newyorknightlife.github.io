@@ -1,0 +1,119 @@
+{
+ "slug": "bossa-nova-civic-club",
+ "name": "Bossa Nova Civic Club",
+ "type": "club",
+ "neighborhood": "Bushwick",
+ "borough": "Brooklyn",
+ "address": "1271 Myrtle Ave, Brooklyn, NY 11221",
+ "phone": "",
+ "website": "",
+ "instagram": "",
+ "status": "open",
+ "status_note": "Event listings (RA via Findmuse, Mood) show nights through at least Oct 13–14, 2026. Note: the old official domain bossanovacivicclub.com now 301-redirects to an unrelated site (paddlingcenter.com), so don't link it; use RA listings instead.",
+ "dress": {
+  "answer": "None published",
+  "detail": "No official or third-party source found states a dress code; reviews describe an alternative, open-minded techno crowd.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Atly listing",
+    "url": "https://atly.com/location/new-york/BossaNovaCivicClub"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+ with driver's license, non-driver ID or passport",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Event listing for Oct 14, 2026 (Findmuse / RA)",
+    "url": "https://findmuse.app/concerts/new-york-city/happy-hour-with-json-daimei-bossa-nova-civic-club-2026-10-14"
+   }
+  ]
+ },
+ "cover": {
+  "value": "Varies by night: free or suggested donation on some weeknights; around $15 cash reported for regular nights; RA tickets for bigger lineups",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Findmuse / RA event listing, Oct 13, 2026 (donation at door)",
+    "url": "https://findmuse.app/concerts/new-york-city/input-x-cybersoul-bossa-nova-civic-club-2026-10-14"
+   },
+   {
+    "name": "Atly listing ($15, cash only; undated)",
+    "url": "https://atly.com/location/new-york/BossaNovaCivicClub"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Walk up and pay at the door; some nights sell advance tickets on Resident Advisor; bring cash",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Findmuse / RA event listing",
+    "url": "https://findmuse.app/concerts/new-york-city/input-x-cybersoul-bossa-nova-civic-club-2026-10-14"
+   }
+  ],
+  "booking_platform": "ra",
+  "booking_url": "https://ra.co/clubs/62483"
+ },
+ "hours": {
+  "value": "Seven nights a week, roughly 10pm–3:30/4am (varies by event)",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Findmuse / RA event listing (10pm–3:30am, Oct 13, 2026)",
+    "url": "https://findmuse.app/concerts/new-york-city/input-x-cybersoul-bossa-nova-civic-club-2026-10-14"
+   },
+   {
+    "name": "Atly listing (till 4am)",
+    "url": "https://atly.com/location/new-york/BossaNovaCivicClub"
+   }
+  ]
+ },
+ "price": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "Under the elevated M on Myrtle Ave; Central Av (M) is the nearby stop, ~1–3 min walk",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "NYC Tourism (under the M overpass)",
+    "url": "https://www.nyctourism.com/venues/bossa-nova-civic-club/"
+   },
+   {
+    "name": "Wikipedia: Myrtle Avenue",
+    "url": "https://en.wikipedia.org/wiki/Myrtle_Avenue"
+   }
+  ]
+ },
+ "skip_if": [
+  "You want room to move: the dance floor is small and sits between the bar and the bathrooms, so traffic is constant.",
+  "You dislike heavy fog and a dark, cramped layout, which reviewers call out."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club"
+  ],
+  "aliases": [
+   "bossa nova",
+   "bossa",
+   "bossanova"
+  ]
+ }
+}

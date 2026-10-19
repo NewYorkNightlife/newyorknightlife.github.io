@@ -1,0 +1,294 @@
+Removed in the Oct 2026 rebuild (restore from git history or archive\2026-10-18-pre-rebuild):
+.ops-logs/hourly/2026-03-20_04-01-32.log
+.ops-logs/hourly/2026-03-20_04-07-02.log
+.ops-logs/hourly/2026-03-20_05-07-01.log
+.ops-logs/hourly/2026-03-20_06-07-03.log
+.ops-logs/hourly/2026-03-20_07-07-02.log
+.ops-logs/hourly/2026-03-20_08-07-02.log
+.ops-logs/hourly/2026-03-20_09-07-02.log
+.ops-logs/hourly/2026-03-20_10-07-03.log
+.ops-logs/hourly/2026-03-20_11-07-01.log
+.ops-logs/hourly/2026-03-20_12-07-03.log
+.ops-logs/hourly/2026-03-20_13-07-03.log
+.ops-logs/hourly/2026-03-20_14-07-02.log
+.ops-logs/hourly/2026-03-20_15-07-04.log
+.ops-logs/weekly-blog-publish.log
+.weekly-blog.lock
+ads.txt
+ai/index.html
+ai/nybot-nightlife-concierge.html
+blog/archive-weekly-briefs.html
+blog/archive/index.html
+blog/getting-into-exclusive-clubs.html
+blog/index.html
+blog/labor-day-weekend-2026-nyc-nightlife.html
+blog/rooftop-bars-manhattan.html
+blog/weekly/weekend-brief-2025-02-28.html
+blog/weekly/weekend-brief-2025-03-07.html
+blog/weekly/weekend-brief-2025-03-14.html
+blog/weekly/weekend-brief-2025-03-21.html
+blog/weekly/weekend-brief-2025-03-28.html
+blog/weekly/weekend-brief-2025-04-04.html
+blog/weekly/weekend-brief-2025-04-11.html
+blog/weekly/weekend-brief-2025-04-18.html
+blog/weekly/weekend-brief-2025-04-25.html
+blog/weekly/weekend-brief-2025-05-02.html
+blog/weekly/weekend-brief-2025-05-09.html
+blog/weekly/weekend-brief-2025-05-16.html
+blog/weekly/weekend-brief-2025-05-23.html
+blog/weekly/weekend-brief-2025-05-30.html
+blog/weekly/weekend-brief-2025-06-06.html
+blog/weekly/weekend-brief-2025-06-13.html
+blog/weekly/weekend-brief-2025-06-20.html
+blog/weekly/weekend-brief-2025-06-27.html
+blog/weekly/weekend-brief-2025-07-04.html
+blog/weekly/weekend-brief-2025-07-11.html
+blog/weekly/weekend-brief-2025-07-18.html
+blog/weekly/weekend-brief-2025-07-25.html
+blog/weekly/weekend-brief-2025-08-01.html
+blog/weekly/weekend-brief-2025-08-08.html
+blog/weekly/weekend-brief-2025-08-15.html
+blog/weekly/weekend-brief-2025-08-22.html
+blog/weekly/weekend-brief-2025-08-29.html
+blog/weekly/weekend-brief-2025-09-05.html
+blog/weekly/weekend-brief-2025-09-12.html
+blog/weekly/weekend-brief-2025-09-19.html
+blog/weekly/weekend-brief-2025-09-26.html
+blog/weekly/weekend-brief-2025-10-03.html
+blog/weekly/weekend-brief-2025-10-10.html
+blog/weekly/weekend-brief-2025-10-17.html
+blog/weekly/weekend-brief-2025-10-24.html
+blog/weekly/weekend-brief-2025-10-31.html
+blog/weekly/weekend-brief-2025-11-07.html
+blog/weekly/weekend-brief-2025-11-14.html
+blog/weekly/weekend-brief-2025-11-21.html
+blog/weekly/weekend-brief-2025-11-28.html
+blog/weekly/weekend-brief-2025-12-05.html
+blog/weekly/weekend-brief-2025-12-12.html
+blog/weekly/weekend-brief-2025-12-19.html
+blog/weekly/weekend-brief-2025-12-26.html
+blog/weekly/weekend-brief-2026-01-02.html
+blog/weekly/weekend-brief-2026-01-09.html
+blog/weekly/weekend-brief-2026-01-16.html
+blog/weekly/weekend-brief-2026-01-23.html
+blog/weekly/weekend-brief-2026-01-30.html
+blog/weekly/weekend-brief-2026-02-06.html
+blog/weekly/weekend-brief-2026-02-13.html
+blog/weekly/weekend-brief-2026-02-20.html
+blog/weekly/weekend-brief-2026-02-27.html
+blog/weekly/weekend-brief-2026-03-06.html
+blog/weekly/weekend-brief-2026-03-13.html
+blog/weekly/weekend-brief-2026-03-20.html
+blog/weekly/weekend-brief-2026-03-27.html
+blog/weekly/weekend-brief-2026-08-28.html
+blog/weekly/weekend-brief-2026-09-04.html
+css/chrome.css
+css/main.css
+css/revival.css
+data/tonight-feed.json
+docs/AFFILIATE-APPLICATION-RUNBOOK.md
+docs/AFFILIATE-MODULE.md
+docs/AFFILIATE-OPS.md
+docs/ANALYTICS.md
+docs/AUTOMATION.md
+docs/BLOG_HARD_RULES.md
+docs/BREADCRUMBS.md
+docs/CHANGE_REVIEW_CHECKLIST.md
+docs/CONTENT-BASELINE-PASS.md
+docs/CONTENT-STANDARDS.md
+docs/CONVERSION-CTA.md
+docs/EDITORIAL-TRUTH-POLICY.md
+docs/EMAIL-CAPTURE.md
+docs/GUIDE-TEMPLATE.html
+docs/INTERNAL-LINKING.md
+docs/MONETIZATION-SPRINT.md
+docs/MONETIZATION.md
+docs/MONEY-PAGES.md
+docs/NEIGHBORHOOD_PAGE_TEMPLATE.md
+docs/PERFORMANCE-MEDIA-PIPELINE.md
+docs/SCHEMA-STANDARDS.md
+docs/SITE-ARCHITECTURE.md
+docs/SKELETON_BLUEPRINT_V1.md
+docs/SKELETON_BLUEPRINT_V2.md
+docs/TRUST-POLICY.md
+docs/WEEKLY-BLOG-WORKFLOW.md
+docs/affiliate-deployment-queue.csv
+docs/affiliate-program-tracker.csv
+games/bar-or-club-quiz.html
+games/build-your-perfect-nyc-night.html
+games/dj-or-genre-match.html
+games/first-date-night-game.html
+games/group-vibe-decider.html
+games/guess-the-neighborhood.html
+games/index.html
+games/nightlife-tier-list.html
+games/nyc-nightlife-trivia.html
+games/secret-spot-hunt.html
+games/would-you-get-in-door-game.html
+js/main.js
+js/revival.js
+js/tonight-live.js
+llms.txt
+night-planner/index.html
+ops/affiliate-application-checklist.html
+ops/affiliate-status.html
+ops/index.html
+plan/airport-to-manhattan-night-arrival.html
+plan/index.html
+plan/nyc-subway-for-nightlife.html
+plan/safe-late-night-transport-nyc.html
+plan/uber-lyft-vs-subway-nyc-night.html
+robots.txt
+safe-late-night-transport/index.html
+safety/areas-to-be-cautious-at-night-nyc.html
+safety/index.html
+safety/late-night-safety-by-borough.html
+safety/solo-traveler-nightlife-safety.html
+scripts/affiliate-readiness-report.sh
+scripts/audit-thin-pages.sh
+scripts/hourly_audit_and_fill.sh
+scripts/weekly-blog-check.sh
+scripts/weekly_blog_autopublish.py
+scripts/weekly_blog_publish_and_push.sh
+seasonal/index.html
+seasonal/new-years-eve-nyc-nightlife.html
+seasonal/summer-nightlife-nyc.html
+seasonal/winter-nightlife-nyc.html
+sitemap.xml
+things-to-do/hidden-nyc-locals-only-guide.html
+things-to-do/index.html
+things-to-do/late-night-food-nyc-map-guide.html
+things-to-do/nyc-free-things-to-do-guide.html
+things-to-do/nyc-helicopter-tours-guide.html
+things-to-do/nyc-hop-on-hop-off-bus-guide.html
+things-to-do/nyc-night-cruises-and-ferry-experiences.html
+things-to-do/nyc-on-a-budget-guide.html
+things-to-do/statue-of-liberty-and-ellis-island-guide.html
+things-to-do/times-square-at-night.html
+things-to-do/top-10-first-time-nyc-experiences.html
+things-to-do/weird-unique-nyc-museums.html
+tonight/friday-night-nyc.html
+tonight/index.html
+tonight/saturday-night-nyc.html
+tonight/things-to-do-in-nyc-tonight.html
+tools/birthday-night-planner-nyc.html
+tools/budget-planner.html
+tools/cover-charge-calculator-nyc.html
+tools/dress-code-checker-nyc.html
+tools/group-night-out-planner.html
+tools/hotel-neighborhood-matcher-nyc.html
+tools/index.html
+tools/neighborhood-quiz.html
+tools/night-out-spinner.html
+tools/nyc-3-day-itinerary-builder.html
+tools/nyc-night-planner.html
+tools/nyc-nightlife-map.html
+tools/nyc-trip-cost-calculator.html
+tools/subway-safe-route-night.html
+tools/venue-compare-nyc.html
+transport/bridges-tunnels-tolls-nyc-nightlife.html
+transport/index.html
+transport/jfk-lga-ewr-to-nightlife-guide.html
+transport/rush-hour-routes-to-avoid-nyc.html
+venue-compare/index.html
+visit-essentials/best-cards-for-nyc-travel.html
+visit-essentials/esim-and-sim-nyc-travel.html
+visit-essentials/index.html
+visit-essentials/money-exchange-in-nyc.html
+visit-essentials/nyc-tourist-scams-to-avoid.html
+visit-essentials/parents-night-out-babysitter-options-nyc.html
+visit-essentials/tipping-in-nyc-guide.html
+visit/3-day-nyc-nightlife-itinerary.html
+visit/5-day-nyc-nightlife-itinerary.html
+visit/family-vs-party-zones-nyc.html
+visit/first-time-nyc-nightlife-guide.html
+visit/index.html
+visit/where-to-stay-for-nightlife-nyc.html
+weekend/index.html
+weekend/nyc-nightlife-this-weekend.html
+weekend/nyc-rooftop-weekend-guide.html
+workflows/README.md
+workflows/n8n/SETUP.md
+workflows/n8n/nyc-tonight-production.json
+workflows/n8n/tonight-feed.schema.json
+
+Redirected (old URL -> new):
+boroughs/bronx-nightlife.html -> /venues/
+boroughs/brooklyn-nightlife.html -> /venues/
+boroughs/index.html -> /venues/
+boroughs/manhattan-nightlife.html -> /venues/
+boroughs/queens-nightlife.html -> /venues/
+boroughs/staten-island-nightlife.html -> /venues/
+categories/after-hours-nyc.html -> /venues/
+categories/best-nyc-bars.html -> /venues/
+categories/best-nyc-clubs.html -> /venues/
+categories/comedy-nightlife-nyc.html -> /venues/
+categories/date-night-nyc-nightlife.html -> /venues/
+categories/edm-nightlife-nyc.html -> /venues/
+categories/hip-hop-nightlife-nyc.html -> /venues/
+categories/index.html -> /venues/
+categories/latin-nightlife-nyc.html -> /venues/
+categories/lgbtq-nightlife-nyc.html -> /venues/
+categories/live-music-nyc-nightlife.html -> /venues/
+categories/rooftop-bars-nyc.html -> /venues/
+categories/speakeasies-nyc.html -> /venues/
+guides/bar-crawl-guide.html -> /venues/
+guides/best-nightlife-experiences.html -> /venues/
+guides/events-this-weekend.html -> /venues/
+guides/index.html -> /guides/nyc-dress-codes.html
+guides/luxury-experiences-nyc.html -> /venues/
+guides/stay-near-nightlife.html -> /venues/
+guides/vip-club-access-nyc.html -> /venues/
+methodology/editorial-policy.html -> /how-we-check.html
+methodology/how-we-rate-venues.html -> /how-we-check.html
+methodology/index.html -> /how-we-check.html
+neighborhoods/astoria-nightlife.html -> /venues/
+neighborhoods/bed-stuy-nightlife.html -> /venues/
+neighborhoods/bronx-nightlife-guide.html -> /venues/
+neighborhoods/bushwick-nightlife.html -> /venues/
+neighborhoods/chelsea-nightlife.html -> /venues/
+neighborhoods/cobble-hill-nightlife.html -> /venues/
+neighborhoods/crown-heights-nightlife.html -> /venues/
+neighborhoods/downtown-brooklyn-nightlife.html -> /venues/
+neighborhoods/dumbo-nightlife.html -> /venues/
+neighborhoods/east-village-nightlife.html -> /venues/
+neighborhoods/financial-district-nightlife.html -> /venues/
+neighborhoods/flushing-nightlife.html -> /venues/
+neighborhoods/forest-hills-nightlife.html -> /venues/
+neighborhoods/greenpoint-nightlife.html -> /venues/
+neighborhoods/harlem-nightlife.html -> /venues/
+neighborhoods/hells-kitchen-nightlife.html -> /venues/
+neighborhoods/index.html -> /venues/
+neighborhoods/jackson-heights-nightlife.html -> /venues/
+neighborhoods/long-island-city-nightlife.html -> /venues/
+neighborhoods/lower-east-side-nightlife.html -> /venues/
+neighborhoods/meatpacking-nightlife.html -> /venues/
+neighborhoods/midtown-nightlife.html -> /venues/
+neighborhoods/park-slope-nightlife.html -> /venues/
+neighborhoods/red-hook-nightlife.html -> /venues/
+neighborhoods/ridgewood-nightlife.html -> /venues/
+neighborhoods/soho-nightlife.html -> /venues/
+neighborhoods/staten-island-nightlife-guide.html -> /venues/
+neighborhoods/upper-east-side-nightlife.html -> /venues/
+neighborhoods/upper-west-side-nightlife.html -> /venues/
+neighborhoods/west-village-nightlife.html -> /venues/
+neighborhoods/williamsburg-nightlife.html -> /venues/
+privacy-policy.html -> /privacy.html
+rankings/best-bachelorette-nightlife-nyc.html -> /venues/
+rankings/best-bars-in-nyc.html -> /venues/
+rankings/best-birthday-nightlife-nyc.html -> /venues/
+rankings/best-clubs-in-nyc.html -> /venues/
+rankings/best-edm-nights-nyc.html -> /venues/
+rankings/best-friday-night-spots-nyc.html -> /venues/
+rankings/best-hip-hop-nights-nyc.html -> /venues/
+rankings/best-late-night-food-near-clubs-nyc.html -> /venues/
+rankings/best-latin-nights-nyc.html -> /venues/
+rankings/best-nightlife-by-borough.html -> /venues/
+rankings/best-nightlife-under-50-nyc.html -> /venues/
+rankings/best-rooftops-in-nyc.html -> /venues/
+rankings/best-saturday-night-spots-nyc.html -> /venues/
+rankings/best-thursday-night-spots-nyc.html -> /venues/
+rankings/best-vip-experiences-nyc.html -> /venues/
+rankings/index.html -> /venues/
+terms.html -> /about.html
+visitor-start-here.html -> /

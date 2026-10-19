@@ -1,0 +1,139 @@
+{
+ "slug": "the-box",
+ "name": "The Box",
+ "type": "club",
+ "neighborhood": "Lower East Side",
+ "borough": "Manhattan",
+ "address": "189 Chrystie St (between Rivington & Stanton), New York, NY 10002",
+ "phone": "917-280-5977",
+ "website": "https://theboxnyc.com/",
+ "instagram": "",
+ "status": "open",
+ "status_note": "Official site is live with a table-booking form (call/WhatsApp 917-280-5977), and Clubbable lists bookable nights through late Oct 2026. The official site footer still reads (c) 2022 and no 2026 news was found, so confirm before a big night. Time Out's older number is 212-982-9301.",
+ "dress": {
+  "answer": "Dress to impress (no written policy)",
+  "detail": "The official FAQ only says 'There's only one way to find out'; Discotech advises collared shirt and dress shoes with no sportswear, sneakers or hats, and Clubbable says avoid sportswear.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "The Box official FAQ",
+    "url": "https://theboxnyc.com/faq/"
+   },
+   {
+    "name": "Discotech venue page",
+    "url": "https://discotech.me/new-york/the-box/"
+   },
+   {
+    "name": "Clubbable listing (Oct 2026 dates)",
+    "url": "https://www.clubbable.com/New-York/The-Box/3-Oct-2026"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Clubbable listing (Oct 2026 dates)",
+    "url": "https://www.clubbable.com/New-York/The-Box/3-Oct-2026"
+   }
+  ]
+ },
+ "cover": {
+  "value": "No general admission; entry is effectively via table reservation (tables reported from ~$2,000)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Discotech venue page",
+    "url": "https://discotech.me/new-york/the-box/"
+   },
+   {
+    "name": "Clubbable listing (Oct 2026 dates)",
+    "url": "https://www.clubbable.com/New-York/The-Box/3-Oct-2026"
+   },
+   {
+    "name": "The Box official FAQ",
+    "url": "https://theboxnyc.com/faq/"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Reservations required (official FAQ). Book a table through the venue's form or by call/WhatsApp. Without a booking it's the door's call.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "The Box official FAQ",
+    "url": "https://theboxnyc.com/faq/"
+   },
+   {
+    "name": "The Box official booking page",
+    "url": "https://theboxnyc.com/booking/"
+   }
+  ],
+  "booking_platform": "venue site",
+  "booking_url": "https://theboxnyc.com/booking/"
+ },
+ "hours": {
+  "value": "Wed–Sat, roughly 11pm–4am; closed Sun–Tue",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "The Box official FAQ",
+    "url": "https://theboxnyc.com/faq/"
+   },
+   {
+    "name": "Clubbable listing (Oct 2026 dates)",
+    "url": "https://www.clubbable.com/New-York/The-Box/3-Oct-2026"
+   }
+  ]
+ },
+ "price": {
+  "value": "Tables from ~$2,000 plus tips and fees; cocktails ~$15–20 reported",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Clubbable listing (Oct 2026 dates)",
+    "url": "https://www.clubbable.com/New-York/The-Box/3-Oct-2026"
+   },
+   {
+    "name": "Discotech venue page",
+    "url": "https://discotech.me/new-york/the-box/"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "Lower East Side–2nd Ave (F), ~3 min walk",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Time Out listing (2010 review)",
+    "url": "https://www.timeout.com/newyork/bars/the-box"
+   }
+  ]
+ },
+ "skip_if": [
+  "You're on a budget: there's no GA, and tables plus tips run into the thousands",
+  "You're easily shocked: the shows are explicit, adult-oriented cabaret"
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club",
+   "dress_rule"
+  ],
+  "aliases": [
+   "the box"
+  ]
+ }
+}

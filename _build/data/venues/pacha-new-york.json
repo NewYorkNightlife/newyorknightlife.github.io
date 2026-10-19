@@ -1,0 +1,136 @@
+{
+ "slug": "pacha-new-york",
+ "name": "Pacha New York",
+ "type": "club",
+ "neighborhood": "East Williamsburg",
+ "borough": "Brooklyn",
+ "address": "140 Stewart Ave, Brooklyn, NY 11237",
+ "phone": "(929) 787-2600",
+ "website": "https://pacha-nyc.com/",
+ "instagram": "https://www.instagram.com/pachaofficialnyc",
+ "status": "open",
+ "status_note": "Open. Opened June 2026 on the former Brooklyn Mirage site. The official site lists the Open Air Season Closing on Sun Oct 18, 2026, then a 'Brooklyn Pacha Opening Party' on Nov 6 and indoor events through late Nov, with more listed into Dec. Secret NYC (Jun 2026) reported it was running on a temporary liquor license.",
+ "dress": {
+  "answer": "No beachwear; VIP is stricter",
+  "detail": "Brooklyn Magazine (Apr 2026) quoted the club's site: no beachwear (swimsuits, flip-flops, men's vests, bare torsos). The VIP area also bans shorts, sportswear, sneakers, sweatshirts and caps. The current official contact/FAQ page doesn't show a dress code.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Brooklyn Magazine (Apr 8, 2026)",
+    "url": "https://www.bkmag.com/?p=83993"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+ with valid ID",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Pacha NYC official contact/FAQ",
+    "url": "https://pacha-nyc.com/contact-us"
+   },
+   {
+    "name": "Techno Airlines",
+    "url": "https://www.technoairlines.com/club/pacha-new-york"
+   }
+  ]
+ },
+ "cover": {
+  "value": "Ticketed. GA from ~$40-145 for most Oct-Nov 2026 nights (one headliner from $450). Backstage/VIP from ~$150-450. Late early-entry arrivals pay the difference to the door price.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Pacha NYC official event listings",
+    "url": "https://pacha-nyc.com/"
+   },
+   {
+    "name": "Pacha NYC official contact/FAQ",
+    "url": "https://pacha-nyc.com/contact-us"
+   },
+   {
+    "name": "Songkick",
+    "url": "https://songkick.com/venues/4650958-pacha-new-york"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Buy tickets in advance on the official site; big headliner nights sell out. Backstage/VIP is booked on the site too. Staff run security checks at the door, and gum was confiscated on opening night.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Pacha NYC official",
+    "url": "https://pacha-nyc.com/"
+   },
+   {
+    "name": "Brooklyn Magazine (Jun 17, 2026)",
+    "url": "https://www.bkmag.com/?p=84667"
+   },
+   {
+    "name": "Secret NYC",
+    "url": "https://secretnyc.co/pacha-new-york-reveals-first-look-new-venue/"
+   }
+  ],
+  "booking_platform": "venue site",
+  "booking_url": "https://pacha-nyc.com/"
+ },
+ "hours": {
+  "value": "Event nights only. Most events run 10pm-4am (the open-air closing ran 8pm-1am). Check each event.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Pacha NYC official event listings",
+    "url": "https://pacha-nyc.com/"
+   },
+   {
+    "name": "Pacha NYC official contact/FAQ",
+    "url": "https://pacha-nyc.com/contact-us"
+   }
+  ]
+ },
+ "price": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "L train. Jefferson St or Morgan Av are the nearby stops, roughly a 10-minute walk (check the walk time on a map). The venue also runs a shuttle (see the official Shuttle Information page).",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Pacha NYC official (shuttle link)",
+    "url": "https://pacha-nyc.com/"
+   },
+   {
+    "name": "Techno Airlines (shuttle mention)",
+    "url": "https://www.technoairlines.com/club/pacha-new-york"
+   }
+  ]
+ },
+ "skip_if": [
+  "You want cheap or spontaneous: it's ticketed, with prices that climb by tier, and the biggest nights sell out.",
+  "You're after a small, intimate club: it's a mega-venue (Billboard estimated ~5,000 on the floor on opening night)."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club",
+   "ticketed",
+   "dress_rule"
+  ],
+  "aliases": [
+   "pacha",
+   "brooklyn pacha"
+  ]
+ }
+}
