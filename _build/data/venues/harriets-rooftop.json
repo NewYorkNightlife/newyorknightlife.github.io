@@ -1,0 +1,125 @@
+{
+ "slug": "harriets-rooftop",
+ "name": "Harriet's Rooftop",
+ "type": "rooftop bar",
+ "neighborhood": "Dumbo",
+ "borough": "Brooklyn",
+ "address": "1 Hotel Brooklyn Bridge, 60 Furman St, Brooklyn, NY 11201",
+ "phone": "(347) 696-2554",
+ "website": "https://www.1hotels.com/brooklyn-bridge/taste/harriets-rooftop",
+ "instagram": "https://www.instagram.com/harrietsbk",
+ "status": "open",
+ "status_note": "Official 1 Hotels page live with current hours and events (an event dated Fri 23 Oct); open weather permitting, updates on Instagram. Separate indoor Harriet's Lounge one floor below.",
+ "dress": {
+  "answer": "Smart casual (reported)",
+  "detail": "The official page lists no dress code; The Rooftop Guide (updated April 2026) describes it as smart casual, towards relaxed.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "The Rooftop Guide (Apr 2026)",
+    "url": "https://www.therooftopguide.com/rooftop-bars-in-new-york/harriets-rooftop.html"
+   },
+   {
+    "name": "Harriet's Rooftop (official, no dress code listed)",
+    "url": "https://www.1hotels.com/brooklyn-bridge/taste/harriets-rooftop"
+   }
+  ]
+ },
+ "age": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "cover": {
+  "value": "None listed; a suggested 20% gratuity is added to checks (discretionary, can be changed on request)",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Harriet's Rooftop (official)",
+    "url": "https://www.1hotels.com/brooklyn-bridge/taste/harriets-rooftop"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Reservations recommended on SevenRooms; fills on weekends and around sunset. Pool lounge chairs are for registered hotel guests only",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Harriet's Rooftop (official)",
+    "url": "https://www.1hotels.com/brooklyn-bridge/taste/harriets-rooftop"
+   },
+   {
+    "name": "The Rooftop Guide (Apr 2026)",
+    "url": "https://www.therooftopguide.com/rooftop-bars-in-new-york/harriets-rooftop.html"
+   }
+  ],
+  "booking_platform": "sevenrooms",
+  "booking_url": "https://www.sevenrooms.com/reservations/harrietsbrooklynbridge"
+ },
+ "hours": {
+  "value": "Mon–Thu 12pm–11pm; Fri–Sat 11am–12am; Sun 11am–11pm; weather permitting (a third-party guide lists shorter hours, Mon–Fri 4–11pm)",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Harriet's Rooftop (official)",
+    "url": "https://www.1hotels.com/brooklyn-bridge/taste/harriets-rooftop"
+   },
+   {
+    "name": "1 Hotel Brooklyn Bridge rooftop page (official)",
+    "url": "https://www.1hotels.com/brooklyn-bridge/1-rooftop"
+   }
+  ]
+ },
+ "price": {
+  "value": "Drinks reportedly from ~$20",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Laura Peruchi travel blog",
+    "url": "https://lauraperuchi.nyc/rooftop-bars-new-york-city/"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "Express elevator serves Harriet's Lounge & Rooftop; step-free lobby, automatic main door, accessible public restrooms. Rooftop surface itself not described",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "1 Hotel Brooklyn Bridge Accessibility (official)",
+    "url": "https://www.1hotels.com/brooklyn-bridge/accessibility"
+   }
+  ]
+ },
+ "subway": {
+  "value": "A/C to High St–Brooklyn Bridge (walk down to the waterfront at Furman St)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "PressReader (Red magazine)",
+    "url": "https://www.pressreader.com/uk/red/20230101/284133570234138"
+   }
+  ]
+ },
+ "skip_if": [
+  "You want a quiet, cheap drink: it is a busy, view-driven hotel rooftop popular with tourists, with a 20% gratuity added to checks.",
+  "The weather is bad: the rooftop opens weather permitting, so check Instagram first."
+ ],
+ "hotel_bar": true,
+ "photo": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/1_Hotel_Brooklyn_Bridge%2C_Sept_2017.jpg",
+  "license": "CC0 1.0",
+  "credit": "Thomson200 / Wikimedia Commons (hotel exterior)"
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "rooftop",
+   "no_cover",
+   "dress_rule"
+  ],
+  "aliases": [
+   "harriets",
+   "harriet"
+  ]
+ }
+}

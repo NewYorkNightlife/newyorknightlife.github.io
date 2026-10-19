@@ -1,0 +1,125 @@
+{
+ "slug": "employees-only",
+ "name": "Employees Only",
+ "type": "cocktail bar",
+ "neighborhood": "West Village",
+ "borough": "Manhattan",
+ "address": "510 Hudson St (between Christopher & W 10th Sts), New York, NY 10014",
+ "phone": "(212) 242-3021",
+ "website": "https://www.employeesonlynyc.com",
+ "instagram": "http://instagram.com/employeesonlyny/",
+ "status": "open",
+ "status_note": "Official site live with current menus and reservation policy (checked 2026-10-18); no closure notice found. Entrance is behind a psychic's storefront.",
+ "dress": {
+  "answer": "Proper dress required",
+  "detail": "The official reservations page says proper dress is required and bans baseball caps, flip-flops, athletic jerseys, gym sneakers and workout attire.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Employees Only reservations page (official)",
+    "url": "https://www.employeesonlynyc.com/reservations"
+   }
+  ]
+ },
+ "age": {
+  "value": "Proper ID required at the door, no exceptions; minimum age not stated",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Employees Only reservations page (official)",
+    "url": "https://www.employeesonlynyc.com/reservations"
+   }
+  ]
+ },
+ "cover": {
+  "value": "None listed",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Employees Only reservations page (official) - no cover mentioned",
+    "url": "https://www.employeesonlynyc.com/reservations"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Bar and drinks are walk-in only, first come first served; dinner reservations 6–11pm on Resy or by phone; after 11pm no reservations. Expect lines at peak and late night",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Employees Only reservations page (official)",
+    "url": "https://www.employeesonlynyc.com/reservations"
+   },
+   {
+    "name": "Time Out New York (2025)",
+    "url": "https://www.timeout.com/newyork/news/is-a-3am-cup-of-free-chicken-soup-worth-the-wait-at-nycs-most-iconic-speakeasy-worth-staying-out-for-080125"
+   }
+  ],
+  "booking_platform": "resy",
+  "booking_url": "https://www.employeesonlynyc.com/reservations"
+ },
+ "hours": {
+  "value": "Daily 6pm–4am (bar and indoor dining); kitchen full menu until 3am; outdoor dining 6–11pm",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Employees Only reservations page (official)",
+    "url": "https://www.employeesonlynyc.com/reservations"
+   },
+   {
+    "name": "Time Out New York",
+    "url": "https://www.timeout.com/newyork/bars/employees-only"
+   }
+  ]
+ },
+ "price": {
+  "value": "Cocktails $21–24; spirit-free $18; dinner mains $28–125",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Employees Only cocktail menu (official)",
+    "url": "https://www.employeesonlynyc.com/menus/cocktails"
+   },
+   {
+    "name": "Employees Only menus (official)",
+    "url": "https://www.employeesonlynyc.com/menus"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "1 to Christopher St–Sheridan Sq (a short walk west on Christopher to Hudson)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Time Out New York",
+    "url": "https://www.timeout.com/newyork/bars/employees-only"
+   }
+  ]
+ },
+ "skip_if": [
+  "You want a quiet drink: reviewers say it gets crowded and loud at peak hours, and late-night crowds can get rowdy.",
+  "You hate lines: the bar is walk-in only and reviewers report waits at the door."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "cocktail",
+   "no_cover",
+   "dress_rule"
+  ],
+  "aliases": [
+   "employees only",
+   "employee only"
+  ]
+ }
+}

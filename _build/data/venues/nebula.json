@@ -1,0 +1,119 @@
+{
+ "slug": "nebula",
+ "name": "Nebula",
+ "type": "club",
+ "neighborhood": "Midtown / Times Square",
+ "borough": "Manhattan",
+ "address": "135 W 41st St, New York, NY 10036",
+ "phone": "(212) 918-8117",
+ "website": "https://www.nebulanewyork.com/",
+ "instagram": "@nebulanewyork",
+ "status": "open",
+ "status_note": "The official site lists upcoming events for Oct 20, 23, 24 and 27, 2026, with live SpeakeasyGo ticket and table links. The site's FAQ page still says 'Coming soon'.",
+ "dress": {
+  "answer": "Upscale; enforced at the door",
+  "detail": "The official SpeakeasyGo event page bans sports attire, shorts, tank tops or sleeveless shirts, sweatpants, flip-flops and slides for men. For women it bans flip-flops, slides, sneakers, sandals and open-toe shoes, and encourages dresses and heels. Admission is at door staff's discretion.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Nebula on SpeakeasyGo (official ticketing) - Quintino, Oct 24 2026",
+    "url": "https://speakeasygo.com/Nebula-New-York/QUINTINO?eid=EVE-3X3KIC"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Nebula on SpeakeasyGo (official ticketing) - Quintino, Oct 24 2026",
+    "url": "https://speakeasygo.com/Nebula-New-York/QUINTINO?eid=EVE-3X3KIC"
+   }
+  ]
+ },
+ "cover": {
+  "value": "Ticketed per event on SpeakeasyGo; no prices visible in our checks",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Nebula official site",
+    "url": "https://www.nebulanewyork.com/"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Buy tickets or book a table on SpeakeasyGo via the official site. Table bookings also by text or email to reservations. The door has final say.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Nebula official site",
+    "url": "https://www.nebulanewyork.com/"
+   },
+   {
+    "name": "Nebula on SpeakeasyGo - Quintino, Oct 24 2026",
+    "url": "https://speakeasygo.com/Nebula-New-York/QUINTINO?eid=EVE-3X3KIC"
+   }
+  ],
+  "booking_platform": "venue site",
+  "booking_url": "https://www.nebulanewyork.com/"
+ },
+ "hours": {
+  "value": "Tue, Fri and Sat 11pm-4am (event nights)",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Nebula official site (events Tue, Fri and Sat at 11pm)",
+    "url": "https://www.nebulanewyork.com/"
+   },
+   {
+    "name": "Nebula on SpeakeasyGo - Quintino, 11pm-4am",
+    "url": "https://speakeasygo.com/Nebula-New-York/QUINTINO?eid=EVE-3X3KIC"
+   }
+  ]
+ },
+ "price": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "42 St-Bryant Park (B/D/F/M) and 5 Av (7) are about 2-3 min away; Times Sq-42 St is about 5 min",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "WeWork 135 W 41st St listing (B/D/F/M, 7 nearby)",
+    "url": "https://www.wework.com/buildings/135-w-41st-st--new-york-city--NY"
+   },
+   {
+    "name": "Nox Agency - Nebula (about 5 min to Times Square)",
+    "url": "https://nox-agency.com/fr/new-york-city/nebula"
+   }
+  ]
+ },
+ "skip_if": [
+  "You want a big dance floor: reviewers say much of the floor is given over to reserved tables and VIP areas, and it is a bottle-service club.",
+  "You go by ratings: it has about 2 stars on Yelp from roughly 99 reviews."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club",
+   "ticketed",
+   "dress_rule"
+  ],
+  "aliases": [
+   "nebula"
+  ]
+ }
+}

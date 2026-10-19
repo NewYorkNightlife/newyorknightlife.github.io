@@ -1,0 +1,108 @@
+{
+ "slug": "brooklyn-mirage",
+ "name": "Brooklyn Mirage",
+ "type": "club",
+ "neighborhood": "East Williamsburg",
+ "borough": "Brooklyn",
+ "address": "140 Stewart Ave, Brooklyn, NY 11237 (Avant Gardner complex)",
+ "phone": "",
+ "website": "",
+ "instagram": "",
+ "status": "closed",
+ "status_note": "Brooklyn Mirage never reopened after its 2025 renovation (DOB structural/safety issues; no 2025 season), and owner Avant Gardner filed Chapter 11 in Oct 2025. Pacha's parent FIVE Holdings took over in early 2026 and the site reopened as Pacha New York, a seasonal open-air club (June–Oct 2026; 'Open Air Season Closing' listed for Oct 18, 2026). A year-round indoor room, Brooklyn Pacha, opens in the Great Hall at the same address on Nov 6–7, 2026.",
+ "dress": {
+  "answer": "Not applicable (closed)",
+  "detail": "The Brooklyn Mirage brand no longer operates; no dress code was found for successor Pacha New York.",
+  "status": "unknown",
+  "sources": []
+ },
+ "age": {
+  "value": "Successor Pacha New York: 21+ (per individual event listings)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "DICE: Kaytranada at Pacha New York, Oct 30, 2026",
+    "url": "https://dice.fm/event/3or7px-kaytranada-30th-oct-pacha-new-york-new-york-city-tickets"
+   }
+  ]
+ },
+ "cover": {
+  "value": "Not applicable (closed); successor Pacha New York sells tickets per event",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "DICE: Pacha New York event",
+    "url": "https://dice.fm/event/3or7px-kaytranada-30th-oct-pacha-new-york-new-york-city-tickets"
+   },
+   {
+    "name": "doNYC: Pacha NYC venue",
+    "url": "https://donyc.com/venues/pacha-nyc"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Brooklyn Mirage is closed. For the same site, buy advance tickets for Pacha New York / Brooklyn Pacha events (DICE; brooklynpacha.com for the indoor room)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "DICE: Pacha New York event",
+    "url": "https://dice.fm/event/3or7px-kaytranada-30th-oct-pacha-new-york-new-york-city-tickets"
+   },
+   {
+    "name": "Haute Living: Brooklyn Pacha opening weekend (Oct 2026)",
+    "url": "https://hauteliving.com/2026/10/brooklyn-pacha-opening-weekend/799290/"
+   }
+  ],
+  "booking_platform": "dice",
+  "booking_url": "https://dice.fm/event/3or7px-kaytranada-30th-oct-pacha-new-york-new-york-city-tickets"
+ },
+ "hours": {
+  "value": "Not applicable (closed). Successor's open-air season ran June–October 2026",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Brownstoner (Feb 4, 2026)",
+    "url": "https://www.brownstoner.com/interiors-renovation/brooklyn-mirage-sale-approved-reopen-140-stewart-avenue"
+   },
+   {
+    "name": "Pollstar (Jan 7, 2026)",
+    "url": "https://news.pollstar.com/2026/01/07/brooklyn-mirage-purchased-by-pacha-parent-company/"
+   }
+  ]
+ },
+ "price": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "skip_if": [
+  "You're looking for the Brooklyn Mirage itself: it no longer exists under that name; the site is now Pacha New York.",
+  "You want a sure thing in the off-season: the open-air venue is seasonal (June–October) and big nights sell out in advance."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club"
+  ],
+  "aliases": [
+   "brooklyn mirage",
+   "mirage"
+  ]
+ }
+}

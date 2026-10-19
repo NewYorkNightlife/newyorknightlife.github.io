@@ -1,0 +1,106 @@
+{
+ "slug": "nowadays",
+ "name": "Nowadays",
+ "type": "club",
+ "neighborhood": "Ridgewood",
+ "borough": "Queens",
+ "address": "56-06 Cooper Ave, Ridgewood, NY 11385",
+ "phone": "(347) 523-8535",
+ "website": "https://nowadays.nyc/",
+ "instagram": "@nowadaysnyc",
+ "status": "open",
+ "status_note": "The official site is live with Hours & Location, accessibility and RSVP (Resident Advisor) links, and shows no closure notice. Its posted hours are still the summer schedule (they mention NBA Finals and World Cup screenings). Mister Sunday's outdoor dance floor runs mid-May to late October, so outdoor hours may shrink after this month.",
+ "dress": {
+  "answer": "None published",
+  "detail": "Nowadays publishes no dress code. Its Safer Space rules cover behaviour instead: zero tolerance for discrimination, ask before touching, no staring, and no phones or photos on or near the dance floor.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Nowadays official - Safer Space",
+    "url": "https://nowadays.nyc/safer-space/"
+   }
+  ]
+ },
+ "age": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "cover": {
+  "value": "Outdoors free except Sundays (Mister Sunday is ticketed). Night parties usually around $25. If the cover is a barrier, email ahead for free or reduced entry.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Nowadays official - Hours & Location",
+    "url": "https://nowadays.nyc/about/"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "RSVP or buy tickets on Resident Advisor; the outdoor bar and yard are walk-in",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Nowadays official - Hours & Location",
+    "url": "https://nowadays.nyc/about/"
+   }
+  ],
+  "booking_platform": "ra",
+  "booking_url": "https://ra.co/clubs/105873"
+ },
+ "hours": {
+  "value": "Outdoors: Thu 5pm-12am, Fri 5pm-3am, Sat 2pm-3am, Sun 3pm-9pm (Mister Sunday, ticketed). Indoors: Fri 10pm until the party ends (usually 6am); Sat 10pm straight through to Sun 10pm during Nonstop.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Nowadays official - Hours & Location (summer schedule still posted)",
+    "url": "https://nowadays.nyc/about/"
+   }
+  ]
+ },
+ "price": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "accessibility": {
+  "value": "The indoor wheelchair entrance is via the driveway; during parties the gate is locked, so ask staff at the street entrance. One accessible stall indoors (ask staff for the key) and one accessible bathroom outdoors. All bathrooms are gender-neutral. The back yard is rough dirt and gravel, and the outdoor dance floor is soft and slightly uneven. Strobes and haze at most night parties. Water and earplugs are free.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Nowadays official - Hours & Location",
+    "url": "https://nowadays.nyc/about/"
+   }
+  ]
+ },
+ "subway": {
+  "value": "Halsey St (L). Walk down Wyckoff Ave toward the train bridge, then turn right onto Cooper Ave; about 5-10 min. Also the B26 bus to Irving and Halsey.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Nowadays official - How to Get Here",
+    "url": "https://nowadays.nyc/location"
+   }
+  ]
+ },
+ "skip_if": [
+  "You want to film the night: phones and photos are not allowed on or around the dance floor.",
+  "You're sensitive to strobes or haze, or need smooth ground: most night parties use strobes and haze, and the yard is dirt and gravel."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club",
+   "ticketed"
+  ],
+  "aliases": [
+   "!nowadays"
+  ]
+ }
+}

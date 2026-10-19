@@ -1,0 +1,124 @@
+{
+ "slug": "magic-hour-rooftop",
+ "name": "Magic Hour Rooftop Bar & Lounge",
+ "type": "rooftop bar",
+ "neighborhood": "Times Square / Garment District",
+ "borough": "Manhattan",
+ "address": "Moxy NYC Times Square, 485 7th Ave, 18th floor, New York, NY 10018 (street entrance on 7th Ave between 36th and 37th St)",
+ "phone": "(212) 268-0188",
+ "website": "https://moxytimessquare.com/dining/magic-hour-rooftop-bar-lounge/",
+ "instagram": "@magichourny",
+ "status": "open",
+ "status_note": "Official Moxy page is current: 'Dark Magic Hour' Halloween takeover runs through Oct 31, 2026. Operated by Tao Group; a reviewer notes it is run separately from the hotel (no room charges, no direct access from hotel elevators).",
+ "dress": {
+  "answer": "Fun, casual; no athletic wear",
+  "detail": "The official FAQ says 'fun, casual, no true athletic wear'; The Rooftop Guide also lists no shorts or sandals after 9pm.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Magic Hour FAQ (official)",
+    "url": "https://moxytimessquare.com/magic-hour-faqs/"
+   },
+   {
+    "name": "The Rooftop Guide",
+    "url": "https://www.therooftopguide.com/rooftop-bars-in-new-york/magic-hour-rooftop-bar-and-lounge.html"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+ except weekend brunch (Sat-Sun 11:30am-3pm, all ages); physical government ID, non-US ID needs a passport",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Magic Hour FAQ (official)",
+    "url": "https://moxytimessquare.com/magic-hour-faqs/"
+   },
+   {
+    "name": "Moxy Times Square - Magic Hour (official)",
+    "url": "https://moxytimessquare.com/dining/magic-hour-rooftop-bar-lounge/"
+   }
+  ]
+ },
+ "cover": {
+  "value": "None listed; no minimum or fee to reserve ($30 no-show fee on the card)",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Magic Hour FAQ (official)",
+    "url": "https://moxytimessquare.com/magic-hour-faqs/"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Walk-ins welcome at the bar; tables first-come via the door team. Reserve on OpenTable (card required, 90-minute table block, 15-minute grace period).",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Magic Hour FAQ (official)",
+    "url": "https://moxytimessquare.com/magic-hour-faqs/"
+   },
+   {
+    "name": "Moxy Times Square - Magic Hour (official)",
+    "url": "https://moxytimessquare.com/dining/magic-hour-rooftop-bar-lounge/"
+   }
+  ],
+  "booking_platform": "opentable",
+  "booking_url": "https://www.opentable.com/r/magic-hour-rooftop-bar-and-lounge-reservations-new-york"
+ },
+ "hours": {
+  "value": "Mon-Wed 5pm-12am; Thu 5pm-2am; Fri 5pm-4am; Sat 11:30am-4am; Sun 11:30am-12am (brunch Sat-Sun 11:30am-3:30pm)",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Moxy Times Square - Magic Hour (official)",
+    "url": "https://moxytimessquare.com/dining/magic-hour-rooftop-bar-lounge/"
+   }
+  ]
+ },
+ "price": {
+  "value": "Happy hour Mon-Fri 5-6:30pm at the bar: $6 Estrella, $8 house wine, $10 spritzes. Regular cocktails reported as typical-to-high Manhattan rooftop prices (no menu prices found).",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Moxy Times Square - Magic Hour (official)",
+    "url": "https://moxytimessquare.com/dining/magic-hour-rooftop-bar-lounge/"
+   },
+   {
+    "name": "Your Mileage May Vary review",
+    "url": "https://yourmileagemayvary.com/2025/02/11/magic-hour-rooftop-bar-lounge-at-moxy-times-square-fun-theme-mixed-experience/"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "skip_if": [
+  "You want an interactive theme: a 2025 review found the mini-golf gone and the theming underwhelming, with pricey drinks.",
+  "You want attentive service at peak times: reviewers report slow or inattentive service when it is busy."
+ ],
+ "hotel_bar": true,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "rooftop",
+   "no_cover",
+   "dress_rule",
+   "under21"
+  ],
+  "aliases": [
+   "magic hour"
+  ]
+ }
+}

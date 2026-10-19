@@ -1,0 +1,138 @@
+{
+ "slug": "230-fifth-rooftop",
+ "name": "230 Fifth Rooftop",
+ "type": "rooftop bar",
+ "neighborhood": "NoMad / Flatiron",
+ "borough": "Manhattan",
+ "address": "1150 Broadway (between 26th & 27th St), New York, NY 10001",
+ "phone": "(212) 725-4300",
+ "website": "https://www.230-fifth.com/",
+ "instagram": "@230fifthrooftop",
+ "status": "open",
+ "status_note": "Official site current in Oct 2026 with upcoming events and Igloo Bar (Nov–Apr) info.",
+ "dress": {
+  "answer": "Casual, no sweats or gym clothes",
+  "detail": "Official info page says to wear what you love but no sweatpants or gym clothes; a third-party listing reports a stricter weekend code (no athletic wear, hoodies, ripped or baggy jeans).",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "230 Fifth official info page",
+    "url": "https://230-fifth.com/info/"
+   },
+   {
+    "name": "Clubbable listing",
+    "url": "https://www.clubbable.com/New-York/230-Fifth-Rooftop"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+ Fri–Sat after 7pm; under-21s allowed with their own parent at other times; government ID required",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "230 Fifth official info page",
+    "url": "https://230-fifth.com/info/"
+   }
+  ]
+ },
+ "cover": {
+  "value": "$15 Fri / $20 Sat from 8pm; $30 skip-the-line tickets on Eventbrite; no cover other nights",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "230 Fifth official info page",
+    "url": "https://230-fifth.com/info/"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Walk-ins welcome at all times; reservations only for parties of 10+ (up to 30 days ahead); weekend lines after 8pm",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "230 Fifth official info page",
+    "url": "https://230-fifth.com/info/"
+   },
+   {
+    "name": "230 Fifth official homepage",
+    "url": "https://www.230-fifth.com/"
+   }
+  ],
+  "booking_platform": "venue site",
+  "booking_url": "https://230-fifth.com/reservations/"
+ },
+ "hours": {
+  "value": "Mon–Thu noon–1:30am (last order); Fri noon–late (last entry 2am); Sat 11am–4am (last entry 2:30am); Sun 11am–1:30am (last order). Official site also shows a conflicting set; confirm late hours.",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "230 Fifth official info page",
+    "url": "https://230-fifth.com/info/"
+   },
+   {
+    "name": "230 Fifth official homepage",
+    "url": "https://www.230-fifth.com/"
+   },
+   {
+    "name": "Clubbable listing",
+    "url": "https://www.clubbable.com/New-York/230-Fifth-Rooftop"
+   }
+  ]
+ },
+ "price": {
+  "value": "Cocktails ~$18–22",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "The Better Vacation (2026 guide)",
+    "url": "https://thebettervacation.com/new-york/best-rooftop-bars-in-nyc/amp/"
+   },
+   {
+    "name": "TableJourney",
+    "url": "https://tablejourney.com/united-states/new-york-city/nightlife/230-fifth/"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "Listed as wheelchair accessible by NYC Tourism; elevator details not published",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "NYC Tourism listing",
+    "url": "https://www.nyctourism.com/venues/230-fifth"
+   }
+  ]
+ },
+ "subway": {
+  "value": "28 St (R, W) at Broadway, ~2 min walk; also 28 St (6) at Park Ave, ~5 min",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "230 Fifth official info page",
+    "url": "https://230-fifth.com/info/"
+   }
+  ]
+ },
+ "skip_if": [
+  "You hate crowds: reviewers say the rooftop gets packed on summer evenings and Fri–Sat primetime.",
+  "You want a quiet drink late on weekends: after 8pm it shifts to a cover-charge, line-at-the-door party scene."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "rooftop",
+   "dress_rule",
+   "under21"
+  ],
+  "aliases": [
+   "230 fifth",
+   "230 5th"
+  ]
+ }
+}

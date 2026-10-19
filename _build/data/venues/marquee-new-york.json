@@ -1,0 +1,119 @@
+{
+ "slug": "marquee-new-york",
+ "name": "Marquee New York",
+ "type": "club",
+ "neighborhood": "Chelsea",
+ "borough": "Manhattan",
+ "address": "289 10th Ave (at 27th St), New York, NY 10001",
+ "phone": "",
+ "website": "https://taogroup.com/venues/marquee-new-york/",
+ "instagram": "@marqueeny",
+ "status": "open",
+ "status_note": "Tao Group's official page lists current hours (Wed, Fri, Sat 11pm-4am). Reopened Sept 25, 2025 as 'Marquee 3.0' after a full renovation (Wikipedia, Time Out). The official events calendar showed no listings when fetched; third-party listing shows Marquee Wednesdays in Oct 2026. No public phone; official contact is email only.",
+ "dress": {
+  "answer": "None published; upscale expected",
+  "detail": "Tao's official page publishes no dress code; third-party guides describe smart, elegant attire and say shorts, sportswear, caps and flip-flops get turned away.",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "alotea listing",
+    "url": "https://alotea.com/new-york-city/nightclubs/marquee"
+   },
+   {
+    "name": "Lorenzigo NYC nightclub guide",
+    "url": "https://lorenzigo.com/best-nightclubs-new-york/"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Techno Airlines club listing",
+    "url": "https://www.technoairlines.com/club/marquee-new-york"
+   }
+  ]
+ },
+ "cover": {
+  "value": "Ticketed per night; a Marquee Wednesdays listing showed tickets from $82 (Oct 2026); resale averages ~$76",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "new-york.events (Marquee Wednesdays)",
+    "url": "https://new-york.events/event/marquee-wednesdays/"
+   },
+   {
+    "name": "Vivid Seats (resale)",
+    "url": "https://www.vividseats.com/marquee-new-york-tickets/venue/11206"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Buy GA tickets on Tao's events page or book a VIP table on SevenRooms; the door is selective, and a guide warns even ticket holders can be turned away.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Tao Group - Marquee New York (official)",
+    "url": "https://taogroup.com/venues/marquee-new-york/"
+   },
+   {
+    "name": "Lorenzigo NYC nightclub guide",
+    "url": "https://lorenzigo.com/best-nightclubs-new-york/"
+   }
+  ],
+  "booking_platform": "sevenrooms",
+  "booking_url": "https://www.sevenrooms.com/events/marqueeny/website"
+ },
+ "hours": {
+  "value": "Wed, Fri, Sat 11pm-4am",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Tao Group - Marquee New York (official)",
+    "url": "https://taogroup.com/venues/marquee-new-york/"
+   }
+  ]
+ },
+ "price": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "23 St (C/E) per one listing; also walkable from 34 St-Hudson Yards (7). Walk time not confirmed.",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Vivid Seats venue page",
+    "url": "https://www.vividseats.com/marquee-new-york-tickets/venue/11206"
+   }
+  ]
+ },
+ "skip_if": [
+  "You want a sure thing at the door: guides say the door is selective even with a presale ticket.",
+  "You are on a budget: listed GA tickets run around $80 before drinks, and tables are bottle-service bookings."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Marquee_New_York_%2855380944943%29.jpg",
+  "license": "CC BY 4.0",
+  "credit": "Ajay Suresh (Flickr), via Wikimedia Commons"
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club",
+   "ticketed"
+  ],
+  "aliases": [
+   "marquee",
+   "marque"
+  ]
+ }
+}

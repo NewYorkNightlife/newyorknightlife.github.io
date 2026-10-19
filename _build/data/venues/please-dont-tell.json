@@ -1,0 +1,123 @@
+{
+ "slug": "please-dont-tell",
+ "name": "Please Don't Tell (PDT)",
+ "type": "cocktail bar",
+ "neighborhood": "East Village",
+ "borough": "Manhattan",
+ "address": "113 St. Marks Pl (inside Crif Dogs), New York, NY 10009",
+ "phone": "(212) 614-0386",
+ "website": "https://www.pdtnyc.com/",
+ "instagram": "https://www.instagram.com/pdtnyc",
+ "status": "open",
+ "status_note": "Open. The official site is live and links to Resy reservations, with no closure notice. Time Out (Mar 2026) and Haute Living (Jul 2026) both covered it as operating.",
+ "dress": {
+  "answer": "None published",
+  "detail": "The official site, Time Out and The Infatuation give no dress code.",
+  "status": "unknown",
+  "sources": [
+   {
+    "name": "PDT official site",
+    "url": "https://www.pdtnyc.com/"
+   }
+  ]
+ },
+ "age": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "cover": {
+  "value": "None listed",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Time Out New York (Mar 2026)",
+    "url": "https://www.timeout.com/newyork/bars/pdt"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Book on Resy; reservations reportedly open 7 days ahead and fill fast. You enter through the phone booth inside Crif Dogs. There's no standing room, so walk-ins may be turned away or told to come back. Even with a booking, expect to wait at Crif Dogs.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "PDT official site (Resy link)",
+    "url": "https://www.pdtnyc.com/"
+   },
+   {
+    "name": "Time Out New York (Mar 2026)",
+    "url": "https://www.timeout.com/newyork/bars/pdt"
+   },
+   {
+    "name": "Haute Living (Jul 2026)",
+    "url": "https://hauteliving.com/2026/07/the-12-best-speakeasies-in-new-york-city-worth-the-visit/792535/"
+   }
+  ],
+  "booking_platform": "resy",
+  "booking_url": "https://resy.com/cities/new-york-ny/venues/pdt"
+ },
+ "hours": {
+  "value": "Opens 5pm daily; closes around 2am Sun-Thu and 3am Fri-Sat (sources differ slightly on which nights run to 3am)",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Time Out New York (Sun-Thu 5pm-2am, Fri-Sat 5pm-3am)",
+    "url": "https://www.timeout.com/newyork/bars/pdt"
+   },
+   {
+    "name": "StuyTown guide (Sun-Wed 5pm-2am, Thu-Sat 5pm-3am)",
+    "url": "https://www.stuytown.com/community/guides/nyc-guides/best-speakeasies-near-the-east-village/"
+   }
+  ]
+ },
+ "price": {
+  "value": "Cocktails ~$20",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Time Out New York (reviewer paid ~$20)",
+    "url": "https://www.timeout.com/newyork/bars/pdt"
+   },
+   {
+    "name": "Menupedia (May 2026)",
+    "url": "https://menupedia.us/please-dont-tell-menu/"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "1 Av (L) or Astor Pl (6), about a 5-10 minute walk (between 1st Ave and Ave A)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Time Out New York",
+    "url": "https://www.timeout.com/newyork/bars/pdt"
+   }
+  ]
+ },
+ "skip_if": [
+  "You're a group or want to drop in spontaneously: it's tiny, has no standing room, and walk-ins are often turned away.",
+  "You expect to be wowed: Time Out's 2026 review gave it 3/5 and called the cocktails 'one-note' for the price."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "cocktail",
+   "no_cover"
+  ],
+  "aliases": [
+   "pdt",
+   "please dont tell"
+  ]
+ }
+}

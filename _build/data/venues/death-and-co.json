@@ -1,0 +1,116 @@
+{
+ "slug": "death-and-co",
+ "name": "Death & Co",
+ "type": "cocktail bar",
+ "neighborhood": "East Village",
+ "borough": "Manhattan",
+ "address": "433 E 6th St (between 1st Ave & Ave A), New York, NY 10009",
+ "phone": "(212) 388-0882",
+ "website": "https://www.deathandcompany.com/location/death-co-new-york/",
+ "instagram": "https://www.instagram.com/deathandcompany",
+ "status": "open",
+ "status_note": "Official NY location page live with current hours and menu (checked 2026-10-18); no closure or renovation notice. Brand added a Seattle outpost (Sept 2026), unrelated to the NY bar.",
+ "dress": {
+  "answer": "None published",
+  "detail": "Neither the official location page nor NYC Tourism lists a dress code; NYC Tourism describes a dark, somber, classy-hotel-bar atmosphere.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Death & Co New York (official)",
+    "url": "https://www.deathandcompany.com/location/death-co-new-york/"
+   },
+   {
+    "name": "NYC Tourism",
+    "url": "https://nyctourism.com/nightlife/death-co"
+   }
+  ]
+ },
+ "age": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "cover": {
+  "value": "None listed",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Death & Co New York (official) - no cover mentioned; seated-only, first come first served",
+    "url": "https://www.deathandcompany.com/location/death-co-new-york/"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Walk-ins always welcome and mostly first come, first served; limited reservations on SevenRooms; parties up to 8, no standing room, 2-hour limit. Door takes your number and texts when a seat opens.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Death & Co New York (official)",
+    "url": "https://www.deathandcompany.com/location/death-co-new-york/"
+   },
+   {
+    "name": "Foursquare tips",
+    "url": "https://redirect.foursquare.com/deathco.5337860"
+   }
+  ],
+  "booking_platform": "sevenrooms",
+  "booking_url": "https://www.sevenrooms.com/explore/ginluckgroup/reservations/create/search/?venues=deathandcoeastvillage"
+ },
+ "hours": {
+  "value": "Sun–Wed 6pm–1am; Thu–Sat 6pm–2am",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Death & Co New York (official)",
+    "url": "https://www.deathandcompany.com/location/death-co-new-york/"
+   }
+  ]
+ },
+ "price": {
+  "value": "Cocktails $18–26 (most $19–23); zero-proof $17–19; food $10–28",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Death & Co New York menu (official)",
+    "url": "https://www.deathandcompany.com/location/death-co-new-york/"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "F at 2 Av (Lower East Side–Second Ave) or 6 at Astor Pl; roughly 7–12 min walk",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Time Out New York",
+    "url": "https://www.timeout.com/newyork/bars/death-company"
+   }
+  ]
+ },
+ "skip_if": [
+  "You hate waiting: seating is mostly first come, first served and peak-hour waits can run long (reviewers describe leaving a number and being called back).",
+  "You want to stand and mingle or stay all night: no standing room and a 2-hour cap per visit."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Death_and_Company_HDR_2022_jeh.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "Jim.henderson / Wikimedia Commons"
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "cocktail",
+   "no_cover"
+  ],
+  "aliases": [
+   "death and co",
+   "death co",
+   "death and company"
+  ]
+ }
+}

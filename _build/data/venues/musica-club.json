@@ -1,0 +1,118 @@
+{
+ "slug": "musica-club",
+ "name": "Musica Club NYC",
+ "type": "club",
+ "neighborhood": "Hell's Kitchen",
+ "borough": "Manhattan",
+ "address": "637 W 50th St, New York, NY 10019",
+ "phone": "",
+ "website": "",
+ "instagram": "",
+ "status": "unclear",
+ "status_note": "Its official websites are down and no upcoming events are listed (checked Oct 18, 2026). It may be running only occasional events.",
+ "dress": {
+  "answer": "Upscale club attire",
+  "detail": "Discotech recommends collared or form-fitting shirts, slacks or jeans, and dress shoes. It says to avoid athletic wear, sneakers, flip-flops, shorts, sweatpants and hats. Another guide says 'smart and elegant' with no shorts, athletic wear or flip-flops. Themed events can override this; one Halloween party required costumes.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Discotech - Musica guide",
+    "url": "https://discotech.me/?p=89543"
+   },
+   {
+    "name": "Discotech - Afterlife Halloween event at Musica",
+    "url": "https://app.discotech.me/events/38269605-offline-afterlife-musica-halloween-nyc-oct-30-at-new-york-concerts-and-events"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+ with valid government ID",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "Resident Advisor - Francis Mercier at Musica NYC",
+    "url": "https://ra.co/events/1752387"
+   },
+   {
+    "name": "Discotech - Afterlife Halloween event at Musica",
+    "url": "https://app.discotech.me/events/38269605-offline-afterlife-musica-halloween-nyc-oct-30-at-new-york-concerts-and-events"
+   }
+  ]
+ },
+ "cover": {
+  "value": "Ticketed by event; no current price list found. Tickets are final sale.",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Resident Advisor - Francis Mercier at Musica NYC",
+    "url": "https://ra.co/events/1752387"
+   },
+   {
+    "name": "Discotech - Musica guide",
+    "url": "https://discotech.me/?p=89543"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Buy advance tickets for the specific event (RA, Shotgun or Discotech). Doors around 10pm and no re-entry. Bottle service via promoters.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Discotech - Afterlife Halloween event at Musica",
+    "url": "https://app.discotech.me/events/38269605-offline-afterlife-musica-halloween-nyc-oct-30-at-new-york-concerts-and-events"
+   },
+   {
+    "name": "Shotgun - Musica Club NYC venue page",
+    "url": "https://shotgun.live/en/venues/musicaclubnyc"
+   }
+  ],
+  "booking_platform": "ra",
+  "booking_url": ""
+ },
+ "hours": {
+  "value": "Sat 10pm-4am; other nights for special events only",
+  "status": "unconfirmed",
+  "sources": [
+   {
+    "name": "Discotech - Musica guide (footer dated 2023)",
+    "url": "https://discotech.me/?p=89543"
+   }
+  ]
+ },
+ "price": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "skip_if": [
+  "You need a sure thing on a given night: the official website is down and event listings in 2026 are sparse.",
+  "You want flexibility: tickets are final sale with no refunds and no re-entry."
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "",
+  "license": "",
+  "credit": ""
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "club",
+   "ticketed",
+   "dress_rule"
+  ],
+  "aliases": [
+   "musica"
+  ]
+ }
+}

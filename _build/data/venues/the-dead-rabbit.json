@@ -1,0 +1,129 @@
+{
+ "slug": "the-dead-rabbit",
+ "name": "The Dead Rabbit",
+ "type": "cocktail bar",
+ "neighborhood": "Financial District",
+ "borough": "Manhattan",
+ "address": "30 Water St (near Broad St), New York, NY 10004",
+ "phone": "646-422-7906",
+ "website": "https://thedeadrabbit.com/",
+ "instagram": "@thedeadrabbitNY",
+ "status": "open",
+ "status_note": "Open daily per the official site (thedeadrabbit.com) with live Resy booking. WARNING: deadrabbitnyc.com now serves an unrelated football-streaming page, and deadrabbit.com is a podcast, so don't link either. The phone number comes from third-party listings, not the official site.",
+ "dress": {
+  "answer": "None published",
+  "detail": "The official FAQ gives no dress code; reviews describe a busy, come-as-you-are pub downstairs.",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "The Dead Rabbit official Help & FAQs",
+    "url": "https://thedeadrabbit.com/help"
+   },
+   {
+    "name": "The Infatuation review",
+    "url": "https://www.theinfatuation.com/new-york/reviews/the-dead-rabbit"
+   }
+  ]
+ },
+ "age": {
+  "value": "21+ in the Parlor; under-21s are allowed in the Taproom before 9pm only with a parent or guardian, seated at a table",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "The Dead Rabbit official Help & FAQs",
+    "url": "https://thedeadrabbit.com/help"
+   }
+  ]
+ },
+ "cover": {
+  "value": "None listed (some live-music nights are ticketed via Eventbrite/Resy)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "The Dead Rabbit official Help & FAQs",
+    "url": "https://thedeadrabbit.com/help"
+   }
+  ]
+ },
+ "getting_in": {
+  "value": "Reservations on Resy recommended, especially for the Parlor; walk-ins always kept. Taproom bar seats are first come, first served. Table limits are 90 min for walk-ins and 2 hr for reservations.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "The Dead Rabbit official Help & FAQs",
+    "url": "https://thedeadrabbit.com/help"
+   },
+   {
+    "name": "The Infatuation review",
+    "url": "https://www.theinfatuation.com/new-york/reviews/the-dead-rabbit"
+   }
+  ],
+  "booking_platform": "resy",
+  "booking_url": "https://resy.com/cities/ny/the-dead-rabbit"
+ },
+ "hours": {
+  "value": "Taproom: Sun–Thu 11am–2am, Fri–Sat 11am–3am. Parlor: Tue–Sat 5pm–1am, Sun 4pm–12am, closed Mon.",
+  "status": "confirmed",
+  "sources": [
+   {
+    "name": "The Dead Rabbit official Help & FAQs",
+    "url": "https://thedeadrabbit.com/help"
+   },
+   {
+    "name": "Time Out listing",
+    "url": "https://timeout.com/newyork/bars/the-dead-rabbit"
+   }
+  ]
+ },
+ "price": {
+  "value": "Cocktails ~$18–25; a 20% service charge on the bill has been reported",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "Tripadvisor reviews (Nov 2025, Mar 2026)",
+    "url": "https://www.tripadvisor.com/3903182"
+   },
+   {
+    "name": "World's 50 Best Bars listing",
+    "url": "https://www.worlds50bestbars.com/the-list/the-dead-rabbit.html"
+   }
+  ]
+ },
+ "accessibility": {
+  "value": "",
+  "status": "unknown",
+  "sources": []
+ },
+ "subway": {
+  "value": "Whitehall St (R/W), ~3 min walk; South Ferry (1) and Bowling Green (4/5) are also close (estimated from the address)",
+  "status": "likely",
+  "sources": [
+   {
+    "name": "The Dead Rabbit official Help & FAQs",
+    "url": "https://thedeadrabbit.com/help"
+   }
+  ]
+ },
+ "skip_if": [
+  "You want space: it gets very crowded (Infatuation)",
+  "You're watching the bill: reviewers say prices run higher than expected and a 20% service charge is added"
+ ],
+ "hotel_bar": false,
+ "photo": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Dead_Rabbit%2C_30_Water_St%2C_New_York%2C_NY.jpg",
+  "license": "CC BY 2.0",
+  "credit": "loustejskal.com via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Dead_Rabbit,_30_Water_St,_New_York,_NY.jpg)"
+ },
+ "checked": "2026-10-18",
+ "chat": {
+  "tags": [
+   "cocktail",
+   "no_cover",
+   "live",
+   "under21"
+  ],
+  "aliases": [
+   "dead rabbit"
+  ]
+ }
+}

@@ -11,9 +11,9 @@
   var PRIVATE = ".nyb-msgs, .nyb-panel";              /* chat/free-text areas: never recorded or click-tracked ("" = none) */
   var AFFILIATE = [];          /* substrings marking affiliate links, e.g. ["amzn.to/", "tag="] */
   var MIRROR_TO_GA = false;                  /* true = also send these events to Google Analytics (gtag) */
-  var RECORDINGS = true;                      /* false = no session recordings at all (sensitive sites) */
+  var RECORDINGS = false;                     /* false = no session recordings at all (sensitive sites) */
   var REPLAY_SAMPLE = 1.0;                /* share of visits recorded, 0-1 (protects the shared free quota) */
-  var COOKIELESS = false;                      /* true = no cookies/localStorage for PostHog (each page view is a new visitor) */
+  var COOKIELESS = true;                      /* true = no cookies/localStorage for PostHog (each page view is a new visitor) */
   var NOTRACK_KEY = "nyn_notrack";
   var BRIDGE_HOOK = "NYNTrackEvent";               /* name of the site's own custom-event hook ("" = none) */
   var BRIDGE_SKIP = ["outbound_click", "page_view"];               /* hook events already counted by the listeners below */

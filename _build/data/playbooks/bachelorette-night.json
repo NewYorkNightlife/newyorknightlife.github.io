@@ -1,0 +1,57 @@
+{
+  "slug": "bachelorette-night",
+  "title": "Bachelorette Night, NYC",
+  "group": 10,
+  "checked": "2026-10-18",
+  "photo": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sunset_over_the_Lower_Manhattan_skyline_as_seen_from_New_York_Harbor_-_20200904.jpg?width=1200",
+    "page": "https://commons.wikimedia.org/wiki/File:Sunset_over_the_Lower_Manhattan_skyline_as_seen_from_New_York_Harbor_-_20200904.jpg",
+    "credit": "Andre Carrotflower, Wikimedia Commons",
+    "license": "CC BY-SA 4.0"
+  },
+  "scale_max": 200,
+  "options": [
+    {
+      "id": "cruise",
+      "name": "Public sunset or harbor cruise",
+      "style": "cream",
+      "low": 48, "high": 55,
+      "meta": "About 2 hrs. Circle Line Harbor Lights (Pier 83, all ages, bar on board) or the Grande Mariner DJ sunset cruise (Pier 36, 21+). Tickets, no group minimum.",
+      "status": "likely",
+      "sources": [
+        {"name": "Tripster: Circle Line Harbor Lights", "url": "https://www.tripster.com/detail/circle-line-harbor-lights-sightseeing-cruise-new-york"},
+        {"name": "Travelocity: Circle Line Harbor Lights", "url": "https://www.travelocity.com/things-to-do/circle-line-new-york-harbor-lights-evening-cruise.a255366.activity-details"},
+        {"name": "Tripster: Grande Mariner sunset cruise", "url": "https://boomertravel.tripster.com/detail/nyc-sunset-cruise-grande-mariner.md"}
+      ]
+    },
+    {
+      "id": "bus",
+      "name": "Party bus, 10–14 seats",
+      "style": "bronze",
+      "tag": "Pick for 10",
+      "low": 80, "high": 120,
+      "meta": "NYC small party buses list at about $200–300 an hour with a 3–5 hour minimum (4 is most common): about $800–1,200 for the bus before tip and tolls, split 10 ways.",
+      "status": "confirmed",
+      "sources": [
+        {"name": "Tagvenue: small party buses, NYC", "url": "https://tagvenue.com/us/hire/small-party-buses/new-york-city"},
+        {"name": "Thumbtack: NYC party bus costs", "url": "https://www.thumbtack.com/ny/new-york/party-bus"},
+        {"name": "Cost Insight Hub: party bus cost", "url": "https://costinsighthub.com/us/business/how-much-does-a-party-bus-cost"}
+      ]
+    },
+    {
+      "id": "yacht",
+      "name": "Small private yacht, 2 hrs",
+      "style": "outline",
+      "low": 120, "high": 170,
+      "meta": "Listings for boats that take 10–12 guests start around $1,000–1,400 for 2 hours, plus a 15–20% crew tip. Bigger yachts run far higher.",
+      "status": "likely",
+      "sources": [
+        {"name": "Sailo: 40-ft yacht, Chelsea Piers", "url": "https://www.sailo.com/boats/New_York_NY/Motor/rental_boat_44952/?duration=2"},
+        {"name": "Getmyboat: 52-ft Sea Ray, Brooklyn Bridge Park", "url": "https://getmyboat.com/trips/RKdzbkaZ/"},
+        {"name": "Yachting Magazine: tipping", "url": "https://www.yachtingmagazine.com/tipping-point/"}
+      ]
+    }
+  ],
+  "combo": {"label": "Cruise + party bus", "low": 130, "high": 175},
+  "primary": {"label": "Compare party buses for 10", "url": "https://tagvenue.com/us/hire/small-party-buses/new-york-city"}
+}
