@@ -30,3 +30,7 @@ credentials*
 # Local scratch
 /tmp/
 *.log.local
+
+# Generated image derivatives. The served copies live in /img/ and are committed.
+_build/img/gen/
+_build/img/og/

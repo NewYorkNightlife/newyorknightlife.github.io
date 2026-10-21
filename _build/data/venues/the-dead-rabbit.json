@@ -112,7 +112,9 @@
  "photo": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Dead_Rabbit%2C_30_Water_St%2C_New_York%2C_NY.jpg",
   "license": "CC BY 2.0",
-  "credit": "loustejskal.com via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Dead_Rabbit,_30_Water_St,_New_York,_NY.jpg)"
+  "credit": "loustejskal.com via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Dead_Rabbit,_30_Water_St,_New_York,_NY.jpg)",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "depicts": "Photographed through the window from inside, so the sign reads in reverse."
  },
  "checked": "2026-10-18",
  "chat": {

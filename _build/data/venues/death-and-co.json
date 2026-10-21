@@ -99,7 +99,8 @@
  "photo": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Death_and_Company_HDR_2022_jeh.jpg",
   "license": "CC BY-SA 4.0",
-  "credit": "Jim.henderson / Wikimedia Commons"
+  "credit": "Jim.henderson / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
  },
  "checked": "2026-10-18",
  "chat": {

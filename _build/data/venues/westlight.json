@@ -117,7 +117,9 @@
  "photo": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/William_Vale_Hotel_2_jeh.jpg",
   "license": "CC BY-SA 4.0",
-  "credit": "Jim.henderson via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:William_Vale_Hotel_2_jeh.jpg); shows The William Vale building"
+  "credit": "Jim.henderson via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:William_Vale_Hotel_2_jeh.jpg); shows The William Vale building",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "depicts": "Shows The William Vale building from outside, not the rooftop bar."
  },
  "checked": "2026-10-18",
  "chat": {

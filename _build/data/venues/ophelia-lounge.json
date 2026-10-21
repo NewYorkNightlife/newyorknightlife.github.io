@@ -102,7 +102,9 @@
  "photo": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Beekman_Panhellenic_Tower_May_2021_14.jpg",
   "license": "CC BY-SA 4.0",
-  "credit": "Epicgenius / Wikimedia Commons (Beekman Tower exterior)"
+  "credit": "Epicgenius / Wikimedia Commons (Beekman Tower exterior)",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "depicts": "Shows the Beekman Tower from outside, not the lounge."
  },
  "checked": "2026-10-18",
  "chat": {

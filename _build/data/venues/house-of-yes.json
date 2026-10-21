@@ -125,7 +125,8 @@
  "photo": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/A_performance_at_the_House_of_Yes_in_Bushwick%2C_Brooklyn.jpg",
   "license": "CC BY 2.0",
-  "credit": "Raffi Asdourian (Flickr: rasdourian), via Wikimedia Commons"
+  "credit": "Raffi Asdourian (Flickr: rasdourian), via Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/"
  },
  "checked": "2026-10-18",
  "chat": {

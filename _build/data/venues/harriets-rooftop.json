@@ -108,7 +108,9 @@
  "photo": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/1_Hotel_Brooklyn_Bridge%2C_Sept_2017.jpg",
   "license": "CC0 1.0",
-  "credit": "Thomson200 / Wikimedia Commons (hotel exterior)"
+  "credit": "Thomson200 / Wikimedia Commons (hotel exterior)",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "depicts": "Shows the 1 Hotel Brooklyn Bridge from outside, not the rooftop bar."
  },
  "checked": "2026-10-18",
  "chat": {

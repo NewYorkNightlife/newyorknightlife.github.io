@@ -1,6 +1,32 @@
 /* NY Nightlife v2 design system: "The Ledger" (concept 01, approved 2026-10-18).
    Ink / cream / bronze, Fraunces display + Instrument Sans body.
-   Keep to these tokens and components. */
+   Keep to these tokens and components.
+
+   2026-10-20: fonts self-hosted; hero plates re-cut (gradient scrim, no clipped
+   descenders); designed "pattern" plates for venues with no licensed photo;
+   venue cards carry thumbnails; real desktop layout above 1040px. */
+
+/* ---------------------------------------------------------------- fonts
+   Self-hosted so no visitor IP reaches a third party on page load.
+   Fraunces and Instrument Sans are both SIL Open Font License 1.1. */
+@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url(/fonts/fraunces-normal-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url(/fonts/fraunces-normal-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 400; font-display: swap;
+  src: url(/fonts/fraunces-italic-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 400; font-display: swap;
+  src: url(/fonts/fraunces-italic-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400 700; font-stretch: 100%; font-display: swap;
+  src: url(/fonts/instrument-sans-normal-400_700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400 700; font-stretch: 100%; font-display: swap;
+  src: url(/fonts/instrument-sans-normal-400_700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
 
 :root {
   --ink: #0B0908;
@@ -20,6 +46,7 @@
   --r-lg: 18px;
   --r-md: 14px;
   --pad: 18px;
+  --col: 760px;      /* reading column; widened on big screens */
   color-scheme: dark;
 }
 
@@ -61,9 +88,9 @@ body.tall-bar .nyb-panel { bottom: calc(184px + env(safe-area-inset-bottom)); he
 }
 a { color: var(--bronze-lt); }
 a:hover { color: var(--cream); }
-:focus-visible { outline: 3px solid var(--bronze-lt); outline-offset: 2px; border-radius: 4px; }
+:focus-visible { outline: 3px solid var(--bronze-lt); outline-offset: 2px; }
 img { max-width: 100%; display: block; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 var(--pad); }
+.wrap { max-width: var(--col); margin: 0 auto; padding: 0 var(--pad); }
 .wide { max-width: 1100px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
@@ -85,28 +112,101 @@ details.menu .panel a:hover { background: var(--ink-3); }
 /* Type */
 .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze-lt); margin: 0; }
 h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; }
-h1 { font-size: clamp(36px, 11vw, 60px); line-height: 1.02; text-wrap: balance; overflow-wrap: anywhere; }
-h2 { font-size: 28px; line-height: 1.1; margin-top: 36px; }
-h3 { font-size: 21px; line-height: 1.2; }
+h1 { font-size: clamp(36px, 10vw, 56px); line-height: 1.08; text-wrap: balance; overflow-wrap: break-word; }
+h2 { font-size: 28px; line-height: 1.15; margin-top: 36px; }
+h3, h2.as-h3 { font-size: 21px; line-height: 1.2; }
+h2.as-h3 { margin-top: 0; }
 p { margin: 10px 0 0; }
 .lede { font-size: 18px; color: var(--text-2); max-width: 60ch; }
 .small { font-size: 14px; color: var(--muted); }
 
-/* Plate: title block that looks finished with or without a photo */
-.plate { position: relative; margin-top: 4px; border-radius: var(--r-lg); background: var(--bronze); color: var(--ink); padding: 16px; min-height: 120px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; overflow: hidden; }
+/* ------------------------------------------------- Plate: the page's title block
+   Three flavours, all the same shape so the site reads as one thing:
+     .plate.photo    a licensed photograph behind the title
+     .plate.pattern  a drawn cover for a venue we have no licensed photo of
+     .plate          plain bronze (fallback)
+   Descenders used to be shaved by overflow:hidden; the block now reserves
+   space for them with padding-bottom plus a little leading under the title. */
+.plate {
+  position: relative;
+  margin-top: 4px;
+  border-radius: var(--r-lg);
+  background: var(--bronze);
+  color: var(--ink);
+  padding: 20px 20px 22px;
+  min-height: 132px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  overflow: hidden;
+  isolation: isolate;
+}
 .plate .eyebrow { color: var(--ink); opacity: 0.85; }
+.plate h1 { padding-bottom: 0.06em; }
+/* the eyebrow is wide-tracked, so let it wrap instead of running off the edge */
+.plate .eyebrow { font-size: clamp(11px, 3vw, 13px); letter-spacing: 0.1em; max-width: 100%; overflow-wrap: anywhere; }
 .plate.cream { background: var(--cream); }
-.plate.photo { color: var(--cream); min-height: 220px; background: var(--ink-3); }
-.plate.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.plate.photo::after { content: ""; position: absolute; inset: 0; background: rgba(11, 9, 8, 0.55); }
+
+/* Photo plate: a bottom-weighted gradient, not a flat veil. The flat veil
+   greyed the whole picture out and still left the type sitting on neon. */
+.plate.photo { color: var(--cream); min-height: 188px; background: var(--ink-3); }
+.plate.photo img,
+.plate.photo picture { position: absolute; inset: 0; width: 100%; height: 100%; }
+.plate.photo img { object-fit: cover; object-position: var(--pos, 50% 42%); }
+.plate.photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(11, 9, 8, 0.93) 0%, rgba(11, 9, 8, 0.88) 26%, rgba(11, 9, 8, 0.66) 46%, rgba(11, 9, 8, 0.28) 68%, rgba(11, 9, 8, 0.04) 100%),
+    linear-gradient(to right, rgba(11, 9, 8, 0.42) 0%, rgba(11, 9, 8, 0.10) 46%, rgba(11, 9, 8, 0) 100%);
+}
 .plate.photo > * { position: relative; z-index: 1; }
-.plate.photo .eyebrow { color: var(--cream); }
+.plate.photo > picture, .plate.photo > img { z-index: 0; }
+.plate.photo .eyebrow { color: var(--cream); opacity: 0.92; text-shadow: 0 1px 10px rgba(11, 9, 8, 0.9); }
+.plate.photo h1 { text-shadow: 0 2px 22px rgba(11, 9, 8, 0.75); }
+
+/* Pattern plate: what a venue page shows when no free, correctly-licensed
+   photograph of it exists. Drawn in CSS, so it costs no bytes and can never
+   be mistaken for a picture of the room. */
+.plate.pattern {
+  color: var(--cream);
+  min-height: 138px;
+  border: 1px solid var(--rule);
+  background:
+    radial-gradient(130% 100% at 88% -10%, rgba(192, 143, 82, 0.30), rgba(192, 143, 82, 0) 60%),
+    linear-gradient(150deg, var(--ink-3) 0%, var(--ink-2) 58%, var(--ink) 100%);
+}
+.plate.pattern .eyebrow { color: var(--bronze-lt); opacity: 1; }
+.plate.pattern > * { position: relative; z-index: 1; }
+.plate.pattern::before { content: ""; position: absolute; inset: 0; z-index: 0; }
+.plate .initial {
+  position: absolute;
+  right: 2px;
+  bottom: -0.30em;
+  z-index: 0;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(132px, 34vw, 230px);
+  line-height: 1;
+  color: rgba(192, 143, 82, 0.16);
+  pointer-events: none;
+  user-select: none;
+}
+.pat1::before { background: repeating-linear-gradient(135deg, rgba(192, 143, 82, 0) 0 11px, rgba(192, 143, 82, 0.13) 11px 12px); }
+.pat2::before { background: radial-gradient(rgba(192, 143, 82, 0.22) 1.2px, rgba(192, 143, 82, 0) 1.3px); background-size: 15px 15px; }
+.pat3::before { background: repeating-radial-gradient(circle at 92% 4%, rgba(192, 143, 82, 0) 0 23px, rgba(192, 143, 82, 0.13) 23px 24px); }
+.pat4::before { background: repeating-linear-gradient(90deg, rgba(192, 143, 82, 0) 0 23px, rgba(192, 143, 82, 0.11) 23px 24px); }
+.pat5::before { background: repeating-linear-gradient(45deg, rgba(192, 143, 82, 0) 0 15px, rgba(192, 143, 82, 0.10) 15px 16px), repeating-linear-gradient(-45deg, rgba(192, 143, 82, 0) 0 15px, rgba(192, 143, 82, 0.10) 15px 16px); }
+.pat6::before { background: repeating-linear-gradient(0deg, rgba(192, 143, 82, 0) 0 15px, rgba(192, 143, 82, 0.12) 15px 16px); }
+
 .credit { font-size: 12px; color: var(--muted); margin-top: 6px; }
 
 /* Answer card + source stamp */
 .answer { margin-top: 14px; padding: 16px; border-radius: var(--r-lg); background: var(--cream); color: var(--ink); }
 .answer .label { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6E4F2A; }
-.answer .value { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 9vw, 40px); line-height: 1.05; margin-top: 4px; }
+.answer .value { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 9vw, 40px); line-height: 1.06; margin-top: 4px; }
 .answer p { color: #3B342D; font-size: 16px; }
 .stamp { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 44px; margin-top: 10px; font-size: 14px; color: var(--text-2); text-decoration: none; }
 .stamp .go { color: var(--bronze-lt); font-weight: 600; white-space: nowrap; }
@@ -121,14 +221,48 @@ p { margin: 10px 0 0; }
 .chip { display: inline-block; margin-top: 6px; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 8px; background: #2A231C; color: #E3B87A; }
 .chip.ok { background: #1E2A20; color: #A9D3A5; }
 
-/* Lists of venues (hubs, home) */
+/* Lists of venues (hubs, home). Each card carries a thumbnail: a photograph
+   where one exists, otherwise the same drawn cover as that venue's page. */
 .vlist { display: grid; gap: 10px; margin-top: 14px; }
-.vcard { display: block; border: 1px solid var(--edge); border-radius: var(--r-md); padding: 14px; color: var(--cream); text-decoration: none; }
-.vcard:hover { border-color: var(--bronze); }
-.vcard .t { font-family: var(--display); font-size: 22px; font-weight: 600; }
+.vcard {
+  display: block;
+  gap: 14px;
+  align-items: start;
+  border: 1px solid var(--edge);
+  border-radius: var(--r-md);
+  padding: 14px;
+  color: var(--cream);
+  text-decoration: none;
+}
+.vcard:hover { border-color: var(--bronze); background: var(--ink-2); }
+.vcard .vtext { display: block; min-width: 0; }
+.vcard .t, .vcard .m, .vcard .a { display: block; }
+.vcard .t { font-family: var(--display); font-size: 22px; font-weight: 600; line-height: 1.15; }
 .vcard .m { font-size: 14px; color: var(--muted); }
 .vcard .a { margin-top: 6px; font-size: 15px; }
-@media (min-width: 760px) { .vlist.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.vthumb {
+  position: relative;
+  display: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--ink-3);
+  isolation: isolate;
+}
+.vthumb img { width: 100%; height: 100%; object-fit: cover; }
+/* night photographs go very dark at 88px, so the frame gets a hairline */
+.vthumb::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(237, 231, 222, 0.14); pointer-events: none; }
+.vthumb.pattern { border: 1px solid var(--rule); background: radial-gradient(130% 100% at 88% -10%, rgba(192, 143, 82, 0.34), rgba(192, 143, 82, 0) 62%), linear-gradient(150deg, var(--ink-3), var(--ink)); }
+.vthumb.pattern::before { content: ""; position: absolute; inset: 0; z-index: 0; opacity: 2.6; }
+.vthumb.pat1::before { background: repeating-linear-gradient(135deg, rgba(192, 143, 82, 0) 0 5px, rgba(192, 143, 82, 0.34) 5px 6px); }
+.vthumb.pat2::before { background: radial-gradient(rgba(192, 143, 82, 0.5) 1.2px, rgba(192, 143, 82, 0) 1.4px); background-size: 9px 9px; }
+.vthumb.pat3::before { background: repeating-radial-gradient(circle at 92% 4%, rgba(192, 143, 82, 0) 0 9px, rgba(192, 143, 82, 0.34) 9px 10px); }
+.vthumb.pat4::before { background: repeating-linear-gradient(90deg, rgba(192, 143, 82, 0) 0 9px, rgba(192, 143, 82, 0.3) 9px 10px); }
+.vthumb.pat5::before { background: repeating-linear-gradient(45deg, rgba(192, 143, 82, 0) 0 7px, rgba(192, 143, 82, 0.26) 7px 8px), repeating-linear-gradient(-45deg, rgba(192, 143, 82, 0) 0 7px, rgba(192, 143, 82, 0.26) 7px 8px); }
+.vthumb.pat6::before { background: repeating-linear-gradient(0deg, rgba(192, 143, 82, 0) 0 7px, rgba(192, 143, 82, 0.32) 7px 8px); }
+.vthumb .initial { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 600; font-size: 30px; line-height: 1; color: rgba(217, 168, 106, 0.72); }
+@media (min-width: 700px) { .vlist.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* Poster price cards (group pages) */
 .scale { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-top: 16px; }
@@ -152,9 +286,11 @@ p { margin: 10px 0 0; }
 .total { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; padding: 14px 16px; border-radius: var(--r-lg); border: 1px solid var(--edge); }
 .total b { font-family: var(--display); font-weight: 600; font-size: 38px; line-height: 1; }
 
-/* Sticky action bar */
+/* Sticky action bar (phones and tablets). On a wide screen the same element
+   becomes the sidebar card: see the 1040px block below. */
 .actions { position: fixed; left: 0; right: 0; bottom: 0; background: var(--ink); border-top: 1px solid var(--rule); padding: 12px var(--pad) calc(14px + env(safe-area-inset-bottom)); z-index: 10; }
 .actions .wrap { padding: 0; display: flex; gap: 10px; flex-wrap: wrap; }
+.actions .side-title { display: none; }
 .btn { flex: 1 1 140px; min-height: 50px; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-weight: 600; text-decoration: none; text-align: center; padding: 0 16px; font-size: 16px; }
 .btn.primary { background: var(--bronze); color: var(--ink); }
 .btn.cream { background: var(--cream); color: var(--ink); }
@@ -171,6 +307,8 @@ p { margin: 10px 0 0; }
 ul.clean { padding-left: 18px; }
 ul.clean li { margin: 6px 0; }
 .sources { font-size: 14px; color: var(--muted); }
+.sources li { margin: 2px 0; }
+.sources a { display: inline-block; padding: 4px 0; }
 .sources a { color: var(--bronze-lt); }
 .skip li { margin: 6px 0; }
 table.compare { width: 100%; border-collapse: collapse; font-size: 15px; }
@@ -192,8 +330,116 @@ table.compare th { color: var(--muted); font-weight: 600; font-size: 13px; }
 .site-foot a { color: var(--text-2); }
 .site-foot nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 10px 0; }
 
-@media (min-width: 760px) {
+/* A short viewport (a 400%-zoomed desktop, or a phone in landscape) cannot
+   spare 77-137px of fixed bar, so there the bar simply ends the page. */
+@media (max-height: 560px) {
+  .actions { position: static; margin-top: 32px; border-top: 1px solid var(--rule); padding-bottom: 20px; }
+  body, body.tall-bar { padding-bottom: 0; }
+}
+@media (min-height: 561px) {
+  html { scroll-padding-bottom: 150px; }
+}
+
+/* Venue page column split. Below 1040 the aside is display:contents, so the
+   action bar inside it keeps behaving as the fixed bottom bar it is today.
+   The checked-date line belongs to the desktop sidebar card, not to the
+   phone bar, where it would only cost a line of screen. */
+.vside { display: contents; }
+.vgrid .actions .disclose { display: none; }
+
+@media (min-width: 700px) {
   body { font-size: 17px; }
-  .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .plate { padding: 26px 28px 28px; min-height: 150px; }
+  .plate.photo { min-height: 280px; }
+  .plate.pattern { min-height: 230px; }
   .posters.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .vcard { display: grid; grid-template-columns: 76px minmax(0, 1fr); }
+  .vthumb { display: block; width: 76px; height: 76px; }
+  .vthumb .initial { font-size: 34px; }
+}
+
+/* ------------------------------------------------------------- big screens
+   Below this the site is the phone layout it was designed as. Above it the
+   reading column widens, the hero gets room, and the venue page puts its
+   actions in a sticky sidebar instead of a full-width bar across the screen. */
+@media (min-width: 1040px) {
+  :root { --col: 1080px; --pad: 32px; }
+  body, body.tall-bar { padding-bottom: 0; }
+  .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lede { font-size: 19px; }
+  .vmain > p, main > p, main > ul.clean, .answer p, .card p { max-width: 70ch; }
+  h1 { font-size: clamp(48px, 4.6vw, 64px); }
+  h2 { font-size: 32px; margin-top: 44px; }
+
+  .plate { padding: 32px 36px 34px; }
+  .plate.photo { min-height: clamp(240px, 34vh, 320px); }
+  .plate.pattern { min-height: 210px; }
+  .plate .initial { font-size: 330px; }
+  .plate h1 { max-width: 22ch; }
+  .plate .eyebrow { font-size: 13px; letter-spacing: 0.14em; }
+
+  /* The venue page: content left, a sticky card right. */
+  .vgrid { display: grid; grid-template-columns: minmax(0, 1fr) 264px; column-gap: 32px; align-items: start; }
+  .vside { display: block; position: sticky; top: 28px; }
+  .vgrid .actions {
+    position: static;
+    border: 1px solid var(--edge);
+    border-top: 1px solid var(--edge);
+    border-radius: var(--r-lg);
+    background: var(--ink-2);
+    padding: 18px;
+    margin-top: 14px;
+  }
+  .vgrid .actions .wrap { max-width: none; flex-direction: column; }
+  .vgrid .actions .side-title { display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
+  .vgrid .actions .btn { flex: none; width: 100%; }
+  .vgrid .actions .disclose { display: block; text-align: left; margin-top: 4px; }
+
+  /* Everywhere else the bar stops being a fixed phone bar and simply ends
+     the page, at the content width, with buttons the size of their labels. */
+  .actions { position: static; margin-top: 40px; padding: 22px 0 0; border-top: 1px solid var(--rule); }
+  .actions .wrap { max-width: var(--col); margin: 0 auto; }
+  .actions .btn { flex: 0 0 auto; min-width: 220px; }
+  .actions .btn.quiet { flex-basis: auto; }
+  .actions .disclose { flex-basis: 100%; text-align: left; margin-top: 10px; }
+  .vgrid .actions { margin-top: 14px; padding: 18px; }
+  .vgrid .actions .btn, .vgrid .actions .btn.quiet { min-width: 0; }
+  /* the sidebar takes 300px, so the fact cards stay two-up in what is left */
+  .vgrid .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* page-level buttons size to their label instead of splitting the width */
+  .inline-actions .btn { flex: 0 0 auto; min-width: 190px; }
+
+  /* Hubs and the home page get the width instead of a sidebar. */
+  .vlist.two { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .vcard { grid-template-columns: 88px minmax(0, 1fr); padding: 16px; }
+  .vthumb { width: 88px; height: 88px; border-radius: 12px; }
+  .vthumb .initial { font-size: 38px; }
+  .split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: start; }
+  .split > h2 { margin-top: 44px; }
+  table.compare { font-size: 16px; }
+  table.compare th, table.compare td { padding: 12px 10px; }
+  /* Nyla sits at the normal bottom once there is no bar to clear */
+  body .nyb-bubble, body:not(.no-bar) .nyb-bubble, body.tall-bar .nyb-bubble { bottom: 16px; }
+  .vgrid { margin-right: 0; }
+  body .nyb-panel, body:not(.no-bar) .nyb-panel, body.tall-bar .nyb-panel { top: auto; bottom: 24px; height: min(560px, calc(100vh - 60px)); height: min(560px, calc(100dvh - 60px)); }
+  body .nyb-teaser, body:not(.no-bar) .nyb-teaser, body.tall-bar .nyb-teaser { bottom: 370px; }
+}
+
+@media (min-width: 1340px) {
+  :root { --col: 1180px; }
+  .plate.photo { min-height: clamp(280px, 36vh, 360px); }
+  .vgrid { grid-template-columns: minmax(0, 1fr) 320px; column-gap: 52px; }
+}
+
+/* Windows High Contrast and other forced-colours modes drop author colours and
+   may drop background images, which would leave a solid ghost initial over the
+   title and cream text on a bare photograph. */
+@media (forced-colors: active) {
+  .plate .initial { display: none; }
+  .plate.photo::after { background: Canvas; opacity: 0.85; }
+  .plate.photo h1, .plate.photo .eyebrow { forced-color-adjust: none; color: CanvasText; background: Canvas; }
+  .plate.pattern::before, .vthumb.pattern::before { display: none; }
+  .pbar i { forced-color-adjust: none; background: Highlight; }
+  .vthumb { border: 1px solid CanvasText; }
 }

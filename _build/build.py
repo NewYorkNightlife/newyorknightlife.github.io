@@ -1,10 +1,14 @@
 """Build NY Nightlife v2 static pages into the site root (../).
 
-Data:  _build/data/venues/*.json  (one per venue, fact-checked; see FACTS.md)
+Data:  _build/data/venues/*.json  (one per venue, fact-checked)
        _build/data/playbooks/*.json
 Pages: generated from the templates in this file.
-Run:   python _build/build.py   (from the site folder), then: node _build/test_nyla.js .
+Images: masters in _build/img/, responsive copies in _build/img/gen/ (make_images.py).
+Run:   python _build/make_images.py   (only after adding or replacing a photo)
+       python _build/build.py         (from the site folder)
+       node _build/test_nyla.js .     (Nyla's answer tests; run it 3 times)
 """
+import hashlib
 import html
 import json
 import os
@@ -19,6 +23,18 @@ SITE = "https://nynightlife.com"
 BASE = os.environ.get("NYN_BASE", "")  # path prefix for test builds; "" for the live site
 RELATIVE = os.environ.get("NYN_RELATIVE") == "1"  # relative links for the private preview
 CHECKED_FMT = "%b %-d, %Y"
+SITE_EDITED = "2026-10-21"   # the day the fixed pages themselves last changed
+def _ver(p):
+    """Cache-bust from the file's own content, so it can never be forgotten.
+    CRLF is normalised because git's autocrlf makes working copies differ."""
+    return hashlib.md5(p.read_bytes().replace(b"\r\n", b"\n")).hexdigest()[:8] if p.exists() else "0"
+GEN = ROOT / "img" / "gen"
+_DIMS_F = ROOT / "img" / "dims.json"
+DIMS = json.loads(_DIMS_F.read_text(encoding="utf-8")) if _DIMS_F.exists() else {}
+CSS_V = _ver(ROOT / "site.css")
+JS_V = _ver(ROOT / "concierge.js")
+OG_DIR = ROOT / "img" / "og"
+OG_DEFAULT = "/img/og/site.jpg"
 
 e = html.escape
 
@@ -35,8 +51,10 @@ def fmt_date(iso):
 
 # ---------------------------------------------------------------- shell
 
-def head(title, desc, path, schema=None, robots="index,follow"):
+def head(title, desc, path, schema=None, robots="index,follow", image=None, img_alt=None):
     ld = f'<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>' if schema else ""
+    img = SITE + (image or OG_DEFAULT)
+    img_alt = img_alt or "NY Nightlife \u2014 know before you go"
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -46,16 +64,27 @@ def head(title, desc, path, schema=None, robots="index,follow"):
 <meta name="description" content="{e(desc)}">
 <meta name="robots" content="{robots}">
 <link rel="canonical" href="{SITE}{path}">
+<meta property="og:site_name" content="NY Nightlife">
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="website">
+<meta property="og:url" content="{SITE}{path}">
+<meta property="og:image" content="{e(img)}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{e(img_alt)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{e(title)}">
+<meta name="twitter:description" content="{e(desc)}">
+<meta name="twitter:image" content="{e(img)}">
+<meta name="twitter:image:alt" content="{e(img_alt)}">
 <meta name="theme-color" content="#0B0908">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{u('/css/site.css')}?v=20261018">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="{u('/fonts/instrument-sans-normal-400_700-latin.woff2')}">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="{u('/fonts/fraunces-normal-600-latin.woff2')}">
+<link rel="stylesheet" href="{u('/css/site.css')}?v={CSS_V}">
 <link rel="stylesheet" href="{u('/css/concierge.css')}">
-<script defer src="{u('/js/concierge.js')}?v=20261018"></script>
+<script defer src="{u('/js/concierge.js')}?v={JS_V}"></script>
 <script defer src="{u('/analytics.js')}"></script>
 {ld}
 </head>
@@ -86,13 +115,14 @@ def footer():
 """
 
 
-def actions(buttons, disclose=None):
+def actions(buttons, disclose=None, side_title=None):
     d = f'<p class="disclose">{disclose}</p>' if disclose else ""
-    return f'<div class="actions" role="region" aria-label="Actions"><div class="wrap">{buttons}{d}</div></div>'
+    t = f'<p class="side-title">{e(side_title)}</p>' if side_title else ""
+    return f'<div class="actions" role="region" aria-label="Actions"><div class="wrap">{t}{buttons}{d}</div></div>'
 
 
-def page(title, desc, path, body, schema=None, body_class="", robots="index,follow"):
-    return (head(title, desc, path, schema, robots) +
+def page(title, desc, path, body, schema=None, body_class="", robots="index,follow", image=None, img_alt=None):
+    return (head(title, desc, path, schema, robots, image, img_alt) +
             f'<body class="{body_class}">\n' + header() + f'<main class="wrap">\n{body}\n</main>\n' + footer() + "</body>\n</html>\n")
 
 
@@ -114,6 +144,75 @@ def write(path, text):
     p.write_text(text, encoding="utf-8", newline="\n")
 
 
+# ---------------------------------------------------------------- imagery
+# A venue page shows a photograph only when we hold a correctly-licensed one.
+# The other venues get a cover drawn in CSS from their own slug and initial:
+# it costs no bytes, it is stable between builds, and it can never be mistaken
+# for a picture of the room.
+SIZES_PLATE = ("(min-width: 1340px) 1116px, (min-width: 1040px) 1016px, "
+               "(min-width: 796px) 724px, calc(100vw - 36px)")
+
+
+def pattern_of(slug):
+    return int(hashlib.md5(slug.encode()).hexdigest(), 16) % 6 + 1
+
+
+def initial_of(name):
+    for c in re.sub(r"^(the|a)\s+", "", name.strip(), flags=re.I):
+        if c.isalnum():
+            return c.upper()
+    return "N"
+
+
+def has_photo(v):
+    return bool((v.get("photo") or {}).get("url")) and (ROOT / "img" / (v["slug"] + ".jpg")).exists()
+
+
+def shows_the_venue(v):
+    """True only where the photograph is of the place itself. The others stay
+    on their own page, under the caption that says what they really show."""
+    return has_photo(v) and not (v.get("photo") or {}).get("depicts")
+
+
+def picture(slug, alt, sizes, eager=False):
+    w, h = DIMS.get(slug, [1280, 853])
+    srcset = ", ".join(f'{u("/img/" + slug + "-" + str(n) + ".webp")} {n}w' for n in (640, 960, 1280))
+    load = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy"'
+    return (f'<picture><source type="image/webp" srcset="{srcset}" sizes="{sizes}">'
+            f'<img src="{u("/img/" + slug + ".jpg")}" alt="{e(alt)}" width="{w}" height="{h}" '
+            f'{load} decoding="async"></picture>')
+
+
+def plate(slug, name, eyebrow, title=None, credit=None, alt=None, style=""):
+    """The title block. `credit` (already-escaped HTML) means: use the photo."""
+    title = title or name
+    st = f' style="{style}"' if style else ""
+    eb = f'<p class="eyebrow">{eyebrow}</p>' if eyebrow else ""
+    if credit:
+        return (f'<div class="plate photo"{st}>{picture(slug, alt or name, SIZES_PLATE, eager=True)}'
+                f'{eb}<h1>{e(title)}</h1></div><p class="credit">Photo: {credit}</p>')
+    return (f'<div class="plate pattern pat{pattern_of(slug)}"{st}>'
+            f'<span class="initial" aria-hidden="true">{e(initial_of(name))}</span>'
+            f'{eb}<h1>{e(title)}</h1></div>')
+
+
+def vthumb(v):
+    slug = v["slug"]
+    if shows_the_venue(v):
+        return (f'<span class="vthumb"><picture>'
+                f'<source type="image/webp" srcset="{u("/img/" + slug + "-thumb.webp")}">'
+                f'<img src="{u("/img/" + slug + "-thumb.jpg")}" alt="" width="176" height="176" '
+                f'loading="lazy" decoding="async"></picture></span>')
+    return (f'<span class="vthumb pattern pat{pattern_of(slug)}" aria-hidden="true">'
+            f'<span class="initial">{e(initial_of(v["name"]))}</span></span>')
+
+
+def vcard(v, meta, answer):
+    return (f'<a class="vcard" href="{u("/venues/" + v["slug"] + ".html")}">{vthumb(v)}'
+            f'<span class="vtext"><span class="t">{e(v["name"])}</span>'
+            f'<span class="m">{e(meta)}</span><span class="a">{answer}</span></span></a>')
+
+
 # ---------------------------------------------------------------- venues
 
 STATUS_CHIP = {
@@ -132,7 +231,7 @@ def fact(label, f, big=False, full=False):
     cls = "fact full" if full else "fact"
     dd = "big" if big and val and len(val) <= 8 else ""
     chip = STATUS_CHIP.get(st, "") if not (st == "unknown" and not val) else ""
-    return f'<div class="{cls}"><dt>{e(label)}</dt><dd class="{dd}">{shown}</dd>{chip}</div>'
+    return f'<div class="{cls}"><dt>{e(label)}</dt><dd class="{dd}">{shown}{chip}</dd></div>'
 
 
 def all_sources(v):
@@ -159,23 +258,26 @@ def venue_page(v):
     closed = v.get("status") == "closed"
 
     photo = v.get("photo") or {}
-    local = (ROOT / "img" / f"{slug}.jpg").exists()
-    if photo.get("url") and local:
-        plate = (f'<div class="plate photo"><img src="{u("/img/" + slug + ".jpg")}" alt="{e(name)}" loading="eager" decoding="async">'
-                 f'<p class="eyebrow">{e(hood)} · {e(type_)}</p><h1>{e(name)}</h1></div>'
-                 f'<p class="credit">Photo: {e(photo.get("credit", ""))} · {e(photo.get("license", ""))}</p>')
-    else:
-        plate = f'<div class="plate"><p class="eyebrow">{e(hood)} · {e(type_)}</p><h1>{e(name)}</h1></div>'
+    shot = has_photo(v)
+    credit = None
+    if shot:
+        lic, lurl = photo.get("license", ""), photo.get("license_url", "")
+        lic_html = f'<a href="{e(lurl)}" rel="license noopener">{e(lic)}</a>' if lurl else e(lic)
+        credit = (f'{e(photo.get("credit", ""))} · {lic_html} · resized and cropped by us'
+                  + (f'. {e(photo["depicts"])}' if photo.get("depicts") else ""))
+    # The hero is decorative: the name is in the h1 right beside it and the
+    # credit sits underneath, so naming it again only doubles the announcement.
+    head_block = plate(slug, name, f"{e(hood)} · {e(type_)}", credit=credit, alt="")
 
     if closed:
-        body = plate + f"""<div class="answer"><div class="label">Status</div><div class="value">Closed</div><p>{e(v.get('status_note', ''))}</p></div>
+        body = f"""<div class="answer"><div class="label">Status</div><div class="value">Closed</div><p>{e(v.get('status_note', ''))}</p></div>
 <a class="stamp" href="#sources">Checked {checked} · {len(srcs)} sources<span class="go">Sources ↓</span></a>"""
     else:
         dchip = STATUS_CHIP.get(dress.get("status", ""), "")
         warn = ""
         if v.get("status") == "unclear":
             warn = f'<div class="card" style="border:1px solid var(--bronze)"><b>Status unclear.</b> {e(v.get("status_note", ""))} Check the venue before heading out.</div>'
-        body = plate + warn + f"""<section class="answer" aria-labelledby="dc"><div class="label" id="dc">Dress code</div>
+        body = warn + f"""<section class="answer" aria-labelledby="dc"><div class="label" id="dc">Dress code</div>
 <div class="value">{e(dress.get('answer') or 'Not found yet')}</div><p>{e(dress.get('detail', ''))}</p>{dchip}</section>
 <a class="stamp" href="#sources">Checked {checked} · {len(srcs)} sources · editor review pending<span class="go">Sources ↓</span></a>
 <dl class="facts">
@@ -210,16 +312,33 @@ def venue_page(v):
         if v.get("address"):
             q = urllib.parse.quote(f"{name}, {v['address']}")
             btns += f'<a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query={q}" rel="noopener">Directions</a>'
-    bar = actions(btns) if btns else ""
-    kind = "NightClub" if "club" in type_ else "BarOrPub"
+    bar = actions(btns, disclose=f"Checked {checked}", side_title="Go there") if btns else ""
+    if bar:
+        body = f'<div class="vgrid"><div class="vmain">{body}</div><div class="vside">{bar}</div></div>'
+    body = head_block + body
+    # Only a venue we believe is trading is marked up as a business; a closed or
+    # unclear one is a plain Place, so the machine-readable page cannot say
+    # "open" where the visible page says otherwise.
+    kind = "Place" if v.get("status") in ("closed", "unclear") else ("NightClub" if "club" in type_ else "BarOrPub")
+    about = {"@type": kind, "name": name, "address": v.get("address", "")}
+    same = [x for x in [v.get("website"), v.get("instagram")] if x]
+    if same:
+        about["sameAs"] = same
+    if shot:
+        about["image"] = SITE + f"/img/{slug}.jpg"
     schema = {"@context": "https://schema.org", "@type": "WebPage", "name": f"{name}: dress code, age & how to get in",
               "url": SITE + path, "dateModified": v.get("checked"),
-              "author": {"@type": "Person", "name": "Dan Herlehy"},
-              "about": {"@type": kind, "name": name, "address": v.get("address", ""),
-                        "sameAs": [x for x in [v.get("website"), v.get("instagram")] if x]}}
-    desc = f"{name} ({hood}): dress code, age policy, cover and how to get in, checked {checked} with sources."
+              "author": {"@type": "Person", "name": "Dan Herlehy"}, "about": about}
+    if closed:
+        desc = f"{name} ({hood}) has closed. {v.get('status_note', '')[:110]}".strip()
+    elif v.get("status") == "unclear":
+        desc = f"{name} ({hood}): we could not confirm this venue is still operating. Checked {checked}."
+    else:
+        desc = f"{name} ({hood}): dress code, age policy, cover and how to get in, checked {checked} with sources."
     title = f"{name} dress code, age & cover | NY Nightlife"
-    write(path, page(title, desc, path, body + bar, schema, "" if btns else "no-bar"))
+    write(path, page(title, desc, path, body, schema, "" if btns else "no-bar",
+                     image=f"/img/og/{slug}.jpg",   # make_og.py draws one per venue; check_output() enforces it
+                     img_alt=f"{name}, {hood}: dress code, age and cover"))
     return v
 
 
@@ -233,9 +352,10 @@ def venues_index(vs):
     for b in sorted(by_b):
         body += f"<h2>{e(b)}</h2><div class=\"vlist two\">"
         for v in by_b[b]:
-            body += (f'<a class="vcard" href="{u("/venues/" + v["slug"] + ".html")}"><div class="t">{e(v["name"])}</div>'
-                     f'<div class="m">{e(v.get("neighborhood", ""))} · {e(v.get("type", ""))}</div>'
-                     f'<div class="a">Dress: {e((v.get("dress") or {}).get("answer") or "not found yet")} {(" · Age: " + e((v.get("age") or {}).get("value"))) if (v.get("age") or {}).get("value") else ""}</div></a>')
+            age = (v.get("age") or {}).get("value")
+            answer = "Dress: " + e((v.get("dress") or {}).get("answer") or "not found yet")
+            body += vcard(v, f'{v.get("neighborhood", "")} · {v.get("type", "")}',
+                          answer + (f" · Age: {e(age)}" if age else ""))
         body += "</div>"
     write("/venues/index.html", page("NYC bars & clubs: dress code, age, cover | NY Nightlife",
                                      "Checked, sourced door facts for NYC bars and clubs: dress code, age, cover and how to get in.",
@@ -252,7 +372,7 @@ def dress_hub(vs):
     checked = fmt_date(max(v.get("checked", "2026-10-18") for v in vs))
     body = f"""<p class="eyebrow" style="margin-top:16px">The roundup</p><h1>NYC bar &amp; club dress codes</h1>
 <p class="lede">What {len(open_vs)} New York bars and clubs say about dress code, age and cover, and what sources report when the venue says nothing. Checked {checked}.</p>
-<div class="card"><h3>The short version</h3><ul class="clean">
+<div class="card"><h2 class="as-h3">The short version</h2><ul class="clean">
 <li>Most cocktail bars publish no dress code. "Smart casual" is the safe default.</li>
 <li>Clubs and rooftops are where sneakers, athletic wear and hats get turned away.</li>
 <li>Almost every venue here is 21+ at night. Bring a physical ID.</li></ul></div>
@@ -273,18 +393,60 @@ def dress_hub(vs):
 CHATBOT = ["css/concierge.css", "assets/nyla-full-welcome.png", "assets/nyla-head.png"]
 
 
+def sitemap(vs, pbs):
+    """Generated, not hand-maintained, so a new page can never be forgotten and
+    lastmod can never drift from the date the page displays."""
+    rows = [("/", max(v.get("checked", "2026-10-18") for v in vs)),
+            ("/venues/", max(v.get("checked", "2026-10-18") for v in vs)),
+            ("/guides/nyc-dress-codes.html", max(v.get("checked", "2026-10-18") for v in vs))]
+    rows += [(f"/venues/{v['slug']}.html", v.get("checked", "2026-10-18")) for v in vs]
+    rows += [(f"/plans/{p['slug']}.html", p["checked"]) for p in pbs]
+    rows += [(p, SITE_EDITED) for p in ("/about.html", "/how-we-check.html",
+                                        "/affiliate-disclosure.html", "/privacy.html", "/contact.html")]
+    body = "".join(f"<url><loc>{SITE}{p}</loc><lastmod>{d}</lastmod></url>\n" for p, d in sorted(rows))
+    (OUT / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n",
+        encoding="utf-8", newline="\n")
+
+
 def copy_static():
     import shutil
     site = ROOT.parent
     # Nyla's updated script lives in _build until cutover, so the old live site keeps the old one
     pairs = [(ROOT / "site.css", OUT / "css" / "site.css"), (ROOT / "concierge.js", OUT / "js" / "concierge.js")]
-    pairs += [(f, OUT / "img" / f.name) for f in sorted((ROOT / "img").glob("*.jpg"))]
+    # the responsive set from make_images.py; its <slug>.jpg replaces the master
+    pairs += [(f, OUT / "img" / f.name) for f in sorted(GEN.glob("*.jpg"))]
+    pairs += [(f, OUT / "img" / f.name) for f in sorted(GEN.glob("*.webp"))]
+    pairs += [(f, OUT / "img" / "og" / f.name) for f in sorted(OG_DIR.glob("*.jpg"))]
+    pairs += [(f, OUT / "fonts" / f.name) for f in sorted((site / "fonts").glob("*.woff2"))]
     if OUT.resolve() != site.resolve():
         pairs += [(site / c, OUT / c) for c in CHATBOT]
     for src, dst in pairs:
         if src.exists() and src.resolve() != dst.resolve():
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(src, dst)
+
+
+def check_output():
+    """Every local file the pages ask for must exist. A missing derivative used
+    to ship as an empty hero and a 404 share image, with no warning."""
+    missing = set()
+    for f in OUT.rglob("*.html"):
+        s = f.read_text(encoding="utf-8")
+        refs = re.findall(r'(?:src|href)="(/[^"]+)"', s) + re.findall(r'content="https://nynightlife\.com(/img/[^"]+)"', s)
+        for m in re.findall(r'srcset="([^"]+)"', s):
+            refs += [c.strip().split()[0] for c in m.split(",") if c.strip()]
+        for r in refs:
+            r = r.split("?")[0].split("#")[0]
+            if r.endswith("/"):
+                r += "index.html"
+            if not (OUT / r.lstrip("/")).exists():
+                missing.add(r)
+    if missing:
+        raise SystemExit("build produced broken references:\n  " + "\n  ".join(sorted(missing))
+                         + "\n(if these are images, run: python _build/make_images.py && python _build/make_og.py)")
+    return True
 
 
 def main():
@@ -294,11 +456,14 @@ def main():
     venues_index(vs)
     dress_hub(vs)
     import pages
-    pages.build(page, write, u, actions, fmt_date, vs)
+    pages.build(page, write, u, actions, fmt_date, vs,
+                {"plate": plate, "vcard": vcard, "picture": picture})
     import nyla
     pbs = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((ROOT / "data" / "playbooks").glob("*.json"))]
     nyla.build(write, fmt_date, vs, pbs, max(v.get("checked", "2026-10-18") for v in vs))
     copy_static()
+    sitemap(vs, pbs)
+    check_output()
     print(f"built {len(vs)} venue pages + hubs into {OUT}")
 
 

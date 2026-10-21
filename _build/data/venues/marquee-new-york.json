@@ -103,7 +103,8 @@
  "photo": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Marquee_New_York_%2855380944943%29.jpg",
   "license": "CC BY 4.0",
-  "credit": "Ajay Suresh (Flickr), via Wikimedia Commons"
+  "credit": "Ajay Suresh (Flickr), via Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/"
  },
  "checked": "2026-10-18",
  "chat": {

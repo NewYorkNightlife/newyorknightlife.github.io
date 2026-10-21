@@ -107,7 +107,8 @@
  "photo": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/KdC_main_interior.jpg",
   "license": "CC BY-SA 4.0",
-  "credit": "Jimmyfever1978, via Wikimedia Commons"
+  "credit": "Jimmyfever1978, via Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
  },
  "checked": "2026-10-18",
  "chat": {

@@ -10,7 +10,7 @@ SITE = "https://nynightlife.com"
 FEATURED = ["death-and-co", "attaboy", "nebula", "ophelia-lounge", "the-back-room", "mr-purple"]
 
 
-def playbook(page, write, u, actions, fmt_date, pb):
+def playbook(page, write, u, actions, fmt_date, pb, H):
     path = f"/plans/{pb['slug']}.html"
     checked = fmt_date(pb["checked"])
     ph = pb["photo"]
@@ -28,9 +28,10 @@ def playbook(page, write, u, actions, fmt_date, pb):
         srcs += [(o["name"], s["name"], s["url"]) for s in o["sources"]]
     c = pb["combo"]
     share_text = f"{pb['title']}: {c['label'].lower()} is about ${c['low']}–{c['high']} each. {SITE}{path}"
-    body = f"""<div class="plate photo" style="margin-top:12px"><img src="{u('/img/' + pb['slug'] + '.jpg')}" alt="Lower Manhattan skyline at sunset from New York Harbor" decoding="async">
-<p class="eyebrow">Group playbook · party of {pb['group']}</p><h1>{e(pb['title'])}</h1></div>
-<p class="credit">Photo: <a href="{e(ph['page'])}" rel="noopener">{e(ph['credit'])}</a> · {e(ph['license'])}</p>
+    credit = f'<a href="{e(ph["page"])}" rel="noopener">{e(ph["credit"])}</a> · {e(ph["license"])}'
+    body = H["plate"](pb["slug"], pb["title"], f"Group playbook · party of {pb['group']}", credit=credit,
+                      alt="Lower Manhattan skyline at sunset from New York Harbor",
+                      style="margin-top:12px") + f"""
 <p class="lede">Real prices from listings we checked, split per person for a group of {pb['group']}. Pick one or stack two.</p>
 <div class="scale" aria-hidden="true"><span>Per person</span><span>$0 · ${mx // 2} · ${mx}</span></div>
 <div class="posters">{posters}</div>
@@ -47,7 +48,9 @@ def playbook(page, write, u, actions, fmt_date, pb):
               "author": {"@type": "Person", "name": "Dan Herlehy"}, "image": ph["url"]}
     write(path, page(f"{pb['title']}: real prices per person for {pb['group']} | NY Nightlife",
                      f"Sunset cruise, party bus or private yacht for a group of {pb['group']} in NYC: real listing prices split per person, with sources.",
-                     path, body + actions(btns, disclose), schema, "tall-bar"))
+                     path, body + actions(btns, disclose), schema, "tall-bar",
+                     image="/img/og/" + pb["slug"] + ".jpg",
+                     img_alt=pb["title"] + ": real prices per person"))
 
 
 def age_bit(v):
@@ -60,33 +63,36 @@ HOME_PHOTO = {"url": "https://commons.wikimedia.org/wiki/Special:FilePath/East_V
               "credit": "takomabibelot, Wikimedia Commons", "license": "CC BY 2.0"}
 
 
-def home(page, write, u, vs):
+def home(page, write, u, vs, H):
     by = {v["slug"]: v for v in vs}
     feat = [by[s] for s in FEATURED if s in by and by[s].get("status") != "closed"]
     cards = "".join(
-        f'<a class="vcard" href="{u("/venues/" + v["slug"] + ".html")}"><div class="t">{e(v["name"])}</div>'
-        f'<div class="m">{e(v.get("neighborhood", ""))}</div>'
-        f'<div class="a">Dress: {e((v.get("dress") or {}).get("answer") or "not found yet")}{age_bit(v)}</div></a>'
+        H["vcard"](v, v.get("neighborhood", ""),
+                   "Dress: " + e((v.get("dress") or {}).get("answer") or "not found yet") + age_bit(v))
         for v in feat)
     n = len([v for v in vs if v.get("status") != "closed"])
-    body = f"""<div class="plate photo" style="margin-top:12px;min-height:260px"><img src="{u('/img/home.jpg')}" alt="An East Village sidewalk at night" decoding="async"><p class="eyebrow">New York City · checked &amp; sourced</p><h1>Know before you go.</h1></div>
-<p class="credit">Photo: <a href="{e(HOME_PHOTO['page'])}" rel="noopener">{e(HOME_PHOTO['credit'])}</a> · {e(HOME_PHOTO['license'])}</p>
+    credit = f'<a href="{e(HOME_PHOTO["page"])}" rel="noopener">{e(HOME_PHOTO["credit"])}</a> · {e(HOME_PHOTO["license"])}'
+    body = H["plate"]("home", "NY Nightlife", "New York City", title="Know before you go.", credit=credit,
+                      alt="An East Village sidewalk at night", style="margin-top:12px") + f"""
 <p class="lede">Dress code, age, cover and how to get in for {n} NYC bars and clubs. Every fact shows its source and the date we checked it.</p>
 <div class="inline-actions"><a class="btn primary" href="{u('/venues/')}">Find a venue</a><a class="btn ghost" href="{u('/guides/nyc-dress-codes.html')}">All dress codes</a></div>
 <h2>Most asked about</h2>
 <div class="vlist two">{cards}</div>
-<h2>Planning for a group?</h2>
-<a class="card-link" href="{u('/plans/bachelorette-night.html')}"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus or yacht, priced per person</span></span><span class="go">See prices →</span></a>
-<h2>Why trust this</h2>
+<div class="split">
+<div><h2>Planning for a group?</h2>
+<a class="card-link" href="{u('/plans/bachelorette-night.html')}"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus or yacht, priced per person</span></span><span class="go">See prices →</span></a></div>
+<div><h2>Why trust this</h2>
 <div class="card"><ul class="clean">
 <li>Each fact is checked against the venue's own site or two independent sources.</li>
 <li>If we can't confirm something, we say so, with an "unconfirmed" label.</li>
 <li>Every page shows the date it was checked. We never pretend it's fresher.</li></ul>
-<p><a href="{u('/how-we-check.html')}">How we check →</a></p></div>"""
+<p><a href="{u('/how-we-check.html')}">How we check →</a></p></div></div>
+</div>"""
     schema = {"@context": "https://schema.org", "@type": "WebSite", "name": "NY Nightlife", "url": SITE + "/"}
     write("/index.html", page("NY Nightlife: NYC bar & club dress codes, age & cover, checked",
                               "Know before you go: dress code, age, cover and how to get in for NYC bars and clubs, with sources and dates.",
-                              "/", body, schema, "no-bar"))
+                              "/", body, schema, "no-bar", image="/img/og/site.jpg",
+                              img_alt="NY Nightlife: know before you go"))
 
 
 def simple(page, write, path, title, desc, h1, html_body):
@@ -120,7 +126,8 @@ def trust_pages(page, write, u):
 <ul class="clean"><li>We count page visits and link clicks with privacy-friendly analytics that don't set cookies or identify you.</li>
 <li>We don't run ad trackers.</li>
 <li>Nyla, our chat helper, runs in your browser. What you type isn't sent or saved anywhere; she only remembers when she last said hello, so she doesn't pop up on every page.</li>
-<li>Our fonts load from Google Fonts, so Google sees your IP address when a page loads.</li>
+<li>Our fonts are served from this site, so loading a page no longer sends your IP address to Google.</li>
+<li>Our analytics provider, PostHog, does receive page views and clicks from US servers. It sets no cookies, doesn't identify you, and honours Do Not Track. Add <code>?notrack=1</code> to any URL to opt out.</li>
 <li>If you click through to a booking site, that site has its own privacy policy and may set its own cookies.</li>
 <li>If you email us, we use your email only to reply.</li></ul>
 <p>Questions: <a href="mailto:privacy@nynightlife.com">privacy@nynightlife.com</a>.</p>""")
@@ -132,8 +139,8 @@ def trust_pages(page, write, u):
                             None, "no-bar", "noindex"))
 
 
-def build(page, write, u, actions, fmt_date, vs):
+def build(page, write, u, actions, fmt_date, vs, H):
     for f in sorted((ROOT / "data" / "playbooks").glob("*.json")):
-        playbook(page, write, u, actions, fmt_date, json.loads(f.read_text(encoding="utf-8")))
-    home(page, write, u, vs)
+        playbook(page, write, u, actions, fmt_date, json.loads(f.read_text(encoding="utf-8")), H)
+    home(page, write, u, vs, H)
     trust_pages(page, write, u)
