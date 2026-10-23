@@ -64,7 +64,15 @@
     "name": "Public Records official site",
     "url": "https://publicrecords.nyc/"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "wed": "18:00-22:00",
+   "thu": "18:00-22:00",
+   "fri": "18:00-28:00",
+   "sat": "10:00-28:00",
+   "sun": "10:00-21:00"
+  }
  },
  "price": {
   "value": "",

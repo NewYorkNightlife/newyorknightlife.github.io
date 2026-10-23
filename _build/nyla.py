@@ -44,6 +44,11 @@ def _venue(v, fmt_date):
         "dress": _fact(v.get("dress"), "answer"),  # page shows no chip when dress has no status
         "age": _fact(v.get("age"), default="likely"),
         "hours": _fact(v.get("hours"), default="likely"),
+        # structured week for "open tonight" (js/live.js); only "fixed" venues are ever shown as open
+        "week": (v.get("hours") or {}).get("week") or {},
+        "hours_kind": (v.get("hours") or {}).get("kind") or "",
+        "hours_status": (v.get("hours") or {}).get("status") or "likely",
+        "hours_note": (v.get("hours") or {}).get("note") or "",
         "howto": _fact(v.get("getting_in"), default="likely"),
         "price": _fact(v.get("price"), default="likely"),
         "subway": _fact(v.get("subway"), default="likely"),

@@ -72,7 +72,9 @@
     "name": "RA event (22:00-05:00)",
     "url": "https://ra.co/events/2466485"
    }
-  ]
+  ],
+  "kind": "event",
+  "week": {}
  },
  "price": {
   "value": "",

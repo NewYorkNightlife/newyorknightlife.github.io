@@ -69,7 +69,17 @@
     "name": "Atly listing (till 4am)",
     "url": "https://atly.com/location/new-york/BossaNovaCivicClub"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "mon": "22:00-27:30",
+   "tue": "22:00-27:30",
+   "wed": "22:00-27:30",
+   "thu": "22:00-27:30",
+   "fri": "22:00-27:30",
+   "sat": "22:00-27:30",
+   "sun": "22:00-27:30"
+  }
  },
  "price": {
   "value": "",

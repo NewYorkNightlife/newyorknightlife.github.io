@@ -85,7 +85,9 @@
     "name": "Pacha NYC official contact/FAQ",
     "url": "https://pacha-nyc.com/contact-us"
    }
-  ]
+  ],
+  "kind": "event",
+  "week": {}
  },
  "price": {
   "value": "",

@@ -73,7 +73,17 @@
     "name": "Moxy Times Square - Magic Hour (official)",
     "url": "https://moxytimessquare.com/dining/magic-hour-rooftop-bar-lounge/"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "mon": "17:00-24:00",
+   "tue": "17:00-24:00",
+   "wed": "17:00-24:00",
+   "thu": "17:00-26:00",
+   "fri": "17:00-28:00",
+   "sat": "11:30-28:00",
+   "sun": "11:30-24:00"
+  }
  },
  "price": {
   "value": "Happy hour Mon-Fri 5-6:30pm at the bar: $6 Estrella, $8 house wine, $10 spritzes. Regular cocktails reported as typical-to-high Manhattan rooftop prices (no menu prices found).",

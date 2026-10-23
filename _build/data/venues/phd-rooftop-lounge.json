@@ -73,7 +73,14 @@
     "name": "The Rooftop Guide",
     "url": "http://www.therooftopguide.com/rooftop-bars-in-new-york/ph-d-rooftop-lounge.html"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "wed": "22:00-28:00",
+   "thu": "22:00-28:00",
+   "fri": "22:00-28:00",
+   "sat": "22:00-28:00"
+  }
  },
  "price": {
   "value": "Steep. No cocktail prices published.",

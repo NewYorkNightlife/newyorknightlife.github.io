@@ -77,7 +77,17 @@
     "name": "OpenTable",
     "url": "https://www.opentable.com/r/attaboy-new-york"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "mon": "17:00-27:00",
+   "tue": "17:00-27:00",
+   "wed": "17:00-27:00",
+   "thu": "17:00-27:00",
+   "fri": "17:00-27:00",
+   "sat": "17:00-27:00",
+   "sun": "17:00-27:00"
+  }
  },
  "price": {
   "value": "Cocktails ~$20 (bartender's choice, no menu)",

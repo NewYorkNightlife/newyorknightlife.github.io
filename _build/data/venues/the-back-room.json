@@ -81,7 +81,17 @@
     "name": "Time Out review (Sept 2025)",
     "url": "https://www.timeout.com/newyork/bars/the-back-room"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "sun": "18:00-25:00",
+   "mon": "18:00-25:00",
+   "tue": "18:00-26:00",
+   "wed": "18:00-26:00",
+   "thu": "18:00-26:00",
+   "fri": "18:00-27:00",
+   "sat": "18:00-27:00"
+  }
  },
  "price": {
   "value": "Moderate (Time Out $$ of 4); exact cocktail prices aren't published, and some reviewers call the drinks small or pricey",

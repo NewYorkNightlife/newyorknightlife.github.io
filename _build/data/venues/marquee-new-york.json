@@ -73,7 +73,13 @@
     "name": "Tao Group - Marquee New York (official)",
     "url": "https://taogroup.com/venues/marquee-new-york/"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "wed": "23:00-28:00",
+   "fri": "23:00-28:00",
+   "sat": "23:00-28:00"
+  }
  },
  "price": {
   "value": "",

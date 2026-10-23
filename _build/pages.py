@@ -76,8 +76,13 @@ def home(page, write, u, vs, H):
                       alt="An East Village sidewalk at night", style="margin-top:12px") + f"""
 <p class="lede">Dress code, age, cover and how to get in for {n} NYC bars and clubs. Every fact shows its source and the date we checked it.</p>
 <div class="inline-actions"><a class="btn primary" href="{u('/venues/')}">Find a venue</a><a class="btn ghost" href="{u('/guides/nyc-dress-codes.html')}">All dress codes</a></div>
+{H['home_box']()}
 <h2>Most asked about</h2>
 <div class="vlist two">{cards}</div>
+<h2>Guides</h2>
+<a class="card-link" href="{u('/guides/nyc-bar-closing-time.html')}"><span>What time do NYC bars close?<span class="sub">The 4am rule, and who stays open latest</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="{u('/guides/under-21-nyc-bars-clubs.html')}"><span>Under 21 in NYC<span class="sub">Which bars and clubs let you in, and on what terms</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="{u('/changes/')}"><span>What changed<span class="sub">Every update to our checked facts, by date</span></span><span class="go">See log →</span></a>
 <div class="split">
 <div><h2>Planning for a group?</h2>
 <a class="card-link" href="{u('/plans/bachelorette-night.html')}"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus or yacht, priced per person</span></span><span class="go">See prices →</span></a></div>
@@ -128,6 +133,8 @@ def trust_pages(page, write, u):
 <li>Nyla, our chat helper, runs in your browser. What you type isn't sent or saved anywhere; she only remembers when she last said hello, so she doesn't pop up on every page.</li>
 <li>Our fonts are served from this site, so loading a page no longer sends your IP address to Google.</li>
 <li>Our analytics provider, PostHog, does receive page views and clicks from US servers. It sets no cookies, doesn't identify you, and honours Do Not Track. Add <code>?notrack=1</code> to any URL to opt out.</li>
+<li>The Tonight page and the home page's tonight box load their data only from this site. A scheduled job (run on GitHub) fetches the forecast from the National Weather Service, plus headlines and liquor-license data, and saves them here, so your browser never contacts those services.</li>
+<li>The weekly email, once it starts, will be sent with Kit (kit.com). If you sign up, Kit stores your email address to send it; you confirm by email first, every email has an unsubscribe link, and we delete your address on request.</li>
 <li>If you click through to a booking site, that site has its own privacy policy and may set its own cookies.</li>
 <li>If you email us, we use your email only to reply.</li></ul>
 <p>Questions: <a href="mailto:privacy@nynightlife.com">privacy@nynightlife.com</a>.</p>""")

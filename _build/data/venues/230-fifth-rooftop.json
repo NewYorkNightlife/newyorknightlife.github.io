@@ -77,7 +77,18 @@
     "name": "Clubbable listing",
     "url": "https://www.clubbable.com/New-York/230-Fifth-Rooftop"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "mon": "12:00-25:30",
+   "tue": "12:00-25:30",
+   "wed": "12:00-25:30",
+   "thu": "12:00-25:30",
+   "fri": "12:00-late",
+   "sat": "11:00-28:00",
+   "sun": "11:00-25:30"
+  },
+  "note": "Friday has no published closing time; last entry 2am."
  },
  "price": {
   "value": "Cocktails ~$18–22",

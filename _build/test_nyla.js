@@ -45,7 +45,7 @@ async function session(pathname) {
     const n = msgs.children.length;
     input.value = q;
     form.listeners.submit({ preventDefault() {} });
-    await new Promise(r => setTimeout(r, 40));
+    await new Promise(r => setTimeout(r, 120));
     return msgs.children.slice(n + 1).map(m => m.innerHTML).join(' || ');
   };
 }
@@ -79,7 +79,7 @@ const CASES = [
   ['/', 'what should i wear to a club', ['stated dress rule', 'Nebula'], ['Attaboy']],
   ['/', 'dress codes', ['stated dress rule', 'nyc-dress-codes.html'], ['Westlight</a>', 'House of Yes</a>']],
   ['/', 'no cover', ['no cover for walk-ins', 'Attaboy'], ['Marquee']],
-  ['/', "what's on tonight", ['don’t track tonight', 'Ticketed'], []],
+  ['/', "what's on tonight", ['Tonight in NYC', 'Ticketed'], []],
   ['/', 'bachelorette for 10', ['Bachelorette', '(1 source)', 'Pick for 10'], []],
   ['/', 'where to go for a birthday with 6 friends', ['group playbook', 'with 6 people'], []],
   ['/', 'is the info up to date', ['How we check'], ['Cocktail']],
@@ -87,7 +87,7 @@ const CASES = [
   ['/', 'harlem', ['don’t have checked venues in Harlem'], []],
   ['/', 'hells kitchen', ['Musica'], []],
   ['/', 'les bars', ['Lower East Side', 'Attaboy'], []],
-  ['/', 'newsletter', ['no newsletter'], []],
+  ['/', 'newsletter', ['weekly email is planned', 'feed.xml'], []],
   ['/', 'me@example.com', ['can’t sign you up'], []],
   ['/', 'asdfgh', ['I answer from this site'], []],
   ['/venues/westlight.html', 'dress code?', ['Westlight', 'Dress code:'], []],

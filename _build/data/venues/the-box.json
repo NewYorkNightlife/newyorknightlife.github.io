@@ -85,7 +85,14 @@
     "name": "Clubbable listing (Oct 2026 dates)",
     "url": "https://www.clubbable.com/New-York/The-Box/3-Oct-2026"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "wed": "23:00-28:00",
+   "thu": "23:00-28:00",
+   "fri": "23:00-28:00",
+   "sat": "23:00-28:00"
+  }
  },
  "price": {
   "value": "Tables from ~$2,000 plus tips and fees; cocktails ~$15–20 reported",

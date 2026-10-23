@@ -73,7 +73,9 @@
     "name": "Elsewhere FAQ (official)",
     "url": "https://www.elsewhere.club/faq"
    }
-  ]
+  ],
+  "kind": "event",
+  "week": {}
  },
  "price": {
   "value": "",

@@ -77,7 +77,9 @@
     "name": "House of Yes calendar (official)",
     "url": "https://calendar.houseofyes.org/"
    }
-  ]
+  ],
+  "kind": "event",
+  "week": {}
  },
  "price": {
   "value": "Mid-range ($$ of $$$$); cocktails were ~$13 in older press, current prices not published",

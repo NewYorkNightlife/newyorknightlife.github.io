@@ -73,7 +73,17 @@
     "name": "Westlight official Hours & Location",
     "url": "https://westlightnyc.com/location/westlight-/"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "mon": "16:00-24:00",
+   "tue": "16:00-24:00",
+   "wed": "16:00-24:00",
+   "thu": "16:00-24:00",
+   "fri": "16:00-25:00",
+   "sat": "12:00-26:00",
+   "sun": "12:00-24:00"
+  }
  },
  "price": {
   "value": "Cocktails $22–42 (spirit-free $19–20); beer $11; small plates $11–32",

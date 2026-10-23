@@ -449,10 +449,10 @@
       if (area && area.none) return botSay('I don’t have checked venues in ' + esc(area.label) + ' yet. Everything I’ve checked is here: ' + ALL_LINK());
       var extra = group ? planLink() : '';
 
-      if (/[^\s@]+@[^\s@]+\.[^\s@]{2,}/.test(t)) return botSay('I can’t sign you up for anything. There’s no newsletter right now. To reach a person, use the <a href="' + R('contact.html') + '">contact page</a>.');
+      if (/[^\s@]+@[^\s@]+\.[^\s@]{2,}/.test(t)) return botSay('I can’t sign you up from here. A weekly email is planned; until then you can follow every change by <a href="' + R('feed.xml') + '">RSS</a>. To reach a person, use the <a href="' + R('contact.html') + '">contact page</a>.');
       if (/source|how do you (check|know)|accura|verif|up to date|outdated|\bwrong\b|\bstale\b|\bupdated?\b/.test(t)) return botSay('Each fact is checked against the venue’s own site or two independent sources, and shows the date it was checked. Spot something out of date? Tell us on the <a href="' + R('contact.html') + '">contact page</a>. <a href="' + R('how-we-check.html') + '">How we check →</a>');
       if (/tonight|right now|happening|weekend|\bevents?\b|lineup|playing|\bdj\b/.test(t) && !focus) {
-        botSay('I don’t track tonight’s lineups. I only know the checked facts about each venue. These sell tickets night by night, and their own pages show who’s playing:');
+        botSay('I don’t track lineups, but I know who’s open tonight from our checked hours: <a href="' + R('tonight/') + '">Tonight in NYC →</a>. These sell tickets night by night, and their own pages show who’s playing:');
         return setTimeout(function () { botSay(listOrNone(function (v) { return has(v, 'ticketed') && hasAll(tags)(v); }, 'Ticketed clubs &amp; venues', 'cover', area)); }, 500);
       }
       if (focus === 'age') {
@@ -483,7 +483,7 @@
       if (focus) return botSay('Which venue? Name one, e.g. “cover at House of Yes”. Or browse ' + ALL_LINK());
       if (/happy hour|food|dinner|\beat\b|restaurant/.test(t)) return botSay('I don’t cover food or happy hours, just door facts: cover, dress code, age and how to get in. ' + ALL_LINK());
       if (/safe|safety|scam|pickpocket/.test(t)) return botSay('Stick to venues’ official ticket links, keep your ID and phone close, and agree a meet-up spot with your group. For each venue I can tell you the cover and how to get in.');
-      if (/subscribe|newsletter|email|brief/.test(t)) return botSay('There’s no newsletter right now. Everything I know is on the site: ' + ALL_LINK());
+      if (/subscribe|newsletter|email|brief/.test(t)) return botSay('A weekly email is planned. Until then, every change to our checked facts is on <a href="' + R('changes/') + '">What changed</a> and its <a href="' + R('feed.xml') + '">RSS feed</a>.');
       if (/\b(hi|hello|hey|yo|sup|hiya)\b/.test(t)) return botSay('Hey 🥂 I’m ' + esc(ART.name) + '. Ask me what a venue costs, its dress code, rooftops, no-cover spots, or how to plan a group night. Anything on this site, I know it.');
       if (/thank|thanks|\bty\b|cheers/.test(t)) return botSay('Anytime. Have a great night out, and pace yourself. 😉');
       botSay('I answer from this site’s checked facts. Try a venue name (“cover at House of Yes”), <b>rooftops</b>, <b>no cover</b>, <b>dress codes</b>, a neighborhood like <b>Bushwick</b>, or <b>bachelorette for 10</b>. Or browse ' + ALL_LINK());

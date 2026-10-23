@@ -73,7 +73,18 @@
     "name": "Time Out listing",
     "url": "https://timeout.com/newyork/bars/the-dead-rabbit"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "sun": "11:00-26:00",
+   "mon": "11:00-26:00",
+   "tue": "11:00-26:00",
+   "wed": "11:00-26:00",
+   "thu": "11:00-26:00",
+   "fri": "11:00-27:00",
+   "sat": "11:00-27:00"
+  },
+  "note": "Taproom hours. The upstairs Parlor closes earlier (1am most nights)."
  },
  "price": {
   "value": "Cocktails ~$18–25; a 20% service charge on the bill has been reported",

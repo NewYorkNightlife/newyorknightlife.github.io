@@ -68,7 +68,17 @@
     "name": "StuyTown guide (Sun-Wed 5pm-2am, Thu-Sat 5pm-3am)",
     "url": "https://www.stuytown.com/community/guides/nyc-guides/best-speakeasies-near-the-east-village/"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "sun": "17:00-26:00",
+   "mon": "17:00-26:00",
+   "tue": "17:00-26:00",
+   "wed": "17:00-26:00",
+   "thu": "17:00-26:00",
+   "fri": "17:00-27:00",
+   "sat": "17:00-27:00"
+  }
  },
  "price": {
   "value": "Cocktails ~$20",

@@ -1,0 +1,98 @@
+# Live data for the Tonight page: NWS forecast, nightlife headlines, new liquor licenses.
+# Writes ONLY data/live/*.json (never pages), so it can't collide with a normal site build.
+# Don't commit data/live/ by hand; let this job own it.
+# A push made with GITHUB_TOKEN doesn't start a GitHub Pages build, so the job requests one.
+# Problems open (or comment on) a GitHub issue titled "Live data job failed".
+name: Live data
+
+on:
+  schedule:
+    - cron: "17 3,14,19,23 * * *"   # about 11pm, 10am, 3pm and 7pm New York time (an hour earlier in winter)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/live.yml", "_build/live.py"]
+
+permissions: {}
+
+concurrency:
+  group: live-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write   # commit data/live/*.json
+      pages: write      # request a Pages build
+      issues: write     # report problems
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+        with:
+          fetch-depth: 20
+          persist-credentials: false
+
+      - name: Fetch live data
+        run: python3 _build/live.py
+
+      - name: Commit data files only
+        id: commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "nynightlife live data"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add data/live/
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -q -m "live data: forecast, headlines, licenses"
+          ok=0
+          for i in 1 2 3; do
+            if git pull -q --rebase "$remote" main && git push -q "$remote" HEAD:main; then ok=1; break; fi
+            # someone else touched data/live: start again from their version
+            git rebase --abort 2>/dev/null || true
+            git fetch -q "$remote" main && git reset -q --hard FETCH_HEAD
+            python3 _build/live.py || true
+            git add data/live/
+            git diff --cached --quiet && { ok=1; break; }
+            git commit -q -m "live data: forecast, headlines, licenses"
+            sleep 10
+          done
+          [ "$ok" = 1 ] || { echo "push failed after 3 tries"; exit 1; }
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Request a Pages build
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" --jq .status
+
+      - name: Report a source that keeps failing
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          stuck=$(python3 -c "import json;print(' '.join(json.load(open('data/live/status.json')).get('stuck', [])))")
+          [ -z "$stuck" ] && exit 0
+          n=$(gh issue list --state open --search "Live data job failed in:title" --json number --jq '.[0].number' || true)
+          msg="These sources have failed 4+ runs in a row (the site keeps their last good data): $stuck. $RUN_URL"
+          if [ -n "$n" ]; then gh issue comment "$n" --body "$msg" || true
+          else gh issue create --title "Live data job failed" --body "$msg" || true; fi
+
+      - name: Report failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          n=$(gh issue list --state open --search "Live data job failed in:title" --json number --jq '.[0].number' || true)
+          if [ -n "$n" ]; then
+            gh issue comment "$n" --body "Failed again: $RUN_URL" || true
+          else
+            gh issue create --title "Live data job failed" --body "The scheduled live-data job failed: $RUN_URL. The site keeps showing the last good data; the forecast hides itself once it is too old." || true
+          fi

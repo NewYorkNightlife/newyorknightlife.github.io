@@ -69,7 +69,17 @@
     "name": "Time Out New York",
     "url": "https://www.timeout.com/newyork/bars/employees-only"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "mon": "18:00-28:00",
+   "tue": "18:00-28:00",
+   "wed": "18:00-28:00",
+   "thu": "18:00-28:00",
+   "fri": "18:00-28:00",
+   "sat": "18:00-28:00",
+   "sun": "18:00-28:00"
+  }
  },
  "price": {
   "value": "Cocktails $21–24; spirit-free $18; dinner mains $28–125",

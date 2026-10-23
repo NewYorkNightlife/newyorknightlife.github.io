@@ -17,13 +17,15 @@ import posixpath
 import re
 import urllib.parse
 
+import extras
+
 ROOT = pathlib.Path(__file__).resolve().parent
 OUT = pathlib.Path(os.environ.get("NYN_OUT", ROOT.parent))  # the live site root
 SITE = "https://nynightlife.com"
 BASE = os.environ.get("NYN_BASE", "")  # path prefix for test builds; "" for the live site
 RELATIVE = os.environ.get("NYN_RELATIVE") == "1"  # relative links for the private preview
 CHECKED_FMT = "%b %-d, %Y"
-SITE_EDITED = "2026-10-21"   # the day the fixed pages themselves last changed
+SITE_EDITED = "2026-10-23"   # the day the fixed pages themselves last changed
 def _ver(p):
     """Cache-bust from the file's own content, so it can never be forgotten.
     CRLF is normalised because git's autocrlf makes working copies differ."""
@@ -33,6 +35,7 @@ _DIMS_F = ROOT / "img" / "dims.json"
 DIMS = json.loads(_DIMS_F.read_text(encoding="utf-8")) if _DIMS_F.exists() else {}
 CSS_V = _ver(ROOT / "site.css")
 JS_V = _ver(ROOT / "concierge.js")
+LIVE_V = _ver(ROOT / "live.js")
 OG_DIR = ROOT / "img" / "og"
 OG_DEFAULT = "/img/og/site.jpg"
 
@@ -91,7 +94,7 @@ def head(title, desc, path, schema=None, robots="index,follow", image=None, img_
 """
 
 
-MENU = [("/venues/", "Venues"), ("/guides/nyc-dress-codes.html", "Dress codes"),
+MENU = [("/tonight/", "Tonight"), ("/venues/", "Venues"), ("/guides/nyc-dress-codes.html", "Dress codes"),
         ("/plans/bachelorette-night.html", "Group nights"), ("/how-we-check.html", "How we check")]
 
 
@@ -109,7 +112,7 @@ def header():
 
 def footer():
     return f"""<footer class="site-foot"><div class="wrap">
-<nav aria-label="Footer"><a href="{u('/about.html')}">About</a><a href="{u('/how-we-check.html')}">How we check</a><a href="{u('/affiliate-disclosure.html')}">Affiliate disclosure</a><a href="{u('/privacy.html')}">Privacy</a><a href="{u('/contact.html')}">Contact</a></nav>
+<nav aria-label="Footer"><a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time</a><a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21</a><a href="{u('/changes/')}">What changed</a><a href="{u('/about.html')}">About</a><a href="{u('/how-we-check.html')}">How we check</a><a href="{u('/affiliate-disclosure.html')}">Affiliate disclosure</a><a href="{u('/privacy.html')}">Privacy</a><a href="{u('/contact.html')}">Contact</a></nav>
 <p>NY Nightlife is an independent guide. Facts are checked against the sources listed on each page; always confirm with the venue before you go. 21+ venues are for adults of legal drinking age.</p>
 </div></footer>
 """
@@ -288,7 +291,7 @@ def venue_page(v):
 {fact('Drinks', v.get('price'))}
 {fact('Nearest subway', v.get('subway'))}
 {fact('Accessibility', v.get('accessibility'), full=True)}
-</dl>"""
+</dl>""" + extras.week_table(v)
         if gi.get("booking_url"):
             body += f'<a class="card-link" href="{e(gi["booking_url"])}" rel="nofollow noopener">' \
                     f'<span>Book or check availability<span class="sub">{e(gi.get("booking_platform", "").title())} · venue&#39;s own booking page</span></span><span class="go">Open →</span></a>'
@@ -302,7 +305,7 @@ def venue_page(v):
     body += f"""<h2 id="sources">Sources</h2>
 <p class="small">We checked these on {checked}. Facts change; confirm with the venue before you go. Something wrong at the door? <a href="mailto:hello@nynightlife.com?subject={urllib.parse.quote('Door report: ' + name)}">Tell us</a>.</p>
 <ol class="sources">{''.join(f'<li><a href="{e(url)}" rel="nofollow noopener">{e(n)}</a></li>' for n, url in srcs) or '<li>No sources recorded yet.</li>'}</ol>
-<p class="small"><a href="{u('/venues/')}">← All venues</a> · <a href="{u('/guides/nyc-dress-codes.html')}">NYC dress codes</a></p>"""
+<p class="small"><a href="{u('/venues/')}">← All venues</a> · <a href="{u('/guides/nyc-dress-codes.html')}">NYC dress codes</a> · <a href="{u('/guides/nyc-bar-closing-time.html')}">What time NYC bars close</a> · <a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21 in NYC</a> · <a href="{u('/tonight/')}">Open tonight</a></p>"""
 
     btns = ""
     if not closed:
@@ -393,7 +396,7 @@ def dress_hub(vs):
 CHATBOT = ["css/concierge.css", "assets/nyla-full-welcome.png", "assets/nyla-head.png"]
 
 
-def sitemap(vs, pbs):
+def sitemap(vs, pbs, extra=()):
     """Generated, not hand-maintained, so a new page can never be forgotten and
     lastmod can never drift from the date the page displays."""
     rows = [("/", max(v.get("checked", "2026-10-18") for v in vs)),
@@ -401,6 +404,7 @@ def sitemap(vs, pbs):
             ("/guides/nyc-dress-codes.html", max(v.get("checked", "2026-10-18") for v in vs))]
     rows += [(f"/venues/{v['slug']}.html", v.get("checked", "2026-10-18")) for v in vs]
     rows += [(f"/plans/{p['slug']}.html", p["checked"]) for p in pbs]
+    rows += list(extra)
     rows += [(p, SITE_EDITED) for p in ("/about.html", "/how-we-check.html",
                                         "/affiliate-disclosure.html", "/privacy.html", "/contact.html")]
     body = "".join(f"<url><loc>{SITE}{p}</loc><lastmod>{d}</lastmod></url>\n" for p, d in sorted(rows))
@@ -414,7 +418,8 @@ def copy_static():
     import shutil
     site = ROOT.parent
     # Nyla's updated script lives in _build until cutover, so the old live site keeps the old one
-    pairs = [(ROOT / "site.css", OUT / "css" / "site.css"), (ROOT / "concierge.js", OUT / "js" / "concierge.js")]
+    pairs = [(ROOT / "site.css", OUT / "css" / "site.css"), (ROOT / "concierge.js", OUT / "js" / "concierge.js"),
+             (ROOT / "live.js", OUT / "js" / "live.js")]
     # the responsive set from make_images.py; its <slug>.jpg replaces the master
     pairs += [(f, OUT / "img" / f.name) for f in sorted(GEN.glob("*.jpg"))]
     pairs += [(f, OUT / "img" / f.name) for f in sorted(GEN.glob("*.webp"))]
@@ -456,13 +461,18 @@ def main():
     venues_index(vs)
     dress_hub(vs)
     import pages
+    XH = {"u": u, "page": page, "write": write, "fmt_date": fmt_date, "OUT": OUT, "LIVE_V": LIVE_V}
     pages.build(page, write, u, actions, fmt_date, vs,
-                {"plate": plate, "vcard": vcard, "picture": picture})
+                {"plate": plate, "vcard": vcard, "picture": picture, "home_box": lambda: extras.home_box(XH),
+                 "newsletter": lambda: extras.newsletter_block(XH)})
+    extras.tonight_page(XH, vs)
+    changed = extras.changes_pages(XH, vs)   # None while the log is too thin to index
+    extra = [extras.guide_under21(XH, vs), extras.guide_closing(XH, vs)] + ([("/changes/", changed)] if changed else [])
     import nyla
     pbs = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((ROOT / "data" / "playbooks").glob("*.json"))]
     nyla.build(write, fmt_date, vs, pbs, max(v.get("checked", "2026-10-18") for v in vs))
     copy_static()
-    sitemap(vs, pbs)
+    sitemap(vs, pbs, extra)
     check_output()
     print(f"built {len(vs)} venue pages + hubs into {OUT}")
 

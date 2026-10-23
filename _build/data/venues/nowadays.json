@@ -56,7 +56,15 @@
     "name": "Nowadays official - Hours & Location (summer schedule still posted)",
     "url": "https://nowadays.nyc/about/"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "thu": "17:00-24:00",
+   "fri": "17:00-27:00",
+   "sat": "14:00-27:00",
+   "sun": "15:00-21:00"
+  },
+  "note": "Outdoor yard hours. Indoors runs Fri 10pm to about 6am; Nonstop runs Sat 10pm to Sun 10pm."
  },
  "price": {
   "value": "",

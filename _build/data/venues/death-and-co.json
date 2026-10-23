@@ -64,7 +64,17 @@
     "name": "Death & Co New York (official)",
     "url": "https://www.deathandcompany.com/location/death-co-new-york/"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "sun": "18:00-25:00",
+   "mon": "18:00-25:00",
+   "tue": "18:00-25:00",
+   "wed": "18:00-25:00",
+   "thu": "18:00-26:00",
+   "fri": "18:00-26:00",
+   "sat": "18:00-26:00"
+  }
  },
  "price": {
   "value": "Cocktails $18–26 (most $19–23); zero-proof $17–19; food $10–28",

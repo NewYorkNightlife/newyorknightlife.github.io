@@ -68,7 +68,17 @@
     "name": "1 Hotel Brooklyn Bridge rooftop page (official)",
     "url": "https://www.1hotels.com/brooklyn-bridge/1-rooftop"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "mon": "12:00-23:00",
+   "tue": "12:00-23:00",
+   "wed": "12:00-23:00",
+   "thu": "12:00-23:00",
+   "fri": "11:00-24:00",
+   "sat": "11:00-24:00",
+   "sun": "11:00-23:00"
+  }
  },
  "price": {
   "value": "Drinks reportedly from ~$20",

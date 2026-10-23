@@ -76,7 +76,9 @@
     "name": "Songkick",
     "url": "https://songkick.com/venues/4453649-paragon"
    }
-  ]
+  ],
+  "kind": "event",
+  "week": {}
  },
  "price": {
   "value": "",

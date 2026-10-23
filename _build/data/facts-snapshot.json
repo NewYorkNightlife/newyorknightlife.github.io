@@ -1,0 +1,812 @@
+{
+ "230-fifth-rooftop": {
+  "age": [
+   "21+ Fri–Sat after 7pm; under-21s allowed with their own parent at other times; government ID required",
+   "confirmed"
+  ],
+  "cover": [
+   "$15 Fri / $20 Sat from 8pm; $30 skip-the-line tickets on Eventbrite; no cover other nights",
+   "confirmed"
+  ],
+  "dress": [
+   "Casual, no sweats or gym clothes",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Walk-ins welcome at all times; reservations only for parties of 10+ (up to 30 days ahead); weekend lines after 8pm",
+   "confirmed"
+  ],
+  "hours": [
+   "Mon–Thu noon–1:30am (last order); Fri noon–late (last entry 2am); Sat 11am–4am (last entry 2:30am); Sun 11am–1:30am (last order). Official site also shows a conflicting set; confirm late hours.",
+   "unconfirmed"
+  ],
+  "price": [
+   "Cocktails ~$18–22",
+   "confirmed"
+  ],
+  "status": "open"
+ },
+ "attaboy": {
+  "age": [
+   "21+, valid physical government-issued ID required",
+   "confirmed"
+  ],
+  "cover": [
+   "None listed",
+   "likely"
+  ],
+  "dress": [
+   "None published",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Limited reservations on OpenTable (parties of 6 and under); everyone else first-come, first-served; ring the buzzer at the unmarked 'AB 134' door; expect a wait late and on weekends",
+   "confirmed"
+  ],
+  "hours": [
+   "Daily 5pm–3am",
+   "confirmed"
+  ],
+  "price": [
+   "Cocktails ~$20 (bartender's choice, no menu)",
+   "likely"
+  ],
+  "status": "open"
+ },
+ "beauty-and-essex": {
+  "age": [
+   "",
+   "unknown"
+  ],
+  "cover": [
+   "None listed (restaurant/lounge); optional $86/pp set menu, whole table must participate",
+   "likely"
+  ],
+  "dress": [
+   "No overly casual clothes",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Reservations on OpenTable (parties up to 14; 15+ email the venue); 24-hour notice for cancellations",
+   "confirmed"
+  ],
+  "hours": [
+   "Closed Mon; Tue–Wed 5–10pm; Thu 5–11pm; Fri–Sat 5pm–midnight; Sun 5–10pm",
+   "confirmed"
+  ],
+  "price": [
+   "Cocktails $18–21 (luxury cocktails $24–29); shareable plates $18–28",
+   "confirmed"
+  ],
+  "status": "open"
+ },
+ "bossa-nova-civic-club": {
+  "age": [
+   "21+ with driver's license, non-driver ID or passport",
+   "likely"
+  ],
+  "cover": [
+   "Varies by night: free or suggested donation on some weeknights; around $15 cash reported for regular nights; RA tickets for bigger lineups",
+   "unconfirmed"
+  ],
+  "dress": [
+   "None published",
+   "likely"
+  ],
+  "getting_in": [
+   "Walk up and pay at the door; some nights sell advance tickets on Resident Advisor; bring cash",
+   "likely"
+  ],
+  "hours": [
+   "Seven nights a week, roughly 10pm–3:30/4am (varies by event)",
+   "unconfirmed"
+  ],
+  "price": [
+   "",
+   "unknown"
+  ],
+  "status": "open"
+ },
+ "brooklyn-mirage": {
+  "age": [
+   "Successor Pacha New York: 21+ (per individual event listings)",
+   "likely"
+  ],
+  "cover": [
+   "Not applicable (closed); successor Pacha New York sells tickets per event",
+   "confirmed"
+  ],
+  "dress": [
+   "Not applicable (closed)",
+   "unknown"
+  ],
+  "getting_in": [
+   "Brooklyn Mirage is closed. For the same site, buy advance tickets for Pacha New York / Brooklyn Pacha events (DICE; brooklynpacha.com for the indoor room)",
+   "likely"
+  ],
+  "hours": [
+   "Not applicable (closed). Successor's open-air season ran June–October 2026",
+   "confirmed"
+  ],
+  "price": [
+   "",
+   "unknown"
+  ],
+  "status": "closed"
+ },
+ "death-and-co": {
+  "age": [
+   "",
+   "unknown"
+  ],
+  "cover": [
+   "None listed",
+   "likely"
+  ],
+  "dress": [
+   "None published",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Walk-ins always welcome and mostly first come, first served; limited reservations on SevenRooms; parties up to 8, no standing room, 2-hour limit. Door takes your number and texts when a seat opens.",
+   "confirmed"
+  ],
+  "hours": [
+   "Sun–Wed 6pm–1am; Thu–Sat 6pm–2am",
+   "confirmed"
+  ],
+  "price": [
+   "Cocktails $18–26 (most $19–23); zero-proof $17–19; food $10–28",
+   "confirmed"
+  ],
+  "status": "open"
+ },
+ "elsewhere": {
+  "age": [
+   "16+ to 21+ depending on event; under-16 never admitted. Scannable US government photo ID or passport required (internationals: passport only); no expired IDs or photocopies",
+   "confirmed"
+  ],
+  "cover": [
+   "Ticketed per event; Oct 2026 listings ran about $10–36, with some headliner tiers up to ~$100. Door tickets after the event starts have no fees",
+   "likely"
+  ],
+  "dress": [
+   "None published",
+   "likely"
+  ],
+  "getting_in": [
+   "Buy tickets on Eventbrite or at the door; bags inspected, mandatory bag check at big events. Zone One/Loft/Rooftop use the left courtyard entrance; Hall uses the right corridor entrance",
+   "confirmed"
+  ],
+  "hours": [
+   "Varies by event; usually closes around midnight Mon–Thu, 4am Fri–Sat, 11pm Sun",
+   "confirmed"
+  ],
+  "price": [
+   "",
+   "unknown"
+  ],
+  "status": "open"
+ },
+ "employees-only": {
+  "age": [
+   "Proper ID required at the door, no exceptions; minimum age not stated",
+   "unconfirmed"
+  ],
+  "cover": [
+   "None listed",
+   "likely"
+  ],
+  "dress": [
+   "Proper dress required",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Bar and drinks are walk-in only, first come first served; dinner reservations 6–11pm on Resy or by phone; after 11pm no reservations. Expect lines at peak and late night",
+   "confirmed"
+  ],
+  "hours": [
+   "Daily 6pm–4am (bar and indoor dining); kitchen full menu until 3am; outdoor dining 6–11pm",
+   "confirmed"
+  ],
+  "price": [
+   "Cocktails $21–24; spirit-free $18; dinner mains $28–125",
+   "confirmed"
+  ],
+  "status": "open"
+ },
+ "good-room": {
+  "age": [
+   "21+",
+   "likely"
+  ],
+  "cover": [
+   "Ticketed per party; a recent RA listing was $10–20",
+   "likely"
+  ],
+  "dress": [
+   "None published",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Buy tickets through the Resident Advisor links on the official calendar; entry screening at ticketed events",
+   "confirmed"
+  ],
+  "hours": [
+   "Party nights mostly Thu–Sat (occasional Sun/Tue); a recent RA listing ran 10pm–4am",
+   "likely"
+  ],
+  "price": [
+   "",
+   "unknown"
+  ],
+  "status": "open"
+ },
+ "harriets-rooftop": {
+  "age": [
+   "",
+   "unknown"
+  ],
+  "cover": [
+   "None listed; a suggested 20% gratuity is added to checks (discretionary, can be changed on request)",
+   "confirmed"
+  ],
+  "dress": [
+   "Smart casual (reported)",
+   "likely"
+  ],
+  "getting_in": [
+   "Reservations recommended on SevenRooms; fills on weekends and around sunset. Pool lounge chairs are for registered hotel guests only",
+   "confirmed"
+  ],
+  "hours": [
+   "Mon–Thu 12pm–11pm; Fri–Sat 11am–12am; Sun 11am–11pm; weather permitting (a third-party guide lists shorter hours, Mon–Fri 4–11pm)",
+   "confirmed"
+  ],
+  "price": [
+   "Drinks reportedly from ~$20",
+   "unconfirmed"
+  ],
+  "status": "open"
+ },
+ "house-of-yes": {
+  "age": [
+   "21+ with government photo ID (except events marked All Ages)",
+   "confirmed"
+  ],
+  "cover": [
+   "Ticketed per event; Dirty Circus GA ~$43, cabaret table for 2 ~$77; party tickets tiered and rise closer to the date",
+   "likely"
+  ],
+  "dress": [
+   "No formal code; costumes encouraged",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Buy advance tickets on the official calendar; limited door sales first-come, first-served until capacity. Some tickets require arrival before 11pm or 1:30am.",
+   "confirmed"
+  ],
+  "hours": [
+   "Event-driven: shows usually start 6:30pm (Thu-Sat), dance parties 9-10:30pm onward Thu-Sat and some Wednesdays; end times not published",
+   "likely"
+  ],
+  "price": [
+   "Mid-range ($$ of $$$$); cocktails were ~$13 in older press, current prices not published",
+   "unconfirmed"
+  ],
+  "status": "open"
+ },
+ "knockdown-center": {
+  "age": [
+   "Varies by event (mostly 21+, some 18+); valid photo ID required",
+   "confirmed"
+  ],
+  "cover": [
+   "Ticketed per event; prices vary by act (e.g. ~$59 listed for Cortex & Adrian Younge, Oct 12 2026)",
+   "likely"
+  ],
+  "dress": [
+   "None published",
+   "unknown"
+  ],
+  "getting_in": [
+   "Buy advance tickets per event; Dice tickets are stored in the app. No re-entry; bag size limits; no outside food or drink.",
+   "likely"
+  ],
+  "hours": [
+   "Event-driven: concerts usually 6-8pm starts; club nights 10-11pm to as late as 5am",
+   "likely"
+  ],
+  "price": [
+   "",
+   "unknown"
+  ],
+  "status": "open"
+ },
+ "le-bain": {
+  "age": [
+   "21+",
+   "confirmed"
+  ],
+  "cover": [
+   "No cover for standing/dancing room and bar service; tables carry a minimum spend",
+   "confirmed"
+  ],
+  "dress": [
+   "None published",
+   "unconfirmed"
+  ],
+  "getting_in": [
+   "Walk-ins welcome; table reservations optional on Resy (minimum spend). Hotel guests are not guaranteed entry. Reviewers say arrive early, as the line can wrap the block.",
+   "confirmed"
+  ],
+  "hours": [
+   "Wed-Fri 4pm-4am; Sat 2pm-4am; Sun 2pm-12am. Mon-Tue conflicting: Standard pages say closed, lebainnewyork.com says 4pm-12am.",
+   "unconfirmed"
+  ],
+  "price": [
+   "Pricey: reviewers call the drinks on the expensive end (no current menu prices found)",
+   "likely"
+  ],
+  "status": "open"
+ },
+ "magic-hour-rooftop": {
+  "age": [
+   "21+ except weekend brunch (Sat-Sun 11:30am-3pm, all ages); physical government ID, non-US ID needs a passport",
+   "confirmed"
+  ],
+  "cover": [
+   "None listed; no minimum or fee to reserve ($30 no-show fee on the card)",
+   "confirmed"
+  ],
+  "dress": [
+   "Fun, casual; no athletic wear",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Walk-ins welcome at the bar; tables first-come via the door team. Reserve on OpenTable (card required, 90-minute table block, 15-minute grace period).",
+   "confirmed"
+  ],
+  "hours": [
+   "Mon-Wed 5pm-12am; Thu 5pm-2am; Fri 5pm-4am; Sat 11:30am-4am; Sun 11:30am-12am (brunch Sat-Sun 11:30am-3:30pm)",
+   "confirmed"
+  ],
+  "price": [
+   "Happy hour Mon-Fri 5-6:30pm at the bar: $6 Estrella, $8 house wine, $10 spritzes. Regular cocktails reported as typical-to-high Manhattan rooftop prices (no menu prices found).",
+   "likely"
+  ],
+  "status": "open"
+ },
+ "marquee-new-york": {
+  "age": [
+   "21+",
+   "likely"
+  ],
+  "cover": [
+   "Ticketed per night; a Marquee Wednesdays listing showed tickets from $82 (Oct 2026); resale averages ~$76",
+   "unconfirmed"
+  ],
+  "dress": [
+   "None published; upscale expected",
+   "unconfirmed"
+  ],
+  "getting_in": [
+   "Buy GA tickets on Tao's events page or book a VIP table on SevenRooms; the door is selective, and a guide warns even ticket holders can be turned away.",
+   "likely"
+  ],
+  "hours": [
+   "Wed, Fri, Sat 11pm-4am",
+   "confirmed"
+  ],
+  "price": [
+   "",
+   "unknown"
+  ],
+  "status": "open"
+ },
+ "mr-purple": {
+  "age": [
+   "",
+   "unknown"
+  ],
+  "cover": [
+   "None listed; walk-ins welcome, and the door host has final say",
+   "likely"
+  ],
+  "dress": [
+   "Upscale / smart casual",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Walk-ins welcome, but the door host and management decide admittance. Book dining on SevenRooms and events on SpeakeasyGo. Reservations recommended in the evening; it gets crowded, so arrive early.",
+   "confirmed"
+  ],
+  "hours": [
+   "Mon-Wed 4pm-2am; Thu 4pm-3am; Fri 4pm-4am; Sat 2pm-4am; Sun 2pm-2am",
+   "confirmed"
+  ],
+  "price": [
+   "Cocktails $20-23; happy hour Mon-Fri 4-7pm with $11 cocktails and wine",
+   "confirmed"
+  ],
+  "status": "open"
+ },
+ "musica-club": {
+  "age": [
+   "21+ with valid government ID",
+   "confirmed"
+  ],
+  "cover": [
+   "Ticketed by event; no current price list found. Tickets are final sale.",
+   "unconfirmed"
+  ],
+  "dress": [
+   "Upscale club attire",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Buy advance tickets for the specific event (RA, Shotgun or Discotech). Doors around 10pm and no re-entry. Bottle service via promoters.",
+   "likely"
+  ],
+  "hours": [
+   "Sat 10pm-4am; other nights for special events only",
+   "unconfirmed"
+  ],
+  "price": [
+   "",
+   "unknown"
+  ],
+  "status": "unclear"
+ },
+ "nebula": {
+  "age": [
+   "21+",
+   "confirmed"
+  ],
+  "cover": [
+   "Ticketed per event on SpeakeasyGo; no prices visible in our checks",
+   "likely"
+  ],
+  "dress": [
+   "Upscale; enforced at the door",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Buy tickets or book a table on SpeakeasyGo via the official site. Table bookings also by text or email to reservations. The door has final say.",
+   "confirmed"
+  ],
+  "hours": [
+   "Tue, Fri and Sat 11pm-4am (event nights)",
+   "confirmed"
+  ],
+  "price": [
+   "",
+   "unknown"
+  ],
+  "status": "open"
+ },
+ "nowadays": {
+  "age": [
+   "",
+   "unknown"
+  ],
+  "cover": [
+   "Outdoors free except Sundays (Mister Sunday is ticketed). Night parties usually around $25. If the cover is a barrier, email ahead for free or reduced entry.",
+   "confirmed"
+  ],
+  "dress": [
+   "None published",
+   "confirmed"
+  ],
+  "getting_in": [
+   "RSVP or buy tickets on Resident Advisor; the outdoor bar and yard are walk-in",
+   "confirmed"
+  ],
+  "hours": [
+   "Outdoors: Thu 5pm-12am, Fri 5pm-3am, Sat 2pm-3am, Sun 3pm-9pm (Mister Sunday, ticketed). Indoors: Fri 10pm until the party ends (usually 6am); Sat 10pm straight through to Sun 10pm during Nonstop.",
+   "likely"
+  ],
+  "price": [
+   "",
+   "unknown"
+  ],
+  "status": "open"
+ },
+ "ophelia-lounge": {
+  "age": [
+   "",
+   "unknown"
+  ],
+  "cover": [
+   "None listed",
+   "likely"
+  ],
+  "dress": [
+   "Smart casual",
+   "likely"
+  ],
+  "getting_in": [
+   "Reservations on OpenTable, recommended for the best (window) seating. Social Hour is at the bar, Mon-Fri 5-7pm.",
+   "confirmed"
+  ],
+  "hours": [
+   "Sun-Wed 5pm-11pm; Thu 5pm-12am; Fri-Sat 5pm-2am",
+   "confirmed"
+  ],
+  "price": [
+   "Social Hour cocktail tasting flight (three mini cocktails) $30, Mon-Fri 5-7pm; three-course prix-fixe dinner $60pp. Single-cocktail prices not found.",
+   "confirmed"
+  ],
+  "status": "open"
+ },
+ "pacha-new-york": {
+  "age": [
+   "21+ with valid ID",
+   "confirmed"
+  ],
+  "cover": [
+   "Ticketed. GA from ~$40-145 for most Oct-Nov 2026 nights (one headliner from $450). Backstage/VIP from ~$150-450. Late early-entry arrivals pay the difference to the door price.",
+   "confirmed"
+  ],
+  "dress": [
+   "No beachwear; VIP is stricter",
+   "likely"
+  ],
+  "getting_in": [
+   "Buy tickets in advance on the official site; big headliner nights sell out. Backstage/VIP is booked on the site too. Staff run security checks at the door, and gum was confiscated on opening night.",
+   "likely"
+  ],
+  "hours": [
+   "Event nights only. Most events run 10pm-4am (the open-air closing ran 8pm-1am). Check each event.",
+   "confirmed"
+  ],
+  "price": [
+   "",
+   "unknown"
+  ],
+  "status": "open"
+ },
+ "paragon": {
+  "age": [
+   "",
+   "unknown"
+  ],
+  "cover": [
+   "Ticketed, roughly $20-50. Recent 2026 nights were listed at about $28 all-in.",
+   "confirmed"
+  ],
+  "dress": [
+   "None published",
+   "unknown"
+  ],
+  "getting_in": [
+   "Buy tickets in advance on Resident Advisor (the official site's Tickets link goes to RA). Some nights are also sold on DICE.",
+   "confirmed"
+  ],
+  "hours": [
+   "Weekend event nights, mainly Fri and Sat (some Thursday nights). Doors around 9:30-11:30pm. Times vary by event.",
+   "likely"
+  ],
+  "price": [
+   "",
+   "unknown"
+  ],
+  "status": "open"
+ },
+ "phd-rooftop-lounge": {
+  "age": [
+   "21+ with photo ID",
+   "likely"
+  ],
+  "cover": [
+   "Not published officially. A concierge site reports cover from ~$50 at management's discretion.",
+   "unconfirmed"
+  ],
+  "dress": [
+   "Smart casual",
+   "likely"
+  ],
+  "getting_in": [
+   "VIP tables and bottle service are booked ahead on SevenRooms (a deposit may be required). Otherwise it's at the door's discretion, with a heavy promoter/table culture.",
+   "likely"
+  ],
+  "hours": [
+   "Wed-Sat 10pm-4am; closed Sun-Tue",
+   "confirmed"
+  ],
+  "price": [
+   "Steep. No cocktail prices published.",
+   "likely"
+  ],
+  "status": "open"
+ },
+ "please-dont-tell": {
+  "age": [
+   "",
+   "unknown"
+  ],
+  "cover": [
+   "None listed",
+   "likely"
+  ],
+  "dress": [
+   "None published",
+   "unknown"
+  ],
+  "getting_in": [
+   "Book on Resy; reservations reportedly open 7 days ahead and fill fast. You enter through the phone booth inside Crif Dogs. There's no standing room, so walk-ins may be turned away or told to come back. Even with a booking, expect to wait at Crif Dogs.",
+   "confirmed"
+  ],
+  "hours": [
+   "Opens 5pm daily; closes around 2am Sun-Thu and 3am Fri-Sat (sources differ slightly on which nights run to 3am)",
+   "unconfirmed"
+  ],
+  "price": [
+   "Cocktails ~$20",
+   "confirmed"
+  ],
+  "status": "open"
+ },
+ "public-records": {
+  "age": [
+   "",
+   "unknown"
+  ],
+  "cover": [
+   "The restaurant, cafe and bar charge no entry fee. Sound Room shows and club nights are ticketed on DICE, e.g. a jazz show on Oct 24, 2026 from ~$32.",
+   "likely"
+  ],
+  "dress": [
+   "None published",
+   "unknown"
+  ],
+  "getting_in": [
+   "Book Atrium and UPSTAIRS tables on Resy. Buy Sound Room and Nursery event tickets on DICE (a few events go through partner pages).",
+   "confirmed"
+  ],
+  "hours": [
+   "Campus hours: Wed-Thu 6-10pm, Fri 6pm-4am, Sat 10am-4am, Sun 10am-9pm; closed Mon-Tue. Event times vary.",
+   "confirmed"
+  ],
+  "price": [
+   "",
+   "unknown"
+  ],
+  "status": "open"
+ },
+ "somewhere-nowhere": {
+  "age": [
+   "21+ (government ID required)",
+   "confirmed"
+  ],
+  "cover": [
+   "Ticketed: GA (entry before 1am) or Bar Reservation (entry + 4 drink tickets, before 3am); prices vary by event and aren't published",
+   "likely"
+  ],
+  "dress": [
+   "Smart casual, strictly enforced",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Buy GA or a bar reservation via the venue's Weekly Events page (opens 30 days ahead, non-refundable); bottle service by email or phone. Late-night entry after 12:30am depends on capacity. Some dinner and show packages are on OpenTable.",
+   "confirmed"
+  ],
+  "hours": [
+   "Wed 5pm–1am; Thu closed; Fri–Sun 12pm–4am (official; events vary)",
+   "confirmed"
+  ],
+  "price": [
+   "Very expensive ($$$$). Minimum spends are common: about $50–100 per person for seated and show bookings. Martini Power Hour specials are $12, 5–7pm (reported).",
+   "likely"
+  ],
+  "status": "open"
+ },
+ "the-back-room": {
+  "age": [
+   "21+ Sun–Thu; 25+ Fri–Sat",
+   "confirmed"
+  ],
+  "cover": [
+   "None (\"always free\")",
+   "confirmed"
+  ],
+  "dress": [
+   "No hats, flip-flops, men's tanks or real fur",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Walk-ins welcome. Reserve through the venue site (taken until 11:30pm, Tue–Sun). Small-group reservations have a bar minimum, large groups need bottle service Fri–Sat, and bachelor/bachelorette parties aren't allowed. Enter through the 'Lower East Side Toy Company' gate.",
+   "confirmed"
+  ],
+  "hours": [
+   "Sun–Mon 6pm–1am; Tue–Thu 6pm–2am; Fri–Sat 6pm–3am",
+   "confirmed"
+  ],
+  "price": [
+   "Moderate (Time Out $$ of 4); exact cocktail prices aren't published, and some reviewers call the drinks small or pricey",
+   "likely"
+  ],
+  "status": "open"
+ },
+ "the-box": {
+  "age": [
+   "21+",
+   "likely"
+  ],
+  "cover": [
+   "No general admission; entry is effectively via table reservation (tables reported from ~$2,000)",
+   "likely"
+  ],
+  "dress": [
+   "Dress to impress (no written policy)",
+   "likely"
+  ],
+  "getting_in": [
+   "Reservations required (official FAQ). Book a table through the venue's form or by call/WhatsApp. Without a booking it's the door's call.",
+   "confirmed"
+  ],
+  "hours": [
+   "Wed–Sat, roughly 11pm–4am; closed Sun–Tue",
+   "confirmed"
+  ],
+  "price": [
+   "Tables from ~$2,000 plus tips and fees; cocktails ~$15–20 reported",
+   "unconfirmed"
+  ],
+  "status": "open"
+ },
+ "the-dead-rabbit": {
+  "age": [
+   "21+ in the Parlor; under-21s are allowed in the Taproom before 9pm only with a parent or guardian, seated at a table",
+   "confirmed"
+  ],
+  "cover": [
+   "None listed (some live-music nights are ticketed via Eventbrite/Resy)",
+   "likely"
+  ],
+  "dress": [
+   "None published",
+   "likely"
+  ],
+  "getting_in": [
+   "Reservations on Resy recommended, especially for the Parlor; walk-ins always kept. Taproom bar seats are first come, first served. Table limits are 90 min for walk-ins and 2 hr for reservations.",
+   "confirmed"
+  ],
+  "hours": [
+   "Taproom: Sun–Thu 11am–2am, Fri–Sat 11am–3am. Parlor: Tue–Sat 5pm–1am, Sun 4pm–12am, closed Mon.",
+   "confirmed"
+  ],
+  "price": [
+   "Cocktails ~$18–25; a 20% service charge on the bill has been reported",
+   "likely"
+  ],
+  "status": "open"
+ },
+ "westlight": {
+  "age": [
+   "All ages until 6pm; 21+ after 6pm daily",
+   "confirmed"
+  ],
+  "cover": [
+   "None listed; tables may carry a food-and-drink minimum",
+   "likely"
+  ],
+  "dress": [
+   "Casual (nothing official)",
+   "confirmed"
+  ],
+  "getting_in": [
+   "Reserve on Tablz via the official site. Walk-ins face elevator lines from opening, and weekend nights after 9pm are busiest.",
+   "likely"
+  ],
+  "hours": [
+   "Mon–Thu 4pm–12am; Fri 4pm–1am; Sat 12pm–2am; Sun 12pm–12am",
+   "confirmed"
+  ],
+  "price": [
+   "Cocktails $22–42 (spirit-free $19–20); beer $11; small plates $11–32",
+   "confirmed"
+  ],
+  "status": "open"
+ }
+}

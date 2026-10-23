@@ -69,7 +69,13 @@
     "name": "Nebula on SpeakeasyGo - Quintino, 11pm-4am",
     "url": "https://speakeasygo.com/Nebula-New-York/QUINTINO?eid=EVE-3X3KIC"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "tue": "23:00-28:00",
+   "fri": "23:00-28:00",
+   "sat": "23:00-28:00"
+  }
  },
  "price": {
   "value": "",

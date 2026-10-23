@@ -81,7 +81,14 @@
     "name": "Somewhere Nowhere official FAQ",
     "url": "https://www.somewherenowherenyc.com/faq"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "wed": "17:00-25:00",
+   "fri": "12:00-28:00",
+   "sat": "12:00-28:00",
+   "sun": "12:00-28:00"
+  }
  },
  "price": {
   "value": "Very expensive ($$$$). Minimum spends are common: about $50–100 per person for seated and show bookings. Martini Power Hour specials are $12, 5–7pm (reported).",

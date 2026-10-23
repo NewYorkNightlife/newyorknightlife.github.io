@@ -56,7 +56,16 @@
     "name": "Tao Group official venue page",
     "url": "https://taogroup.com/venues/beauty-essex-new-york/"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "tue": "17:00-22:00",
+   "wed": "17:00-22:00",
+   "sun": "17:00-22:00",
+   "thu": "17:00-23:00",
+   "fri": "17:00-24:00",
+   "sat": "17:00-24:00"
+  }
  },
  "price": {
   "value": "Cocktails $18–21 (luxury cocktails $24–29); shareable plates $18–28",

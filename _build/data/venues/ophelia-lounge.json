@@ -68,7 +68,17 @@
     "name": "The Rooftop Guide - Ophelia",
     "url": "https://www.therooftopguide.com/rooftop-bars-in-new-york/ophelia.html"
    }
-  ]
+  ],
+  "kind": "fixed",
+  "week": {
+   "sun": "17:00-23:00",
+   "mon": "17:00-23:00",
+   "tue": "17:00-23:00",
+   "wed": "17:00-23:00",
+   "thu": "17:00-24:00",
+   "fri": "17:00-26:00",
+   "sat": "17:00-26:00"
+  }
  },
  "price": {
   "value": "Social Hour cocktail tasting flight (three mini cocktails) $30, Mon-Fri 5-7pm; three-course prix-fixe dinner $60pp. Single-cocktail prices not found.",

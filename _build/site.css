@@ -443,3 +443,22 @@ table.compare th { color: var(--muted); font-weight: 600; font-size: 13px; }
   .pbar i { forced-color-adjust: none; background: Highlight; }
   .vthumb { border: 1px solid CanvasText; }
 }
+
+/* ---- Oct 2026 "alive" pass: Tonight box/page, hours table, changes log, signup ---- */
+.live { margin-top: 18px; }
+#tonight-box { min-height: 420px; }  /* room for the list, so the page doesn't jump when it loads */
+.live h2 { margin-top: 0; }
+.live .weather { margin: 6px 0 12px; }
+.live .weather .small { display: block; margin-top: 2px; }
+.live .weather .tip { color: var(--bronze-lt); }
+.live-sec { margin-top: 26px; }
+.tonight-list li, .news li, .lic li, .changes li { padding: 10px 0; border-bottom: 1px solid var(--rule); line-height: 1.45; }
+.tonight-list li:last-child, .news li:last-child, .lic li:last-child, .changes li:last-child { border-bottom: 0; }
+.tonight-list .chip, .hours-table .chip, .compare .chip { margin-left: 8px; vertical-align: middle; }
+.hours-table { border-collapse: collapse; width: 100%; max-width: 420px; }
+.hours-table th, .hours-table td { text-align: left; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--rule); font-weight: 400; }
+.hours-table th { color: var(--muted); width: 64px; }
+.news-signup { margin-top: 28px; }
+.signup { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.signup label { width: 100%; font-size: 14px; color: var(--muted); }
+.signup input { flex: 1 1 220px; min-height: 44px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--edge); background: var(--ink); color: var(--cream); font: inherit; }
