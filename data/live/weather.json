@@ -1,12 +1,12 @@
 {
- "end": "2026-10-23T06:00:00-04:00",
- "fetched": "2026-10-23T04:58:09+00:00",
- "issued": "2026-10-22T19:20:20+00:00",
+ "end": "2026-10-24T06:00:00-04:00",
+ "fetched": "2026-10-23T18:19:51+00:00",
+ "issued": "2026-10-23T13:30:29+00:00",
  "period": "Tonight",
  "rain_pct": 0,
- "short": "Clear",
+ "short": "Mostly Clear",
  "source": "National Weather Service (weather.gov)",
- "start": "2026-10-22T22:00:00-04:00",
- "temp_f": 47,
- "wind": "12 mph N"
+ "start": "2026-10-23T18:00:00-04:00",
+ "temp_f": 42,
+ "wind": "5 to 8 mph NE"
 }
