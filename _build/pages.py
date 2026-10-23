@@ -133,7 +133,7 @@ def trust_pages(page, write, u):
 <li>Nyla, our chat helper, runs in your browser. What you type isn't sent or saved anywhere; she only remembers when she last said hello, so she doesn't pop up on every page.</li>
 <li>Our fonts are served from this site, so loading a page no longer sends your IP address to Google.</li>
 <li>Our analytics provider, PostHog, does receive page views and clicks from US servers. It sets no cookies, doesn't identify you, and honours Do Not Track. Add <code>?notrack=1</code> to any URL to opt out.</li>
-<li>The Tonight page and the home page's tonight box load their data only from this site. A scheduled job (run on GitHub) fetches the forecast from the National Weather Service, plus headlines and liquor-license data, and saves them here, so your browser never contacts those services.</li>
+<li>The Tonight page and the home page's tonight box load their data from this site and from GitHub (raw.githubusercontent.com), where our scheduled job saves it. GitHub sees your IP address like any web host. The job fetches the forecast (National Weather Service), headlines and liquor-license data itself, so your browser never contacts those services.</li>
 <li>The weekly email, once it starts, will be sent with Kit (kit.com). If you sign up, Kit stores your email address to send it; you confirm by email first, every email has an unsubscribe link, and we delete your address on request.</li>
 <li>If you click through to a booking site, that site has its own privacy policy and may set its own cookies.</li>
 <li>If you email us, we use your email only to reply.</li></ul>

@@ -2,8 +2,8 @@
 
 Run by .github/workflows/live.yml a few times a day (also fine to run by hand):
     python _build/live.py
-Writes only data/live/*.json. Pages read those files in the browser (js/live.js), so this job
-never rewrites HTML and can't collide with a normal site build.
+Writes only data/live/*.json. The workflow publishes them to the repo's `live-data` branch (main only
+takes pull requests); pages read them in the browser (js/live.js), so this job never rewrites HTML.
 
 Rules (see the 2026-10 plan review):
 - Every source can fail. A failed source keeps its last good file untouched; nothing is blanked.

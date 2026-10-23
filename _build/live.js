@@ -1,6 +1,6 @@
 /* NY Nightlife "tonight" data: open tonight (from checked weekly hours), NWS weather,
    nightlife headlines and new liquor licenses. Fills #tonight-box (home) and #tonight (Tonight page).
-   Data comes from /data/venues.json (build) and /data/live/*.json (scheduled job, see _build/live.py).
+   Data comes from /data/venues.json (build) and the live-data branch (scheduled job, see _build/live.py).
    Everything from outside is inserted as text, never as HTML. */
 (function () {
   'use strict';
@@ -15,6 +15,13 @@
   var HOURS_LABEL = { likely: 'hours: 1 source', unconfirmed: 'hours unconfirmed' };
 
   function get(p) { return fetch(R(p), { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw r.status; return r.json(); }).catch(function () { return null; }); }
+  // The scheduled job publishes to the repo's live-data branch (main only takes pull requests);
+  // if GitHub's raw file host fails, use the copy that ships with the site.
+  var LIVE = 'https://raw.githubusercontent.com/NewYorkNightlife/newyorknightlife.github.io/live-data/data/live/';
+  function getLive(name) {
+    return fetch(LIVE + name, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw r.status; return r.json(); })
+      .catch(function () { return get('data/live/' + name); });
+  }
   function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
   function link(href, text, ext) {
     var a = el('a', null, text); a.href = href;
@@ -132,7 +139,7 @@
     s.appendChild(src);
   }
 
-  Promise.all([get('data/venues.json'), get('data/live/weather.json'), get('data/live/news.json'), get('data/live/licenses.json'), get('data/live/status.json')])
+  Promise.all([get('data/venues.json'), getLive('weather.json'), getLive('news.json'), getLive('licenses.json'), getLive('status.json')])
     .then(function (r) {
       var venues = (r[0] && r[0].venues) || [];
       if (!venues.length) return;
