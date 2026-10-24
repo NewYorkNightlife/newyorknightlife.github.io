@@ -1,12 +1,12 @@
 {
  "end": "2026-10-25T06:00:00-04:00",
- "fetched": "2026-10-24T17:26:18+00:00",
- "issued": "2026-10-24T06:37:05+00:00",
+ "fetched": "2026-10-24T21:36:28+00:00",
+ "issued": "2026-10-24T18:23:07+00:00",
  "period": "Tonight",
  "rain_pct": 0,
- "short": "Clear",
+ "short": "Mostly Clear",
  "source": "National Weather Service (weather.gov)",
  "start": "2026-10-24T18:00:00-04:00",
- "temp_f": 44,
+ "temp_f": 47,
  "wind": "3 mph W"
 }
