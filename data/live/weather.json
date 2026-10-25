@@ -1,12 +1,12 @@
 {
- "end": "2026-10-25T06:00:00-04:00",
- "fetched": "2026-10-25T08:23:23+00:00",
- "issued": "2026-10-25T07:10:05+00:00",
- "period": "Overnight",
+ "end": "2026-10-26T06:00:00-04:00",
+ "fetched": "2026-10-25T17:38:41+00:00",
+ "issued": "2026-10-25T13:08:10+00:00",
+ "period": "Tonight",
  "rain_pct": 0,
  "short": "Clear",
  "source": "National Weather Service (weather.gov)",
- "start": "2026-10-25T04:00:00-04:00",
- "temp_f": 47,
- "wind": "3 mph NW"
+ "start": "2026-10-25T18:00:00-04:00",
+ "temp_f": 52,
+ "wind": "5 mph SW"
 }
