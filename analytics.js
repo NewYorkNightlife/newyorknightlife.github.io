@@ -130,13 +130,14 @@
   /* Form sends (never the field values). Sites that confirm success should call siteTrack('form_submission').
      A form inside a PRIVATE area is a chat box, not a contact form. Nyla's ask-a-question row is a <form>,
      so until 2026-10-30 every question she was asked was reported as a failed contact-form send — on a site
-     that has no contact form at all. Those now get their own event, with no part of the question attached. */
+     that has no contact form at all. She already reports herself (nybot_open / nybot_message in
+     concierge.js), so these are dropped here rather than renamed, to keep one count per question. */
   document.addEventListener('submit', function (event) {
     var f = event.target;
     if (!f || f.tagName !== 'FORM') return;
     var inPrivate = false;
     try { inPrivate = !!(PRIVATE && f.closest(PRIVATE)); } catch (_) {}
-    if (inPrivate) return window.siteTrack('nyla_question', {event_label: 'chat'});
+    if (inPrivate) return;
     window.siteTrack('form_submit_attempt', {event_label: String(f.id || f.getAttribute('name') || 'form').slice(0, 40)}, {beforeLeaving: true});
   }, true);
 })();
