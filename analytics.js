@@ -1,6 +1,7 @@
-/* PostHog analytics (installed by the site-posthog skill): page views, heatmaps, privacy-masked
-   session replay, and standard goal events (text/call/email taps, quote buttons, form sends,
-   affiliate and outbound clicks). Serve this file as-is from the site's public/static root.
+/* PostHog analytics (installed by the site-posthog skill): page views, heatmaps and standard goal
+   events (text/call/email taps, quote buttons, form sends, affiliate and outbound clicks).
+   Session recordings are OFF on this site — see RECORDINGS below.
+   Serve this file as-is from the site's public/static root.
    Skip tracking in this browser: visit any page with ?notrack=1 (undo with ?notrack=0). */
 (function () {
   'use strict';
@@ -126,9 +127,16 @@
     }
   }, true);
 
-  /* Form sends (never the field values). Sites that confirm success should call siteTrack('form_submission'). */
+  /* Form sends (never the field values). Sites that confirm success should call siteTrack('form_submission').
+     A form inside a PRIVATE area is a chat box, not a contact form. Nyla's ask-a-question row is a <form>,
+     so until 2026-10-30 every question she was asked was reported as a failed contact-form send — on a site
+     that has no contact form at all. Those now get their own event, with no part of the question attached. */
   document.addEventListener('submit', function (event) {
     var f = event.target;
-    if (f && f.tagName === 'FORM') window.siteTrack('form_submit_attempt', {event_label: String(f.id || f.getAttribute('name') || 'form').slice(0, 40)}, {beforeLeaving: true});
+    if (!f || f.tagName !== 'FORM') return;
+    var inPrivate = false;
+    try { inPrivate = !!(PRIVATE && f.closest(PRIVATE)); } catch (_) {}
+    if (inPrivate) return window.siteTrack('nyla_question', {event_label: 'chat'});
+    window.siteTrack('form_submit_attempt', {event_label: String(f.id || f.getAttribute('name') || 'form').slice(0, 40)}, {beforeLeaving: true});
   }, true);
 })();
