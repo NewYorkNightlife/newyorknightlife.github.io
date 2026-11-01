@@ -1,12 +1,12 @@
 {
- "end": "2026-11-01T06:00:00-05:00",
- "fetched": "2026-11-01T10:25:41+00:00",
- "issued": "2026-11-01T06:21:39+00:00",
- "period": "Overnight",
- "rain_pct": 0,
- "short": "Partly Cloudy",
+ "end": "2026-11-02T06:00:00-05:00",
+ "fetched": "2026-11-01T18:55:01+00:00",
+ "issued": "2026-11-01T14:03:18+00:00",
+ "period": "Tonight",
+ "rain_pct": 1,
+ "short": "Mostly Clear",
  "source": "National Weather Service (weather.gov)",
- "start": "2026-11-01T03:00:00-05:00",
- "temp_f": 43,
- "wind": "5 mph N"
+ "start": "2026-11-01T18:00:00-05:00",
+ "temp_f": 45,
+ "wind": "8 mph SW"
 }
