@@ -1,12 +1,12 @@
 {
  "end": "2026-11-07T06:00:00-05:00",
- "fetched": "2026-11-06T20:27:14+00:00",
- "issued": "2026-11-06T18:27:04+00:00",
+ "fetched": "2026-11-07T02:47:20+00:00",
+ "issued": "2026-11-07T00:33:37+00:00",
  "period": "Tonight",
- "rain_pct": 38,
+ "rain_pct": 33,
  "short": "Chance Light Rain then Mostly Cloudy",
  "source": "National Weather Service (weather.gov)",
- "start": "2026-11-06T18:00:00-05:00",
+ "start": "2026-11-06T20:00:00-05:00",
  "temp_f": 55,
  "wind": "5 mph W"
 }
