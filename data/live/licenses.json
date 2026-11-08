@@ -1,6 +1,42 @@
 {
- "fetched": "2026-11-07T02:47:20+00:00",
+ "fetched": "2026-11-08T02:28:01+00:00",
  "items": [
+  {
+   "address": "903 Seneca Ave",
+   "borough": "Queens",
+   "id": "0240-26-159940",
+   "issued": "2026-11-06",
+   "name": "Seneca 903 Corp.",
+   "type": "Wine and beer (restaurant/bar)",
+   "zip": "11385"
+  },
+  {
+   "address": "732 Lorimer St",
+   "borough": "Brooklyn",
+   "id": "0340-26-159912",
+   "issued": "2026-11-06",
+   "name": "FERGS LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "11211"
+  },
+  {
+   "address": "1681 Pitkin Ave",
+   "borough": "Brooklyn",
+   "id": "0240-26-159921",
+   "issued": "2026-11-06",
+   "name": "Chipotle Mexican Grill of Colorado, LLC",
+   "type": "Wine and beer (restaurant/bar)",
+   "zip": "11212"
+  },
+  {
+   "address": "220 W Houston St",
+   "borough": "Manhattan",
+   "id": "0340-26-159941",
+   "issued": "2026-11-06",
+   "name": "The 3 & 10 Bar LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "10014"
+  },
   {
    "address": "1628 Shore Pkwy",
    "borough": "Brooklyn",
@@ -9,15 +45,6 @@
    "name": "Chipotle Mexican Grill of Colorado, LLC",
    "type": "Wine and beer (restaurant/bar)",
    "zip": "11214"
-  },
-  {
-   "address": "118-02-12 Atlantic Ave",
-   "borough": "Queens",
-   "id": "0340-26-159947",
-   "issued": "2026-11-06",
-   "name": "Royal India Palace LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "11419"
   },
   {
    "address": "277 Church St",
@@ -38,49 +65,13 @@
    "zip": "10019"
   },
   {
-   "address": "220 W Houston St",
-   "borough": "Manhattan",
-   "id": "0340-26-159941",
-   "issued": "2026-11-06",
-   "name": "The 3 & 10 Bar LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "10014"
-  },
-  {
-   "address": "732 Lorimer St",
-   "borough": "Brooklyn",
-   "id": "0340-26-159912",
-   "issued": "2026-11-06",
-   "name": "FERGS LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "11211"
-  },
-  {
-   "address": "903 Seneca Ave",
+   "address": "118-02-12 Atlantic Ave",
    "borough": "Queens",
-   "id": "0240-26-159940",
+   "id": "0340-26-159947",
    "issued": "2026-11-06",
-   "name": "Seneca 903 Corp.",
-   "type": "Wine and beer (restaurant/bar)",
-   "zip": "11385"
-  },
-  {
-   "address": "1681 Pitkin Ave",
-   "borough": "Brooklyn",
-   "id": "0240-26-159921",
-   "issued": "2026-11-06",
-   "name": "Chipotle Mexican Grill of Colorado, LLC",
-   "type": "Wine and beer (restaurant/bar)",
-   "zip": "11212"
-  },
-  {
-   "address": "201 Allen St",
-   "borough": "Manhattan",
-   "id": "0340-26-159766",
-   "issued": "2026-11-04",
-   "name": "IARANYC LLC",
+   "name": "Royal India Palace LLC",
    "type": "Full liquor (restaurant/bar)",
-   "zip": "10002"
+   "zip": "11419"
   },
   {
    "address": "57-35 Main St",
@@ -110,6 +101,24 @@
    "zip": "11217"
   },
   {
+   "address": "201 Allen St",
+   "borough": "Manhattan",
+   "id": "0340-26-159766",
+   "issued": "2026-11-04",
+   "name": "IARANYC LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "10002"
+  },
+  {
+   "address": "107-04 Queens Blvd",
+   "borough": "Queens",
+   "id": "0340-26-159638",
+   "issued": "2026-11-03",
+   "name": "BCL Hospitality Group Inc.",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "11375"
+  },
+  {
    "address": "6419 Myrtle Ave",
    "borough": "Queens",
    "id": "0240-26-159637",
@@ -137,15 +146,6 @@
    "zip": "10036"
   },
   {
-   "address": "107-04 Queens Blvd",
-   "borough": "Queens",
-   "id": "0340-26-159638",
-   "issued": "2026-11-03",
-   "name": "BCL Hospitality Group Inc.",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "11375"
-  },
-  {
    "address": "754 9th Ave",
    "borough": "Manhattan",
    "id": "0340-26-159556",
@@ -153,6 +153,15 @@
    "name": "Monkey Thief 51 LLC",
    "type": "Full liquor (restaurant/bar)",
    "zip": "10019"
+  },
+  {
+   "address": "52 E 8th St",
+   "borough": "Manhattan",
+   "id": "0240-26-159480",
+   "issued": "2026-11-02",
+   "name": "Rokstar Chicken NOHO, Inc.",
+   "type": "Wine and beer (restaurant/bar)",
+   "zip": "10003"
   },
   {
    "address": "7407 3rd Ave",
@@ -173,15 +182,6 @@
    "zip": "10001"
   },
   {
-   "address": "52 E 8th St",
-   "borough": "Manhattan",
-   "id": "0240-26-159480",
-   "issued": "2026-11-02",
-   "name": "Rokstar Chicken NOHO, Inc.",
-   "type": "Wine and beer (restaurant/bar)",
-   "zip": "10003"
-  },
-  {
    "address": "731 Flatbush Ave Fl 1",
    "borough": "Brooklyn",
    "id": "0340-26-159372",
@@ -200,15 +200,6 @@
    "zip": "11224"
   },
   {
-   "address": "119 Mott St",
-   "borough": "Manhattan",
-   "id": "0340-26-159351",
-   "issued": "2026-10-30",
-   "name": "FOUR VINNIES LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "10013"
-  },
-  {
    "address": "89 E 42nd St",
    "borough": "Manhattan",
    "id": "0340-26-159275",
@@ -216,6 +207,15 @@
    "name": "Vizz Group LLC",
    "type": "Full liquor (restaurant/bar)",
    "zip": "10017"
+  },
+  {
+   "address": "119 Mott St",
+   "borough": "Manhattan",
+   "id": "0340-26-159351",
+   "issued": "2026-10-30",
+   "name": "FOUR VINNIES LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "10013"
   },
   {
    "address": "501 E 6th St",
@@ -236,15 +236,6 @@
    "zip": "10012"
   },
   {
-   "address": "125 Division Street",
-   "borough": "Manhattan",
-   "id": "0340-26-159199",
-   "issued": "2026-10-29",
-   "name": "Division Krill LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "10002"
-  },
-  {
    "address": "6 Murray St",
    "borough": "Manhattan",
    "id": "0340-26-159132",
@@ -252,6 +243,15 @@
    "name": "HOJYOZU NY INC.",
    "type": "Full liquor (restaurant/bar)",
    "zip": "10007"
+  },
+  {
+   "address": "125 Division Street",
+   "borough": "Manhattan",
+   "id": "0340-26-159199",
+   "issued": "2026-10-29",
+   "name": "Division Krill LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "10002"
   },
   {
    "address": "28-07 Jackson Ave",
@@ -263,15 +263,6 @@
    "zip": "11101"
   },
   {
-   "address": "43 Herkimer Pl",
-   "borough": "Brooklyn",
-   "id": "0340-26-139171",
-   "issued": "2026-10-28",
-   "name": "Supreme Management 43 Corp.",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "11216"
-  },
-  {
    "address": "10 E 33rd St, 1st Floor",
    "borough": "Manhattan",
    "id": "0340-26-159004",
@@ -279,6 +270,15 @@
    "name": "Jaesang Partners, Inc",
    "type": "Full liquor (restaurant/bar)",
    "zip": "10016"
+  },
+  {
+   "address": "705A 707 Nostrand Ave",
+   "borough": "Brooklyn",
+   "id": "0240-26-158998",
+   "issued": "2026-10-28",
+   "name": "Blossom Kitchen, LLC",
+   "type": "Wine and beer (restaurant/bar)",
+   "zip": "11216"
   },
   {
    "address": "39-22 61st St",
@@ -299,12 +299,12 @@
    "zip": "10010"
   },
   {
-   "address": "705A 707 Nostrand Ave",
+   "address": "43 Herkimer Pl",
    "borough": "Brooklyn",
-   "id": "0240-26-158998",
+   "id": "0340-26-139171",
    "issued": "2026-10-28",
-   "name": "Blossom Kitchen, LLC",
-   "type": "Wine and beer (restaurant/bar)",
+   "name": "Supreme Management 43 Corp.",
+   "type": "Full liquor (restaurant/bar)",
    "zip": "11216"
   },
   {
@@ -317,6 +317,15 @@
    "zip": "10003"
   },
   {
+   "address": "133 Essex St",
+   "borough": "Manhattan",
+   "id": "0340-26-158851",
+   "issued": "2026-10-26",
+   "name": "133 ESSEX ASSOCIATES LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "10002"
+  },
+  {
    "address": "218 E 10th St",
    "borough": "Manhattan",
    "id": "0340-26-158769",
@@ -324,15 +333,6 @@
    "name": "Sous Vide Panda LLC",
    "type": "Full liquor (restaurant/bar)",
    "zip": "10003"
-  },
-  {
-   "address": "4104 4th Ave",
-   "borough": "Brooklyn",
-   "id": "0240-26-158798",
-   "issued": "2026-10-26",
-   "name": "Chipotle Mexican Grill of Colorado, LLC",
-   "type": "Wine and beer (restaurant/bar)",
-   "zip": "11232"
   },
   {
    "address": "21 Clark St",
@@ -344,13 +344,13 @@
    "zip": "11201"
   },
   {
-   "address": "133 Essex St",
-   "borough": "Manhattan",
-   "id": "0340-26-158851",
+   "address": "4104 4th Ave",
+   "borough": "Brooklyn",
+   "id": "0240-26-158798",
    "issued": "2026-10-26",
-   "name": "133 ESSEX ASSOCIATES LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "10002"
+   "name": "Chipotle Mexican Grill of Colorado, LLC",
+   "type": "Wine and beer (restaurant/bar)",
+   "zip": "11232"
   },
   {
    "address": "501 7th Ave",
@@ -371,15 +371,6 @@
    "zip": "10019"
   },
   {
-   "address": "5204 8th Ave",
-   "borough": "Brooklyn",
-   "id": "0240-26-158580",
-   "issued": "2026-10-22",
-   "name": "A FA BK LLC",
-   "type": "Wine and beer (restaurant/bar)",
-   "zip": "11220"
-  },
-  {
    "address": "65-25 Roosevelt Ave",
    "borough": "Queens",
    "id": "0340-26-158506",
@@ -389,67 +380,13 @@
    "zip": "11377"
   },
   {
-   "address": "106 3rd Ave",
-   "borough": "Manhattan",
-   "id": "0340-26-158373",
-   "issued": "2026-10-21",
-   "name": "OLIO EAST VILLAGE, LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "10003"
-  },
-  {
-   "address": "410 Amsterdam Ave",
-   "borough": "Manhattan",
-   "id": "0340-26-158470",
-   "issued": "2026-10-21",
-   "name": "GEO Hospitality Corp",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "10024"
-  },
-  {
-   "address": "199 Grand St",
-   "borough": "Manhattan",
-   "id": "0240-26-158472",
-   "issued": "2026-10-21",
-   "name": "Subang Corp.",
-   "type": "Wine and beer (restaurant/bar)",
-   "zip": "10013"
-  },
-  {
-   "address": "191 5th Ave",
+   "address": "5204 8th Ave",
    "borough": "Brooklyn",
-   "id": "0340-26-158469",
-   "issued": "2026-10-21",
-   "name": "ENL CONFIANZA LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "11217"
-  },
-  {
-   "address": "6735 3rd Ave",
-   "borough": "Brooklyn",
-   "id": "0240-26-158443",
-   "issued": "2026-10-21",
-   "name": "Arom Dee Thai LLC",
+   "id": "0240-26-158580",
+   "issued": "2026-10-22",
+   "name": "A FA BK LLC",
    "type": "Wine and beer (restaurant/bar)",
    "zip": "11220"
-  },
-  {
-   "address": "3801 Vernon Blvd",
-   "borough": "Queens",
-   "id": "0240-26-158417",
-   "issued": "2026-10-21",
-   "name": "Delicious Delights Corp.",
-   "type": "Wine and beer (restaurant/bar)",
-   "zip": "11101"
-  },
-  {
-   "address": "711 Manhattan Ave",
-   "borough": "Brooklyn",
-   "id": "0240-26-158427",
-   "issued": "2026-10-21",
-   "name": "Three Brother Minimart Inc",
-   "type": "Wine and beer (restaurant/bar)",
-   "zip": "11222"
   },
   {
    "address": "1045 Surf Ave",
@@ -461,40 +398,67 @@
    "zip": "11224"
   },
   {
-   "address": "620 Manhattan Ave",
+   "address": "711 Manhattan Ave",
    "borough": "Brooklyn",
-   "id": "0240-26-158181",
-   "issued": "2026-10-20",
-   "name": "VENDE HUMOO LLC",
+   "id": "0240-26-158427",
+   "issued": "2026-10-21",
+   "name": "Three Brother Minimart Inc",
    "type": "Wine and beer (restaurant/bar)",
    "zip": "11222"
   },
   {
-   "address": "1431 1st Ave",
-   "borough": "Manhattan",
-   "id": "0340-26-158174",
-   "issued": "2026-10-20",
-   "name": "Assieme Inc.",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "10021"
-  },
-  {
-   "address": "413 W 14th St",
-   "borough": "Manhattan",
-   "id": "0340-26-158231",
-   "issued": "2026-10-20",
-   "name": "BGI 14th Street LLC & Brand Essence Hospitality Group Inc as Mgr",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "10014"
-  },
-  {
-   "address": "125 E 23rd St",
-   "borough": "Manhattan",
-   "id": "0240-26-158310",
-   "issued": "2026-10-20",
-   "name": "Chipotle Mexican Grill of Colorado, LLC",
+   "address": "3801 Vernon Blvd",
+   "borough": "Queens",
+   "id": "0240-26-158417",
+   "issued": "2026-10-21",
+   "name": "Delicious Delights Corp.",
    "type": "Wine and beer (restaurant/bar)",
-   "zip": "10010"
+   "zip": "11101"
+  },
+  {
+   "address": "199 Grand St",
+   "borough": "Manhattan",
+   "id": "0240-26-158472",
+   "issued": "2026-10-21",
+   "name": "Subang Corp.",
+   "type": "Wine and beer (restaurant/bar)",
+   "zip": "10013"
+  },
+  {
+   "address": "6735 3rd Ave",
+   "borough": "Brooklyn",
+   "id": "0240-26-158443",
+   "issued": "2026-10-21",
+   "name": "Arom Dee Thai LLC",
+   "type": "Wine and beer (restaurant/bar)",
+   "zip": "11220"
+  },
+  {
+   "address": "191 5th Ave",
+   "borough": "Brooklyn",
+   "id": "0340-26-158469",
+   "issued": "2026-10-21",
+   "name": "ENL CONFIANZA LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "11217"
+  },
+  {
+   "address": "410 Amsterdam Ave",
+   "borough": "Manhattan",
+   "id": "0340-26-158470",
+   "issued": "2026-10-21",
+   "name": "GEO Hospitality Corp",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "10024"
+  },
+  {
+   "address": "106 3rd Ave",
+   "borough": "Manhattan",
+   "id": "0340-26-158373",
+   "issued": "2026-10-21",
+   "name": "OLIO EAST VILLAGE, LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "10003"
   },
   {
    "address": "864 Broadway",
@@ -506,13 +470,13 @@
    "zip": "10003"
   },
   {
-   "address": "274 Madison Ave",
-   "borough": "Manhattan",
-   "id": "0240-26-158309",
+   "address": "185 7th Ave",
+   "borough": "Brooklyn",
+   "id": "0240-26-158299",
    "issued": "2026-10-20",
    "name": "Chipotle Mexican Grill of Colorado, LLC",
    "type": "Wine and beer (restaurant/bar)",
-   "zip": "10016"
+   "zip": "11215"
   },
   {
    "address": "55 Driggs Ave",
@@ -524,13 +488,22 @@
    "zip": "11222"
   },
   {
-   "address": "185 7th Ave",
+   "address": "620 Manhattan Ave",
    "borough": "Brooklyn",
-   "id": "0240-26-158299",
+   "id": "0240-26-158181",
    "issued": "2026-10-20",
-   "name": "Chipotle Mexican Grill of Colorado, LLC",
+   "name": "VENDE HUMOO LLC",
    "type": "Wine and beer (restaurant/bar)",
-   "zip": "11215"
+   "zip": "11222"
+  },
+  {
+   "address": "413 W 14th St",
+   "borough": "Manhattan",
+   "id": "0340-26-158231",
+   "issued": "2026-10-20",
+   "name": "BGI 14th Street LLC & Brand Essence Hospitality Group Inc as Mgr",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "10014"
   },
   {
    "address": "8402 3rd Ave",
@@ -542,6 +515,33 @@
    "zip": "11209"
   },
   {
+   "address": "125 E 23rd St",
+   "borough": "Manhattan",
+   "id": "0240-26-158310",
+   "issued": "2026-10-20",
+   "name": "Chipotle Mexican Grill of Colorado, LLC",
+   "type": "Wine and beer (restaurant/bar)",
+   "zip": "10010"
+  },
+  {
+   "address": "274 Madison Ave",
+   "borough": "Manhattan",
+   "id": "0240-26-158309",
+   "issued": "2026-10-20",
+   "name": "Chipotle Mexican Grill of Colorado, LLC",
+   "type": "Wine and beer (restaurant/bar)",
+   "zip": "10016"
+  },
+  {
+   "address": "1431 1st Ave",
+   "borough": "Manhattan",
+   "id": "0340-26-158174",
+   "issued": "2026-10-20",
+   "name": "Assieme Inc.",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "10021"
+  },
+  {
    "address": "31 Union Sq W",
    "borough": "Manhattan",
    "id": "0340-26-152892",
@@ -549,15 +549,6 @@
    "name": "SPH Manhattan LLC",
    "type": "Full liquor (restaurant/bar)",
    "zip": "10003"
-  },
-  {
-   "address": "127 Atlantic Ave",
-   "borough": "Brooklyn",
-   "id": "0340-26-144376",
-   "issued": "2026-10-15",
-   "name": "Confidant Hospitality LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "11201"
   },
   {
    "address": "112 Harrison Pl",
@@ -587,6 +578,24 @@
    "zip": "11238"
   },
   {
+   "address": "127 Atlantic Ave",
+   "borough": "Brooklyn",
+   "id": "0340-26-144376",
+   "issued": "2026-10-15",
+   "name": "Confidant Hospitality LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "11201"
+  },
+  {
+   "address": "435 Hudson St 1st FL and Mezzanine",
+   "borough": "Manhattan",
+   "id": "0340-26-157759",
+   "issued": "2026-10-14",
+   "name": "Miles on Hudson, LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "10014"
+  },
+  {
    "address": "140 W 4th St Bsmt",
    "borough": "Manhattan",
    "id": "0240-26-157725",
@@ -605,15 +614,6 @@
    "zip": "10022"
   },
   {
-   "address": "435 Hudson St 1st FL and Mezzanine",
-   "borough": "Manhattan",
-   "id": "0340-26-157759",
-   "issued": "2026-10-14",
-   "name": "Miles on Hudson, LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "10014"
-  },
-  {
    "address": "84-28 Jamaica Ave",
    "borough": "Queens",
    "id": "0340-26-157601",
@@ -623,15 +623,6 @@
    "zip": "11421"
   },
   {
-   "address": "58-08 Myrtle Ave",
-   "borough": "Queens",
-   "id": "0240-26-157645",
-   "issued": "2026-10-13",
-   "name": "Simple Peruvian Inc.",
-   "type": "Wine and beer (restaurant/bar)",
-   "zip": "11385"
-  },
-  {
    "address": "44 E 92nd St",
    "borough": "Manhattan",
    "id": "0240-26-157648",
@@ -639,6 +630,15 @@
    "name": "Linda's At Madison Inc",
    "type": "Wine and beer (restaurant/bar)",
    "zip": "10128"
+  },
+  {
+   "address": "58-08 Myrtle Ave",
+   "borough": "Queens",
+   "id": "0240-26-157645",
+   "issued": "2026-10-13",
+   "name": "Simple Peruvian Inc.",
+   "type": "Wine and beer (restaurant/bar)",
+   "zip": "11385"
   },
   {
    "address": "157 Rockaway Beach Blvd",
@@ -668,6 +668,24 @@
    "zip": "11104"
   },
   {
+   "address": "137 W 72nd St",
+   "borough": "Manhattan",
+   "id": "0240-26-157295",
+   "issued": "2026-10-08",
+   "name": "MIKADO AT UWS INC.",
+   "type": "Wine and beer (restaurant/bar)",
+   "zip": "10023"
+  },
+  {
+   "address": "347 Van Brunt St",
+   "borough": "Brooklyn",
+   "id": "0340-26-157378",
+   "issued": "2026-10-08",
+   "name": "The Hellmouth LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "11231"
+  },
+  {
    "address": "351 E 12th St",
    "borough": "Manhattan",
    "id": "0340-26-157372",
@@ -684,24 +702,6 @@
    "name": "NONG GENG JI 37 LLC",
    "type": "Wine and beer (restaurant/bar)",
    "zip": "11354"
-  },
-  {
-   "address": "347 Van Brunt St",
-   "borough": "Brooklyn",
-   "id": "0340-26-157378",
-   "issued": "2026-10-08",
-   "name": "The Hellmouth LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "11231"
-  },
-  {
-   "address": "137 W 72nd St",
-   "borough": "Manhattan",
-   "id": "0240-26-157295",
-   "issued": "2026-10-08",
-   "name": "MIKADO AT UWS INC.",
-   "type": "Wine and beer (restaurant/bar)",
-   "zip": "10023"
   },
   {
    "address": "213-41 39th Ave",
@@ -722,15 +722,6 @@
    "zip": "11435"
   },
   {
-   "address": "88 2nd Ave",
-   "borough": "Manhattan",
-   "id": "0340-26-156950",
-   "issued": "2026-10-06",
-   "name": "88 2nd Ave Buenavista Restaurant & Bar LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "10003"
-  },
-  {
    "address": "JFK International Airport, Terminal 4",
    "borough": "Queens",
    "id": "0340-26-156958",
@@ -738,6 +729,15 @@
    "name": "SSP America Inc. and SSP America JFK LLC",
    "type": "Full liquor (restaurant/bar)",
    "zip": "11430"
+  },
+  {
+   "address": "88 2nd Ave",
+   "borough": "Manhattan",
+   "id": "0340-26-156950",
+   "issued": "2026-10-06",
+   "name": "88 2nd Ave Buenavista Restaurant & Bar LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "10003"
   },
   {
    "address": "9207 ROCKAWAY BEACH BLVD",
@@ -749,15 +749,6 @@
    "zip": "11693"
   },
   {
-   "address": "327 W 57th St",
-   "borough": "Manhattan",
-   "id": "0340-26-133264",
-   "issued": "2026-10-05",
-   "name": "PMACS 12 LLC",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "10019"
-  },
-  {
    "address": "1075 Bergen St",
    "borough": "Brooklyn",
    "id": "0240-26-156822",
@@ -767,6 +758,15 @@
    "zip": "11216"
   },
   {
+   "address": "327 W 57th St",
+   "borough": "Manhattan",
+   "id": "0340-26-133264",
+   "issued": "2026-10-05",
+   "name": "PMACS 12 LLC",
+   "type": "Full liquor (restaurant/bar)",
+   "zip": "10019"
+  },
+  {
    "address": "955 Pennsylvania Ave",
    "borough": "Brooklyn",
    "id": "0340-26-156717",
@@ -774,15 +774,6 @@
    "name": "Bebe Bar Restaurant Yanmy Libon Inc",
    "type": "Full liquor (restaurant/bar)",
    "zip": "11207"
-  },
-  {
-   "address": "135 W 42nd St",
-   "borough": "Manhattan",
-   "id": "0340-26-146923",
-   "issued": "2026-10-03",
-   "name": "JFNY 1 Inc",
-   "type": "Full liquor (restaurant/bar)",
-   "zip": "10036"
   }
  ],
  "source": "NYS Liquor Authority via data.ny.gov (Active Licenses, 9s3h-dpkz)",
