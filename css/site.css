@@ -304,6 +304,17 @@ p { margin: 10px 0 0; }
 .card-link { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 56px; padding: 10px 14px; margin-top: 12px; border-radius: var(--r-md); background: var(--ink-2); color: var(--cream); text-decoration: none; }
 .card-link .go { color: var(--bronze-lt); font-weight: 600; white-space: nowrap; }
 .card-link .sub { display: block; font-size: 13px; color: var(--muted); }
+.book-grid .card-link:hover, .book-one .card-link:hover { outline: 1px solid var(--bronze); }
+/* Book-a-night rows reuse .card-link. Two-up only when there is a set of them. */
+.book-grid { display: grid; gap: 10px; margin-top: 12px; }
+.book-grid .card-link { margin-top: 0; height: 100%; }
+.book-grid .card-link > span:first-child { min-width: 0; }
+.book-one .card-link { margin-top: 12px; }
+.aff-note { font-size: 12px; line-height: 1.4; color: var(--muted); margin: 8px 0 0; max-width: 68ch; }
+.aff-note a { color: var(--bronze-lt); white-space: nowrap; }
+@media (min-width: 700px) {
+  .book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 ul.clean { padding-left: 18px; }
 ul.clean li { margin: 6px 0; }
 .sources { font-size: 14px; color: var(--muted); }

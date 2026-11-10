@@ -7,6 +7,8 @@ data/live/*.json (written by the scheduled job, _build/live.py).
 import html
 import json
 import pathlib
+
+import affiliates
 from email.utils import format_datetime
 import datetime as dt
 
@@ -81,6 +83,7 @@ def tonight_page(H, vs):
 <ul class="clean"><li>NYC bars stop serving at 4am by state law. <a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time, explained</a>.</li>
 <li>Under 21? <a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Which venues let you in</a>.</li>
 <li>Dressing for the door: <a href="{u('/guides/nyc-dress-codes.html')}">every dress code in one table</a>.</li></ul>
+{affiliates.block(affiliates.TONIGHT, "nynightlife-tonight", "tonight", u, "Book a night out")}
 {newsletter_block(H)}
 <script defer src="{u('/js/live.js')}?v={H['LIVE_V']}"></script>"""
     H["write"]("/tonight/index.html", H["page"]("Tonight in NYC: what's open, forecast and nightlife headlines | NY Nightlife",
