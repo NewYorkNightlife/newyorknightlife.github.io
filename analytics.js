@@ -10,7 +10,7 @@
   var POSTHOG_HOST = "https://us.i.posthog.com";      /* e.g. "https://us.i.posthog.com" */
   var LIVE_HOSTS = ["nynightlife.com", "www.nynightlife.com"];                 /* only these domains are tracked (never local previews) */
   var PRIVATE = ".nyb-msgs, .nyb-panel";              /* chat/free-text areas: never recorded or click-tracked ("" = none) */
-  var AFFILIATE = [];          /* substrings marking affiliate links, e.g. ["amzn.to/", "tag="] */
+  var AFFILIATE = ["viator.com"];          /* substrings marking affiliate links, e.g. ["amzn.to/", "tag="] */
   var MIRROR_TO_GA = false;                  /* true = also send these events to Google Analytics (gtag) */
   var RECORDINGS = false;                     /* false = no session recordings at all (sensitive sites) */
   var REPLAY_SAMPLE = 1.0;                /* share of visits recorded, 0-1 (protects the shared free quota) */
@@ -118,7 +118,13 @@
     if (/^tel:/i.test(href)) return window.siteTrack('phone_click', {event_label: label}, {beforeLeaving: true});
     if (/^sms:/i.test(href)) return window.siteTrack('sms_click', {event_label: label}, {beforeLeaving: true});
     if (/^mailto:/i.test(href)) return window.siteTrack('email_click', {event_label: label}, {beforeLeaving: true});
-    if (href && isAffiliate(href)) return window.siteTrack('affiliate_click', {event_label: label, link_host: el.hostname || ''}, {beforeLeaving: true});
+    if (href && isAffiliate(href)) {
+      var affiliate = {event_label: label, link_host: el.hostname || ''};
+      /* partner + placement come from data-partner / data-placement on the link (Viator cards). */
+      if (el.dataset.partner) affiliate.partner = String(el.dataset.partner).slice(0, 40);
+      if (el.dataset.placement) affiliate.placement = String(el.dataset.placement).slice(0, 80);
+      return window.siteTrack('affiliate_click', affiliate, {beforeLeaving: true});
+    }
     if (el.hostname && LIVE_HOSTS.indexOf(el.hostname) === -1 && el.hostname !== window.location.hostname && /^https?:/i.test(href)) {
       return window.siteTrack('outbound_click', {event_label: label, link_host: el.hostname}, {beforeLeaving: true});
     }

@@ -17,6 +17,7 @@ import posixpath
 import re
 import urllib.parse
 
+import affiliates
 import extras
 
 ROOT = pathlib.Path(__file__).resolve().parent
@@ -25,7 +26,7 @@ SITE = "https://nynightlife.com"
 BASE = os.environ.get("NYN_BASE", "")  # path prefix for test builds; "" for the live site
 RELATIVE = os.environ.get("NYN_RELATIVE") == "1"  # relative links for the private preview
 CHECKED_FMT = "%b %-d, %Y"
-SITE_EDITED = "2026-10-23"   # the day the fixed pages themselves last changed
+SITE_EDITED = "2026-11-09"   # the day the fixed pages themselves last changed
 def _ver(p):
     """Cache-bust from the file's own content, so it can never be forgotten.
     CRLF is normalised because git's autocrlf makes working copies differ."""
@@ -113,7 +114,7 @@ def header():
 def footer():
     return f"""<footer class="site-foot"><div class="wrap">
 <nav aria-label="Footer"><a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time</a><a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21</a><a href="{u('/changes/')}">What changed</a><a href="{u('/about.html')}">About</a><a href="{u('/how-we-check.html')}">How we check</a><a href="{u('/affiliate-disclosure.html')}">Affiliate disclosure</a><a href="{u('/privacy.html')}">Privacy</a><a href="{u('/contact.html')}">Contact</a></nav>
-<p>NY Nightlife is an independent guide. Facts are checked against the sources listed on each page; always confirm with the venue before you go. 21+ venues are for adults of legal drinking age.</p>
+<p>NY Nightlife is an independent guide. Facts are checked against the sources listed on each page; always confirm with the venue before you go. 21+ venues are for adults of legal drinking age. We may earn a commission when you book through links on this site, at no extra cost to you.</p>
 </div></footer>
 """
 
@@ -298,6 +299,7 @@ def venue_page(v):
         if v.get("hotel_bar"):
             body += f'<a class="card-link" href="#" data-affiliate="stay22" rel="sponsored nofollow noopener">' \
                     f'<span>Stay upstairs or nearby<span class="sub">Hotels within a short walk (affiliate link)</span></span><span class="go">See rates →</span></a>'
+        body += affiliates.venue_block(v, u)
         skip = [s for s in (v.get("skip_if") or []) if s]
         if skip:
             body += "<h2>Skip it if</h2><ul class=\"clean skip\">" + "".join(f"<li>{e(s)}</li>" for s in skip) + "</ul>"

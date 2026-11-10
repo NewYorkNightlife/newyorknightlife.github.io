@@ -4,6 +4,8 @@ import json
 import pathlib
 import urllib.parse
 
+import affiliates
+
 e = html.escape
 ROOT = pathlib.Path(__file__).resolve().parent
 SITE = "https://nynightlife.com"
@@ -29,6 +31,11 @@ def playbook(page, write, u, actions, fmt_date, pb, H):
     c = pb["combo"]
     share_text = f"{pb['title']}: {c['label'].lower()} is about ${c['low']}–{c['high']} each. {SITE}{path}"
     credit = f'<a href="{e(ph["page"])}" rel="noopener">{e(ph["credit"])}</a> · {e(ph["license"])}'
+    book = ""
+    if pb["slug"] == "bachelorette-night":
+        book = affiliates.block(
+            affiliates.BACH, "nynightlife-bach", "bach", u, "Book a cruise",
+            "Viator listings, separate from the checked prices above. " + affiliates.NOTE)
     body = H["plate"](pb["slug"], pb["title"], f"Group playbook · party of {pb['group']}", credit=credit,
                       alt="Lower Manhattan skyline at sunset from New York Harbor",
                       style="margin-top:12px") + f"""
@@ -36,6 +43,7 @@ def playbook(page, write, u, actions, fmt_date, pb, H):
 <div class="scale" aria-hidden="true"><span>Per person</span><span>$0 · ${mx // 2} · ${mx}</span></div>
 <div class="posters">{posters}</div>
 <div class="total"><span>{e(c['label'])}<span class="small" style="display:block">your night, each</span></span><b>${c['low']}–{c['high']}</b></div>
+{book}
 <h2>How we worked it out</h2>
 <p>Cruise prices are per ticket. Bus and yacht prices are the whole booking divided by {pb['group']} people, before tip, tolls and fees unless noted. Listing prices change by date and season, so confirm the total before you pay.</p>
 <h2 id="sources">Sources</h2>
@@ -79,6 +87,7 @@ def home(page, write, u, vs, H):
 {H['home_box']()}
 <h2>Most asked about</h2>
 <div class="vlist two">{cards}</div>
+{affiliates.block(affiliates.HOME, "nynightlife-home", "home", u, "Book a night out")}
 <h2>Guides</h2>
 <a class="card-link" href="{u('/guides/nyc-bar-closing-time.html')}"><span>What time do NYC bars close?<span class="sub">The 4am rule, and who stays open latest</span></span><span class="go">Read →</span></a>
 <a class="card-link" href="{u('/guides/under-21-nyc-bars-clubs.html')}"><span>Under 21 in NYC<span class="sub">Which bars and clubs let you in, and on what terms</span></span><span class="go">Read →</span></a>
@@ -124,6 +133,7 @@ def trust_pages(page, write, u):
 <h2>Prices</h2><p>Prices come from the listing or venue on the date shown, include fees where the seller shows them, and change often. Confirm before you pay.</p>""")
     simple(page, write, "/affiliate-disclosure.html", "Affiliate disclosure | NY Nightlife", "How NY Nightlife may earn money.", "Affiliate disclosure",
            """<p class="lede">Some links on NY Nightlife may be affiliate links. If you book through one, we may earn a commission at no extra cost to you.</p>
+<p>Booking links to Viator are affiliate links (partner ID P00330813). They are marked sponsored. You pay the price Viator shows; we don't add a fee.</p>
 <p>Affiliate links are labeled where they appear. Commissions never decide what a page says: dress codes, ages and prices are reported as the sources show them, including when that's bad news for a venue.</p>
 <p>We don't accept payment for reviews or rankings. If we ever sell a sponsored placement, it will be labeled "Sponsored".</p>""")
     simple(page, write, "/privacy.html", "Privacy | NY Nightlife", "What NY Nightlife collects.", "Privacy",
