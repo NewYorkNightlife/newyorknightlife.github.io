@@ -1,12 +1,12 @@
 {
  "end": "2026-11-11T06:00:00-05:00",
- "fetched": "2026-11-11T02:46:42+00:00",
- "issued": "2026-11-10T23:08:50+00:00",
- "period": "Tonight",
+ "fetched": "2026-11-11T10:54:32+00:00",
+ "issued": "2026-11-11T06:20:28+00:00",
+ "period": "Overnight",
  "rain_pct": 0,
- "short": "Clear",
+ "short": "Mostly Clear",
  "source": "National Weather Service (weather.gov)",
- "start": "2026-11-10T21:00:00-05:00",
- "temp_f": 49,
- "wind": "5 to 8 mph W"
+ "start": "2026-11-11T04:00:00-05:00",
+ "temp_f": 52,
+ "wind": "6 mph W"
 }
