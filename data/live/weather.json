@@ -1,12 +1,12 @@
 {
- "end": "2026-11-11T06:00:00-05:00",
- "fetched": "2026-11-11T10:54:32+00:00",
- "issued": "2026-11-11T06:20:28+00:00",
- "period": "Overnight",
- "rain_pct": 0,
- "short": "Mostly Clear",
+ "end": "2026-11-12T06:00:00-05:00",
+ "fetched": "2026-11-11T21:24:38+00:00",
+ "issued": "2026-11-11T19:56:03+00:00",
+ "period": "Tonight",
+ "rain_pct": 25,
+ "short": "Mostly Cloudy then Chance Rain Showers",
  "source": "National Weather Service (weather.gov)",
- "start": "2026-11-11T04:00:00-05:00",
- "temp_f": 52,
- "wind": "6 mph W"
+ "start": "2026-11-11T18:00:00-05:00",
+ "temp_f": 51,
+ "wind": "8 mph SE"
 }
