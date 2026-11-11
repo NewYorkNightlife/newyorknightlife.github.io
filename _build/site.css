@@ -632,10 +632,38 @@ a { color: var(--cool); }
   .hero { min-height: 520px; }
 }
 @media (max-width: 1040px) {
-  body .nyb-bubble { width: 72px; height: 168px; right: 8px; }
-  body.no-bar .nyb-bubble { bottom: 10px; }
   body .nyb-teaser { display: none; }
   .facts { margin-bottom: 12px; }
+}
+/* Phones: Nyla is a round launcher, not the full-body figure, so she cannot cover the short answer. */
+@media (max-width: 767px) {
+  body .nyb-bubble,
+  body.no-bar .nyb-bubble,
+  body:not(.no-bar) .nyb-bubble,
+  body.tall-bar .nyb-bubble {
+    width: 56px;
+    height: 56px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0;
+    background: #10151f;
+    border: 2px solid var(--warm);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .45);
+    animation: none;
+    filter: none;
+  }
+  body:not(.no-bar) .nyb-bubble,
+  body.tall-bar .nyb-bubble { bottom: calc(78px + env(safe-area-inset-bottom)); }
+  body .nyb-bubble img {
+    width: 100%;
+    height: 140%;
+    object-fit: cover;
+    object-position: center 8%;
+  }
+  body .nyb-bubble:hover img { transform: none; }
+  body .nyb-teaser { display: none; }
 }
 @media (max-width: 700px) {
   body { background-attachment: scroll; }

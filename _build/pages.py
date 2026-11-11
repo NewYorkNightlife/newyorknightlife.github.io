@@ -101,7 +101,12 @@ def home(page, write, u, vs, H):
         if span and __import__("extras").close_mins(span) >= 24 * 60:
             late += 1
     fetched = (snap.get("fetched_at") or "")[:10] or now.date().isoformat()
-    live = f'{now.strftime("%a")} {now.date().isoformat()} · {len(tonight)} tonight · {len(snap.get("events") or [])} this week · {late} open past midnight'
+    week_n = len(snap.get("events") or [])
+    if tonight:
+        count_bit = f"{len(tonight)} tonight · {week_n} this week"
+    else:
+        count_bit = f"{week_n} this week"
+    live = f'{now.strftime("%a")} {now.date().isoformat()} · {count_bit} · {late} open past midnight'
     hero = H["picture"]("home", "An East Village sidewalk at night",
                         "(min-width: 900px) 1100px, 100vw", eager=True)
     note = ("NYC Parks events and permitted street festivals are from NYC Open Data. "
