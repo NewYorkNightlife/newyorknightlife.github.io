@@ -635,27 +635,26 @@ a { color: var(--cool); }
   body .nyb-teaser { display: none; }
   .facts { margin-bottom: 12px; }
 }
-/* Phones: Nyla is a round launcher, not the full-body figure, so she cannot cover the short answer. */
+/* Phones: Nyla is a round launcher in the header, not a figure over the copy. */
 @media (max-width: 767px) {
   body .nyb-bubble,
   body.no-bar .nyb-bubble,
   body:not(.no-bar) .nyb-bubble,
   body.tall-bar .nyb-bubble {
-    width: 56px;
-    height: 56px;
-    right: 12px;
-    bottom: calc(12px + env(safe-area-inset-bottom));
+    width: 44px;
+    height: 44px;
+    top: calc(12px + env(safe-area-inset-top));
+    right: 64px;
+    bottom: auto;
     border-radius: 50%;
     overflow: hidden;
     padding: 0;
     background: #10151f;
     border: 2px solid var(--warm);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .45);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .45);
     animation: none;
     filter: none;
   }
-  body:not(.no-bar) .nyb-bubble,
-  body.tall-bar .nyb-bubble { bottom: calc(78px + env(safe-area-inset-bottom)); }
   body .nyb-bubble img {
     width: 100%;
     height: 140%;
@@ -664,6 +663,7 @@ a { color: var(--cool); }
   }
   body .nyb-bubble:hover img { transform: none; }
   body .nyb-teaser { display: none; }
+  .site-head .wordmark { max-width: calc(100% - 120px); }
 }
 @media (max-width: 700px) {
   body { background-attachment: scroll; }
