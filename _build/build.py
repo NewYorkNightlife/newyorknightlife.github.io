@@ -96,11 +96,15 @@ def head(title, desc, path, schema=None, robots="index,follow", image=None, img_
 
 
 MENU = [("/tonight/", "Tonight"), ("/venues/", "Venues"), ("/guides/nyc-dress-codes.html", "Dress codes"),
-        ("/plans/bachelorette-night.html", "Group nights"), ("/how-we-check.html", "How we check")]
+        ("/plans/bachelorette-night.html", "Group nights"), ("/plans/nyc-dinner-cruises.html", "Cruises"),
+        ("/how-we-check.html", "How we check")]
 
 
 def header():
-    links = "".join(f'<a class="txt" href="{u(p)}">{e(t)}</a>' for p, t in MENU)
+    def link(p, t):
+        extra = " nav-wide" if p == "/plans/nyc-dinner-cruises.html" else ""
+        return f'<a class="txt{extra}" href="{u(p)}">{e(t)}</a>'
+    links = "".join(link(p, t) for p, t in MENU)
     panel = "".join(f'<a href="{u(p)}">{e(t)}</a>' for p, t in MENU)
     return f"""<header class="site-head"><div class="wrap">
 <a class="wordmark" href="{u('/')}">NY Nightlife</a>
@@ -113,7 +117,7 @@ def header():
 
 def footer():
     return f"""<footer class="site-foot"><div class="wrap">
-<nav aria-label="Footer"><a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time</a><a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21</a><a href="{u('/changes/')}">What changed</a><a href="{u('/about.html')}">About</a><a href="{u('/how-we-check.html')}">How we check</a><a href="{u('/affiliate-disclosure.html')}">Affiliate disclosure</a><a href="{u('/privacy.html')}">Privacy</a><a href="{u('/contact.html')}">Contact</a></nav>
+<nav aria-label="Footer"><a href="{u('/plans/nyc-dinner-cruises.html')}">Dinner cruises</a><a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time</a><a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21</a><a href="{u('/changes/')}">What changed</a><a href="{u('/about.html')}">About</a><a href="{u('/how-we-check.html')}">How we check</a><a href="{u('/affiliate-disclosure.html')}">Affiliate disclosure</a><a href="{u('/privacy.html')}">Privacy</a><a href="{u('/contact.html')}">Contact</a></nav>
 <p>NY Nightlife is an independent guide. Facts are checked against the sources listed on each page; always confirm with the venue before you go. 21+ venues are for adults of legal drinking age. We may earn a commission when you book through links on this site, at no extra cost to you.</p>
 </div></footer>
 """
@@ -296,9 +300,11 @@ def venue_page(v):
         if gi.get("booking_url"):
             body += f'<a class="card-link" href="{e(gi["booking_url"])}" rel="nofollow noopener">' \
                     f'<span>Book or check availability<span class="sub">{e(gi.get("booking_platform", "").title())} · venue&#39;s own booking page</span></span><span class="go">Open →</span></a>'
-        if v.get("hotel_bar"):
-            body += f'<a class="card-link" href="#" data-affiliate="stay22" rel="sponsored nofollow noopener">' \
-                    f'<span>Stay upstairs or nearby<span class="sub">Hotels within a short walk (affiliate link)</span></span><span class="go">See rates →</span></a>'
+        # Stay22 is not an approved partner, so the hotel card (href="#") is not
+        # rendered. hotel_bar stays on the venue JSON for when a real URL exists.
+        # if v.get("hotel_bar"):
+        #     body += f'<a class="card-link" href="#" data-affiliate="stay22" rel="sponsored nofollow noopener">' \
+        #             f'<span>Stay upstairs or nearby<span class="sub">Hotels within a short walk (affiliate link)</span></span><span class="go">See rates →</span></a>'
         body += affiliates.venue_block(v, u)
         skip = [s for s in (v.get("skip_if") or []) if s]
         if skip:
@@ -340,7 +346,13 @@ def venue_page(v):
         desc = f"{name} ({hood}): we could not confirm this venue is still operating. Checked {checked}."
     else:
         desc = f"{name} ({hood}): dress code, age policy, cover and how to get in, checked {checked} with sources."
-    title = f"{name} dress code, age & cover | NY Nightlife"
+    # Keep the descriptive title, then drop clauses until it is 60 characters or under.
+    title = next(t for t in (
+        f"{name} dress code, age & cover | NY Nightlife",
+        f"{name} dress code & cover | NY Nightlife",
+        f"{name}: dress code | NY Nightlife",
+        f"{name} | NY Nightlife",
+    ) if len(t) <= 60)
     write(path, page(title, desc, path, body, schema, "" if btns else "no-bar",
                      image=f"/img/og/{slug}.jpg",   # make_og.py draws one per venue; check_output() enforces it
                      img_alt=f"{name}, {hood}: dress code, age and cover"))
@@ -464,12 +476,13 @@ def main():
     dress_hub(vs)
     import pages
     XH = {"u": u, "page": page, "write": write, "fmt_date": fmt_date, "OUT": OUT, "LIVE_V": LIVE_V}
-    pages.build(page, write, u, actions, fmt_date, vs,
-                {"plate": plate, "vcard": vcard, "picture": picture, "home_box": lambda: extras.home_box(XH),
-                 "newsletter": lambda: extras.newsletter_block(XH)})
+    plan_rows = pages.build(page, write, u, actions, fmt_date, vs,
+                            {"plate": plate, "vcard": vcard, "picture": picture, "home_box": lambda: extras.home_box(XH),
+                             "newsletter": lambda: extras.newsletter_block(XH)})
     extras.tonight_page(XH, vs)
     changed = extras.changes_pages(XH, vs)   # None while the log is too thin to index
     extra = [extras.guide_under21(XH, vs), extras.guide_closing(XH, vs)] + ([("/changes/", changed)] if changed else [])
+    extra += [("/tonight/", "2026-11-11")] + list(plan_rows or [])
     import nyla
     pbs = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((ROOT / "data" / "playbooks").glob("*.json"))]
     nyla.build(write, fmt_date, vs, pbs, max(v.get("checked", "2026-10-18") for v in vs))

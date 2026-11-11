@@ -219,6 +219,12 @@ def main():
              "Real listing prices, split per person.", fmt(pb["checked"]), None,
              ROOT / "img" / f"{pb['slug']}.jpg").save(OUT / f"{pb['slug']}.jpg", "JPEG", quality=82, optimize=True, progressive=True)
         n += 1
+    # Same licensed harbor photo as the bachelorette page. The card text is this guide's.
+    card("nyc-dinner-cruises", "NYC Dinner & Sunset Cruises", "Guide",
+         "Piers, timing, and what to wear.", "Nov 11, 2026", None,
+         ROOT / "img" / "bachelorette-night.jpg").save(
+             OUT / "nyc-dinner-cruises.jpg", "JPEG", quality=82, optimize=True, progressive=True)
+    n += 1
     total = sum(p.stat().st_size for p in OUT.glob("*.jpg"))
     big = [p.name for p in OUT.glob("*.jpg") if p.stat().st_size > 300_000]
     print(f"{n + 2} share cards, {total // 1024} kB total, largest {max(p.stat().st_size for p in OUT.glob('*.jpg')) // 1024} kB")

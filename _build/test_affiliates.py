@@ -55,9 +55,32 @@ def main():
     if "$49" not in drag or "nynightlife-drag" not in drag:
         errors += _fail("drag venue card")
     plain = affiliates.venue_block({"slug": "nebula", "type": "club", "status": "open"}, u)
+    if "nynightlife-nebula" not in plain or "searchResults" not in plain or 'data-placement="night:nebula"' not in plain:
+        errors += _fail("club venue card")
+    if "affiliate-disclosure.html" not in plain or 'rel="sponsored nofollow noopener"' not in plain:
+        errors += _fail("club venue card missing disclosure or rel")
     closed = affiliates.venue_block({"slug": "mr-purple", "type": "rooftop bar", "status": "closed"}, u)
-    if plain or closed:
+    unknown = affiliates.venue_block({"slug": "not-a-venue", "type": "club", "status": "open"}, u)
+    mirage = affiliates.venue_block({"slug": "brooklyn-mirage", "type": "club", "status": "closed"}, u)
+    if closed or unknown or mirage:
         errors += _fail("unexpected venue card")
+    if len(affiliates.EXTRA_VENUE) != 17:
+        errors += _fail(f"expected 17 venue cards, got {len(affiliates.EXTRA_VENUE)}")
+    for slug, (offer, kind) in affiliates.EXTRA_VENUE.items():
+        card = affiliates.venue_block({"slug": slug, "type": "club", "status": "open"}, u)
+        if f"nynightlife-{slug}" not in card or f'data-placement="{kind}:{slug}"' not in card:
+            errors += _fail(f"{slug} campaign or placement")
+        if "searchResults" not in card or "/tours/" in card:
+            errors += _fail(f"{slug} should be a search link, not a product URL")
+        if offer not in card and affiliates.BY_ID[offer]["title"] not in card:
+            errors += _fail(f"{slug} missing offer {offer}")
+    cruises = affiliates.block(affiliates.CRUISES, "nynightlife-nyc-dinner-cruises", "nyc-dinner-cruises", u, "Book a cruise")
+    if cruises.count('class="card-link"') != 4 or "searchResults" not in cruises:
+        errors += _fail("cruise guide block")
+    if cruises.count("searchResults") != 4 or "/tours/" in cruises or re.search(r"\$\d", cruises):
+        errors += _fail("cruise guide invented a product or a price")
+    if "affiliate-disclosure.html" not in cruises or "nynightlife-nyc-dinner-cruises" not in cruises:
+        errors += _fail("cruise guide disclosure or campaign")
     js = pathlib.Path(__file__).resolve().parent.parent.joinpath("analytics.js").read_text(encoding="utf-8")
     if 'AFFILIATE = ["viator.com"]' not in js or "affiliate.placement" not in js or "affiliate.partner" not in js:
         errors += _fail("analytics.js does not record viator partner and placement")
