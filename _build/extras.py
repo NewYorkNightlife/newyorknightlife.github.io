@@ -86,9 +86,9 @@ def tonight_page(H, vs):
 {affiliates.block(affiliates.TONIGHT, "nynightlife-tonight", "tonight", u, "Book a night out")}
 {newsletter_block(H)}
 <script defer src="{u('/js/live.js')}?v={H['LIVE_V']}"></script>"""
-    H["write"]("/tonight/index.html", H["page"]("Tonight in NYC: what's open, forecast and nightlife headlines | NY Nightlife",
+    H["write"]("/tonight/index.html", H["page"]("Tonight in NYC: open bars and headlines | NY Nightlife",
                                                 "Which checked NYC bars and clubs are open tonight, the forecast, nightlife headlines and new liquor licenses.",
-                                                "/tonight/", body, None, "no-bar", "noindex,follow"))
+                                                "/tonight/", body, None, "no-bar"))
 
 
 def home_box(H):
@@ -138,7 +138,7 @@ def guide_under21(H, vs):
     schema = {"@context": "https://schema.org", "@type": "Article", "headline": "Under 21 in NYC: which bars and clubs let you in",
               "dateModified": updated, "author": {"@type": "Person", "name": "Dan Herlehy"}}
     path = "/guides/under-21-nyc-bars-clubs.html"
-    H["write"](path, H["page"]("Under 21 in NYC: which bars & clubs let you in (checked) | NY Nightlife",
+    H["write"](path, H["page"]("Under 21 in NYC bars and clubs | NY Nightlife",
                                f"Which NYC bars and clubs admit under-21s, with each venue's exact age policy and sources. Checked {H['fmt_date'](checked)}.",
                                path, body, schema, "no-bar"))
     return path, updated
@@ -199,7 +199,7 @@ def guide_closing(H, vs):
     schema = {"@context": "https://schema.org", "@type": "Article", "headline": "What time do NYC bars close?",
               "dateModified": updated, "author": {"@type": "Person", "name": "Dan Herlehy"}}
     path = "/guides/nyc-bar-closing-time.html"
-    H["write"](path, H["page"]("What time do NYC bars close? 4am, and who stays open latest | NY Nightlife",
+    H["write"](path, H["page"]("NYC bar closing time: the 4am rule | NY Nightlife",
                                "NYC bars must stop serving at 4am under state law. Here's the rule, and the checked hours of bars and clubs open latest.",
                                path, body, schema, "no-bar"))
     return path, updated

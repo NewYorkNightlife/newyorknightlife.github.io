@@ -98,8 +98,10 @@ img { max-width: 100%; display: block; }
 .site-head .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 68px; gap: 12px; }
 .wordmark { font-family: var(--display); font-style: italic; font-size: 23px; color: var(--cream); text-decoration: none; }
 .head-nav { display: flex; gap: 6px; align-items: center; }
-.head-nav a.txt { display: none; color: var(--text-2); text-decoration: none; font-size: 15px; padding: 10px 12px; border-radius: 22px; }
+.head-nav a.txt { display: none; color: var(--text-2); text-decoration: none; font-size: 15px; padding: 10px 12px; border-radius: 22px; white-space: nowrap; }
 .head-nav a.txt:hover { background: var(--ink-2); color: var(--cream); }
+/* Cruises joins the text nav only once the column is wide enough to hold it. */
+.head-nav a.txt.nav-wide { display: none; }
 .icon-btn { width: 44px; height: 44px; border-radius: 22px; border: 1px solid var(--edge); background: transparent; color: var(--cream); display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
 details.menu { position: relative; }
 details.menu summary { list-style: none; cursor: pointer; }
@@ -107,7 +109,8 @@ details.menu summary::-webkit-details-marker { display: none; }
 details.menu .panel { position: absolute; right: 0; top: 52px; width: 240px; background: var(--ink-2); border: 1px solid var(--rule); border-radius: var(--r-md); padding: 8px; z-index: 20; }
 details.menu .panel a { display: block; padding: 12px; border-radius: 10px; color: var(--cream); text-decoration: none; }
 details.menu .panel a:hover { background: var(--ink-3); }
-@media (min-width: 860px) { .head-nav a.txt { display: inline-block; } details.menu { display: none; } }
+@media (min-width: 860px) { .head-nav a.txt { display: inline-block; } .head-nav a.txt.nav-wide { display: none; } details.menu { display: none; } }
+@media (min-width: 1040px) { .head-nav a.txt.nav-wide { display: inline-block; } }
 
 /* Type */
 .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze-lt); margin: 0; }

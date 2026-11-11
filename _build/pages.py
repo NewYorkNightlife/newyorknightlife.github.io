@@ -36,6 +36,9 @@ def playbook(page, write, u, actions, fmt_date, pb, H):
         book = affiliates.block(
             affiliates.BACH, "nynightlife-bach", "bach", u, "Book a cruise",
             "Viator listings, separate from the checked prices above. " + affiliates.NOTE)
+        book += (f'<a class="card-link" href="{u("/plans/nyc-dinner-cruises.html")}">'
+                 f'<span>NYC dinner and sunset cruises<span class="sub">Piers, timing, and New Year\'s Eve 2026</span></span>'
+                 f'<span class="go">Read →</span></a>')
     body = H["plate"](pb["slug"], pb["title"], f"Group playbook · party of {pb['group']}", credit=credit,
                       alt="Lower Manhattan skyline at sunset from New York Harbor",
                       style="margin-top:12px") + f"""
@@ -54,7 +57,10 @@ def playbook(page, write, u, actions, fmt_date, pb, H):
     disclose = f'Links go to the listings we checked. Any affiliate link is labeled. Prices checked {checked}.'
     schema = {"@context": "https://schema.org", "@type": "Article", "headline": pb["title"], "dateModified": pb["checked"],
               "author": {"@type": "Person", "name": "Dan Herlehy"}, "image": ph["url"]}
-    write(path, page(f"{pb['title']}: real prices per person for {pb['group']} | NY Nightlife",
+    title = f"{pb['title']}: real prices per person for {pb['group']} | NY Nightlife"
+    if len(title) > 60:
+        title = f"{pb['title']} for {pb['group']}: prices | NY Nightlife"
+    write(path, page(title,
                      f"Sunset cruise, party bus or private yacht for a group of {pb['group']} in NYC: real listing prices split per person, with sources.",
                      path, body + actions(btns, disclose), schema, "tall-bar",
                      image="/img/og/" + pb["slug"] + ".jpg",
@@ -94,7 +100,8 @@ def home(page, write, u, vs, H):
 <a class="card-link" href="{u('/changes/')}"><span>What changed<span class="sub">Every update to our checked facts, by date</span></span><span class="go">See log →</span></a>
 <div class="split">
 <div><h2>Planning for a group?</h2>
-<a class="card-link" href="{u('/plans/bachelorette-night.html')}"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus or yacht, priced per person</span></span><span class="go">See prices →</span></a></div>
+<a class="card-link" href="{u('/plans/bachelorette-night.html')}"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus or yacht, priced per person</span></span><span class="go">See prices →</span></a>
+<a class="card-link" href="{u('/plans/nyc-dinner-cruises.html')}"><span>NYC dinner and sunset cruises<span class="sub">Piers, timing, and New Year's Eve 2026</span></span><span class="go">Read →</span></a></div>
 <div><h2>Why trust this</h2>
 <div class="card"><ul class="clean">
 <li>Each fact is checked against the venue's own site or two independent sources.</li>
@@ -103,7 +110,7 @@ def home(page, write, u, vs, H):
 <p><a href="{u('/how-we-check.html')}">How we check →</a></p></div></div>
 </div>"""
     schema = {"@context": "https://schema.org", "@type": "WebSite", "name": "NY Nightlife", "url": SITE + "/"}
-    write("/index.html", page("NY Nightlife: NYC bar & club dress codes, age & cover, checked",
+    write("/index.html", page("NYC bar & club dress codes, age & cover | NY Nightlife",
                               "Know before you go: dress code, age, cover and how to get in for NYC bars and clubs, with sources and dates.",
                               "/", body, schema, "no-bar", image="/img/og/site.jpg",
                               img_alt="NY Nightlife: know before you go"))
@@ -156,8 +163,78 @@ def trust_pages(page, write, u):
                             None, "no-bar", "noindex"))
 
 
+HARBOR_PHOTO = {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sunset_over_the_Lower_Manhattan_skyline_as_seen_from_New_York_Harbor_-_20200904.jpg?width=1200",
+    "page": "https://commons.wikimedia.org/wiki/File:Sunset_over_the_Lower_Manhattan_skyline_as_seen_from_New_York_Harbor_-_20200904.jpg",
+    "credit": "Andre Carrotflower, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+}
+
+
+def cruise_guide(page, write, u, actions, fmt_date, H):
+    """Dinner, sunset, jazz/brunch, and NYE cruises. Facts only from pages we opened
+    or from the Oct 18 bachelorette check. No prices beyond that check."""
+    path = "/plans/nyc-dinner-cruises.html"
+    checked = "2026-11-11"
+    ph = HARBOR_PHOTO
+    credit = f'<a href="{e(ph["page"])}" rel="noopener">{e(ph["credit"])}</a> · {e(ph["license"])}'
+    book = affiliates.block(
+        affiliates.CRUISES, "nynightlife-nyc-dinner-cruises", "nyc-dinner-cruises", u,
+        "Book a cruise",
+        "Viator listings, separate from the facts above. " + affiliates.NOTE,
+        heading_id="book")
+    body = H["plate"]("bachelorette-night", "NYC Dinner & Sunset Cruises", "Guide · New York Harbor",
+                      credit=credit,
+                      alt="Lower Manhattan skyline at sunset from New York Harbor",
+                      style="margin-top:12px") + f"""
+<p class="lede">Where sunset, dinner, jazz, brunch, and New Year's Eve cruises leave from, and how long the sailings we could verify actually run. If a fact is missing, we did not confirm it.</p>
+<h2>Sunset cruises</h2>
+<p>Circle Line publishes three evening cruises. Checked on the operator's pages, Nov 11, 2026.</p>
+<ul class="clean">
+<li><b>Harbor Lights</b>: 2 hours from Pier 83, Midtown (83 North River Piers, New York, NY 10036). Live narration, a full bar, and concessions. It leaves at 7pm for most of the year and at 6pm from January through March.</li>
+<li><b>Statue at Sunset</b>: about 90 minutes from Pier 16 at the South Street Seaport (89 South Street, New York, NY 10038). Music and drinks, no narration. Departure time moves with sunset.</li>
+<li><b>Sip 'N Groove</b>: 2 hours from Pier 83, with a live DJ and a full bar. 18+.</li>
+</ul>
+<p>Circle Line says Harbor Lights and Statue at Sunset can work for families comfortable with an evening departure. Sip 'N Groove is 18 and older. Those three pages do not publish a dress code. Harbor Lights has open-air decks, so bring a layer for that sailing.</p>
+<p>On Oct 18, 2026 we checked two public sunset and harbor tickets, Circle Line Harbor Lights and the Grande Mariner DJ sunset cruise from Pier 36 (21+), at about $48–$55 a person. That number is from those listings on that date. It is not a dinner-cruise price. The same check is on <a href="{u('/plans/bachelorette-night.html')}">Bachelorette Night for 10</a>.</p>
+<h2>Dinner cruises</h2>
+<p>A dinner cruise is a different ticket from a sightseeing cruise that happens to sell drinks. NYC Tourism lists City Cruises Signature Dining at Pier 61, Chelsea Piers, West 23rd Street and 12th Avenue, and marks that listing wheelchair accessible. The tourism page does not say how long the cruise runs or what to wear.</p>
+<p>Other dinner boats leave from other piers and set their own dress codes. Read the listing for the boat you book. We are not publishing a dinner-cruise price.</p>
+<h2>Jazz and brunch cruises</h2>
+<p>Jazz cruises and brunch cruises are separate listings. Pier, length, what is included, and dress code change by boat. We have not confirmed one jazz or brunch sailing's details on this page.</p>
+<h2>New Year's Eve 2026</h2>
+<p>New Year's Eve 2026 is Thursday, December 31. A sunset or dinner cruise on another night is not a New Year's Eve ticket. Boats that night are sold as their own sailings.</p>
+<p>The pier, the hours, the dress code, and the price belong to that sailing's listing. We have not checked one NYE boat's price for this page. Book the NYE listing and read it, including whether fireworks are included or only a view when conditions allow.</p>
+<p>Alcohol is 21+ in New York on every boat. <a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21 in NYC</a> explains the rule. Boarding age is separate and is printed on the ticket.</p>
+{book}
+<h2 id="sources">Sources</h2>
+<p class="small">Circle Line and NYC Tourism checked {fmt_date(checked)}. The $48–$55 tickets were checked Oct 18, 2026.</p>
+<ol class="sources">
+<li>Circle Line Harbor Lights: <a href="https://www.circleline.com/sightseeing-cruises/harbor-lights" rel="nofollow noopener">Harbor Lights cruise</a></li>
+<li>Circle Line evening cruises: <a href="https://www.circleline.com/about/nyc-cruise-guide/NYC-Sunset-and-Night-Cruises-Compared" rel="nofollow noopener">Sunset and night cruises compared</a></li>
+<li>City Cruises Signature Dining: <a href="https://www.nyctourism.com/restaurants/city-cruises-signature-dining/" rel="nofollow noopener">NYC Tourism listing, Pier 61</a></li>
+<li>Public sunset or harbor ticket, Oct 18, 2026: <a href="https://www.tripster.com/detail/circle-line-harbor-lights-sightseeing-cruise-new-york" rel="nofollow noopener">Tripster: Circle Line Harbor Lights</a></li>
+<li>Public sunset or harbor ticket, Oct 18, 2026: <a href="https://www.travelocity.com/things-to-do/circle-line-new-york-harbor-lights-evening-cruise.a255366.activity-details" rel="nofollow noopener">Travelocity: Circle Line Harbor Lights</a></li>
+<li>Public sunset or harbor ticket, Oct 18, 2026: <a href="https://boomertravel.tripster.com/detail/nyc-sunset-cruise-grande-mariner.md" rel="nofollow noopener">Tripster: Grande Mariner sunset cruise</a></li>
+</ol>"""
+    btns = (f'<a class="btn primary" href="#book">See cruise listings</a>'
+            f'<a class="btn quiet" href="{u("/plans/bachelorette-night.html")}">Bachelorette prices</a>')
+    disclose = f"Affiliate links are labeled. Listing prices change. Facts checked {fmt_date(checked)}."
+    schema = {"@context": "https://schema.org", "@type": "Article",
+              "headline": "NYC Dinner & Sunset Cruises", "dateModified": checked,
+              "author": {"@type": "Person", "name": "Dan Herlehy"}, "image": ph["url"]}
+    write(path, page("NYC Dinner & Sunset Cruises | NY Nightlife",
+                     "Sunset, dinner, and New Year's Eve cruises in NYC: piers and timing we could verify, plus Viator listings. Checked Nov 11, 2026.",
+                     path, body + actions(btns, disclose), schema, "tall-bar",
+                     image="/img/og/nyc-dinner-cruises.jpg",
+                     img_alt="NYC Dinner & Sunset Cruises"))
+    return path, checked
+
+
 def build(page, write, u, actions, fmt_date, vs, H):
     for f in sorted((ROOT / "data" / "playbooks").glob("*.json")):
         playbook(page, write, u, actions, fmt_date, json.loads(f.read_text(encoding="utf-8")), H)
+    cruise = cruise_guide(page, write, u, actions, fmt_date, H)
     home(page, write, u, vs, H)
     trust_pages(page, write, u)
+    return [cruise]

@@ -42,6 +42,24 @@ OFFERS = (
         "url": "https://www.viator.com/searchResults/all?text=New+York+City+sunset+dinner+cruise",
     },
     {
+        "id": "sunset-cruise",
+        "title": "Sunset cruises",
+        "go": "See cruises",
+        "url": "https://www.viator.com/searchResults/all?text=New+York+City+sunset+cruise",
+    },
+    {
+        "id": "dinner-cruise",
+        "title": "Dinner cruises",
+        "go": "See cruises",
+        "url": "https://www.viator.com/searchResults/all?text=New+York+City+dinner+cruise",
+    },
+    {
+        "id": "jazz-brunch",
+        "title": "Jazz and brunch cruises",
+        "go": "See cruises",
+        "url": "https://www.viator.com/searchResults/all?text=New+York+City+jazz+brunch+cruise",
+    },
+    {
         "id": "bar-crawls",
         "title": "NYC bar crawls",
         "go": "See crawls",
@@ -81,6 +99,35 @@ BY_ID = {o["id"]: o for o in OFFERS}
 HOME = ("sunset-yacht", "sunset-dinner", "night-tours", "bar-crawls", "comedy", "rooftop-speakeasy", "drag", "nye")
 TONIGHT = ("night-tours", "bar-crawls", "comedy")
 BACH = ("sunset-yacht", "sunset-dinner")
+# Search links only. The priced yacht product stays on home and the bachelorette page.
+CRUISES = ("sunset-cruise", "dinner-cruise", "nye", "jazz-brunch")
+
+# Open venues that had no affiliate card. One existing search link each.
+# (offer id, placement prefix). Campaign is nynightlife-<slug>.
+# Hidden-door and cocktail rooms → the speakeasy/rooftop tour search.
+# Le Bain is a rooftop club. Dead Rabbit is a FiDi cocktail bar → bar crawl.
+# Clubs, listening rooms, and ticketed halls → night tours.
+# Comedy and the priced yacht/drag products are not used here: none of these
+# pages are a comedy club or that specific tour.
+EXTRA_VENUE = {
+    "attaboy": ("rooftop-speakeasy", "speakeasy"),
+    "beauty-and-essex": ("rooftop-speakeasy", "speakeasy"),
+    "death-and-co": ("rooftop-speakeasy", "speakeasy"),
+    "the-dead-rabbit": ("bar-crawls", "crawl"),
+    "le-bain": ("rooftop-speakeasy", "rooftop"),
+    "bossa-nova-civic-club": ("night-tours", "night"),
+    "elsewhere": ("night-tours", "night"),
+    "good-room": ("night-tours", "night"),
+    "knockdown-center": ("night-tours", "night"),
+    "marquee-new-york": ("night-tours", "night"),
+    "musica-club": ("night-tours", "night"),
+    "nebula": ("night-tours", "night"),
+    "nowadays": ("night-tours", "night"),
+    "pacha-new-york": ("night-tours", "night"),
+    "paragon": ("night-tours", "night"),
+    "public-records": ("night-tours", "night"),
+    "the-box": ("night-tours", "night"),
+}
 
 NOTE = "We may earn a commission when you book through these links, at no extra cost to you."
 NOTE_ONE = "We may earn a commission when you book through this link, at no extra cost to you."
@@ -114,10 +161,14 @@ def _card(offer, campaign, placement):
     )
 
 
-def block(ids, campaign, placement, u, heading=None, note=None):
+def block(ids, campaign, placement, u, heading=None, note=None, heading_id=None):
     """A compact group of existing card-links, plus the FTC line."""
     links = "".join(_card(BY_ID[i], campaign, placement) for i in ids)
-    h = f"<h2>{e(heading)}</h2>" if heading else ""
+    if heading:
+        hid = f' id="{e(heading_id)}"' if heading_id else ""
+        h = f"<h2{hid}>{e(heading)}</h2>"
+    else:
+        h = ""
     cls = "book-grid" if len(ids) > 1 else "book-one"
     line = note or (NOTE if len(ids) > 1 else NOTE_ONE)
     return (
@@ -137,4 +188,8 @@ def venue_block(v, u):
         return block(("rooftop-speakeasy",), "nynightlife-speakeasy", f"speakeasy:{slug}", u)
     if slug in DRAG_SLUGS:
         return block(("drag",), "nynightlife-drag", f"drag:{slug}", u)
+    extra = EXTRA_VENUE.get(slug)
+    if extra:
+        offer, kind = extra
+        return block((offer,), f"nynightlife-{slug}", f"{kind}:{slug}", u)
     return ""
