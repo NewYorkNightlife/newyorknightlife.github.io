@@ -74,8 +74,43 @@ def week_table(v):
 # ---------------------------------------------------------------- Tonight
 
 def tonight_page(H, vs):
+    import events
+    import present
     u = H["u"]
-    body = f"""<p class="eyebrow" style="margin-top:20px">New York City · tonight</p><h1>Tonight</h1>
+    snap = events.load_snapshot()
+    now = events.local_now()
+    tonight, week = present.split_events(snap.get("events") or [], now)
+    fetched = (snap.get("fetched_at") or "")[:10] or now.date().isoformat()
+    note = ("Listings come from NYC Open Data (Parks events and permitted street festivals) and, when a key is configured, Ticketmaster Discovery for music, comedy, theatre, and nightlife. "
+            "Ticketmaster links are the event URL, with no affiliate tag. Images from Ticketmaster are loaded beside that event only. "
+            f"Feed checked {fetched}.")
+    short = (f"On {now.strftime('%A %b')} {now.day}, the feeds we checked list {len(tonight)} events between 5pm and 5am New York time, and {len(week)} more through the coming week. "
+             "Below that, the open-now list uses each venue's checked weekly hours. Bar service in the city still stops at 4am under state law. "
+             "A missing listing means the feed did not include it, not that the night is empty.")
+    faqs = [
+        ("What time do NYC bars stop serving?",
+         "4am. New York State law stops on-premises alcohol sales at 4am in all five boroughs. The closing-time guide cites the statute."),
+        ("Where do these event listings come from?",
+         "NYC Parks public events and NYC permitted events, both from NYC Open Data, plus Ticketmaster Discovery when the site's build has a key. We do not scrape Resident Advisor or SeatGeek."),
+        ("Are Ticketmaster links affiliate links?",
+         "No. The button goes to the event URL Ticketmaster returned. Viator booking links elsewhere on the page are the affiliate links, and they are labeled."),
+        ("Why is a show missing?",
+         "The parks feed is mostly daytime programs, and we keep concerts, festivals, theater, and dance performances. Ticketmaster is limited to the next seven days in New York City. Anything outside those feeds is not listed."),
+    ]
+    schemas = [
+        {"@context": "https://schema.org", "@type": "WebPage", "name": "Tonight in NYC",
+         "url": "https://nynightlife.com/tonight/", "dateModified": fetched},
+        present.faq_schema(faqs),
+        present.item_list("Tonight and this week", [(ev["title"], "/tonight/") for ev in (tonight + week)[:30]]),
+    ]
+    schemas += [s for s in (present.event_schema(ev) for ev in (tonight + week)[:24]) if s]
+    body = f"""<p class="eyebrow" style="margin-top:8px">New York City</p><h1>Tonight</h1>
+{present.answer_box(short)}
+{present.events_html(tonight, "Tonight", note, "Nothing in the 5pm–5am window in the latest feed.")}
+{present.events_html(week[:24], "This week", "The next listings after tonight, from the same feeds.", "No later listings in this feed.")}
+{present.route_html()}
+{present.faq_html(faqs)}
+<h2>Open now, from checked hours</h2>
 <p class="lede">Which of our checked venues are open tonight, tonight's forecast, nightlife headlines and new liquor licenses.</p>
 <div id="tonight" class="live" aria-live="polite"><p class="small">Loading tonight's list…</p>
 <noscript><p>This page needs JavaScript to work out what's open right now in New York time. Every venue's hours are on its own page: <a href="{u('/venues/')}">all venues</a>.</p></noscript></div>
@@ -86,9 +121,9 @@ def tonight_page(H, vs):
 {affiliates.block(affiliates.TONIGHT, "nynightlife-tonight", "tonight", u, "Book a night out")}
 {newsletter_block(H)}
 <script defer src="{u('/js/live.js')}?v={H['LIVE_V']}"></script>"""
-    H["write"]("/tonight/index.html", H["page"]("Tonight in NYC: open bars and headlines | NY Nightlife",
-                                                "Which checked NYC bars and clubs are open tonight, the forecast, nightlife headlines and new liquor licenses.",
-                                                "/tonight/", body, None, "no-bar"))
+    H["write"]("/tonight/index.html", H["page"]("Tonight in NYC: what's on | NY Nightlife",
+                                                "What's on in NYC tonight and this week from NYC Open Data and Ticketmaster, plus which checked bars are open.",
+                                                "/tonight/", body, schemas, "no-bar", updated=fetched))
 
 
 def home_box(H):

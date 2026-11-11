@@ -1,0 +1,81 @@
+# Rebuild the site with fresh NYC event listings and publish that build.
+# GitHub Pages source has to be "GitHub Actions" for the deploy job to go live.
+# Until then, main still contains the generated HTML from the last pull request.
+# This job does not commit. Ticketmaster and Viator run only when their secrets exist.
+name: Daily build
+
+on:
+  schedule:
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
+        with:
+          python-version: "3.12"
+
+      - name: Install Pillow for stored event images
+        run: python -m pip install --disable-pip-version-check pillow
+
+      - name: Fetch events
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+          TM_API_KEY: ${{ secrets.TM_API_KEY }}
+          VIATOR_API_KEY: ${{ secrets.VIATOR_API_KEY }}
+        run: python _build/events.py
+
+      - name: Build the site
+        run: python _build/build.py
+
+      - name: Tests
+        run: |
+          python _build/test_live.py
+          python _build/test_affiliates.py
+          python _build/test_events.py
+          node _build/test_nyla.js .
+
+      - name: Stage the Pages artifact
+        if: github.event_name != 'pull_request'
+        run: |
+          mkdir -p "$RUNNER_TEMP/site"
+          rsync -a --delete \
+            --exclude '.git' --exclude '.github' --exclude '_build' \
+            --exclude '.gitignore' \
+            ./ "$RUNNER_TEMP/site/"
+
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9  # v5.0.0
+        if: github.event_name != 'pull_request'
+        with:
+          path: ${{ runner.temp }}/site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346  # v5.0.1
