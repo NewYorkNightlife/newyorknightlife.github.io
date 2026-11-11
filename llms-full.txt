@@ -1,0 +1,32 @@
+# NY Nightlife, full index
+Each venue page repeats only the facts checked for that place.
+- [230 Fifth Rooftop](https://nynightlife.com/venues/230-fifth-rooftop.html): rooftop bar in NoMad / Flatiron, Manhattan. Checked 2026-10-18.
+- [Attaboy](https://nynightlife.com/venues/attaboy.html): cocktail bar in Lower East Side, Manhattan. Checked 2026-10-18.
+- [Beauty & Essex](https://nynightlife.com/venues/beauty-and-essex.html): lounge in Lower East Side, Manhattan. Checked 2026-10-18.
+- [Bossa Nova Civic Club](https://nynightlife.com/venues/bossa-nova-civic-club.html): club in Bushwick, Brooklyn. Checked 2026-10-18.
+- [Brooklyn Mirage](https://nynightlife.com/venues/brooklyn-mirage.html): club in East Williamsburg, Brooklyn. Checked 2026-10-18.
+- [Death & Co](https://nynightlife.com/venues/death-and-co.html): cocktail bar in East Village, Manhattan. Checked 2026-10-18.
+- [Elsewhere](https://nynightlife.com/venues/elsewhere.html): venue in Bushwick, Brooklyn. Checked 2026-10-18.
+- [Employees Only](https://nynightlife.com/venues/employees-only.html): cocktail bar in West Village, Manhattan. Checked 2026-10-18.
+- [Good Room](https://nynightlife.com/venues/good-room.html): club in Greenpoint, Brooklyn. Checked 2026-10-18.
+- [Harriet's Rooftop](https://nynightlife.com/venues/harriets-rooftop.html): rooftop bar in Dumbo, Brooklyn. Checked 2026-10-18.
+- [House of Yes](https://nynightlife.com/venues/house-of-yes.html): club in Bushwick, Brooklyn. Checked 2026-10-18.
+- [Knockdown Center](https://nynightlife.com/venues/knockdown-center.html): venue in Maspeth, Queens. Checked 2026-10-18.
+- [Le Bain](https://nynightlife.com/venues/le-bain.html): club in Meatpacking District, Manhattan. Checked 2026-10-18.
+- [Magic Hour Rooftop Bar & Lounge](https://nynightlife.com/venues/magic-hour-rooftop.html): rooftop bar in Times Square / Garment District, Manhattan. Checked 2026-10-18.
+- [Marquee New York](https://nynightlife.com/venues/marquee-new-york.html): club in Chelsea, Manhattan. Checked 2026-10-18.
+- [Mr. Purple](https://nynightlife.com/venues/mr-purple.html): rooftop bar in Lower East Side, Manhattan. Checked 2026-10-18.
+- [Musica Club NYC](https://nynightlife.com/venues/musica-club.html): club in Hell's Kitchen, Manhattan. Checked 2026-10-18.
+- [Nebula](https://nynightlife.com/venues/nebula.html): club in Midtown / Times Square, Manhattan. Checked 2026-10-18.
+- [Nowadays](https://nynightlife.com/venues/nowadays.html): club in Ridgewood, Queens. Checked 2026-10-18.
+- [Ophelia Lounge](https://nynightlife.com/venues/ophelia-lounge.html): rooftop bar in Midtown East (Beekman / Turtle Bay), Manhattan. Checked 2026-10-18.
+- [Pacha New York](https://nynightlife.com/venues/pacha-new-york.html): club in East Williamsburg, Brooklyn. Checked 2026-10-18.
+- [Paragon](https://nynightlife.com/venues/paragon.html): club in Bushwick (Bed-Stuy border), Brooklyn. Checked 2026-10-18.
+- [PHD Rooftop Lounge](https://nynightlife.com/venues/phd-rooftop-lounge.html): rooftop bar in Chelsea, Manhattan. Checked 2026-10-18.
+- [Please Don't Tell (PDT)](https://nynightlife.com/venues/please-dont-tell.html): cocktail bar in East Village, Manhattan. Checked 2026-10-18.
+- [Public Records](https://nynightlife.com/venues/public-records.html): venue in Gowanus, Brooklyn. Checked 2026-10-18.
+- [Somewhere Nowhere](https://nynightlife.com/venues/somewhere-nowhere.html): rooftop bar in Chelsea, Manhattan. Checked 2026-10-18.
+- [The Back Room](https://nynightlife.com/venues/the-back-room.html): cocktail bar in Lower East Side, Manhattan. Checked 2026-10-18.
+- [The Box](https://nynightlife.com/venues/the-box.html): club in Lower East Side, Manhattan. Checked 2026-10-18.
+- [The Dead Rabbit](https://nynightlife.com/venues/the-dead-rabbit.html): cocktail bar in Financial District, Manhattan. Checked 2026-10-18.
+- [Westlight](https://nynightlife.com/venues/westlight.html): rooftop bar in Williamsburg, Brooklyn. Checked 2026-10-18.

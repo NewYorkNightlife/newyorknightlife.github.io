@@ -1,0 +1,15 @@
+# NY Nightlife
+
+> Know before you go for New York bars and clubs: dress code, age, cover, hours, and what is on tonight. Facts are sourced and dated. Event listings come from NYC Open Data and, when configured, Ticketmaster Discovery. We do not invent missing facts.
+
+## Start here
+- [Tonight](https://nynightlife.com/tonight/): what's on tonight and this week, plus which checked venues are open
+- [Venues](https://nynightlife.com/venues/): door facts for the checked bars and clubs
+- [Group nights](https://nynightlife.com/plans/): bachelorette prices and the cruise guide
+- [Dress codes](https://nynightlife.com/guides/nyc-dress-codes.html)
+- [Closing time](https://nynightlife.com/guides/nyc-bar-closing-time.html)
+- [Under 21](https://nynightlife.com/guides/under-21-nyc-bars-clubs.html)
+- [How we check](https://nynightlife.com/how-we-check.html)
+- [Image credits](https://nynightlife.com/image-credits.html)
+
+Updated 2026-11-10.

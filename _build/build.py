@@ -18,7 +18,9 @@ import re
 import urllib.parse
 
 import affiliates
+import events
 import extras
+import present
 
 ROOT = pathlib.Path(__file__).resolve().parent
 OUT = pathlib.Path(os.environ.get("NYN_OUT", ROOT.parent))  # the live site root
@@ -26,7 +28,7 @@ SITE = "https://nynightlife.com"
 BASE = os.environ.get("NYN_BASE", "")  # path prefix for test builds; "" for the live site
 RELATIVE = os.environ.get("NYN_RELATIVE") == "1"  # relative links for the private preview
 CHECKED_FMT = "%b %-d, %Y"
-SITE_EDITED = "2026-11-09"   # the day the fixed pages themselves last changed
+SITE_EDITED = "2026-11-11"   # the day the fixed pages themselves last changed
 def _ver(p):
     """Cache-bust from the file's own content, so it can never be forgotten.
     CRLF is normalised because git's autocrlf makes working copies differ."""
@@ -37,6 +39,7 @@ DIMS = json.loads(_DIMS_F.read_text(encoding="utf-8")) if _DIMS_F.exists() else 
 CSS_V = _ver(ROOT / "site.css")
 JS_V = _ver(ROOT / "concierge.js")
 LIVE_V = _ver(ROOT / "live.js")
+SIGNAL_V = _ver(ROOT / "signal.js")
 OG_DIR = ROOT / "img" / "og"
 OG_DEFAULT = "/img/og/site.jpg"
 
@@ -56,7 +59,9 @@ def fmt_date(iso):
 # ---------------------------------------------------------------- shell
 
 def head(title, desc, path, schema=None, robots="index,follow", image=None, img_alt=None):
-    ld = f'<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>' if schema else ""
+    items = [s for s in (schema if isinstance(schema, list) else [schema]) if s] if schema else []
+    ld = "\n".join(
+        f'<script type="application/ld+json">{json.dumps(s, ensure_ascii=False)}</script>' for s in items)
     img = SITE + (image or OG_DEFAULT)
     img_alt = img_alt or "NY Nightlife \u2014 know before you go"
     return f"""<!doctype html>
@@ -83,7 +88,7 @@ def head(title, desc, path, schema=None, robots="index,follow", image=None, img_
 <meta name="twitter:description" content="{e(desc)}">
 <meta name="twitter:image" content="{e(img)}">
 <meta name="twitter:image:alt" content="{e(img_alt)}">
-<meta name="theme-color" content="#0B0908">
+<meta name="theme-color" content="#05070C">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="{u('/fonts/instrument-sans-normal-400_700-latin.woff2')}">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="{u('/fonts/fraunces-normal-600-latin.woff2')}">
 <link rel="stylesheet" href="{u('/css/site.css')}?v={CSS_V}">
@@ -96,7 +101,7 @@ def head(title, desc, path, schema=None, robots="index,follow", image=None, img_
 
 
 MENU = [("/tonight/", "Tonight"), ("/venues/", "Venues"), ("/guides/nyc-dress-codes.html", "Dress codes"),
-        ("/plans/bachelorette-night.html", "Group nights"), ("/plans/nyc-dinner-cruises.html", "Cruises"),
+        ("/plans/", "Group nights"), ("/plans/nyc-dinner-cruises.html", "Cruises"),
         ("/how-we-check.html", "How we check")]
 
 
@@ -118,7 +123,8 @@ def header():
 def footer():
     return f"""<footer class="site-foot"><div class="wrap">
 <nav aria-label="Footer"><a href="{u('/plans/nyc-dinner-cruises.html')}">Dinner cruises</a><a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time</a><a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21</a><a href="{u('/changes/')}">What changed</a><a href="{u('/about.html')}">About</a><a href="{u('/how-we-check.html')}">How we check</a><a href="{u('/affiliate-disclosure.html')}">Affiliate disclosure</a><a href="{u('/privacy.html')}">Privacy</a><a href="{u('/contact.html')}">Contact</a></nav>
-<p>NY Nightlife is an independent guide. Facts are checked against the sources listed on each page; always confirm with the venue before you go. 21+ venues are for adults of legal drinking age. We may earn a commission when you book through links on this site, at no extra cost to you.</p>
+<p>NY Nightlife is an independent guide. Facts are checked against the sources listed on each page; always confirm with the venue before you go. 21+ venues are for adults of legal drinking age. We may earn a commission when you book through links on this site, at no extra cost to you. Concert, comedy, theatre, and nightlife listings from Ticketmaster, when shown, are refreshed daily and the ticket link is that event's page.</p>
+<nav aria-label="More"><a href="{u('/image-credits.html')}">Image credits</a><a href="{u('/llms.txt')}">llms.txt</a></nav>
 </div></footer>
 """
 
@@ -129,9 +135,34 @@ def actions(buttons, disclose=None, side_title=None):
     return f'<div class="actions" role="region" aria-label="Actions"><div class="wrap">{t}{buttons}{d}</div></div>'
 
 
-def page(title, desc, path, body, schema=None, body_class="", robots="index,follow", image=None, img_alt=None):
-    return (head(title, desc, path, schema, robots, image, img_alt) +
-            f'<body class="{body_class}">\n' + header() + f'<main class="wrap">\n{body}\n</main>\n' + footer() + "</body>\n</html>\n")
+def _auto_crumbs(path, label):
+    if path in ("/", "/index.html"):
+        return [("Home", "/")]
+    crumbs = [("Home", "/")]
+    if path.startswith("/venues/") and path != "/venues/":
+        crumbs.append(("Venues", "/venues/"))
+    elif path.startswith("/plans/"):
+        crumbs.append(("Group nights", "/plans/"))
+    elif path.startswith("/guides/"):
+        crumbs.append(("Guides", "/guides/nyc-dress-codes.html"))
+    if not crumbs or crumbs[-1][1] != path:
+        crumbs.append((label, path))
+    return crumbs
+
+
+def page(title, desc, path, body, schema=None, body_class="", robots="index,follow", image=None, img_alt=None,
+         crumbs=None, updated=None, crumb_label=None):
+    label = crumb_label or title.split("|")[0].strip()
+    trail = _auto_crumbs(path, label) if crumbs is None else crumbs
+    blocks = [s for s in (schema if isinstance(schema, list) else [schema]) if s] if schema else []
+    if trail:
+        blocks.append(present.breadcrumb_schema(trail))
+    crumb_html = "" if path in ("/", "/index.html") else present.crumbs_html(trail)
+    upd = f'<p class="updated">Updated {e(updated)}</p>' if updated else ""
+    signal = f'<script defer src="{u("/js/signal.js")}?v={SIGNAL_V}"></script>\n'
+    return (head(title, desc, path, blocks, robots, image, img_alt) +
+            f'<body class="{body_class}">\n<div class="lamp" aria-hidden="true"></div>\n' + header() +
+            f'<main class="wrap">\n{upd}{crumb_html}\n{body}\n</main>\n' + footer() + signal + "</body>\n</html>\n")
 
 
 def _rel(m, here):
@@ -253,7 +284,7 @@ def all_sources(v):
     return out
 
 
-def venue_page(v):
+def venue_page(v, vs=None):
     slug = v["slug"]
     path = f"/venues/{slug}.html"
     checked = fmt_date(v.get("checked", "2026-10-18"))
@@ -310,6 +341,24 @@ def venue_page(v):
         if skip:
             body += "<h2>Skip it if</h2><ul class=\"clean skip\">" + "".join(f"<li>{e(s)}</li>" for s in skip) + "</ul>"
 
+    faqs = present.venue_faqs(v)
+    body += present.answer_box(present.short_answer(v))
+    body += present.faq_html(faqs)
+    pool = [x for x in vs or [] if x["slug"] != slug and x.get("status") != "closed"]
+    same_h = sorted((x for x in pool if x.get("neighborhood") == v.get("neighborhood")), key=lambda x: x["name"].lower())
+    same_b = sorted((x for x in pool if x.get("borough") == v.get("borough") and x not in same_h), key=lambda x: x["name"].lower())
+    near = (same_h + same_b)[:3]
+    if near:
+        body += '<h2>Nearby</h2><div class="vlist">' + "".join(
+            vcard(x, f'{x.get("neighborhood", "")} · {x.get("borough", "")}',
+                  "Dress: " + e((x.get("dress") or {}).get("answer") or "not found yet"))
+            for x in near) + "</div>"
+    mine = [ev for ev in (events.load_snapshot().get("events") or []) if ev.get("venue_slug") == slug][:4]
+    if mine:
+        body += present.events_html(
+            mine, "Upcoming here",
+            "Matched from the daily event feed. Ticketmaster links go to that event's page.",
+            "")
     body += f"""<h2 id="sources">Sources</h2>
 <p class="small">We checked these on {checked}. Facts change; confirm with the venue before you go. Something wrong at the door? <a href="mailto:hello@nynightlife.com?subject={urllib.parse.quote('Door report: ' + name)}">Tell us</a>.</p>
 <ol class="sources">{''.join(f'<li><a href="{e(url)}" rel="nofollow noopener">{e(n)}</a></li>' for n, url in srcs) or '<li>No sources recorded yet.</li>'}</ol>
@@ -332,14 +381,19 @@ def venue_page(v):
     # "open" where the visible page says otherwise.
     kind = "Place" if v.get("status") in ("closed", "unclear") else ("NightClub" if "club" in type_ else "BarOrPub")
     about = {"@type": kind, "name": name, "address": v.get("address", "")}
+    hours_spec = present.opening_hours(v)
+    if hours_spec and kind != "Place":
+        about["openingHoursSpecification"] = hours_spec
     same = [x for x in [v.get("website"), v.get("instagram")] if x]
     if same:
         about["sameAs"] = same
     if shot:
         about["image"] = SITE + f"/img/{slug}.jpg"
-    schema = {"@context": "https://schema.org", "@type": "WebPage", "name": f"{name}: dress code, age & how to get in",
+    schema = [{"@context": "https://schema.org", "@type": "WebPage", "name": f"{name}: dress code, age & how to get in",
               "url": SITE + path, "dateModified": v.get("checked"),
-              "author": {"@type": "Person", "name": "Dan Herlehy"}, "about": about}
+              "author": {"@type": "Person", "name": "Dan Herlehy"}, "about": about},
+             present.faq_schema(faqs)]
+    schema += [s for s in (present.event_schema(ev) for ev in mine) if s]
     if closed:
         desc = f"{name} ({hood}) has closed. {v.get('status_note', '')[:110]}".strip()
     elif v.get("status") == "unclear":
@@ -353,9 +407,15 @@ def venue_page(v):
         f"{name}: dress code | NY Nightlife",
         f"{name} | NY Nightlife",
     ) if len(t) <= 60)
+    boro = v.get("borough") or ""
+    crumbs = [("Home", "/"), ("Venues", "/venues/")]
+    if boro:
+        crumbs.append((boro, "/venues/#" + re.sub(r"[^a-z0-9]+", "-", boro.lower()).strip("-")))
+    crumbs.append((name, path))
     write(path, page(title, desc, path, body, schema, "" if btns else "no-bar",
                      image=f"/img/og/{slug}.jpg",   # make_og.py draws one per venue; check_output() enforces it
-                     img_alt=f"{name}, {hood}: dress code, age and cover"))
+                     img_alt=f"{name}, {hood}: dress code, age and cover",
+                     crumbs=crumbs, updated=v.get("checked"), crumb_label=name))
     return v
 
 
@@ -365,18 +425,25 @@ def venues_index(vs):
     for v in sorted(open_vs, key=lambda x: x["name"].lower()):
         by_b.setdefault(v.get("borough") or "Other", []).append(v)
     body = '<p class="eyebrow" style="margin-top:16px">All venues</p><h1>Know before you go</h1>' \
-           '<p class="lede">Dress code, age and how to get in for NYC bars and clubs, each with its sources and the date we checked.</p>'
+           + present.answer_box("This is every NYC bar and club we have checked. Open a page for the dress code, age, cover, and how to get in, each with its sources and the date. If a fact was not found, the page says so instead of guessing. Closed places stay marked closed.") \
+           + '<p class="lede">Dress code, age and how to get in for NYC bars and clubs, each with its sources and the date we checked.</p>'
     for b in sorted(by_b):
-        body += f"<h2>{e(b)}</h2><div class=\"vlist two\">"
+        anchor = re.sub(r"[^a-z0-9]+", "-", b.lower()).strip("-")
+        body += f'<h2 id="{e(anchor)}">{e(b)}</h2><div class="vlist two posters">'
         for v in by_b[b]:
             age = (v.get("age") or {}).get("value")
             answer = "Dress: " + e((v.get("dress") or {}).get("answer") or "not found yet")
             body += vcard(v, f'{v.get("neighborhood", "")} · {v.get("type", "")}',
                           answer + (f" · Age: {e(age)}" if age else ""))
         body += "</div>"
+    pairs = [(v["name"], f"/venues/{v['slug']}.html") for v in open_vs]
+    schema = [present.item_list("NYC bars and clubs", pairs),
+              {"@context": "https://schema.org", "@type": "CollectionPage",
+               "name": "NYC bars and clubs", "dateModified": max(v.get("checked", "2026-10-18") for v in vs)}]
     write("/venues/index.html", page("NYC bars & clubs: dress code, age, cover | NY Nightlife",
                                      "Checked, sourced door facts for NYC bars and clubs: dress code, age, cover and how to get in.",
-                                     "/venues/", body, body_class="no-bar"))
+                                     "/venues/", body, schema, body_class="no-bar",
+                                     updated=max(v.get("checked", "2026-10-18") for v in vs)))
 
 
 def dress_hub(vs):
@@ -433,7 +500,7 @@ def copy_static():
     site = ROOT.parent
     # Nyla's updated script lives in _build until cutover, so the old live site keeps the old one
     pairs = [(ROOT / "site.css", OUT / "css" / "site.css"), (ROOT / "concierge.js", OUT / "js" / "concierge.js"),
-             (ROOT / "live.js", OUT / "js" / "live.js")]
+             (ROOT / "live.js", OUT / "js" / "live.js"), (ROOT / "signal.js", OUT / "js" / "signal.js")]
     # the responsive set from make_images.py; its <slug>.jpg replaces the master
     pairs += [(f, OUT / "img" / f.name) for f in sorted(GEN.glob("*.jpg"))]
     pairs += [(f, OUT / "img" / f.name) for f in sorted(GEN.glob("*.webp"))]
@@ -468,10 +535,44 @@ def check_output():
     return True
 
 
-def main():
-    vs = []
+def write_meta(live_day):
+    (OUT / "robots.txt").write_text(
+        "User-agent: *\nAllow: /\n\n"
+        "User-agent: GPTBot\nAllow: /\n\n"
+        "User-agent: OAI-SearchBot\nAllow: /\n\n"
+        "User-agent: PerplexityBot\nAllow: /\n\n"
+        "User-agent: ClaudeBot\nAllow: /\n\n"
+        "User-agent: Google-Extended\nAllow: /\n\n"
+        "User-agent: Bingbot\nAllow: /\n\n"
+        "Sitemap: https://nynightlife.com/sitemap.xml\n",
+        encoding="utf-8", newline="\n")
+    (OUT / "llms.txt").write_text(
+        "# NY Nightlife\n\n"
+        "> Know before you go for New York bars and clubs: dress code, age, cover, hours, and what is on tonight. "
+        "Facts are sourced and dated. Event listings come from NYC Open Data and, when configured, Ticketmaster Discovery. "
+        "We do not invent missing facts.\n\n"
+        "## Start here\n"
+        "- [Tonight](https://nynightlife.com/tonight/): what's on tonight and this week, plus which checked venues are open\n"
+        "- [Venues](https://nynightlife.com/venues/): door facts for the checked bars and clubs\n"
+        "- [Group nights](https://nynightlife.com/plans/): bachelorette prices and the cruise guide\n"
+        "- [Dress codes](https://nynightlife.com/guides/nyc-dress-codes.html)\n"
+        "- [Closing time](https://nynightlife.com/guides/nyc-bar-closing-time.html)\n"
+        "- [Under 21](https://nynightlife.com/guides/under-21-nyc-bars-clubs.html)\n"
+        "- [How we check](https://nynightlife.com/how-we-check.html)\n"
+        "- [Image credits](https://nynightlife.com/image-credits.html)\n\n"
+        f"Updated {live_day}.\n",
+        encoding="utf-8", newline="\n")
+    lines = ["# NY Nightlife, full index\n",
+             "Each venue page repeats only the facts checked for that place.\n"]
     for f in sorted((ROOT / "data" / "venues").glob("*.json")):
-        vs.append(venue_page(json.loads(f.read_text(encoding="utf-8"))))
+        v = json.loads(f.read_text(encoding="utf-8"))
+        lines.append(f"- [{v['name']}](https://nynightlife.com/venues/{v['slug']}.html): {v.get('type', 'venue')} in {v.get('neighborhood', '')}, {v.get('borough', '')}. Checked {v.get('checked', '')}.\n")
+    (OUT / "llms-full.txt").write_text("".join(lines), encoding="utf-8", newline="\n")
+
+
+def main():
+    loaded = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((ROOT / "data" / "venues").glob("*.json"))]
+    vs = [venue_page(raw, loaded) for raw in loaded]
     venues_index(vs)
     dress_hub(vs)
     import pages
@@ -487,6 +588,10 @@ def main():
     pbs = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((ROOT / "data" / "playbooks").glob("*.json"))]
     nyla.build(write, fmt_date, vs, pbs, max(v.get("checked", "2026-10-18") for v in vs))
     copy_static()
+    snap = events.load_snapshot()
+    live_day = (snap.get("fetched_at") or SITE_EDITED)[:10]
+    extra = [(p, live_day if p in ("/tonight/", "/") else d) for p, d in extra]
+    write_meta(live_day)
     sitemap(vs, pbs, extra)
     check_output()
     print(f"built {len(vs)} venue pages + hubs into {OUT}")

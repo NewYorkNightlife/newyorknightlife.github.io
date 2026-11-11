@@ -78,6 +78,8 @@ HOME_PHOTO = {"url": "https://commons.wikimedia.org/wiki/Special:FilePath/East_V
 
 
 def home(page, write, u, vs, H):
+    import events
+    import present
     by = {v["slug"]: v for v in vs}
     feat = [by[s] for s in FEATURED if s in by and by[s].get("status") != "closed"]
     cards = "".join(
@@ -86,34 +88,65 @@ def home(page, write, u, vs, H):
         for v in feat)
     n = len([v for v in vs if v.get("status") != "closed"])
     credit = f'<a href="{e(HOME_PHOTO["page"])}" rel="noopener">{e(HOME_PHOTO["credit"])}</a> · {e(HOME_PHOTO["license"])}'
-    body = H["plate"]("home", "NY Nightlife", "New York City", title="Know before you go.", credit=credit,
-                      alt="An East Village sidewalk at night", style="margin-top:12px") + f"""
-<p class="lede">Dress code, age, cover and how to get in for {n} NYC bars and clubs. Every fact shows its source and the date we checked it.</p>
-<div class="inline-actions"><a class="btn primary" href="{u('/venues/')}">Find a venue</a><a class="btn ghost" href="{u('/guides/nyc-dress-codes.html')}">All dress codes</a></div>
+    snap = events.load_snapshot()
+    now = events.local_now()
+    tonight, week = present.split_events(snap.get("events") or [], now)
+    shown = (tonight + week)[:6]
+    late = 0
+    key = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"][now.weekday()]
+    for v in vs:
+        if v.get("status") == "closed":
+            continue
+        span = ((v.get("hours") or {}).get("week") or {}).get(key)
+        if span and __import__("extras").close_mins(span) >= 24 * 60:
+            late += 1
+    fetched = (snap.get("fetched_at") or "")[:10] or now.date().isoformat()
+    live = f'{now.strftime("%a")} {now.date().isoformat()} · {len(tonight)} tonight · {len(snap.get("events") or [])} this week · {late} open past midnight'
+    hero = H["picture"]("home", "An East Village sidewalk at night",
+                        "(min-width: 900px) 1100px, 100vw", eager=True)
+    note = ("NYC Parks events and permitted street festivals are from NYC Open Data. "
+            "Music, comedy, theatre, and nightlife are added from Ticketmaster when that key is set. "
+            "Ticketmaster images sit only beside that event, and the link is the event page. "
+            f"Feed checked {fetched}.")
+    short = (f"Tonight in New York, this site lists {n} checked bars and clubs and the public events we could pull for this week. "
+             f"{len(tonight)} of those events fall in tonight's 5pm to 5am window, and {late} venues list hours past midnight on {now.strftime('%A')}. "
+             "Dress code, age, and cover stay on each venue page with the date we checked them.")
+    body = f"""<section class="hero">{hero}<div class="hero-copy"><p class="eyebrow">New York City</p><h1>Tonight in New York</h1>
+<p class="hero-live">{e(live)}</p>
+<div class="inline-actions"><a class="btn primary" href="{u('/tonight/')}">What's on tonight</a><a class="btn ghost" href="{u('/plans/')}">Plan a group night</a></div>
+</div></section>
+<p class="credit">Photo: {credit}</p>
+{present.answer_box(short)}
+{present.events_html(shown, "What's on in NYC tonight / this week", note, "No evening parks, festival, or ticketed listings are in the latest feed.")}
+{present.route_html()}
+<h2>Beyond the bar</h2>
+<p class="lede">Cruises, a comedy booking link, and the door facts. The cruise page only states what we could verify.</p>
+<a class="card-link" href="{u('/plans/nyc-dinner-cruises.html')}"><span>Dinner and sunset cruises<span class="sub">Piers and timing we could verify</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="{u('/guides/nyc-dress-codes.html')}"><span>Dress codes<span class="sub">What {n} venues say, or that they say nothing</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="{u('/guides/nyc-bar-closing-time.html')}"><span>The 4am rule<span class="sub">When service stops, and who lists later hours</span></span><span class="go">Read →</span></a>
+<h2>Group nights</h2>
+<a class="card-link" href="{u('/plans/')}"><span>Group nights<span class="sub">Bachelorette prices and the cruise guide</span></span><span class="go">Open →</span></a>
+<a class="card-link" href="{u('/plans/bachelorette-night.html')}"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus or yacht, priced per person</span></span><span class="go">See prices →</span></a>
 {H['home_box']()}
 <h2>Most asked about</h2>
-<div class="vlist two">{cards}</div>
+<div class="vlist two posters">{cards}</div>
 {affiliates.block(affiliates.HOME, "nynightlife-home", "home", u, "Book a night out")}
-<h2>Guides</h2>
-<a class="card-link" href="{u('/guides/nyc-bar-closing-time.html')}"><span>What time do NYC bars close?<span class="sub">The 4am rule, and who stays open latest</span></span><span class="go">Read →</span></a>
-<a class="card-link" href="{u('/guides/under-21-nyc-bars-clubs.html')}"><span>Under 21 in NYC<span class="sub">Which bars and clubs let you in, and on what terms</span></span><span class="go">Read →</span></a>
-<a class="card-link" href="{u('/changes/')}"><span>What changed<span class="sub">Every update to our checked facts, by date</span></span><span class="go">See log →</span></a>
-<div class="split">
-<div><h2>Planning for a group?</h2>
-<a class="card-link" href="{u('/plans/bachelorette-night.html')}"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus or yacht, priced per person</span></span><span class="go">See prices →</span></a>
-<a class="card-link" href="{u('/plans/nyc-dinner-cruises.html')}"><span>NYC dinner and sunset cruises<span class="sub">Piers, timing, and New Year's Eve 2026</span></span><span class="go">Read →</span></a></div>
-<div><h2>Why trust this</h2>
+<h2>Why trust this</h2>
 <div class="card"><ul class="clean">
 <li>Each fact is checked against the venue's own site or two independent sources.</li>
 <li>If we can't confirm something, we say so, with an "unconfirmed" label.</li>
 <li>Every page shows the date it was checked. We never pretend it's fresher.</li></ul>
-<p><a href="{u('/how-we-check.html')}">How we check →</a></p></div></div>
-</div>"""
-    schema = {"@context": "https://schema.org", "@type": "WebSite", "name": "NY Nightlife", "url": SITE + "/"}
-    write("/index.html", page("NYC bar & club dress codes, age & cover | NY Nightlife",
-                              "Know before you go: dress code, age, cover and how to get in for NYC bars and clubs, with sources and dates.",
+<p><a href="{u('/how-we-check.html')}">How we check →</a></p></div>"""
+    schema = [
+        {"@context": "https://schema.org", "@type": "WebSite", "name": "NY Nightlife", "url": SITE + "/",
+         "dateModified": fetched},
+        present.item_list("What's on", [(ev["title"], "/tonight/") for ev in shown]),
+    ]
+    schema += [s for s in (present.event_schema(ev) for ev in shown) if s]
+    write("/index.html", page("Tonight in NYC: bars, events, door facts | NY Nightlife",
+                              "What's on in NYC tonight and this week, plus dress code, age, and cover for checked bars and clubs.",
                               "/", body, schema, "no-bar", image="/img/og/site.jpg",
-                              img_alt="NY Nightlife: know before you go"))
+                              img_alt="Tonight in New York", updated=fetched))
 
 
 def simple(page, write, path, title, desc, h1, html_body):
@@ -153,6 +186,7 @@ def trust_pages(page, write, u):
 <li>The Tonight page and the home page's tonight box load their data from this site and from GitHub (raw.githubusercontent.com), where our scheduled job saves it. GitHub sees your IP address like any web host. The job fetches the forecast (National Weather Service), headlines and liquor-license data itself, so your browser never contacts those services.</li>
 <li>The weekly email, once it starts, will be sent with Kit (kit.com). If you sign up, Kit stores your email address to send it; you confirm by email first, every email has an unsubscribe link, and we delete your address on request.</li>
 <li>If you click through to a booking site, that site has its own privacy policy and may set its own cookies.</li>
+<li>When the build has a Ticketmaster key, concert, comedy, theatre, and nightlife listings on the homepage and Tonight page come from the Ticketmaster Discovery API. They are refreshed about daily and past events are dropped. Ticket links go to that event's page. Event images are loaded from Ticketmaster beside that listing and are not kept as a photo library. Continuing to Ticketmaster is covered by Ticketmaster's own privacy policy.</li>
 <li>If you email us, we use your email only to reply.</li></ul>
 <p>Questions: <a href="mailto:privacy@nynightlife.com">privacy@nynightlife.com</a>.</p>""")
     simple(page, write, "/contact.html", "Contact | NY Nightlife", "Contact NY Nightlife.", "Contact",
@@ -231,10 +265,54 @@ def cruise_guide(page, write, u, actions, fmt_date, H):
     return path, checked
 
 
+def plans_hub(page, write, u):
+    body = """<p class="eyebrow">Group nights</p><h1>Plan a group night</h1>
+<p class="lede">Two pages we have actually checked: a per-person price split for a group of 10, and a cruise guide that only states piers and timing we could verify.</p>
+<a class="card-link" href="/plans/bachelorette-night.html"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus, or yacht, priced per person. Checked Oct 18, 2026.</span></span><span class="go">See prices →</span></a>
+<a class="card-link" href="/plans/nyc-dinner-cruises.html"><span>NYC dinner and sunset cruises<span class="sub">Piers, timing, and what we did not confirm. Checked Nov 11, 2026.</span></span><span class="go">Read →</span></a>
+"""
+    write("/plans/index.html", page("Group nights in NYC | NY Nightlife",
+                                    "Bachelorette prices per person and a checked guide to NYC dinner and sunset cruises.",
+                                    "/plans/", body, None, "no-bar", updated="2026-11-11"))
+
+
+def image_credits(page, write):
+    import json
+    import pathlib
+    rows = []
+    root = pathlib.Path(__file__).resolve().parent
+    for f in sorted((root / "data" / "venues").glob("*.json")):
+        v = json.loads(f.read_text(encoding="utf-8"))
+        ph = v.get("photo") or {}
+        if not ph.get("credit"):
+            continue
+        rows.append((v["name"], ph.get("credit", ""), ph.get("license", ""), ph.get("license_url", ""), ph.get("url", ""), ph.get("depicts", "")))
+    rows.append(("Homepage hero", HOME_PHOTO["credit"], HOME_PHOTO["license"], "https://creativecommons.org/licenses/by/2.0/", HOME_PHOTO["page"], "East Village sidewalk at night"))
+    rows.append(("Harbor photograph", HARBOR_PHOTO["credit"], HARBOR_PHOTO["license"], "https://creativecommons.org/licenses/by-sa/4.0/", HARBOR_PHOTO["page"], "Lower Manhattan skyline from the harbor"))
+    items = ""
+    for name, credit, lic, lurl, src, depicts in rows:
+        bit = f"<li><b>{e(name)}</b>: {e(credit)}"
+        if lic:
+            bit += f' · <a href="{e(lurl)}" rel="license noopener">{e(lic)}</a>' if lurl else f" · {e(lic)}"
+        if src:
+            bit += f' · <a href="{e(src)}" rel="noopener">source file</a>'
+        if depicts:
+            bit += f" · {e(depicts)}"
+        items += bit + "</li>"
+    body = f"""<p class="eyebrow">Credits</p><h1>Image credits</h1>
+<p class="lede">Photographs on this site are ones we have a license to store. Venue pages without one use a CSS cover, not a stand-in photo. Ticketmaster event images, when a listing has one, are loaded from Ticketmaster next to that event and are not saved here.</p>
+<ul class="clean">{items}</ul>"""
+    write("/image-credits.html", page("Image credits | NY Nightlife",
+                                     "Photograph credits and licenses for images stored on NY Nightlife.",
+                                     "/image-credits.html", body, None, "no-bar", updated="2026-11-11"))
+
+
 def build(page, write, u, actions, fmt_date, vs, H):
     for f in sorted((ROOT / "data" / "playbooks").glob("*.json")):
         playbook(page, write, u, actions, fmt_date, json.loads(f.read_text(encoding="utf-8")), H)
     cruise = cruise_guide(page, write, u, actions, fmt_date, H)
+    plans_hub(page, write, u)
+    image_credits(page, write)
     home(page, write, u, vs, H)
     trust_pages(page, write, u)
-    return [cruise]
+    return [cruise, ("/plans/", "2026-11-11"), ("/image-credits.html", "2026-11-11")]
