@@ -1,12 +1,12 @@
 {
- "end": "2026-11-13T06:00:00-05:00",
- "fetched": "2026-11-13T03:25:09+00:00",
- "issued": "2026-11-12T22:04:44+00:00",
+ "end": "2026-11-14T06:00:00-05:00",
+ "fetched": "2026-11-13T20:53:49+00:00",
+ "issued": "2026-11-13T18:17:02+00:00",
  "period": "Tonight",
- "rain_pct": 84,
- "short": "Rain Showers then Light Rain",
+ "rain_pct": 32,
+ "short": "Chance Light Rain then Cloudy",
  "source": "National Weather Service (weather.gov)",
- "start": "2026-11-12T18:00:00-05:00",
- "temp_f": 45,
- "wind": "14 to 20 mph NE"
+ "start": "2026-11-13T18:00:00-05:00",
+ "temp_f": 36,
+ "wind": "8 mph NW"
 }
