@@ -1,6 +1,7 @@
 """HTML and schema fragments built only from checked venue facts or event rows."""
 import html
 import re
+import urllib.parse
 
 import events as evs
 
@@ -188,8 +189,47 @@ def item_list(name, pairs):
     }
 
 
+# Used only when the source event has no image of its own. It is this site's
+# share card, not a photo of the event.
+FALLBACK_IMAGE = SITE + "/img/og/site.jpg"
+
+
+def _https(url):
+    url = (url or "").strip()
+    return url if url.startswith("https://") else ""
+
+
+def _event_image(ev):
+    """The source image when we have one, otherwise the site card."""
+    local = ev.get("image_local") or ""
+    if local.startswith("/"):
+        return SITE + local
+    if local.startswith("https://"):
+        return local
+    remote = _https(ev.get("image_url"))
+    host = (urllib.parse.urlsplit(remote).hostname or "").lower() if remote else ""
+    if ev.get("source") == "ticketmaster" and evs.tm_image_ok(remote):
+        return remote
+    if remote and (host == "nycgovparks.org" or host.endswith(".nycgovparks.org")):
+        return remote
+    return FALLBACK_IMAGE
+
+
+def _event_description(ev):
+    """A description the source wrote. The permit blurb and the Ticketmaster
+    street address are not descriptions, so they stay out."""
+    text = (ev.get("description") or "").strip()
+    if not text and ev.get("source") == "nyc_parks":
+        text = (ev.get("blurb") or "").strip()
+    return text
+
+
 def event_schema(ev):
-    """Event JSON-LD only when we have a real start time from the source."""
+    """Event JSON-LD only when we have a real start time from the source.
+
+    endDate, description, price, currency, and availability are omitted when
+    the source did not provide them. image falls back to the site card.
+    """
     if not ev.get("start") or ev.get("listing") or ev.get("source") == "viator":
         return None
     place = ev.get("venue_name") or "New York"
@@ -213,22 +253,34 @@ def event_schema(ev):
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "location": loc,
+        "image": _event_image(ev),
     }
     if ev.get("end"):
         data["endDate"] = ev["end"]
-    if ev.get("url"):
-        data["url"] = ev["url"]
-    if ev.get("image_local"):
-        data["image"] = SITE + ev["image_local"]
+    desc = _event_description(ev)
+    if desc:
+        data["description"] = desc
+    url = _https(ev.get("url"))
+    if url:
+        data["url"] = url
     org = {"nyc_parks": "NYC Parks", "nyc_permits": "NYC permitted event",
            "ticketmaster": "Ticketmaster"}.get(ev.get("source"))
     if org:
-        data["organizer"] = {"@type": "Organization", "name": org}
-    if ev.get("price_min") is not None and ev.get("url"):
-        data["offers"] = {
-            "@type": "Offer", "url": ev["url"], "price": ev["price_min"],
-            "priceCurrency": "USD", "availability": "https://schema.org/InStock",
-        }
+        organizer = {"@type": "Organization", "name": org}
+        if url:
+            organizer["url"] = url
+        data["organizer"] = organizer
+    if url:
+        offer = {"@type": "Offer", "url": url}
+        if ev.get("price_min") is not None:
+            offer["price"] = ev["price_min"]
+        currency = (ev.get("price_currency") or "").strip()
+        if currency:
+            offer["priceCurrency"] = currency
+        availability = (ev.get("offer_availability") or "").strip()
+        if availability.startswith("https://schema.org/"):
+            offer["availability"] = availability
+        data["offers"] = offer
     return data
 
 

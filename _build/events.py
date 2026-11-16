@@ -438,7 +438,11 @@ def fetch_parks(get_json, now):
         if not ev:
             continue
         image = row.get("image") if isinstance(row.get("image"), dict) else {}
-        _stamp_remote(ev, https_parks(image.get("url") or ""), "NYC Parks" if image.get("url") else "")
+        remote = https_parks(image.get("url") or "")
+        _stamp_remote(ev, remote, "NYC Parks" if image.get("url") else "")
+        host = (urllib.parse.urlsplit(remote).hostname or "").lower()
+        if remote.startswith("https://") and (host == "nycgovparks.org" or host.endswith(".nycgovparks.org")):
+            ev["image_url"] = remote
         out.append(ev)
     return out
 
@@ -593,11 +597,16 @@ def _tm_one(ev, fetched):
         return None
     prices = ev.get("priceRanges") or []
     price = None
+    currency = ""
     if prices and prices[0].get("min") is not None:
         try:
             price = float(prices[0]["min"])
         except (TypeError, ValueError):
             price = None
+    if prices and prices[0].get("currency"):
+        cur = str(prices[0]["currency"]).strip().upper()
+        if re.fullmatch(r"[A-Z]{3}", cur):
+            currency = cur
     image = _tm_image(ev.get("images") or [])
     addr = venue.get("address") or {}
     borough = city if city.lower() in {"brooklyn", "queens", "bronx", "staten island", "manhattan"} else ""
@@ -613,6 +622,18 @@ def _tm_one(ev, fetched):
         out["image_url"] = image.get("url") or ""
         out["image_w"] = int(image.get("width") or 0) or None
         out["image_h"] = int(image.get("height") or 0) or None
+    if currency:
+        out["price_currency"] = currency
+    # info / pleaseNote are the copy Ticketmaster publishes. The street address
+    # stored in blurb is not a description.
+    note = clean(ev.get("info") or ev.get("pleaseNote") or "", 400)
+    if note:
+        out["description"] = note
+    status = str(((ev.get("dates") or {}).get("status") or {}).get("code") or "").lower()
+    availability = {"onsale": "https://schema.org/InStock",
+                    "offsale": "https://schema.org/SoldOut"}.get(status)
+    if availability:
+        out["offer_availability"] = availability
     return out
 
 
