@@ -1,12 +1,12 @@
 {
  "end": "2026-11-17T06:00:00-05:00",
- "fetched": "2026-11-16T11:13:03+00:00",
- "issued": "2026-11-16T09:51:56+00:00",
- "period": "Monday Night",
- "rain_pct": 1,
- "short": "Mostly Clear",
+ "fetched": "2026-11-16T23:23:40+00:00",
+ "issued": "2026-11-16T18:20:15+00:00",
+ "period": "Tonight",
+ "rain_pct": 0,
+ "short": "Clear",
  "source": "National Weather Service (weather.gov)",
  "start": "2026-11-16T18:00:00-05:00",
- "temp_f": 40,
- "wind": "3 to 7 mph NW"
+ "temp_f": 38,
+ "wind": "7 mph NW"
 }
