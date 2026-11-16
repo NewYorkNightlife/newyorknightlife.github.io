@@ -205,8 +205,53 @@ def test_match_and_words():
     check(f"short answer length {n}", 40 <= n <= 60)
     faqs = present.venue_faqs(sample)
     check("faq count", 4 <= len(faqs) <= 6)
-    schema = present.event_schema(music_public())
+    music = music_public()
+    schema = present.event_schema(music)
     check("event schema", schema["@type"] == "Event" and schema["startDate"] and schema["location"]["name"])
+    check("ticketmaster image is the source image", schema["image"].endswith("/mid.jpg"))
+    check("offer keeps the price and skips currency and stock we were not given",
+          schema["offers"]["url"] == music["url"] and schema["offers"]["price"] == 45
+          and "priceCurrency" not in schema["offers"] and "availability" not in schema["offers"])
+    check("organizer url is the source url", schema["organizer"]["url"] == music["url"]
+          and schema["organizer"]["name"] == "Ticketmaster")
+    check("no endDate or description invented", "endDate" not in schema and "description" not in schema)
+    bare = dict(music, image_url="https://evil.example/x.jpg", image_local="")
+    check("unsafe image uses the site card", present.event_schema(bare)["image"].endswith("/img/og/site.jpg"))
+    park = {
+        "source": "nyc_parks", "title": "Fire Cider", "start": "2026-11-14T13:00:00-05:00",
+        "end": "2026-11-14T15:00:00-05:00", "venue_name": "Randall's Island Park",
+        "url": "https://www.nycgovparks.org/events/2026/11/14/fire-cider-workshop",
+        "blurb": "Learn how to make fire cider.",
+        "image_url": "https://www.nycgovparks.org/photo.jpg", "image_local": "",
+    }
+    ps = present.event_schema(park)
+    check("parks end, description, image, and page url",
+          ps["endDate"] == park["end"] and ps["description"] == park["blurb"]
+          and ps["image"] == park["image_url"] and ps["organizer"]["url"] == park["url"]
+          and ps["offers"] == {"@type": "Offer", "url": park["url"]})
+    no_photo = dict(park, image_url="", image_local="")
+    check("parks without a photo use the site card",
+          present.event_schema(no_photo)["image"].endswith("/img/og/site.jpg"))
+    permit = {
+        "source": "nyc_permits", "title": "Fair", "start": "2026-11-12T10:00:00-05:00",
+        "end": "2026-11-12T18:00:00-05:00", "venue_name": "Park Place",
+        "url": events.PERMITS_PAGE, "blurb": "Parade · NYC permitted event listing",
+    }
+    permit_schema = present.event_schema(permit)
+    check("permit end is kept and the made-up blurb is not a description",
+          permit_schema["endDate"] == permit["end"] and "description" not in permit_schema
+          and permit_schema["organizer"]["url"] == events.PERMITS_PAGE)
+    raw = _tm("Band", "Music", "Rock")
+    raw["dates"]["end"] = {"dateTime": "2026-11-12T03:00:00Z"}
+    raw["dates"]["status"] = {"code": "onsale"}
+    raw["priceRanges"] = [{"min": 45, "currency": "usd"}]
+    raw["info"] = "<b>A loud show</b> downtown"
+    rich = events._tm_one(raw, "2026-11-11T21:00:00-05:00")
+    rs = present.event_schema(rich)
+    check("ticketmaster end, description, currency, and onsale",
+          rs.get("endDate") and rs["description"] == "A loud show downtown"
+          and rs["offers"]["priceCurrency"] == "USD"
+          and rs["offers"]["availability"] == "https://schema.org/InStock")
 
 
 def music_public():
