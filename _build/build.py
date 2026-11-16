@@ -122,7 +122,7 @@ def header():
 
 def footer():
     return f"""<footer class="site-foot"><div class="wrap">
-<nav aria-label="Footer"><a href="{u('/plans/nyc-dinner-cruises.html')}">Dinner cruises</a><a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time</a><a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21</a><a href="{u('/changes/')}">What changed</a><a href="{u('/about.html')}">About</a><a href="{u('/how-we-check.html')}">How we check</a><a href="{u('/affiliate-disclosure.html')}">Affiliate disclosure</a><a href="{u('/privacy.html')}">Privacy</a><a href="{u('/contact.html')}">Contact</a></nav>
+<nav aria-label="Footer"><a href="{u('/plans/nyc-dinner-cruises.html')}">Dinner cruises</a><a href="{u('/plans/nyc-boat-party.html')}">Boat party</a><a href="{u('/plans/bachelor-party.html')}">Bachelor party</a><a href="{u('/guides/nyc-comedy-clubs.html')}">Comedy clubs</a><a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time</a><a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21</a><a href="{u('/changes/')}">What changed</a><a href="{u('/about.html')}">About</a><a href="{u('/how-we-check.html')}">How we check</a><a href="{u('/affiliate-disclosure.html')}">Affiliate disclosure</a><a href="{u('/privacy.html')}">Privacy</a><a href="{u('/contact.html')}">Contact</a></nav>
 <p>NY Nightlife is an independent guide. Facts are checked against the sources listed on each page; always confirm with the venue before you go. 21+ venues are for adults of legal drinking age. We may earn a commission when you book through links on this site, at no extra cost to you. Concert, comedy, theatre, and nightlife listings from Ticketmaster, when shown, are refreshed daily and the ticket link is that event's page.</p>
 <nav aria-label="More"><a href="{u('/image-credits.html')}">Image credits</a><a href="{u('/llms.txt')}">llms.txt</a></nav>
 </div></footer>
@@ -554,7 +554,10 @@ def write_meta(live_day):
         "## Start here\n"
         "- [Tonight](https://nynightlife.com/tonight/): what's on tonight and this week, plus which checked venues are open\n"
         "- [Venues](https://nynightlife.com/venues/): door facts for the checked bars and clubs\n"
-        "- [Group nights](https://nynightlife.com/plans/): bachelorette prices and the cruise guide\n"
+        "- [Group nights](https://nynightlife.com/plans/): bachelorette prices, boat party, bachelor party, and the cruise guide\n"
+        "- [NYC boat party](https://nynightlife.com/plans/nyc-boat-party.html)\n"
+        "- [Bachelor party](https://nynightlife.com/plans/bachelor-party.html)\n"
+        "- [Comedy clubs](https://nynightlife.com/guides/nyc-comedy-clubs.html)\n"
         "- [Dress codes](https://nynightlife.com/guides/nyc-dress-codes.html)\n"
         "- [Closing time](https://nynightlife.com/guides/nyc-bar-closing-time.html)\n"
         "- [Under 21](https://nynightlife.com/guides/under-21-nyc-bars-clubs.html)\n"

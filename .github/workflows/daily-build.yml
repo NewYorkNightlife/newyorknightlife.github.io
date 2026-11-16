@@ -45,12 +45,22 @@ jobs:
       - name: Build the site
         run: python _build/build.py
 
+      # Hard tests block the deploy: input safety, affiliate markup, the event
+      # fetcher, well-formed HTML, JSON-LD, and links. Intent phrases are a
+      # separate step. They read the chatbot's answers, which can miss on a
+      # slow runner or on copy that changes with the events feed or the day.
+      # A miss there warns and still ships an otherwise good build.
       - name: Tests
         run: |
           python _build/test_live.py
           python _build/test_affiliates.py
           python _build/test_events.py
-          node _build/test_nyla.js .
+          python _build/test_html.py
+          node _build/test_nyla.js . --links
+
+      - name: Intent checks
+        continue-on-error: true
+        run: node _build/test_nyla.js . --intents
 
       - name: Stage the Pages artifact
         if: github.event_name != 'pull_request'

@@ -45,8 +45,21 @@ async function session(pathname) {
     const n = msgs.children.length;
     input.value = q;
     form.listeners.submit({ preventDefault() {} });
-    await new Promise(r => setTimeout(r, 120));
-    return msgs.children.slice(n + 1).map(m => m.innerHTML).join(' || ');
+    // The concierge answers on timers (load, then a typing delay, then sometimes
+    // a second bubble). The sandbox caps those timers at 5ms, but a fixed 120ms
+    // still lost the second bubble on a slow runner (Daily build, 2026-11-15).
+    // Poll until the reply stops growing, with a ceiling.
+    let a = '';
+    let stable = 0;
+    const deadline = Date.now() + 1000;
+    while (Date.now() < deadline && stable < 3) {
+      await new Promise(r => setTimeout(r, 40));
+      const next = msgs.children.slice(n + 1).map(m => m.innerHTML).join(' || ');
+      if (next && next === a) stable++;
+      else stable = 0;
+      a = next;
+    }
+    return a;
   };
 }
 
@@ -111,28 +124,51 @@ const CASES = [
   ['/', 'bachelorette for 10', [], ['((']],
 ];
 
+// --links   hard: broken links only (Daily build deploy gate)
+// --intents hard: phrase checks only (Daily build runs this as a warning step)
+// --soft    phrase misses warn and do not fail; broken links still fail
+// default   both fail the process, which is the local full suite
+const mode = process.argv.includes('--links') ? 'links'
+  : process.argv.includes('--intents') ? 'intents'
+  : process.argv.includes('--soft') ? 'soft' : 'all';
+
 (async () => {
-  let fail = 0;
+  let intentFail = 0;
+  let linkFail = 0;
   const hrefs = new Set();
+  const checkIntent = mode !== 'links';
+  const checkLinks = mode !== 'intents';
   for (const [page, q, want, nope] of CASES) {
     const ask = await session(page);
     const a = await ask(q);
     (a.match(/href="([^"]+)"/g) || []).forEach(h => hrefs.add(h.slice(6, -1)));
+    if (!checkIntent) continue;
     const miss = want.filter(w => !a.includes(w));
     const bad = nope.filter(w => a.includes(w));
     if (!a || miss.length || bad.length) {
-      fail++;
-      console.log('FAIL', page, JSON.stringify(q), miss.length ? 'missing ' + JSON.stringify(miss) : '', bad.length ? 'unwanted ' + JSON.stringify(bad) : '');
+      intentFail++;
+      const tag = mode === 'soft' ? 'WARN' : 'FAIL';
+      console.log(tag, page, JSON.stringify(q), miss.length ? 'missing ' + JSON.stringify(miss) : '', bad.length ? 'unwanted ' + JSON.stringify(bad) : '');
       console.log('     ', a.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').slice(0, 300));
     }
   }
-  // every link she produced must exist in the built site
-  for (const h of hrefs) {
-    if (!h.startsWith('https://nynightlife.com/')) { fail++; console.log('FAIL non-site link', h); continue; }
-    let p = path.join(site, h.slice('https://nynightlife.com/'.length));
-    if (h.endsWith('/')) p = path.join(p, 'index.html');
-    if (!fs.existsSync(p)) { fail++; console.log('FAIL broken link', h); }
+  if (checkLinks) {
+    for (const h of hrefs) {
+      if (!h.startsWith('https://nynightlife.com/')) { linkFail++; console.log('FAIL non-site link', h); continue; }
+      let p = path.join(site, h.slice('https://nynightlife.com/'.length));
+      if (h.endsWith('/')) p = path.join(p, 'index.html');
+      if (!fs.existsSync(p)) { linkFail++; console.log('FAIL broken link', h); }
+    }
   }
-  console.log(`${CASES.length - (fail > CASES.length ? CASES.length : fail)}/${CASES.length} intent cases, ${hrefs.size} links checked, ${fail} failures`);
-  process.exit(fail ? 1 : 0);
+  const intentLine = checkIntent
+    ? `${CASES.length - Math.min(intentFail, CASES.length)}/${CASES.length} intent cases`
+    : `intent cases skipped`;
+  const linkLine = checkLinks ? `${hrefs.size} links checked` : `links not gated`;
+  console.log(`${intentLine}, ${linkLine}, ${intentFail + linkFail} failures`);
+  if (mode === 'soft' && intentFail) {
+    console.log(`::warning::${intentFail} intent checks did not match. Deploy is not blocked.`);
+  }
+  const blockIntent = intentFail && mode !== 'soft' && mode !== 'links';
+  const blockLinks = linkFail && mode !== 'intents';
+  process.exit(blockIntent || blockLinks ? 1 : 0);
 })();

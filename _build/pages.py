@@ -1,7 +1,9 @@
 """Hand-written pages for NY Nightlife v2: home, group playbooks, trust pages."""
+import datetime as dt
 import html
 import json
 import pathlib
+import re
 import urllib.parse
 
 import affiliates
@@ -39,6 +41,12 @@ def playbook(page, write, u, actions, fmt_date, pb, H):
         book += (f'<a class="card-link" href="{u("/plans/nyc-dinner-cruises.html")}">'
                  f'<span>NYC dinner and sunset cruises<span class="sub">Piers, timing, and New Year\'s Eve 2026</span></span>'
                  f'<span class="go">Read →</span></a>')
+        book += (f'<a class="card-link" href="{u("/plans/nyc-boat-party.html")}">'
+                 f'<span>NYC boat party<span class="sub">The 18+ DJ cruise and the dinner boat</span></span>'
+                 f'<span class="go">Read →</span></a>')
+        book += (f'<a class="card-link" href="{u("/plans/bachelor-party.html")}">'
+                 f'<span>Bachelor party ideas<span class="sub">Same harbor, plus comedy rooms and clubs</span></span>'
+                 f'<span class="go">Read →</span></a>')
     body = H["plate"](pb["slug"], pb["title"], f"Group playbook · party of {pb['group']}", credit=credit,
                       alt="Lower Manhattan skyline at sunset from New York Harbor",
                       style="margin-top:12px") + f"""
@@ -49,6 +57,7 @@ def playbook(page, write, u, actions, fmt_date, pb, H):
 {book}
 <h2>How we worked it out</h2>
 <p>Cruise prices are per ticket. Bus and yacht prices are the whole booking divided by {pb['group']} people, before tip, tolls and fees unless noted. Listing prices change by date and season, so confirm the total before you pay.</p>
+{'' if pb.get('group') == 6 else f'<p>These prices are for a group of {pb["group"]}. With 6 people the bus and yacht cost more per head, and the cruise price does not change.</p>'}
 <h2 id="sources">Sources</h2>
 <p class="small">Checked {checked}.</p>
 <ol class="sources">{''.join(f'<li>{e(o)}: <a href="{e(url)}" rel="nofollow noopener">{e(n)}</a></li>' for o, n, url in srcs)}</ol>"""
@@ -125,8 +134,11 @@ def home(page, write, u, vs, H):
 {present.events_html(shown, "What's on in NYC tonight / this week", note, "No evening parks, festival, or ticketed listings are in the latest feed.")}
 {present.route_html()}
 <h2>Beyond the bar</h2>
-<p class="lede">Cruises, a comedy booking link, and the door facts. The cruise page only states what we could verify.</p>
+<p class="lede">Cruises, a boat party, a bachelor night, comedy rooms, and the door facts. Each page only states what we could verify.</p>
 <a class="card-link" href="{u('/plans/nyc-dinner-cruises.html')}"><span>Dinner and sunset cruises<span class="sub">Piers and timing we could verify</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="{u('/plans/nyc-boat-party.html')}"><span>NYC boat party<span class="sub">DJ cruise, sunset sail, and the dinner boat</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="{u('/plans/bachelor-party.html')}"><span>Bachelor party ideas<span class="sub">A boat, a comedy room, or a checked club</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="{u('/guides/nyc-comedy-clubs.html')}"><span>NYC comedy clubs<span class="sub">Rooms we could verify, plus comedy in the feed</span></span><span class="go">Read →</span></a>
 <a class="card-link" href="{u('/guides/nyc-dress-codes.html')}"><span>Dress codes<span class="sub">What {n} venues say, or that they say nothing</span></span><span class="go">Read →</span></a>
 <a class="card-link" href="{u('/guides/nyc-bar-closing-time.html')}"><span>The 4am rule<span class="sub">When service stops, and who lists later hours</span></span><span class="go">Read →</span></a>
 <h2>Group nights</h2>
@@ -235,7 +247,7 @@ def cruise_guide(page, write, u, actions, fmt_date, H):
 <li><b>Sip 'N Groove</b>: 2 hours from Pier 83, with a live DJ and a full bar. 18+.</li>
 </ul>
 <p>Circle Line says Harbor Lights and Statue at Sunset can work for families comfortable with an evening departure. Sip 'N Groove is 18 and older. Those three pages do not publish a dress code. Harbor Lights has open-air decks, so bring a layer for that sailing.</p>
-<p>On Oct 18, 2026 we checked two public sunset and harbor tickets, Circle Line Harbor Lights and the Grande Mariner DJ sunset cruise from Pier 36 (21+), at about $48–$55 a person. That number is from those listings on that date. It is not a dinner-cruise price. The same check is on <a href="{u('/plans/bachelorette-night.html')}">Bachelorette Night for 10</a>.</p>
+<p>On Oct 18, 2026 we checked two public sunset and harbor tickets, Circle Line Harbor Lights and the Grande Mariner DJ sunset cruise from Pier 36 (21+), at about $48–$55 a person. That number is from those listings on that date. It is not a dinner-cruise price. The same check is on <a href="{u('/plans/bachelorette-night.html')}">Bachelorette Night for 10</a>. The party cruise and the dinner boat are on <a href="{u('/plans/nyc-boat-party.html')}">NYC boat party</a>.</p>
 <h2>Dinner cruises</h2>
 <p>A dinner cruise is a different ticket from a sightseeing cruise that happens to sell drinks. NYC Tourism lists City Cruises Signature Dining at Pier 61, Chelsea Piers, West 23rd Street and 12th Avenue, and marks that listing wheelchair accessible. The tourism page does not say how long the cruise runs or what to wear.</p>
 <p>Other dinner boats leave from other piers and set their own dress codes. Read the listing for the boat you book. We are not publishing a dinner-cruise price.</p>
@@ -272,13 +284,16 @@ def cruise_guide(page, write, u, actions, fmt_date, H):
 
 def plans_hub(page, write, u):
     body = """<p class="eyebrow">Group nights</p><h1>Plan a group night</h1>
-<p class="lede">Two pages we have actually checked: a per-person price split for a group of 10, and a cruise guide that only states piers and timing we could verify.</p>
+<p class="lede">Checked pages for a group of 10, a harbor cruise, a boat party, and a bachelor night. Each one only states what we could verify.</p>
 <a class="card-link" href="/plans/bachelorette-night.html"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus, or yacht, priced per person. Checked Oct 18, 2026.</span></span><span class="go">See prices →</span></a>
 <a class="card-link" href="/plans/nyc-dinner-cruises.html"><span>NYC dinner and sunset cruises<span class="sub">Piers, timing, and what we did not confirm. Checked Nov 11, 2026.</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="/plans/nyc-boat-party.html"><span>NYC boat party<span class="sub">DJ cruise, sunset sail, and the dinner boat. Checked Nov 16, 2026.</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="/plans/bachelor-party.html"><span>Bachelor party ideas<span class="sub">A boat, a comedy room, or a checked club. Checked Nov 16, 2026.</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="/guides/nyc-comedy-clubs.html"><span>NYC comedy clubs<span class="sub">Rooms the clubs publish, plus comedy in the feed.</span></span><span class="go">Read →</span></a>
 """
     write("/plans/index.html", page("Group nights in NYC | NY Nightlife",
-                                    "Bachelorette prices per person and a checked guide to NYC dinner and sunset cruises.",
-                                    "/plans/", body, None, "no-bar", updated="2026-11-11"))
+                                    "Bachelorette prices, NYC boat party, bachelor party ideas, and a checked guide to dinner and sunset cruises.",
+                                    "/plans/", body, None, "no-bar", updated="2026-11-16"))
 
 
 def image_credits(page, write):
@@ -312,12 +327,243 @@ def image_credits(page, write):
                                      "/image-credits.html", body, None, "no-bar", updated="2026-11-11"))
 
 
+MONEY_CHECKED = "2026-11-16"
+
+
+def _money_page(page, write, path, title, desc, body, faqs, image_alt):
+    import present
+    schema = [
+        {"@context": "https://schema.org", "@type": "Article", "headline": title.split("|")[0].strip(),
+         "dateModified": MONEY_CHECKED, "author": {"@type": "Person", "name": "Dan Herlehy"}},
+        present.faq_schema(faqs),
+    ]
+    if len(title) > 60:
+        raise SystemExit(f"title over 60 characters ({len(title)}): {title}")
+    write(path, page(title, desc, path, body, schema, "tall-bar", img_alt=image_alt, updated=MONEY_CHECKED))
+
+
+def comedy_events(rows, now, parse_when):
+    """Showtime rows that are comedy and have not already ended. Listings with no
+    real start (Viator products) stay out. `now` is timezone-aware."""
+    kept = []
+    cutoff = now - dt.timedelta(hours=6)
+    for ev in rows or []:
+        if ev.get("listing") or not ev.get("start"):
+            continue
+        cat = (ev.get("category") or "").lower()
+        blob = f"{ev.get('title') or ''} {ev.get('venue_name') or ''}".lower()
+        if cat != "comedy" and not re.search(r"\bcomedy\b", blob):
+            continue
+        start = parse_when(ev.get("start"))
+        if not start or start < cutoff:
+            continue
+        kept.append(ev)
+    kept.sort(key=lambda r: r.get("start") or "")
+    return kept[:8]
+
+
+def _comedy_feed():
+    import events
+    snap = events.load_snapshot()
+    rows = comedy_events(snap.get("events") or [], events.local_now(), events.parse_when)
+    return rows, (snap.get("fetched_at") or "")[:10] or "unknown"
+
+
+def boat_party(page, write, u, actions, H):
+    """Boat party and sunset cruise. Facts opened on the operators' sites on MONEY_CHECKED."""
+    import present
+    path = "/plans/nyc-boat-party.html"
+    book = affiliates.block(
+        ("sunset-cruise", "dinner-cruise", "jazz-brunch"),
+        "nynightlife-nyc-boat-party", "nyc-boat-party", u, "Book a boat",
+        "Viator listings, separate from the facts above. " + affiliates.NOTE,
+        heading_id="book")
+    faqs = [
+        ("What counts as an NYC boat party?",
+         "Circle Line describes Sip 'N Groove as an 18+ live-DJ party cruise from Pier 83, built for groups, birthdays, and a night out. Harbor Lights and Statue at Sunset are sightseeing cruises. City Cruises' Signature Dinner Cruise is a 2.5-hour dinner with a live DJ from Pier 61."),
+        ("Where do the sunset cruises leave from?",
+         "Circle Line's Harbor Lights leaves from Pier 83, 83 North River Piers, New York, NY 10036. Statue at Sunset leaves from Pier 16, 89 South Street, New York, NY 10038. City Cruises' Signature Dinner Cruise boards at Pier 61, Chelsea Piers, West 23rd Street and 12th Avenue."),
+        ("What time is sunset on the boat?",
+         "Circle Line's schedule lists Harbor Lights at 7pm in off-peak, shoulder, and peak seasons, and at 5pm in the winter season it dates January 5 to March 5. Its comparison page instead says 6pm from January through March. Statue at Sunset is the sailing timed near sunset, and that departure moves with the season. Check the operator's calendar for the date you want."),
+        ("Can a group book together?",
+         "Circle Line's Harbor Lights page says groups of 15 or more can ask for special pricing, and that drinks and catered food can be added. It does not publish the group rate. City Cruises says the dinner cruise holds a table for the party size and that children are welcome, with infants under three cruising free."),
+    ]
+    body = H["plate"]("nyc-boat-party", "NYC boat party", "Guide · New York Harbor") + f"""
+<p class="lede">A ticketed night on the harbor, not a private yacht quote. These are the sailings the operators describe, checked {MONEY_CHECKED}.</p>
+{present.answer_box("For an NYC boat party, Circle Line's Sip 'N Groove is the 18+ DJ cruise from Pier 83. Harbor Lights (Pier 83, 2 hours) and Statue at Sunset (Pier 16, about 90 minutes) are sightseeing cruises. City Cruises' Signature Dinner Cruise is 2.5 hours from Pier 61 with a dinner buffet, a live DJ, and a casual dress code. We are not publishing a ticket price. Checked " + MONEY_CHECKED + ".")}
+<h2>The party cruise</h2>
+<p>Circle Line's own comparison of its evening cruises calls Sip 'N Groove a two-hour 18+ party cruise from Pier 83 with a live DJ and a full bar. The same page says it fits birthdays, bachelorette weekends, and groups of friends. It does not list a clock time or a dress code. Alcohol service is still 21+ in New York. <a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21 in NYC</a> cites the statute. Boarding age is the 18+ rule printed for this sailing.</p>
+<h2>Sunset and night sightseeing</h2>
+<p>Harbor Lights is a two-hour narrated cruise from Pier 83 with open-air decks, a full bar, and concessions. Circle Line's Harbor Lights page says groups of 15 or more can get special pricing, and that cocktails, beer, wine, soft drinks, and catered food can be added. It does not print that price.</p>
+<p>On the schedule page, Harbor Lights is 7pm in the off-peak, shoulder, and peak seasons, and 5pm in the winter season dated January 5 to March 5. The evening-cruise comparison instead says 7pm most of the year and 6pm from January through March. Both pages say the calendar is what to book against, and the schedule page says times can change and that holiday sailings replace the regular cruise.</p>
+<p>Statue at Sunset is about 90 minutes from Pier 16 at the South Street Seaport, with music and drinks and no narration. Its departure is the one Circle Line moves to stay near sunset. The schedule lists it as limited in winter, about 4:00–5:30pm off-peak, about 6:00–7:00pm in the shoulder, and about 7:30pm at peak.</p>
+<p>The same comparison says Harbor Lights and Statue at Sunset can work for families who are fine with an evening departure. Sip 'N Groove is 18 and older. None of those three write a dress code.</p>
+<p>A Holiday Harbor Lights cruise is listed on the Harbor Lights page for November 27, 2026 through January 3, 2027. That is a separate sailing from the regular Harbor Lights cruise.</p>
+<p>Public sunset tickets we priced on October 18, 2026, and the piers we had already written up, are on <a href="{u('/plans/nyc-dinner-cruises.html')}">NYC dinner and sunset cruises</a> and <a href="{u('/plans/bachelorette-night.html')}">Bachelorette Night for 10</a>. A bachelor group using the same boats is on <a href="{u('/plans/bachelor-party.html')}">bachelor party ideas</a>.</p>
+<h2>Dinner cruise</h2>
+<p>City Cruises' Signature Dinner Cruise page says the sailing is 2.5 hours from Pier 61, Chelsea Piers, West 23rd Street and 12th Avenue, New York, NY. Boarding is 30 minutes before the start. The page lists a dinner buffet, a live DJ, alcoholic drinks for sale, a casual dress code, a table for the party, and an open-air rooftop lounge. Children are welcome and infants under three cruise free. The page shows a starting price that changes with the date, so this guide does not print a number.</p>
+<h2>If the night continues on land</h2>
+<p>Door facts for clubs and bars we have checked, including dress and cover, are on the venue pages. Nothing here claims they are next to a pier.</p>
+<ul class="clean">
+<li><a href="{u('/venues/marquee-new-york.html')}">Marquee New York</a></li>
+<li><a href="{u('/venues/le-bain.html')}">Le Bain</a></li>
+<li><a href="{u('/venues/the-dead-rabbit.html')}">The Dead Rabbit</a></li>
+<li><a href="{u('/guides/nyc-dress-codes.html')}">Dress codes</a> for the venues on this site</li>
+</ul>
+{book}
+{present.faq_html(faqs)}
+<h2 id="sources">Sources</h2>
+<p class="small">Checked {MONEY_CHECKED}.</p>
+<ol class="sources">
+<li>Circle Line Harbor Lights: <a href="https://www.circleline.com/sightseeing-cruises/harbor-lights" rel="nofollow noopener">Harbor Lights cruise</a></li>
+<li>Circle Line evening cruises: <a href="https://www.circleline.com/about/nyc-cruise-guide/NYC-Sunset-and-Night-Cruises-Compared" rel="nofollow noopener">Sunset and night cruises compared</a></li>
+<li>Circle Line schedule: <a href="https://www.circleline.com/schedule" rel="nofollow noopener">2026 cruise schedule</a></li>
+<li>City Cruises Signature Dinner Cruise: <a href="https://citycruises.com/tickets/new-york-city/new-york-signature-dinner-cruise" rel="nofollow noopener">Signature Dinner Cruise</a></li>
+</ol>"""
+    btns = (f'<a class="btn primary" href="#book">See boat listings</a>'
+            f'<a class="btn quiet" href="{u("/plans/nyc-dinner-cruises.html")}">Cruise guide</a>')
+    disclose = f"Affiliate links are labeled. Listing prices change. Facts checked {MONEY_CHECKED}."
+    _money_page(page, write, path,
+                "NYC boat party and sunset cruise | NY Nightlife",
+                "NYC boat party and sunset cruise: Circle Line's DJ cruise, Harbor Lights, Statue at Sunset, and City Cruises' dinner boat. Checked 2026-11-16.",
+                body + actions(btns, disclose), faqs,
+                "NYC boat party and sunset cruise")
+    return path, MONEY_CHECKED
+
+
+def bachelor_party(page, write, u, actions, H):
+    """Bachelor party ideas limited to operator facts and pages already on this site."""
+    import present
+    path = "/plans/bachelor-party.html"
+    book = affiliates.block(
+        ("bar-crawls", "comedy", "sunset-cruise", "night-tours"),
+        "nynightlife-bachelor-party", "bachelor-party", u, "Book a piece of the night",
+        "Viator listings, separate from the checked pages above. " + affiliates.NOTE,
+        heading_id="book")
+    faqs = [
+        ("What are NYC bachelor party ideas you actually checked?",
+         "A harbor boat, a comedy club, or a nightclub that already has a fact page here. Circle Line's Sip 'N Groove is an 18+ DJ cruise. Comedy Cellar, Gotham Comedy Club, The Stand, and New York Comedy Club publish their rooms on their own sites. This page does not sell a package or a price."),
+        ("Is a boat a good bachelor plan?",
+         "Sip 'N Groove is the Circle Line sailing written for groups and birthdays. It is 18+, two hours, from Pier 83, with a live DJ and a full bar. The dinner cruise from Pier 61 is a separate ticket with a casual dress code. Details and sources are on the boat party page."),
+        ("Where do the per-person prices live?",
+         "The only per-person split on this site is Bachelorette Night for a group of 10, checked October 18, 2026. With 6 people the bus and yacht on that page cost more per head. This bachelor page does not repeat those listing prices."),
+        ("What should the group wear?",
+         "City Cruises prints a casual dress code for its Signature Dinner Cruise. Circle Line's evening pages we checked do not print one. Clubs are different: use the dress-code table and the venue page before you go."),
+    ]
+    body = H["plate"]("bachelor-party", "NYC bachelor party", "Guide · group night") + f"""
+<p class="lede">Three kinds of plan we could verify. No package price, and no ranking.</p>
+{present.answer_box("NYC bachelor party ideas on this site are a boat, a comedy room, or a club we have already checked. Circle Line's Sip 'N Groove is an 18+ DJ cruise from Pier 83. Comedy Cellar, Gotham, The Stand, and New York Comedy Club publish their own addresses. Covers and dress codes for clubs stay on the venue pages. Checked " + MONEY_CHECKED + ".")}
+<h2>Start on the water</h2>
+<p>The boat we can describe from the operator is on <a href="{u('/plans/nyc-boat-party.html')}">NYC boat party</a>. Short version: Sip 'N Groove is Circle Line's 18+ DJ cruise from Pier 83, and City Cruises runs a 2.5-hour dinner with a DJ from Pier 61. <a href="{u('/plans/nyc-dinner-cruises.html')}">Dinner and sunset cruises</a> has the sightseeing piers.</p>
+<h2>Comedy</h2>
+<p>A show is a simpler group plan than a club door. Addresses, Comedy Cellar's published prices, and any comedy row in the events feed are on <a href="{u('/guides/nyc-comedy-clubs.html')}">NYC comedy clubs</a>.</p>
+<h2>Clubs we have already checked</h2>
+<p>These are not a ranking. Each page has the cover, dress code, age, and hours we could source, plus the date that page was checked. Read the page before you promise the group a yes at the door.</p>
+<ul class="clean">
+<li><a href="{u('/venues/marquee-new-york.html')}">Marquee New York</a>, Chelsea</li>
+<li><a href="{u('/venues/house-of-yes.html')}">House of Yes</a>, Bushwick</li>
+<li><a href="{u('/venues/nebula.html')}">Nebula</a></li>
+<li><a href="{u('/guides/nyc-dress-codes.html')}">Dress codes</a> and <a href="{u('/guides/nyc-bar-closing-time.html')}">when service stops</a></li>
+</ul>
+<h2>A priced split, if you want numbers</h2>
+<p>We have not built a bachelor price sheet. <a href="{u('/plans/bachelorette-night.html')}">Bachelorette Night for 10</a> splits a cruise, a party bus, and a small yacht per person from listings checked October 18, 2026. Those listings are not bachelor-only. With 6 people the bus and yacht on that page cost more per head, and a per-ticket cruise does not.</p>
+{book}
+{present.faq_html(faqs)}
+<h2 id="sources">Sources</h2>
+<p class="small">Checked {MONEY_CHECKED}. Club door facts stay on the venue pages, which name their own sources.</p>
+<ol class="sources">
+<li>Circle Line evening cruises: <a href="https://www.circleline.com/about/nyc-cruise-guide/NYC-Sunset-and-Night-Cruises-Compared" rel="nofollow noopener">Sunset and night cruises compared</a></li>
+<li>City Cruises Signature Dinner Cruise: <a href="https://citycruises.com/tickets/new-york-city/new-york-signature-dinner-cruise" rel="nofollow noopener">Signature Dinner Cruise</a></li>
+<li>Comedy Cellar: <a href="https://www.comedycellar.com/" rel="nofollow noopener">showtimes and prices</a> and <a href="https://www.comedycellar.com/contact-us/" rel="nofollow noopener">entrances</a></li>
+<li>Gotham Comedy Club: <a href="https://gothamcomedyclub.com/" rel="nofollow noopener">Gotham Comedy Club</a></li>
+<li>The Stand: <a href="https://www.thestandnyc.com/" rel="nofollow noopener">The Stand</a></li>
+<li>New York Comedy Club: <a href="https://www.newyorkcomedyclub.com/" rel="nofollow noopener">New York Comedy Club</a></li>
+</ol>"""
+    btns = (f'<a class="btn primary" href="{u("/plans/nyc-boat-party.html")}">Boat party</a>'
+            f'<a class="btn quiet" href="{u("/guides/nyc-comedy-clubs.html")}">Comedy clubs</a>')
+    disclose = f"Affiliate links are labeled. We did not invent a bachelor package price. Facts checked {MONEY_CHECKED}."
+    _money_page(page, write, path,
+                "NYC bachelor party ideas | NY Nightlife",
+                "NYC bachelor party ideas we could verify: an 18+ harbor cruise, comedy clubs, and nightclubs with checked door facts.",
+                body + actions(btns, disclose), faqs,
+                "NYC bachelor party ideas")
+    return path, MONEY_CHECKED
+
+
+def comedy_clubs(page, write, u, actions, H):
+    """Comedy rooms from the clubs' own sites, plus comedy rows in the events feed."""
+    import present
+    path = "/guides/nyc-comedy-clubs.html"
+    rows, fetched = _comedy_feed()
+    note = ("Comedy rows are events in the latest feed whose category or title says comedy. "
+            "Ticketmaster links are that event's page, with no affiliate tag. "
+            f"Feed checked {fetched}.")
+    book = affiliates.block(
+        ("comedy",), "nynightlife-nyc-comedy-clubs", "nyc-comedy-clubs", u, "Book a comedy show",
+        "Viator search, separate from the clubs above. " + affiliates.NOTE_ONE,
+        heading_id="book")
+    faqs = [
+        ("Which comedy clubs did you verify?",
+         "Comedy Cellar (117 MacDougal Street, plus Village Underground and Fat Black Pussycat at 130 West 3rd Street), Gotham Comedy Club at 208 West 23rd Street, The Stand at 116 East 16th Street and The Stand West at 407 West 15th Street, and New York Comedy Club at 241 East 24th Street, 85 East 4th Street, and 236 West 78th Street. This page does not rank them."),
+        ("What does Comedy Cellar charge?",
+         "On 2026-11-16 the Comedy Cellar homepage listed a two-item minimum per person (food, a drink, or a bottle of water). Friday and Saturday shows were $25, Thursday and Sunday shows $18, and Monday to Wednesday shows $15, with New Joke Night at $10 and Hot Soup Comedy at $20. Holidays and special events were $25. Check the homepage before you go."),
+        ("Does The Stand have a drink minimum?",
+         "The Stand's homepage says its cocktails do not come with a two-drink minimum. That is the club's line, not a price. The site lists hours of Monday to Thursday 12pm to 12am, Friday 12pm to 2am, Saturday 11am to 2am, and Sunday 11am to 12am."),
+        ("Where are tonight's comedy shows?",
+         "The list on this page is whatever the events feed marked as comedy, or titled as comedy, and that has not already ended. If it is empty, the feed did not include one. Lineups on the club sites change and are not copied here."),
+    ]
+    body = H["plate"]("nyc-comedy-clubs", "NYC comedy clubs", "Guide · stand-up") + f"""
+<p class="lede">Four clubs, using only what their own sites said on {MONEY_CHECKED}. No ranking, and no copied lineup.</p>
+{present.answer_box("Comedy Cellar, Gotham Comedy Club, The Stand, and New York Comedy Club all publish a New York room on their own sites. Comedy Cellar prints show prices and a two-item minimum. The Stand says it has no two-drink minimum. This page does not call any of them the best. Comedy events from the live feed are listed when the feed has them. Checked " + MONEY_CHECKED + ".")}
+<h2>Comedy Cellar</h2>
+<p>The homepage is the price list. On {MONEY_CHECKED} it said every show has a two-item minimum per person, and that the item can be food, a drink, or a bottle of water. Friday and Saturday shows were $25. Thursday and Sunday shows were $18. Monday to Wednesday shows were $15, except New Joke Night at $10 and Hot Soup Comedy at $20. Holidays and special events were $25.</p>
+<p>The contact page gives two entrances. 117 MacDougal Street is the Comedy Cellar and the Olive Tree Cafe. 130 West 3rd Street is the Village Underground and Fat Black Pussycat, which has a bar and a lounge. The phone on that page is 212-254-3480. It tells ticket holders to bring the QR code from the reservation email to the entrance named in that email.</p>
+<h2>Gotham Comedy Club</h2>
+<p>Gotham's site lists the club at 208 West 23rd Street, between 7th and 8th Avenues, New York, NY 10011, phone 212-367-9000. The same pages describe pub food, a liquor selection that includes 30 kinds of vodka, and a wine list. The schedule names the main room and The Vintage Lounge, including a Kids 'N Comedy show. It does not publish a cover or a dress code on the pages we opened, so those are omitted.</p>
+<h2>The Stand</h2>
+<p>The Stand's site lists two rooms: 116 East 16th Street, New York, NY 10003 (212-677-2600) and The Stand West at 407 West 15th Street, New York, NY 10011. Under hours it lists Monday to Thursday 12pm–12am, Friday 12pm–2am, Saturday 11am–2am, and Sunday 11am–12am. The cocktails line says they do not need a two-drink minimum. The contact page points private-party questions to a private parties page. We did not copy that page's packages.</p>
+<h2>New York Comedy Club</h2>
+<p>New York Comedy Club's site lists three rooms and three phones: Midtown at 241 East 24th Street, New York, NY 10010, (212) 696-5233; East Village at 85 East 4th Street, New York, NY 10003, (212) 994-9828; Upper West Side at 236 West 78th Street, New York, NY 10024, (973) 222-7422. The homepage is a changing lineup, so this guide does not repeat the bill.</p>
+<h2>Comedy in the events feed</h2>
+{present.events_html(rows, "Comedy coming up", note, "No upcoming comedy listing is in the latest feed. That means the feed did not include one, not that the clubs are dark.")}
+<h2>Around the show</h2>
+<p>These are checked bars and the rules that actually apply after you leave the club. They are not comedy venues.</p>
+<ul class="clean">
+<li><a href="{u('/venues/death-and-co.html')}">Death &amp; Co</a>, <a href="{u('/venues/attaboy.html')}">Attaboy</a>, and <a href="{u('/venues/please-dont-tell.html')}">Please Don't Tell</a></li>
+<li><a href="{u('/guides/nyc-dress-codes.html')}">Dress codes</a>, <a href="{u('/guides/nyc-bar-closing-time.html')}">the 4am rule</a>, and <a href="{u('/guides/under-21-nyc-bars-clubs.html')}">under 21</a></li>
+<li><a href="{u('/tonight/')}">Tonight</a> for the rest of the feed, and <a href="{u('/plans/bachelor-party.html')}">bachelor party ideas</a> if the show is the group's plan</li>
+</ul>
+{book}
+{present.faq_html(faqs)}
+<h2 id="sources">Sources</h2>
+<p class="small">Checked {MONEY_CHECKED}. Show bills on these sites change; the addresses and the Comedy Cellar price list are what we wrote down.</p>
+<ol class="sources">
+<li>Comedy Cellar showtimes and prices: <a href="https://www.comedycellar.com/" rel="nofollow noopener">comedycellar.com</a></li>
+<li>Comedy Cellar entrances: <a href="https://www.comedycellar.com/contact-us/" rel="nofollow noopener">contact page</a></li>
+<li>Gotham Comedy Club: <a href="https://gothamcomedyclub.com/" rel="nofollow noopener">gothamcomedyclub.com</a> and <a href="https://gothamcomedyclub.com/contact/" rel="nofollow noopener">contact</a></li>
+<li>The Stand: <a href="https://www.thestandnyc.com/" rel="nofollow noopener">thestandnyc.com</a> and <a href="https://thestandnyc.com/contact-us" rel="nofollow noopener">contact</a></li>
+<li>New York Comedy Club: <a href="https://www.newyorkcomedyclub.com/" rel="nofollow noopener">newyorkcomedyclub.com</a></li>
+</ol>"""
+    btns = (f'<a class="btn primary" href="#book">Comedy tickets</a>'
+            f'<a class="btn quiet" href="{u("/tonight/")}">Tonight</a>')
+    disclose = f"Affiliate links are labeled. Club prices are copied only where the club printed them. Facts checked {MONEY_CHECKED}."
+    _money_page(page, write, path,
+                "NYC comedy clubs | NY Nightlife",
+                "Comedy Cellar, Gotham Comedy Club, The Stand, and New York Comedy Club from their own sites, plus comedy events in the live feed.",
+                body + actions(btns, disclose), faqs,
+                "NYC comedy clubs")
+    return path, MONEY_CHECKED
+
+
 def build(page, write, u, actions, fmt_date, vs, H):
     for f in sorted((ROOT / "data" / "playbooks").glob("*.json")):
         playbook(page, write, u, actions, fmt_date, json.loads(f.read_text(encoding="utf-8")), H)
     cruise = cruise_guide(page, write, u, actions, fmt_date, H)
+    boat = boat_party(page, write, u, actions, H)
+    bachelor = bachelor_party(page, write, u, actions, H)
+    comedy = comedy_clubs(page, write, u, actions, H)
     plans_hub(page, write, u)
     image_credits(page, write)
     home(page, write, u, vs, H)
     trust_pages(page, write, u)
-    return [cruise, ("/plans/", "2026-11-11"), ("/image-credits.html", "2026-11-11")]
+    return [cruise, boat, bachelor, comedy, ("/plans/", MONEY_CHECKED), ("/image-credits.html", "2026-11-11")]

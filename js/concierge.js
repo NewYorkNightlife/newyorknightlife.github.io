@@ -359,6 +359,16 @@
     var p = PLANS[0];
     return p ? ' Planning for a group? <a href="' + esc(R(p.url)) + '">' + esc(p.title) + ', priced per person →</a>' : '';
   }
+  // Stable sentence for "birthday with 6 friends" and any other headcount.
+  // It does not depend on the events feed or the day of the week. The playbook
+  // group size is fixed data; the number comes from the question.
+  function sizeNote(t) {
+    var p = PLANS[0];
+    if (!p) return '';
+    var n = (String(t).match(/\b(\d{1,2})\b/) || [])[1];
+    if (!(n && +n !== +p.group)) return '';
+    return ' These are priced for ' + p.group + '; with ' + n + ' people the bus and yacht cost more (or less) per head, the cruise doesn’t change.';
+  }
   function answerPlan(t) {
     var p = PLANS[0];
     if (!p) return botSay('Browse ' + ALL_LINK());
@@ -366,10 +376,8 @@
       return '<li>' + esc(o.name) + ': ' + money(o.low) + '–' + money(o.high) + ' per person' +
         (o.label ? ' ' + esc(o.label) : '') + (o.tag ? ' <b>' + esc(o.tag) + '</b>' : '') + '</li>';
     }).join('');
-    var n = (t.match(/\b(\d{1,2})\b/) || [])[1];
-    var size = n && +n !== p.group ? ' These are priced for ' + p.group + '; with ' + n + ' people the bus and yacht cost more (or less) per head, the cruise doesn’t change.' : '';
     botSay('<b>' + esc(p.title) + '</b>, priced for ' + p.group + ' people:<ul>' + opts + '</ul>' +
-      (p.combo ? esc(p.combo.label) + ' together: about ' + money(p.combo.low) + '–' + money(p.combo.high) + ' per person. ' : '') + size +
+      (p.combo ? esc(p.combo.label) + ' together: about ' + money(p.combo.low) + '–' + money(p.combo.high) + ' per person. ' : '') + sizeNote(t) +
       ' <a href="' + esc(R(p.url)) + '">Prices, sources &amp; how to book →</a>');
     setChips(['Rooftops', 'Cocktail bars', 'Dress codes', 'No cover']);
   }
@@ -475,7 +483,9 @@
       if (tags.length) return botSay(listOrNone(hasAll(tags), tagHeading(tags), tags.indexOf('no_cover') !== -1 ? 'cover' : null, area) + extra);
       if (PLANW.test(t)) return answerPlan(t);
       if (group) {
-        botSay('Our group playbook is built for a bachelorette of 10, but the math works for any group night:');
+        // The size sentence is in this first bubble. The price list follows on a
+        // timer; a short reader (or a short test wait) still gets "with N people".
+        botSay('Our group playbook is built for a bachelorette of 10, but the math works for any group night.' + sizeNote(t));
         return setTimeout(function () { answerPlan(t); }, 500);
       }
       if (area) return botSay(listOrNone(function () { return true; }, 'Checked venues', null, area));
