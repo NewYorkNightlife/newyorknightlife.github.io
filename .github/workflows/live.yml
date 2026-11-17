@@ -2,7 +2,8 @@
 # main only accepts changes through pull requests, so this job keeps its data on its own branch,
 # `live-data` (data/live/*.json and nothing else). js/live.js reads it from
 # raw.githubusercontent.com and falls back to the copy in main's /data/live/ if that fails.
-# No page is ever rebuilt or committed by this job.
+# This job does not commit pages. A successful run starts "Daily build" through
+# that workflow's workflow_run trigger, which is what republishes the dated HTML.
 # Problems open (or comment on) a GitHub issue titled "Live data job failed"; a good run closes it.
 name: Live data
 
