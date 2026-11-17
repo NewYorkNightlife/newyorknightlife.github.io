@@ -70,6 +70,17 @@ def test_dedupe_and_fallback():
         {"id": "c", "title": "Stage Band", "venue_name": "Wave Hill", "start": "2026-11-15T18:00:00-05:00", "source": "nyc_parks"},
     ]
     check("near-duplicate collapsed", len(events.dedupe(rows)) == 2)
+    check("dedupe ignores input order",
+          [ev["id"] for ev in events.dedupe(rows)] == [ev["id"] for ev in events.dedupe(list(reversed(rows)))])
+    same_start = [
+        {"id": "z", "title": "Late", "venue_name": "Hall", "start": "2026-11-15T20:00:00-05:00"},
+        {"id": "m", "title": "Early id", "venue_name": "Room", "start": "2026-11-15T20:00:00-05:00"},
+    ]
+    check("same start sorts by id", [ev["id"] for ev in events.dedupe(same_start)] == ["m", "z"])
+    route = present.route_html()
+    check("route runs 5pm to 4am", 'data-hour="17"' in route and 'data-hour="28"' in route and ">4am<" in route)
+    bare = present.route_html(heading=False)
+    check("hero route is the line only", bare.startswith("<ol") and "<h2>" not in bare)
     previous = {"events": [
         {"id": "p", "source": "nyc_parks", "title": "Old", "venue_name": "Park", "start": "2026-11-11T22:00:00-05:00"},
         {"id": "t", "source": "ticketmaster", "title": "Show", "venue_name": "Hall",
@@ -187,6 +198,21 @@ def json_row(row):
     return str(row)
 
 
+def test_snapshot_write_is_idempotent():
+    import tempfile
+    snap = {"fetched_at": "2026-11-17T12:00:00-05:00", "sources": {}, "events": [
+        {"id": "b", "start": "2026-11-17T22:00:00-05:00"},
+        {"id": "a", "start": "2026-11-17T20:00:00-05:00"},
+    ], "listings": []}
+    with tempfile.TemporaryDirectory() as folder:
+        path = pathlib.Path(folder) / "latest.json"
+        events.write_snapshot(snap, path)
+        first = path.read_bytes()
+        events.write_snapshot(snap, path)
+        check("snapshot rewrite matches", first == path.read_bytes() and first.startswith(b"{"))
+        check("no temp file left behind", not (pathlib.Path(folder) / "latest.json.tmp").exists())
+
+
 def test_match_and_words():
     venues = [{"slug": "house-of-yes", "name": "House of Yes", "borough": "Brooklyn", "neighborhood": "Bushwick"}]
     hit = events.match_venue("House of Yes", venues)
@@ -262,6 +288,7 @@ if __name__ == "__main__":
     test_filters()
     test_time()
     test_dedupe_and_fallback()
+    test_snapshot_write_is_idempotent()
     test_ticketmaster()
     test_match_and_words()
     print(f"{'OK' if not fails else str(fails) + ' FAILED'}: event fetcher tests")

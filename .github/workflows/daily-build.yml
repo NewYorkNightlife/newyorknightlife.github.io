@@ -2,12 +2,25 @@
 # GitHub Pages source has to be "GitHub Actions" for the deploy job to go live.
 # Until then, main still contains the generated HTML from the last pull request.
 # This job does not commit. Ticketmaster and Viator run only when their secrets exist.
+#
+# The New York date on / and /tonight/ is baked in at build time. A single
+# top-of-hour cron was not enough: on 2026-11-17 the 10:00 UTC run had not
+# started by 17:30 UTC, and the previous day's run started at 20:04 UTC, so
+# the live page still said Monday Nov 16. GitHub delays the top of the hour,
+# so the schedules sit at :17 and :41. A successful Live data run starts this
+# same workflow (workflow_run). Overlapping production runs queue on one
+# group and each run rewrites the events snapshot in place, so a second
+# build the same day publishes the later clock without corrupting the file.
 name: Daily build
 
 on:
   schedule:
-    - cron: "0 10 * * *"
+    - cron: "17 9 * * *"
+    - cron: "41 14 * * *"
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Live data"]
+    types: [completed]
   push:
     branches: [main]
   pull_request:
@@ -16,11 +29,12 @@ permissions:
   contents: read
 
 concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.event.pull_request.number) || 'pages-live' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -77,7 +91,7 @@ jobs:
           path: ${{ runner.temp }}/site
 
   deploy:
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     needs: build
     runs-on: ubuntu-latest
     permissions:

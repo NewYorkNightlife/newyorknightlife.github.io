@@ -125,14 +125,14 @@ def home(page, write, u, vs, H):
     short = (f"Tonight in New York, this site lists {n} checked bars and clubs and the public events we could pull for this week. "
              f"{len(tonight)} of those events fall in tonight's 5pm to 5am window, and {late} venues list hours past midnight on {now.strftime('%A')}. "
              "Dress code, age, and cover stay on each venue page with the date we checked them.")
-    body = f"""<section class="hero">{hero}<div class="hero-copy"><p class="eyebrow">New York City</p><h1>Tonight in New York</h1>
+    body = f"""<section class="hero route-hero">{hero}<div class="hero-copy"><p class="eyebrow"><span class="line-mark" aria-hidden="true">N</span>New York City</p><h1>Tonight in New York</h1>
 <p class="hero-live">{e(live)}</p>
 <div class="inline-actions"><a class="btn primary" href="{u('/tonight/')}">What's on tonight</a><a class="btn ghost" href="{u('/plans/')}">Plan a group night</a></div>
+{present.route_html(heading=False)}
 </div></section>
 <p class="credit">Photo: {credit}</p>
 {present.answer_box(short)}
 {present.events_html(shown, "What's on in NYC tonight / this week", note, "No evening parks, festival, or ticketed listings are in the latest feed.")}
-{present.route_html()}
 <h2>Beyond the bar</h2>
 <p class="lede">Cruises, a boat party, a bachelor night, comedy rooms, and the door facts. Each page only states what we could verify.</p>
 <a class="card-link" href="{u('/plans/nyc-dinner-cruises.html')}"><span>Dinner and sunset cruises<span class="sub">Piers and timing we could verify</span></span><span class="go">Read →</span></a>

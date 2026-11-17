@@ -342,15 +342,21 @@ def events_html(rows, heading, note, empty):
             f'<p class="small">{e(note)}</p><div class="pcards">{cards}</div></section>')
 
 
-def route_html():
-    return """<section class="route-block"><h2>The night, as a line</h2>
-<p class="small">A route line, not a listing. The lit stop is the current part of the evening in New York.</p>
-<ol class="route" data-live>
+def route_html(heading=True):
+    """Clock of the night, 5pm to the 4am close. Not a listing of shows."""
+    line = """<ol class="route" data-live aria-label="Tonight from 5pm to 4am">
+<li data-hour="17"><b>5</b><span>Early</span><time>5pm</time></li>
 <li data-hour="20"><b>M</b><span>Music</span><time>8pm</time></li>
 <li data-hour="22"><b>C</b><span>Comedy</span><time>10pm</time></li>
-<li data-hour="24"><b>S</b><span>Bar</span><time>12am</time></li>
-<li data-hour="26"><b>R</b><span>Late</span><time>2am</time></li>
-</ol></section>"""
+<li data-hour="24"><b>S</b><span>Bars</span><time>12am</time></li>
+<li data-hour="26"><b>L</b><span>Late</span><time>2am</time></li>
+<li data-hour="28"><b>4</b><span>Close</span><time>4am</time></li>
+</ol>"""
+    if not heading:
+        return line
+    return """<section class="route-block"><h2>The night, as a line</h2>
+<p class="small">A route line, not a listing. Stops run from 5pm to the 4am close. The lit stop is the current part of the evening in New York.</p>
+""" + line + "</section>"
 
 
 def answer_box(text):

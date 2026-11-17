@@ -349,8 +349,12 @@ def apply_matches(events, venues):
 
 
 def dedupe(events):
+    """Collapse near-duplicates. Order follows start, then id, then title,
+    so the same set of rows always keeps the same events."""
     kept, seen = [], set()
-    for ev in sorted(events, key=lambda e: e.get("start") or ""):
+    ordered = sorted(events, key=lambda ev: (
+        ev.get("start") or "", str(ev.get("id") or ""), ev.get("title") or ""))
+    for ev in ordered:
         if ev.get("id") and ev["id"] in seen:
             continue
         if ev.get("id"):
@@ -769,6 +773,17 @@ def store_image(ev):
     return ev
 
 
+def write_snapshot(snap, path=None):
+    """Replace the snapshot atomically. The same payload written twice
+    produces the same bytes, and a crash mid-write leaves the previous file."""
+    path = pathlib.Path(path or SNAP)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = json.dumps(snap, ensure_ascii=False, indent=1) + "\n"
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(payload, encoding="utf-8")
+    os.replace(tmp, path)
+
+
 def load_snapshot():
     if not SNAP.exists():
         return {"fetched_at": None, "sources": {}, "events": [], "listings": []}
@@ -842,8 +857,7 @@ def run(now=None, get_json=None, post_json=None, store_images=True):
         if secret and secret in raw:
             raise RuntimeError("refusing to write a snapshot that contains an API key")
     snap = {"fetched_at": iso(now), "sources": status, "events": events, "listings": listings}
-    SNAP.parent.mkdir(parents=True, exist_ok=True)
-    SNAP.write_text(json.dumps(snap, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    write_snapshot(snap)
     return snap
 
 

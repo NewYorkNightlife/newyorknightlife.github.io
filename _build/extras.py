@@ -104,11 +104,11 @@ def tonight_page(H, vs):
         present.item_list("Tonight and this week", [(ev["title"], "/tonight/") for ev in (tonight + week)[:30]]),
     ]
     schemas += [s for s in (present.event_schema(ev) for ev in (tonight + week)[:24]) if s]
-    body = f"""<p class="eyebrow" style="margin-top:8px">New York City</p><h1>Tonight</h1>
+    body = f"""<p class="eyebrow" style="margin-top:8px"><span class="line-mark" aria-hidden="true">N</span>New York City</p><h1>Tonight</h1>
 {present.answer_box(short)}
+{present.route_html()}
 {present.events_html(tonight, "Tonight", note, "Nothing in the 5pm–5am window in the latest feed.")}
 {present.events_html(week[:24], "This week", "The next listings after tonight, from the same feeds.", "No later listings in this feed.")}
-{present.route_html()}
 {present.faq_html(faqs)}
 <h2>Open now, from checked hours</h2>
 <p class="lede">Which of our checked venues are open tonight, tonight's forecast, nightlife headlines and new liquor licenses.</p>
