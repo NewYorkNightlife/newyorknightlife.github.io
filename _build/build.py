@@ -89,6 +89,7 @@ def head(title, desc, path, schema=None, robots="index,follow", image=None, img_
 <meta name="twitter:image" content="{e(img)}">
 <meta name="twitter:image:alt" content="{e(img_alt)}">
 <meta name="theme-color" content="#05070C">
+<meta name='impact-site-verification' value='59f0bf98-cda3-4aaf-9bd2-b750205147c8'>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="{u('/fonts/instrument-sans-normal-400_700-latin.woff2')}">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="{u('/fonts/fraunces-normal-600-latin.woff2')}">
 <link rel="stylesheet" href="{u('/css/site.css')}?v={CSS_V}">
