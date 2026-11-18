@@ -240,16 +240,75 @@ def permits_keep(row):
     return typ in PERMIT_TYPES
 
 
-def in_tonight(start, now):
-    """5pm through 5am New York time. Before 5am still belongs to the night before."""
-    if start is None or now is None:
-        return False
-    start, now = start.astimezone(NY), now.astimezone(NY)
+# A show with no end time is treated as three hours long, here and in js/tonight.js.
+ASSUMED_LENGTH = dt.timedelta(hours=3)
+WD_SHORT = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+WD_LONG = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def night_window(now):
+    """5pm through 5am New York time.
+
+    From midnight until 5am the window is still the previous evening. The
+    date visitors should see is the date of that 5pm, not the morning's date.
+    """
+    if now is None:
+        return None, None
+    now = now.astimezone(NY)
     if now.hour < 5:
         begin = (now - dt.timedelta(days=1)).replace(hour=17, minute=0, second=0, microsecond=0)
     else:
         begin = now.replace(hour=17, minute=0, second=0, microsecond=0)
-    return begin <= start < begin + dt.timedelta(hours=12)
+    return begin, begin + dt.timedelta(hours=12)
+
+
+def night_facts(now):
+    begin, end = night_window(now)
+    return {
+        "begin": begin,
+        "end": end,
+        "short": WD_SHORT[begin.weekday()],
+        "long": WD_LONG[begin.weekday()],
+        "mon": MONTHS[begin.month - 1],
+        "day": begin.day,
+        "iso": begin.date().isoformat(),
+    }
+
+
+def in_tonight(start, now):
+    """True when `start` falls in the New York night that contains `now`."""
+    if start is None or now is None:
+        return False
+    begin, end = night_window(now)
+    return begin <= start.astimezone(NY) < end
+
+
+def event_end(ev, start=None):
+    start = start or parse_when((ev or {}).get("start"))
+    if start is None:
+        return None
+    return parse_when((ev or {}).get("end")) or (start + ASSUMED_LENGTH)
+
+
+def has_ended(ev, now, start=None):
+    """An event has ended when its end (or start plus three hours) is at or before `now`."""
+    if now is None:
+        return False
+    end = event_end(ev, start)
+    if end is None:
+        return False
+    return end <= now.astimezone(NY)
+
+
+def refresh_stamp(value):
+    """The data's own New York time, so 'Updated' is not mistaken for today's date."""
+    parsed = parse_when(value)
+    if not parsed:
+        return (str(value or ""))[:10]
+    hour = parsed.hour % 12 or 12
+    ap = "am" if parsed.hour < 12 else "pm"
+    return f"{parsed.strftime('%Y-%m-%d')} {hour}:{parsed.minute:02d}{ap} ET"
 
 
 def record(source, ident, title, start, end, venue_name, category, url, **extra):
@@ -376,14 +435,14 @@ def dedupe(events):
 
 
 def drop_past(events, now):
+    """Drop rows that have already ended. Rows that started earlier tonight and
+    are still going stay, which is why the fetch window has to reach back to 5pm."""
     out = []
     for ev in events:
         start = parse_when(ev.get("start"))
-        if not start:
+        if not start or has_ended(ev, now, start):
             continue
-        end = parse_when(ev.get("end")) or (start + dt.timedelta(hours=3))
-        if end > now:
-            out.append(ev)
+        out.append(ev)
     return out
 
 
@@ -422,9 +481,43 @@ def assemble(previous, results, now):
     return events, listings, status
 
 
+def fetch_start(now):
+    """Earliest wall time to ask NYC Open Data for.
+
+    Eight hours before the build is enough during the day. Once the night has
+    started, the lower bound also has to reach that night's 5pm, or a run
+    after 1am would miss a show that began at 5pm and is still going.
+    """
+    now = now.astimezone(NY)
+    begin, _ = night_window(now)
+    lookback = now - dt.timedelta(hours=8)
+    if now >= begin:
+        return min(begin, lookback)
+    return lookback
+
+
 def _window(now):
-    start = (now - dt.timedelta(hours=8)).strftime("%Y-%m-%dT%H:%M:%S")
-    end = (now + dt.timedelta(days=8)).strftime("%Y-%m-%dT%H:%M:%S")
+    start_at = fetch_start(now)
+    end_at = now.astimezone(NY) + dt.timedelta(days=8)
+    return start_at.strftime("%Y-%m-%dT%H:%M:%S"), end_at.strftime("%Y-%m-%dT%H:%M:%S")
+
+
+def tm_range(now):
+    """Ticketmaster startDateTime / endDateTime in UTC.
+
+    Discovery's startDateTime drops events that have already started. The
+    2026-11-18 04:18Z build was 23:18 in New York, so the query began at
+    04:18Z and every show from 5pm to 11:18pm was excluded. The night window
+    was then empty while the rest of the week (88 events, all later) remained.
+    Once the night has begun, start at that night's 5pm. Before 5pm, start at
+    the build clock so the first page of results is not filled with the morning.
+    """
+    now = now.astimezone(NY)
+    begin, _ = night_window(now)
+    start_at = begin if now >= begin else now
+    end_at = now + dt.timedelta(days=7)
+    start = start_at.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    end = end_at.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     return start, end
 
 
@@ -646,13 +739,12 @@ def fetch_ticketmaster(get_json, now):
     if not key:
         return None  # skipped
     fetched = iso(now)
-    start = now.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    end = (now + dt.timedelta(days=7)).astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    start, end = tm_range(now)
     out, misses = [], []
     for name in TM_QUERIES:
         q = {
             "apikey": key, "dmaId": TM_DMA, "classificationName": name,
-            "startDateTime": start, "endDateTime": end, "size": "40", "page": "0",
+            "startDateTime": start, "endDateTime": end, "size": "100", "page": "0",
             "sort": "date,asc", "includeTBA": "no", "includeTBD": "no", "includeTest": "no",
             "countryCode": "US",
         }
@@ -794,6 +886,41 @@ def load_snapshot():
     data.setdefault("events", [])
     data.setdefault("listings", [])
     return data
+
+
+PUBLIC_FIELDS = (
+    "id", "source", "title", "start", "end", "venue_name", "venue_slug",
+    "borough", "neighborhood", "category", "price_min", "url",
+    "image_url", "image_local", "image_w", "image_h",
+)
+
+
+def public_feed(snap, now=None):
+    """The week snapshot the browser re-slices. Ended rows are left out.
+
+    Unknown keys are dropped so a stray secret in a row cannot be published.
+    """
+    now = now or local_now()
+    rows = []
+    for ev in (snap or {}).get("events") or []:
+        if not ev.get("start") or has_ended(ev, now):
+            continue
+        row = {}
+        for key in PUBLIC_FIELDS:
+            value = ev.get(key)
+            if value not in (None, ""):
+                row[key] = value
+        rows.append(row)
+    return {"fetched_at": (snap or {}).get("fetched_at"), "events": rows}
+
+
+def write_public_feed(snap, path, now=None):
+    path = pathlib.Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = json.dumps(public_feed(snap, now), ensure_ascii=False, indent=1) + "\n"
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(payload, encoding="utf-8")
+    os.replace(tmp, path)
 
 
 def load_venues():

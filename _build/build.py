@@ -40,6 +40,7 @@ CSS_V = _ver(ROOT / "site.css")
 JS_V = _ver(ROOT / "concierge.js")
 LIVE_V = _ver(ROOT / "live.js")
 SIGNAL_V = _ver(ROOT / "signal.js")
+TONIGHT_V = _ver(ROOT / "tonight.js")
 OG_DIR = ROOT / "img" / "og"
 OG_DEFAULT = "/img/og/site.jpg"
 
@@ -152,14 +153,18 @@ def _auto_crumbs(path, label):
 
 
 def page(title, desc, path, body, schema=None, body_class="", robots="index,follow", image=None, img_alt=None,
-         crumbs=None, updated=None, crumb_label=None):
+         crumbs=None, updated=None, crumb_label=None, updated_iso=None):
     label = crumb_label or title.split("|")[0].strip()
     trail = _auto_crumbs(path, label) if crumbs is None else crumbs
     blocks = [s for s in (schema if isinstance(schema, list) else [schema]) if s] if schema else []
     if trail:
         blocks.append(present.breadcrumb_schema(trail))
     crumb_html = "" if path in ("/", "/index.html") else present.crumbs_html(trail)
-    upd = f'<p class="updated">Updated {e(updated)}</p>' if updated else ""
+    if updated:
+        extra = f' data-feed-updated="{e(updated_iso)}"' if updated_iso else ""
+        upd = f'<p class="updated"{extra}>Updated {e(updated)}</p>'
+    else:
+        upd = ""
     signal = f'<script defer src="{u("/js/signal.js")}?v={SIGNAL_V}"></script>\n'
     return (head(title, desc, path, blocks, robots, image, img_alt) +
             f'<body class="{body_class}">\n<div class="lamp" aria-hidden="true"></div>\n' + header() +
@@ -501,7 +506,8 @@ def copy_static():
     site = ROOT.parent
     # Nyla's updated script lives in _build until cutover, so the old live site keeps the old one
     pairs = [(ROOT / "site.css", OUT / "css" / "site.css"), (ROOT / "concierge.js", OUT / "js" / "concierge.js"),
-             (ROOT / "live.js", OUT / "js" / "live.js"), (ROOT / "signal.js", OUT / "js" / "signal.js")]
+             (ROOT / "live.js", OUT / "js" / "live.js"), (ROOT / "signal.js", OUT / "js" / "signal.js"),
+             (ROOT / "tonight.js", OUT / "js" / "tonight.js")]
     # the responsive set from make_images.py; its <slug>.jpg replaces the master
     pairs += [(f, OUT / "img" / f.name) for f in sorted(GEN.glob("*.jpg"))]
     pairs += [(f, OUT / "img" / f.name) for f in sorted(GEN.glob("*.webp"))]
@@ -580,10 +586,12 @@ def main():
     venues_index(vs)
     dress_hub(vs)
     import pages
-    XH = {"u": u, "page": page, "write": write, "fmt_date": fmt_date, "OUT": OUT, "LIVE_V": LIVE_V}
+    tonight_js = f"{u('/js/tonight.js')}?v={TONIGHT_V}"
+    XH = {"u": u, "page": page, "write": write, "fmt_date": fmt_date, "OUT": OUT, "LIVE_V": LIVE_V,
+          "tonight_js": tonight_js}
     plan_rows = pages.build(page, write, u, actions, fmt_date, vs,
                             {"plate": plate, "vcard": vcard, "picture": picture, "home_box": lambda: extras.home_box(XH),
-                             "newsletter": lambda: extras.newsletter_block(XH)})
+                             "newsletter": lambda: extras.newsletter_block(XH), "tonight_js": tonight_js})
     extras.tonight_page(XH, vs)
     changed = extras.changes_pages(XH, vs)   # None while the log is too thin to index
     extra = [extras.guide_under21(XH, vs), extras.guide_closing(XH, vs)] + ([("/changes/", changed)] if changed else [])
@@ -593,6 +601,7 @@ def main():
     nyla.build(write, fmt_date, vs, pbs, max(v.get("checked", "2026-10-18") for v in vs))
     copy_static()
     snap = events.load_snapshot()
+    events.write_public_feed(snap, OUT / "data" / "events.json")
     live_day = (snap.get("fetched_at") or SITE_EDITED)[:10]
     extra = [(p, live_day if p in ("/tonight/", "/") else d) for p, d in extra]
     write_meta(live_day)

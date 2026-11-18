@@ -117,6 +117,28 @@ def main():
     titles = [ev["title"] for ev in picked]
     if titles != ["Late set", "Comedy night"]:
         fail(f"comedy feed filter returned {titles}")
+    home = (ROOT / "index.html").read_text(encoding="utf-8")
+    tonight = (ROOT / "tonight" / "index.html").read_text(encoding="utf-8")
+    if "59f0bf98-cda3-4aaf-9bd2-b750205147c8" not in home or "59f0bf98-cda3-4aaf-9bd2-b750205147c8" not in tonight:
+        fail("impact site verification missing")
+    if "js/tonight.js" not in home or "data-events=" not in home or "data-night-line" not in home:
+        fail("home missing the tonight client")
+    if "js/tonight.js" not in tonight or 'data-night-page="tonight"' not in tonight:
+        fail("tonight page missing the tonight client")
+    if not (ROOT / "data" / "events.json").is_file():
+        fail("missing data/events.json")
+    else:
+        feed = json.loads((ROOT / "data" / "events.json").read_text(encoding="utf-8"))
+        if "events" not in feed or "fetched_at" not in feed:
+            fail("events.json is not the week snapshot")
+        blob = json.dumps(feed)
+        if "apikey" in blob.lower() or "test-key" in blob:
+            fail("events.json contains a key")
+    if "pid=P00330813" not in tonight or "mcid=42383" not in tonight:
+        fail("tonight page lost the viator affiliate")
+    for label, text in (("home", home), ("tonight", tonight)):
+        if re.search(r"\b(list|lists) 0\b", text) or re.search(r"\b0 events\b", text) or re.search(r"\b0 tonight\b", text):
+            fail(f"{label} shows a bare zero count")
     if FAILS:
         print(f"{FAILS} failed")
         return 1

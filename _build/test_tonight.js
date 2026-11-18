@@ -1,0 +1,181 @@
+/* Client night window. Run: node _build/test_tonight.js
+   Fakes America/New_York via a fixed Date and a tiny DOM. No browser, no deps. */
+'use strict';
+const fs = require('fs');
+const path = require('path');
+const vm = require('vm');
+
+const code = fs.readFileSync(path.join(__dirname, 'tonight.js'), 'utf8');
+let fails = 0;
+function check(name, cond) {
+  if (!cond) { fails++; console.log('FAIL', name); }
+}
+
+function makeEl(tag) {
+  const node = {
+    tag, children: [], attrs: {}, className: '', href: '', rel: '', target: '', src: '', alt: '',
+    width: 0, height: 0, style: {}, parent: null, _text: '',
+    setAttribute(k, v) { this.attrs[k] = String(v); },
+    getAttribute(k) { return Object.prototype.hasOwnProperty.call(this.attrs, k) ? this.attrs[k] : null; },
+    appendChild(c) { this.children.push(c); c.parent = this; return c; },
+    removeChild(c) {
+      const i = this.children.indexOf(c);
+      if (i >= 0) this.children.splice(i, 1);
+      return c;
+    }
+  };
+  Object.defineProperty(node, 'textContent', {
+    get() { return this._text; },
+    set(v) { this._text = String(v); }
+  });
+  return node;
+}
+
+function walk(node, sel, out) {
+  if (node.attrs && node.getAttribute && match(node, sel)) out.push(node);
+  (node.children || []).forEach(c => walk(c, sel, out));
+}
+function match(node, sel) {
+  const m = /^\[([a-z0-9-]+)\]$/.exec(sel);
+  return !!(m && node.getAttribute(m[1]) != null);
+}
+function texts(node, cls) {
+  const out = [];
+  (function rec(n) {
+    if (n.className === cls && n.textContent) out.push(n.textContent);
+    (n.children || []).forEach(rec);
+  })(node);
+  return out;
+}
+function allText(node) {
+  let s = node._text || '';
+  (node.children || []).forEach(c => { s += ' ' + allText(c); });
+  return s;
+}
+
+function clock(iso) {
+  const fixed = new Date(iso).getTime();
+  const Real = Date;
+  class FakeDate extends Real {
+    constructor(...args) {
+      if (args.length === 0) super(fixed);
+      else super(...args);
+    }
+    static now() { return fixed; }
+  }
+  FakeDate.UTC = Real.UTC;
+  FakeDate.parse = Real.parse;
+  return FakeDate;
+}
+
+const FEED = {
+  fetched_at: '2026-11-17T23:18:00-05:00',
+  events: [
+    { title: 'Ten Oclock Show', start: '2026-11-17T22:00:00-05:00', end: '2026-11-18T01:30:00-05:00', venue_name: 'Hall', category: 'music', url: 'https://www.ticketmaster.com/event/ten', source: 'ticketmaster' },
+    { title: 'Seven Ended', start: '2026-11-17T19:00:00-05:00', end: '2026-11-17T22:00:00-05:00', venue_name: 'Hall', category: 'music', url: 'https://www.ticketmaster.com/event/seven', source: 'ticketmaster' },
+    { title: 'Next Evening', start: '2026-11-18T19:00:00-05:00', venue_name: 'Hall', category: 'comedy', url: 'https://www.ticketmaster.com/event/next', source: 'ticketmaster' },
+    { title: 'Friday Late', start: '2026-11-20T20:00:00-05:00', end: '2026-11-20T23:00:00-05:00', venue_name: 'Hall', category: 'music', url: 'https://www.ticketmaster.com/event/fri', source: 'ticketmaster' },
+    { title: 'Saturday Show', start: '2026-11-21T19:00:00-05:00', venue_name: 'Hall', category: 'music', url: 'https://www.ticketmaster.com/event/sat', source: 'ticketmaster' }
+  ]
+};
+const VENUES = {
+  venues: [
+    { slug: 'attaboy', name: 'Attaboy', hood: 'Lower East Side', status: 'open', hours_kind: 'fixed', url: 'venues/attaboy.html', week: { fri: '17:00-27:00', tue: '17:00-27:00' } },
+    { slug: 'house-of-yes', name: 'House of Yes', status: 'open', hours_kind: 'event', week: {} }
+  ]
+};
+
+function page(kind) {
+  const body = makeEl('body');
+  const stamp = makeEl('p');
+  stamp.setAttribute('data-feed-updated', FEED.fetched_at);
+  stamp.textContent = 'Updated 2026-11-17';
+  const line = makeEl('p');
+  line.className = 'hero-live';
+  line.setAttribute('data-night-line', '');
+  line.textContent = 'Tue 2026-11-17 · 0 tonight';
+  const summary = makeEl('aside');
+  summary.setAttribute('data-night-summary', kind);
+  summary.setAttribute('data-checked', '29');
+  const label = makeEl('p');
+  label.textContent = 'Short answer';
+  const copy = makeEl('p');
+  copy.textContent = 'On Tuesday Nov 17, the feeds we checked list 0 events between 5pm and 5am.';
+  summary.appendChild(label);
+  summary.appendChild(copy);
+  const section = makeEl('section');
+  section.setAttribute('data-night-events', '');
+  section.setAttribute('data-night-page', kind);
+  section.setAttribute('data-events', '/data/events.json');
+  section.setAttribute('data-venues', '/data/venues.json');
+  const week = makeEl('section');
+  week.setAttribute('data-week-events', '');
+  [stamp, line, summary, section, week].forEach(n => body.appendChild(n));
+  return { body, stamp, line, summary, section, week, copy };
+}
+
+async function run(iso, kind) {
+  const dom = page(kind);
+  const doc = {
+    currentScript: { src: 'https://nynightlife.com/js/tonight.js?v=test' },
+    createElement: makeEl,
+    querySelector(sel) {
+      const found = [];
+      walk(dom.body, sel, found);
+      return found[0] || null;
+    }
+  };
+  const ctx = {
+    document: doc,
+    Intl, URL, Promise, Math, String, RegExp, Array, Object, JSON, isFinite, parseInt,
+    Date: clock(iso),
+    fetch(url) {
+      const u = String(url);
+      const payload = u.includes('venues.json') ? VENUES : FEED;
+      return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(JSON.stringify(payload))) });
+    }
+  };
+  ctx.window = ctx;
+  vm.runInNewContext(code, ctx);
+  await new Promise(r => setTimeout(r, 30));
+  return dom;
+}
+
+function bareZero(text) {
+  return /(^|[^\d])0 (events|tonight|of those)\b/.test(text) || /\b(list|lists) 0\b/.test(text);
+}
+
+(async () => {
+  const one = await run('2026-11-18T01:00:00-05:00', 'tonight');
+  check('1am date is still Tuesday night', one.line.textContent.startsWith('Tue 2026-11-17 · 1 tonight'));
+  check('1am updated stamp is the feed time', one.stamp.textContent === 'Updated 2026-11-17 11:18pm ET');
+  const tonightTitles = texts(one.section, 't');
+  const weekTitles = texts(one.week, 't');
+  check('1am tonight card is the 10pm show', tonightTitles.indexOf('Ten Oclock Show') === 0 && tonightTitles.indexOf('Seven Ended') < 0);
+  check('1am hides the ended 7pm show entirely', allText(one.section).indexOf('Seven Ended') < 0 && allText(one.week).indexOf('Seven Ended') < 0);
+  check('1am keeps the next evening out of tonight', tonightTitles.indexOf('Next Evening') < 0 && weekTitles.indexOf('Next Evening') >= 0);
+  check('1am summary names Tuesday and not a bare zero',
+    one.copy.textContent.indexOf('Tuesday Nov 17') >= 0 && one.copy.textContent.indexOf('1 events') >= 0 && !bareZero(one.copy.textContent));
+
+  const later = await run('2026-11-20T18:00:00-05:00', 'home');
+  check('later-day home date is Friday', later.line.textContent.startsWith('Fri 2026-11-20 · 1 tonight'));
+  check('later-day card is Friday night', texts(later.section, 't').indexOf('Friday Late') >= 0);
+  check('later-day does not keep the baked Tuesday line', later.line.textContent.indexOf('2026-11-17') < 0);
+  check('later-day updated stamp is still the refresh', later.stamp.textContent === 'Updated 2026-11-17 11:18pm ET');
+
+  const emptyFeed = { fetched_at: FEED.fetched_at, events: [FEED.events[4]] };
+  const saved = FEED.events;
+  FEED.events = emptyFeed.events;
+  const empty = await run('2026-11-20T18:00:00-05:00', 'tonight');
+  FEED.events = saved;
+  check('empty night has no bare zero', empty.line.textContent.startsWith('Fri 2026-11-20 · Nothing listed tonight') && !bareZero(empty.line.textContent) && !bareZero(allText(empty.section)));
+  check('empty night shows the next event', texts(empty.section, 't').indexOf('Saturday Show') >= 0);
+  check('empty night shows the late venue', texts(empty.section, 't').indexOf('Attaboy') >= 0);
+  check('empty night does not invent a zero count', allText(empty.section).indexOf('0 events') < 0 && empty.copy.textContent.indexOf('list 0') < 0);
+
+  console.log(fails ? fails + ' FAILED' : 'OK: tonight client');
+  process.exit(fails ? 1 : 0);
+})().catch(err => {
+  console.error(err);
+  process.exit(1);
+});

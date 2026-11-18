@@ -55,6 +55,39 @@ def close_mins(span):
     return h * 60 + m
 
 
+def late_venues(vs, now):
+    """Checked venues whose weekly hours run to midnight or later on this night.
+
+    The night's weekday is the evening's date: 1am Wednesday is still Tuesday night.
+    Event-only rooms have no weekly hours and are not listed as open.
+    """
+    import events
+    begin, _ = events.night_window(now)
+    key = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"][begin.weekday()]
+    out = []
+    for v in vs or []:
+        if v.get("status") == "closed":
+            continue
+        hours = v.get("hours") or {}
+        if hours.get("kind") == "event":
+            continue
+        span = (hours.get("week") or {}).get(key)
+        if not span:
+            continue
+        mins = close_mins(span)
+        if mins >= 24 * 60:
+            out.append((v, span, mins))
+    out.sort(key=lambda row: (-row[2], (row[0].get("name") or "").lower()))
+    return out
+
+
+def late_posters(vs, now, limit=8):
+    import present
+    rows = late_venues(vs, now)
+    html_cards = "".join(present.venue_poster(v, span_text(span)) for v, span, _mins in rows[:limit])
+    return rows, html_cards
+
+
 # ---------------------------------------------------------------- venue pages
 
 def week_table(v):
@@ -80,13 +113,25 @@ def tonight_page(H, vs):
     snap = events.load_snapshot()
     now = events.local_now()
     tonight, week = present.split_events(snap.get("events") or [], now)
-    fetched = (snap.get("fetched_at") or "")[:10] or now.date().isoformat()
+    fetched_at = snap.get("fetched_at") or ""
+    fetched = fetched_at[:10] or now.date().isoformat()
+    late_rows, posters = late_posters(vs, now)
     note = ("Listings come from NYC Open Data (Parks events and permitted street festivals) and, when a key is configured, Ticketmaster Discovery for music, comedy, theatre, and nightlife. "
             "Ticketmaster links are the event URL, with no affiliate tag. Images from Ticketmaster are loaded beside that event only. "
             f"Feed checked {fetched}.")
-    short = (f"On {now.strftime('%A %b')} {now.day}, the feeds we checked list {len(tonight)} events between 5pm and 5am New York time, and {len(week)} more through the coming week. "
-             "Below that, the open-now list uses each venue's checked weekly hours. Bar service in the city still stops at 4am under state law. "
-             "A missing listing means the feed did not include it, not that the night is empty.")
+    week_note = "The next listings after tonight, from the same feeds."
+    short = present.tonight_short(now, len(tonight), len(week))
+    line = present.hero_line(now, len(tonight), len(tonight) + len(week), len(late_rows))
+    attrs = present.night_attrs("tonight")
+    if tonight:
+        tonight_html = present.events_html(tonight, "Tonight", note,
+                                           "Nothing in the 5pm–5am window is still ahead in the latest feed.", attrs)
+        later = week
+        later_heading = "This week"
+    else:
+        tonight_html = present.empty_night(week[:6], posters, note, attrs)
+        later = week[6:]
+        later_heading = "Later this week"
     faqs = [
         ("What time do NYC bars stop serving?",
          "4am. New York State law stops on-premises alcohol sales at 4am in all five boroughs. The closing-time guide cites the statute."),
@@ -105,10 +150,11 @@ def tonight_page(H, vs):
     ]
     schemas += [s for s in (present.event_schema(ev) for ev in (tonight + week)[:24]) if s]
     body = f"""<p class="eyebrow" style="margin-top:8px"><span class="line-mark" aria-hidden="true">N</span>New York City</p><h1>Tonight</h1>
-{present.answer_box(short)}
+<p class="hero-live" data-night-line>{e(line)}</p>
+{present.answer_box(short, "tonight")}
 {present.route_html()}
-{present.events_html(tonight, "Tonight", note, "Nothing in the 5pm–5am window in the latest feed.")}
-{present.events_html(week[:24], "This week", "The next listings after tonight, from the same feeds.", "No later listings in this feed.")}
+{tonight_html}
+{present.events_html(later[:24], later_heading, week_note, "No later listings in this feed.", "data-week-events")}
 {present.faq_html(faqs)}
 <h2>Open now, from checked hours</h2>
 <p class="lede">Which of our checked venues are open tonight, tonight's forecast, nightlife headlines and new liquor licenses.</p>
@@ -121,10 +167,13 @@ def tonight_page(H, vs):
 <li>Comedy tonight: <a href="{u('/guides/nyc-comedy-clubs.html')}">clubs we could verify</a>, plus any comedy row in the feed above.</li></ul>
 {affiliates.block(affiliates.TONIGHT, "nynightlife-tonight", "tonight", u, "Book a night out")}
 {newsletter_block(H)}
-<script defer src="{u('/js/live.js')}?v={H['LIVE_V']}"></script>"""
+<script defer src="{u('/js/live.js')}?v={H['LIVE_V']}"></script>
+<script defer src="{H['tonight_js']}"></script>"""
     H["write"]("/tonight/index.html", H["page"]("Tonight in NYC: what's on | NY Nightlife",
                                                 "What's on in NYC tonight and this week from NYC Open Data and Ticketmaster, plus which checked bars are open.",
-                                                "/tonight/", body, schemas, "no-bar", updated=fetched))
+                                                "/tonight/", body, schemas, "no-bar",
+                                                updated=events.refresh_stamp(fetched_at) or fetched,
+                                                updated_iso=fetched_at or fetched))
 
 
 def home_box(H):
