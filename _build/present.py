@@ -1,4 +1,5 @@
 """HTML and schema fragments built only from checked venue facts or event rows."""
+import datetime as dt
 import html
 import re
 import urllib.parse
@@ -415,6 +416,80 @@ def home_short(now, venues_n, tonight_n, late_n):
                "The next listings are below, with the venues that stay open past midnight"
                + (f" on {facts['long']}" if late_n else "") + ". ")
     return base + mid + "Dress code, age, and cover stay on each venue page with the date we checked them."
+
+
+def weekend_events(rows, now):
+    """Fri 5am through Mon 5am, minus anything that has already ended.
+
+    Viator product rows stay off this list. The page has its own labeled
+    Viator cards, and a product is not a show time.
+    """
+    begin, end = evs.weekend_window(now)
+    kept = []
+    for ev in rows or []:
+        if ev.get("listing") or ev.get("source") == "viator" or not ev.get("start"):
+            continue
+        start = evs.parse_when(ev.get("start"))
+        if not start or evs.has_ended(ev, now, start):
+            continue
+        start = start.astimezone(evs.NY)
+        if begin <= start < end:
+            kept.append(ev)
+    kept.sort(key=lambda r: (r.get("start") or "", r.get("id") or ""))
+    return kept
+
+
+def _evening_day(start):
+    start = start.astimezone(evs.NY)
+    if start.hour < 5:
+        start -= dt.timedelta(days=1)
+    return start.date()
+
+
+def weekend_html(rows, now, note, attrs=""):
+    """Day groups for the baked weekend page. JS replaces this for the visitor's clock."""
+    if not rows:
+        return (_section_open(attrs) + "<h2>This weekend</h2>"
+                "<p>No listing in the Friday-through-Sunday window is still ahead in the latest feed.</p>"
+                f'<p class="small">{e(note)}</p></section>')
+    groups, order = {}, []
+    for ev in rows:
+        day = _evening_day(evs.parse_when(ev.get("start")))
+        if day not in groups:
+            groups[day] = []
+            order.append(day)
+        groups[day].append(ev)
+    parts = [_section_open(attrs), "<h2>This weekend</h2>", f'<p class="small">{e(note)}</p>']
+    for day in order:
+        label = f"{evs.WD_LONG[day.weekday()]} {evs.MONTHS[day.month - 1]} {day.day}"
+        cards = "".join(event_card(ev) for ev in groups[day])
+        parts.append(f'<h2 class="as-h3">{e(label)}</h2><div class="pcards">{cards}</div>')
+    parts.append("</section>")
+    return "".join(parts)
+
+
+def weekend_line(now, n):
+    facts = evs.weekend_facts(now)
+    count = "Nothing listed" if not n else (f"{n} event" if n == 1 else f"{n} events")
+    return f"Fri–Sun {facts['span']} · {count}"
+
+
+def weekend_short(now, n):
+    """Keep the wording in step with weekendShort() in tonight.js."""
+    facts = evs.weekend_facts(now)
+    when = (f"{facts['fri_long']} {facts['fri_mon']} {facts['fri_day']} through "
+            f"{facts['sun_long']} {facts['sun_mon']} {facts['sun_day']}")
+    if n == 1:
+        mid = "The feeds list 1 event in that window that has not already ended. "
+    elif n:
+        mid = f"The feeds list {n} events in that window that have not already ended. "
+    else:
+        mid = ("No listing in the feeds starts in that window and is still ahead. "
+               "Venues that list hours past midnight are below. ")
+    return (f"This weekend in New York is {when}, from Friday at 5am through Monday at 5am. "
+            + mid
+            + "Listings come from NYC Open Data and Ticketmaster when a key is set. "
+            "A missing show means the feed did not include it. Bar service still stops at 4am under state law.")
 
 
 def tonight_short(now, tonight_n, more_n):

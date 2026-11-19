@@ -173,6 +173,27 @@ function bareZero(text) {
   check('empty night shows the late venue', texts(empty.section, 't').indexOf('Attaboy') >= 0);
   check('empty night does not invent a zero count', allText(empty.section).indexOf('0 events') < 0 && empty.copy.textContent.indexOf('list 0') < 0);
 
+  const midweek = await run('2026-11-18T18:00:00-05:00', 'weekend');
+  check('wednesday weekend is Fri Nov 20 through Sun Nov 22',
+    midweek.line.textContent === 'Fri\u2013Sun Nov 20\u201322 \u00b7 2 events');
+  check('wednesday weekend shows friday and saturday',
+    texts(midweek.section, 't').indexOf('Friday Late') >= 0 && texts(midweek.section, 't').indexOf('Saturday Show') >= 0);
+  check('wednesday weekend leaves out tuesday', allText(midweek.section).indexOf('Ten Oclock Show') < 0);
+  check('wednesday weekend summary names the days and not a bare zero',
+    midweek.copy.textContent.indexOf('Friday Nov 20 through Sunday Nov 22') >= 0 && !bareZero(midweek.copy.textContent));
+  check('saturday night stays on sunday', allText(midweek.section).indexOf('Saturday Nov 21') >= 0);
+
+  const mondayNight = await run('2026-11-23T01:00:00-05:00', 'weekend');
+  check('monday 1am is still the Nov 20 weekend',
+    mondayNight.line.textContent.indexOf('Nov 20\u201322') >= 0 && mondayNight.line.textContent.indexOf('Nothing listed') >= 0);
+  check('monday 1am summary does not roll to the next friday',
+    mondayNight.copy.textContent.indexOf('November 27') < 0 && mondayNight.copy.textContent.indexOf('Nov 27') < 0);
+
+  const mondayDay = await run('2026-11-23T10:00:00-05:00', 'weekend');
+  check('monday morning rolls to the next weekend',
+    mondayDay.line.textContent === 'Fri\u2013Sun Nov 27\u201329 \u00b7 Nothing listed');
+  check('rolled weekend has no bare zero', !bareZero(mondayDay.line.textContent) && !bareZero(mondayDay.copy.textContent));
+
   console.log(fails ? fails + ' FAILED' : 'OK: tonight client');
   process.exit(fails ? 1 : 0);
 })().catch(err => {

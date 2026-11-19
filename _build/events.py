@@ -276,6 +276,59 @@ def night_facts(now):
     }
 
 
+def _evening_date(now):
+    """The date of the evening, using the same 5am cutoff as Tonight.
+
+    Monday at 1am is still Sunday night. Monday at 10am is Monday.
+    """
+    now = now.astimezone(NY)
+    if now.hour < 5:
+        return (now - dt.timedelta(days=1)).date()
+    return now.date()
+
+
+def weekend_window(now):
+    """Friday 5am through Monday 5am, America/New_York.
+
+    Mon–Thu (and Friday before 5am, which is still Thursday night) points at
+    the coming Friday. Friday, Saturday, and Sunday point at this Friday.
+    Monday before 5am is still Sunday night, so it stays on the weekend that
+    is underway. The 5am edge matches Tonight, so Thursday night is not
+    pulled into the weekend and Sunday night runs until Monday at 5am.
+    """
+    if now is None:
+        return None, None
+    day = _evening_date(now)
+    friday = day + dt.timedelta(days=(4 - day.weekday()))
+    begin = dt.datetime(friday.year, friday.month, friday.day, 5, 0, tzinfo=NY)
+    return begin, begin + dt.timedelta(days=3)
+
+
+def weekend_facts(now):
+    begin, end = weekend_window(now)
+    friday = begin.date()
+    sunday = friday + dt.timedelta(days=2)
+
+    def mon(d):
+        return MONTHS[d.month - 1]
+
+    if friday.month == sunday.month:
+        span = f"{mon(friday)} {friday.day}–{sunday.day}"
+    else:
+        span = f"{mon(friday)} {friday.day}–{mon(sunday)} {sunday.day}"
+    return {
+        "begin": begin,
+        "end": end,
+        "span": span,
+        "fri_long": WD_LONG[friday.weekday()],
+        "fri_mon": mon(friday),
+        "fri_day": friday.day,
+        "sun_long": WD_LONG[sunday.weekday()],
+        "sun_mon": mon(sunday),
+        "sun_day": sunday.day,
+    }
+
+
 def in_tonight(start, now):
     """True when `start` falls in the New York night that contains `now`."""
     if start is None or now is None:

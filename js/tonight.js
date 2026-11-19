@@ -7,6 +7,9 @@ already ended (real end, or three hours after the start) are hidden.
 
 The route line stays the 5pm-to-4am Night Signal. js/signal.js lights the stop
 from the same New York clock. "Updated" stays the feed's own timestamp.
+
+data-night-page="weekend" uses the same clock for Friday 5am through Monday
+5am. Keep weekendShort() in step with present.weekend_short.
 */
 (function () {
   'use strict';
@@ -321,8 +324,119 @@ from the same New York clock. "Updated" stays the feed's own timestamp.
   function bareZero(text) {
     return /(^|[^\d])0 (events|tonight|of those)\b/.test(text) || /\b(list|lists) 0\b/.test(text);
   }
+  var WD_INDEX = { Mon: 0, Tue: 1, Wed: 2, Thu: 3, Fri: 4, Sat: 5, Sun: 6 };
+  function weekendBounds(now) {
+    var night = nightBounds(now);
+    var p = nyParts(night.begin);
+    var wd = WD_INDEX[p.weekday];
+    var noon = nyInstant(+p.year, +p.month, +p.day, 12, 0).getTime();
+    var friday = nyParts(new Date(noon + (4 - wd) * 24 * 60 * 60 * 1000));
+    var begin = nyInstant(+friday.year, +friday.month, +friday.day, 5, 0);
+    var end = nyInstant(+friday.year, +friday.month, +friday.day + 3, 5, 0);
+    return { begin: begin, end: end };
+  }
+  function eveningParts(date) {
+    var p = nyParts(date);
+    if ((parseInt(p.hour, 10) % 24) < 5) {
+      var noon = nyInstant(+p.year, +p.month, +p.day, 12, 0);
+      p = nyParts(new Date(noon.getTime() - 24 * 60 * 60 * 1000));
+    }
+    return p;
+  }
+  function weekendPartition(events, now) {
+    var bounds = weekendBounds(now);
+    var rows = [];
+    (events || []).forEach(function (ev) {
+      if (!ev || !ev.start || ev.listing || ev.source === 'viator') return;
+      var start = new Date(ev.start);
+      if (isNaN(start.getTime()) || ended(ev, now)) return;
+      if (start >= bounds.begin && start < bounds.end) rows.push(ev);
+    });
+    rows.sort(function (a, b) { return new Date(a.start) - new Date(b.start); });
+    var groups = [];
+    var index = {};
+    rows.forEach(function (ev) {
+      var p = eveningParts(new Date(ev.start));
+      var key = p.year + '-' + p.month + '-' + p.day;
+      if (!index[key]) {
+        index[key] = {
+          label: (LONG[p.weekday] || p.weekday) + ' ' + (MONTHS[+p.month - 1] || '') + ' ' + parseInt(p.day, 10),
+          rows: []
+        };
+        groups.push(index[key]);
+      }
+      index[key].rows.push(ev);
+    });
+    return { bounds: bounds, groups: groups, count: rows.length };
+  }
+  function weekendFacts(bounds) {
+    var fp = nyParts(bounds.begin);
+    var sp = nyParts(nyInstant(+fp.year, +fp.month, +fp.day + 2, 12, 0));
+    var friDay = parseInt(fp.day, 10);
+    var sunDay = parseInt(sp.day, 10);
+    var friMon = MONTHS[+fp.month - 1] || '';
+    var sunMon = MONTHS[+sp.month - 1] || '';
+    var span = fp.month === sp.month ? (friMon + ' ' + friDay + '\u2013' + sunDay)
+      : (friMon + ' ' + friDay + '\u2013' + sunMon + ' ' + sunDay);
+    return {
+      span: span,
+      when: (LONG[fp.weekday] || fp.weekday) + ' ' + friMon + ' ' + friDay + ' through ' +
+        (LONG[sp.weekday] || sp.weekday) + ' ' + sunMon + ' ' + sunDay
+    };
+  }
+  function weekendLine(facts, n) {
+    var count = !n ? 'Nothing listed' : (n === 1 ? '1 event' : (n + ' events'));
+    return 'Fri\u2013Sun ' + facts.span + ' \u00b7 ' + count;
+  }
+  function weekendShort(facts, n) {
+    var mid;
+    if (n === 1) mid = 'The feeds list 1 event in that window that has not already ended. ';
+    else if (n) mid = 'The feeds list ' + n + ' events in that window that have not already ended. ';
+    else mid = 'No listing in the feeds starts in that window and is still ahead. Venues that list hours past midnight are below. ';
+    return 'This weekend in New York is ' + facts.when + ', from Friday at 5am through Monday at 5am. ' + mid +
+      'Listings come from NYC Open Data and Ticketmaster when a key is set. ' +
+      'A missing show means the feed did not include it. Bar service still stops at 4am under state law.';
+  }
+  function weekendNote(iso) {
+    var day = String(iso || '').slice(0, 10) || 'the last build';
+    return 'Events that start between Friday at 5am and Monday at 5am New York time. A start after midnight is shown on the previous night, same as Tonight. Listings come from NYC Open Data and, when a key is configured, Ticketmaster Discovery. Ticketmaster links are the event URL. Feed checked ' + day + '.';
+  }
+  function fillWeekend(node, groups, note) {
+    clear(node);
+    node.appendChild(el('h2', null, 'This weekend'));
+    if (!groups.length) {
+      node.appendChild(el('p', null, 'No listing in the Friday-through-Sunday window is still ahead in the latest feed.'));
+      node.appendChild(el('p', 'small', note));
+      return;
+    }
+    node.appendChild(el('p', 'small', note));
+    groups.forEach(function (g) {
+      node.appendChild(el('h2', 'as-h3', g.label));
+      node.appendChild(grid(g.rows.map(eventCard)));
+    });
+  }
+  function applyWeekend(feed, now) {
+    var part = weekendPartition(feed.events || [], now);
+    var facts = weekendFacts(part.bounds);
+    var line = weekendLine(facts, part.count);
+    var lineNode = document.querySelector('[data-night-line]');
+    if (lineNode && !bareZero(line)) lineNode.textContent = line;
+    var summary = document.querySelector('[data-night-summary]');
+    if (summary && summary.children && summary.children.length) {
+      var text = weekendShort(facts, part.count);
+      if (text && !bareZero(text)) summary.children[summary.children.length - 1].textContent = text;
+    }
+    var stamp = document.querySelector('[data-feed-updated]');
+    var refresh = refreshStamp(feed.fetched_at);
+    if (stamp && refresh) stamp.textContent = 'Updated ' + refresh;
+    fillWeekend(section, part.groups, weekendNote(feed.fetched_at));
+  }
   function apply(feed, venuesDoc) {
     var now = new Date();
+    if ((section.getAttribute('data-night-page') || '') === 'weekend') {
+      applyWeekend(feed, now);
+      return;
+    }
     var part = partition(feed.events || [], now);
     var facts = factsFrom(part.bounds.begin);
     var late = lateVenues(venuesDoc, part.bounds.begin);

@@ -102,14 +102,17 @@ def head(title, desc, path, schema=None, robots="index,follow", image=None, img_
 """
 
 
-MENU = [("/tonight/", "Tonight"), ("/venues/", "Venues"), ("/guides/nyc-dress-codes.html", "Dress codes"),
+MENU = [("/tonight/", "Tonight"), ("/this-weekend/", "Weekend"), ("/venues/", "Venues"),
+        ("/guides/nyc-dress-codes.html", "Dress codes"),
         ("/plans/", "Group nights"), ("/plans/nyc-dinner-cruises.html", "Cruises"),
         ("/how-we-check.html", "How we check")]
+# Cruises and How we check join the text nav only once the column is wide enough.
+NAV_WIDE = {"/plans/nyc-dinner-cruises.html", "/how-we-check.html"}
 
 
 def header():
     def link(p, t):
-        extra = " nav-wide" if p == "/plans/nyc-dinner-cruises.html" else ""
+        extra = " nav-wide" if p in NAV_WIDE else ""
         return f'<a class="txt{extra}" href="{u(p)}">{e(t)}</a>'
     links = "".join(link(p, t) for p, t in MENU)
     panel = "".join(f'<a href="{u(p)}">{e(t)}</a>' for p, t in MENU)
@@ -124,7 +127,7 @@ def header():
 
 def footer():
     return f"""<footer class="site-foot"><div class="wrap">
-<nav aria-label="Footer"><a href="{u('/plans/nyc-dinner-cruises.html')}">Dinner cruises</a><a href="{u('/plans/nyc-boat-party.html')}">Boat party</a><a href="{u('/plans/bachelor-party.html')}">Bachelor party</a><a href="{u('/guides/nyc-comedy-clubs.html')}">Comedy clubs</a><a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time</a><a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21</a><a href="{u('/changes/')}">What changed</a><a href="{u('/about.html')}">About</a><a href="{u('/how-we-check.html')}">How we check</a><a href="{u('/affiliate-disclosure.html')}">Affiliate disclosure</a><a href="{u('/privacy.html')}">Privacy</a><a href="{u('/contact.html')}">Contact</a></nav>
+<nav aria-label="Footer"><a href="{u('/this-weekend/')}">This weekend</a><a href="{u('/guides/nyc-speakeasies.html')}">Speakeasies</a><a href="{u('/guides/nyc-rooftop-bars.html')}">Rooftop bars</a><a href="{u('/guides/nyc-new-years-eve.html')}">New Year's Eve</a><a href="{u('/plans/nyc-dinner-cruises.html')}">Dinner cruises</a><a href="{u('/plans/nyc-boat-party.html')}">Boat party</a><a href="{u('/plans/bachelor-party.html')}">Bachelor party</a><a href="{u('/guides/nyc-comedy-clubs.html')}">Comedy clubs</a><a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time</a><a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21</a><a href="{u('/changes/')}">What changed</a><a href="{u('/about.html')}">About</a><a href="{u('/how-we-check.html')}">How we check</a><a href="{u('/affiliate-disclosure.html')}">Affiliate disclosure</a><a href="{u('/privacy.html')}">Privacy</a><a href="{u('/contact.html')}">Contact</a></nav>
 <p>NY Nightlife is an independent guide. Facts are checked against the sources listed on each page; always confirm with the venue before you go. 21+ venues are for adults of legal drinking age. We may earn a commission when you book through links on this site, at no extra cost to you. Concert, comedy, theatre, and nightlife listings from Ticketmaster, when shown, are refreshed daily and the ticket link is that event's page.</p>
 <nav aria-label="More"><a href="{u('/image-credits.html')}">Image credits</a><a href="{u('/llms.txt')}">llms.txt</a></nav>
 </div></footer>
@@ -527,7 +530,8 @@ def check_output():
     missing = set()
     for f in OUT.rglob("*.html"):
         s = f.read_text(encoding="utf-8")
-        refs = re.findall(r'(?:src|href)="(/[^"]+)"', s) + re.findall(r'content="https://nynightlife\.com(/img/[^"]+)"', s)
+        refs = re.findall(r'(?:src|href)="(/[^"]+)"', s)
+        refs += re.findall(r'https://nynightlife\.com(/[^"\s<]+)', s)
         for m in re.findall(r'srcset="([^"]+)"', s):
             refs += [c.strip().split()[0] for c in m.split(",") if c.strip()]
         for r in refs:
@@ -560,6 +564,10 @@ def write_meta(live_day):
         "We do not invent missing facts.\n\n"
         "## Start here\n"
         "- [Tonight](https://nynightlife.com/tonight/): what's on tonight and this week, plus which checked venues are open\n"
+        "- [This weekend](https://nynightlife.com/this-weekend/): Friday 5am through Monday 5am in New York, from the same feeds\n"
+        "- [NYC speakeasies](https://nynightlife.com/guides/nyc-speakeasies.html): hidden doors and walk-in cocktail bars from checked venue pages\n"
+        "- [NYC rooftop bars](https://nynightlife.com/guides/nyc-rooftop-bars.html): hours and dress for the rooftops we have checked\n"
+        "- [New Year's Eve 2026](https://nynightlife.com/guides/nyc-new-years-eve.html): Times Square ball drop and NYE cruises from official pages, no invented prices\n"
         "- [Venues](https://nynightlife.com/venues/): door facts for the checked bars and clubs\n"
         "- [Group nights](https://nynightlife.com/plans/): bachelorette prices, boat party, bachelor party, and the cruise guide\n"
         "- [NYC boat party](https://nynightlife.com/plans/nyc-boat-party.html)\n"
@@ -593,9 +601,10 @@ def main():
                             {"plate": plate, "vcard": vcard, "picture": picture, "home_box": lambda: extras.home_box(XH),
                              "newsletter": lambda: extras.newsletter_block(XH), "tonight_js": tonight_js})
     extras.tonight_page(XH, vs)
+    extras.weekend_page(XH, vs)
     changed = extras.changes_pages(XH, vs)   # None while the log is too thin to index
     extra = [extras.guide_under21(XH, vs), extras.guide_closing(XH, vs)] + ([("/changes/", changed)] if changed else [])
-    extra += [("/tonight/", "2026-11-11")] + list(plan_rows or [])
+    extra += [("/tonight/", "2026-11-11"), ("/this-weekend/", "2026-11-11")] + list(plan_rows or [])
     import nyla
     pbs = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((ROOT / "data" / "playbooks").glob("*.json"))]
     nyla.build(write, fmt_date, vs, pbs, max(v.get("checked", "2026-10-18") for v in vs))
@@ -603,7 +612,7 @@ def main():
     snap = events.load_snapshot()
     events.write_public_feed(snap, OUT / "data" / "events.json")
     live_day = (snap.get("fetched_at") or SITE_EDITED)[:10]
-    extra = [(p, live_day if p in ("/tonight/", "/") else d) for p, d in extra]
+    extra = [(p, live_day if p in ("/tonight/", "/", "/this-weekend/") else d) for p, d in extra]
     write_meta(live_day)
     sitemap(vs, pbs, extra)
     check_output()
