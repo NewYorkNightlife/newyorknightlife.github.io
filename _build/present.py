@@ -334,12 +334,103 @@ def event_card(ev):
     )
 
 
-def events_html(rows, heading, note, empty):
+def _section_open(attrs):
+    extra = f" {attrs}" if attrs else ""
+    return f'<section class="whats-on"{extra}>'
+
+
+def events_html(rows, heading, note, empty, attrs=""):
     if not rows:
-        return f"<section class=\"whats-on\"><h2>{e(heading)}</h2><p>{e(empty)}</p><p class=\"small\">{e(note)}</p></section>"
+        return (_section_open(attrs) + f"<h2>{e(heading)}</h2><p>{e(empty)}</p>"
+                f"<p class=\"small\">{e(note)}</p></section>")
     cards = "".join(event_card(ev) for ev in rows)
-    return (f'<section class="whats-on"><h2>{e(heading)}</h2>'
-            f'<p class="small">{e(note)}</p><div class="pcards">{cards}</div></section>')
+    return (_section_open(attrs) + f"<h2>{e(heading)}</h2>"
+            f"<p class=\"small\">{e(note)}</p><div class=\"pcards\">{cards}</div></section>")
+
+
+def _initial(name):
+    stripped = re.sub(r"^(the|a|an)\s+", "", (name or "").strip(), flags=re.I)
+    for c in stripped:
+        if c.isalnum():
+            return c.upper()
+    return "N"
+
+
+def venue_poster(v, when):
+    """A checked venue in the same poster frame as an event card."""
+    slug = v.get("slug") or ""
+    href = "/venues/" + slug + ".html" if slug else "/venues/"
+    where = " · ".join(x for x in (v.get("neighborhood") or v.get("hood"), when) if x)
+    return (
+        f'<a class="pcard rise" data-cat="nightlife" href="{e(href)}">'
+        f'<span class="pcard-media cat-nightlife"><span class="mark" aria-hidden="true">{e(_initial(v.get("name")))}</span></span>'
+        f'<span class="pcard-body"><span class="kicker">Open past midnight</span>'
+        f'<span class="t">{e(v.get("name") or "Venue")}</span>'
+        f'<span class="m">{e(where)}</span></span></a>'
+    )
+
+
+def empty_night(next_rows, posters, note, attrs):
+    """No bare zero. The night section shows what is next and who is open late."""
+    parts = [_section_open(attrs), "<h2>Tonight</h2>",
+             "<p>Nothing in the 5pm–5am window is still ahead in the latest feed.</p>",
+             f'<p class="small">{e(note)}</p>']
+    if next_rows:
+        parts.append('<h2 class="as-h3">Next up</h2>')
+        parts.append('<div class="pcards">' + "".join(event_card(ev) for ev in next_rows) + "</div>")
+    if posters:
+        parts.append('<h2 class="as-h3">Open past midnight</h2>')
+        parts.append(f'<div class="pcards">{posters}</div>')
+    parts.append("</section>")
+    return "".join(parts)
+
+
+def night_attrs(page):
+    return (f'data-night-events data-night-page="{page}" '
+            'data-events="/data/events.json" data-venues="/data/venues.json"')
+
+
+def hero_line(now, tonight_n, week_n, late_n):
+    facts = evs.night_facts(now)
+    bits = [f"{facts['short']} {facts['iso']}"]
+    bits.append(f"{tonight_n} tonight" if tonight_n else "Nothing listed tonight")
+    if week_n:
+        bits.append(f"{week_n} this week")
+    if late_n:
+        bits.append(f"{late_n} open past midnight")
+    return " · ".join(bits)
+
+
+def home_short(now, venues_n, tonight_n, late_n):
+    facts = evs.night_facts(now)
+    base = (f"Tonight in New York, this site lists {venues_n} checked bars and clubs "
+            "and the public events we could pull for this week. ")
+    if tonight_n and late_n:
+        mid = (f"{tonight_n} of those events fall in tonight's 5pm to 5am window, "
+               f"and {late_n} venues list hours past midnight on {facts['long']}. ")
+    elif tonight_n:
+        mid = f"{tonight_n} of those events fall in tonight's 5pm to 5am window. "
+    else:
+        mid = ("None of those events start in tonight's 5pm to 5am window. "
+               "The next listings are below, with the venues that stay open past midnight"
+               + (f" on {facts['long']}" if late_n else "") + ". ")
+    return base + mid + "Dress code, age, and cover stay on each venue page with the date we checked them."
+
+
+def tonight_short(now, tonight_n, more_n):
+    facts = evs.night_facts(now)
+    phrase = f"{facts['long']} {facts['mon']} {facts['day']}"
+    if tonight_n and more_n:
+        lead = (f"On {phrase}, the feeds we checked list {tonight_n} events between 5pm and 5am New York time, "
+                f"and {more_n} more through the coming week. ")
+    elif tonight_n:
+        lead = f"On {phrase}, the feeds we checked list {tonight_n} events between 5pm and 5am New York time. "
+    else:
+        lead = (f"On {phrase}, no listing in the feeds starts between 5pm and 5am New York time and is still ahead. "
+                "The next events are below, with the venues that list hours past midnight. ")
+    return (lead + "Below that, the open-now list uses each venue's checked weekly hours. "
+            "Bar service in the city still stops at 4am under state law. "
+            "A missing listing means the feed did not include it, not that the night is empty.")
 
 
 def route_html(heading=True):
@@ -359,18 +450,36 @@ def route_html(heading=True):
 """ + line + "</section>"
 
 
-def answer_box(text):
-    return f'<aside class="short-answer"><p class="label">Short answer</p><p>{e(text)}</p></aside>'
+def answer_box(text, summary="", checked=None):
+    bits = []
+    if summary:
+        bits.append(f'data-night-summary="{e(summary)}"')
+    if checked is not None:
+        bits.append(f'data-checked="{int(checked)}"')
+    attr = (" " + " ".join(bits)) if bits else ""
+    return f'<aside class="short-answer"{attr}><p class="label">Short answer</p><p>{e(text)}</p></aside>'
 
 
 def split_events(rows, now):
-    tonight, week = [], []
+    """Tonight is the 5pm–5am window, minus anything that has already ended.
+
+    The rest of the week follows. A long-running listing that started before
+    tonight sorts after the events that have not started yet, so it does not
+    lead "Next up".
+    """
+    tonight, upcoming, earlier = [], [], []
+    begin, end = evs.night_window(now)
     for ev in rows or []:
         start = evs.parse_when(ev.get("start"))
-        if evs.in_tonight(start, now):
+        if not start or evs.has_ended(ev, now, start):
+            continue
+        if begin <= start < end:
             tonight.append(ev)
+        elif start >= end:
+            upcoming.append(ev)
         else:
-            week.append(ev)
+            earlier.append(ev)
     tonight.sort(key=lambda r: r.get("start") or "")
-    week.sort(key=lambda r: r.get("start") or "")
-    return tonight, week
+    upcoming.sort(key=lambda r: r.get("start") or "")
+    earlier.sort(key=lambda r: r.get("start") or "")
+    return tonight, upcoming + earlier

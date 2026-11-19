@@ -5,7 +5,9 @@ Run: python _build/test_events.py
 import datetime as dt
 import os
 import pathlib
+import re
 import sys
+import urllib.parse
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import events  # noqa: E402
@@ -194,6 +196,85 @@ def test_ticketmaster():
     check("missing key skips", events.fetch_ticketmaster(get_json, NOW) is None)
 
 
+def _bare_zero(text):
+    return bool(re.search(r"(^|[^\d])0 (events|tonight|of those)\b", text) or re.search(r"\b(list|lists) 0\b", text))
+
+
+def test_late_build_and_after_midnight():
+    """The 2026-11-18 04:18Z build was 23:18 in New York. A visit at 1am is still that night."""
+    built = at("2026-11-17T23:18:00")
+    visit = at("2026-11-18T01:00:00")
+    ten = {"title": "Ten Oclock Show", "start": "2026-11-17T22:00:00-05:00", "end": "2026-11-18T01:30:00-05:00"}
+    seven = {"title": "Seven Ended", "start": "2026-11-17T19:00:00-05:00", "end": "2026-11-17T22:00:00-05:00"}
+    afternoon = {"title": "Afternoon", "start": "2026-11-17T14:00:00-05:00", "end": "2026-11-17T16:00:00-05:00"}
+    nxt = {"title": "Next Evening", "start": "2026-11-18T19:00:00-05:00"}
+    rows = [afternoon, seven, ten, nxt]
+    check("23:18 keeps 10pm in tonight", events.in_tonight(at(ten["start"]), built))
+    check("23:18 excludes the next evening", not events.in_tonight(at(nxt["start"]), built))
+    check("23:18 excludes 4pm", not events.in_tonight(at("2026-11-17T16:00:00"), built))
+    check("1am visit keeps 10pm in tonight", events.in_tonight(at(ten["start"]), visit))
+    check("1am visit excludes the next evening", not events.in_tonight(at(nxt["start"]), visit))
+    check("1am night date is the previous evening", events.night_facts(visit)["iso"] == "2026-11-17")
+    check("23:18 night date is that evening", events.night_facts(built)["iso"] == "2026-11-17")
+    check("5am starts the coming night", events.night_facts(at("2026-11-18T05:00:00"))["iso"] == "2026-11-18")
+    check("4:30am is still the previous night", events.in_tonight(at("2026-11-18T04:30:00"), at("2026-11-18T04:30:00")))
+    check("10pm has not ended at 23:18", not events.has_ended(ten, built))
+    check("7pm has ended at 23:18", events.has_ended(seven, built))
+    check("10pm has not ended at 1am", not events.has_ended(ten, visit))
+    check("7pm has ended at 1am", events.has_ended(seven, visit))
+    kept = events.drop_past(rows, built)
+    titles = [ev["title"] for ev in kept]
+    check("ended 7pm show is not kept for the snapshot", "Seven Ended" not in titles and "Afternoon" not in titles)
+    check("10pm show and the next evening stay in the snapshot", titles == ["Ten Oclock Show", "Next Evening"] or set(titles) == {"Ten Oclock Show", "Next Evening"})
+    shown, later = present.split_events(rows, built)
+    check("static tonight at 23:18 is the 10pm show", [ev["title"] for ev in shown] == ["Ten Oclock Show"])
+    check("next evening is upcoming, not tonight", [ev["title"] for ev in later] == ["Next Evening"])
+    shown_visit, later_visit = present.split_events(rows, visit)
+    check("visit at 1am still shows the 10pm show", [ev["title"] for ev in shown_visit] == ["Ten Oclock Show"])
+    check("visit at 1am does not pull in the next evening", [ev["title"] for ev in later_visit] == ["Next Evening"])
+    start, _end = events.tm_range(built)
+    check("ticketmaster starts at 5pm ET, not the build clock", start == "2026-11-17T22:00:00Z")
+    check("the old UTC cutoff is not the lower bound", start != "2026-11-18T04:18:00Z")
+    check("1am fetch still starts at the previous 5pm", events.tm_range(visit)[0] == "2026-11-17T22:00:00Z")
+    check("daytime ticketmaster starts at the build clock", events.tm_range(at("2026-11-18T10:00:00"))[0] == "2026-11-18T15:00:00Z")
+    window, _ = events._window(at("2026-11-18T03:00:00"))
+    check("3am open-data window reaches back to 5pm", window == "2026-11-17T17:00:00")
+    late_window, _ = events._window(built)
+    check("23:18 open-data window includes 5pm", late_window <= "2026-11-17T17:00:00")
+    os.environ["TICKETMASTER_API_KEY"] = "test-key-not-real"
+    seen = []
+
+    def get_json(url):
+        seen.append(url)
+        return {"_embedded": {"events": []}}
+
+    try:
+        events.fetch_ticketmaster(get_json, built)
+    finally:
+        os.environ.pop("TICKETMASTER_API_KEY", None)
+    check("late build asks discovery from 5pm", len(seen) == 4)
+    for url in seen:
+        q = urllib.parse.parse_qs(urllib.parse.urlsplit(url).query)
+        check("startDateTime is 5pm ET in UTC", q.get("startDateTime") == ["2026-11-17T22:00:00Z"])
+        check("page is large enough to keep the rest of the week", q.get("size") == ["100"])
+        check("build clock is not the lower bound", "2026-11-18T04:18:00Z" not in url)
+    empty_hero = present.hero_line(built, 0, 88, 12)
+    check("empty hero names the night without a bare zero",
+          empty_hero == "Tue 2026-11-17 · Nothing listed tonight · 88 this week · 12 open past midnight" and not _bare_zero(empty_hero))
+    one_hero = present.hero_line(visit, 1, 88, 12)
+    check("1am hero is still Tuesday night", one_hero.startswith("Tue 2026-11-17 · 1 tonight · 88 this week"))
+    check("empty tonight copy has no bare zero", not _bare_zero(present.tonight_short(built, 0, 88)))
+    check("empty home copy has no bare zero", not _bare_zero(present.home_short(built, 29, 0, 12)))
+    check("refresh stamp is the data time", events.refresh_stamp("2026-11-17T23:18:00-05:00") == "2026-11-17 11:18pm ET")
+    feed = events.public_feed({"fetched_at": "2026-11-17T23:18:00-05:00", "events": rows + [
+        {"title": "Secret", "start": ten["start"], "end": ten["end"], "apikey": "nope"}
+    ]}, built)
+    names = [ev["title"] for ev in feed["events"]]
+    check("public feed keeps the week and drops ended rows", names == ["Ten Oclock Show", "Next Evening", "Secret"])
+    check("public feed drops unknown keys", all("apikey" not in ev and "nope" not in str(ev) for ev in feed["events"]))
+    check("public feed records the refresh time", feed["fetched_at"] == "2026-11-17T23:18:00-05:00")
+
+
 def json_row(row):
     return str(row)
 
@@ -287,6 +368,7 @@ def music_public():
 if __name__ == "__main__":
     test_filters()
     test_time()
+    test_late_build_and_after_midnight()
     test_dedupe_and_fallback()
     test_snapshot_write_is_idempotent()
     test_ticketmaster()

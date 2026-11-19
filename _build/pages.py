@@ -97,42 +97,39 @@ def home(page, write, u, vs, H):
         for v in feat)
     n = len([v for v in vs if v.get("status") != "closed"])
     credit = f'<a href="{e(HOME_PHOTO["page"])}" rel="noopener">{e(HOME_PHOTO["credit"])}</a> · {e(HOME_PHOTO["license"])}'
+    import extras
     snap = events.load_snapshot()
     now = events.local_now()
     tonight, week = present.split_events(snap.get("events") or [], now)
-    shown = (tonight + week)[:6]
-    late = 0
-    key = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"][now.weekday()]
-    for v in vs:
-        if v.get("status") == "closed":
-            continue
-        span = ((v.get("hours") or {}).get("week") or {}).get(key)
-        if span and __import__("extras").close_mins(span) >= 24 * 60:
-            late += 1
-    fetched = (snap.get("fetched_at") or "")[:10] or now.date().isoformat()
-    week_n = len(snap.get("events") or [])
-    if tonight:
-        count_bit = f"{len(tonight)} tonight · {week_n} this week"
-    else:
-        count_bit = f"{week_n} this week"
-    live = f'{now.strftime("%a")} {now.date().isoformat()} · {count_bit} · {late} open past midnight'
+    late_rows, posters = extras.late_posters(vs, now)
+    late = len(late_rows)
+    fetched_at = snap.get("fetched_at") or ""
+    fetched = fetched_at[:10] or now.date().isoformat()
+    active = [ev for ev in (snap.get("events") or []) if ev.get("start") and not events.has_ended(ev, now)]
+    week_n = len(active)
+    live = present.hero_line(now, len(tonight), week_n, late)
     hero = H["picture"]("home", "An East Village sidewalk at night",
                         "(min-width: 900px) 1100px, 100vw", eager=True)
     note = ("NYC Parks events and permitted street festivals are from NYC Open Data. "
             "Music, comedy, theatre, and nightlife are added from Ticketmaster when that key is set. "
             "Ticketmaster images sit only beside that event, and the link is the event page. "
             f"Feed checked {fetched}.")
-    short = (f"Tonight in New York, this site lists {n} checked bars and clubs and the public events we could pull for this week. "
-             f"{len(tonight)} of those events fall in tonight's 5pm to 5am window, and {late} venues list hours past midnight on {now.strftime('%A')}. "
-             "Dress code, age, and cover stay on each venue page with the date we checked them.")
+    short = present.home_short(now, n, len(tonight), late)
+    attrs = present.night_attrs("home")
+    shown = (tonight + week)[:6]
+    if tonight:
+        events_block = present.events_html(shown, "What's on in NYC tonight / this week", note,
+                                           "No evening parks, festival, or ticketed listings are in the latest feed.", attrs)
+    else:
+        events_block = present.empty_night(week[:6], posters, note, attrs)
     body = f"""<section class="hero route-hero">{hero}<div class="hero-copy"><p class="eyebrow"><span class="line-mark" aria-hidden="true">N</span>New York City</p><h1>Tonight in New York</h1>
-<p class="hero-live">{e(live)}</p>
+<p class="hero-live" data-night-line>{e(live)}</p>
 <div class="inline-actions"><a class="btn primary" href="{u('/tonight/')}">What's on tonight</a><a class="btn ghost" href="{u('/plans/')}">Plan a group night</a></div>
 {present.route_html(heading=False)}
 </div></section>
 <p class="credit">Photo: {credit}</p>
-{present.answer_box(short)}
-{present.events_html(shown, "What's on in NYC tonight / this week", note, "No evening parks, festival, or ticketed listings are in the latest feed.")}
+{present.answer_box(short, "home", n)}
+{events_block}
 <h2>Beyond the bar</h2>
 <p class="lede">Cruises, a boat party, a bachelor night, comedy rooms, and the door facts. Each page only states what we could verify.</p>
 <a class="card-link" href="{u('/plans/nyc-dinner-cruises.html')}"><span>Dinner and sunset cruises<span class="sub">Piers and timing we could verify</span></span><span class="go">Read →</span></a>
@@ -145,6 +142,7 @@ def home(page, write, u, vs, H):
 <a class="card-link" href="{u('/plans/')}"><span>Group nights<span class="sub">Bachelorette prices and the cruise guide</span></span><span class="go">Open →</span></a>
 <a class="card-link" href="{u('/plans/bachelorette-night.html')}"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus or yacht, priced per person</span></span><span class="go">See prices →</span></a>
 {H['home_box']()}
+<script defer src="{H['tonight_js']}"></script>
 <h2>Most asked about</h2>
 <div class="vlist two posters">{cards}</div>
 {affiliates.block(affiliates.HOME, "nynightlife-home", "home", u, "Book a night out")}
@@ -163,7 +161,9 @@ def home(page, write, u, vs, H):
     write("/index.html", page("Tonight in NYC: bars, events, door facts | NY Nightlife",
                               "What's on in NYC tonight and this week, plus dress code, age, and cover for checked bars and clubs.",
                               "/", body, schema, "no-bar", image="/img/og/site.jpg",
-                              img_alt="Tonight in New York", updated=fetched))
+                              img_alt="Tonight in New York",
+                              updated=events.refresh_stamp(fetched_at) or fetched,
+                              updated_iso=fetched_at or fetched))
 
 
 def simple(page, write, path, title, desc, h1, html_body):

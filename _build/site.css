@@ -154,6 +154,7 @@ h1 { font-size: clamp(36px, 10vw, 56px); line-height: 1.08; text-wrap: balance; 
 h2 { font-size: 28px; line-height: 1.15; margin-top: 36px; }
 h3, h2.as-h3 { font-size: 21px; line-height: 1.2; }
 h2.as-h3 { margin-top: 0; }
+.whats-on h2.as-h3 { margin-top: 22px; }
 p { margin: 10px 0 0; }
 .lede { font-size: 18px; color: var(--text-2); max-width: 60ch; }
 .small { font-size: 14px; color: var(--muted); }

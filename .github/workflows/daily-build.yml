@@ -3,14 +3,14 @@
 # Until then, main still contains the generated HTML from the last pull request.
 # This job does not commit. Ticketmaster and Viator run only when their secrets exist.
 #
-# The New York date on / and /tonight/ is baked in at build time. A single
-# top-of-hour cron was not enough: on 2026-11-17 the 10:00 UTC run had not
-# started by 17:30 UTC, and the previous day's run started at 20:04 UTC, so
-# the live page still said Monday Nov 16. GitHub delays the top of the hour,
-# so the schedules sit at :17 and :41. A successful Live data run starts this
-# same workflow (workflow_run). Overlapping production runs queue on one
-# group and each run rewrites the events snapshot in place, so a second
-# build the same day publishes the later clock without corrupting the file.
+# The visible New York night on / and /tonight/ is computed in the browser
+# from data/events.json (js/tonight.js). The baked HTML is only the no-JS
+# fallback for the night of the build. GitHub's cron is often late or skipped
+# (on 2026-11-18 the 09:17 and 14:41 UTC runs never started; the last build
+# was 04:18Z, which is 23:18 in New York). More crons would not keep the date
+# current. These two schedules, plus a run after each successful Live data
+# job, only refresh the week snapshot. Overlapping production runs queue on
+# one group and each run rewrites the events snapshot in place.
 name: Daily build
 
 on:
@@ -69,6 +69,7 @@ jobs:
           python _build/test_live.py
           python _build/test_affiliates.py
           python _build/test_events.py
+          node _build/test_tonight.js
           python _build/test_html.py
           node _build/test_nyla.js . --links
 
