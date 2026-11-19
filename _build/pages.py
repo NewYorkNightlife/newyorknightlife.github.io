@@ -124,7 +124,7 @@ def home(page, write, u, vs, H):
         events_block = present.empty_night(week[:6], posters, note, attrs)
     body = f"""<section class="hero route-hero">{hero}<div class="hero-copy"><p class="eyebrow"><span class="line-mark" aria-hidden="true">N</span>New York City</p><h1>Tonight in New York</h1>
 <p class="hero-live" data-night-line>{e(live)}</p>
-<div class="inline-actions"><a class="btn primary" href="{u('/tonight/')}">What's on tonight</a><a class="btn ghost" href="{u('/plans/')}">Plan a group night</a></div>
+<div class="inline-actions"><a class="btn primary" href="{u('/tonight/')}">What's on tonight</a><a class="btn ghost" href="{u('/this-weekend/')}">This weekend</a><a class="btn ghost" href="{u('/plans/')}">Plan a group night</a></div>
 {present.route_html(heading=False)}
 </div></section>
 <p class="credit">Photo: {credit}</p>
@@ -138,6 +138,10 @@ def home(page, write, u, vs, H):
 <a class="card-link" href="{u('/guides/nyc-comedy-clubs.html')}"><span>NYC comedy clubs<span class="sub">Rooms we could verify, plus comedy in the feed</span></span><span class="go">Read →</span></a>
 <a class="card-link" href="{u('/guides/nyc-dress-codes.html')}"><span>Dress codes<span class="sub">What {n} venues say, or that they say nothing</span></span><span class="go">Read →</span></a>
 <a class="card-link" href="{u('/guides/nyc-bar-closing-time.html')}"><span>The 4am rule<span class="sub">When service stops, and who lists later hours</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="{u('/this-weekend/')}"><span>This weekend<span class="sub">Friday through Sunday, from the same feeds</span></span><span class="go">See the weekend →</span></a>
+<a class="card-link" href="{u('/guides/nyc-speakeasies.html')}"><span>NYC speakeasies<span class="sub">Hidden doors we could check, and the walk-in rooms beside them</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="{u('/guides/nyc-rooftop-bars.html')}"><span>NYC rooftop bars<span class="sub">Hours and dress from the rooftops we have checked</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="{u('/guides/nyc-new-years-eve.html')}"><span>New Year's Eve 2026<span class="sub">Ball drop and cruises, only what the official pages say</span></span><span class="go">Read →</span></a>
 <h2>Group nights</h2>
 <a class="card-link" href="{u('/plans/')}"><span>Group nights<span class="sub">Bachelorette prices and the cruise guide</span></span><span class="go">Open →</span></a>
 <a class="card-link" href="{u('/plans/bachelorette-night.html')}"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus or yacht, priced per person</span></span><span class="go">See prices →</span></a>
@@ -285,6 +289,7 @@ def cruise_guide(page, write, u, actions, fmt_date, H):
 def plans_hub(page, write, u):
     body = """<p class="eyebrow">Group nights</p><h1>Plan a group night</h1>
 <p class="lede">Checked pages for a group of 10, a harbor cruise, a boat party, and a bachelor night. Each one only states what we could verify.</p>
+<a class="card-link" href="/this-weekend/"><span>This weekend<span class="sub">Friday through Sunday from the same event feeds as Tonight.</span></span><span class="go">See the weekend →</span></a>
 <a class="card-link" href="/plans/bachelorette-night.html"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus, or yacht, priced per person. Checked Oct 18, 2026.</span></span><span class="go">See prices →</span></a>
 <a class="card-link" href="/plans/nyc-dinner-cruises.html"><span>NYC dinner and sunset cruises<span class="sub">Piers, timing, and what we did not confirm. Checked Nov 11, 2026.</span></span><span class="go">Read →</span></a>
 <a class="card-link" href="/plans/nyc-boat-party.html"><span>NYC boat party<span class="sub">DJ cruise, sunset sail, and the dinner boat. Checked Nov 16, 2026.</span></span><span class="go">Read →</span></a>
@@ -330,16 +335,17 @@ def image_credits(page, write):
 MONEY_CHECKED = "2026-11-16"
 
 
-def _money_page(page, write, path, title, desc, body, faqs, image_alt):
+def _money_page(page, write, path, title, desc, body, faqs, image_alt, checked=None):
     import present
+    checked = checked or MONEY_CHECKED
     schema = [
         {"@context": "https://schema.org", "@type": "Article", "headline": title.split("|")[0].strip(),
-         "dateModified": MONEY_CHECKED, "author": {"@type": "Person", "name": "Dan Herlehy"}},
+         "dateModified": checked, "author": {"@type": "Person", "name": "Dan Herlehy"}},
         present.faq_schema(faqs),
     ]
     if len(title) > 60:
         raise SystemExit(f"title over 60 characters ({len(title)}): {title}")
-    write(path, page(title, desc, path, body, schema, "tall-bar", img_alt=image_alt, updated=MONEY_CHECKED))
+    write(path, page(title, desc, path, body, schema, "tall-bar", img_alt=image_alt, updated=checked))
 
 
 def comedy_events(rows, now, parse_when):
@@ -555,6 +561,220 @@ def comedy_clubs(page, write, u, actions, H):
     return path, MONEY_CHECKED
 
 
+def _field(v, key, field):
+    """A checked fact plus the same chip the venue page uses. Empty stays empty."""
+    f = v.get(key) or {}
+    val = (f.get(field) or "").strip()
+    if not val:
+        return ""
+    chip = {"likely": ' <span class="chip">1 source</span>',
+            "unconfirmed": ' <span class="chip">unconfirmed</span>'}.get(f.get("status") or "", "")
+    return e(val) + chip
+
+
+def _pick(vs, slugs):
+    by = {v["slug"]: v for v in vs}
+    missing = [s for s in slugs if s not in by or by[s].get("status") == "closed"]
+    if missing:
+        raise SystemExit("guide is missing an open venue: " + ", ".join(missing))
+    return [by[s] for s in slugs]
+
+
+def _checked(venues):
+    return max((v.get("checked") or "2026-10-18") for v in venues)
+
+
+def _posters(H, venues, answer_fn):
+    cards = "".join(H["vcard"](v, v.get("neighborhood") or "", answer_fn(v)) for v in venues)
+    return f'<div class="vlist two posters">{cards}</div>'
+
+
+def _notes(venues):
+    rows = [v for v in venues if (v.get("status_note") or "").strip()]
+    if not rows:
+        return ""
+    bits = "".join(f'<p><b>{e(v["name"])}.</b> {e(v["status_note"])}</p>' for v in rows)
+    return f'<div class="card">{bits}</div>'
+
+
+def speakeasies(page, write, u, actions, H, vs):
+    """Hidden-door facts copied from venue pages. No venue is called a speakeasy unless the door fact says so."""
+    import present
+    order = ("please-dont-tell", "the-back-room", "attaboy", "employees-only", "death-and-co")
+    venues = _pick(vs, order)
+    checked = _checked(venues)
+    path = "/guides/nyc-speakeasies.html"
+
+    def answer(v):
+        return "<br>".join(p for p in (_field(v, "getting_in", "value"), _field(v, "hours", "value")) if p)
+
+    book = affiliates.block(
+        affiliates.SPEAKEASY_GUIDE, "nynightlife-nyc-speakeasies", "nyc-speakeasies", u,
+        "Book a tour",
+        "Viator search, separate from the bars above. " + affiliates.NOTE,
+        heading_id="book")
+    faqs = [
+        ("Which doors are actually hidden?",
+         "Three of the checked rooms describe a door that is not a normal street entrance. Please Don't Tell is entered through the phone booth inside Crif Dogs. The Back Room is entered through the Lower East Side Toy Company gate. Attaboy is the unmarked AB 134 buzzer. Employees Only and Death & Co are walk-in cocktail bars. Their pages do not describe a hidden door."),
+        ("Is Mr. Purple a speakeasy?",
+         "No. Mr. Purple's checked type is rooftop bar. Its getting-in line names SpeakeasyGo as the events booking page. This site does not treat that ticketing link as a speakeasy. The rooftop guide has the door facts."),
+        ("Do these bars take reservations?",
+         "It depends on the room, and the card copies the checked line. Please Don't Tell says to book on Resy. Attaboy takes limited reservations and is otherwise first-come at the buzzer. The Back Room says walk-ins are welcome and reservations run through the venue site. Employees Only's bar is walk-in. Death & Co says walk-ins are welcome, with limited reservations."),
+        ("What time do they close?",
+         "Each card copies the checked hours. Employees Only lists daily 6pm to 4am. State law still stops on-premises alcohol sales at 4am. Holiday hours can differ from the weekly hours. Confirm on the venue page before you go."),
+    ]
+    body = H["plate"]("nyc-speakeasies", "NYC speakeasies", f"Guide · checked {checked}") + f"""
+<p class="lede">Hidden doors we could check, then two walk-in cocktail bars on the same list. Mr. Purple is a rooftop, so it is not here. Nothing on this page is a ranking.</p>
+{present.answer_box("Three checked rooms publish a door that is not a normal street entrance: Please Don't Tell through the phone booth inside Crif Dogs, The Back Room through the Lower East Side Toy Company gate, and Attaboy at the unmarked AB 134 buzzer. Employees Only and Death & Co are walk-in cocktail bars on this page. Mr. Purple is a rooftop bar, so it is not listed here as a speakeasy. Checked " + checked + ".")}
+{present.route_html()}
+<h2>The doors</h2>
+<p class="small">Getting in, then hours. Both lines are copied from the venue page. Dress, age, cover, and the source links stay on that page.</p>
+{_posters(H, venues, answer)}
+<p>Mr. Purple is a rooftop bar in the checked data, not a hidden-door room. It is on the <a href="{u('/guides/nyc-rooftop-bars.html')}">rooftop guide</a>. <a href="{u('/venues/mr-purple.html')}">Mr. Purple door facts</a>.</p>
+<p>The same checked set, for a different question: <a href="{u('/guides/nyc-dress-codes.html')}">dress codes</a>, <a href="{u('/guides/nyc-bar-closing-time.html')}">the 4am rule</a>, <a href="{u('/tonight/')}">tonight</a>, and <a href="{u('/this-weekend/')}">this weekend</a>.</p>
+{book}
+{present.faq_html(faqs)}
+<h2 id="sources">Sources</h2>
+<p class="small">Venue facts checked {checked}. Each venue page lists the links behind the lines above. We did not add a door, a price, or a ranking that those pages do not already state.</p>"""
+    btns = (f'<a class="btn primary" href="#book">See tours</a>'
+            f'<a class="btn quiet" href="{u("/guides/nyc-rooftop-bars.html")}">Rooftop bars</a>')
+    _money_page(page, write, path,
+                "NYC speakeasies | NY Nightlife",
+                "NYC speakeasy doors we could check: Please Don't Tell, The Back Room, and Attaboy, plus the walk-in cocktail bars beside them.",
+                body + actions(btns, f"Affiliate links are labeled. Door facts checked {checked}."),
+                faqs, "NYC speakeasies", checked=checked)
+    return path, checked
+
+
+def rooftop_bars(page, write, u, actions, H, vs):
+    """Every open rooftop in the venue data, plus Le Bain, which is a club with a rooftop tag."""
+    import present
+    order = ("230-fifth-rooftop", "harriets-rooftop", "le-bain", "magic-hour-rooftop", "mr-purple",
+             "ophelia-lounge", "phd-rooftop-lounge", "somewhere-nowhere", "westlight")
+    venues = _pick(vs, order)
+    checked = _checked(venues)
+    path = "/guides/nyc-rooftop-bars.html"
+
+    def answer(v):
+        hours = _field(v, "hours", "value")
+        note = ((v.get("hours") or {}).get("note") or "").strip()
+        if hours and note:
+            hours += f'<br><span class="small">{e(note)}</span>'
+        dress = _field(v, "dress", "answer")
+        if dress:
+            dress = "Dress: " + dress
+        return "<br>".join(p for p in (hours, dress) if p)
+
+    book = affiliates.block(
+        affiliates.ROOFTOP_GUIDE, "nynightlife-nyc-rooftop-bars", "nyc-rooftop-bars", u,
+        "Book a rooftop tour",
+        "Viator search, separate from the rooftops above. " + affiliates.NOTE,
+        heading_id="book")
+    faqs = [
+        ("Which rooftop bars did you check?",
+         "230 Fifth, Harriet's Rooftop, Le Bain, Magic Hour, Mr. Purple, Ophelia Lounge, PHD Rooftop Lounge, Somewhere Nowhere, and Westlight. Le Bain is filed as a club with a rooftop tag. The others are rooftop bars. This page does not rank them."),
+        ("Is there a cover?",
+         "It is not one number. 230 Fifth publishes $15 on Friday and $20 on Saturday from 8pm, checked " + checked + ". Le Bain lists no cover for the standing room and a minimum on tables. PHD's cover is unconfirmed. The other pages say none listed, a table minimum, or that a ticket price is not published. Read the venue page."),
+        ("What if the weather is bad?",
+         "Harriet's hours say the rooftop opens weather permitting. We do not have a weather rule for the others. 230 Fifth's hours are unconfirmed and say Friday has no published closing time."),
+        ("Are they 21+?",
+         "Not all of them, and not all night. 230 Fifth is 21+ Friday and Saturday after 7pm. Westlight is all ages until 6pm and 21+ after. Magic Hour is 21+ except weekend brunch. Several pages publish no age. The age line on the venue page is the one we checked."),
+    ]
+    body = H["plate"]("nyc-rooftop-bars", "NYC rooftop bars", f"Guide · checked {checked}") + f"""
+<p class="lede">The rooftop bars in the checked set, plus Le Bain. Hours and dress on each card are copied from that venue's page. This is not a best-of list.</p>
+{present.answer_box("Nine checked places are rooftops: 230 Fifth, Harriet's Rooftop, Le Bain, Magic Hour, Mr. Purple, Ophelia Lounge, PHD Rooftop Lounge, Somewhere Nowhere, and Westlight. Le Bain is a club with a rooftop tag. The others are rooftop bars. Hours and dress on the cards are copied from those pages. This is not a ranking. Checked " + checked + ".")}
+{present.route_html()}
+<h2>The rooftops</h2>
+<p class="small">Hours, then dress. A chip means the venue page did not confirm that line. Age, cover, and sources stay on the venue page.</p>
+{_posters(H, venues, answer)}
+{_notes(venues)}
+<p>Hidden doors, separate from rooftops: <a href="{u('/guides/nyc-speakeasies.html')}">NYC speakeasies</a>. Also <a href="{u('/guides/nyc-dress-codes.html')}">dress codes</a>, <a href="{u('/tonight/')}">tonight</a>, and <a href="{u('/this-weekend/')}">this weekend</a>.</p>
+{book}
+{present.faq_html(faqs)}
+<h2 id="sources">Sources</h2>
+<p class="small">Venue facts checked {checked}. Each venue page lists the links behind the lines above.</p>"""
+    btns = (f'<a class="btn primary" href="#book">See tours</a>'
+            f'<a class="btn quiet" href="{u("/guides/nyc-speakeasies.html")}">Speakeasies</a>')
+    _money_page(page, write, path,
+                "NYC rooftop bars | NY Nightlife",
+                "NYC rooftop bars we have checked: hours and dress for 230 Fifth, Westlight, Magic Hour, PHD, Harriet's, Le Bain, and the others.",
+                body + actions(btns, f"Affiliate links are labeled. Rooftop facts checked {checked}."),
+                faqs, "NYC rooftop bars", checked=checked)
+    return path, checked
+
+
+NYE_CHECKED = "2026-11-19"
+LAW_106 = "https://www.nysenate.gov/legislation/laws/ABC/106"
+SLA_HOURS = "https://sla.ny.gov/county-closing-hours"
+TSQ_FAQ = "https://www.timessquarenyc.org/nye/nye-faq"
+MOME_NYE = "https://www.nyc.gov/site/mome/press-card/press-card-nye-2027.page"
+CIRCLE_NYE = "https://www.circleline.com/nyc-new-years-eve-cruises"
+
+
+def new_years_eve(page, write, u, actions, H, vs):
+    """NYE 2026 from pages opened on NYE_CHECKED, plus venue facts already in the repo. No prices."""
+    import present
+    _pick(vs, ("magic-hour-rooftop", "phd-rooftop-lounge", "employees-only"))
+    path = "/guides/nyc-new-years-eve.html"
+    book = affiliates.block(
+        affiliates.NYE_GUIDE, "nynightlife-nyc-new-years-eve", "nyc-new-years-eve", u,
+        "Book an NYE cruise or tour",
+        "Viator search, separate from the operator pages above. " + affiliates.NOTE,
+        heading_id="book")
+    faqs = [
+        ("When is New Year's Eve 2026?",
+         "Thursday, December 31, 2026. New York City's Mayor's Office of Media and Entertainment dates the 2027 Times Square ball drop that day. The Times Square Alliance FAQ, checked the same day as this page, calls the season New Year's Eve 2027."),
+        ("What time is the ball drop?",
+         "The Times Square Alliance FAQ says the celebration begins shortly before 6:00pm EST, the ball is raised at about 6:00pm EST, and at 11:59pm EST it starts a 60-second descent from the flagpole at One Times Square. Viewing areas open at 3pm, first come, first served, with no ticket. The same FAQ also tells people to watch a webcast at 6pm on December 31 and calls that stream the NYE 2026 celebration."),
+        ("What time do NYC bars close on New Year's Eve?",
+         "4am, according to the closing-time guide on this site. That guide cites New York ABC Law section 106(5): no on-premises alcohol sales from 4am to 8am, and no drinking on the premises more than half an hour after 4am. The guide's citation does not describe a New Year's Eve exception. December 31, 2026 is a Thursday, so the Sunday-morning rule in that section is not the one in effect that night. Many venues close earlier. Weekly hours on a venue page are not an NYE schedule."),
+        ("How much is an NYE cruise?",
+         "Circle Line's New Year's Eve page does not print a price, and this guide does not invent one. The page describes two Pier 83 sailings for ringing in 2027 and does not print a calendar date. Read the operator's listing. Viator links below are a separate search."),
+    ]
+    body = H["plate"]("nyc-new-years-eve", "New Year's Eve 2026", f"Guide · official pages checked {NYE_CHECKED}") + f"""
+<p class="lede">The ball drop, two cruises, and the 4am rule. Only what an official page or a checked venue page actually says. No prices.</p>
+{present.answer_box("New Year's Eve 2026 is Thursday, December 31. New York City dates the Times Square ball drop that night. The Alliance FAQ says the ball goes up around 6:00pm EST and starts a 60-second descent at 11:59pm EST, and that the outdoor viewing areas open at 3pm with no ticket. On-premises alcohol sales still stop at 4am. This page does not publish a cruise or party price. Official pages checked " + NYE_CHECKED + ".")}
+{present.route_html()}
+<h2>Times Square ball drop</h2>
+<p>New York City's <a href="{MOME_NYE}" rel="nofollow noopener">press-card page</a> titles the event the 2027 New Year's Eve ball drop and dates it Thursday, Dec. 31, 2026. That page is about press credentials, not about public viewing.</p>
+<p>The <a href="{TSQ_FAQ}" rel="nofollow noopener">Times Square Alliance FAQ</a>, checked {NYE_CHECKED}, opens with New Year's Eve 2027. It says the ball descends from a flagpole at the top of One Times Square, best seen along Broadway from 43rd Street to 50th Street and along Seventh Avenue as far north as 59th Street. The celebration begins shortly before 6:00pm EST. At about 6:00pm EST the ball is raised. At 11:59pm EST it makes a 60-second descent. Viewing areas open at 3pm on a first-come, first-served basis. The FAQ says no ticket is needed and that no public viewing space is for sale. Access points it lists: 45th, 49th, 52nd, and 56th Streets, from 6th Avenue and from 8th Avenue.</p>
+<p>The same FAQ says all bags are searched. It says backpacks, large bags, umbrellas, lawn chairs, alcohol, drones, and weapons are not permitted, and that there are no portable restrooms in Times Square during the celebration. The designated viewing area for people with disabilities is at 44th Street and Broadway, reached from the southwest corner of 44th Street and 6th Avenue.</p>
+<p>One line on that FAQ does not match the heading. It says to join the webcast at 6pm on December 31 for the NYE 2026 celebration. The City page above dates the drop December 31, 2026. Read the Alliance page again before you go. This guide does not copy the performer list on the FAQ. The FAQ does not date that list to December 31, 2026.</p>
+<p>The FAQ also says Notify NYC takes the keyword NEWYEARSEVE at 692692 for weather and street alerts. It says message and data rates may apply.</p>
+<h2>Cruises</h2>
+<p><a href="{CIRCLE_NYE}" rel="nofollow noopener">Circle Line's New Year's Eve page</a>, checked {NYE_CHECKED}, describes two sailings for ringing in 2027. Both board at Pier 83, Midtown, 83 North River Piers, New York, NY 10036, at 9:00pm, and run 10:00pm to 1:00am. The dinner cruise is all ages and lists a buffet, an open bar, a dessert display, a live DJ, a champagne toast, and fireworks views. The party cruise is 21+ and lists a live DJ, an open standard bar, passed appetizers, a champagne toast at midnight, and fireworks views near the Statue of Liberty. That page does not print a calendar date or a ticket price, so this guide does not either. <a href="{u('/plans/nyc-dinner-cruises.html')}">Dinner and sunset cruises</a> has the other piers we have checked, and says a sunset cruise on another night is not an NYE ticket.</p>
+<h2>Parties and bars</h2>
+<p>The Alliance FAQ says some restaurants and hotels in Times Square hold private parties that need a ticket bought ahead. It warns that multi-venue, pay-one-price, all-access passes have advertised movement through Times Square that police checkpoints have not allowed. This page does not list those parties and does not repeat a price.</p>
+<p>Checked rooms, if the night continues indoors. Their weekly hours are not an NYE schedule. Holiday hours can differ, and we have not re-checked them for December 31.</p>
+<ul class="clean">
+<li><a href="{u('/venues/magic-hour-rooftop.html')}">Magic Hour</a>, the Times Square rooftop we have checked</li>
+<li><a href="{u('/venues/phd-rooftop-lounge.html')}">PHD Rooftop Lounge</a>. When we checked it on 2026-10-18, a New Year's Eve 2026 ticket-terms page was one source for the 21+ line. This guide does not copy that ticket's price or start time. The venue page also notes a generic closed-for-the-season pop-up that does not name the venue.</li>
+<li><a href="{u('/venues/employees-only.html')}">Employees Only</a>, which lists a bar open daily until 4am on the weekly hours we checked</li>
+<li><a href="{u('/guides/nyc-rooftop-bars.html')}">Rooftop bars</a>, <a href="{u('/guides/nyc-speakeasies.html')}">speakeasies</a>, and <a href="{u('/guides/nyc-dress-codes.html')}">dress codes</a></li>
+</ul>
+<h2>Last call is still 4am</h2>
+<p>The <a href="{u('/guides/nyc-bar-closing-time.html')}">closing-time guide</a> cites <a href="{LAW_106}" rel="noopener">NY ABC Law §106(5)</a>: no on-premises alcohol sales from 4am to 8am, or from 4am to 10am on Sunday, and no drinking on the premises more than half an hour after 4am. It says the State Liquor Authority's <a href="{SLA_HOURS}" rel="noopener">county closing hours</a> list 4am for all five boroughs. That guide checked the law text on 2026-10-23. Its citation of section 106(5) does not describe a New Year's Eve exception. A venue can close earlier. <a href="{u('/this-weekend/')}">This weekend</a> is the Friday-to-Sunday feed, which is a different night from December 31.</p>
+{book}
+{present.faq_html(faqs)}
+<h2 id="sources">Sources</h2>
+<p class="small">Times Square Alliance, NYC Media and Entertainment, and Circle Line checked {NYE_CHECKED}. The alcohol statute was checked 2026-10-23 on the closing-time guide. Venue pages were checked 2026-10-18. No price from any of those pages is reprinted here.</p>
+<ol class="sources">
+<li>Times Square Alliance, New Year's Eve FAQ: <a href="{TSQ_FAQ}" rel="nofollow noopener">timessquarenyc.org/nye/nye-faq</a></li>
+<li>NYC Mayor's Office of Media and Entertainment, 2027 ball drop press cards: <a href="{MOME_NYE}" rel="nofollow noopener">nyc.gov, dated Thursday, Dec. 31, 2026</a></li>
+<li>Circle Line, New Year's Eve cruises: <a href="{CIRCLE_NYE}" rel="nofollow noopener">circleline.com/nyc-new-years-eve-cruises</a></li>
+<li>NY ABC Law §106: <a href="{LAW_106}" rel="noopener">nysenate.gov</a></li>
+<li>State Liquor Authority county closing hours: <a href="{SLA_HOURS}" rel="noopener">sla.ny.gov/county-closing-hours</a></li>
+</ol>"""
+    btns = (f'<a class="btn primary" href="#book">NYE cruises</a>'
+            f'<a class="btn quiet" href="{u("/guides/nyc-bar-closing-time.html")}">4am rule</a>')
+    _money_page(page, write, path,
+                "NYC New Year's Eve 2026 | NY Nightlife",
+                "New Year's Eve 2026 in NYC: Times Square ball drop basics, Circle Line's NYE cruises, and the 4am close. No invented prices.",
+                body + actions(btns, f"Affiliate links are labeled. Official pages checked {NYE_CHECKED}. No prices copied."),
+                faqs, "New Year's Eve in NYC", checked=NYE_CHECKED)
+    return path, NYE_CHECKED
+
+
 def build(page, write, u, actions, fmt_date, vs, H):
     for f in sorted((ROOT / "data" / "playbooks").glob("*.json")):
         playbook(page, write, u, actions, fmt_date, json.loads(f.read_text(encoding="utf-8")), H)
@@ -562,8 +782,12 @@ def build(page, write, u, actions, fmt_date, vs, H):
     boat = boat_party(page, write, u, actions, H)
     bachelor = bachelor_party(page, write, u, actions, H)
     comedy = comedy_clubs(page, write, u, actions, H)
+    speak = speakeasies(page, write, u, actions, H, vs)
+    roofs = rooftop_bars(page, write, u, actions, H, vs)
+    nye = new_years_eve(page, write, u, actions, H, vs)
     plans_hub(page, write, u)
     image_credits(page, write)
     home(page, write, u, vs, H)
     trust_pages(page, write, u)
-    return [cruise, boat, bachelor, comedy, ("/plans/", MONEY_CHECKED), ("/image-credits.html", "2026-11-11")]
+    return [cruise, boat, bachelor, comedy, speak, roofs, nye,
+            ("/plans/", MONEY_CHECKED), ("/image-credits.html", "2026-11-11")]

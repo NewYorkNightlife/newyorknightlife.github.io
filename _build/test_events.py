@@ -65,6 +65,40 @@ def test_time():
     check("ended event dropped", len(kept) == 1 and kept[0]["start"].startswith("2026-11-11T22"))
 
 
+def test_weekend_window():
+    wed = at("2026-11-18T18:00:00")
+    begin, end = events.weekend_window(wed)
+    check("wednesday points at coming friday 5am",
+          begin.isoformat().startswith("2026-11-20") and begin.hour == 5)
+    check("weekend ends monday 5am", end.isoformat().startswith("2026-11-23") and end.hour == 5)
+    early = events.weekend_window(at("2026-11-20T03:00:00"))[0]
+    check("friday 3am is still the coming friday", early.date().isoformat() == "2026-11-20")
+    check("monday 1am stays on this weekend",
+          events.weekend_window(at("2026-11-23T01:00:00"))[0].date().isoformat() == "2026-11-20")
+    check("monday morning rolls forward",
+          events.weekend_window(at("2026-11-23T10:00:00"))[0].date().isoformat() == "2026-11-27")
+    rows = [
+        {"title": "Fri night", "start": "2026-11-20T18:00:00-05:00", "category": "music"},
+        {"title": "Thu tail", "start": "2026-11-20T03:00:00-05:00", "category": "music"},
+        {"title": "Sun late", "start": "2026-11-23T01:00:00-05:00", "category": "music", "url": "https://example.com/sun"},
+        {"title": "Mon day", "start": "2026-11-23T10:00:00-05:00", "category": "music"},
+        {"title": "Ended", "start": "2026-11-20T12:00:00-05:00", "end": "2026-11-20T13:00:00-05:00"},
+        {"title": "Listing", "listing": True, "source": "viator", "start": "2026-11-21T20:00:00-05:00"},
+    ]
+    now = at("2026-11-20T18:00:00")
+    kept = present.weekend_events(rows, now)
+    check("weekend keeps friday night and sunday night", [ev["title"] for ev in kept] == ["Fri night", "Sun late"])
+    html_out = present.weekend_html(kept, now, "note")
+    check("monday 1am is grouped on sunday",
+          "Sunday Nov 22" in html_out and "as-h3\">Monday" not in html_out and "Sun late" in html_out)
+    check("weekend line has no bare zero",
+          present.weekend_line(now, 0) == "Fri–Sun Nov 20–22 · Nothing listed")
+    check("weekend line counts events", present.weekend_line(now, 2) == "Fri–Sun Nov 20–22 · 2 events")
+    empty = present.weekend_short(now, 0)
+    check("empty weekend short answer avoids a zero", "0 event" not in empty and "No listing" in empty)
+    check("weekend short answer names the days", "Friday Nov 20 through Sunday Nov 22" in present.weekend_short(now, 2))
+
+
 def test_dedupe_and_fallback():
     rows = [
         {"id": "a", "title": "Stage Band", "venue_name": "Wave Hill", "start": "2026-11-15T14:00:00-05:00", "source": "nyc_parks"},
@@ -368,6 +402,7 @@ def music_public():
 if __name__ == "__main__":
     test_filters()
     test_time()
+    test_weekend_window()
     test_late_build_and_after_midnight()
     test_dedupe_and_fallback()
     test_snapshot_write_is_idempotent()

@@ -81,6 +81,19 @@ def main():
         errors += _fail("cruise guide invented a product or a price")
     if "affiliate-disclosure.html" not in cruises or "nynightlife-nyc-dinner-cruises" not in cruises:
         errors += _fail("cruise guide disclosure or campaign")
+    for name, ids in (
+        ("weekend", affiliates.WEEKEND),
+        ("speakeasy guide", affiliates.SPEAKEASY_GUIDE),
+        ("rooftop guide", affiliates.ROOFTOP_GUIDE),
+        ("nye guide", affiliates.NYE_GUIDE),
+    ):
+        card = affiliates.block(ids, "nynightlife-t", "t", u, "Book")
+        if card.count('class="card-link"') != len(ids):
+            errors += _fail(f"{name} card count")
+        if re.search(r"\$\d", card) or "/tours/" in card:
+            errors += _fail(f"{name} invented a price or a product url")
+        if "searchResults" not in card or "pid=P00330813" not in card:
+            errors += _fail(f"{name} lost the viator search tag")
     js = pathlib.Path(__file__).resolve().parent.parent.joinpath("analytics.js").read_text(encoding="utf-8")
     if 'AFFILIATE = ["viator.com"]' not in js or "affiliate.placement" not in js or "affiliate.partner" not in js:
         errors += _fail("analytics.js does not record viator partner and placement")

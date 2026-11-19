@@ -7,6 +7,7 @@ sentence the birthday intent depends on.
 
 Intent phrases are not checked here. Those live in test_nyla.js.
 """
+import html
 import json
 import pathlib
 import re
@@ -28,8 +29,9 @@ def fail(msg):
 
 
 def local_refs(text):
+    """Root-relative links, including ones that only appear inside JSON-LD."""
     refs = re.findall(r'(?:src|href)="(/[^"]+)"', text)
-    refs += re.findall(r'content="https://nynightlife\.com(/img/[^"]+)"', text)
+    refs += re.findall(r'https://nynightlife\.com(/[^"\s<]+)', text)
     for srcset in re.findall(r'srcset="([^"]+)"', text):
         refs += [c.strip().split()[0] for c in srcset.split(",") if c.strip().startswith("/")]
     return refs
@@ -95,11 +97,86 @@ def main():
         ("plans/index.html", "/plans/nyc-boat-party.html"),
         ("plans/index.html", "/plans/bachelor-party.html"),
         ("plans/index.html", "/guides/nyc-comedy-clubs.html"),
+        ("plans/index.html", "/this-weekend/"),
         ("index.html", "/plans/nyc-boat-party.html"),
+        ("index.html", "/this-weekend/"),
+        ("index.html", "/guides/nyc-speakeasies.html"),
+        ("index.html", "/guides/nyc-rooftop-bars.html"),
+        ("index.html", "/guides/nyc-new-years-eve.html"),
         ("tonight/index.html", "/guides/nyc-comedy-clubs.html"),
+        ("tonight/index.html", "/this-weekend/"),
     ):
         if needle not in (ROOT / hub).read_text(encoding="utf-8"):
             fail(f"{hub} does not link to {needle}")
+    guide_pages = {
+        "/this-weekend/": "NYC this weekend | NY Nightlife",
+        "/guides/nyc-speakeasies.html": "NYC speakeasies | NY Nightlife",
+        "/guides/nyc-rooftop-bars.html": "NYC rooftop bars | NY Nightlife",
+        "/guides/nyc-new-years-eve.html": "NYC New Year's Eve 2026 | NY Nightlife",
+    }
+    for path, want in guide_pages.items():
+        if f"https://nynightlife.com{path}" not in sitemap:
+            fail(f"sitemap missing {path}")
+        target = ROOT / (path.strip("/") + ("/index.html" if path.endswith("/") else ""))
+        text = target.read_text(encoding="utf-8")
+        m = re.search(r"<title>(.*?)</title>", text)
+        title = html.unescape(m.group(1)) if m else ""
+        if title != want:
+            fail(f"{path} title {title!r}")
+        if len(title) > 60:
+            fail(f"{path} title length {len(title)}")
+        blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, re.S)
+        types = set()
+        for raw in blocks:
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError:
+                continue
+            for item in (data if isinstance(data, list) else [data]):
+                if isinstance(item, dict):
+                    types.add(item.get("@type"))
+        if "FAQPage" not in types or "BreadcrumbList" not in types:
+            fail(f"{path} schema types {types}")
+        if 'class="short-answer"' not in text or 'class="route"' not in text:
+            fail(f"{path} missing answer box or route line")
+        if "pid=P00330813" not in text or "mcid=42383" not in text:
+            fail(f"{path} missing viator partner ids")
+        if 'rel="sponsored nofollow noopener"' not in text:
+            fail(f"{path} affiliate link missing sponsored rel")
+        if "59f0bf98-cda3-4aaf-9bd2-b750205147c8" not in text:
+            fail(f"{path} lost the impact verification tag")
+        if "dateModified" not in text:
+            fail(f"{path} missing dateModified")
+    weekend = (ROOT / "this-weekend" / "index.html").read_text(encoding="utf-8")
+    if "js/tonight.js" not in weekend or 'data-night-page="weekend"' not in weekend:
+        fail("weekend page missing the weekend client")
+    if "ItemList" not in weekend or '"@type": "Event"' not in weekend and '"@type":"Event"' not in weekend:
+        # Event schema is omitted when the feed has no weekend rows. ItemList still has venues.
+        if "ItemList" not in weekend:
+            fail("weekend page missing ItemList")
+    speak = (ROOT / "guides" / "nyc-speakeasies.html").read_text(encoding="utf-8")
+    for slug in ("please-dont-tell", "the-back-room", "attaboy", "employees-only", "death-and-co", "mr-purple"):
+        if f"/venues/{slug}.html" not in speak:
+            fail(f"speakeasy guide missing {slug}")
+    if "phone booth inside Crif Dogs" not in speak or "Toy Company" not in speak or "AB 134" not in speak:
+        fail("speakeasy guide dropped a checked door fact")
+    if "rooftop bar" not in speak:
+        fail("speakeasy guide does not say Mr. Purple is a rooftop")
+    roofs = (ROOT / "guides" / "nyc-rooftop-bars.html").read_text(encoding="utf-8")
+    for slug in ("230-fifth-rooftop", "westlight", "magic-hour-rooftop", "phd-rooftop-lounge",
+                 "harriets-rooftop", "le-bain", "mr-purple", "ophelia-lounge", "somewhere-nowhere"):
+        if f"/venues/{slug}.html" not in roofs:
+            fail(f"rooftop guide missing {slug}")
+    nye = (ROOT / "guides" / "nyc-new-years-eve.html").read_text(encoding="utf-8")
+    for needle in ("December 31, 2026", "11:59", "timessquarenyc.org/nye/nye-faq",
+                   "circleline.com/nyc-new-years-eve-cruises", "4am"):
+        if needle not in nye:
+            fail(f"NYE guide missing {needle}")
+    if re.search(r"\$\d", nye):
+        fail("NYE guide invented a price")
+    for slug in ("magic-hour-rooftop", "phd-rooftop-lounge", "employees-only"):
+        if f"/venues/{slug}.html" not in nye:
+            fail(f"NYE guide missing {slug}")
     import datetime as dt
     sys.path.insert(0, str(ROOT / "_build"))
     import events

@@ -101,6 +101,11 @@ TONIGHT = ("night-tours", "bar-crawls", "comedy")
 BACH = ("sunset-yacht", "sunset-dinner")
 # Search links only. The priced yacht product stays on home and the bachelorette page.
 CRUISES = ("sunset-cruise", "dinner-cruise", "nye", "jazz-brunch")
+# Weekend, speakeasy, rooftop, and NYE guides. Search links only: no copied price.
+WEEKEND = ("night-tours", "sunset-cruise", "dinner-cruise", "bar-crawls")
+SPEAKEASY_GUIDE = ("rooftop-speakeasy", "bar-crawls")
+ROOFTOP_GUIDE = ("rooftop-speakeasy", "sunset-cruise")
+NYE_GUIDE = ("nye", "night-tours")
 
 # Open venues that had no affiliate card. One existing search link each.
 # (offer id, placement prefix). Campaign is nynightlife-<slug>.

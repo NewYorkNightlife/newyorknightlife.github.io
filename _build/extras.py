@@ -161,7 +161,8 @@ def tonight_page(H, vs):
 <div id="tonight" class="live" aria-live="polite"><p class="small">Loading tonight's list…</p>
 <noscript><p>This page needs JavaScript to work out what's open right now in New York time. Every venue's hours are on its own page: <a href="{u('/venues/')}">all venues</a>.</p></noscript></div>
 <h2>Good to know</h2>
-<ul class="clean"><li>NYC bars stop serving at 4am by state law. <a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time, explained</a>.</li>
+<ul class="clean"><li>Friday through Sunday: <a href="{u('/this-weekend/')}">this weekend</a>.</li>
+<li>NYC bars stop serving at 4am by state law. <a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time, explained</a>.</li>
 <li>Under 21? <a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Which venues let you in</a>.</li>
 <li>Dressing for the door: <a href="{u('/guides/nyc-dress-codes.html')}">every dress code in one table</a>.</li>
 <li>Comedy tonight: <a href="{u('/guides/nyc-comedy-clubs.html')}">clubs we could verify</a>, plus any comedy row in the feed above.</li></ul>
@@ -174,6 +175,110 @@ def tonight_page(H, vs):
                                                 "/tonight/", body, schemas, "no-bar",
                                                 updated=events.refresh_stamp(fetched_at) or fetched,
                                                 updated_iso=fetched_at or fetched))
+
+
+def weekend_late(vs, limit=8):
+    """Checked venues open past midnight on Friday, Saturday, or Sunday."""
+    import present
+    rows = []
+    labels = {"fri": "Fri", "sat": "Sat", "sun": "Sun"}
+    for v in vs or []:
+        if v.get("status") == "closed":
+            continue
+        hours = v.get("hours") or {}
+        if hours.get("kind") == "event":
+            continue
+        week = hours.get("week") or {}
+        best = None
+        for key, label in labels.items():
+            span = week.get(key)
+            if not span:
+                continue
+            mins = close_mins(span)
+            if mins >= 24 * 60 and (best is None or mins > best[0]):
+                best = (mins, label, span)
+        if best:
+            rows.append((v, best[1], best[2], best[0]))
+    rows.sort(key=lambda row: (-row[3], (row[0].get("name") or "").lower()))
+    html_cards = "".join(
+        present.venue_poster(v, f"{label} {span_text(span)}") for v, label, span, _mins in rows[:limit])
+    return rows, html_cards
+
+
+def weekend_page(H, vs):
+    import events
+    import present
+    import affiliates
+    u = H["u"]
+    snap = events.load_snapshot()
+    now = events.local_now()
+    rows = present.weekend_events(snap.get("events") or [], now)
+    fetched_at = snap.get("fetched_at") or ""
+    fetched = fetched_at[:10] or now.date().isoformat()
+    facts = events.weekend_facts(now)
+    late_rows, posters = weekend_late(vs)
+    note = ("Events that start between Friday at 5am and Monday at 5am New York time. "
+            "A start after midnight is shown on the previous night, same as Tonight. "
+            "Listings come from NYC Open Data and, when a key is configured, Ticketmaster Discovery. "
+            "Ticketmaster links are the event URL. "
+            f"Feed checked {fetched}.")
+    short = present.weekend_short(now, len(rows))
+    line = present.weekend_line(now, len(rows))
+    attrs = present.night_attrs("weekend")
+    listed = rows[:30]
+    faqs = [
+        ("What counts as this weekend?",
+         "Friday at 5am through Monday at 5am, New York time. Monday, Tuesday, Wednesday, and Thursday show the coming Friday. Friday, Saturday, and Sunday show the Friday already underway. Monday before 5am is still Sunday night. The 5am cutoff is the same one Tonight uses, so Thursday night is not part of the weekend."),
+        ("Where do these listings come from?",
+         "NYC Parks public events and NYC permitted events, both from NYC Open Data, plus Ticketmaster Discovery when the site's build has a key. We do not scrape Resident Advisor or SeatGeek. Viator cards on this page are separate, labeled booking links."),
+        ("Are the booking links affiliate links?",
+         "Viator links are affiliate links (partner ID P00330813) and they are marked sponsored. Ticketmaster buttons, when a listing has one, go to the event URL Ticketmaster returned and are not affiliate links."),
+        ("Why is a show missing?",
+         "The parks feed is mostly daytime programs, and we keep concerts, festivals, theater, and dance performances. Ticketmaster is limited to the next seven days in New York City. Anything outside those feeds is not listed. A missing listing means the feed did not include it."),
+    ]
+    schemas = [
+        {"@context": "https://schema.org", "@type": "WebPage", "name": "This weekend in NYC",
+         "url": "https://nynightlife.com/this-weekend/", "dateModified": fetched},
+        present.faq_schema(faqs),
+        present.item_list(
+            "This weekend",
+            [(ev["title"], "/this-weekend/") for ev in listed] or
+            [(v.get("name") or "Venue", "/venues/" + v["slug"] + ".html") for v, _label, _span, _mins in late_rows[:8]]),
+    ]
+    schemas += [s for s in (present.event_schema(ev) for ev in listed[:24]) if s]
+    late_block = ""
+    if posters:
+        late_block = (f'<h2>Open past midnight</h2>'
+                      f'<p class="small">Checked weekly hours on Friday, Saturday, or Sunday. '
+                      f'Not a live door report, and not a New Year\'s Eve schedule.</p>'
+                      f'<div class="pcards">{posters}</div>')
+    span = f"{facts['fri_long']} {facts['fri_mon']} {facts['fri_day']}–{facts['sun_long']} {facts['sun_mon']} {facts['sun_day']}"
+    body = f"""<p class="eyebrow" style="margin-top:8px"><span class="line-mark" aria-hidden="true">N</span>New York City</p><h1>This weekend</h1>
+<p class="hero-live" data-night-line>{e(line)}</p>
+{present.answer_box(short, "weekend")}
+{present.route_html()}
+{present.weekend_html(listed, now, note, attrs)}
+{late_block}
+<h2>Good to know</h2>
+<ul class="clean"><li>Tonight's slice of the same feed: <a href="{u('/tonight/')}">what's on tonight</a>.</li>
+<li>NYC bars stop serving at 4am by state law. <a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time, explained</a>.</li>
+<li>Hidden doors we could check: <a href="{u('/guides/nyc-speakeasies.html')}">NYC speakeasies</a>.</li>
+<li>Rooftop hours and dress codes: <a href="{u('/guides/nyc-rooftop-bars.html')}">NYC rooftop bars</a>.</li>
+<li>December 31 is its own page: <a href="{u('/guides/nyc-new-years-eve.html')}">New Year's Eve 2026</a>.</li>
+<li>A group plan: <a href="{u('/plans/')}">group nights</a>.</li></ul>
+{affiliates.block(affiliates.WEEKEND, "nynightlife-this-weekend", "this-weekend", u, "Book a weekend tour or cruise")}
+{newsletter_block(H)}
+<script defer src="{H['tonight_js']}"></script>"""
+    title = "NYC this weekend | NY Nightlife"
+    if len(title) > 60:
+        raise SystemExit(f"title over 60 characters ({len(title)}): {title}")
+    H["write"]("/this-weekend/index.html", H["page"](
+        title,
+        f"What's on in NYC {span}: Friday through Sunday from the same feeds as Tonight, plus bars open past midnight.",
+        "/this-weekend/", body, schemas, "no-bar",
+        updated=events.refresh_stamp(fetched_at) or fetched,
+        updated_iso=fetched_at or fetched,
+        crumb_label="This weekend"))
 
 
 def home_box(H):
