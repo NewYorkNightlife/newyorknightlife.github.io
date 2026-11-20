@@ -310,18 +310,23 @@ def guide_under21(H, vs):
                    f'<td data-label="Who gets in">{_fact_txt(v.get("age"))}</td></tr>' for v in in21)
     rest_rows = "".join(f'<tr><td data-label="Venue">{_vlink(H, v)}</td><td data-label="Age">{_fact_txt(v.get("age"))}</td></tr>'
                         for v in sorted(rest, key=lambda x: x["name"].lower()))
+    import present
     passport = [v for v in live if "passport" in ((v.get("age") or {}).get("value") or "").lower()]
     updated = max(checked, LAW_CHECKED)
-    body = f"""<p class="eyebrow" style="margin-top:20px">Guide · updated {H['fmt_date'](updated)} · venue facts checked {H['fmt_date'](checked)}</p>
-<h1>Under 21 in NYC: which bars and clubs let you in</h1>
-<p class="lede">In New York you must be 21 to buy or drink alcohol. Whether you can walk in under 21 is up to each venue. Of the {len(live)} venues we've checked, {len(in21)} let some under-21s in, at some times, with conditions.</p>
-<div class="card"><ul class="clean">
+    lede = (f"In New York you must be 21 to buy or drink alcohol. Whether you can walk in under 21 is up to each venue. "
+            f"Of the {len(live)} venues we've checked, {len(in21)} let some under-21s in, at some times, with conditions.")
+    body = present.guide_hero(
+        "Under 21 in NYC: which bars and clubs let you in",
+        f"Guide · updated {H['fmt_date'](updated)} · venue facts checked {H['fmt_date'](checked)}",
+        updated, present.place_chips(in21) or ["21+", "ID"]) + present.answer_box(lede) + present.jump_nav([
+            ("law", "The law"), ("admit", "Who gets in"), ("rest", "Everywhere else")]) + f"""
+<div class="card" id="law"><ul class="clean">
 <li>The law: no one may sell or give alcohol to anyone under 21 (<a href="{LAW_65}" rel="noopener">NY ABC Law §65</a>), and under-21s may not possess it intending to drink (<a href="{LAW_65C}" rel="noopener">§65-c</a>).</li>
 <li>Entry age is each venue's own policy, and it often changes by night or event. Read the conditions, then check the event listing.</li>
 <li>Bring a physical government photo ID.{' ' + str(len(passport)) + ' of the venues we have checked say a non-US ID must be a passport; see each venue page.' if passport else ''}</li></ul></div>
-<h2>Venues that admit some under-21s</h2>
+<h2 id="admit">Venues that admit some under-21s</h2>
 <div class="scroll-x"><table class="compare"><thead><tr><th>Venue</th><th>Who gets in (as checked)</th></tr></thead><tbody>{rows}</tbody></table></div>
-<h2>Everywhere else we've checked</h2>
+<h2 id="rest">Everywhere else we've checked</h2>
 <p>These say 21 or older, or haven't published an age.</p>
 <div class="scroll-x"><table class="compare"><thead><tr><th>Venue</th><th>Age</th></tr></thead><tbody>{rest_rows}</tbody></table></div>
 <p class="small">Each venue's age policy links to its sources on the venue page. Law text checked {H['fmt_date'](LAW_CHECKED)}. This isn't legal advice.</p>"""
@@ -367,21 +372,25 @@ def guide_closing(H, vs):
                        + (f'<div class="small">{e(h["note"])}</div>' if h.get("note") and _note_fits(h["note"], day) else "") + '</td></tr>'
                        for _, v, span, h in rows)
     events = [v for v in live if (v.get("hours") or {}).get("kind") == "event"]
+    import present
     updated = max(checked, LAW_CHECKED)
-    body = f"""<p class="eyebrow" style="margin-top:20px">Guide · updated {H['fmt_date'](updated)} · venue hours checked {H['fmt_date'](checked)}</p>
-<h1>What time do NYC bars close?</h1>
-<p class="lede">4am. New York State law stops on-premises alcohol sales at 4am in all five boroughs, and drinks must be finished by 4:30am. Many places close earlier.</p>
-<div class="card"><ul class="clean">
+    body = present.guide_hero(
+        "What time do NYC bars close?",
+        f"Guide · updated {H['fmt_date'](updated)} · venue hours checked {H['fmt_date'](checked)}",
+        updated, ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"]) + present.answer_box(
+        "4am. New York State law stops on-premises alcohol sales at 4am in all five boroughs, and drinks must be finished by 4:30am. Many places close earlier.") + present.jump_nav([
+            ("law", "The rule"), ("after", "After 4am"), ("saturday", "Saturday"), ("thursday", "Thursday")]) + f"""
+<div class="card" id="law"><ul class="clean">
 <li>Bars and restaurants can't sell drinks for on-premises drinking from 4am to 8am, or 4am to 10am on Sunday (<a href="{LAW_106}" rel="noopener">NY ABC Law §106(5)</a>).</li>
 <li>No one may drink on the premises more than half an hour after 4am (same section).</li>
 <li>The State Liquor Authority lists 4am closing for Manhattan, Brooklyn, Queens, the Bronx and Staten Island (<a href="{SLA_HOURS}" rel="noopener">county closing hours</a>).</li>
 <li>A venue's own license or choice can set earlier hours. That's why a club "open till 4am" may stop serving earlier.</li></ul></div>
-<h2>Dancing after 4am</h2>
+<h2 id="after">Dancing after 4am</h2>
 <p>The 4am rule is about selling alcohol, not about music. Some clubs keep going after the bar shuts: of the venues we've checked, {_after4(H, live)}</p>
-<h2>Who stays open latest on a Saturday</h2>
+<h2 id="saturday">Who stays open latest on a Saturday</h2>
 <p>Saturday-night hours of the venues we've checked, latest first (times after midnight are Sunday morning).</p>
 <div class="scroll-x"><table class="compare"><thead><tr><th>Venue</th><th>Saturday hours</th></tr></thead><tbody>{late_table('sat')}</tbody></table></div>
-<h2>On a Thursday</h2>
+<h2 id="thursday">On a Thursday</h2>
 <div class="scroll-x"><table class="compare"><thead><tr><th>Venue</th><th>Thursday hours</th></tr></thead><tbody>{late_table('thu')}</tbody></table></div>
 <p>Event-night venues (no fixed hours, check each listing): {', '.join(_vlink(H, v) for v in events)}.</p>
 <p>Out right now? <a href="{H['u']('/tonight/')}">See what's open tonight</a>.</p>

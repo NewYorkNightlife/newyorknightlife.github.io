@@ -163,7 +163,12 @@ def page(title, desc, path, body, schema=None, body_class="", robots="index,foll
     if trail:
         blocks.append(present.breadcrumb_schema(trail))
     crumb_html = "" if path in ("/", "/index.html") else present.crumbs_html(trail)
-    if updated:
+    # Guide and plan pages carry the date inside the route hero, so the
+    # automatic line above the crumbs would repeat it.
+    guide = path.startswith("/guides/") or path.startswith("/plans/")
+    if guide and "guide-page" not in body_class:
+        body_class = (body_class + " guide-page").strip()
+    if updated and not guide:
         extra = f' data-feed-updated="{e(updated_iso)}"' if updated_iso else ""
         upd = f'<p class="updated"{extra}>Updated {e(updated)}</p>'
     else:
@@ -259,6 +264,45 @@ def vcard(v, meta, answer):
     return (f'<a class="vcard" href="{u("/venues/" + v["slug"] + ".html")}">{vthumb(v)}'
             f'<span class="vtext"><span class="t">{e(v["name"])}</span>'
             f'<span class="m">{e(meta)}</span><span class="a">{answer}</span></span></a>')
+
+
+def _fact_chip(status):
+    return {"likely": ' <span class="chip">1 source</span>',
+            "unconfirmed": ' <span class="chip">unconfirmed</span>'}.get(status or "", "")
+
+
+def poster_card(v, detail_html):
+    """Venue list item as a poster: neighborhood, hours, price, and vibe, then the page's own line."""
+    def cell(label, shown):
+        if not shown:
+            return ""
+        return f"<div><dt>{e(label)}</dt><dd>{shown}</dd></div>"
+
+    def from_fact(fact):
+        fact = fact or {}
+        val = (fact.get("value") or "").strip()
+        if not val:
+            return ""
+        return e(val) + _fact_chip(fact.get("status"))
+
+    place = " · ".join(p for p in ((v.get("neighborhood") or "").strip(), (v.get("borough") or "").strip()) if p)
+    hours = v.get("hours") or {}
+    hours_html = from_fact(hours)
+    note = (hours.get("note") or "").strip()
+    if hours_html and note:
+        hours_html += f'<br><span class="small">{e(note)}</span>'
+    facts = (
+        cell("Neighborhood", e(place) if place else "")
+        + cell("Hours", hours_html)
+        + cell("Price", from_fact(v.get("price") or {}))
+        + cell("Vibe", e((v.get("type") or "").strip()))
+    )
+    detail = f'<span class="a">{detail_html}</span>' if detail_html else ""
+    return (
+        f'<a class="vcard poster-card" href="{u("/venues/" + v["slug"] + ".html")}">{vthumb(v)}'
+        f'<span class="vtext"><span class="t">{e(v["name"])}</span>'
+        f'<dl class="poster-facts">{facts}</dl>{detail}</span></a>'
+    )
 
 
 # ---------------------------------------------------------------- venues
@@ -462,16 +506,19 @@ def dress_hub(vs):
         f'<td data-label="Dress code">{e((v.get("dress") or {}).get("answer") or "Not found yet")}</td>'
         f'<td data-label="Age">{e((v.get("age") or {}).get("value") or "Not found yet")}</td>'
         f'<td data-label="Cover">{e((v.get("cover") or {}).get("value") or "Not found yet")}</td></tr>' for v in open_vs)
-    checked = fmt_date(max(v.get("checked", "2026-10-18") for v in vs))
-    body = f"""<p class="eyebrow" style="margin-top:16px">The roundup</p><h1>NYC bar &amp; club dress codes</h1>
+    checked_iso = max(v.get("checked", "2026-10-18") for v in vs)
+    checked = fmt_date(checked_iso)
+    chips = present.place_chips(open_vs)
+    body = present.guide_hero("NYC bar & club dress codes", "The roundup", checked_iso, chips) + f"""
 <p class="lede">What {len(open_vs)} New York bars and clubs say about dress code, age and cover, and what sources report when the venue says nothing. Checked {checked}.</p>
-<div class="card"><h2 class="as-h3">The short version</h2><ul class="clean">
+{present.jump_nav([("short", "The short version"), ("table", "Venue by venue"), ("sources", "Sources")])}
+<aside class="short-answer" id="short"><p class="label">Short answer</p><ul class="clean">
 <li>Most cocktail bars publish no dress code. "Smart casual" is the safe default.</li>
 <li>Clubs and rooftops are where sneakers, athletic wear and hats get turned away.</li>
-<li>Almost every venue here is 21+ at night. Bring a physical ID.</li></ul></div>
-<h2>Venue by venue</h2>
+<li>Almost every venue here is 21+ at night. Bring a physical ID.</li></ul></aside>
+<h2 id="table">Venue by venue</h2>
 <div class="scroll-x"><table class="compare"><thead><tr><th>Venue</th><th>Dress code</th><th>Age</th><th>Cover</th></tr></thead><tbody>{rows}</tbody></table></div>
-<p class="small">Each venue page lists its sources. <a href="{u('/how-we-check.html')}">How we check</a>.</p>"""
+<p class="small" id="sources">Each venue page lists its sources. <a href="{u('/how-we-check.html')}">How we check</a>.</p>"""
     schema = {"@context": "https://schema.org", "@type": "Article", "headline": "NYC bar & club dress codes",
               "dateModified": max(v.get("checked", "2026-10-18") for v in vs), "author": {"@type": "Person", "name": "Dan Herlehy"}}
     write("/guides/nyc-dress-codes.html", page("NYC bar & club dress codes (checked) | NY Nightlife",
@@ -524,26 +571,90 @@ def copy_static():
             shutil.copyfile(src, dst)
 
 
-def check_output():
-    """Every local file the pages ask for must exist. A missing derivative used
-    to ship as an empty hero and a 404 share image, with no warning."""
+def _local_target(ref):
+    target = ref.split("?")[0].split("#")[0]
+    if not target.startswith("/"):
+        return None
+    if target.endswith("/"):
+        target += "index.html"
+    return target.lstrip("/")
+
+
+def _refs_in(text):
+    refs = re.findall(r'(?:src|href)="(/[^"]+)"', text)
+    refs += re.findall(r'https://nynightlife\.com(/[^"\s)<]+)', text)
+    for srcset in re.findall(r'srcset="([^"]+)"', text):
+        refs += [c.strip().split()[0] for c in srcset.split(",") if c.strip().startswith("/")]
+    return refs
+
+
+def audit_urls(root):
+    """Sitemap entries must be real, indexable, canonical pages with a lastmod.
+    Internal links in HTML and llms.txt must point at a file that exists."""
+    root = pathlib.Path(root)
+    problems = []
     missing = set()
-    for f in OUT.rglob("*.html"):
-        s = f.read_text(encoding="utf-8")
-        refs = re.findall(r'(?:src|href)="(/[^"]+)"', s)
-        refs += re.findall(r'https://nynightlife\.com(/[^"\s<]+)', s)
-        for m in re.findall(r'srcset="([^"]+)"', s):
-            refs += [c.strip().split()[0] for c in m.split(",") if c.strip()]
-        for r in refs:
-            r = r.split("?")[0].split("#")[0]
-            if r.endswith("/"):
-                r += "index.html"
-            if not (OUT / r.lstrip("/")).exists():
-                missing.add(r)
+    for f in list(root.rglob("*.html")) + [root / "llms.txt", root / "llms-full.txt"]:
+        if not f.is_file():
+            continue
+        rel = f.relative_to(root).as_posix()
+        if rel.startswith("_build/") or "/.git/" in f.as_posix():
+            continue
+        text = f.read_text(encoding="utf-8")
+        for ref in _refs_in(text):
+            target = _local_target(ref)
+            if target and not (root / target).exists():
+                missing.add(f"{rel} -> /{target}")
     if missing:
-        raise SystemExit("build produced broken references:\n  " + "\n  ".join(sorted(missing))
+        problems.append("broken internal links:\n  " + "\n  ".join(sorted(missing)))
+    sm_path = root / "sitemap.xml"
+    sm = sm_path.read_text(encoding="utf-8") if sm_path.exists() else ""
+    blocks = re.findall(r"<url>(.*?)</url>", sm, re.S)
+    if not blocks:
+        problems.append("sitemap.xml has no <url> entries")
+    seen = set()
+    for block in blocks:
+        loc_m = re.search(r"<loc>\s*https://nynightlife\.com([^<]*?)\s*</loc>", block)
+        mod_m = re.search(r"<lastmod>\s*(\d{4}-\d{2}-\d{2})\s*</lastmod>", block)
+        if not loc_m:
+            problems.append("sitemap url missing a loc")
+            continue
+        path = loc_m.group(1) or "/"
+        if not path.startswith("/"):
+            path = "/" + path
+        if path in seen:
+            problems.append(f"sitemap repeats {path}")
+        seen.add(path)
+        if not mod_m:
+            problems.append(f"sitemap {path} missing lastmod YYYY-MM-DD")
+        target = _local_target(path)
+        page = root / target if target else None
+        if page is None or not page.exists():
+            problems.append(f"sitemap {path} does not exist")
+            continue
+        html_txt = page.read_text(encoding="utf-8")
+        robots_m = re.search(r'<meta name="robots" content="([^"]*)"', html_txt)
+        robots = robots_m.group(1) if robots_m else "index,follow"
+        if "noindex" in robots:
+            problems.append(f"sitemap lists noindex URL {path}")
+        if 'http-equiv="refresh"' in html_txt:
+            problems.append(f"sitemap lists a redirect {path}")
+        canon_m = re.search(r'<link rel="canonical" href="([^"]+)"', html_txt)
+        canon = canon_m.group(1) if canon_m else ""
+        want = "https://nynightlife.com" + path
+        if canon != want:
+            problems.append(f"sitemap {path} canonical is {canon or 'missing'}, expected {want}")
+    if problems:
+        raise SystemExit("URL audit failed:\n  " + "\n  ".join(problems)
                          + "\n(if these are images, run: python _build/make_images.py && python _build/make_og.py)")
     return True
+
+
+def check_output():
+    """Every local file the pages ask for must exist, and the sitemap may only
+    list indexable canonical URLs. A missing derivative used to ship as an
+    empty hero and a 404 share image, with no warning."""
+    return audit_urls(OUT)
 
 
 def write_meta(live_day):
@@ -598,7 +709,7 @@ def main():
     XH = {"u": u, "page": page, "write": write, "fmt_date": fmt_date, "OUT": OUT, "LIVE_V": LIVE_V,
           "tonight_js": tonight_js}
     plan_rows = pages.build(page, write, u, actions, fmt_date, vs,
-                            {"plate": plate, "vcard": vcard, "picture": picture, "home_box": lambda: extras.home_box(XH),
+                            {"plate": plate, "vcard": vcard, "poster": poster_card, "picture": picture, "home_box": lambda: extras.home_box(XH),
                              "newsletter": lambda: extras.newsletter_block(XH), "tonight_js": tonight_js})
     extras.tonight_page(XH, vs)
     extras.weekend_page(XH, vs)
@@ -615,6 +726,8 @@ def main():
     extra = [(p, live_day if p in ("/tonight/", "/", "/this-weekend/") else d) for p, d in extra]
     write_meta(live_day)
     sitemap(vs, pbs, extra)
+    import redirects
+    redirects.write_redirects(OUT)
     check_output()
     print(f"built {len(vs)} venue pages + hubs into {OUT}")
 

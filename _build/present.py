@@ -109,7 +109,7 @@ def faq_html(pairs):
     rows = []
     for q, a in pairs:
         rows.append(f"<details class=\"qa\" open><summary>{e(q)}</summary><p>{e(a)}</p></details>")
-    return "<section class=\"faq\"><h2>Questions</h2>" + "".join(rows) + "</section>"
+    return '<section class="faq" id="questions"><h2>Questions</h2>' + "".join(rows) + "</section>"
 
 
 def faq_schema(pairs):
@@ -520,7 +520,7 @@ def route_html(heading=True):
 </ol>"""
     if not heading:
         return line
-    return """<section class="route-block"><h2>The night, as a line</h2>
+    return """<section class="route-block" id="line"><h2>The night, as a line</h2>
 <p class="small">A route line, not a listing. Stops run from 5pm to the 4am close. The lit stop is the current part of the evening in New York.</p>
 """ + line + "</section>"
 
@@ -558,3 +558,60 @@ def split_events(rows, now):
     upcoming.sort(key=lambda r: r.get("start") or "")
     earlier.sort(key=lambda r: r.get("start") or "")
     return tonight, upcoming + earlier
+
+
+def place_chips(venues, limit=6):
+    """Neighborhoods first, then boroughs. Empty and duplicate labels are dropped."""
+    hoods, boros, seen = [], [], set()
+    for v in venues:
+        hood = (v.get("neighborhood") or "").strip()
+        boro = (v.get("borough") or "").strip()
+        if hood and hood not in seen:
+            seen.add(hood)
+            hoods.append(hood)
+        if boro and boro not in seen:
+            seen.add(boro)
+            boros.append(boro)
+    return (hoods + boros)[:limit]
+
+
+def guide_hero(title, eyebrow, updated, chips, media=""):
+    """Dark route hero for a guide or plan. `media` is optional already-built picture HTML."""
+    chip_html = "".join(f"<li>{e(c)}</li>" for c in chips if c)
+    klass = "guide-hero has-photo" if media else "guide-hero"
+    media_html = f'<div class="guide-hero-media">{media}</div>' if media else ""
+    return (
+        f'<header class="{klass}">'
+        f'<div class="route-glow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>'
+        f"{media_html}"
+        f'<div class="guide-hero-copy">'
+        f'<p class="fresh">Updated <time datetime="{e(updated)}">{e(updated)}</time></p>'
+        f'<p class="eyebrow">{e(eyebrow)}</p>'
+        f"<h1>{e(title)}</h1>"
+        f'<ul class="hood-chips">{chip_html}</ul>'
+        f"</div></header>"
+    )
+
+
+def jump_nav(items):
+    """In-page links. Sticky on desktop, a sideways chip row on a phone."""
+    links = "".join(f'<a href="#{e(i)}">{e(n)}</a>' for i, n in items)
+    return f'<nav class="jump-nav" aria-label="On this page">{links}</nav>'
+
+
+def static_poster(name, href, facts, blurb, initial, external=False):
+    """A poster for a place that is not one of our venue pages. Facts are copied, not invented.
+
+    A missing href keeps the same card without a link, for a sailing described on this page.
+    """
+    cells = "".join(f"<div><dt>{e(label)}</dt><dd>{e(value)}</dd></div>" for label, value in facts if value)
+    text = f'<span class="a">{e(blurb)}</span>' if blurb else ""
+    inner = (
+        f'<span class="vthumb pattern" aria-hidden="true"><span class="initial">{e(initial)}</span></span>'
+        f'<span class="vtext"><span class="t">{e(name)}</span>'
+        f'<dl class="poster-facts">{cells}</dl>{text}</span>'
+    )
+    if not href:
+        return f'<article class="vcard poster-card">{inner}</article>'
+    rel = ' rel="nofollow noopener"' if external else ""
+    return f'<a class="vcard poster-card" href="{e(href)}"{rel}>{inner}</a>'
