@@ -199,22 +199,10 @@ def write(path, text):
 
 # ---------------------------------------------------------------- imagery
 # A venue page shows a photograph only when we hold a correctly-licensed one.
-# The other venues get a cover drawn in CSS from their own slug and initial:
-# it costs no bytes, it is stable between builds, and it can never be mistaken
-# for a picture of the room.
+# The other venues get a Night Signal poster drawn in CSS: the name, the area,
+# and a category line. It costs no bytes and cannot be mistaken for a photo.
 SIZES_PLATE = ("(min-width: 1340px) 1116px, (min-width: 1040px) 1016px, "
                "(min-width: 796px) 724px, calc(100vw - 36px)")
-
-
-def pattern_of(slug):
-    return int(hashlib.md5(slug.encode()).hexdigest(), 16) % 6 + 1
-
-
-def initial_of(name):
-    for c in re.sub(r"^(the|a)\s+", "", name.strip(), flags=re.I):
-        if c.isalnum():
-            return c.upper()
-    return "N"
 
 
 def has_photo(v):
@@ -236,7 +224,7 @@ def picture(slug, alt, sizes, eager=False):
             f'{load} decoding="async"></picture>')
 
 
-def plate(slug, name, eyebrow, title=None, credit=None, alt=None, style=""):
+def plate(slug, name, eyebrow, title=None, credit=None, alt=None, style="", area="", category=""):
     """The title block. `credit` (already-escaped HTML) means: use the photo."""
     title = title or name
     st = f' style="{style}"' if style else ""
@@ -244,9 +232,18 @@ def plate(slug, name, eyebrow, title=None, credit=None, alt=None, style=""):
     if credit:
         return (f'<div class="plate photo"{st}>{picture(slug, alt or name, SIZES_PLATE, eager=True)}'
                 f'{eb}<h1>{e(title)}</h1></div><p class="credit">Photo: {credit}</p>')
-    return (f'<div class="plate pattern pat{pattern_of(slug)}"{st}>'
-            f'<span class="initial" aria-hidden="true">{e(initial_of(name))}</span>'
-            f'{eb}<h1>{e(title)}</h1></div>')
+    kind = category or "Nightlife"
+    variant, px, py = present.poster_metrics(title)
+    line = present.signal_line(kind)
+    extra = f"--line:{line}" + (f";{style}" if style else "")
+    return (
+        f'<div class="plate pattern is-poster" style="{extra}">'
+        f'<span class="poster pv{variant}" style="--px:{px}%;--py:{py}%">'
+        f'<span class="poster-cat">{e(kind)}</span>'
+        f'<h1 class="poster-t">{e(title)}</h1>'
+        f'<span class="poster-m">{e(area)}</span>'
+        f'</span></div>'
+    )
 
 
 def vthumb(v):
@@ -256,8 +253,12 @@ def vthumb(v):
                 f'<source type="image/webp" srcset="{u("/img/" + slug + "-thumb.webp")}">'
                 f'<img src="{u("/img/" + slug + "-thumb.jpg")}" alt="" width="176" height="176" '
                 f'loading="lazy" decoding="async"></picture></span>')
-    return (f'<span class="vthumb pattern pat{pattern_of(slug)}" aria-hidden="true">'
-            f'<span class="initial">{e(initial_of(v["name"]))}</span></span>')
+    kind = v.get("type") or "Nightlife"
+    area = v.get("neighborhood") or v.get("borough") or ""
+    return (
+        f'<span class="vthumb pattern is-poster" style="--line:{present.signal_line(kind)}" aria-hidden="true">'
+        f'{present.night_poster(v["name"], kind, area)}</span>'
+    )
 
 
 def vcard(v, meta, answer):
@@ -359,7 +360,8 @@ def venue_page(v, vs=None):
                   + (f'. {e(photo["depicts"])}' if photo.get("depicts") else ""))
     # The hero is decorative: the name is in the h1 right beside it and the
     # credit sits underneath, so naming it again only doubles the announcement.
-    head_block = plate(slug, name, f"{e(hood)} · {e(type_)}", credit=credit, alt="")
+    head_block = plate(slug, name, f"{e(hood)} · {e(type_)}", credit=credit, alt="",
+                       area=hood, category=type_ or "Nightlife")
 
     if closed:
         body = f"""<div class="answer"><div class="label">Status</div><div class="value">Closed</div><p>{e(v.get('status_note', ''))}</p></div>

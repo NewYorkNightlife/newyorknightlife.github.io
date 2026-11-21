@@ -12,15 +12,20 @@ function check(name, cond) {
 }
 
 function makeEl(tag) {
+  const style = {};
+  style.setProperty = function (k, v) { this[k] = String(v); };
   const node = {
-    tag, children: [], attrs: {}, className: '', href: '', rel: '', target: '', src: '', alt: '',
-    width: 0, height: 0, style: {}, parent: null, _text: '',
+    tag, tagName: String(tag || '').toUpperCase(), children: [], attrs: {}, className: '', href: '', rel: '', target: '', src: '', alt: '',
+    width: 0, height: 0, style, parent: null, parentNode: null, _text: '', listeners: {},
     setAttribute(k, v) { this.attrs[k] = String(v); },
     getAttribute(k) { return Object.prototype.hasOwnProperty.call(this.attrs, k) ? this.attrs[k] : null; },
-    appendChild(c) { this.children.push(c); c.parent = this; return c; },
+    addEventListener(type, fn) { (this.listeners[type] || (this.listeners[type] = [])).push(fn); },
+    appendChild(c) { this.children.push(c); c.parent = this; c.parentNode = this; return c; },
     removeChild(c) {
       const i = this.children.indexOf(c);
       if (i >= 0) this.children.splice(i, 1);
+      c.parent = null;
+      c.parentNode = null;
       return c;
     }
   };
@@ -114,7 +119,23 @@ function page(kind) {
   return { body, stamp, line, summary, section, week, copy };
 }
 
-async function run(iso, kind) {
+function classes(node) {
+  return String(node.className || '').split(/\s+/).filter(Boolean);
+}
+function byClass(node, cls) {
+  const out = [];
+  (function rec(n) {
+    if (classes(n).includes(cls)) out.push(n);
+    (n.children || []).forEach(rec);
+  })(node);
+  return out;
+}
+function mediaFilled(node) {
+  const media = byClass(node, 'pcard-media');
+  return media.every((m) => m.children.some((c) => c.tagName === 'IMG' || classes(c).includes('poster')));
+}
+
+async function run(iso, kind, feed) {
   const dom = page(kind);
   const doc = {
     currentScript: { src: 'https://nynightlife.com/js/tonight.js?v=test' },
@@ -131,7 +152,7 @@ async function run(iso, kind) {
     Date: clock(iso),
     fetch(url) {
       const u = String(url);
-      const payload = u.includes('venues.json') ? VENUES : FEED;
+      const payload = u.includes('venues.json') ? VENUES : (feed || FEED);
       return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(JSON.stringify(payload))) });
     }
   };
@@ -143,6 +164,57 @@ async function run(iso, kind) {
 
 function bareZero(text) {
   return /(^|[^\d])0 (events|tonight|of those)\b/.test(text) || /\b(list|lists) 0\b/.test(text);
+}
+
+function walkHtml(dir, out) {
+  for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (ent.name === '_build' || ent.name === '.git' || ent.name === 'node_modules') continue;
+    const p = path.join(dir, ent.name);
+    if (ent.isDirectory()) walkHtml(p, out);
+    else if (ent.name.endsWith('.html')) out.push(p);
+  }
+}
+function elementInner(html, openEnd) {
+  const re = /<\/?(span|div)\b[^>]*>|<img\b[^>]*>/gi;
+  re.lastIndex = openEnd;
+  let depth = 1;
+  let m;
+  while ((m = re.exec(html))) {
+    const tok = m[0];
+    if (/^<img\b/i.test(tok)) continue;
+    if (tok.startsWith('</')) {
+      depth -= 1;
+      if (depth === 0) return html.slice(openEnd, m.index);
+    } else depth += 1;
+  }
+  return '';
+}
+function checkBuiltMedia() {
+  const root = path.join(__dirname, '..');
+  const files = [];
+  walkHtml(root, files);
+  let seen = 0;
+  for (const file of files) {
+    const html = fs.readFileSync(file, 'utf8');
+    const openRe = /<(span|div)\b([^>]*\bclass="[^"]*"[^>]*)>/gi;
+    let m;
+    while ((m = openRe.exec(html))) {
+      const classM = /\bclass="([^"]*)"/.exec(m[2]);
+      if (!classM) continue;
+      const cls = classM[1].split(/\s+/);
+      const card = cls.includes('pcard-media');
+      const pattern = (cls.includes('vthumb') || cls.includes('plate')) && cls.includes('pattern');
+      if (!card && !pattern) continue;
+      seen += 1;
+      const inner = elementInner(html, m.index + m[0].length);
+      const ok = /<img\b/i.test(inner) || /\bclass="poster[\s"]/.test(inner);
+      if (!ok) {
+        const rel = path.relative(root, file);
+        check(rel + ' media has an img or a poster', false);
+      }
+    }
+  }
+  check('built card media was scanned', seen > 0);
 }
 
 (async () => {
@@ -193,6 +265,57 @@ function bareZero(text) {
   check('monday morning rolls to the next weekend',
     mondayDay.line.textContent === 'Fri\u2013Sun Nov 27\u201329 \u00b7 Nothing listed');
   check('rolled weekend has no bare zero', !bareZero(mondayDay.line.textContent) && !bareZero(mondayDay.copy.textContent));
+
+  for (const [name, dom] of [['1am', one], ['later-day', later], ['empty', empty], ['weekend', midweek], ['monday-night', mondayNight], ['monday-day', mondayDay]]) {
+    check(name + ' card media has a photo or a poster', mediaFilled(dom.section) && mediaFilled(dom.week));
+  }
+  const late = byClass(empty.section, 'pcard').find((c) => texts(c, 't').includes('Attaboy'));
+  const latePoster = late && byClass(late, 'poster')[0];
+  check('open-past-midnight card is a poster, not a letter', latePoster && byClass(late, 'mark').length === 0 && classes(byClass(late, 'pcard-media')[0]).includes('is-poster'));
+  check('open-past-midnight poster names the venue and neighborhood',
+    latePoster && texts(latePoster, 'poster-cat').includes('Nightlife') && texts(latePoster, 'poster-t').includes('Attaboy') && texts(latePoster, 'poster-m').includes('Lower East Side'));
+  check('poster variant is pv0-pv5 with anchors',
+    latePoster && classes(latePoster).some((c) => /^pv[0-5]$/.test(c)) && /^\d+%$/.test(latePoster.style['--px']) && /^\d+%$/.test(latePoster.style['--py']));
+
+  const shotFeed = {
+    fetched_at: FEED.fetched_at,
+    events: [
+      { title: 'Ticketm Photo', start: '2026-11-17T22:00:00-05:00', end: '2026-11-18T01:30:00-05:00', venue_name: 'Hall', category: 'music', url: 'https://www.ticketmaster.com/event/a', source: 'ticketmaster', image_url: 'https://s1.ticketm.net/x.jpg', image_w: 640, image_h: 360 },
+      { title: 'Ticketmaster Photo', start: '2026-11-17T22:30:00-05:00', end: '2026-11-18T02:00:00-05:00', venue_name: 'Garden', category: 'comedy', url: 'https://www.ticketmaster.com/event/b', source: 'ticketmaster', image_url: 'https://www.ticketmaster.com/x.jpg' },
+      { title: 'Parks Photo', start: '2026-11-17T21:00:00-05:00', end: '2026-11-18T01:30:00-05:00', venue_name: 'Lawn', category: 'parks', url: 'https://www.nycgovparks.org/events/1', source: 'nyc_parks', image_url: 'https://www.nycgovparks.org/x.jpg' },
+      { title: 'Evil Host', start: '2026-11-17T23:00:00-05:00', venue_name: 'Nowhere', category: 'music', url: 'https://www.ticketmaster.com/event/c', source: 'ticketmaster', image_url: 'https://evilticketm.net/x.jpg' },
+      { title: 'No Picture', start: '2026-11-17T23:15:00-05:00', venue_name: 'Park', category: 'parks', url: '/tonight/', source: 'nyc_parks' }
+    ]
+  };
+  const shots = await run('2026-11-18T01:00:00-05:00', 'tonight', shotFeed);
+  function cardNamed(title) {
+    return byClass(shots.section, 'pcard').find((c) => texts(c, 't').includes(title));
+  }
+  function imgOf(card) {
+    const media = card && byClass(card, 'pcard-media')[0];
+    return media && media.children.find((c) => c.tagName === 'IMG');
+  }
+  const tm = cardNamed('Ticketm Photo');
+  const tcom = cardNamed('Ticketmaster Photo');
+  const parks = cardNamed('Parks Photo');
+  const evil = cardNamed('Evil Host');
+  const none = cardNamed('No Picture');
+  check('safeImage accepts https://s1.ticketm.net/x.jpg', imgOf(tm) && imgOf(tm).src === 'https://s1.ticketm.net/x.jpg');
+  check('safeImage accepts https://www.ticketmaster.com/x.jpg', imgOf(tcom) && imgOf(tcom).src === 'https://www.ticketmaster.com/x.jpg');
+  check('safeImage accepts a nycgovparks.org image', imgOf(parks) && imgOf(parks).src === 'https://www.nycgovparks.org/x.jpg');
+  check('safeImage rejects https://evilticketm.net/x.jpg', evil && !imgOf(evil) && byClass(evil, 'poster').length === 1);
+  const bare = byClass(none, 'poster')[0];
+  check('event without a photo gets a Night Signal poster',
+    bare && classes(byClass(none, 'pcard-media')[0]).includes('is-poster')
+    && texts(bare, 'poster-cat').includes('Parks') && texts(bare, 'poster-t').includes('No Picture') && texts(bare, 'poster-m').includes('Park'));
+  check('shot cards all have a photo or a poster', mediaFilled(shots.section));
+  const broken = imgOf(tm);
+  (broken.listeners.error || []).forEach((fn) => fn());
+  const brokenMedia = byClass(tm, 'pcard-media')[0];
+  check('a broken photo is swapped for a poster',
+    brokenMedia && !brokenMedia.children.some((c) => c.tagName === 'IMG') && byClass(brokenMedia, 'poster').length === 1 && classes(brokenMedia).includes('is-poster'));
+
+  checkBuiltMedia();
 
   console.log(fails ? fails + ' FAILED' : 'OK: tonight client');
   process.exit(fails ? 1 : 0);

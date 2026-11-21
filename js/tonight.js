@@ -19,8 +19,8 @@ data-night-page="weekend" uses the same clock for Friday 5am through Monday
   var ROOT = /js\/tonight\.js/.test(SRC) ? SRC.replace(/js\/tonight\.js.*$/, '') : '/';
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var LONG = { Sun: 'Sunday', Mon: 'Monday', Tue: 'Tuesday', Wed: 'Wednesday', Thu: 'Thursday', Fri: 'Friday', Sat: 'Saturday' };
-  var MARK = { music: 'M', comedy: 'C', club: 'K', nightlife: 'N', theatre: 'A', parks: 'P', festival: 'F', tour: 'T', cruise: 'B' };
   var LABEL = { music: 'Music', comedy: 'Comedy', club: 'Dance', nightlife: 'Nightlife', theatre: 'Theatre', parks: 'Parks', festival: 'Festival', tour: 'Tour', cruise: 'Cruise' };
+  var IMG_HOSTS = ['ticketm.net', 'ticketmaster.com', 'nycgovparks.org'];
   var THREE_H = 3 * 60 * 60 * 1000;
 
   function R(p) { return ROOT + String(p || '').replace(/^\//, ''); }
@@ -169,6 +169,13 @@ data-night-page="weekend" uses the same clock for Friday 5am through Monday
     if (/^https:\/\/[a-z0-9.-]+(\/|$)/i.test(url)) return url;
     return R('tonight/');
   }
+  function hostOk(host) {
+    for (var i = 0; i < IMG_HOSTS.length; i++) {
+      var h = IMG_HOSTS[i];
+      if (host === h || (host.length > h.length && host.slice(-(h.length + 1)) === '.' + h)) return true;
+    }
+    return false;
+  }
   function safeImage(ev) {
     var local = ev.image_local || '';
     if (local.charAt(0) === '/' && local.indexOf('//') !== 0 && local.indexOf('\\') < 0) return R(local);
@@ -176,16 +183,66 @@ data-night-page="weekend" uses the same clock for Friday 5am through Monday
     if (!/^https:\/\//i.test(remote)) return '';
     var host = '';
     try { host = new URL(remote).hostname.toLowerCase(); } catch (err) { return ''; }
-    if (host === 'ticketm.net' || host.slice(-11) === '.ticketm.net' || host === 'ticketmaster.com' || host.slice(-16) === '.ticketmaster.com' || host === 'nycgovparks.org' || host.slice(-16) === '.nycgovparks.org') return remote;
+    if (hostOk(host)) return remote;
     return '';
   }
-  function initial(name) {
-    var s = String(name || '').replace(/^(the|a|an)\s+/i, '');
-    for (var i = 0; i < s.length; i++) if (/[a-z0-9]/i.test(s.charAt(i))) return s.charAt(i).toUpperCase();
-    return 'N';
+  function fnv1a(text) {
+    var h = 2166136261;
+    var s = String(text || '');
+    for (var i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  }
+  function hasClass(node, cls) {
+    return (' ' + (node.className || '') + ' ').indexOf(' ' + cls + ' ') >= 0;
+  }
+  function isImg(node) {
+    return String(node.tagName || node.tag || '').toLowerCase() === 'img';
+  }
+  function posterEl(title, cat, meta) {
+    var h = fnv1a(title);
+    var node = el('span', 'poster pv' + (h % 6));
+    node.style.setProperty('--px', (12 + (h % 76)) + '%');
+    node.style.setProperty('--py', (8 + ((h >>> 8) % 70)) + '%');
+    node.setAttribute('aria-hidden', 'true');
+    node.appendChild(el('span', 'poster-cat', cat || 'Nightlife'));
+    node.appendChild(el('span', 'poster-t', title || 'Tonight'));
+    if (meta) node.appendChild(el('span', 'poster-m', meta));
+    return node;
+  }
+  function usePoster(media, title, cat, meta) {
+    if (!hasClass(media, 'is-poster')) media.className += ' is-poster';
+    var kids = media.children || [];
+    for (var i = kids.length - 1; i >= 0; i--) {
+      var child = kids[i];
+      if (isImg(child) || hasClass(child, 'poster')) media.removeChild(child);
+    }
+    media.appendChild(posterEl(title, cat, meta));
+  }
+  function attachImage(media, src, alt, w, h, title, cat, meta) {
+    var img = el('img');
+    img.src = src;
+    img.alt = alt;
+    img.width = w || 640;
+    img.height = h || 360;
+    img.setAttribute('loading', 'lazy');
+    img.setAttribute('decoding', 'async');
+    var swapped = false;
+    img.addEventListener('error', function () {
+      if (swapped) return;
+      swapped = true;
+      if (img.parentNode) img.parentNode.removeChild(img);
+      usePoster(media, title, cat, meta);
+    });
+    media.appendChild(img);
   }
   function eventCard(ev) {
     var cat = ev.category || 'parks';
+    var title = ev.title || 'Event';
+    var catLabel = LABEL[cat] || 'Event';
+    var posterMeta = ev.venue_name || ev.borough || '';
     var a = el('a', 'pcard');
     a.setAttribute('data-cat', cat);
     a.href = safeHref(ev.url);
@@ -193,16 +250,9 @@ data-night-page="weekend" uses the same clock for Friday 5am through Monday
     var media = el('span', 'pcard-media cat-' + cat);
     var src = safeImage(ev);
     if (src) {
-      var img = el('img');
-      img.src = src;
-      img.alt = (ev.title || 'Event') + (ev.venue_name ? ' at ' + ev.venue_name : '');
-      img.width = ev.image_w || 640;
-      img.height = ev.image_h || 360;
-      img.setAttribute('loading', 'lazy');
-      img.setAttribute('decoding', 'async');
-      media.appendChild(img);
+      attachImage(media, src, title + (ev.venue_name ? ' at ' + ev.venue_name : ''), ev.image_w || 640, ev.image_h || 360, title, catLabel, posterMeta);
     } else {
-      media.appendChild(el('span', 'mark', MARK[cat] || 'P'));
+      usePoster(media, title, catLabel, posterMeta);
     }
     var body = el('span', 'pcard-body');
     var start = new Date(ev.start);
@@ -274,7 +324,7 @@ data-night-page="weekend" uses the same clock for Friday 5am through Monday
     a.setAttribute('data-cat', 'nightlife');
     a.href = safeHref(v.url ? ('/' + String(v.url).replace(/^\//, '')) : ('/venues/' + v.slug + '.html'));
     var media = el('span', 'pcard-media cat-nightlife');
-    media.appendChild(el('span', 'mark', initial(v.name)));
+    usePoster(media, v.name || 'Venue', 'Nightlife', v.hood || v.neighborhood || v.borough || '');
     var body = el('span', 'pcard-body');
     body.appendChild(el('span', 'kicker', 'Open past midnight'));
     body.appendChild(el('span', 't', v.name || 'Venue'));

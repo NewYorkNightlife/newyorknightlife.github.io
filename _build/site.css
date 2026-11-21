@@ -646,12 +646,13 @@ p.eyebrow:has(.line-mark) {
   font-size: 72px;
   color: var(--line);
 }
-.pcard-media.cat-music { background: radial-gradient(circle at 30% 20%, rgba(110, 168, 255, .55), #10151f 70%); }
-.pcard-media.cat-comedy { background: radial-gradient(circle at 70% 20%, rgba(255, 184, 107, .5), #10151f 70%); }
-.pcard-media.cat-theatre { background: radial-gradient(circle at 40% 80%, rgba(201, 182, 255, .45), #10151f 70%); }
-.pcard-media.cat-nightlife, .pcard-media.cat-club { background: radial-gradient(circle at 70% 30%, rgba(125, 222, 207, .4), #10151f 70%); }
-.pcard-media.cat-festival { background: radial-gradient(circle at 30% 30%, rgba(240, 193, 74, .42), #10151f 70%); }
-.pcard-media.cat-parks { background: radial-gradient(circle at 60% 20%, rgba(157, 207, 138, .4), #10151f 70%); }
+.pcard-media.cat-music { --line: #6EA8FF; --display: 'Fraunces', Georgia, serif; background: radial-gradient(circle at 30% 20%, rgba(110, 168, 255, .55), #10151f 70%); }
+.pcard-media.cat-comedy { --line: #FFB86B; --display: 'Fraunces', Georgia, serif; background: radial-gradient(circle at 70% 20%, rgba(255, 184, 107, .5), #10151f 70%); }
+.pcard-media.cat-theatre { --line: #C9B6FF; --display: 'Fraunces', Georgia, serif; background: radial-gradient(circle at 40% 80%, rgba(201, 182, 255, .45), #10151f 70%); }
+.pcard-media.cat-nightlife, .pcard-media.cat-club { --line: #7DDECF; --display: 'Fraunces', Georgia, serif; background: radial-gradient(circle at 70% 30%, rgba(125, 222, 207, .4), #10151f 70%); }
+.pcard-media.cat-festival { --line: #F0C14A; --display: 'Fraunces', Georgia, serif; background: radial-gradient(circle at 30% 30%, rgba(240, 193, 74, .42), #10151f 70%); }
+.pcard-media.cat-parks { --line: #9DCF8A; --display: 'Fraunces', Georgia, serif; background: radial-gradient(circle at 60% 20%, rgba(157, 207, 138, .4), #10151f 70%); }
+.pcard-media.cat-tour, .pcard-media.cat-cruise { --line: #8EB4FF; --display: 'Fraunces', Georgia, serif; }
 .pcard-body { display: flex; flex-direction: column; gap: 6px; padding: 14px 14px 16px 18px; }
 .pcard .kicker, .pcard .price { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--line); }
 .pcard .kicker::before {
@@ -1041,4 +1042,134 @@ body.guide-page .poster::before {
   .route-glow::before { box-shadow: none; }
   .route-glow i { box-shadow: none; }
   .guide-hero { box-shadow: none; }
+}
+
+/* Night Signal poster. Replaces a blank letter tile when a card has no photo.
+   Scoped under the media so it does not restyle the price-card .poster. */
+.pcard-media.is-poster { background: #07090f; }
+.pcard-media.is-poster > .poster,
+.vthumb.is-poster > .poster,
+.plate.is-poster > .poster {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 16px 16px 16px 20px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 0;
+  border-radius: 0;
+  background:
+    radial-gradient(120% 90% at var(--px, 70%) var(--py, 20%), color-mix(in srgb, var(--line) 55%, transparent), transparent 60%),
+    linear-gradient(160deg, #111827 0%, #07090f 70%);
+  color: #F2F5FA;
+}
+.vthumb.pattern.is-poster,
+.plate.pattern.is-poster { background: #07090f; }
+.vthumb.pattern.is-poster::before,
+.plate.pattern.is-poster::before { content: none; display: none; }
+.pcard-media.is-poster > .poster::before,
+.vthumb.is-poster > .poster::before,
+.plate.is-poster > .poster::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.pcard-media.is-poster > .poster::after,
+.vthumb.is-poster > .poster::after,
+.plate.is-poster > .poster::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--line), transparent);
+  box-shadow: 0 0 12px var(--line);
+  pointer-events: none;
+}
+.pcard-media.is-poster > .poster.pv0::before,
+.vthumb.is-poster > .poster.pv0::before,
+.plate.is-poster > .poster.pv0::before {
+  background: repeating-linear-gradient(135deg, transparent 0 10px, color-mix(in srgb, var(--line) 20%, transparent) 10px 12px);
+}
+.pcard-media.is-poster > .poster.pv1::before,
+.vthumb.is-poster > .poster.pv1::before,
+.plate.is-poster > .poster.pv1::before {
+  background-image: radial-gradient(color-mix(in srgb, var(--line) 20%, transparent) 1.15px, transparent 1.35px);
+  background-size: 14px 14px;
+}
+.pcard-media.is-poster > .poster.pv2::before,
+.vthumb.is-poster > .poster.pv2::before,
+.plate.is-poster > .poster.pv2::before {
+  background: repeating-radial-gradient(circle at var(--px, 70%) var(--py, 20%), transparent 0 12px, color-mix(in srgb, var(--line) 20%, transparent) 12px 13px);
+}
+.pcard-media.is-poster > .poster.pv3::before,
+.vthumb.is-poster > .poster.pv3::before,
+.plate.is-poster > .poster.pv3::before {
+  background: repeating-linear-gradient(90deg, transparent 0 12px, color-mix(in srgb, var(--line) 20%, transparent) 12px 13px);
+}
+.pcard-media.is-poster > .poster.pv4::before,
+.vthumb.is-poster > .poster.pv4::before,
+.plate.is-poster > .poster.pv4::before {
+  background: repeating-linear-gradient(0deg, transparent 0 3px, color-mix(in srgb, var(--line) 20%, transparent) 3px 4px);
+}
+.pcard-media.is-poster > .poster.pv5::before,
+.vthumb.is-poster > .poster.pv5::before,
+.plate.is-poster > .poster.pv5::before {
+  background: repeating-conic-gradient(from 0deg at var(--px, 70%) var(--py, 20%), transparent 0 10deg, color-mix(in srgb, var(--line) 20%, transparent) 10deg 12deg);
+}
+.pcard-media.is-poster > .poster > *,
+.vthumb.is-poster > .poster > *,
+.plate.is-poster > .poster > * { position: relative; z-index: 1; }
+.poster-cat {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: var(--line);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--line) 75%, transparent);
+}
+.poster-t {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #F2F5FA;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.poster-m {
+  font-size: 12px;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, .72);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.plate.is-poster { padding: 0; min-height: 220px; color: #F2F5FA; }
+.plate.is-poster .poster-t { font-size: clamp(32px, 5vw, 56px); }
+.vlist:not(.posters) .vthumb.is-poster > .poster { padding: 6px 6px 6px 8px; gap: 2px; }
+.vlist:not(.posters) .poster-cat { font-size: 8px; letter-spacing: .08em; }
+.vlist:not(.posters) .poster-t { font-size: 12px; }
+.vlist:not(.posters) .poster-m { font-size: 9px; }
+body.guide-page .vlist.posters .vthumb.is-poster > .poster { padding: 12px 14px 12px 16px; }
+body.guide-page .vlist.posters .poster-t { font-size: clamp(18px, 2vw, 26px); -webkit-line-clamp: 2; }
+@media (forced-colors: active) {
+  .pcard-media.is-poster > .poster::before,
+  .pcard-media.is-poster > .poster::after,
+  .vthumb.is-poster > .poster::before,
+  .vthumb.is-poster > .poster::after,
+  .plate.is-poster > .poster::before,
+  .plate.is-poster > .poster::after { display: none; }
 }
