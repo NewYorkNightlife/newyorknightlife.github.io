@@ -9,15 +9,60 @@ import events as evs
 e = html.escape
 SITE = "https://nynightlife.com"
 
-MARK = {
-    "music": "M", "comedy": "C", "club": "K", "nightlife": "N", "theatre": "A",
-    "parks": "P", "festival": "F", "tour": "T", "cruise": "B",
-}
 CAT_LABEL = {
     "music": "Music", "comedy": "Comedy", "club": "Dance", "nightlife": "Nightlife",
     "theatre": "Theatre", "parks": "Parks", "festival": "Festival", "tour": "Tour",
     "cruise": "Cruise",
 }
+
+
+def fnv1a(text):
+    """32-bit FNV-1a, same bit pattern as the client poster hash."""
+    h = 2166136261
+    for ch in str(text or ""):
+        h ^= ord(ch)
+        h = (h * 16777619) & 0xFFFFFFFF
+    return h
+
+
+def poster_metrics(title):
+    h = fnv1a(title)
+    return h % 6, 12 + (h % 76), 8 + ((h >> 8) % 70)
+
+
+def signal_line(kind):
+    """Neon category colour for a venue type or a poster vibe line."""
+    k = (kind or "").lower()
+    if "comedy" in k:
+        return "#FFB86B"
+    if "rooftop" in k or "festival" in k:
+        return "#F0C14A"
+    if "theatre" in k or "theater" in k:
+        return "#C9B6FF"
+    if "park" in k:
+        return "#9DCF8A"
+    if any(w in k for w in ("music", "jazz", "concert")):
+        return "#6EA8FF"
+    if any(w in k for w in ("cruise", "tour", "boat", "harbor", "sightseeing")):
+        return "#8EB4FF"
+    if any(w in k for w in ("cocktail", "speakeasy", "bar", "lounge")):
+        return "#FFB86B"
+    return "#7DDECF"
+
+
+def night_poster(title, cat, meta):
+    """Night Signal plate: category, title, and place. No letter tile."""
+    shown = title or "Tonight"
+    variant, px, py = poster_metrics(shown)
+    parts = [
+        f'<span class="poster pv{variant}" style="--px:{px}%;--py:{py}%" aria-hidden="true">',
+        f'<span class="poster-cat">{e(cat or "Nightlife")}</span>',
+        f'<span class="poster-t">{e(shown)}</span>',
+    ]
+    if meta:
+        parts.append(f'<span class="poster-m">{e(meta)}</span>')
+    parts.append("</span>")
+    return "".join(parts)
 
 
 def words(text):
@@ -297,20 +342,23 @@ def _when(ev):
 
 def event_card(ev):
     cat = ev.get("category") or "parks"
-    mark = MARK.get(cat, "P")
     label = CAT_LABEL.get(cat, "Event")
     where = " · ".join(x for x in (ev.get("venue_name"), ev.get("borough")) if x)
     when = _when(ev)
-    alt = e((ev.get("title") or "Event") + (" at " + ev["venue_name"] if ev.get("venue_name") else ""))
+    title = ev.get("title") or "Event"
+    alt = e(title + (" at " + ev["venue_name"] if ev.get("venue_name") else ""))
     src = ev.get("image_local") or ""
     if not src and ev.get("source") == "ticketmaster" and evs.tm_image_ok(ev.get("image_url") or ""):
         src = ev["image_url"]
+    poster_meta = ev.get("venue_name") or ev.get("borough") or ""
     if src:
         w, h = ev.get("image_w") or 640, ev.get("image_h") or 360
         media = (f'<img src="{e(src)}" alt="{alt}" width="{int(w)}" height="{int(h)}" '
                  f'loading="lazy" decoding="async">')
+        media_cls = f"pcard-media cat-{e(cat)}"
     else:
-        media = f'<span class="mark" aria-hidden="true">{e(mark)}</span>'
+        media = night_poster(title, label, poster_meta)
+        media_cls = f"pcard-media cat-{e(cat)} is-poster"
     price = ""
     if ev.get("price_min") is not None:
         width = max(4, min(100, float(ev["price_min"]) / 150 * 100))
@@ -328,7 +376,7 @@ def event_card(ev):
     kicker = " · ".join(x for x in (label, when) if x)
     return (
         f'<a class="pcard rise" data-cat="{e(cat)}" href="{e(href)}"{rel}>'
-        f'<span class="pcard-media cat-{e(cat)}">{media}</span>'
+        f'<span class="{media_cls}">{media}</span>'
         f'<span class="pcard-body"><span class="kicker">{e(kicker)}</span>'
         f'<span class="t">{e(ev.get("title") or "Event")}</span>'
         f'<span class="m">{e(where)}</span>{price}{source}</span></a>'
@@ -349,24 +397,18 @@ def events_html(rows, heading, note, empty, attrs=""):
             f"<p class=\"small\">{e(note)}</p><div class=\"pcards\">{cards}</div></section>")
 
 
-def _initial(name):
-    stripped = re.sub(r"^(the|a|an)\s+", "", (name or "").strip(), flags=re.I)
-    for c in stripped:
-        if c.isalnum():
-            return c.upper()
-    return "N"
-
-
 def venue_poster(v, when):
     """A checked venue in the same poster frame as an event card."""
     slug = v.get("slug") or ""
     href = "/venues/" + slug + ".html" if slug else "/venues/"
-    where = " · ".join(x for x in (v.get("neighborhood") or v.get("hood"), when) if x)
+    area = v.get("neighborhood") or v.get("hood") or ""
+    where = " · ".join(x for x in (area, when) if x)
+    name = v.get("name") or "Venue"
     return (
         f'<a class="pcard rise" data-cat="nightlife" href="{e(href)}">'
-        f'<span class="pcard-media cat-nightlife"><span class="mark" aria-hidden="true">{e(_initial(v.get("name")))}</span></span>'
+        f'<span class="pcard-media cat-nightlife is-poster">{night_poster(name, "Nightlife", area)}</span>'
         f'<span class="pcard-body"><span class="kicker">Open past midnight</span>'
-        f'<span class="t">{e(v.get("name") or "Venue")}</span>'
+        f'<span class="t">{e(name)}</span>'
         f'<span class="m">{e(where)}</span></span></a>'
     )
 
@@ -599,15 +641,33 @@ def jump_nav(items):
     return f'<nav class="jump-nav" aria-label="On this page">{links}</nav>'
 
 
+def _poster_fact(facts):
+    area, cat = "", ""
+    for label, value in facts:
+        lab = (label or "").strip().lower()
+        val = (value or "").strip()
+        if not val:
+            continue
+        if lab in ("place", "neighborhood", "area") and not area:
+            area = val.split("·")[0].strip()
+        if lab == "vibe" and not cat:
+            cat = val
+    return cat or "Nightlife", area
+
+
 def static_poster(name, href, facts, blurb, initial, external=False):
     """A poster for a place that is not one of our venue pages. Facts are copied, not invented.
 
     A missing href keeps the same card without a link, for a sailing described on this page.
+    `initial` is unused: the plate shows the name, area, and category instead of a letter.
     """
+    del initial
     cells = "".join(f"<div><dt>{e(label)}</dt><dd>{e(value)}</dd></div>" for label, value in facts if value)
     text = f'<span class="a">{e(blurb)}</span>' if blurb else ""
+    cat, area = _poster_fact(facts)
     inner = (
-        f'<span class="vthumb pattern" aria-hidden="true"><span class="initial">{e(initial)}</span></span>'
+        f'<span class="vthumb pattern is-poster" style="--line:{signal_line(cat)}" aria-hidden="true">'
+        f'{night_poster(name, cat, area)}</span>'
         f'<span class="vtext"><span class="t">{e(name)}</span>'
         f'<dl class="poster-facts">{cells}</dl>{text}</span>'
     )
