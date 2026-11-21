@@ -216,6 +216,40 @@ def main():
     for label, text in (("home", home), ("tonight", tonight)):
         if re.search(r"\b(list|lists) 0\b", text) or re.search(r"\b0 events\b", text) or re.search(r"\b0 tonight\b", text):
             fail(f"{label} shows a bare zero count")
+    speak = (ROOT / "guides" / "nyc-speakeasies.html").read_text(encoding="utf-8")
+    bach_page = (ROOT / "plans" / "bachelor-party.html").read_text(encoding="utf-8")
+    for label, text in (("speakeasies", speak), ("bachelor", bach_page)):
+        for needle in ('class="guide-hero"', 'class="jump-nav"', 'class="hood-chips"', 'class="fresh"',
+                       'class="short-answer"', "59f0bf98-cda3-4aaf-9bd2-b750205147c8"):
+            if needle not in text:
+                fail(f"{label} missing {needle}")
+    if "poster-facts" not in speak or "poster-card" not in bach_page:
+        fail("guide posters missing fact rows")
+    if "phone booth inside Crif Dogs" not in speak:
+        fail("speakeasy door fact dropped while restyling")
+    moved = (ROOT / "tonight" / "friday-night-nyc.html").read_text(encoding="utf-8")
+    if "location.replace" not in moved or 'rel="canonical" href="https://nynightlife.com/tonight/"' not in moved:
+        fail("friday-night redirect is not a noindex refresh to /tonight/")
+    if "noindex" not in moved:
+        fail("friday-night redirect is indexable")
+    nye_old = (ROOT / "seasonal" / "new-years-eve-nyc-nightlife.html").read_text(encoding="utf-8")
+    if "/guides/nyc-new-years-eve.html" not in nye_old:
+        fail("old NYE URL does not point at the new guide")
+    miss = (ROOT / "404.html").read_text(encoding="utf-8")
+    for needle in ("/tonight/", "/this-weekend/", "/guides/nyc-speakeasies.html",
+                   "/guides/nyc-rooftop-bars.html", 'content="noindex"'):
+        if needle not in miss:
+            fail(f"404 page missing {needle}")
+    if "https://nynightlife.com/404.html" in sitemap:
+        fail("sitemap lists the 404 page")
+    if "friday-night-nyc" in sitemap or "new-years-eve-nyc-nightlife" in sitemap:
+        fail("sitemap lists a redirect")
+    sys.path.insert(0, str(ROOT / "_build"))
+    import build
+    try:
+        build.audit_urls(ROOT)
+    except SystemExit as ex:
+        fail(str(ex))
     if FAILS:
         print(f"{FAILS} failed")
         return 1
