@@ -1,12 +1,12 @@
 {
  "end": "2026-11-23T06:00:00-05:00",
- "fetched": "2026-11-22T11:19:37+00:00",
- "issued": "2026-11-22T10:26:46+00:00",
- "period": "Sunday Night",
- "rain_pct": 78,
- "short": "Light Rain",
+ "fetched": "2026-11-22T20:43:08+00:00",
+ "issued": "2026-11-22T18:56:12+00:00",
+ "period": "Tonight",
+ "rain_pct": 32,
+ "short": "Chance Light Rain",
  "source": "National Weather Service (weather.gov)",
  "start": "2026-11-22T18:00:00-05:00",
- "temp_f": 56,
- "wind": "9 mph N"
+ "temp_f": 55,
+ "wind": "2 to 9 mph N"
 }
