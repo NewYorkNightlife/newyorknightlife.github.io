@@ -7,9 +7,11 @@ Labels mirror the page chips exactly (see build.fact / STATUS_CHIP):
 Tags + aliases come from each venue's "chat" block.
 """
 import json
+import pathlib
 import re
 
 LABEL = {"likely": " (1 source)", "unconfirmed": " (unconfirmed)", "unknown": " (not found yet)"}
+IMG = pathlib.Path(__file__).resolve().parent / "img"
 TAGS = {"rooftop", "cocktail", "club", "live", "ticketed", "no_cover", "dress_rule", "under21"}
 
 
@@ -21,6 +23,10 @@ def _fact(f, key="value", default=None):
         return "Not found yet"
     st = f.get("status") or default
     return val + LABEL.get(st, "")
+
+
+def _has_photo(v):
+    return bool((v.get("photo") or {}).get("url")) and (IMG / f"{v['slug']}.jpg").exists()
 
 
 def _venue(v, fmt_date):
@@ -54,6 +60,8 @@ def _venue(v, fmt_date):
         "subway": _fact(v.get("subway"), default="likely"),
         "skip": v.get("skip_if") or [],
         "verified": fmt_date(v.get("checked", "2026-10-18")),
+        # card photo for js/tonight.js; empty when we hold no licensed photo
+        "photo": f"img/{v['slug']}-640.webp" if _has_photo(v) else "",
     }
 
 

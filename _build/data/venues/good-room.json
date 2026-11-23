@@ -103,9 +103,12 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://live.staticflickr.com/4538/37584254614_ccb4c6fd5c_b.jpg",
+  "page": "https://www.flickr.com/photos/21124414@N00/37584254614/",
+  "license": "CC BY-SA 2.0",
+  "credit": "Reuben Strayer / Flickr",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "kind": "venue"
  },
  "checked": "2026-10-18",
  "chat": {

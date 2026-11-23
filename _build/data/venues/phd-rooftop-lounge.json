@@ -117,9 +117,12 @@
  ],
  "hotel_bar": true,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PHD_Rooftop_Downtown_NYC_2025.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:PHD_Rooftop_Downtown_NYC_2025.jpg",
+  "license": "CC BY 4.0",
+  "credit": "InvadingInvader / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "kind": "venue"
  },
  "checked": "2026-10-18",
  "chat": {

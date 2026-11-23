@@ -106,9 +106,13 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Myrtle_Avenue%E2%80%93Broadway_station_20261003.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:Myrtle_Avenue%E2%80%93Broadway_station_20261003.jpg",
+  "license": "CC BY 4.0",
+  "credit": "VynedJ / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "kind": "location",
+  "depicts": "Shows the Myrtle Av–Broadway J/M/Z station, at the corner where Paragon is, not the club itself."
  },
  "checked": "2026-10-18",
  "chat": {

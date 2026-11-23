@@ -130,9 +130,12 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://live.staticflickr.com/8237/8384173880_ff4c17bcec_b.jpg",
+  "page": "https://www.flickr.com/photos/29481208@N08/8384173880/",
+  "license": "CC BY 2.0",
+  "credit": "Andreas Dantz / Flickr",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "kind": "venue"
  },
  "checked": "2026-10-18",
  "chat": {

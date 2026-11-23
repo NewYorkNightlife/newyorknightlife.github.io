@@ -244,6 +244,18 @@ def main():
         fail("sitemap lists the 404 page")
     if "friday-night-nyc" in sitemap or "new-years-eve-nyc-nightlife" in sitemap:
         fail("sitemap lists a redirect")
+    # Real photos, not posters: every venue page leads with a licensed photo
+    # and no built page draws the Night Signal poster for a venue or place.
+    for vp in sorted((ROOT / "venues").glob("*.html")):
+        if vp.name == "index.html":
+            continue
+        if 'class="plate photo"' not in vp.read_text(encoding="utf-8"):
+            fail(f"{vp.name} has no photo plate")
+    for hp in ROOT.rglob("*.html"):
+        if "_build" in hp.parts or ".git" in hp.parts:
+            continue
+        if "is-poster" in hp.read_text(encoding="utf-8"):
+            fail(f"{hp.relative_to(ROOT)} still draws a poster; add a licensed photo")
     sys.path.insert(0, str(ROOT / "_build"))
     import build
     try:

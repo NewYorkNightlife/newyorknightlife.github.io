@@ -111,9 +111,13 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Central_Avenue_station_platforms_at_night%2C_September_2025.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:Central_Avenue_station_platforms_at_night,_September_2025.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "Pi.1415926535 / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kind": "location",
+  "depicts": "Shows the Central Av M station on Myrtle Avenue, a few steps from the club's door, not the club itself."
  },
  "checked": "2026-10-18",
  "chat": {

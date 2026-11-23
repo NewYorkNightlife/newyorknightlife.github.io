@@ -36,6 +36,8 @@ def _ver(p):
 GEN = ROOT / "img" / "gen"
 _DIMS_F = ROOT / "img" / "dims.json"
 DIMS = json.loads(_DIMS_F.read_text(encoding="utf-8")) if _DIMS_F.exists() else {}
+present.PHOTOS = dict(DIMS)   # every licensed master make_images.py has sized
+present.BASE = BASE
 CSS_V = _ver(ROOT / "site.css")
 JS_V = _ver(ROOT / "concierge.js")
 LIVE_V = _ver(ROOT / "live.js")
@@ -198,21 +200,16 @@ def write(path, text):
 
 
 # ---------------------------------------------------------------- imagery
-# A venue page shows a photograph only when we hold a correctly-licensed one.
-# The other venues get a Night Signal poster drawn in CSS: the name, the area,
-# and a category line. It costs no bytes and cannot be mistaken for a photo.
+# Every venue shows a real, correctly-licensed photograph: the room, its door,
+# the building it is in, or (kind "location") the block or station by the
+# door, always captioned with what it actually shows. The Night Signal poster
+# is a last resort for a venue with no photo at all; main() lists any.
 SIZES_PLATE = ("(min-width: 1340px) 1116px, (min-width: 1040px) 1016px, "
                "(min-width: 796px) 724px, calc(100vw - 36px)")
 
 
 def has_photo(v):
     return bool((v.get("photo") or {}).get("url")) and (ROOT / "img" / (v["slug"] + ".jpg")).exists()
-
-
-def shows_the_venue(v):
-    """True only where the photograph is of the place itself. The others stay
-    on their own page, under the caption that says what they really show."""
-    return has_photo(v) and not (v.get("photo") or {}).get("depicts")
 
 
 def picture(slug, alt, sizes, eager=False):
@@ -232,6 +229,7 @@ def plate(slug, name, eyebrow, title=None, credit=None, alt=None, style="", area
     if credit:
         return (f'<div class="plate photo"{st}>{picture(slug, alt or name, SIZES_PLATE, eager=True)}'
                 f'{eb}<h1>{e(title)}</h1></div><p class="credit">Photo: {credit}</p>')
+    present.POSTER_FALLBACKS.append("page: " + name)
     kind = category or "Nightlife"
     variant, px, py = present.poster_metrics(title)
     line = present.signal_line(kind)
@@ -248,11 +246,9 @@ def plate(slug, name, eyebrow, title=None, credit=None, alt=None, style="", area
 
 def vthumb(v):
     slug = v["slug"]
-    if shows_the_venue(v):
-        return (f'<span class="vthumb"><picture>'
-                f'<source type="image/webp" srcset="{u("/img/" + slug + "-thumb.webp")}">'
-                f'<img src="{u("/img/" + slug + "-thumb.jpg")}" alt="" width="176" height="176" '
-                f'loading="lazy" decoding="async"></picture></span>')
+    if has_photo(v):
+        return present.thumb_img(slug)
+    present.POSTER_FALLBACKS.append("venue: " + v["name"])
     kind = v.get("type") or "Nightlife"
     area = v.get("neighborhood") or v.get("borough") or ""
     return (
@@ -356,7 +352,10 @@ def venue_page(v, vs=None):
     if shot:
         lic, lurl = photo.get("license", ""), photo.get("license_url", "")
         lic_html = f'<a href="{e(lurl)}" rel="license noopener">{e(lic)}</a>' if lurl else e(lic)
-        credit = (f'{e(photo.get("credit", ""))} · {lic_html} · resized and cropped by us'
+        who = e(photo.get("credit", ""))
+        if photo.get("page"):
+            who = f'<a href="{e(photo["page"])}" rel="noopener">{who}</a>'
+        credit = (f'{who} · {lic_html} · resized and cropped by us'
                   + (f'. {e(photo["depicts"])}' if photo.get("depicts") else ""))
     # The hero is decorative: the name is in the h1 right beside it and the
     # credit sits underneath, so naming it again only doubles the announcement.
@@ -731,6 +730,11 @@ def main():
     import redirects
     redirects.write_redirects(OUT)
     check_output()
+    posters = sorted(set(present.POSTER_FALLBACKS))
+    if posters:
+        print(f"poster fallbacks ({len(posters)}), add a licensed photo for: " + "; ".join(posters))
+    else:
+        print("poster fallbacks: none, every venue, place and event card has a real photo")
     print(f"built {len(vs)} venue pages + hubs into {OUT}")
 
 

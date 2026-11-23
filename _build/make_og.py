@@ -192,9 +192,10 @@ def main():
         slug, st = v["slug"], v.get("status")
         master = ROOT / "img" / f"{slug}.jpg"
         ph = v.get("photo") or {}
-        # a photo that shows the building, not the room, stays on its own page
-        # under the caption that explains it, and never becomes the share card
-        has = bool(ph.get("url")) and master.exists() and not ph.get("depicts")
+        # only a photo of the venue itself becomes the share card. A building or
+        # street photo stays on its own page under the caption that explains it.
+        kind = ph.get("kind") or ("building" if ph.get("depicts") else "venue")
+        has = bool(ph.get("url")) and master.exists() and kind == "venue"
         if st == "closed":
             answer, chip = "This venue has closed.", "Closed"
         else:

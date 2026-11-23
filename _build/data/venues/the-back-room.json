@@ -133,9 +133,12 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://live.staticflickr.com/65535/51896122014_5ff67bf920_b.jpg",
+  "page": "https://www.flickr.com/photos/41213471@N00/51896122014/",
+  "license": "CC BY-SA 2.0",
+  "credit": "Mig Gilbert / Flickr",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "kind": "venue"
  },
  "checked": "2026-10-18",
  "chat": {

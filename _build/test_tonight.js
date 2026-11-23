@@ -303,17 +303,36 @@ function checkBuiltMedia() {
   check('safeImage accepts https://s1.ticketm.net/x.jpg', imgOf(tm) && imgOf(tm).src === 'https://s1.ticketm.net/x.jpg');
   check('safeImage accepts https://www.ticketmaster.com/x.jpg', imgOf(tcom) && imgOf(tcom).src === 'https://www.ticketmaster.com/x.jpg');
   check('safeImage accepts a nycgovparks.org image', imgOf(parks) && imgOf(parks).src === 'https://www.nycgovparks.org/x.jpg');
-  check('safeImage rejects https://evilticketm.net/x.jpg', evil && !imgOf(evil) && byClass(evil, 'poster').length === 1);
-  const bare = byClass(none, 'poster')[0];
-  check('event without a photo gets a Night Signal poster',
-    bare && classes(byClass(none, 'pcard-media')[0]).includes('is-poster')
-    && texts(bare, 'poster-cat').includes('Parks') && texts(bare, 'poster-t').includes('No Picture') && texts(bare, 'poster-m').includes('Park'));
+  check('safeImage rejects https://evilticketm.net/x.jpg',
+    evil && imgOf(evil) && imgOf(evil).src.indexOf('evilticketm') < 0 && /img\/home-640\.webp$/.test(imgOf(evil).src) && byClass(evil, 'poster').length === 0);
+  check('event without a photo gets a real category photo, not a poster',
+    none && imgOf(none) && /img\/event-parks-640\.webp$/.test(imgOf(none).src)
+    && classes(byClass(none, 'pcard-media')[0]).includes('has-place-photo') && byClass(none, 'poster').length === 0);
   check('shot cards all have a photo or a poster', mediaFilled(shots.section));
   const broken = imgOf(tm);
   (broken.listeners.error || []).forEach((fn) => fn());
   const brokenMedia = byClass(tm, 'pcard-media')[0];
   check('a broken photo is swapped for a poster',
     brokenMedia && !brokenMedia.children.some((c) => c.tagName === 'IMG') && byClass(brokenMedia, 'poster').length === 1 && classes(brokenMedia).includes('is-poster'));
+
+  // With a photo in /data/venues.json, the late venue card and that venue's
+  // events use the venue photo, and no poster is drawn.
+  const savedVenues = VENUES.venues[0].photo;
+  VENUES.venues[0].photo = 'img/attaboy-640.webp';
+  const photoFeed = { fetched_at: FEED.fetched_at, events: [
+    { title: 'At Attaboy', start: '2026-11-17T23:30:00-05:00', venue_name: 'Attaboy', venue_slug: 'attaboy', category: 'nightlife', url: '/tonight/', source: 'nyc_parks' },
+    { title: 'Merchant Show', start: '2026-11-17T23:40:00-05:00', venue_name: "Merchant's House Museum", category: 'parks', url: '/tonight/', source: 'nyc_parks' }
+  ] };
+  const withPhoto = await run('2026-11-18T01:00:00-05:00', 'tonight', photoFeed);
+  const atCard = byClass(withPhoto.section, 'pcard').find((c) => texts(c, 't').includes('At Attaboy'));
+  check('event at a venue uses the venue photo', atCard && imgOf(atCard) && /img\/attaboy-640\.webp$/.test(imgOf(atCard).src));
+  const mhCard = byClass(withPhoto.section, 'pcard').find((c) => texts(c, 't').includes('Merchant Show'));
+  check('event at a named place uses that place photo', mhCard && imgOf(mhCard) && /img\/merchants-house-museum-640\.webp$/.test(imgOf(mhCard).src));
+  const emptyPhoto = await run('2026-11-20T18:00:00-05:00', 'tonight', { fetched_at: FEED.fetched_at, events: [FEED.events[4]] });
+  const lateP = byClass(emptyPhoto.section, 'pcard').find((c) => texts(c, 't').includes('Attaboy'));
+  check('open-past-midnight card uses the venue photo when there is one',
+    lateP && imgOf(lateP) && /img\/attaboy-640\.webp$/.test(imgOf(lateP).src) && byClass(lateP, 'poster').length === 0);
+  VENUES.venues[0].photo = savedVenues;
 
   checkBuiltMedia();
 

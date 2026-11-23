@@ -116,11 +116,13 @@
  ],
  "hotel_bar": true,
  "photo": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/1_Hotel_Brooklyn_Bridge%2C_Sept_2017.jpg",
-  "license": "CC0 1.0",
-  "credit": "Thomson200 / Wikimedia Commons (hotel exterior)",
-  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "depicts": "Shows the 1 Hotel Brooklyn Bridge from outside, not the rooftop bar."
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/1_Hotel_Brooklyn_Bridge%2C_Sept_2017.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:1_Hotel_Brooklyn_Bridge,_Sept_2017.jpg",
+  "license": "CC0",
+  "credit": "Thomson200 / Wikimedia Commons",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0",
+  "kind": "building",
+  "depicts": "Shows 1 Hotel Brooklyn Bridge from outside. Harriet's is on the roof."
  },
  "checked": "2026-10-18",
  "chat": {

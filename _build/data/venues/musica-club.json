@@ -102,9 +102,13 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kennth_Cole_Productions_603_W50_jeh.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:Kennth_Cole_Productions_603_W50_jeh.jpg",
+  "license": "CC0",
+  "credit": "Jim.henderson / Wikimedia Commons",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "kind": "location",
+  "depicts": "Shows West 50th Street at 11th Avenue, on Musica's block. The club's door is further west at No. 637."
  },
  "checked": "2026-10-18",
  "chat": {

@@ -108,9 +108,12 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/JLin_performing_at_Elsewhere_in_Brooklyn%2C_New_York%2C_on_August_8%2C_2021.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:JLin_performing_at_Elsewhere_in_Brooklyn,_New_York,_on_August_8,_2021.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "CindyLouWho93 / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kind": "venue"
  },
  "checked": "2026-10-18",
  "chat": {

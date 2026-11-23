@@ -16,6 +16,52 @@ CAT_LABEL = {
 }
 
 
+# Real photographs for card frames. build.py fills PHOTOS from img/dims.json
+# (one entry per licensed master: venues, guide places, event fallbacks) and
+# BASE with its URL prefix. The Night Signal poster is only drawn when a
+# slug has no photo at all, and build.py lists every place that falls back.
+PHOTOS = {}
+BASE = ""
+# Event rows that arrive without an image get the venue's own photo first,
+# then a photo of the named place, then a real photo for the category.
+EVENT_PLACE_PHOTO = {"merchant's house museum": "merchants-house-museum"}
+EVENT_CAT_PHOTO = {"festival": "event-festival", "parks": "event-parks"}
+EVENT_DEFAULT_PHOTO = "home"
+POSTER_FALLBACKS = []   # names that still got a poster in this build
+
+
+def has_photo(slug):
+    return bool(slug) and slug in PHOTOS
+
+
+def card_img(slug, alt=""):
+    """A licensed photo for a 3:2 card frame (.pcard-media)."""
+    w, h = PHOTOS.get(slug) or [1280, 853]
+    return (f'<img src="{BASE}/img/{slug}-640.webp" '
+            f'srcset="{BASE}/img/{slug}-640.webp 640w, {BASE}/img/{slug}-960.webp 960w" '
+            f'sizes="(min-width: 796px) 360px, 100vw" alt="{e(alt)}" width="{int(w)}" height="{int(h)}" '
+            f'loading="lazy" decoding="async">')
+
+
+def thumb_img(slug):
+    """A licensed photo for the square venue thumb (.vthumb)."""
+    return (f'<span class="vthumb"><picture>'
+            f'<source type="image/webp" srcset="{BASE}/img/{slug}-thumb.webp">'
+            f'<img src="{BASE}/img/{slug}-thumb.jpg" alt="" width="176" height="176" '
+            f'loading="lazy" decoding="async"></picture></span>')
+
+
+def event_photo(ev):
+    """Slug of the best licensed photo for an event that has no image of its own."""
+    for slug in (ev.get("venue_slug"),
+                 EVENT_PLACE_PHOTO.get((ev.get("venue_name") or "").strip().lower()),
+                 EVENT_CAT_PHOTO.get(ev.get("category") or ""),
+                 EVENT_DEFAULT_PHOTO):
+        if has_photo(slug):
+            return slug
+    return None
+
+
 def fnv1a(text):
     """32-bit FNV-1a, same bit pattern as the client poster hash."""
     h = 2166136261
@@ -351,12 +397,17 @@ def event_card(ev):
     if not src and ev.get("source") == "ticketmaster" and evs.tm_image_ok(ev.get("image_url") or ""):
         src = ev["image_url"]
     poster_meta = ev.get("venue_name") or ev.get("borough") or ""
+    fallback = None if src else event_photo(ev)
     if src:
         w, h = ev.get("image_w") or 640, ev.get("image_h") or 360
         media = (f'<img src="{e(src)}" alt="{alt}" width="{int(w)}" height="{int(h)}" '
                  f'loading="lazy" decoding="async">')
         media_cls = f"pcard-media cat-{e(cat)}"
+    elif fallback:
+        media = card_img(fallback)
+        media_cls = f"pcard-media cat-{e(cat)} has-place-photo"
     else:
+        POSTER_FALLBACKS.append("event: " + title)
         media = night_poster(title, label, poster_meta)
         media_cls = f"pcard-media cat-{e(cat)} is-poster"
     price = ""
@@ -404,9 +455,14 @@ def venue_poster(v, when):
     area = v.get("neighborhood") or v.get("hood") or ""
     where = " · ".join(x for x in (area, when) if x)
     name = v.get("name") or "Venue"
+    if has_photo(slug):
+        media = f'<span class="pcard-media cat-nightlife">{card_img(slug)}</span>'
+    else:
+        POSTER_FALLBACKS.append("venue: " + name)
+        media = f'<span class="pcard-media cat-nightlife is-poster">{night_poster(name, "Nightlife", area)}</span>'
     return (
         f'<a class="pcard rise" data-cat="nightlife" href="{e(href)}">'
-        f'<span class="pcard-media cat-nightlife is-poster">{night_poster(name, "Nightlife", area)}</span>'
+        f'{media}'
         f'<span class="pcard-body"><span class="kicker">Open past midnight</span>'
         f'<span class="t">{e(name)}</span>'
         f'<span class="m">{e(where)}</span></span></a>'
@@ -655,19 +711,26 @@ def _poster_fact(facts):
     return cat or "Nightlife", area
 
 
-def static_poster(name, href, facts, blurb, initial, external=False):
+def static_poster(name, href, facts, blurb, initial, external=False, photo=None):
     """A poster for a place that is not one of our venue pages. Facts are copied, not invented.
 
     A missing href keeps the same card without a link, for a sailing described on this page.
     `initial` is unused: the plate shows the name, area, and category instead of a letter.
+    `photo` is the key of a licensed photo in data/place_photos.json; with one, the
+    thumb is that photo and the poster is not drawn.
     """
     del initial
     cells = "".join(f"<div><dt>{e(label)}</dt><dd>{e(value)}</dd></div>" for label, value in facts if value)
     text = f'<span class="a">{e(blurb)}</span>' if blurb else ""
     cat, area = _poster_fact(facts)
+    if has_photo(photo):
+        thumb = thumb_img(photo)
+    else:
+        POSTER_FALLBACKS.append("place: " + name)
+        thumb = (f'<span class="vthumb pattern is-poster" style="--line:{signal_line(cat)}" aria-hidden="true">'
+                 f'{night_poster(name, cat, area)}</span>')
     inner = (
-        f'<span class="vthumb pattern is-poster" style="--line:{signal_line(cat)}" aria-hidden="true">'
-        f'{night_poster(name, cat, area)}</span>'
+        f'{thumb}'
         f'<span class="vtext"><span class="t">{e(name)}</span>'
         f'<dl class="poster-facts">{cells}</dl>{text}</span>'
     )

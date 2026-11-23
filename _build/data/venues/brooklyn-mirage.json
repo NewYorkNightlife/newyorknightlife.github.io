@@ -91,9 +91,12 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Glass_Animals_-_Brooklyn_Mirage_2022_08.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:Glass_Animals_-_Brooklyn_Mirage_2022_08.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "Legoktm / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kind": "venue"
  },
  "checked": "2026-10-18",
  "chat": {

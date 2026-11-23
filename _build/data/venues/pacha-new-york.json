@@ -119,9 +119,13 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bushwick_Brooklyn_January_2023_046.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:Bushwick_Brooklyn_January_2023_046.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "Kidfly182 / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kind": "building",
+  "depicts": "Shows the 140 Stewart Avenue complex from the street in January 2023, before it reopened as Pacha."
  },
  "checked": "2026-10-18",
  "chat": {
