@@ -111,9 +111,13 @@
  ],
  "hotel_bar": true,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://live.staticflickr.com/8299/28423723552_98c8cfc376_b.jpg",
+  "page": "https://www.flickr.com/photos/33008270@N00/28423723552/",
+  "license": "CC BY-SA 2.0",
+  "credit": "Malcolm Murdoch / Flickr",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "kind": "venue",
+  "depicts": "The view at sunset from the Mr. Purple roof."
  },
  "checked": "2026-10-18",
  "chat": {

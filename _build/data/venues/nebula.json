@@ -107,9 +107,13 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/135-141_W_41_St_Mar_2021_12.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:135-141_W_41_St_Mar_2021_12.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "Epicgenius / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kind": "building",
+  "depicts": "Shows 135–141 West 41st Street from the sidewalk in 2021, before Nebula opened."
  },
  "checked": "2026-10-18",
  "chat": {

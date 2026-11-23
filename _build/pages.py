@@ -264,17 +264,17 @@ def cruise_guide(page, write, u, actions, fmt_date, H):
             "Harbor Lights", "",
             [("Place", "Pier 83, Midtown"), ("Hours", "2 hours, 7pm most of the year"), ("Vibe", "Sightseeing, full bar")],
             "2 hours from Pier 83, Midtown (83 North River Piers, New York, NY 10036). Live narration, a full bar, and concessions. It leaves at 7pm for most of the year and at 6pm from January through March.",
-            "H")
+            "H", photo="circle-line-pier-83")
         +         present.static_poster(
             "Statue at Sunset", "",
             [("Place", "Pier 16, South Street Seaport"), ("Hours", "About 90 minutes"), ("Vibe", "Music and drinks")],
             "About 90 minutes from Pier 16 at the South Street Seaport (89 South Street, New York, NY 10038). Music and drinks, no narration. Departure time moves with sunset.",
-            "S")
+            "S", photo="pier-16-seaport")
         +         present.static_poster(
             "Sip 'N Groove", "",
             [("Place", "Pier 83"), ("Hours", "2 hours"), ("Vibe", "18+ DJ cruise")],
             "2 hours from Pier 83, with a live DJ and a full bar. 18+.",
-            "G")
+            "G", photo="circle-line-pier-83")
     )
     body = present.guide_hero("NYC Dinner & Sunset Cruises", "Guide · New York Harbor", checked,
                               ["Pier 83", "Pier 16", "Pier 61", "Midtown"], media) + f"""
@@ -350,7 +350,11 @@ def image_credits(page, write):
         ph = v.get("photo") or {}
         if not ph.get("credit"):
             continue
-        rows.append((v["name"], ph.get("credit", ""), ph.get("license", ""), ph.get("license_url", ""), ph.get("url", ""), ph.get("depicts", "")))
+        rows.append((v["name"], ph.get("credit", ""), ph.get("license", ""), ph.get("license_url", ""), ph.get("page") or ph.get("url", ""), ph.get("depicts", "")))
+    places = root / "data" / "place_photos.json"
+    if places.exists():
+        for ph in json.loads(places.read_text(encoding="utf-8"))["places"].values():
+            rows.append((ph["name"], ph.get("credit", ""), ph.get("license", ""), ph.get("license_url", ""), ph.get("page") or ph.get("url", ""), ph.get("depicts", "")))
     rows.append(("Homepage hero", HOME_PHOTO["credit"], HOME_PHOTO["license"], "https://creativecommons.org/licenses/by/2.0/", HOME_PHOTO["page"], "East Village sidewalk at night"))
     rows.append(("Harbor photograph", HARBOR_PHOTO["credit"], HARBOR_PHOTO["license"], "https://creativecommons.org/licenses/by-sa/4.0/", HARBOR_PHOTO["page"], "Lower Manhattan skyline from the harbor"))
     items = ""
@@ -359,16 +363,16 @@ def image_credits(page, write):
         if lic:
             bit += f' · <a href="{e(lurl)}" rel="license noopener">{e(lic)}</a>' if lurl else f" · {e(lic)}"
         if src:
-            bit += f' · <a href="{e(src)}" rel="noopener">source file</a>'
+            bit += f' · <a href="{e(src)}" rel="noopener">source page</a>'
         if depicts:
             bit += f" · {e(depicts)}"
         items += bit + "</li>"
     body = f"""<p class="eyebrow">Credits</p><h1>Image credits</h1>
-<p class="lede">Photographs on this site are ones we have a license to store. Venue pages without one use a CSS cover, not a stand-in photo. Ticketmaster event images, when a listing has one, are loaded from Ticketmaster next to that event and are not saved here.</p>
+<p class="lede">Photographs on this site are ones we have a license to store, from Wikimedia Commons and Flickr under the Creative Commons licenses linked below. Each one is credited to its author, resized and cropped by us. Where a photo shows the building or the street outside rather than the room, the note says so. Ticketmaster event images, when a listing has one, are loaded from Ticketmaster next to that event and are not saved here.</p>
 <ul class="clean">{items}</ul>"""
     write("/image-credits.html", page("Image credits | NY Nightlife",
                                      "Photograph credits and licenses for images stored on NY Nightlife.",
-                                     "/image-credits.html", body, None, "no-bar", updated="2026-11-11"))
+                                     "/image-credits.html", body, None, "no-bar", updated="2026-11-21"))
 
 
 MONEY_CHECKED = "2026-11-16"
@@ -566,22 +570,22 @@ def comedy_clubs(page, write, u, actions, H, vs):
             "Comedy Cellar", "https://www.comedycellar.com/",
             [("Place", "117 MacDougal Street"), ("Price", "Fri and Sat $25"), ("Vibe", "Stand-up")],
             "Two-item minimum per person. Friday and Saturday shows were $25 on " + MONEY_CHECKED + ".",
-            "C", external=True)
+            "C", external=True, photo="comedy-cellar")
         + present.static_poster(
             "Gotham Comedy Club", "https://gothamcomedyclub.com/",
             [("Place", "208 West 23rd Street"), ("Price", "Not published on the pages we opened"), ("Vibe", "Stand-up")],
             "208 West 23rd Street, between 7th and 8th Avenues. No cover or dress code on the pages we opened.",
-            "G", external=True)
+            "G", external=True, photo="gotham-comedy-club")
         + present.static_poster(
             "The Stand", "https://www.thestandnyc.com/",
             [("Place", "East 16th Street and West 15th Street"), ("Hours", "Friday 12pm to 2am"), ("Vibe", "Stand-up")],
             "No two-drink minimum. Monday to Thursday 12pm to 12am, Friday 12pm to 2am, Saturday 11am to 2am, Sunday 11am to 12am.",
-            "S", external=True)
+            "S", external=True, photo="the-stand-nyc")
         + present.static_poster(
             "New York Comedy Club", "https://www.newyorkcomedyclub.com/",
             [("Place", "Midtown, East Village, Upper West Side"), ("Vibe", "Stand-up")],
             "Three rooms: 241 East 24th Street, 85 East 4th Street, and 236 West 78th Street.",
-            "N", external=True)
+            "N", external=True, photo="new-york-comedy-club")
     )
     body = present.guide_hero("NYC comedy clubs", "Guide · stand-up", MONEY_CHECKED,
                               ["MacDougal St", "West 23rd St", "East 16th St", "East 24th St"]) + f"""

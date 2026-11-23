@@ -115,9 +115,12 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PDT_bar_08.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:PDT_bar_08.jpg",
+  "license": "CC BY 2.0",
+  "credit": "jmh's random shots / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "kind": "venue"
  },
  "checked": "2026-10-18",
  "chat": {

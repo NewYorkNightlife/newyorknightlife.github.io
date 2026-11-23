@@ -130,9 +130,13 @@
  ],
  "hotel_bar": true,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/West_25th_Street_from_6th_Avenue_%28Manhattan%29_May_2023.JPG?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:West_25th_Street_from_6th_Avenue_(Manhattan)_May_2023.JPG",
+  "license": "CC0",
+  "credit": "Benoît Prieur / Wikimedia Commons",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "kind": "location",
+  "depicts": "Shows West 25th Street off Sixth Avenue, the block of the Renaissance hotel that Somewhere Nowhere sits on top of."
  },
  "checked": "2026-10-18",
  "chat": {

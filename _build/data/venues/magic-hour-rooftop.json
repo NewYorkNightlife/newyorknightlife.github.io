@@ -115,9 +115,13 @@
  ],
  "hotel_bar": true,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moxy_Times_Square_2020-03-04.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:Moxy_Times_Square_2020-03-04.jpg",
+  "license": "CC BY 2.0",
+  "credit": "Eden, Janine and Jim / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "kind": "building",
+  "depicts": "Shows the Moxy Times Square from the street. Magic Hour is on the roof."
  },
  "checked": "2026-10-18",
  "chat": {

@@ -116,9 +116,12 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://live.staticflickr.com/65535/54160206203_6e989f0662_b.jpg",
+  "page": "https://www.flickr.com/photos/7831824@N04/54160206203/",
+  "license": "CC BY 2.0",
+  "credit": "Bex Walton / Flickr",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "kind": "venue"
  },
  "checked": "2026-10-18",
  "chat": {

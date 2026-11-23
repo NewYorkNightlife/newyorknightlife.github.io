@@ -98,9 +98,12 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://live.staticflickr.com/8458/8074276738_00ede90a41_b.jpg",
+  "page": "https://www.flickr.com/photos/97844767@N00/8074276738/",
+  "license": "CC BY 2.0",
+  "credit": "WordRidden / Flickr",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "kind": "venue"
  },
  "checked": "2026-10-18",
  "chat": {

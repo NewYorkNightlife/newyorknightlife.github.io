@@ -110,11 +110,13 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Beekman_Panhellenic_Tower_May_2021_14.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beekman_Panhellenic_Tower_May_2021_14.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:Beekman_Panhellenic_Tower_May_2021_14.jpg",
   "license": "CC BY-SA 4.0",
-  "credit": "Epicgenius / Wikimedia Commons (Beekman Tower exterior)",
-  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-  "depicts": "Shows the Beekman Tower from outside, not the lounge."
+  "credit": "Epicgenius / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kind": "building",
+  "depicts": "Shows Beekman Tower from outside. Ophelia is on the top floor."
  },
  "checked": "2026-10-18",
  "chat": {

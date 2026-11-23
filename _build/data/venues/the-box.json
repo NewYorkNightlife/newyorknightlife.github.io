@@ -129,9 +129,13 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://live.staticflickr.com/7386/8725509148_e60c848ddb_b.jpg",
+  "page": "https://www.flickr.com/photos/64482519@N02/8725509148/",
+  "license": "CC BY 2.0",
+  "credit": "NokiaInnovation / Flickr",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "kind": "venue",
+  "depicts": "The Chrystie Street entrance, photographed in 2013."
  },
  "checked": "2026-10-18",
  "chat": {

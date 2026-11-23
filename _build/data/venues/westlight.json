@@ -125,11 +125,13 @@
  ],
  "hotel_bar": true,
  "photo": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/William_Vale_Hotel_2_jeh.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/William_Vale_Hotel_1_jeh.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:William_Vale_Hotel_1_jeh.jpg",
   "license": "CC BY-SA 4.0",
-  "credit": "Jim.henderson via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:William_Vale_Hotel_2_jeh.jpg); shows The William Vale building",
-  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-  "depicts": "Shows The William Vale building from outside, not the rooftop bar."
+  "credit": "Jim.henderson / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kind": "building",
+  "depicts": "Shows The William Vale from outside. Westlight is the bar up top."
  },
  "checked": "2026-10-18",
  "chat": {

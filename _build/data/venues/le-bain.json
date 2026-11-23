@@ -122,9 +122,13 @@
  ],
  "hotel_bar": true,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Standard_Hotel_nite_fr_High_Line_jeh.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:Standard_Hotel_nite_fr_High_Line_jeh.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "Jim.henderson / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kind": "building",
+  "depicts": "Shows The Standard, High Line from outside at night. Le Bain is on the top floor."
  },
  "checked": "2026-10-18",
  "chat": {

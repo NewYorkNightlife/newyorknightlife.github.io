@@ -107,10 +107,12 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Marquee_New_York_%2855380944943%29.jpg",
-  "license": "CC BY 4.0",
-  "credit": "Ajay Suresh (Flickr), via Wikimedia Commons",
-  "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Marquee_Nightclub_in_New_York_City_-_November_10%2C_2024.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:Marquee_Nightclub_in_New_York_City_-_November_10,_2024.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "David Wang / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kind": "venue"
  },
  "checked": "2026-10-18",
  "chat": {

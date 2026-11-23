@@ -1,11 +1,63 @@
 {
+ "230-fifth-rooftop": [
+  1024,
+  683
+ ],
+ "attaboy": [
+  1280,
+  1707
+ ],
  "bachelorette-night": [
+  1280,
+  960
+ ],
+ "beauty-and-essex": [
+  1024,
+  768
+ ],
+ "bossa-nova-civic-club": [
+  1280,
+  962
+ ],
+ "brooklyn-mirage": [
+  1280,
+  576
+ ],
+ "circle-line-pier-83": [
+  1280,
+  857
+ ],
+ "comedy-cellar": [
   1280,
   960
  ],
  "death-and-co": [
   1280,
   960
+ ],
+ "elsewhere": [
+  1280,
+  960
+ ],
+ "employees-only": [
+  1024,
+  768
+ ],
+ "event-festival": [
+  1280,
+  853
+ ],
+ "event-parks": [
+  768,
+  1024
+ ],
+ "good-room": [
+  1024,
+  768
+ ],
+ "gotham-comedy-club": [
+  1280,
+  1707
  ],
  "harriets-rooftop": [
   1280,
@@ -20,27 +72,95 @@
   1080
  ],
  "knockdown-center": [
+  1080,
+  1080
+ ],
+ "le-bain": [
   1280,
-  853
+  1024
+ ],
+ "magic-hour-rooftop": [
+  1280,
+  1707
  ],
  "marquee-new-york": [
   1280,
   720
  ],
+ "merchants-house-museum": [
+  1280,
+  1707
+ ],
+ "mr-purple": [
+  1024,
+  768
+ ],
+ "musica-club": [
+  1280,
+  960
+ ],
+ "nebula": [
+  1280,
+  960
+ ],
+ "new-york-comedy-club": [
+  400,
+  250
+ ],
+ "nowadays": [
+  1280,
+  960
+ ],
  "ophelia-lounge": [
   1280,
   1920
+ ],
+ "pacha-new-york": [
+  1280,
+  960
+ ],
+ "paragon": [
+  1280,
+  960
+ ],
+ "phd-rooftop-lounge": [
+  1280,
+  720
+ ],
+ "pier-16-seaport": [
+  1280,
+  853
+ ],
+ "please-dont-tell": [
+  1280,
+  853
  ],
  "public-records": [
   1280,
   960
  ],
+ "somewhere-nowhere": [
+  1280,
+  1707
+ ],
+ "the-back-room": [
+  1024,
+  768
+ ],
+ "the-box": [
+  577,
+  1024
+ ],
  "the-dead-rabbit": [
   1280,
   853
  ],
+ "the-stand-nyc": [
+  1280,
+  1569
+ ],
  "westlight": [
   1280,
-  1563
+  960
  ]
 }

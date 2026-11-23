@@ -97,9 +97,13 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "",
-  "license": "",
-  "credit": ""
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Techno_Edit-a-thon_at_Nowadays.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:Techno_Edit-a-thon_at_Nowadays.jpg",
+  "license": "CC BY-SA 4.0",
+  "credit": "Megs / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kind": "venue",
+  "depicts": "Inside Nowadays during a daytime event in January 2020."
  },
  "checked": "2026-10-18",
  "chat": {

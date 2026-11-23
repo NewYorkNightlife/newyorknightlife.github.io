@@ -22,6 +22,13 @@ data-night-page="weekend" uses the same clock for Friday 5am through Monday
   var LABEL = { music: 'Music', comedy: 'Comedy', club: 'Dance', nightlife: 'Nightlife', theatre: 'Theatre', parks: 'Parks', festival: 'Festival', tour: 'Tour', cruise: 'Cruise' };
   var IMG_HOSTS = ['ticketm.net', 'ticketmaster.com', 'nycgovparks.org'];
   var THREE_H = 3 * 60 * 60 * 1000;
+  // Real photos for cards without an image of their own: the venue's photo
+  // (from /data/venues.json), then the named place, then the category.
+  // Keep in step with present.EVENT_PLACE_PHOTO / EVENT_CAT_PHOTO.
+  var VENUE_PHOTO = {};
+  var PLACE_PHOTO = { "merchant's house museum": 'img/merchants-house-museum-640.webp' };
+  var CAT_PHOTO = { festival: 'img/event-festival-640.webp', parks: 'img/event-parks-640.webp' };
+  var DEFAULT_PHOTO = 'img/home-640.webp';
 
   function R(p) { return ROOT + String(p || '').replace(/^\//, ''); }
   function get(url) {
@@ -238,6 +245,13 @@ data-night-page="weekend" uses the same clock for Friday 5am through Monday
     });
     media.appendChild(img);
   }
+  function fallbackPhoto(ev) {
+    var p = (ev.venue_slug && VENUE_PHOTO[ev.venue_slug])
+      || PLACE_PHOTO[String(ev.venue_name || '').trim().toLowerCase()]
+      || CAT_PHOTO[ev.category || '']
+      || DEFAULT_PHOTO;
+    return p ? R(p) : '';
+  }
   function eventCard(ev) {
     var cat = ev.category || 'parks';
     var title = ev.title || 'Event';
@@ -251,6 +265,9 @@ data-night-page="weekend" uses the same clock for Friday 5am through Monday
     var src = safeImage(ev);
     if (src) {
       attachImage(media, src, title + (ev.venue_name ? ' at ' + ev.venue_name : ''), ev.image_w || 640, ev.image_h || 360, title, catLabel, posterMeta);
+    } else if ((src = fallbackPhoto(ev))) {
+      media.className += ' has-place-photo';
+      attachImage(media, src, '', 640, 427, title, catLabel, posterMeta);
     } else {
       usePoster(media, title, catLabel, posterMeta);
     }
@@ -324,7 +341,10 @@ data-night-page="weekend" uses the same clock for Friday 5am through Monday
     a.setAttribute('data-cat', 'nightlife');
     a.href = safeHref(v.url ? ('/' + String(v.url).replace(/^\//, '')) : ('/venues/' + v.slug + '.html'));
     var media = el('span', 'pcard-media cat-nightlife');
-    usePoster(media, v.name || 'Venue', 'Nightlife', v.hood || v.neighborhood || v.borough || '');
+    var area = v.hood || v.neighborhood || v.borough || '';
+    var photo = typeof v.photo === 'string' && /^img\/[a-z0-9-]+\.webp$/.test(v.photo) ? R(v.photo) : '';
+    if (photo) attachImage(media, photo, '', 640, 427, v.name || 'Venue', 'Nightlife', area);
+    else usePoster(media, v.name || 'Venue', 'Nightlife', area);
     var body = el('span', 'pcard-body');
     body.appendChild(el('span', 'kicker', 'Open past midnight'));
     body.appendChild(el('span', 't', v.name || 'Venue'));
@@ -482,6 +502,9 @@ data-night-page="weekend" uses the same clock for Friday 5am through Monday
     fillWeekend(section, part.groups, weekendNote(feed.fetched_at));
   }
   function apply(feed, venuesDoc) {
+    ((venuesDoc && venuesDoc.venues) || []).forEach(function (v) {
+      if (v && v.slug && typeof v.photo === 'string' && /^img\/[a-z0-9-]+\.webp$/.test(v.photo)) VENUE_PHOTO[v.slug] = v.photo;
+    });
     var now = new Date();
     if ((section.getAttribute('data-night-page') || '') === 'weekend') {
       applyWeekend(feed, now);

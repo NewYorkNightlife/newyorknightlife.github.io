@@ -107,10 +107,12 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/KdC_main_interior.jpg",
-  "license": "CC BY-SA 4.0",
-  "credit": "Jimmyfever1978, via Wikimedia Commons",
-  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Knockdown_Center_-_Maspeth%2C_Queens%2C_New_York_City_%282017-10-15_06.15_by_Kazuhisa_OTSUBO%29.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:Knockdown_Center_-_Maspeth,_Queens,_New_York_City_(2017-10-15_06.15_by_Kazuhisa_OTSUBO).jpg",
+  "license": "CC BY 2.0",
+  "credit": "Kazuhisa OTSUBO from Tokyo, Japan / Wikimedia Commons",
+  "license_url": "https://creativecommons.org/licenses/by/2.0",
+  "kind": "venue"
  },
  "checked": "2026-10-18",
  "chat": {

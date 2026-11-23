@@ -1,0 +1,92 @@
+{
+ "_note": "Licensed photos for places that are not venue pages (guide cards) and for event cards that arrive without an image. fetch_images.py downloads each to _build/img/<key>.jpg.",
+ "places": {
+  "circle-line-pier-83": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Circle_Line_%285049892774%29.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:Circle_Line_(5049892774).jpg",
+   "license": "CC BY 2.0",
+   "credit": "raphaelstrada / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "kind": "venue",
+   "depicts": "The Circle Line terminal at Pier 83.",
+   "name": "Circle Line, Pier 83 (Harbor Lights, Sip 'N Groove)"
+  },
+  "pier-16-seaport": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/USA-NYC-Pier_16a.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:USA-NYC-Pier_16a.jpg",
+   "license": "CC BY-SA 3.0",
+   "credit": "Ingfbruno / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "kind": "venue",
+   "depicts": "Pier 16 at the South Street Seaport.",
+   "name": "Pier 16, South Street Seaport (Statue at Sunset)"
+  },
+  "comedy-cellar": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Comedy_Cellar_%2848072765427%29.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Comedy_Cellar_(48072765427).jpg",
+   "license": "CC BY 2.0",
+   "credit": "Ajay Suresh from New York, NY, USA / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "kind": "venue",
+   "name": "Comedy Cellar"
+  },
+  "gotham-comedy-club": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gotham-comedy-club.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:Gotham-comedy-club.jpg",
+   "license": "CC BY-SA 3.0",
+   "credit": "Americasroof / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "kind": "venue",
+   "name": "Gotham Comedy Club"
+  },
+  "the-stand-nyc": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Conner_O%27Malley_saluting_while_performing_comedy_at_The_Stand_in_New_York_City%2C_26_January_2025.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:Conner_O%27Malley_saluting_while_performing_comedy_at_The_Stand_in_New_York_City,_26_January_2025.jpg",
+   "license": "CC BY-SA 4.0",
+   "credit": "AddisonByAddisonRaeFan / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "kind": "venue",
+   "depicts": "On stage at The Stand in January 2025.",
+   "name": "The Stand"
+  },
+  "new-york-comedy-club": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/NYCC4_large.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:NYCC4_large.jpg",
+   "license": "Public domain",
+   "credit": "Mbellace / Wikimedia Commons",
+   "license_url": "",
+   "kind": "venue",
+   "depicts": "On stage at New York Comedy Club.",
+   "name": "New York Comedy Club"
+  },
+  "merchants-house-museum": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Merchant%27s_House_Museum_%2848072654706%29.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:Merchant%27s_House_Museum_(48072654706).jpg",
+   "license": "CC BY 2.0",
+   "credit": "Ajay Suresh from New York, NY, USA / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "kind": "venue",
+   "name": "Merchant's House Museum"
+  },
+  "event-festival": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Street_fair_on_University_Place_in_Manhattan_October_2014.JPG?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:Street_fair_on_University_Place_in_Manhattan_October_2014.JPG",
+   "license": "CC BY-SA 4.0",
+   "credit": "MusikAnimal / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "kind": "location",
+   "depicts": "A Manhattan street fair (University Place, 2014), shown for street festivals without their own photo.",
+   "name": "Street festival listings"
+  },
+  "event-parks": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bethesda_Fountain%2C_Central_Park.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:Bethesda_Fountain,_Central_Park.jpg",
+   "license": "CC BY 2.0",
+   "credit": "Dan4th Nicholas from Cambridge, MA, USA / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "kind": "location",
+   "depicts": "Bethesda Fountain in Central Park, shown for parks listings without their own photo.",
+   "name": "Parks listings"
+  }
+ }
+}

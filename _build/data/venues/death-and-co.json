@@ -107,10 +107,12 @@
  ],
  "hotel_bar": false,
  "photo": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Death_and_Company_HDR_2022_jeh.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Death_and_Company_HDR_2022_jeh.jpg?width=1280",
+  "page": "https://commons.wikimedia.org/wiki/File:Death_and_Company_HDR_2022_jeh.jpg",
   "license": "CC BY-SA 4.0",
   "credit": "Jim.henderson / Wikimedia Commons",
-  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kind": "venue"
  },
  "checked": "2026-10-18",
  "chat": {
