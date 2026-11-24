@@ -1,0 +1,213 @@
+{
+ "version": 1,
+ "pages": {
+  "/": {
+   "hash": "5691f09a8a94bcfa96a185b52d14490d24ec5459ae29d26ad5ca3e8fc768fd8d",
+   "lastmod": "2026-11-24"
+  },
+  "/about.html": {
+   "hash": "04d4bcdde35c6cd467a6a393aced7ced2e0dcc5d8e9ca2d7c6a1546ac7c1657c",
+   "lastmod": "2026-10-18"
+  },
+  "/affiliate-disclosure.html": {
+   "hash": "e964434ce2458b5ce35401ee423617bb19d2b798c5d9b70d4f4fdbbe52d4a432",
+   "lastmod": "2026-11-09"
+  },
+  "/contact.html": {
+   "hash": "94edaa852cc7ead78f66d4a859560a8d9521eb012b4e88bfa60e0ea3776e3e1b",
+   "lastmod": "2026-10-18"
+  },
+  "/guides/nyc-bar-closing-time.html": {
+   "hash": "6a1eb01d57cd18da00da5d822adaa8a36483b41889578856db1c7fcfbbff33eb",
+   "lastmod": "2026-11-23"
+  },
+  "/guides/nyc-comedy-clubs.html": {
+   "hash": "a2086f23e05b73817534740b23c2aa38074fa5451ccd8f6b2528dcdbf0988bec",
+   "lastmod": "2026-11-23"
+  },
+  "/guides/nyc-dress-codes.html": {
+   "hash": "600931e2c4b1427e35cda09dd004949f0454c49d4aea666791960aad62c8c695",
+   "lastmod": "2026-11-23"
+  },
+  "/guides/nyc-new-years-eve.html": {
+   "hash": "5b8b5422ca5635909a9170e922eed9ec6531635fa715cc183afc80e54b4e49f6",
+   "lastmod": "2026-11-23"
+  },
+  "/guides/nyc-rooftop-bars.html": {
+   "hash": "43361c086817b097e6288bb90fd521bda08b9ab06e7baa09c0832924098a5a96",
+   "lastmod": "2026-11-23"
+  },
+  "/guides/nyc-speakeasies.html": {
+   "hash": "1be3f05e51dcaaae914d1c65905254b5163959c29b8fb95fd401d35ed941775d",
+   "lastmod": "2026-11-23"
+  },
+  "/guides/under-21-nyc-bars-clubs.html": {
+   "hash": "77987df5b867fc446db5f4a1efd8f6cf38e1b8e2cad301b396533c213d2c0030",
+   "lastmod": "2026-11-23"
+  },
+  "/how-we-check.html": {
+   "hash": "db44720ff76ca7c2118adebe1ee7728639a2ddcb1e306ae06306f65b27905868",
+   "lastmod": "2026-10-18"
+  },
+  "/image-credits.html": {
+   "hash": "aca1777fa47700edaf24f8bcc0e0a6fffc255718a1e92990a95deb95e220469b",
+   "lastmod": "2026-11-23"
+  },
+  "/plans/": {
+   "hash": "fc8d92853d1f5e3a451c4802d22dc8ab320b55ed094b506356155562eb143014",
+   "lastmod": "2026-11-21"
+  },
+  "/plans/bachelor-party.html": {
+   "hash": "2ab8fa57482ada842be68ea78a3f519e9fc7d67face82c76a88d493ff234d1c9",
+   "lastmod": "2026-11-23"
+  },
+  "/plans/bachelorette-night.html": {
+   "hash": "66921fb3ad495f22038c475f3773790497d8a382b1daf6d079f182ba7efde3da",
+   "lastmod": "2026-11-21"
+  },
+  "/plans/nyc-boat-party.html": {
+   "hash": "89e576e069db9661c67f4d087f4d4bcb9e6524bba0cc125fc0ee9d5655dea899",
+   "lastmod": "2026-11-23"
+  },
+  "/plans/nyc-dinner-cruises.html": {
+   "hash": "4df71f4437c89ede225cf4a12653fc198ae74ec1c0cb533d776321ff33970429",
+   "lastmod": "2026-11-23"
+  },
+  "/privacy.html": {
+   "hash": "a3c2ff0133e911dc8d18248b1e88a130c697a73e06a6d24b2f58c30975e42c42",
+   "lastmod": "2026-11-24"
+  },
+  "/this-weekend/": {
+   "hash": "07633ad692d72077f10b2dc5eca4978c7c8a7798bba3f840141dd4940657f393",
+   "lastmod": "2026-11-23"
+  },
+  "/tonight/": {
+   "hash": "aa6a09ad13335101d725155ddf9d954237987bbd6448901fa046da721f2d8fc1",
+   "lastmod": "2026-11-24"
+  },
+  "/venues/": {
+   "hash": "9986e2a35067e238df3bed4d2b4ce2870648f68a6308ed280eaed32387001d45",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/230-fifth-rooftop.html": {
+   "hash": "ce51d1ded6251cfa4f27345c12a3f71ed5827ec2224ea7da15222b02ccabba72",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/attaboy.html": {
+   "hash": "86f5f8ccf08e085b0d674374c6852ec033eb822a1eb438e4a42ccb6a3d34d444",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/beauty-and-essex.html": {
+   "hash": "4018703c28a78a1cc9a497393ea578e2a94d6b7698b974cc5b1cf3fec7831e29",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/bossa-nova-civic-club.html": {
+   "hash": "b4d8771db68e0bbcc2bea4b1300e6c745ec9badfc920adada724eb80950d8948",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/brooklyn-mirage.html": {
+   "hash": "517b24cc8c1e98b6d41ae6194800b9db2624ea35f609b542f79cd9a75d032e2e",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/death-and-co.html": {
+   "hash": "99b11b1336c73b810bd3193437385bccaa57fe78974efb1e732ba0269300db3c",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/elsewhere.html": {
+   "hash": "ea78de7fca98be9f4b3d566bed5f070f155b7ed16afcece9b51973f606710fc0",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/employees-only.html": {
+   "hash": "8de3960ac0a90d26e25facb9f4fa16cb8b9f06e6ccb54dcef40e1e3b5808497d",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/good-room.html": {
+   "hash": "79c253bb414222cac6f12815498df542c056c05fa23782f18db819a3e0d40281",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/harriets-rooftop.html": {
+   "hash": "fcc26dfa2ca191fcdea9d7f8435c917b8f40dd1df6110086ef4a2b320ccdf7ec",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/house-of-yes.html": {
+   "hash": "729e3d88aa710e9b7e615384993ac8c032564a53a96f13e2ecc64fc08965438c",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/knockdown-center.html": {
+   "hash": "ce057cd5065c8dd0507eee8c148a6e52d36a14fde56bf5d55e652e0c1553fc6c",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/le-bain.html": {
+   "hash": "ad4830b753046c079ea26170793d93fe9c88c3e8d68dbe8b9d762e4df3cfb9c9",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/magic-hour-rooftop.html": {
+   "hash": "bdf25bcbe225809b6389513b49801f2ab16d298a5a4e67d2d463008cbf5deb17",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/marquee-new-york.html": {
+   "hash": "3aeccf387c60517b2969fc90669b3c8713d3283c536fb251d36250102128f915",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/mr-purple.html": {
+   "hash": "4e88fb41cdc6646a7ebf5bb1883567a4c03e72391c7738d5e0096d06a078eadc",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/musica-club.html": {
+   "hash": "6c706d105c73c1bab456608a6621369f061e4b898d275048c3a568182930bc9c",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/nebula.html": {
+   "hash": "844bc907f228cd1344398a0b13f6395b4b4331b3154aad13927533c56348c6a6",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/nowadays.html": {
+   "hash": "a3879e973af7e6aa8f64b7c34352a1bce5b0b1ab611992c7f62fdbd7478c9dd2",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/ophelia-lounge.html": {
+   "hash": "31f14fa99d0ee32b7e3fd924498010635d65cfcf8a1f549d08bfc12d9283aeeb",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/pacha-new-york.html": {
+   "hash": "3caad7c8ea0114f1456e003e3fd6f84782e6e977418d87789c09de0e503860a3",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/paragon.html": {
+   "hash": "7eb21bc451b84c150225c18dfaf1f10c0f1f270e0d1583f83a1985d65f4677d3",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/phd-rooftop-lounge.html": {
+   "hash": "5ce453243276461aea16f150053a8cb258a5645e7811a3bdc92a692a99df18b5",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/please-dont-tell.html": {
+   "hash": "0c1e013f8ba1fd3dee2d5cc7a7efaff60c6bb99e55e39a3a6c3b6d22f55aa54e",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/public-records.html": {
+   "hash": "f6c5d8f69d5c10234d0596ba625712df05d4d734dbb1909778279c5c84b05974",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/somewhere-nowhere.html": {
+   "hash": "7aa1f73e799e69a376a33a7547c42aa55e2cb85a5a1748fb223ac371aee45dfe",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/the-back-room.html": {
+   "hash": "be4a377d348ec3949d4f8562d563ae6270f974709b4410c76896bcdc70362c96",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/the-box.html": {
+   "hash": "4c88bbd63930e4199b7a231a62aff1b7bf97991f8cd477e2cf394b85a48b8f35",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/the-dead-rabbit.html": {
+   "hash": "e314e7d8bca6f9f3156940cdd2a30a048117a2ad361a05b276b236df340c2c33",
+   "lastmod": "2026-11-23"
+  },
+  "/venues/westlight.html": {
+   "hash": "7571bb1ff3ca5a85f52515f6127357803446e02fbae49f3462698427dc4aaea3",
+   "lastmod": "2026-11-23"
+  }
+ }
+}
