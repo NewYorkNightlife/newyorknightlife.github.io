@@ -542,21 +542,16 @@ CHATBOT = ["css/concierge.css", "assets/nyla-full-welcome.png", "assets/nyla-hea
 
 
 def sitemap(vs, pbs, extra=()):
-    """Generated, not hand-maintained, so a new page can never be forgotten and
-    lastmod can never drift from the date the page displays."""
-    rows = [("/", max(v.get("checked", "2026-10-18") for v in vs)),
-            ("/venues/", max(v.get("checked", "2026-10-18") for v in vs)),
-            ("/guides/nyc-dress-codes.html", max(v.get("checked", "2026-10-18") for v in vs))]
-    rows += [(f"/venues/{v['slug']}.html", v.get("checked", "2026-10-18")) for v in vs]
-    rows += [(f"/plans/{p['slug']}.html", p["checked"]) for p in pbs]
-    rows += list(extra)
-    rows += [(p, SITE_EDITED) for p in ("/about.html", "/how-we-check.html",
-                                        "/affiliate-disclosure.html", "/privacy.html", "/contact.html")]
-    body = "".join(f"<url><loc>{SITE}{p}</loc><lastmod>{d}</lastmod></url>\n" for p, d in sorted(rows))
-    (OUT / "sitemap.xml").write_text(
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n",
-        encoding="utf-8", newline="\n")
+    """Generated, not hand-maintained. lastmod, dateModified, and the visible
+    Updated line come from freshness.py (git history, or the day the listings changed)."""
+    paths = ["/", "/venues/", "/guides/nyc-dress-codes.html"]
+    paths += [f"/venues/{v['slug']}.html" for v in vs]
+    paths += [f"/plans/{p['slug']}.html" for p in pbs]
+    paths += [p for p, _date in extra]
+    paths += ["/about.html", "/how-we-check.html", "/affiliate-disclosure.html",
+              "/privacy.html", "/contact.html"]
+    import freshness
+    freshness.publish(OUT, paths)
 
 
 def copy_static():
@@ -653,6 +648,8 @@ def audit_urls(root):
         want = "https://nynightlife.com" + path
         if canon != want:
             problems.append(f"sitemap {path} canonical is {canon or 'missing'}, expected {want}")
+    import freshness
+    problems.extend(freshness.problems(root))
     if problems:
         raise SystemExit("URL audit failed:\n  " + "\n  ".join(problems)
                          + "\n(if these are images, run: python _build/make_images.py && python _build/make_og.py)")
