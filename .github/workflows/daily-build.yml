@@ -71,6 +71,7 @@ jobs:
           python _build/test_events.py
           node _build/test_tonight.js
           python _build/test_html.py
+          python _build/test_nyla_data.py
           node _build/test_nyla.js . --links
 
       - name: Intent checks
