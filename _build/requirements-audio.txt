@@ -1,0 +1,7 @@
+# Nyla's voice (_build/nyla_audio.py). Pinned; bump together and re-run the audio test.
+kokoro-onnx==0.6.1
+onnxruntime==1.32.0
+numpy==2.5.5
+espeakng-loader==0.2.4
+phonemizer==3.6.0
+lameenc==1.9.0

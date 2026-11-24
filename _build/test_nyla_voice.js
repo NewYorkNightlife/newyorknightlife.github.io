@@ -1,7 +1,8 @@
 /* Tests for Nyla voice (js/nyla-voice.js) with js/concierge.js and a built data/venues.json.
    Run after a build:  node _build/test_nyla_voice.js <built-site-folder>
-   No browser and no npm packages: a tiny fake DOM, a fake clock, and fake Web Speech
-   objects stand in for the browser. Exit code 1 on any failure. */
+   No browser and no npm packages: a tiny fake DOM, a fake clock, fake Web Speech
+   recognition and a fake Audio element stand in for the browser. Answers play the real
+   /audio/nyla/manifest.json files (built by _build/nyla_audio.py). Exit code 1 on any failure. */
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -12,6 +13,8 @@ const data = JSON.parse(fs.readFileSync(path.join(site, 'data', 'venues.json'), 
 const CONCIERGE = fs.readFileSync(path.join(__dirname, 'concierge.js'), 'utf8');
 const VOICE = fs.readFileSync(path.join(__dirname, 'nyla-voice.js'), 'utf8');
 const V = require('./nyla-voice.js');
+const MANIFEST = JSON.parse(fs.readFileSync(path.join(site, 'audio', 'nyla', 'manifest.json'), 'utf8'));
+const LINES = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'nyla_audio_lines.json'), 'utf8'));
 
 let fails = 0, passes = 0;
 function ok(cond, name, extra) {
@@ -35,20 +38,14 @@ function ok(cond, name, extra) {
   const long = Array.from({ length: 40 }, (_, i) => 'Sentence number ' + i + ' is here.').join(' ');
   const lt2 = V.speechText(long);
   ok(lt2.length < 460 && /The rest is on screen\.$/.test(lt2), 'speechText caps long answers', lt2.length);
-  const ch = V.chunks(long + ' ' + 'word, '.repeat(80) + 'end.', 180);
-  ok(ch.every(c => c.length <= 180) && ch.join(' ').replace(/\s+/g, ' ').includes('Sentence number 39'), 'chunks stay under 180 chars and keep all text', ch.map(c => c.length));
-  ok(V.chunks('').length === 0, 'chunks of empty text');
-
-  const voices = [
-    { name: 'Daniel', lang: 'en-GB' }, { name: 'Google UK English Male', lang: 'en-GB' },
-    { name: 'Google US English', lang: 'en-US' }, { name: 'Samantha', lang: 'en-US' },
-    { name: 'Amélie', lang: 'fr-CA' }, { name: 'Bad News', lang: 'en-US' }
-  ];
-  ok(V.pickVoice(voices).name === 'Samantha', 'pickVoice prefers Samantha', V.pickVoice(voices));
-  ok(V.pickVoice(voices.filter(v => v.name !== 'Samantha')).name === 'Google US English', 'pickVoice falls back to Google US English');
-  ok(V.pickVoice([{ name: 'Microsoft Guy Online (Natural)', lang: 'en-US' }, { name: 'Microsoft Aria Online (Natural) - English (United States)', lang: 'en-US' }]).name.startsWith('Microsoft Aria'), 'pickVoice picks Aria over Guy on Edge');
-  ok(V.pickVoice([{ name: 'Amélie', lang: 'fr-CA' }]) === null, 'pickVoice never picks a non-English voice');
-  ok(V.pickVoice([{ name: 'English United States', lang: 'en_US' }, { name: 'English UK female', lang: 'en_GB' }]).name === 'English UK female', 'pickVoice uses "female" on Android');
+  // sentence split, normalize and hash (Python twin: _build/nyla_audio.py, checked by test_nyla_audio.py)
+  ok(JSON.stringify(V.segments('Cover: $20 to $40. Age: 21 plus! Ok?  Yes')) === JSON.stringify(['Cover: $20 to $40.', 'Age: 21 plus!', 'Ok?', 'Yes']), 'segments split after . ! ?', V.segments('Cover: $20 to $40. Age: 21 plus! Ok?  Yes'));
+  ok(V.segments('').length === 0, 'segments of empty text');
+  ok(V.normalizeSpeech(' I’m\u00a0 “Nyla” ') === 'I\'m "Nyla"', 'normalize: quotes and spaces', V.normalizeSpeech(' I’m\u00a0 “Nyla” '));
+  ok(V.sha1('abc') === 'a9993e364706816aba3e25717850c26c9cd0d89d' && V.sha1('') === 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'sha1 known answers');
+  ok(V.sha1('Café — 21 plus') === require('crypto').createHash('sha1').update('Café — 21 plus', 'utf8').digest('hex'), 'sha1 hashes UTF-8 bytes');
+  ok(V.audioPlan('<b>Zzz</b> nobody wrote this.', MANIFEST, '/a/') === null, 'unknown answer has no audio plan');
+  ok(typeof V.pickVoice === 'undefined' && typeof V.chunks === 'undefined', 'speechSynthesis helpers are gone');
 })();
 
 // ---------------------------------------------------------------- fake browser
@@ -86,23 +83,23 @@ function browser(opt) {
     createElement: t => makeEl(t), querySelector: () => null,
     addEventListener(n, f, cap) { (this.listeners[n] = this.listeners[n] || []).push({ f, cap: !!cap }); }
   };
-  const recs = [], spoken = [], posted = [];
+  const recs = [], played = [], posted = [], audios = [];
   function SR() { this.started = 0; this.stopped = 0; this.aborted = 0; recs.push(this); }
   SR.prototype.start = function () { if (opt.srThrows) throw new Error('nope'); this.started++; };
   SR.prototype.stop = function () { this.stopped++; };
   SR.prototype.abort = function () { this.aborted++; };
-  const synth = {
-    voices: [{ name: 'Daniel', lang: 'en-GB' }, { name: 'Samantha', lang: 'en-US' }],
-    getVoices() { return this.voices; }, speak(u) { spoken.push(u); }, cancel() { this.cancelled = (this.cancelled || 0) + 1; },
-    addEventListener() {}
-  };
-  function Utter(t) { this.text = t; }
+  function FakeAudio() { this.src = ''; this.paused = 0; this.onended = null; this.onerror = null; audios.push(this); }
+  FakeAudio.prototype.play = function () { played.push(this.src); if (opt.playRejects && !/^data:/.test(this.src)) return Promise.reject(new Error('NotAllowedError')); return Promise.resolve(); };
+  FakeAudio.prototype.pause = function () { this.paused++; };
+  const manifest = opt.manifest || MANIFEST;
   const ctx = {
     document: doc, location: { pathname: opt.page || '/' }, console, navigator: {},
     Image: function () { return {}; },
     localStorage: { getItem: k => (k in store ? store[k] : null), setItem: (k, v) => { store[k] = String(v); } },
     fetch: (url, init) => {
       if (/venues\.json/.test(url)) return Promise.resolve({ ok: true, json: () => Promise.resolve(JSON.parse(JSON.stringify(data))) });
+      if (/manifest\.json$/.test(url)) { ctx.manifestUrl = url; return Promise.resolve({ ok: true, json: () => Promise.resolve(manifest) }); }
+      if (/\.mp3$/.test(url)) { ctx.prefetched = (ctx.prefetched || 0) + 1; return Promise.resolve({ ok: true }); }
       posted.push({ url, init });
       return Promise.resolve({ ok: true, json: () => Promise.resolve({ text: opt.transcript || '' }) });
     },
@@ -110,7 +107,10 @@ function browser(opt) {
     Date, Math, String, RegExp, Array, Object, JSON, Promise, Error
   };
   if (!opt.noSR) ctx.webkitSpeechRecognition = SR;
-  if (!opt.noSynth) { ctx.speechSynthesis = synth; ctx.SpeechSynthesisUtterance = Utter; }
+  if (!opt.noAudio) ctx.Audio = FakeAudio;
+  // a speechSynthesis that must never be used any more
+  ctx.speechSynthesis = { speak() { ctx.synthUsed = true; }, cancel() {}, getVoices() { return []; } };
+  ctx.SpeechSynthesisUtterance = function () { ctx.synthUsed = true; };
   if (opt.config) ctx.NYLA_VOICE_CONFIG = opt.config;
   if (opt.recorder) {
     ctx.navigator.mediaDevices = { getUserMedia: () => Promise.resolve({ getTracks: () => [{ stop() {} }] }) };
@@ -119,13 +119,14 @@ function browser(opt) {
   }
   ctx.window = ctx;
   vm.createContext(ctx);
-  if (opt.voiceFirst) { vm.runInContext(VOICE, ctx); vm.runInContext(CONCIERGE, ctx); }
-  else { vm.runInContext(CONCIERGE, ctx); vm.runInContext(VOICE, ctx); }
+  const runC = () => { doc.currentScript = { src: 'https://nynightlife.com/js/concierge.js?v=1' }; vm.runInContext(CONCIERGE, ctx); };
+  const runV = () => { doc.currentScript = { src: 'https://nynightlife.com/js/nyla-voice.js?v=1' }; vm.runInContext(VOICE, ctx); };
+  if (opt.voiceFirst) { runV(); runC(); } else { runC(); runV(); }
 
   const bubble = body.children[0], panel = body.children[1];
   const msgs = panel.querySelector('.nyb-msgs');
   const B = {
-    ctx, store, recs, spoken, posted, bubble, panel, msgs, synth,
+    ctx, store, recs, played, posted, audios, bubble, panel, msgs,
     voice: ctx.__nylaVoice,
     input: panel.querySelector('.nyb-in'),
     form: panel.querySelector('.nyb-inrow'),
@@ -146,7 +147,7 @@ function browser(opt) {
     users() { return msgs.children.filter(m => /\buser\b/.test(m.className)).map(m => m.innerHTML); },
     rec() { return recs[recs.length - 1]; },
     say(rec, words) { rec.onstart && rec.onstart(); rec.onresult({ results: [Object.assign([{ transcript: words }], { isFinal: true })] }); rec.onend(); },
-    async finishSpeech() { for (let i = 0; i < 50 && spoken.length; i++) { const u = spoken.find(x => !x.done && x.onend); if (!u) break; u.done = true; u.onend(); await B.run(1); } },
+    async finishSpeech() { for (let i = 0; i < 80; i++) { const a = audios[0]; if (!a || !a.onended) break; a.onended(); await B.run(1); } },
     click(target) {
       const ev = { target, stopped: false, stopImmediatePropagation() { this.stopped = true; }, stopPropagation() { this.stopped = true; }, preventDefault() {} };
       (doc.listeners.click || []).filter(l => l.cap).forEach(l => l.f(ev));
@@ -156,7 +157,8 @@ function browser(opt) {
   };
   return B;
 }
-const realSpoken = B => B.spoken.filter(u => u.text.trim());
+// what Nyla said: the MP3s played (not the silent unlock), as their sentence text
+const realSpoken = B => B.played.filter(u => !/^data:/.test(u)).map(u => ({ url: u, text: LINES[u.replace(/^.*\//, '').replace(/\.mp3$/, '')] || '?' }));
 
 (async () => {
   // 1. tap the mic, ask, hear the answer
@@ -173,20 +175,24 @@ const realSpoken = B => B.spoken.filter(u => u.text.trim());
     ok(B.panel.classList.contains('nyv-listening') && B.bubble.classList.contains('nyv-listening'), 'listening animation classes');
     ok(/Listening/.test(B.voice.els.status.innerHTML), 'listening status line');
     ok(/mic/.test(B.text()) && /don’t record/.test(B.text()), 'privacy note on first use', B.text());
-    ok(B.spoken.length === 1 && B.spoken[0].volume === 0, 'speech unlocked inside the tap (iOS)', B.spoken.map(u => u.text));
+    ok(B.played.length === 1 && /^data:audio\/mpeg;base64,/.test(B.played[0]), 'audio unlocked inside the tap (iOS)', B.played.map(u => u.slice(0, 30)));
     rec.onstart();
     rec.onresult({ results: [Object.assign([{ transcript: 'cover at house' }], { isFinal: false })] });
     ok(B.input.value === 'cover at house', 'interim words show in the box', B.input.value);
     B.say(rec, 'cover at House of Yes');
     ok(B.users().some(u => /cover at House of Yes/.test(u)), 'the spoken question is shown as text', B.users());
     await B.run(1500);
+    ok(B.voice.state() === 'speaking' && realSpoken(B).length === 1, 'first sentence playing', B.voice.state());
+    ok(B.panel.classList.contains('nyv-speaking'), 'speaking animation while audio plays');
+    await B.finishSpeech();
     const said = realSpoken(B).map(u => u.text).join(' ');
     ok(/House of Yes/.test(said) && /Cover/.test(said), 'Nyla says the answer out loud', said);
     ok(!/night concierge|What kind of night/.test(said), 'greeting is not read out', said);
-    ok(realSpoken(B).every(u => u.voice && u.voice.name === 'Samantha'), 'female voice chosen', realSpoken(B).map(u => u.voice && u.voice.name));
-    ok(B.voice.state() === 'speaking' && B.panel.classList.contains('nyv-speaking'), 'speaking animation while audio plays', B.voice.state());
+    ok(realSpoken(B).length >= 1 && realSpoken(B).every(u => u.url.indexOf('https://nynightlife.com/audio/nyla/') === 0 && u.text !== '?'), 'plays Nyla’s pre-rendered MP3s', realSpoken(B).map(u => u.url));
+    ok(B.ctx.manifestUrl === 'https://nynightlife.com/audio/nyla/manifest.json', 'manifest read next to the script', B.ctx.manifestUrl);
+    ok(B.audios.length === 1, 'one audio element is reused (keeps the iOS unlock)', B.audios.length);
+    ok(!B.ctx.synthUsed, 'speechSynthesis is never used');
     ok(B.bots().some(m => /House of Yes/.test(m.innerHTML)), 'answer is also on screen');
-    await B.finishSpeech();
     ok(B.voice.state() === 'idle' && !B.panel.classList.contains('nyv-speaking'), 'back to idle after speaking', B.voice.state());
     ok(!B.input.focused, 'voice turn does not pop the keyboard', B.input.focused);
     // typed follow-up is read out too now that voice is on
@@ -197,7 +203,7 @@ const realSpoken = B => B.spoken.filter(u => u.text.trim());
     ok(realSpoken(B).length > n && /Le Bain/.test(realSpoken(B).slice(n).map(u => u.text).join(' ')), 'typed follow-up spoken while voice is on');
     // stop button
     B.click(B.voice.els.mic);
-    ok(B.voice.state() === 'idle' && B.synth.cancelled, 'mic tap while speaking stops speech', B.voice.state());
+    ok(B.voice.state() === 'idle' && B.audios[0].paused > 0, 'mic tap while speaking stops speech', B.voice.state());
   }
 
   // 2. typing-only visitors hear nothing
@@ -234,6 +240,7 @@ const realSpoken = B => B.spoken.filter(u => u.text.trim());
     await B.run(1500);
     ok(B.panel.classList.contains('open'), 'chat opens with the answer');
     ok(B.users().some(u => /is pdt 21\+/.test(u)), 'held question shown as text', B.users());
+    await B.finishSpeech();
     ok(/Age and ID/.test(realSpoken(B).map(u => u.text).join(' ')), 'held question answered out loud', realSpoken(B).map(u => u.text));
     ok(!B.doc.body.children.some(c => c.className === 'nyv-live'), 'caption removed after release');
   }
@@ -308,14 +315,35 @@ const realSpoken = B => B.spoken.filter(u => u.text.trim());
     ok(B.bots().some(m => /no cover/i.test(m.innerHTML)), 'muted answer still on screen');
   }
 
-  // 9. no speechSynthesis either: mic still works, speaker hidden
+  // 9. no Audio either: mic still works, speaker hidden
   {
-    const B = browser({ noSynth: true });
-    ok(B.voice.els.spk.style.display === 'none', 'speaker hidden without speechSynthesis');
+    const B = browser({ noAudio: true });
+    ok(B.voice.els.spk.style.display === 'none', 'speaker hidden without audio playback');
     B.click(B.voice.els.mic);
     B.say(B.rec(), 'bushwick clubs');
     await B.run(1500);
     ok(B.bots().some(m => /House of Yes/.test(m.innerHTML)), 'voice question answered in text');
+  }
+
+  // 9b. an answer with a sentence that has no file: text only, nothing played
+  {
+    const B = browser({ manifest: { version: 1, files: {} } });
+    B.click(B.voice.els.mic);
+    B.say(B.rec(), 'cover at House of Yes');
+    await B.run(1500);
+    ok(realSpoken(B).length === 0, 'no file -> nothing played', realSpoken(B));
+    ok(B.bots().some(m => /House of Yes/.test(m.innerHTML)), 'no file -> answer still on screen');
+    ok(B.voice.state() === 'idle', 'no file -> back to idle', B.voice.state());
+    ok(!B.ctx.synthUsed, 'no file -> no robot voice fallback');
+  }
+
+  // 9c. play() refused (autoplay policy): back to idle, answer on screen
+  {
+    const B = browser({ playRejects: true });
+    B.click(B.voice.els.mic);
+    B.say(B.rec(), 'cover at House of Yes');
+    await B.run(1500);
+    ok(B.voice.state() === 'idle', 'refused play -> idle', B.voice.state());
   }
 
   // 10. v1.1 recorder fallback, only when a transcribe URL is configured

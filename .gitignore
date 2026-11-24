@@ -36,3 +36,6 @@ __pycache__/
 # Generated image derivatives. The served copies live in /img/ and are committed.
 _build/img/gen/
 _build/img/og/
+
+# Nyla voice render temp files (_build/nyla_audio.py)
+audio/nyla/*.part
