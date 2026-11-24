@@ -176,13 +176,15 @@
 
   var msgs, chipsEl, input, typing;
 
-  function say(html, who) {
+  function say(html, who, quiet) {
     var m = el('div', 'nyb-m ' + (who || 'bot'), html);
     msgs.appendChild(m); msgs.scrollTop = msgs.scrollHeight;
+    // js/nyla-voice.js reads answers out loud; the greeting is marked quiet
+    if (who !== 'user' && !quiet && typeof window.__nylaOnReply === 'function') { try { window.__nylaOnReply(html); } catch (e) {} }
   }
-  function botSay(html, delay) {
+  function botSay(html, delay, quiet) {
     typing.style.display = 'block';
-    setTimeout(function () { typing.style.display = 'none'; say(html, 'bot'); }, delay || 450);
+    setTimeout(function () { typing.style.display = 'none'; say(html, 'bot', quiet); }, delay || 450);
   }
   function setChips(list) {
     chipsEl.innerHTML = '';
@@ -698,7 +700,7 @@
     if (panel.classList.contains('open') || teaser) return;
     teaser = el('div', 'nyb-teaser',
       '<span class="nyb-teaser-txt">' + teaserLine() + '</span>' +
-      '<span class="nyb-teaser-cta">Tap me to ask anything &rarr;</span>');
+      '<span class="nyb-teaser-cta">Tap me to ask, or hold me to talk &rarr;</span>');
     teaser.setAttribute('role', 'status');
     teaser.addEventListener('click', function () { open(); });
     document.body.appendChild(teaser);
@@ -708,7 +710,7 @@
   }
 
   // ---------- boot ----------
-  function open() {
+  function open(opts) {
     var hi = panel.querySelector('.nyb-head-ava img');
     if (hi && !hi.getAttribute('src')) hi.src = ART.head;
     panel.classList.add('open');
@@ -716,11 +718,12 @@
     teaserGone();
     // header keeps the head crop — a full-body render would be unreadable at 44px
     if (!msgs.children.length) {
-      botSay('Hey, I’m <b>' + esc(ART.name) + '</b> — the night concierge. Every answer comes from this site’s checked, dated facts. What kind of night are we planning?', 250);
+      botSay('Hey, I’m <b>' + esc(ART.name) + '</b> — the night concierge. Every answer comes from this site’s checked, dated facts. What kind of night are we planning?', 250, true);
       setChips(DEFAULT_CHIPS);
     }
     track('nybot_open');
-    setTimeout(function () { input.focus(); }, 300);
+    // a voice question must not pop the phone keyboard over the answer
+    if (!(opts && opts.noFocus)) setTimeout(function () { input.focus(); }, 300);
   }
   function close() {
     if (!panel.classList.contains('open')) return;
@@ -736,7 +739,7 @@
     input = panel.querySelector('.nyb-in');
     typing = panel.querySelector('.nyb-typing');
     typing.textContent = ART.name + ' is typing…';
-    bubble.addEventListener('click', open);
+    bubble.addEventListener('click', function () { open(); });
     panel.querySelector('.nyb-close').addEventListener('click', close);
     panel.querySelector('.nyb-inrow').addEventListener('submit', function (e) {
       e.preventDefault();
@@ -750,6 +753,19 @@
     if (Date.now() - last > 45 * 60 * 1000) {
       setTimeout(showTeaser, 4000);
     }
+
+    // Hook for js/nyla-voice.js (hold Nyla to talk). Voice asks through the same
+    // rules engine as typing, so spoken answers match the pages.
+    window.NylaChat = {
+      ask: handle,
+      open: open,
+      close: close,
+      isOpen: function () { return panel.classList.contains('open'); },
+      bubble: bubble,
+      panel: panel,
+      name: function () { return ART.name; }
+    };
+    if (typeof window.__nylaVoiceInit === 'function') window.__nylaVoiceInit(window.NylaChat);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

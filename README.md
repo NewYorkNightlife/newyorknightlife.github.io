@@ -11,6 +11,7 @@ and the date each fact was checked. Static HTML on GitHub Pages. Live site: http
   - `_build/data/playbooks/*.json`: group-night pages, priced per person.
   - `build.py` and `pages.py` write the pages. `nyla.py` writes `data/venues.json` for the chatbot, from the same venues, hours, guides, and events feed as the pages.
   - `concierge.js` is the source for `js/concierge.js` (Nyla, the chat helper).
+  - `nyla-voice.js` is the source for `js/nyla-voice.js`: hold Nyla (or tap the mic) to ask out loud; she answers out loud. Browser-only Web Speech API, no server, no keys. Tests: `node _build/test_nyla_voice.js .`
   - `site.css` is the source for `css/site.css`. Fonts are self-hosted in `/fonts/` (SIL OFL).
   - `make_images.py` turns the masters in `_build/img/` into the responsive WebP/JPEG set.
   - `make_og.py` draws the 1200x630 share card for every page, from facts already on the page.
