@@ -8,6 +8,9 @@ Run:   python _build/make_images.py   (only after adding or replacing a photo)
        python _build/build.py         (from the site folder)
        python _build/test_nyla_data.py .  (Nyla's file must match the feed, venues, and guides)
        node _build/test_nyla.js .         (Nyla's answer tests; run it 3 times)
+       python _build/nyla_audio.py        (Nyla's voice: render new sentences to audio/nyla/, needs
+                                           pip install -r _build/requirements-audio.txt)
+       python _build/test_nyla_audio.py   (every audio file listed, JS and Python hashes agree)
        node _build/test_nyla_voice.js .   (Nyla's voice: hold-to-talk, spoken answers)
 """
 import hashlib

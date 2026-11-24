@@ -1,8 +1,15 @@
-/* Nyla voice v1 (2026-11): hold Nyla, or tap the mic in her chat, ask out loud, hear her answer.
-   Fully in-browser, $0: Web Speech API recognition (webkitSpeechRecognition) for the question,
-   speechSynthesis for the answer. No server and no keys. The answer comes from the same
-   rules engine as typed chat (js/concierge.js -> window.NylaChat), so spoken answers can
-   never drift from the checked facts on the pages.
+/* Nyla voice v2 (2026-11): hold Nyla, or tap the mic in her chat, ask out loud, hear her answer.
+   Question: Web Speech API recognition (webkitSpeechRecognition) in the visitor's browser.
+   Answer: pre-rendered MP3s in Nyla's own voice (Kokoro-82M, voice af_heart), made at build
+   time by _build/nyla_audio.py and served as static files from /audio/nyla/. Nothing is
+   synthesized in the browser and nothing is sent anywhere: the answer text is split into
+   sentences, each sentence is normalized and SHA-1 hashed, and the hash names the file
+   (/audio/nyla/<sha1>.mp3, listed in /audio/nyla/manifest.json). If any sentence of an
+   answer has no file, Nyla answers in text only. The answer still comes from the same rules
+   engine as typed chat (js/concierge.js -> window.NylaChat), so spoken answers can never
+   drift from the checked facts on the pages.
+   _build/nyla_audio.py has the same normalize + hash in Python; _build/test_nyla_audio.py
+   checks that both agree.
    Optional later (v1.1, off by default): set window.NYLA_VOICE_CONFIG = { transcribeUrl: '...' }
    before this script and browsers without speech recognition record with MediaRecorder and
    POST the clip to that URL (a Cloudflare Worker running Whisper). It must return {"text": "..."}. */
@@ -11,7 +18,10 @@
   var HOLD_MS = 350;          // press longer than this on Nyla = push-to-talk; shorter = normal tap (opens chat)
   var START_WATCHDOG_MS = 5000; // some browsers expose the API but never fire events (old Edge, in-app webviews)
   var MAX_SPOKEN = 420;       // keep spoken answers short; the full answer is always on screen
-  var CHUNK = 180;            // Chrome desktop cuts utterances off at ~15s, so speak in short chunks
+  var MANIFEST_WAIT_MS = 4000; // an answer waits at most this long for /audio/nyla/manifest.json
+  // 0.1 s of silence, played inside the tap so iOS lets the real answer play later
+  var SILENCE = 'data:audio/mpeg;base64,//NAxAAAAANIAAAAAExBTUU0LjBVVVVVVVVVVVVVVVVMQU1FNC4wVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/80LEWwAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FNC4wVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/80DEpAAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUU0LjBVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsSjAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUU0LjBVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//NCxKMAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV';
+  var SCRIPT_SRC = (function () { try { return (document.currentScript && document.currentScript.src) || ''; } catch (e) { return ''; } })();
   var MAX_RECORD_MS = 15000;
 
   // ---------------------------------------------------------------- pure helpers
@@ -51,47 +61,65 @@
     return s;
   }
 
-  // Split into sentence chunks of at most `max` characters.
-  function chunks(text, max) {
-    max = max || CHUNK;
-    var out = [], parts = String(text || '').match(/[^.!?]+[.!?]*\s*/g) || [];
-    var cur = '';
-    parts.forEach(function (p) {
-      p = p.trim();
-      if (!p) return;
-      while (p.length > max) {
-        var at = p.lastIndexOf(', ', max); if (at < 40) at = p.lastIndexOf(' ', max); if (at < 1) at = max;
-        if (cur) { out.push(cur); cur = ''; }
-        out.push(p.slice(0, at + (p.charAt(at) === ',' ? 1 : 0)).trim());
-        p = p.slice(at + 1).trim();
+  // Spoken text -> the exact string that is hashed and rendered. Python twin: norm() in
+  // _build/nyla_audio.py. NFKC, straight quotes, one space, trimmed.
+  var WS = /[ \t\n\r\f\v\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/g;
+  function normalizeSpeech(text) {
+    var s = String(text == null ? '' : text);
+    if (s.normalize) s = s.normalize('NFKC');
+    s = s.replace(/[\u2018\u2019\u201a\u201b\u2032]/g, "'").replace(/[\u201c\u201d\u201e\u201f\u2033]/g, '"');
+    return s.replace(WS, ' ').replace(/^ | $/g, '');
+  }
+  // One audio file per sentence: split after . ! ? followed by a space.
+  function segments(text) {
+    var s = normalizeSpeech(text);
+    if (!s) return [];
+    return s.replace(/([.!?]+) /g, '$1\n').split('\n').map(normalizeSpeech).filter(function (x) { return !!x; });
+  }
+  // SHA-1 of the UTF-8 bytes, lowercase hex. Small and synchronous, so it works in old
+  // browsers, on http:// previews (no crypto.subtle) and in the Node tests.
+  function sha1(str) {
+    var b = unescape(encodeURIComponent(String(str))), n = b.length, i, j;
+    var words = [], len = ((n + 8) >> 6) + 1, wl = len * 16;
+    for (i = 0; i < wl; i++) words[i] = 0;
+    for (i = 0; i < n; i++) words[i >> 2] |= b.charCodeAt(i) << (24 - (i % 4) * 8);
+    words[n >> 2] |= 0x80 << (24 - (n % 4) * 8);
+    words[wl - 1] = n * 8;
+    var h0 = 0x67452301, h1 = 0xefcdab89, h2 = 0x98badcfe, h3 = 0x10325476, h4 = 0xc3d2e1f0, w = [];
+    function rol(x, c) { return (x << c) | (x >>> (32 - c)); }
+    for (i = 0; i < wl; i += 16) {
+      var a = h0, bb = h1, c = h2, d = h3, e = h4;
+      for (j = 0; j < 80; j++) {
+        w[j] = j < 16 ? words[i + j] : rol(w[j - 3] ^ w[j - 8] ^ w[j - 14] ^ w[j - 16], 1);
+        var f, k;
+        if (j < 20) { f = (bb & c) | (~bb & d); k = 0x5a827999; }
+        else if (j < 40) { f = bb ^ c ^ d; k = 0x6ed9eba1; }
+        else if (j < 60) { f = (bb & c) | (bb & d) | (c & d); k = 0x8f1bbcdc; }
+        else { f = bb ^ c ^ d; k = 0xca62c1d6; }
+        var t = (rol(a, 5) + f + e + k + w[j]) | 0;
+        e = d; d = c; c = rol(bb, 30); bb = a; a = t;
       }
-      if (cur && (cur + ' ' + p).length > max) { out.push(cur); cur = p; }
-      else cur = cur ? cur + ' ' + p : p;
-    });
-    if (cur) out.push(cur);
+      h0 = (h0 + a) | 0; h1 = (h1 + bb) | 0; h2 = (h2 + c) | 0; h3 = (h3 + d) | 0; h4 = (h4 + e) | 0;
+    }
+    return [h0, h1, h2, h3, h4].map(function (x) { return ('00000000' + (x >>> 0).toString(16)).slice(-8); }).join('');
+  }
+  // Answer HTML -> list of MP3 urls, or null when any sentence has no file (text only).
+  function audioPlan(html, manifest, base) {
+    var files = manifest && manifest.files;
+    if (!files) return null;
+    var segs = segments(speechText(html));
+    if (!segs.length) return null;
+    var out = [];
+    for (var i = 0; i < segs.length; i++) {
+      var h = sha1(segs[i]), f = files[h];
+      if (!f) return null;
+      out.push({ url: (base || '') + h + '.mp3', ms: Math.round(((f && f[0]) || 10) * 1000) });
+    }
     return out;
   }
-
-  // Best available English female voice. Names differ per OS, so score by a known-good list.
-  var PREFERRED = ['Samantha', 'Ava', 'Allison', 'Susan', 'Zoe', 'Google US English', 'Microsoft Aria',
-    'Microsoft Jenny', 'Microsoft Ava', 'Microsoft Michelle', 'Microsoft Emma', 'Microsoft Zira',
-    'Google UK English Female', 'Karen', 'Moira', 'Tessa', 'Serena', 'Victoria', 'Kate', 'Fiona'];
-  var MALE = /\b(male|daniel|alex|fred|david|mark|guy|george|james|tom|aaron|arthur|rishi|oliver|ryan|eric|christopher|brian|andrew|roger|steffan|reed|ralph|evan|nathan|gordon|lee|rocko|eddy|grandpa)\b/i;
-  function voiceScore(v) {
-    var n = String(v.name || ''), sc = 0;
-    if (!/^en([-_]|$)/i.test(v.lang || '')) return -1e9;
-    for (var i = 0; i < PREFERRED.length; i++) if (n.indexOf(PREFERRED[i]) === 0 || n.indexOf(' ' + PREFERRED[i]) !== -1 || n === PREFERRED[i]) { sc += 100 - i * 3; break; }
-    if (/female|woman/i.test(n)) sc += 40;
-    if (MALE.test(n)) sc -= 200;
-    if (/natural|neural|premium|enhanced|online/i.test(n)) sc += 15;
-    if (/^en[-_]US$/i.test(v.lang)) sc += 10;
-    if (/novelty|whisper|bells|bubbles|cellos|zarvox|trinoids|organ|bad news|good news|jester|superstar|boing|albert|wobble/i.test(n)) sc -= 500;
-    return sc;
-  }
-  function pickVoice(voices) {
-    var best = null, bs = -1e8;
-    (voices || []).forEach(function (v) { var s = voiceScore(v); if (s > bs) { bs = s; best = v; } });
-    return best;
+  function audioBase(src) {
+    var m = String(src || '').match(/^(.*\/)js\/nyla-voice\.js(?:[?#].*)?$/);
+    return (m ? m[1] : '/') + 'audio/nyla/';
   }
 
   // ---------------------------------------------------------------- styles (Night Signal tokens)
@@ -146,9 +174,10 @@
     env = env || {};
     var win = env.window || W, doc = env.document || win.document;
     var SR = env.SpeechRecognition !== undefined ? env.SpeechRecognition : (win.SpeechRecognition || win.webkitSpeechRecognition || null);
-    var synth = env.speechSynthesis !== undefined ? env.speechSynthesis : (win.speechSynthesis || null);
-    var Utter = env.SpeechSynthesisUtterance || win.SpeechSynthesisUtterance;
+    var AudioCtor = env.Audio !== undefined ? env.Audio : (win.Audio || null);
+    var canPlay = !!AudioCtor;
     var cfg = win.NYLA_VOICE_CONFIG || {};
+    var base = cfg.audioBase || env.audioBase || audioBase(SCRIPT_SRC);
     var nav = win.navigator || {};
     var canRecord = !!(cfg.transcribeUrl && win.MediaRecorder && nav.mediaDevices && nav.mediaDevices.getUserMedia && win.fetch);
     var setT = env.setTimeout || win.setTimeout, clearT = env.clearTimeout || win.clearTimeout;
@@ -165,8 +194,8 @@
 
     var state = 'idle', mode = null, rec = null, recorder = null, gotStart = false, finalText = '', interim = '', errored = false;
     var holdTimer = null, holding = false, suppressClick = false, watchdog = null, speakGuard = null;
-    var srBroken = false, queue = [], live = [], voice = null;
-    var speakOn = lsGet('nyv_speak') === '1' && !!synth; // on after the first voice question, until muted
+    var srBroken = false, queue = [], player = null, manifest = null, manifestP = null, playToken = 0;
+    var speakOn = lsGet('nyv_speak') === '1' && canPlay; // on after the first voice question, until muted
 
     // ---- DOM
     var style = doc.createElement('style');
@@ -187,7 +216,7 @@
     spk.className = 'nyv-spk';
     spk.innerHTML = SPK_SVG;
     if (closeBtn && head.insertBefore) head.insertBefore(spk, closeBtn); else head.appendChild(spk);
-    if (!synth) spk.style.display = 'none';
+    if (!canPlay) spk.style.display = 'none';
 
     var status = doc.createElement('div');
     status.className = 'nyv-status';
@@ -253,64 +282,85 @@
     }
     function hideCaption() { if (liveCap && liveCap.parentNode) liveCap.parentNode.removeChild(liveCap); liveCap = null; }
 
-    // ---- speaking
-    function loadVoice() { if (synth && synth.getVoices) voice = pickVoice(synth.getVoices()) || voice; }
-    loadVoice();
-    if (synth && synth.addEventListener) synth.addEventListener('voiceschanged', loadVoice);
-    else if (synth) synth.onvoiceschanged = loadVoice;
+    // ---- speaking: pre-rendered MP3s, one per sentence, played back to back
+    function loadManifest() {
+      if (manifestP) return manifestP;
+      if (!win.fetch) { manifestP = { then: function (f) { f(null); } }; return manifestP; }
+      manifestP = win.fetch(base + 'manifest.json').then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+        .then(function (m) { manifest = m && m.files ? m : null; return manifest; }, function () { manifest = null; return null; });
+      return manifestP;
+    }
+    if (speakOn) loadManifest();
 
     var unlocked = false;
-    // iOS Safari only lets speech start from a tap. Speak a silent utterance inside the tap
-    // so the real answer, which arrives later, is allowed to play.
+    // iOS Safari only lets audio start from a tap. Play a moment of silence on the one
+    // audio element inside the tap; the real answer, which arrives later, reuses it.
     function unlock() {
-      if (unlocked || !synth || !Utter) return;
+      if (!canPlay) return;
+      loadManifest();
+      if (!player) { try { player = new AudioCtor(); player.preload = 'auto'; } catch (e) { canPlay = false; return; } }
+      if (unlocked) return;
       unlocked = true;
-      try { var u = new Utter(' '); u.volume = 0; synth.speak(u); } catch (e) {}
+      try { player.src = SILENCE; var pr = player.play(); if (pr && pr.catch) pr.catch(function () {}); } catch (e) {}
     }
     function stopSpeaking() {
-      queue = []; live = [];
+      queue = []; playToken++;
       if (speakGuard) { clearT(speakGuard); speakGuard = null; }
-      try { if (synth) synth.cancel(); } catch (e) {}
-      if (state === 'speaking') setState('idle');
+      try { if (player) player.pause(); } catch (e) {}
+      if (state === 'speaking' || state === 'thinking') setState('idle');
     }
-    function speak(text) {
-      if (!synth || !Utter || !text) return;
-      queue = queue.concat(chunks(text));
-      if (state !== 'speaking') next();
+    function speak(html) {
+      if (!canPlay) return;
+      var token = playToken, waited = false; // a second bubble queues behind the first
+      var guard = setT(function () { waited = true; if (token === playToken && state === 'thinking') setState('idle'); }, MANIFEST_WAIT_MS);
+      loadManifest().then(function (m) {
+        clearT(guard);
+        if (token !== playToken || waited || !speakOn) return;
+        var plan = audioPlan(html, m, base);
+        if (!plan) {
+          track('nyla_voice_text_only', { manifest: !!m });
+          if (state === 'thinking') setState('idle');
+          return;
+        }
+        if (!player) { try { player = new AudioCtor(); } catch (e) { return; } }
+        // warm the cache so sentence 2+ start without a gap
+        if (win.fetch) plan.slice(1).forEach(function (p) { try { win.fetch(p.url).then(null, function () {}); } catch (e) {} });
+        queue = queue.concat(plan);
+        if (state !== 'speaking') next(token);
+      });
     }
-    function next() {
+    function next(token) {
       if (speakGuard) { clearT(speakGuard); speakGuard = null; }
-      var t = queue.shift();
-      if (!t) { live = []; if (state === 'speaking') setState('idle'); return; }
-      if (!voice) loadVoice();
-      var u = new Utter(t);
-      if (voice) { u.voice = voice; u.lang = voice.lang; } else u.lang = 'en-US';
-      u.rate = 1.02; u.pitch = 1.05;
+      if (token !== playToken) return;
+      var p = queue.shift();
+      if (!p) { if (state === 'speaking') setState('idle'); return; }
       var done = false;
-      function fin() { if (done) return; done = true; next(); }
-      u.onend = fin; u.onerror = fin;
-      live.push(u); // keep a reference: Chrome drops onend for garbage-collected utterances
+      function fin() { if (done) return; done = true; player.onended = player.onerror = null; next(token); }
+      player.onended = fin; player.onerror = fin;
       setState('speaking');
-      // safety net if the engine never fires onend (seen on some Android builds)
-      speakGuard = setT(fin, 2500 + t.length * 90);
-      try { synth.speak(u); } catch (e) { fin(); }
+      // safety net if the browser never fires ended (stalled network, odd webviews)
+      speakGuard = setT(fin, p.ms + 4000);
+      try {
+        player.src = p.url;
+        var pr = player.play();
+        if (pr && pr.then) pr.then(null, function () { queue = []; fin(); });
+      } catch (e) { queue = []; fin(); }
     }
     function openChat() { chat.open({ noFocus: true }); }
     function onReply(html) {
       if (state === 'thinking' && !speakOn) setState('idle');
       if (!speakOn || state === 'listening') return;
-      var t = speechText(html);
-      if (t) speak(t);
+      speak(html);
     }
 
     // ---- listening
     function supported() { return !!SR && !srBroken; }
     function unsupported() {
       track('nyla_voice_unsupported');
-      note(synth
-        ? 'Talking to me doesn’t work in this browser yet. It works in Chrome, and in Safari with Siri turned on. Type your question and I’ll read my answer out loud.'
+      note(canPlay
+        ? 'Talking to me doesn’t work in this browser yet. It works in Chrome, and in Safari with Siri turned on. Type your question and I’ll answer out loud.'
         : 'Voice doesn’t work in this browser yet. It works in Chrome, and in Safari with Siri turned on. You can still type your question.');
-      if (synth && lsGet('nyv_muted') !== '1') { speakOn = true; lsSet('nyv_speak', '1'); syncSpk(); }
+      if (canPlay && lsGet('nyv_muted') !== '1') { speakOn = true; lsSet('nyv_speak', '1'); syncSpk(); }
     }
     function privacyOnce() {
       if (lsGet('nyv_noticed')) return;
@@ -322,7 +372,7 @@
       if (state === 'speaking') stopSpeaking();
       if (state === 'listening') return;
       unlock();
-      if (synth && lsGet('nyv_muted') !== '1') { speakOn = true; lsSet('nyv_speak', '1'); syncSpk(); }
+      if (canPlay && lsGet('nyv_muted') !== '1') { speakOn = true; lsSet('nyv_speak', '1'); syncSpk(); }
       if (!chat.isOpen() && m !== 'hold') openChat();
       if (!supported()) {
         if (canRecord) return beginRecording(m);
@@ -445,7 +495,7 @@
     }
 
     // ---- wiring
-    mic.addEventListener('click', function () { toggle('tap'); });
+    mic.addEventListener('click', function () { unlock(); toggle('tap'); });
     spk.addEventListener('click', function () {
       speakOn = !speakOn;
       lsSet('nyv_speak', speakOn ? '1' : '0');
@@ -454,12 +504,14 @@
       syncSpk();
     });
     // typing a question cancels any speech still playing
-    form.addEventListener('submit', function () { if (state === 'speaking') stopSpeaking(); });
+    // (a submit is a user gesture, so it also unlocks audio for the typed answer)
+    form.addEventListener('submit', function () { if (state === 'speaking') stopSpeaking(); if (speakOn) unlock(); });
     if (closeBtn) closeBtn.addEventListener('click', function () { end(); stopSpeaking(); });
 
     // press-and-hold on Nyla = push-to-talk. A short tap still opens the chat as before.
     function down(e) {
       if (e && e.button != null && e.button !== 0) return;
+      unlock(); // inside the press, before the hold timer, so iOS allows the answer audio
       clearT(holdTimer);
       holding = false;
       holdTimer = setT(function () {
@@ -492,12 +544,13 @@
       state: function () { return state; },
       speakOn: function () { return speakOn; },
       toggle: toggle, begin: begin, end: end, down: down, up: up,
-      voice: function () { return voice; },
+      base: function () { return base; },
+      manifest: function () { return manifest; },
       els: { mic: mic, spk: spk, status: status }
     };
   }
 
-  var api = { speechText: speechText, chunks: chunks, pickVoice: pickVoice, voiceScore: voiceScore, create: create };
+  var api = { speechText: speechText, normalizeSpeech: normalizeSpeech, segments: segments, sha1: sha1, audioPlan: audioPlan, audioBase: audioBase, create: create };
   W.NylaVoice = api;
 
   function boot(chat) {
