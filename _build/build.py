@@ -6,7 +6,8 @@ Pages: generated from the templates in this file.
 Images: masters in _build/img/, responsive copies in _build/img/gen/ (make_images.py).
 Run:   python _build/make_images.py   (only after adding or replacing a photo)
        python _build/build.py         (from the site folder)
-       node _build/test_nyla.js .     (Nyla's answer tests; run it 3 times)
+       python _build/test_nyla_data.py .  (Nyla's file must match the feed, venues, and guides)
+       node _build/test_nyla.js .         (Nyla's answer tests; run it 3 times)
 """
 import hashlib
 import html
@@ -719,7 +720,6 @@ def main():
     extra += [("/tonight/", "2026-11-11"), ("/this-weekend/", "2026-11-11")] + list(plan_rows or [])
     import nyla
     pbs = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((ROOT / "data" / "playbooks").glob("*.json"))]
-    nyla.build(write, fmt_date, vs, pbs, max(v.get("checked", "2026-10-18") for v in vs))
     copy_static()
     snap = events.load_snapshot()
     events.write_public_feed(snap, OUT / "data" / "events.json")
@@ -727,6 +727,14 @@ def main():
     extra = [(p, live_day if p in ("/tonight/", "/", "/this-weekend/") else d) for p, d in extra]
     write_meta(live_day)
     sitemap(vs, pbs, extra)
+    # Rebuild Nyla after the public feed and guide pages exist, so her file
+    # carries the same fetched_at and the same canonical guides as the site.
+    nyla.build(
+        write, fmt_date, vs, pbs, events.iso(events.local_now()),
+        guides=nyla.collect_guides(OUT),
+        events_feed=events.public_feed(snap),
+        extra_plans=nyla.collect_html_plans(OUT, pbs),
+    )
     import redirects
     redirects.write_redirects(OUT)
     check_output()
