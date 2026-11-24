@@ -205,7 +205,7 @@ def trust_pages(page, write, u):
            """<p class="lede">We keep this simple.</p>
 <ul class="clean"><li>We count page visits and link clicks with privacy-friendly analytics that don't set cookies or identify you.</li>
 <li>We don't run ad trackers.</li>
-<li>Nyla, our chat helper, runs in your browser. What you type isn't sent or saved anywhere; she only remembers when she last said hello, so she doesn't pop up on every page.</li>
+<li>Nyla, our chat helper, runs in your browser. What you type isn't sent or saved anywhere. If you ask her out loud, your browser's own speech service (Google in Chrome, Apple in Safari) turns your voice into text; we never receive or keep your audio. She only remembers when she last said hello and whether her voice is on.</li>
 <li>Our fonts are served from this site, so loading a page no longer sends your IP address to Google.</li>
 <li>Our analytics provider, PostHog, does receive page views and clicks from US servers. It sets no cookies, doesn't identify you, and honours Do Not Track. Add <code>?notrack=1</code> to any URL to opt out.</li>
 <li>The Tonight page and the home page's tonight box load their data from this site and from GitHub (raw.githubusercontent.com), where our scheduled job saves it. GitHub sees your IP address like any web host. The job fetches the forecast (National Weather Service), headlines and liquor-license data itself, so your browser never contacts those services.</li>

@@ -8,6 +8,7 @@ Run:   python _build/make_images.py   (only after adding or replacing a photo)
        python _build/build.py         (from the site folder)
        python _build/test_nyla_data.py .  (Nyla's file must match the feed, venues, and guides)
        node _build/test_nyla.js .         (Nyla's answer tests; run it 3 times)
+       node _build/test_nyla_voice.js .   (Nyla's voice: hold-to-talk, spoken answers)
 """
 import hashlib
 import html
@@ -41,6 +42,7 @@ present.PHOTOS = dict(DIMS)   # every licensed master make_images.py has sized
 present.BASE = BASE
 CSS_V = _ver(ROOT / "site.css")
 JS_V = _ver(ROOT / "concierge.js")
+VOICE_V = _ver(ROOT / "nyla-voice.js")
 LIVE_V = _ver(ROOT / "live.js")
 SIGNAL_V = _ver(ROOT / "signal.js")
 TONIGHT_V = _ver(ROOT / "tonight.js")
@@ -99,6 +101,7 @@ def head(title, desc, path, schema=None, robots="index,follow", image=None, img_
 <link rel="stylesheet" href="{u('/css/site.css')}?v={CSS_V}">
 <link rel="stylesheet" href="{u('/css/concierge.css')}">
 <script defer src="{u('/js/concierge.js')}?v={JS_V}"></script>
+<script defer src="{u('/js/nyla-voice.js')}?v={VOICE_V}"></script>
 <script defer src="{u('/analytics.js')}"></script>
 {ld}
 </head>
@@ -558,6 +561,7 @@ def copy_static():
     site = ROOT.parent
     # Nyla's updated script lives in _build until cutover, so the old live site keeps the old one
     pairs = [(ROOT / "site.css", OUT / "css" / "site.css"), (ROOT / "concierge.js", OUT / "js" / "concierge.js"),
+             (ROOT / "nyla-voice.js", OUT / "js" / "nyla-voice.js"),
              (ROOT / "live.js", OUT / "js" / "live.js"), (ROOT / "signal.js", OUT / "js" / "signal.js"),
              (ROOT / "tonight.js", OUT / "js" / "tonight.js")]
     # the responsive set from make_images.py; its <slug>.jpg replaces the master

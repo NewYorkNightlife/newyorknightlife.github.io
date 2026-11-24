@@ -73,6 +73,7 @@ jobs:
           python _build/test_html.py
           python _build/test_nyla_data.py
           node _build/test_nyla.js . --links
+          node _build/test_nyla_voice.js .
 
       - name: Intent checks
         continue-on-error: true

@@ -1,6 +1,7 @@
 {
- "schema": 2,
- "generated": "2026-10-18",
+ "schema": 3,
+ "generated": "2026-11-23T20:27:27-05:00",
+ "feed_fetched_at": "2026-11-10T21:40:29-05:00",
  "venues": [
   {
    "slug": "230-fifth-rooftop",
@@ -1220,9 +1221,11 @@
  ],
  "plans": [
   {
+   "slug": "bachelorette-night",
    "title": "Bachelorette Night, NYC",
    "url": "plans/bachelorette-night.html",
    "group": 10,
+   "blurb": "",
    "options": [
     {
      "name": "Public sunset or harbor cruise",
@@ -1251,6 +1254,119 @@
     "low": 130,
     "high": 175
    }
+  },
+  {
+   "slug": "bachelor-party",
+   "title": "NYC bachelor party ideas",
+   "url": "plans/bachelor-party.html",
+   "group": null,
+   "blurb": "NYC bachelor party ideas we could verify: an 18+ harbor cruise, comedy clubs, and nightclubs with checked door facts.",
+   "options": [],
+   "combo": null
+  },
+  {
+   "slug": "nyc-boat-party",
+   "title": "NYC boat party and sunset cruise",
+   "url": "plans/nyc-boat-party.html",
+   "group": null,
+   "blurb": "NYC boat party and sunset cruise: Circle Line's DJ cruise, Harbor Lights, Statue at Sunset, and City Cruises' dinner boat. Checked 2026-11-16.",
+   "options": [],
+   "combo": null
+  },
+  {
+   "slug": "nyc-dinner-cruises",
+   "title": "NYC Dinner & Sunset Cruises",
+   "url": "plans/nyc-dinner-cruises.html",
+   "group": null,
+   "blurb": "Sunset, dinner, and New Year's Eve cruises in NYC: piers and timing we could verify, plus Viator listings. Checked Nov 11, 2026.",
+   "options": [],
+   "combo": null
   }
- ]
+ ],
+ "guides": [
+  {
+   "slug": "nyc-bar-closing-time",
+   "title": "NYC bar closing time: the 4am rule",
+   "url": "guides/nyc-bar-closing-time.html",
+   "blurb": "NYC bars must stop serving at 4am under state law. Here's the rule, and the checked hours of bars and clubs open latest.",
+   "aliases": [
+    "closing time",
+    "last call",
+    "4am",
+    "4 am",
+    "when do bars close"
+   ]
+  },
+  {
+   "slug": "nyc-comedy-clubs",
+   "title": "NYC comedy clubs",
+   "url": "guides/nyc-comedy-clubs.html",
+   "blurb": "Comedy Cellar, Gotham Comedy Club, The Stand, and New York Comedy Club from their own sites, plus comedy events in the live feed.",
+   "aliases": [
+    "comedy",
+    "stand-up",
+    "standup",
+    "comedy club"
+   ]
+  },
+  {
+   "slug": "nyc-dress-codes",
+   "title": "NYC bar & club dress codes (checked)",
+   "url": "guides/nyc-dress-codes.html",
+   "blurb": "Dress code, age and cover for NYC bars and clubs in one table, with sources and the date checked.",
+   "aliases": [
+    "dress code",
+    "dress codes",
+    "what to wear"
+   ]
+  },
+  {
+   "slug": "nyc-new-years-eve",
+   "title": "NYC New Year's Eve 2026",
+   "url": "guides/nyc-new-years-eve.html",
+   "blurb": "New Year's Eve 2026 in NYC: Times Square ball drop basics, Circle Line's NYE cruises, and the 4am close. No invented prices.",
+   "aliases": [
+    "new years eve",
+    "new year's eve",
+    "nye",
+    "ball drop"
+   ]
+  },
+  {
+   "slug": "nyc-rooftop-bars",
+   "title": "NYC rooftop bars",
+   "url": "guides/nyc-rooftop-bars.html",
+   "blurb": "NYC rooftop bars we have checked: hours and dress for 230 Fifth, Westlight, Magic Hour, PHD, Harriet's, Le Bain, and the others.",
+   "aliases": [
+    "rooftop",
+    "rooftops",
+    "roof bar"
+   ]
+  },
+  {
+   "slug": "nyc-speakeasies",
+   "title": "NYC speakeasies",
+   "url": "guides/nyc-speakeasies.html",
+   "blurb": "NYC speakeasy doors we could check: Please Don't Tell, The Back Room, and Attaboy, plus the walk-in cocktail bars beside them.",
+   "aliases": [
+    "speakeasy",
+    "speakeasies",
+    "hidden door",
+    "hidden bar"
+   ]
+  },
+  {
+   "slug": "under-21-nyc-bars-clubs",
+   "title": "Under 21 in NYC bars and clubs",
+   "url": "guides/under-21-nyc-bars-clubs.html",
+   "blurb": "Which NYC bars and clubs admit under-21s, with each venue's exact age policy and sources. Checked Oct 18, 2026.",
+   "aliases": [
+    "under 21",
+    "under-21",
+    "18+",
+    "all ages"
+   ]
+  }
+ ],
+ "events": []
 }
