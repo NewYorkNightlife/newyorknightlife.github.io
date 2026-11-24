@@ -1,12 +1,12 @@
 {
- "end": "2026-11-23T06:00:00-05:00",
- "fetched": "2026-11-23T03:42:29+00:00",
- "issued": "2026-11-22T18:56:12+00:00",
+ "end": "2026-11-24T06:00:00-05:00",
+ "fetched": "2026-11-24T01:39:59+00:00",
+ "issued": "2026-11-23T18:46:42+00:00",
  "period": "Tonight",
- "rain_pct": 32,
- "short": "Chance Light Rain",
+ "rain_pct": 1,
+ "short": "Partly Cloudy",
  "source": "National Weather Service (weather.gov)",
- "start": "2026-11-22T21:00:00-05:00",
- "temp_f": 55,
- "wind": "2 to 8 mph NW"
+ "start": "2026-11-23T19:00:00-05:00",
+ "temp_f": 43,
+ "wind": "10 mph NW"
 }
