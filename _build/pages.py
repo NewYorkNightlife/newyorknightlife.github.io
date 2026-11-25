@@ -145,6 +145,7 @@ def home(page, write, u, vs, H):
 <a class="card-link" href="{u('/this-weekend/')}"><span>This weekend<span class="sub">Friday through Sunday, from the same feeds</span></span><span class="go">See the weekend →</span></a>
 <a class="card-link" href="{u('/guides/nyc-speakeasies.html')}"><span>NYC speakeasies<span class="sub">Hidden doors we could check, and the walk-in rooms beside them</span></span><span class="go">Read →</span></a>
 <a class="card-link" href="{u('/guides/nyc-rooftop-bars.html')}"><span>NYC rooftop bars<span class="sub">Hours and dress from the rooftops we have checked</span></span><span class="go">Read →</span></a>
+<a class="card-link" href="{u('/guides/nyc-holiday-nights.html')}"><span>Holiday nights 2026<span class="sub">Lights, winter villages, and bars after dark</span></span><span class="go">Read →</span></a>
 <a class="card-link" href="{u('/guides/nyc-new-years-eve.html')}"><span>New Year's Eve 2026<span class="sub">Ball drop and cruises, only what the official pages say</span></span><span class="go">Read →</span></a>
 <h2>Group nights</h2>
 <a class="card-link" href="{u('/plans/')}"><span>Group nights<span class="sub">Bachelorette prices and the cruise guide</span></span><span class="go">Open →</span></a>
@@ -230,6 +231,7 @@ def trust_pages(page, write, u):
 <a href="{u('/guides/nyc-speakeasies.html')}">Speakeasies</a>
 <a href="{u('/guides/nyc-rooftop-bars.html')}">Rooftop bars</a>
 <a href="{u('/guides/nyc-new-years-eve.html')}">New Year's Eve</a>
+<a href="{u('/guides/nyc-holiday-nights.html')}">Holiday nights</a>
 <a href="{u('/guides/nyc-dress-codes.html')}">Dress codes</a>
 </nav>"""
     write("/404.html", page("Page not found | NY Nightlife", "This page doesn't exist.", "/404.html",
@@ -803,6 +805,7 @@ def new_years_eve(page, write, u, actions, H, vs):
     body = present.guide_hero("New Year's Eve 2026", f"Guide · official pages checked {NYE_CHECKED}", NYE_CHECKED,
                               ["Times Square", "Midtown", "Pier 83"]) + f"""
 <p class="lede">The ball drop, two cruises, and the 4am rule. Only what an official page or a checked venue page actually says. No prices.</p>
+<p>The weeks before this, from Thanksgiving through New Year's Day, are on <a href="{u('/guides/nyc-holiday-nights.html')}">holiday nights 2026</a>.</p>
 {present.answer_box("New Year's Eve 2026 is Thursday, December 31. New York City dates the Times Square ball drop that night. The Alliance FAQ says the ball goes up around 6:00pm EST and starts a 60-second descent at 11:59pm EST, and that the outdoor viewing areas open at 3pm with no ticket. On-premises alcohol sales still stop at 4am. This page does not publish a cruise or party price. Official pages checked " + NYE_CHECKED + ".")}
 {present.jump_nav([("line", "The night"), ("ball", "Ball drop"), ("cruises", "Cruises"), ("parties", "Parties and bars"), ("close", "4am"), ("book", "Book"), ("questions", "Questions"), ("sources", "Sources")])}
 {present.route_html()}
@@ -846,6 +849,189 @@ def new_years_eve(page, write, u, actions, H, vs):
     return path, NYE_CHECKED
 
 
+HOLIDAY_CHECKED = "2026-11-25"
+ROCK_TREE = "https://www.rockefellercenter.com/christmas-tree/"
+ROCK_LIGHTING = "https://www.rockefellercenter.com/events/2026-rockefeller-center-christmas-tree-lighting-ceremony/"
+SAKS_RELEASE = "https://www.prnewswire.com/news-releases/saks-fifth-avenue-unveils-main-character-energy-holiday-campaign-celebrating-the-joy-and-magic-of-the-season-302906341.html"
+BRYANT_RINK = "https://bryantpark.org/activities/bank-of-america-winter-village-at-bryant-park/ice-skating"
+BRYANT_LODGE = "https://bryantpark.org/shop-eat/the-lodge"
+BRYANT_SHOPS = "https://bryantpark.org/activities/holiday-shops"
+UNION_SQ = "https://urbanspacemarkets.com/pages/union-square"
+UNION_MADE = "https://www.madeinnyc.org/news-events/made-in-nyc-at-union-square-holiday-market"
+COLUMBUS = "https://urbanspacemarkets.com/pages/columbus-circle"
+DYKER_TO = "https://www.timeout.com/newyork/things-to-do/dyker-heights-christmas-lights"
+DEAD_RABBIT = "https://www.thedeadrabbit.com/"
+SOMEWHERE = "https://www.somewherenowherenyc.com/"
+THANKSGIVING = "https://www.timeanddate.com/holidays/us/thanksgiving-day"
+HERO_PHOTO = {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/BofA_Winter_Village_at_Bryant_Park.jpg?width=1200",
+    "page": "https://commons.wikimedia.org/wiki/File:BofA_Winter_Village_at_Bryant_Park.jpg",
+    "credit": "ClyneKP, Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+}
+
+
+def holiday_nights(page, write, u, actions, H, vs):
+    """Thanksgiving 2026 through New Year's Day. Only pages opened on HOLIDAY_CHECKED."""
+    import present
+    _pick(vs, ("the-dead-rabbit", "somewhere-nowhere"))
+    path = "/guides/nyc-holiday-nights.html"
+    book = affiliates.block(
+        affiliates.HOLIDAY_GUIDE, "nynightlife-nyc-holiday-nights", "nyc-holiday-nights", u,
+        "Book a lights tour or a dinner cruise",
+        "Viator product pages, separate from the facts above. The dinner card is Bateaux New York's dinner cruise. "
+        "A holiday-only menu was not on a product page we could verify, so this card does not call it a Christmas sailing. "
+        + affiliates.NOTE,
+        heading_id="book")
+    faqs = [
+        ("When are the Dyker Heights lights best?",
+         "Time Out's Dyker Heights guide, dated November 20, 2026, says most homeowners put the lights up the weekend after Thanksgiving, and that the best time to see them is mid-December through New Year's Eve, between dusk and 9pm if you are walking. Most houses turn the displays off after 9pm. Some leave them on later. The decor usually stays up until the end of the first week of January. There is no official switch-on. The blocks that guide names are 11th to 13th Avenues, from 83rd to 86th Street, in Dyker Heights, Brooklyn. Walking them is free. The D train to 79th Street leaves about a 15-minute walk, and the guide calls the walk hilly."),
+        ("When is the Rockefeller Center tree lighting, and what are the hours?",
+         "Rockefeller Center's ceremony page dates the 2026 lighting to Wednesday, December 2, from 7:00 to 10:00 p.m. There is no public ticket. Spectators watch from the surrounding streets, first come, first served. The page says to expect security checkpoints, street closures, and a crowd from early afternoon. The broadcast starts at 7 p.m. ET on select NBC stations, and the main celebration airs at 8 p.m. ET on NBC and Peacock. The tree page says this year's tree arrived November 7, a 76-foot Norway spruce from West Edmeston, New York, with more than 50,000 multicolored LED lights, on view through mid-January 2027. That page says to check back for visiting hours beyond the ceremony. It lists Holiday Top of the Rock timed admission from $49. That is an observation-deck ticket, not a ticket for the street."),
+        ("What are Bryant Park Winter Village hours?",
+         "Bryant Park's Winter Village pages date the rink and The Lodge from October 28, 2026 through February 28, 2027. The rink is 8am to 10pm daily, 8am to midnight from November 19 through January 3, and 8am to 8pm on January 31. The Lodge is 10am to 10pm, and 10am to midnight from November 19, 2026 through January 3, 2027, with last call at 11pm. Holiday shops run October 28, 2026 through January 3, 2027, 11am to 8pm Monday to Friday and 10am to 8pm Saturday and Sunday. The shops page says holiday hours may vary. Skate admission is listed as free. This guide does not copy skate-rental prices. The same rink page still points those tickets at the 2025-2026 season."),
+        ("What is Thanksgiving Eve bar night in 2026?",
+         "Thanksgiving Day 2026 is Thursday, November 26, so Thanksgiving Eve is Wednesday, November 25. timeanddate calls the next day, November 27, Black Friday. There is no citywide Thanksgiving Eve bar calendar. Somewhere Nowhere, at 112 West 25th Street, lists a Thanksgiving Eve Party 2026 at 10:00pm on November 25, and lists Wednesday hours of 5pm to 1am. The same page lists a Friday, November 27 party at 11:00pm. Other rooms keep the hours they post. Tonight and this weekend are the event feeds."),
+        ("What is open late on Christmas Eve?",
+         "The Dead Rabbit's homepage, checked the same day as this page, lists Christmas Eve as 11am to 2am and Christmas Day as closed. That is one bar at 30 Water Street, not a city schedule. Its holiday pop-up, Jingle Jangle, is listed from November 16 through January 3, and the page says walk-ins only after 6pm during that run. The closing-time guide on this site cites the state rule that on-premises alcohol sales stop at 4am. A venue can close earlier. If a room has not published a Christmas Eve hour, check the venue."),
+    ]
+    ph = HERO_PHOTO
+    credit = f'<a href="{e(ph["page"])}" rel="noopener">{e(ph["credit"])}</a> · {e(ph["license"])}'
+    media = H["picture"](
+        "bryant-winter-village", "Skaters on the rink at Bryant Park's Winter Village at night, with a lit tree and the library behind",
+        "(min-width: 1040px) 1016px, calc(100vw - 36px)", eager=True)
+    stops = (
+        ("1", "Dyker", "Brooklyn"),
+        ("2", "Tree", "Dec 2"),
+        ("3", "Village", "Midnight"),
+        ("4", "Bars", "Pop-up"),
+        ("5", "Eve", "Nov 25"),
+        ("6", "NYE", "Dec 31"),
+    )
+    route = "".join(
+        f'<li><b>{n}</b><span>{e(label)}</span><time>{e(when)}</time></li>'
+        for n, label, when in stops)
+    dyker = present.static_poster(
+        "Dyker Heights", DYKER_TO,
+        [("Place", "83rd–86th St, 11th–13th Ave"), ("Hours", "Dusk–9pm, best mid-Dec"), ("Vibe", "House lights, free")],
+        "Time Out, dated November 20, 2026: most houses light up the weekend after Thanksgiving. Best from mid-December through New Year's Eve. Most displays go off after 9pm.",
+        "D", external=True, photo="dyker-heights")
+    tree = present.static_poster(
+        "Rockefeller tree", ROCK_TREE,
+        [("Place", "Rockefeller Center"), ("Hours", "Lighting Dec 2, 7–10pm"), ("Vibe", "No public ticket")],
+        "Ceremony page: Wednesday, December 2, 2026, 7:00–10:00 p.m. Watch from the surrounding streets. The tree page says it stays up through mid-January 2027 and to check back for other visiting hours.",
+        "R", external=True, photo="rockefeller-tree")
+    saks = present.static_poster(
+        "Saks light show", SAKS_RELEASE,
+        [("Place", "Fifth Avenue flagship"), ("Hours", "Unveiled Nov 23"), ("Vibe", "Windows and lights")],
+        "Saks' October 13, 2026 release says the windows and light show unveil November 23. It does not print daily showtimes or a closing date. The photo is the 2020 show, not this year's.",
+        "S", external=True, photo="saks-light-show")
+    bryant = present.static_poster(
+        "Bryant Park Winter Village", BRYANT_RINK,
+        [("Place", "Bryant Park"), ("Hours", "Rink and Lodge to midnight"), ("Vibe", "Skate, shops, a bar")],
+        "Rink and Lodge: October 28, 2026–February 28, 2027. Peak hours November 19–January 3 run until midnight. Lodge last call is 11pm in that stretch. Shops close earlier.",
+        "B", external=True, photo="bryant-winter-village")
+    union = present.static_poster(
+        "Union Square market", UNION_SQ,
+        [("Place", "Union Square Park"), ("Hours", "To 8 or 9pm"), ("Vibe", "Early evening")],
+        "Urbanspace: November 12–December 24, Sunday–Wednesday 11am–8pm, Thursday and Friday 11am–9pm, Saturday 10am–9pm. Made in NYC adds the year 2026 and says it is closed Thanksgiving.",
+        "U", external=True, photo="union-square-market")
+    columbus = present.static_poster(
+        "Columbus Circle market", COLUMBUS,
+        [("Place", "Columbus Circle"), ("Hours", "To 7 or 8pm"), ("Vibe", "Early evening")],
+        "Urbanspace: December 1–31, 2026. Monday–Thursday 11am–7pm. Friday–Sunday 10am–8pm. Not a late stop. The photo is the Christmas lanterns in the Columbus Circle complex, not the stalls.",
+        "C", external=True, photo="columbus-circle-holiday")
+    rabbit = present.static_poster(
+        "The Dead Rabbit", u("/venues/the-dead-rabbit.html"),
+        [("Place", "30 Water Street"), ("Hours", "Christmas Eve to 2am"), ("Vibe", "Jingle Jangle")],
+        "The venue's homepage lists Jingle Jangle from November 16 through January 3, Christmas Eve 11am–2am, and Christmas Day closed. Walk-ins only after 6pm during the pop-up.",
+        "J", photo="the-dead-rabbit")
+    somewhere = present.static_poster(
+        "Somewhere Nowhere", u("/venues/somewhere-nowhere.html"),
+        [("Place", "112 W 25th Street"), ("Hours", "Eve party 10pm"), ("Vibe", "Thanksgiving Eve")],
+        "The venue's site lists a Thanksgiving Eve Party 2026 on Wednesday, November 25 at 10:00pm, and a Friday, November 27 party at 11:00pm. Wednesday hours on that page are 5pm–1am.",
+        "N", photo="somewhere-nowhere")
+    short = (
+        "Dyker Heights is a free walk of house lights. Time Out's November 20, 2026 guide says the best window is mid-December through New Year's Eve, between dusk and 9pm. "
+        "The Rockefeller Center tree lighting is Wednesday, December 2, 2026, from 7:00 to 10:00 p.m., with no public ticket. "
+        "Bryant Park's rink and The Lodge stay open until midnight from November 19 through January 3, and The Dead Rabbit lists Christmas Eve until 2am. Other Christmas Eve hours: check the venue."
+    )
+    body = present.guide_hero(
+        "NYC holiday nights 2026", "Guide · Thanksgiving through New Year's Day", HOLIDAY_CHECKED,
+        ["Dyker Heights", "Rockefeller Center", "Bryant Park", "FiDi"], media) + f"""
+<p class="credit">Photo: {credit}. The rink at Bank of America Winter Village. The Rockefeller card below is the 2025 tree, not the 2026 lighting.</p>
+{present.answer_box(short)}
+{present.jump_nav([("line", "The route"), ("dyker", "Dyker Heights"), ("tree", "Tree and Saks"), ("markets", "Markets"), ("bars", "Festive bars"), ("eve", "Thanksgiving Eve"), ("nye", "New Year's Eve"), ("book", "Book"), ("questions", "Questions"), ("sources", "Sources")])}
+<section class="route-block" id="line"><h2>Six stops after dark</h2>
+<p class="small">A route, not a timetable. Each stop is a place with a page we opened on {HOLIDAY_CHECKED}. The lit hour-line on Tonight is a different clock.</p>
+<ol class="route" aria-label="Holiday nights, stop by stop">{route}</ol></section>
+<h2 id="dyker">Dyker Heights</h2>
+<p><a href="{DYKER_TO}" rel="nofollow noopener">Time Out's 2026 guide</a>, dated Friday, November 20, 2026, is the source for this stop. The displays are private houses, not a ticketed event, and that guide does not name an official organizer or a switch-on night.</p>
+<div class="vlist two posters">{dyker}</div>
+<h2 id="tree">Rockefeller Center and Saks</h2>
+<p>The <a href="{ROCK_LIGHTING}" rel="nofollow noopener">ceremony page</a> and the <a href="{ROCK_TREE}" rel="nofollow noopener">tree page</a> agree on Wednesday, December 2, 2026. Saks is across the avenue. Its <a href="{SAKS_RELEASE}" rel="nofollow noopener">October 13, 2026 release</a> says the flagship windows and light show, themed Main Character Energy, unveil on November 23. Daily showtimes and a closing date are not in that release. Check Saks before you count on a show.</p>
+<div class="vlist two posters">{tree}{saks}</div>
+<h2 id="markets">Winter Village and the markets</h2>
+<p>Three markets, three clocks. Bryant Park is the one that runs late. Union Square and Columbus Circle close in the evening. Pages: <a href="{BRYANT_RINK}" rel="nofollow noopener">the rink</a>, <a href="{BRYANT_LODGE}" rel="nofollow noopener">The Lodge</a>, <a href="{BRYANT_SHOPS}" rel="nofollow noopener">the shops</a>, <a href="{UNION_SQ}" rel="nofollow noopener">Union Square</a>, <a href="{UNION_MADE}" rel="nofollow noopener">Made in NYC</a>, and <a href="{COLUMBUS}" rel="nofollow noopener">Columbus Circle</a>.</p>
+<div class="vlist two posters">{bryant}{union}{columbus}</div>
+<h2 id="bars">A festive bar we could check</h2>
+<p><a href="{DEAD_RABBIT}" rel="nofollow noopener">The Dead Rabbit</a> publishes a holiday pop-up on its own homepage. We did not find a second pop-up, on a venue site we already check, with 2026 dates printed. If a bar's holiday hours are not on this page, they were not on a page we opened.</p>
+<div class="vlist two posters">{rabbit}</div>
+<p>Door facts we had already checked for that room are on <a href="{u('/venues/the-dead-rabbit.html')}">The Dead Rabbit</a>. <a href="{u('/guides/nyc-dress-codes.html')}">Dress codes</a> and <a href="{u('/guides/nyc-bar-closing-time.html')}">the 4am rule</a> are separate pages. Weekly hours are not a holiday schedule.</p>
+<h2 id="eve">Thanksgiving Eve and the Black Friday weekend</h2>
+<p><a href="{THANKSGIVING}" rel="nofollow noopener">timeanddate</a> dates Thanksgiving Day 2026 as Thursday, November 26, and calls November 27 Black Friday. Thanksgiving Eve is Wednesday, November 25. Nothing we opened is a city calendar of bar nights for that Wednesday.</p>
+<div class="vlist two posters">{somewhere}</div>
+<p><a href="{SOMEWHERE}" rel="nofollow noopener">Somewhere Nowhere</a> is the listing behind that card. <a href="{u('/venues/somewhere-nowhere.html')}">Its venue page</a> has the weekly hours we had already checked, which are not this holiday poster. <a href="{u('/tonight/')}">Tonight</a> is the feed for the night you are in. <a href="{u('/this-weekend/')}">This weekend</a> is Friday 5am through Monday 5am.</p>
+<p>The Black Friday weekend is Friday, November 27 through Sunday, November 29. Bryant Park's midnight hours cover those nights. Columbus Circle's market does not open until December 1. Time Out says Dyker Heights is fullest from mid-December, so the weekend after Thanksgiving can be early for every house. Union Square's Friday hours are the ordinary Friday hours above. Made in NYC says the market is closed on Thanksgiving itself, November 26.</p>
+<h2 id="nye">New Year's Eve</h2>
+<p>December 31, 2026 is its own page. The ball drop, the two Circle Line sailings, and the 4am rule are on <a href="{u('/guides/nyc-new-years-eve.html')}">New Year's Eve 2026</a>. This guide does not repeat them. The Dead Rabbit's holiday block also lists New Year's Eve as 11am–2am. That line is the venue's, and it is not a Times Square plan.</p>
+{book}
+{present.faq_html(faqs)}
+<h2 id="sources">Sources</h2>
+<p class="small">Every page below was opened {HOLIDAY_CHECKED}, except Time Out's Dyker Heights guide, which prints its own date of November 20, 2026, and the Saks release, which prints October 13, 2026. The 4am statute was not re-read for this page. It is cited on the closing-time guide.</p>
+<ol class="sources">
+<li>Time Out, Dyker Heights Christmas Lights 2026: <a href="{DYKER_TO}" rel="nofollow noopener">timeout.com, dated November 20, 2026</a></li>
+<li>Rockefeller Center, 2026 tree lighting: <a href="{ROCK_LIGHTING}" rel="nofollow noopener">rockefellercenter.com ceremony page</a></li>
+<li>Rockefeller Center, the tree: <a href="{ROCK_TREE}" rel="nofollow noopener">rockefellercenter.com/christmas-tree</a></li>
+<li>Saks Fifth Avenue, holiday release, October 13, 2026: <a href="{SAKS_RELEASE}" rel="nofollow noopener">PR Newswire</a></li>
+<li>Bryant Park, Winter Village rink: <a href="{BRYANT_RINK}" rel="nofollow noopener">bryantpark.org ice skating</a></li>
+<li>Bryant Park, The Lodge: <a href="{BRYANT_LODGE}" rel="nofollow noopener">bryantpark.org/the-lodge</a></li>
+<li>Bryant Park, holiday shops: <a href="{BRYANT_SHOPS}" rel="nofollow noopener">bryantpark.org holiday shops</a></li>
+<li>Urbanspace, Union Square Holiday Market: <a href="{UNION_SQ}" rel="nofollow noopener">urbanspacemarkets.com/union-square</a></li>
+<li>Made in NYC at Union Square, posted October 20, 2026: <a href="{UNION_MADE}" rel="nofollow noopener">madeinnyc.org</a></li>
+<li>Urbanspace, Columbus Circle Holiday Market: <a href="{COLUMBUS}" rel="nofollow noopener">urbanspacemarkets.com/columbus-circle</a></li>
+<li>The Dead Rabbit: <a href="{DEAD_RABBIT}" rel="nofollow noopener">thedeadrabbit.com</a></li>
+<li>Somewhere Nowhere: <a href="{SOMEWHERE}" rel="nofollow noopener">somewherenowherenyc.com</a></li>
+<li>Thanksgiving Day 2026: <a href="{THANKSGIVING}" rel="nofollow noopener">timeanddate.com</a></li>
+</ol>"""
+    btns = (f'<a class="btn primary" href="#book">See tours</a>'
+            f'<a class="btn quiet" href="{u("/guides/nyc-new-years-eve.html")}">New Year\'s Eve</a>')
+    schema = [
+        {"@context": "https://schema.org", "@type": "Article",
+         "headline": "NYC holiday nights 2026", "dateModified": HOLIDAY_CHECKED,
+         "author": {"@type": "Person", "name": "Dan Herlehy"}, "image": ph["url"]},
+        present.faq_schema(faqs),
+        present.item_list("NYC holiday nights", [
+            ("Dyker Heights Christmas lights", path + "#dyker"),
+            ("Rockefeller Center tree and Saks", path + "#tree"),
+            ("Bryant Park, Union Square, Columbus Circle", path + "#markets"),
+            ("Festive bars", path + "#bars"),
+            ("Thanksgiving Eve and Black Friday weekend", path + "#eve"),
+            ("New Year's Eve", "/guides/nyc-new-years-eve.html"),
+        ]),
+    ]
+    title = "NYC holiday nights 2026 | NY Nightlife"
+    if len(title) > 60:
+        raise SystemExit(f"title over 60 characters ({len(title)}): {title}")
+    write(path, page(
+        title,
+        "Dyker Heights lights, the December 2 Rockefeller tree lighting, Bryant Park's late rink and lodge, and Christmas Eve hours we could verify. Checked 2026-11-25.",
+        path, body + actions(btns, f"Affiliate links are labeled. Official pages checked {HOLIDAY_CHECKED}. No guessed hours."),
+        schema, "tall-bar", image="/img/og/nyc-holiday-nights.jpg",
+        img_alt="NYC holiday nights 2026"))
+    return path, HOLIDAY_CHECKED
+
+
 def build(page, write, u, actions, fmt_date, vs, H):
     for f in sorted((ROOT / "data" / "playbooks").glob("*.json")):
         playbook(page, write, u, actions, fmt_date, json.loads(f.read_text(encoding="utf-8")), H)
@@ -856,9 +1042,10 @@ def build(page, write, u, actions, fmt_date, vs, H):
     speak = speakeasies(page, write, u, actions, H, vs)
     roofs = rooftop_bars(page, write, u, actions, H, vs)
     nye = new_years_eve(page, write, u, actions, H, vs)
+    holiday = holiday_nights(page, write, u, actions, H, vs)
     plans_hub(page, write, u)
     image_credits(page, write)
     home(page, write, u, vs, H)
     trust_pages(page, write, u)
-    return [cruise, boat, bachelor, comedy, speak, roofs, nye,
+    return [cruise, boat, bachelor, comedy, speak, roofs, nye, holiday,
             ("/plans/", MONEY_CHECKED), ("/image-credits.html", "2026-11-11")]

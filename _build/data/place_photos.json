@@ -78,7 +78,7 @@
    "depicts": "A Manhattan street fair (University Place, 2014), shown for street festivals without their own photo.",
    "name": "Street festival listings"
   },
-  "event-parks": {
+   "event-parks": {
    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bethesda_Fountain%2C_Central_Park.jpg?width=1280",
    "page": "https://commons.wikimedia.org/wiki/File:Bethesda_Fountain,_Central_Park.jpg",
    "license": "CC BY 2.0",
@@ -87,6 +87,66 @@
    "kind": "location",
    "depicts": "Bethesda Fountain in Central Park, shown for parks listings without their own photo.",
    "name": "Parks listings"
+  },
+  "dyker-heights": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dyker_Heights_Christmas_Lights_December_2025.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:Dyker_Heights_Christmas_Lights_December_2025.jpg",
+   "license": "CC BY 4.0",
+   "credit": "CastIronSeasoner / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "kind": "location",
+   "depicts": "Christmas decorations on a Dyker Heights street, December 2025.",
+   "name": "Dyker Heights Christmas lights"
+  },
+  "rockefeller-tree": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rockefeller_Center_Christmas_Tree%2C_2025_%2854982959538%29.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:Rockefeller_Center_Christmas_Tree,_2025_(54982959538).jpg",
+   "license": "CC BY 4.0",
+   "credit": "Ethan Long / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "kind": "location",
+   "depicts": "The Rockefeller Center Christmas tree in 2025.",
+   "name": "Rockefeller Center Christmas tree"
+  },
+  "bryant-winter-village": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/BofA_Winter_Village_at_Bryant_Park.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:BofA_Winter_Village_at_Bryant_Park.jpg",
+   "license": "CC BY-SA 4.0",
+   "credit": "ClyneKP / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "kind": "location",
+   "depicts": "The rink at Bank of America Winter Village in Bryant Park, with the New York Public Library behind it.",
+   "name": "Bryant Park Winter Village"
+  },
+  "union-square-market": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Union_Square_Christmas_Market_%2811599839796%29.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:Union_Square_Christmas_Market_(11599839796).jpg",
+   "license": "CC BY-SA 2.0",
+   "credit": "Mack Male / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "kind": "location",
+   "depicts": "The Union Square Christmas market.",
+   "name": "Union Square Holiday Market"
+  },
+  "columbus-circle-holiday": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Christmas_%40_Columbus_Circle_%2811654605713%29.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:Christmas_@_Columbus_Circle_(11654605713).jpg",
+   "license": "CC BY 2.0",
+   "credit": "Rob Young / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "kind": "location",
+   "depicts": "Christmas star lanterns inside the Columbus Circle complex, with the circle visible through the glass. Not the outdoor market stalls.",
+   "name": "Columbus Circle at Christmas"
+  },
+  "saks-light-show": {
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Saks_Fifth_Avenue_Christmas_Light_Show_Snowstorm_2020_%2850732619583%29.jpg?width=1280",
+   "page": "https://commons.wikimedia.org/wiki/File:Saks_Fifth_Avenue_Christmas_Light_Show_Snowstorm_2020_(50732619583).jpg",
+   "license": "CC BY 2.0",
+   "credit": "Anthony Quintano / Wikimedia Commons",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "kind": "location",
+   "depicts": "The Saks Fifth Avenue holiday light show on the Fifth Avenue facade during a December 2020 snowstorm. Not the 2026 show.",
+   "name": "Saks Fifth Avenue light show"
   }
  }
 }
