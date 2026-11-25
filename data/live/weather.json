@@ -1,12 +1,12 @@
 {
- "end": "2026-11-25T06:00:00-05:00",
- "fetched": "2026-11-24T23:28:40+00:00",
- "issued": "2026-11-24T18:53:33+00:00",
+ "end": "2026-11-26T06:00:00-05:00",
+ "fetched": "2026-11-25T12:50:10+00:00",
+ "issued": "2026-11-25T10:20:20+00:00",
  "period": "Tonight",
- "rain_pct": 0,
- "short": "Clear",
+ "rain_pct": 8,
+ "short": "Cloudy",
  "source": "National Weather Service (weather.gov)",
- "start": "2026-11-24T18:00:00-05:00",
- "temp_f": 34,
- "wind": "7 mph N"
+ "start": "2026-11-25T18:00:00-05:00",
+ "temp_f": 44,
+ "wind": "10 to 18 mph NE"
 }
