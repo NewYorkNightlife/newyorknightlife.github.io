@@ -952,14 +952,14 @@ def holiday_nights(page, write, u, actions, H, vs):
         "The venue's site lists a Thanksgiving Eve Party 2026 on Wednesday, November 25 at 10:00pm, and a Friday, November 27 party at 11:00pm. Wednesday hours on that page are 5pm–1am.",
         "N", photo="somewhere-nowhere")
     short = (
-        "Dyker Heights is a free walk of house lights. Time Out's November 20, 2026 guide says the best window is mid-December through New Year's Eve, between dusk and 9pm. "
-        "The Rockefeller Center tree lighting is Wednesday, December 2, 2026, from 7:00 to 10:00 p.m., with no public ticket. "
-        "Bryant Park's rink and The Lodge stay open until midnight from November 19 through January 3, and The Dead Rabbit lists Christmas Eve until 2am. Other Christmas Eve hours: check the venue."
+        "Time Out's November 20, 2026 guide says Dyker Heights is best from mid-December through New Year's Eve, between dusk and 9pm, and the walk is free. "
+        "Rockefeller Center lights the tree on Wednesday, December 2, 2026, from 7:00 to 10:00 p.m., with no public ticket. "
+        "Bryant Park's rink and The Lodge stay open until midnight from November 19 through January 3, and the only Christmas Eve close we could verify is The Dead Rabbit at 2am."
     )
     body = present.guide_hero(
         "NYC holiday nights 2026", "Guide · Thanksgiving through New Year's Day", HOLIDAY_CHECKED,
         ["Dyker Heights", "Rockefeller Center", "Bryant Park", "FiDi"], media) + f"""
-<p class="credit">Photo: {credit}. The rink at Bank of America Winter Village. The Rockefeller card below is the 2025 tree, not the 2026 lighting.</p>
+<p class="credit">Photo: {credit}. The rink at Bank of America Winter Village. The Rockefeller card is the tree on December 2, 2023, not the 2026 lighting.</p>
 {present.answer_box(short)}
 {present.jump_nav([("line", "The route"), ("dyker", "Dyker Heights"), ("tree", "Tree and Saks"), ("markets", "Markets"), ("bars", "Festive bars"), ("eve", "Thanksgiving Eve"), ("nye", "New Year's Eve"), ("book", "Book"), ("questions", "Questions"), ("sources", "Sources")])}
 <section class="route-block" id="line"><h2>Six stops after dark</h2>

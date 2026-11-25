@@ -1,6 +1,6 @@
 {
  "schema": 3,
- "generated": "2026-11-23T20:27:27-05:00",
+ "generated": "2026-11-25T12:48:53-05:00",
  "feed_fetched_at": "2026-11-10T21:40:29-05:00",
  "venues": [
   {
@@ -1318,6 +1318,20 @@
     "dress code",
     "dress codes",
     "what to wear"
+   ]
+  },
+  {
+   "slug": "nyc-holiday-nights",
+   "title": "NYC holiday nights 2026",
+   "url": "guides/nyc-holiday-nights.html",
+   "blurb": "Dyker Heights lights, the December 2 Rockefeller tree lighting, Bryant Park's late rink and lodge, and Christmas Eve hours we could verify. Checked 2026-11-25.",
+   "aliases": [
+    "holiday",
+    "christmas lights",
+    "dyker heights",
+    "winter village",
+    "rockefeller tree",
+    "bryant park"
    ]
   },
   {
