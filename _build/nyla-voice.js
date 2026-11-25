@@ -40,6 +40,9 @@
     });
     s = s.replace(/<br\s*\/?>/gi, '. ').replace(/<\/(p|div|ul|ol)>/gi, '. ');
     s = s.replace(/<[^>]+>/g, ' ');
+    // "(1 source)" after every venue is for the eye; read out it was noise
+    s = s.replace(/\s*\((?:\d+|one|two) sources?\)/gi, '');
+    s = s.replace(/\be\.g\.\s*/g, 'for example ');
     s = s.replace(/&[a-z]+;|&#\d+;/gi, function (e) { return ENT[e] != null ? ENT[e] : ' '; });
     s = s.replace(/[\uD83C-\uDBFF][\uDC00-\uDFFF]|[\u2600-\u27BF]|\uFE0F/g, '');
     s = s.replace(/[→←↗•·]/g, ' ');

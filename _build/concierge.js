@@ -215,7 +215,8 @@
     });
   }
   function live() { return (VENUES || []).filter(function (v) { return v.status !== 'closed'; }); }
-  function has(v, tag) { return v.tags.indexOf(tag) !== -1; }
+  // 'bar' is any bar we check: cocktail bars and rooftop bars (people say "bars" for both)
+  function has(v, tag) { return tag === 'bar' ? v.tags.indexOf('cocktail') !== -1 || v.tags.indexOf('rooftop') !== -1 : v.tags.indexOf(tag) !== -1; }
   function ALL_LINK() { return '<a href="' + R('venues/index.html') + '">All venue fact pages →</a>'; }
 
   // ---------- matching ----------
@@ -321,6 +322,13 @@
   }
 
   // ---------- answers ----------
+  // The fact files say "None listed (1 source)" when no source lists a cover charge.
+  // Read out in a list ("Attaboy: None listed") that sounded like "no listings", so say
+  // what it means. The fact itself is unchanged: no cover is listed, nothing is promised.
+  function coverText(c) {
+    return String(c == null ? '' : c).replace(/^None listed\b/i, 'No cover listed').replace(/^None\b(?!\s+listed)/i, 'No cover');
+  }
+  function fieldText(v, field) { return field === 'cover' ? coverText(v.cover) : v[field]; }
   function flag(v) {
     if (v.status === 'closed') return '<b>Closed.</b> ' + esc(v.status_note) + '<br>';
     if (v.status === 'unclear') return '<b>Heads up:</b> we could not confirm it is operating normally. ' + esc(v.status_note) + '<br>';
@@ -339,7 +347,7 @@
     else if (focus === 'subway') rows.push('<b>Subway:</b> ' + esc(v.subway));
     else if (focus === 'honest') rows.push(skipList(v));
     else if (focus === 'group') { rows.push('<b>How to get in:</b> ' + esc(v.howto)); rows.push(skipList(v)); }
-    else rows.push('<b>Cover:</b> ' + esc(v.cover));
+    else rows.push('<b>Cover:</b> ' + esc(coverText(v.cover)));
     if (!focus) { rows.push('<b>Dress:</b> ' + esc(v.dress)); rows.push('<b>Age:</b> ' + esc(v.age)); }
     return '<b>' + esc(v.name) + '</b> (' + esc(v.hood) + ')<br>' + flag(v) + rows.join('<br>') +
       '<br><a href="' + esc(R(v.url)) + '">Sources &amp; full facts, checked ' + esc(v.verified) + ' →</a>';
@@ -351,7 +359,7 @@
     if (!hits.length) return null;
     return '<b>' + heading + '</b><ul>' + hits.map(function (v) {
       return '<li><a href="' + esc(R(v.url)) + '">' + esc(v.name) + '</a> (' + esc(v.hood) + ')' +
-        (v.status === 'unclear' ? ' · <i>status unclear</i>' : '') + (field ? ': ' + esc(v[field]) : '') + '</li>';
+        (v.status === 'unclear' ? ' · <i>status unclear</i>' : '') + (field ? ': ' + esc(fieldText(v, field)) : '') + '</li>';
     }).join('') + '</ul>' + (all.length > hits.length ? (all.length - hits.length) + ' more. ' : '') + (more || ALL_LINK());
   }
   function listOrNone(filter, heading, field, area, more) {
@@ -509,12 +517,32 @@
       head += '<ul>' + pool.slice(0, 5).map(eventLine).join('') + '</ul>';
       if (pool.length > 5) head += (pool.length - 5) + ' more on the Tonight page.';
     }
+    var free = tags.indexOf('no_cover') !== -1;
+    // The feed carries no prices (most listings are ticketed), so a "free" question
+    // gets no event list, only the honest note and the no-cover venues below.
+    if (free) head = 'Our events feed doesn’t say which listings are free, so I can’t promise a free event. Tonight’s full list is on the Tonight page: <a href="' + R('tonight/') + '">Tonight in NYC →</a>';
     botSay(head);
     return setTimeout(function () {
+      if (free) {
+        var rest = tags.filter(function (x) { return x !== 'no_cover'; });
+        return botSay(listOrNone(function (v) { return has(v, 'no_cover') && hasAll(rest)(v); }, tagHeading(tags), 'cover', area) + noCoverNote(''));
+      }
       botSay(listOrNone(function (v) { return has(v, 'ticketed') && hasAll(tags)(v); }, 'Ticketed clubs &amp; venues', 'cover', area));
     }, 500);
   }
 
+  // Said with every "no cover" list, so nobody walks in expecting a free night out.
+  function noCoverNote(t) {
+    var s = ' No cover is listed for these in our checked sources. Tables, ticketed events and drink minimums can still cost money.';
+    if (/tonight|right now|this weekend|weekend|\bevents?\b|happening/.test(t)) {
+      s += ' Our events feed doesn’t say which listings are free. Tonight’s full list is on the Tonight page: <a href="' + R('tonight/') + '">Tonight in NYC →</a>';
+    }
+    return s;
+  }
+  var NEARME = /near me|nearby|close to me|around me|around here|in my area|walking distance/;
+  function nearMeNote() {
+    return ' I can’t see where you are. Add a neighborhood, like “rooftops in Chelsea” or “bars in the East Village”.';
+  }
   function money(n) { return '$' + n; }
   function planLink() {
     var p = pickPlan('bachelorette');
@@ -557,21 +585,30 @@
     if (/drinks?\b|cocktails? cost|how much (are|is a) (drink|cocktail|beer)|beer|menu price/.test(t)) return 'price';
     if (/dress|wear|outfit|sneaker|shoes|jeans|attire/.test(t)) return 'dress';
     if (/\bage\b|\b1[5-9]\b|\b2[01]\b|year.?olds?|\bid\b|how old|under ?21|underage|all ages|foreign|passport|international/.test(t)) return 'age';
-    if (/cover|price|cost|much|ticket|fee|charge/.test(t)) return 'cover';
+    if (/cover|price|cost|much|ticket|fee|charge|admission|free entry|entry free/.test(t)) return 'cover';
+    if (/happy hour/.test(t)) return null;
     if (/\bhours?\b|\bopen\b|\bclos(e|ed|es|ing)\b|what time|\blate\b|monday|tuesday|wednesday|thursday|friday|saturday|sunday/.test(t)) return 'hours';
     if (/get in|door|entry|line|queue|reserv|book|table|guest ?list|bouncer/.test(t)) return 'howto';
     if (/worth|honest|good\b|review|skip|overrated|any good/.test(t)) return 'honest';
     return null;
   }
   // Category words -> venue tags (several can combine: "clubs with no cover in Brooklyn").
-  var TAG_NAME = { rooftop: 'Rooftops', club: 'Clubs', cocktail: 'Cocktail bars', live: 'Live music &amp; shows' };
+  var TAG_NAME = { rooftop: 'Rooftops', club: 'Clubs', cocktail: 'Cocktail bars', bar: 'Bars', live: 'Live music &amp; shows' };
+  // "free entry", "no cover", "no entry fee", "cheap"... -> venues with no cover listed
+  var NOCOVER = /\bfree\b|no cover|without (a )?cover|no (entry|door) fee|no charge|cheap|budget|broke|\$\d/;
+  // Phrasing that is not part of the question: "show me", "can you tell me", "find us"...
+  function plain(t) {
+    return (' ' + t + ' ').replace(/\b(can|could|would) you\b|\bplease\b|\bi (want|need|would like) to (see|know)\b/g, ' ')
+      .replace(/\b(show|tell|give|find|get|list|send) (me|us)\b/g, ' ').replace(/\s+/g, ' ').trim();
+  }
   function wantTags(t) {
     var w = [];
     if (/rooftop|\bviews?\b|skyline|outdoor/.test(t)) w.push('rooftop');
     if (/live music|jazz|\bband\b|concert|\bshows?\b|cabaret/.test(t)) w.push('live');
     else if (/club|danc|techno|house music|rave|disco/.test(t)) w.push('club');
-    else if (!w.length && /speakeasy|cocktail|\bdate\b|romantic|quiet|\bbars?\b|whiskey|drinks/.test(t)) w.push('cocktail');
-    if (/free|no cover|without (a )?cover|cheap|budget|broke|\$\d/.test(t)) w.push('no_cover');
+    else if (!w.length && /speakeasy|cocktail|\bdate\b|romantic|quiet|whiskey|drinks/.test(t)) w.push('cocktail');
+    else if (!w.length && /\bbars?\b|\bpubs?\b|\blounges?\b/.test(t)) w.push('bar');
+    if (NOCOVER.test(t)) w.push('no_cover');
     return w;
   }
   function tagHeading(w) {
@@ -586,7 +623,7 @@
     say(esc(q), 'user');
     input.value = '';
     track('nybot_message');
-    var t = q.toLowerCase();
+    var t = plain(q.toLowerCase());
 
     loadVenues(function (ok) {
       if (!ok) return botSay('I can’t reach the venue list right now. Try again in a moment, or browse ' + ALL_LINK());
@@ -649,7 +686,13 @@
       if (/how late|open late|late.?night|after (midnight|[1-5] ?am)|latest|till [2-5]|until [2-5]/.test(t)) {
         return botSay(listOrNone(function (v) { return /\b[2-6](:\d\d)?\s?am\b|4am|late/i.test(v.hours) && hasAll(tags)(v); }, 'Open late (check the hours)', 'hours', area));
       }
-      if (tags.length) return botSay(listOrNone(hasAll(tags), tagHeading(tags), tags.indexOf('no_cover') !== -1 ? 'cover' : null, area) + extra);
+      if (/happy hour|food|dinner|\beat\b|restaurant/.test(t)) return botSay('I don’t cover food or happy hours, just door facts: cover, dress code, age and how to get in. ' + ALL_LINK());
+      var nearMe = !area && NEARME.test(t);
+      if (tags.length) {
+        var nc = tags.indexOf('no_cover') !== -1;
+        return botSay(listOrNone(hasAll(tags), tagHeading(tags), nc ? 'cover' : null, area) + (nc ? noCoverNote(t) : '') + (nearMe ? nearMeNote() : '') + extra);
+      }
+      if (nearMe && !focus) return botSay('I can’t see where you are, so tell me the neighborhood. Try “bars in the East Village”, “rooftops in Chelsea” or “clubs in Bushwick”.');
       if (PLANW.test(t)) return answerPlan(t);
       if (group) {
         // The size sentence is in this first bubble. The price list follows on a
@@ -660,7 +703,6 @@
       if (area) return botSay(listOrNone(function () { return true; }, 'Checked venues', null, area));
       if (focus === 'hours') return botSay('Hours differ a lot by venue and night. Name one and I’ll give you its checked hours, e.g. “hours at Le Bain”.');
       if (focus) return botSay('Which venue? Name one, e.g. “cover at House of Yes”. Or browse ' + ALL_LINK());
-      if (/happy hour|food|dinner|\beat\b|restaurant/.test(t)) return botSay('I don’t cover food or happy hours, just door facts: cover, dress code, age and how to get in. ' + ALL_LINK());
       if (/safe|safety|scam|pickpocket/.test(t)) return botSay('Stick to venues’ official ticket links, keep your ID and phone close, and agree a meet-up spot with your group. For each venue I can tell you the cover and how to get in.');
       if (/subscribe|newsletter|email|brief/.test(t)) return botSay('A weekly email is planned. Until then, every change to our checked facts is on <a href="' + R('changes/') + '">What changed</a> and its <a href="' + R('feed.xml') + '">RSS feed</a>.');
       if (/\b(hi|hello|hey|yo|sup|hiya)\b/.test(t)) return botSay('Hey 🥂 I’m ' + esc(ART.name) + '. Ask me what a venue costs, its dress code, rooftops, no-cover spots, or how to plan a group night. Anything on this site, I know it.');

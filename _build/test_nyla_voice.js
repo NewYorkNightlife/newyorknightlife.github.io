@@ -29,6 +29,8 @@ function ok(cond, name, extra) {
   ok(/House of Yes/.test(t) && /Cover: \$20 to \$40/.test(t), 'speechText reads the card', t);
   ok(/21 plus/.test(t), 'speechText says 21 plus', t);
   ok(!/Sources|→|<|&amp;/.test(t), 'speechText drops arrow links, tags and entities', t);
+  ok(!/source/.test(t) && /free before 10pm\./.test(t), 'speechText drops the (1 source) count', t);
+  ok(V.speechText('Tickets on DICE, e.g. a jazz show') === 'Tickets on DICE, for example a jazz show', 'speechText reads e.g. as for example', V.speechText('Tickets on DICE, e.g. a jazz show'));
   const list = '<b>Rooftops:</b><ul>' + ['A', 'B', 'C', 'D', 'E'].map(x => '<li><a href="/x">' + x + ' Bar</a> (Chelsea)</li>').join('') + '</ul>2 more. <a href="/v">All venue fact pages →</a>';
   const lt = V.speechText(list);
   ok(/A Bar/.test(lt) && /C Bar/.test(lt) && !/D Bar/.test(lt) && /And 4 more on screen\.$/.test(lt) && !/2 more/.test(lt), 'speechText reads 3 list items then counts the rest', lt);

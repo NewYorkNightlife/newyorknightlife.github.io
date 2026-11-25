@@ -104,7 +104,13 @@ function areasOf(venues) {
     'what are the hours', 'what is the cover', 'food', 'karaoke', 'gay bars', 'asdf qwerty',
     'open late', 'cheap drinks', 'drink prices', 'what is good', 'where is it',
     'No cover', 'Rooftops', 'Cocktail bars', 'Bachelorette for 10', 'clubs', 'live music', 'speakeasy', 'date night',
-    'bachelor party', 'boat party', 'dinner cruise', 'yacht', 'party bus', 'group night out', 'birthday'
+    'bachelor party', 'boat party', 'dinner cruise', 'yacht', 'party bus', 'group night out', 'birthday',
+    // no cover / free entry phrasings (2026-11-23) and other common asks
+    'show me bars with no cover', 'bars with no cover', 'no cover bars', 'free entry bars tonight', 'free entry', 'free bars',
+    'no cover tonight', 'free events tonight', 'free things to do tonight', 'where can I dance for free', 'no cover clubs',
+    'cheap bars', 'bars', 'show me bars', 'show me rooftops', 'show me clubs', 'live shows', 'happy hour', 'happy hour near me',
+    'bars near me', 'clubs near me', 'rooftops near me', 'what is near me', 'karaoke', 'karaoke bars', 'dancing', 'dance clubs',
+    'rooftop bars', 'rooftop bars with no cover', 'bars with no cover near me'
   ];
   for (let n = 2; n <= 30; n++) fixed.push('birthday with ' + n + ' friends', 'bachelorette for ' + n);
   for (const q of fixed) keep(await ask(q));
@@ -118,7 +124,7 @@ function areasOf(venues) {
     keep(await ask('Cover at ' + v.name));
   }
   const CATS = ['', 'rooftops', 'clubs', 'cocktail bars', 'live music', 'no cover', 'rooftops with no cover', 'clubs with no cover',
-    'cocktail bars with no cover', 'live music with no cover', 'dress codes', 'drink prices', 'open late', 'under 21', 'venues'];
+    'cocktail bars with no cover', 'live music with no cover', 'bars', 'bars with no cover', 'dress codes', 'drink prices', 'open late', 'under 21', 'venues'];
   for (const c of CATS) for (const a of [''].concat(areas)) {
     const q = (c + (a ? ' in ' + a : '')).trim();
     if (q) keep(await ask(q));
