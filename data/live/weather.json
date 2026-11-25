@@ -1,12 +1,12 @@
 {
  "end": "2026-11-26T06:00:00-05:00",
- "fetched": "2026-11-25T12:50:10+00:00",
- "issued": "2026-11-25T10:20:20+00:00",
+ "fetched": "2026-11-25T23:05:25+00:00",
+ "issued": "2026-11-25T18:51:47+00:00",
  "period": "Tonight",
- "rain_pct": 8,
+ "rain_pct": 13,
  "short": "Cloudy",
  "source": "National Weather Service (weather.gov)",
  "start": "2026-11-25T18:00:00-05:00",
- "temp_f": 44,
- "wind": "10 to 18 mph NE"
+ "temp_f": 43,
+ "wind": "9 to 20 mph NE"
 }
