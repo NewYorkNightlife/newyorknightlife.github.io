@@ -122,6 +122,27 @@ const CASES = [
   ['/', 'bachelorette rooftop', ['Rooftops', 'priced per person'], []],
   ['/', 'anywhere open late', [], ['Did you mean']],
   ['/', 'bachelorette for 10', [], ['((']],
+  // "no cover" / "free entry" (2026-11-23 report: "show me bars with no cover" read
+  // "None listed" for each bar, which sounded like "no listing", and "show me" was taken as live shows)
+  ['/', 'show me bars with no cover', ['Bars with no cover for walk-ins', 'Attaboy', ' more. <a', 'No cover listed', 'still cost money'], ['Live music', 'None listed', 'Marquee']],
+  ['/', 'bars with no cover', ['Bars with no cover', 'Attaboy', 'No cover listed'], ['None listed']],
+  ['/', 'no cover bars', ['Bars with no cover', 'Attaboy'], ['None listed']],
+  ['/', 'free entry bars tonight', ['Bars with no cover', 'Attaboy', 'events feed doesn’t say which listings are free', 'tonight/'], ['How to get in', 'None listed']],
+  ['/', 'free entry', ['no cover for walk-ins', 'Attaboy'], ['How to get in']],
+  ['/', 'no cover clubs', ['Clubs with no cover', 'Le Bain'], ['Attaboy', 'None listed']],
+  ['/', 'where can i dance for free', ['with no cover', 'Le Bain'], ['Attaboy']],
+  ['/', 'free events tonight', ['events feed doesn’t say which listings are free', 'with no cover'], ['Ticketed clubs']],
+  ['/', 'cheap bars', ['Drink prices'], ['Marquee']],
+  ['/', 'show me rooftops', ['Rooftops', 'Westlight'], ['Live music', 'don’t have a checked venue']],
+  ['/', 'can you show me clubs in bushwick', ['in Bushwick', 'House of Yes'], ['Live music']],
+  ['/', 'live shows', ['Live music', 'Public Records'], []],
+  ['/', 'happy hour', ['don’t cover food or happy hours'], ['Hours differ']],
+  ['/', 'bars near me', ['Bars', 'can’t see where you are'], []],
+  ['/', 'whats near me', ['can’t see where you are'], ['I answer from']],
+  ['/', 'karaoke', ['don’t have checked venues for that'], []],
+  ['/', 'dancing', ['Clubs'], ['Cocktail']],
+  ['/', 'rooftop bars with no cover', ['Rooftops with no cover', 'Westlight'], ['Attaboy']],
+  ['/', 'attaboy cover', ['Attaboy', 'Cover:</b> No cover listed'], []],
 ];
 
 // --links   hard: broken links only (Daily build deploy gate)
