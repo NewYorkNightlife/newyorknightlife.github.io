@@ -29,6 +29,7 @@ GUIDE_ALIASES = {
     "nyc-speakeasies": ["speakeasy", "speakeasies", "hidden door", "hidden bar"],
     "nyc-rooftop-bars": ["rooftop", "rooftops", "roof bar"],
     "nyc-new-years-eve": ["new years eve", "new year's eve", "nye", "ball drop"],
+    "nyc-holiday-nights": ["holiday", "christmas lights", "dyker heights", "winter village", "rockefeller tree", "bryant park"],
     "nyc-comedy-clubs": ["comedy", "stand-up", "standup", "comedy club"],
     "nyc-dress-codes": ["dress code", "dress codes", "what to wear"],
     "nyc-bar-closing-time": ["closing time", "last call", "4am", "4 am", "when do bars close"],

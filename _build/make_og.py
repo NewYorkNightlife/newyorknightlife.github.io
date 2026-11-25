@@ -226,6 +226,11 @@ def main():
          ROOT / "img" / "bachelorette-night.jpg").save(
              OUT / "nyc-dinner-cruises.jpg", "JPEG", quality=82, optimize=True, progressive=True)
     n += 1
+    card("nyc-holiday-nights", "NYC holiday nights 2026", "Guide",
+         "Lights, winter villages, bars after dark.", "Nov 25, 2026", None,
+         ROOT / "img" / "bryant-winter-village.jpg").save(
+             OUT / "nyc-holiday-nights.jpg", "JPEG", quality=82, optimize=True, progressive=True)
+    n += 1
     total = sum(p.stat().st_size for p in OUT.glob("*.jpg"))
     big = [p.name for p in OUT.glob("*.jpg") if p.stat().st_size > 300_000]
     print(f"{n + 2} share cards, {total // 1024} kB total, largest {max(p.stat().st_size for p in OUT.glob('*.jpg')) // 1024} kB")

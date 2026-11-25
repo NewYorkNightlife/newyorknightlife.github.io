@@ -526,7 +526,7 @@ def dress_hub(vs):
 <li>Almost every venue here is 21+ at night. Bring a physical ID.</li></ul></aside>
 <h2 id="table">Venue by venue</h2>
 <div class="scroll-x"><table class="compare"><thead><tr><th>Venue</th><th>Dress code</th><th>Age</th><th>Cover</th></tr></thead><tbody>{rows}</tbody></table></div>
-<p class="small" id="sources">Each venue page lists its sources. <a href="{u('/how-we-check.html')}">How we check</a>.</p>"""
+<p class="small" id="sources">Each venue page lists its sources. <a href="{u('/how-we-check.html')}">How we check</a>. Seasonal route: <a href="{u('/guides/nyc-holiday-nights.html')}">NYC holiday nights 2026</a>.</p>"""
     schema = {"@context": "https://schema.org", "@type": "Article", "headline": "NYC bar & club dress codes",
               "dateModified": max(v.get("checked", "2026-10-18") for v in vs), "author": {"@type": "Person", "name": "Dan Herlehy"}}
     write("/guides/nyc-dress-codes.html", page("NYC bar & club dress codes (checked) | NY Nightlife",
@@ -685,6 +685,7 @@ def write_meta(live_day):
         "- [NYC speakeasies](https://nynightlife.com/guides/nyc-speakeasies.html): hidden doors and walk-in cocktail bars from checked venue pages\n"
         "- [NYC rooftop bars](https://nynightlife.com/guides/nyc-rooftop-bars.html): hours and dress for the rooftops we have checked\n"
         "- [New Year's Eve 2026](https://nynightlife.com/guides/nyc-new-years-eve.html): Times Square ball drop and NYE cruises from official pages, no invented prices\n"
+        "- [Holiday nights 2026](https://nynightlife.com/guides/nyc-holiday-nights.html): Dyker Heights lights, the Rockefeller tree, winter villages, and festive bars, only what a 2026 source said\n"
         "- [Venues](https://nynightlife.com/venues/): door facts for the checked bars and clubs\n"
         "- [Group nights](https://nynightlife.com/plans/): bachelorette prices, boat party, bachelor party, and the cruise guide\n"
         "- [NYC boat party](https://nynightlife.com/plans/nyc-boat-party.html)\n"

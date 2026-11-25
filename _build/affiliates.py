@@ -93,6 +93,30 @@ OFFERS = (
         "go": "See cruises",
         "url": "https://www.viator.com/searchResults/all?text=NYC+New+Years+Eve+cruise+open+bar+fireworks",
     },
+    # Holiday guide, product pages opened 2026-11-25. No rating or from-price:
+    # the dinner listing's from-price was not the same on two views that day,
+    # and the lights tours did not both print a star rating.
+    {
+        "id": "dyker-lights",
+        "title": "Dyker Heights lights",
+        "detail": "Christmas lights bus tour",
+        "go": "Book",
+        "url": "https://www.viator.com/tours/New-York-City/Dyker-Heights-Christmas-Lights-Tour/d687-14061P2",
+    },
+    {
+        "id": "holiday-lights-bus",
+        "title": "Holiday lights bus",
+        "detail": "NYC holiday lights tour",
+        "go": "Book",
+        "url": "https://www.viator.com/tours/New-York-City/New-York-City-Holiday-Lights-Tour/d687-2625HL",
+    },
+    {
+        "id": "bateaux-dinner",
+        "title": "Dinner cruise",
+        "detail": "Bateaux New York",
+        "go": "Book",
+        "url": "https://www.viator.com/tours/New-York-City/Bateaux-New-York-Dinner-Cruise/d687-5042NYCBAT",
+    },
 )
 BY_ID = {o["id"]: o for o in OFFERS}
 
@@ -106,6 +130,9 @@ WEEKEND = ("night-tours", "sunset-cruise", "dinner-cruise", "bar-crawls")
 SPEAKEASY_GUIDE = ("rooftop-speakeasy", "bar-crawls")
 ROOFTOP_GUIDE = ("rooftop-speakeasy", "sunset-cruise")
 NYE_GUIDE = ("nye", "night-tours")
+# Product pages, not searches. The dinner card is Bateaux's dinner cruise.
+# A holiday-only menu was not on a product page we could verify.
+HOLIDAY_GUIDE = ("dyker-lights", "holiday-lights-bus", "bateaux-dinner")
 
 # Open venues that had no affiliate card. One existing search link each.
 # (offer id, placement prefix). Campaign is nynightlife-<slug>.

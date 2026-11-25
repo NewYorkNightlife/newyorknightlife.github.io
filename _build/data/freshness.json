@@ -2,8 +2,8 @@
  "version": 1,
  "pages": {
   "/": {
-   "hash": "5691f09a8a94bcfa96a185b52d14490d24ec5459ae29d26ad5ca3e8fc768fd8d",
-   "lastmod": "2026-11-24"
+   "hash": "9097db96c635f2b503ed387cea2c5fc6cd90217eb9b0a59dfad133433da45e38",
+   "lastmod": "2026-11-25"
   },
   "/about.html": {
    "hash": "04d4bcdde35c6cd467a6a393aced7ced2e0dcc5d8e9ca2d7c6a1546ac7c1657c",
@@ -26,12 +26,16 @@
    "lastmod": "2026-11-23"
   },
   "/guides/nyc-dress-codes.html": {
-   "hash": "600931e2c4b1427e35cda09dd004949f0454c49d4aea666791960aad62c8c695",
-   "lastmod": "2026-11-23"
+   "hash": "608b645f42844b90c6b3ec657aa40ccdcb2826133daefc4db3fffcfc843f07f3",
+   "lastmod": "2026-11-25"
+  },
+  "/guides/nyc-holiday-nights.html": {
+   "hash": "000b9f404c8fe955a639b572d70425ca0b1c8dc33d2f9db09d77738f3695585e",
+   "lastmod": "2026-11-25"
   },
   "/guides/nyc-new-years-eve.html": {
-   "hash": "5b8b5422ca5635909a9170e922eed9ec6531635fa715cc183afc80e54b4e49f6",
-   "lastmod": "2026-11-23"
+   "hash": "c8de95f4aaf67cd165dcc29649d15f084993797f9a262aa217d69aea40b41078",
+   "lastmod": "2026-11-25"
   },
   "/guides/nyc-rooftop-bars.html": {
    "hash": "43361c086817b097e6288bb90fd521bda08b9ab06e7baa09c0832924098a5a96",
@@ -50,8 +54,8 @@
    "lastmod": "2026-10-18"
   },
   "/image-credits.html": {
-   "hash": "aca1777fa47700edaf24f8bcc0e0a6fffc255718a1e92990a95deb95e220469b",
-   "lastmod": "2026-11-23"
+   "hash": "007d8eb4d2f3c3b64477e6f4bf0a037b8e1571cbff450c7595abfc6a044e7757",
+   "lastmod": "2026-11-25"
   },
   "/plans/": {
    "hash": "fc8d92853d1f5e3a451c4802d22dc8ab320b55ed094b506356155562eb143014",
@@ -78,12 +82,12 @@
    "lastmod": "2026-11-24"
   },
   "/this-weekend/": {
-   "hash": "07633ad692d72077f10b2dc5eca4978c7c8a7798bba3f840141dd4940657f393",
-   "lastmod": "2026-11-23"
+   "hash": "6d736dd239d6ab236cab56587081ce2e61b6720990929abe414fe5eccb9d593c",
+   "lastmod": "2026-11-25"
   },
   "/tonight/": {
-   "hash": "aa6a09ad13335101d725155ddf9d954237987bbd6448901fa046da721f2d8fc1",
-   "lastmod": "2026-11-24"
+   "hash": "fb415a097f1cea684b0de86ef3492c3a46151fc998d615cc95ebee7ea050e09e",
+   "lastmod": "2026-11-25"
   },
   "/venues/": {
    "hash": "9986e2a35067e238df3bed4d2b4ce2870648f68a6308ed280eaed32387001d45",

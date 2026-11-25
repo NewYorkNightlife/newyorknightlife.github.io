@@ -103,6 +103,9 @@ def main():
         ("index.html", "/guides/nyc-speakeasies.html"),
         ("index.html", "/guides/nyc-rooftop-bars.html"),
         ("index.html", "/guides/nyc-new-years-eve.html"),
+        ("index.html", "/guides/nyc-holiday-nights.html"),
+        ("tonight/index.html", "/guides/nyc-holiday-nights.html"),
+        ("this-weekend/index.html", "/guides/nyc-holiday-nights.html"),
         ("tonight/index.html", "/guides/nyc-comedy-clubs.html"),
         ("tonight/index.html", "/this-weekend/"),
     ):
@@ -113,6 +116,7 @@ def main():
         "/guides/nyc-speakeasies.html": "NYC speakeasies | NY Nightlife",
         "/guides/nyc-rooftop-bars.html": "NYC rooftop bars | NY Nightlife",
         "/guides/nyc-new-years-eve.html": "NYC New Year's Eve 2026 | NY Nightlife",
+        "/guides/nyc-holiday-nights.html": "NYC holiday nights 2026 | NY Nightlife",
     }
     for path, want in guide_pages.items():
         if f"https://nynightlife.com{path}" not in sitemap:
@@ -174,6 +178,21 @@ def main():
             fail(f"NYE guide missing {needle}")
     if re.search(r"\$\d", nye):
         fail("NYE guide invented a price")
+    holiday = (ROOT / "guides" / "nyc-holiday-nights.html").read_text(encoding="utf-8")
+    for needle in ("December 2, 2026", "7:00", "mid-December", "Dyker Heights",
+                   "d687-14061P2", "d687-2625HL", "d687-5042NYCBAT",
+                   "pid=P00330813", "mcid=42383", "FAQPage", "ItemList",
+                   "Christmas Eve", "November 25", "last call",
+                   "/guides/nyc-new-years-eve.html", "the-dead-rabbit",
+                   "somewhere-nowhere"):
+        if needle not in holiday:
+            fail(f"holiday guide missing {needle}")
+    if "every 10 minutes" in holiday or "5pm to 11pm" in holiday or "5 to 11" in holiday:
+        fail("holiday guide used unverified Saks showtimes")
+    if holiday.count('data-partner="viator"') != 3:
+        fail("holiday guide should have 3 Viator cards")
+    if "is-poster" in holiday:
+        fail("holiday guide drew a poster")
     for slug in ("magic-hour-rooftop", "phd-rooftop-lounge", "employees-only"):
         if f"/venues/{slug}.html" not in nye:
             fail(f"NYE guide missing {slug}")

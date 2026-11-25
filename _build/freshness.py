@@ -233,6 +233,7 @@ def inputs_for(path: str) -> list:
         "/guides/nyc-rooftop-bars.html": ("_build/pages.py", "rooftop_bars", False),
         "/guides/nyc-comedy-clubs.html": ("_build/pages.py", "comedy_clubs", False),
         "/guides/nyc-new-years-eve.html": ("_build/pages.py", "new_years_eve", False),
+        "/guides/nyc-holiday-nights.html": ("_build/pages.py", "holiday_nights", False),
         "/plans/nyc-dinner-cruises.html": ("_build/pages.py", "cruise_guide", False),
         "/plans/nyc-boat-party.html": ("_build/pages.py", "boat_party", False),
         "/plans/bachelor-party.html": ("_build/pages.py", "bachelor_party", False),

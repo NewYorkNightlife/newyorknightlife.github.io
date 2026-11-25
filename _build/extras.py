@@ -165,7 +165,8 @@ def tonight_page(H, vs):
 <li>NYC bars stop serving at 4am by state law. <a href="{u('/guides/nyc-bar-closing-time.html')}">Closing time, explained</a>.</li>
 <li>Under 21? <a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Which venues let you in</a>.</li>
 <li>Dressing for the door: <a href="{u('/guides/nyc-dress-codes.html')}">every dress code in one table</a>.</li>
-<li>Comedy tonight: <a href="{u('/guides/nyc-comedy-clubs.html')}">clubs we could verify</a>, plus any comedy row in the feed above.</li></ul>
+<li>Comedy tonight: <a href="{u('/guides/nyc-comedy-clubs.html')}">clubs we could verify</a>, plus any comedy row in the feed above.</li>
+<li>Lights, winter villages, and Christmas Eve hours we could verify: <a href="{u('/guides/nyc-holiday-nights.html')}">holiday nights 2026</a>.</li></ul>
 {affiliates.block(affiliates.TONIGHT, "nynightlife-tonight", "tonight", u, "Book a night out")}
 {newsletter_block(H)}
 <script defer src="{u('/js/live.js')}?v={H['LIVE_V']}"></script>
@@ -265,6 +266,7 @@ def weekend_page(H, vs):
 <li>Hidden doors we could check: <a href="{u('/guides/nyc-speakeasies.html')}">NYC speakeasies</a>.</li>
 <li>Rooftop hours and dress codes: <a href="{u('/guides/nyc-rooftop-bars.html')}">NYC rooftop bars</a>.</li>
 <li>December 31 is its own page: <a href="{u('/guides/nyc-new-years-eve.html')}">New Year's Eve 2026</a>.</li>
+<li>Thanksgiving through New Year's Day: <a href="{u('/guides/nyc-holiday-nights.html')}">holiday nights 2026</a>.</li>
 <li>A group plan: <a href="{u('/plans/')}">group nights</a>.</li></ul>
 {affiliates.block(affiliates.WEEKEND, "nynightlife-this-weekend", "this-weekend", u, "Book a weekend tour or cruise")}
 {newsletter_block(H)}
