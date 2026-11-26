@@ -209,8 +209,9 @@ def inputs_for(path: str) -> list:
 
     if path == "/":
         fn("_build/pages.py", "home")
+        fn("_build/night_map.py", "markup")
         fn("_build/present.py", "events_html")
-        files(["_build/img/home.jpg"])
+        files(["_build/img/home.jpg", "_build/data/boroughs.geojson", "_build/data/venue_geo.json"])
         import pages
         featured = []
         for slug in pages.FEATURED:

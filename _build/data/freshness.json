@@ -2,8 +2,8 @@
  "version": 1,
  "pages": {
   "/": {
-   "hash": "9097db96c635f2b503ed387cea2c5fc6cd90217eb9b0a59dfad133433da45e38",
-   "lastmod": "2026-11-25"
+   "hash": "c5c234be8b8fd373b166089c178cf885bd3eb6255eea00e82256cd77bd679003",
+   "lastmod": "2026-11-26"
   },
   "/about.html": {
    "hash": "04d4bcdde35c6cd467a6a393aced7ced2e0dcc5d8e9ca2d7c6a1546ac7c1657c",
@@ -54,8 +54,8 @@
    "lastmod": "2026-10-18"
   },
   "/image-credits.html": {
-   "hash": "007d8eb4d2f3c3b64477e6f4bf0a037b8e1571cbff450c7595abfc6a044e7757",
-   "lastmod": "2026-11-25"
+   "hash": "c887d5dd1822d55504d3671a72d1a521027c39ef89a59d65c502a7b041d8d326",
+   "lastmod": "2026-11-26"
   },
   "/plans/": {
    "hash": "fc8d92853d1f5e3a451c4802d22dc8ab320b55ed094b506356155562eb143014",
@@ -86,8 +86,8 @@
    "lastmod": "2026-11-25"
   },
   "/tonight/": {
-   "hash": "fb415a097f1cea684b0de86ef3492c3a46151fc998d615cc95ebee7ea050e09e",
-   "lastmod": "2026-11-25"
+   "hash": "3983dbe06ea39e1a2265bd994635c42cc50577e19c315ef541cc71d1e7eccc1d",
+   "lastmod": "2026-11-26"
   },
   "/venues/": {
    "hash": "9986e2a35067e238df3bed4d2b4ce2870648f68a6308ed280eaed32387001d45",
