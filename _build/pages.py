@@ -120,6 +120,9 @@ def home(page, write, u, vs, H):
             f"Feed checked {fetched}.")
     short = present.home_short(now, n, len(tonight), late)
     attrs = present.night_attrs("home")
+    import night_map
+    night_map.write_svg(H["OUT"])
+    night = night_map.markup(vs, u, H["night_js"])
     shown = (tonight + week)[:6]
     if tonight:
         events_block = present.events_html(shown, "What's on in NYC tonight / this week", note,
@@ -134,6 +137,7 @@ def home(page, write, u, vs, H):
 <p class="credit">Photo: {credit}</p>
 {present.answer_box(short, "home", n)}
 {events_block}
+{night}
 <h2>Beyond the bar</h2>
 <p class="lede">Cruises, a boat party, a bachelor night, comedy rooms, and the door facts. Each page only states what we could verify.</p>
 <a class="card-link" href="{u('/plans/nyc-dinner-cruises.html')}"><span>Dinner and sunset cruises<span class="sub">Piers and timing we could verify</span></span><span class="go">Read →</span></a>
@@ -371,6 +375,8 @@ def image_credits(page, write):
         items += bit + "</li>"
     body = f"""<p class="eyebrow">Credits</p><h1>Image credits</h1>
 <p class="lede">Photographs on this site are ones we have a license to store, from Wikimedia Commons and Flickr under the Creative Commons licenses linked below. Each one is credited to its author, resized and cropped by us. Where a photo shows the building or the street outside rather than the room, the note says so. Ticketmaster event images, when a listing has one, are loaded from Ticketmaster next to that event and are not saved here.</p>
+<h2>Map data</h2>
+<p>Borough outlines on the homepage night map are simplified from the Department of City Planning borough boundaries on <a href="https://data.cityofnewyork.us/" rel="noopener">NYC Open Data</a>. The city publishes that file as public data. A room is placed only when the house number, street, borough, and ZIP on its page match an address point from <a href="https://geosearch.planninglabs.nyc/" rel="noopener">NYC Planning Labs GeoSearch</a>, which reads the Department of City Planning PAD. Rooms that do not match are left off the map.</p>
 <ul class="clean">{items}</ul>"""
     write("/image-credits.html", page("Image credits | NY Nightlife",
                                      "Photograph credits and licenses for images stored on NY Nightlife.",

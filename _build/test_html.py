@@ -219,6 +219,56 @@ def main():
         fail("impact site verification missing")
     if "js/tonight.js" not in home or "data-events=" not in home or "data-night-line" not in home:
         fail("home missing the tonight client")
+    whats = home.find('class="whats-on"')
+    night = home.find('id="night-map"')
+    beyond = home.find("Beyond the bar")
+    if whats < 0 or night < 0 or beyond < 0 or not (whats < night < beyond):
+        fail("night map is not directly after Tonight")
+    if "is-poster" in home[night:beyond]:
+        fail("night map drew a poster")
+    if 'id="night-map-pins"' not in home or "/img/night-map.svg" not in home:
+        fail("night map is missing its pin data or borough drawing")
+    for guide in ("/venues/#manhattan", "/venues/#brooklyn", "/venues/#queens"):
+        if guide not in home:
+            fail(f"night map missing borough link {guide}")
+    import gzip
+    svg_path = ROOT / "img" / "night-map.svg"
+    if not svg_path.is_file():
+        fail("missing img/night-map.svg")
+    else:
+        draws = "".join(re.findall(r'\sd="([^"]*)"', svg_path.read_text(encoding="utf-8")))
+        zipped = len(gzip.compress(draws.encode("utf-8")))
+        if zipped > 40_000:
+            fail(f"borough paths gzip to {zipped} bytes")
+        if zipped < 500:
+            fail("borough paths look empty")
+    pin_match = re.search(r'<script type="application/json" id="night-map-pins">(.*?)</script>', home, re.S)
+    if not pin_match:
+        fail("night map pin JSON missing")
+    else:
+        try:
+            pin_rows = json.loads(pin_match.group(1))
+        except json.JSONDecodeError as ex:
+            fail(f"night map pin JSON {ex}")
+            pin_rows = []
+        slugs = []
+        for row in pin_rows:
+            slug = row.get("slug")
+            slugs.append(slug)
+            photo = row.get("photo") or ""
+            if not re.fullmatch(r"/img/[a-z0-9-]+-thumb\.webp", photo):
+                fail(f"night map pin {slug} has no real photo")
+            elif not (ROOT / photo.lstrip("/")).is_file():
+                fail(f"night map pin {slug} photo missing {photo}")
+            if not isinstance(row.get("lat"), (int, float)) or not isinstance(row.get("lng"), (int, float)):
+                fail(f"night map pin {slug} has no coordinates")
+            href = f"/venues/{slug}.html"
+            if href not in home:
+                fail(f"night map list missing {href}")
+        if len(slugs) != len(set(slugs)):
+            fail("night map repeated a venue")
+        if len(slugs) < 1:
+            fail("night map plotted no venues")
     if "js/tonight.js" not in tonight or 'data-night-page="tonight"' not in tonight:
         fail("tonight page missing the tonight client")
     if not (ROOT / "data" / "events.json").is_file():

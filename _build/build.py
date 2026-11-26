@@ -49,6 +49,7 @@ VOICE_V = _ver(ROOT / "nyla-voice.js")
 LIVE_V = _ver(ROOT / "live.js")
 SIGNAL_V = _ver(ROOT / "signal.js")
 TONIGHT_V = _ver(ROOT / "tonight.js")
+NIGHT_V = _ver(ROOT / "night-map.js")
 OG_DIR = ROOT / "img" / "og"
 OG_DEFAULT = "/img/og/site.jpg"
 
@@ -561,7 +562,8 @@ def copy_static():
     pairs = [(ROOT / "site.css", OUT / "css" / "site.css"), (ROOT / "concierge.js", OUT / "js" / "concierge.js"),
              (ROOT / "nyla-voice.js", OUT / "js" / "nyla-voice.js"),
              (ROOT / "live.js", OUT / "js" / "live.js"), (ROOT / "signal.js", OUT / "js" / "signal.js"),
-             (ROOT / "tonight.js", OUT / "js" / "tonight.js")]
+             (ROOT / "tonight.js", OUT / "js" / "tonight.js"),
+             (ROOT / "night-map.js", OUT / "js" / "night-map.js")]
     # the responsive set from make_images.py; its <slug>.jpg replaces the master
     pairs += [(f, OUT / "img" / f.name) for f in sorted(GEN.glob("*.jpg"))]
     pairs += [(f, OUT / "img" / f.name) for f in sorted(GEN.glob("*.webp"))]
@@ -714,10 +716,11 @@ def main():
     import pages
     tonight_js = f"{u('/js/tonight.js')}?v={TONIGHT_V}"
     XH = {"u": u, "page": page, "write": write, "fmt_date": fmt_date, "OUT": OUT, "LIVE_V": LIVE_V,
-          "tonight_js": tonight_js}
+          "tonight_js": tonight_js, "night_js": f"{u('/js/night-map.js')}?v={NIGHT_V}"}
     plan_rows = pages.build(page, write, u, actions, fmt_date, vs,
                             {"plate": plate, "vcard": vcard, "poster": poster_card, "picture": picture, "home_box": lambda: extras.home_box(XH),
-                             "newsletter": lambda: extras.newsletter_block(XH), "tonight_js": tonight_js})
+                             "newsletter": lambda: extras.newsletter_block(XH), "tonight_js": tonight_js,
+                             "night_js": XH["night_js"], "OUT": OUT})
     extras.tonight_page(XH, vs)
     extras.weekend_page(XH, vs)
     changed = extras.changes_pages(XH, vs)   # None while the log is too thin to index

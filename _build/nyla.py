@@ -62,7 +62,7 @@ def _venue(v, fmt_date):
     bad = set(tags) - TAGS
     assert not bad, f"{v['slug']}: unknown chat tags {bad}"
     assert re.fullmatch(r"[a-z0-9-]+", v["slug"]), v["slug"]
-    return {
+    row = {
         "slug": v["slug"],
         "name": v["name"],
         "hood": v.get("neighborhood", ""),
@@ -90,6 +90,13 @@ def _venue(v, fmt_date):
         # card photo for js/tonight.js; empty when we hold no licensed photo
         "photo": f"img/{v['slug']}-640.webp" if _has_photo(v) else "",
     }
+    import night_map
+    point = night_map.point_for(v)
+    # Optional. The night map plots these and skips a venue when they are absent.
+    if point:
+        row["lat"] = point["lat"]
+        row["lng"] = point["lng"]
+    return row
 
 
 def _plan(p):
