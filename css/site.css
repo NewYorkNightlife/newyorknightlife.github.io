@@ -1173,3 +1173,311 @@ body.guide-page .vlist.posters .poster-t { font-size: clamp(18px, 2vw, 26px); -w
   .plate.is-poster > .poster::before,
   .plate.is-poster > .poster::after { display: none; }
 }
+
+/* ------------------------------------------------- Homepage night map
+   Five boroughs, glowing rooms, a route only when tonight's events
+   name a plotted venue. The stage height is the SVG aspect ratio. */
+.night-map { margin-top: 28px; }
+.night-map h2 { margin-bottom: 0; }
+.night-map-lede {
+  margin: 8px 0 0;
+  max-width: 36em;
+  color: var(--text-2);
+}
+.night-map-layout { margin-top: 14px; }
+.night-map-stage {
+  position: relative;
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  background:
+    radial-gradient(70% 55% at 72% 38%, rgba(110, 168, 255, .22), transparent 62%),
+    radial-gradient(45% 40% at 18% 78%, rgba(255, 184, 107, .12), transparent 70%),
+    #070b12;
+  border: 1px solid rgba(110, 168, 255, .38);
+  box-shadow: inset 0 0 0 1px rgba(255, 184, 107, .1), 0 18px 50px rgba(0, 0, 0, .35);
+}
+.night-map-canvas, .night-map-canvas svg,
+.night-map-labels, .night-map-pins {
+  position: absolute;
+  inset: 0;
+}
+.night-map-canvas svg { width: 100%; height: 100%; display: block; }
+.night-map-labels { z-index: 1; pointer-events: none; }
+.night-map-pins { z-index: 2; pointer-events: none; }
+.night-map-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px 4px;
+  border: 0;
+  background: transparent;
+  color: #d5e4ff;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 8px rgba(5, 7, 12, .9);
+  pointer-events: auto;
+  cursor: pointer;
+}
+.night-map-label[aria-pressed="true"] { color: #ffb86b; }
+.night-map-label:focus-visible, .nmap-pin:focus-visible, .boro-switch button:focus-visible, .nmap-close:focus-visible {
+  outline: 2px solid #ffb86b;
+  outline-offset: 2px;
+}
+.nmap-pin {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #f2f5fa;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.nmap-pin i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  border-radius: 50%;
+  background: #6ea8ff;
+  box-shadow: 0 0 0 4px rgba(110, 168, 255, .2), 0 0 12px rgba(110, 168, 255, .85);
+}
+.nmap-pin.is-cluster i {
+  width: 22px;
+  height: 22px;
+  margin: -11px 0 0 -11px;
+  background: #10182a;
+  border: 1.5px solid #6ea8ff;
+}
+.nmap-pin.is-live i {
+  background: #ffb86b;
+  border-color: #ffb86b;
+  box-shadow: 0 0 0 4px rgba(255, 184, 107, .22), 0 0 14px rgba(255, 184, 107, .9);
+}
+.nmap-pin.is-live.is-cluster i { background: #1a140c; }
+.nmap-pin b {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.night-map-land path.is-dim { fill: #0c111b; stroke: rgba(142, 182, 255, .28); }
+.night-map-land path.is-on { fill: #1b2740; stroke: #ffb86b; }
+.night-map-card {
+  position: absolute;
+  z-index: 3;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 62%;
+  overflow: auto;
+  padding: 8px 8px 8px 8px;
+  border-radius: 16px;
+  background: rgba(7, 10, 16, .94);
+  border: 1px solid rgba(110, 168, 255, .5);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .5), inset 3px 0 0 #ffb86b;
+}
+.night-map-card[hidden] { display: none; }
+.night-map-card a {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  min-height: 84px;
+  padding-right: 48px;
+  color: var(--cream);
+  text-decoration: none;
+}
+.night-map-card.is-stack {
+  flex-direction: row;
+  align-items: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-height: none;
+  gap: 8px;
+  padding-right: 52px;
+}
+.night-map-card.is-stack a {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: none;
+  width: 112px;
+  min-height: 112px;
+  padding: 0;
+  gap: 6px;
+}
+.night-map-card img {
+  width: 112px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #10151f;
+}
+.night-map-card.is-stack img { width: 112px; height: 74px; border-radius: 10px; }
+.night-map-card.is-stack .nmap-copy strong { font-size: 15px; }
+.nmap-copy { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.nmap-copy strong {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.night-map-card.is-stack .nmap-copy strong { font-size: 16px; }
+.nmap-copy em {
+  font-style: normal;
+  color: var(--muted);
+  font-size: 13px;
+}
+.nmap-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--cream-2);
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: .04em;
+  cursor: pointer;
+}
+.night-map-empty {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  margin: 0;
+  color: var(--cream);
+  font-size: 15px;
+}
+.night-map-empty[hidden] { display: none; }
+.night-map-panel { margin-top: 12px; }
+.boro-switch {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+.boro-switch::-webkit-scrollbar { display: none; }
+.boro-switch button {
+  flex: none;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(110, 168, 255, .45);
+  background: #0c121c;
+  color: #f2f5fa;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.boro-switch button[aria-pressed="true"] {
+  background: #ffb86b;
+  border-color: #ffb86b;
+  color: #05070c;
+  font-weight: 700;
+}
+.night-map-guides {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 10px;
+}
+.night-map-guides a { color: var(--cool); font-size: 14px; }
+.night-map-list { margin-top: 8px; }
+.night-map-list summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--warm);
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.night-map-groups h3 {
+  margin: 14px 0 0;
+  font-size: 20px;
+}
+.night-map-groups h3 a { color: var(--cream); text-decoration: none; }
+.night-map-groups ul { list-style: none; margin: 0; padding: 0; }
+.night-map-groups li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 44px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--cream);
+  text-decoration: none;
+}
+.night-map-groups li a span { color: var(--muted); font-size: 13px; }
+.night-map .credit { margin-top: 10px; }
+@media (min-width: 900px) {
+  .night-map-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(250px, .72fr);
+    gap: 18px;
+    align-items: stretch;
+  }
+  .night-map-panel {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 4px 2px 0 0;
+  }
+  .night-map-list { min-height: 0; }
+  .night-map-list[open] {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+  }
+  .night-map-groups {
+    overflow: auto;
+    max-height: 560px;
+    padding-right: 6px;
+  }
+  .night-map-label { font-size: 18px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .nmap-pin i { animation: nmap-pulse 2.8s ease-in-out infinite; }
+  .night-route { animation: nmap-dash 22s linear infinite; }
+}
+@keyframes nmap-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(110, 168, 255, .18), 0 0 10px rgba(110, 168, 255, .55); }
+  50% { box-shadow: 0 0 0 8px rgba(110, 168, 255, .05), 0 0 18px rgba(110, 168, 255, .85); }
+}
+.nmap-pin.is-live i {
+  animation-name: nmap-pulse-live;
+}
+@keyframes nmap-pulse-live {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(255, 184, 107, .2), 0 0 10px rgba(255, 184, 107, .55); }
+  50% { box-shadow: 0 0 0 8px rgba(255, 184, 107, .05), 0 0 18px rgba(255, 184, 107, .9); }
+}
+@keyframes nmap-dash { to { stroke-dashoffset: -320; } }
+@media (prefers-reduced-motion: reduce) {
+  .nmap-pin i, .night-route { animation: none; }
+}

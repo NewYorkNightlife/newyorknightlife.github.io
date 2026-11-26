@@ -1181,7 +1181,7 @@ body.guide-page .vlist.posters .poster-t { font-size: clamp(18px, 2vw, 26px); -w
 .night-map h2 { margin-bottom: 0; }
 .night-map-lede {
   margin: 8px 0 0;
-  max-width: 38em;
+  max-width: 36em;
   color: var(--text-2);
 }
 .night-map-layout { margin-top: 14px; }
@@ -1305,10 +1305,24 @@ body.guide-page .vlist.posters .poster-t { font-size: clamp(18px, 2vw, 26px); -w
   color: var(--cream);
   text-decoration: none;
 }
+.night-map-card.is-stack {
+  flex-direction: row;
+  align-items: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-height: none;
+  gap: 8px;
+  padding-right: 52px;
+}
 .night-map-card.is-stack a {
-  grid-template-columns: 56px minmax(0, 1fr);
-  min-height: 56px;
-  padding: 4px 48px 4px 0;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: none;
+  width: 112px;
+  min-height: 112px;
+  padding: 0;
+  gap: 6px;
 }
 .night-map-card img {
   width: 112px;
@@ -1317,7 +1331,8 @@ body.guide-page .vlist.posters .poster-t { font-size: clamp(18px, 2vw, 26px); -w
   border-radius: 10px;
   background: #10151f;
 }
-.night-map-card.is-stack img { width: 56px; height: 56px; }
+.night-map-card.is-stack img { width: 112px; height: 74px; border-radius: 10px; }
+.night-map-card.is-stack .nmap-copy strong { font-size: 15px; }
 .nmap-copy { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .nmap-copy strong {
   font-family: var(--display);

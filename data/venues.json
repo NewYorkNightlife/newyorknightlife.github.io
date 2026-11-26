@@ -1,6 +1,6 @@
 {
  "schema": 3,
- "generated": "2026-11-25T12:48:53-05:00",
+ "generated": "2026-11-26T12:55:02-05:00",
  "feed_fetched_at": "2026-11-10T21:40:29-05:00",
  "venues": [
   {
@@ -45,7 +45,9 @@
     "You want a quiet drink late on weekends: after 8pm it shifts to a cover-charge, line-at-the-door party scene."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/230-fifth-rooftop-640.webp"
+   "photo": "img/230-fifth-rooftop-640.webp",
+   "lat": 40.744157,
+   "lng": -73.988489
   },
   {
    "slug": "attaboy",
@@ -87,7 +89,9 @@
     "You want food or a menu to browse: there is no food and no drink menu, just a conversation with the bartender."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/attaboy-640.webp"
+   "photo": "img/attaboy-640.webp",
+   "lat": 40.718889,
+   "lng": -73.991378
   },
   {
    "slug": "beauty-and-essex",
@@ -131,7 +135,9 @@
     "You're on a budget: OpenTable lists it in the top $$$$ tier and cocktails run about $20 each."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/beauty-and-essex-640.webp"
+   "photo": "img/beauty-and-essex-640.webp",
+   "lat": 40.720386,
+   "lng": -73.986774
   },
   {
    "slug": "bossa-nova-civic-club",
@@ -174,7 +180,9 @@
     "You dislike heavy fog and a dark, cramped layout, which reviewers call out."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/bossa-nova-civic-club-640.webp"
+   "photo": "img/bossa-nova-civic-club-640.webp",
+   "lat": 40.697947,
+   "lng": -73.927932
   },
   {
    "slug": "brooklyn-mirage",
@@ -208,7 +216,9 @@
     "You want a sure thing in the off-season: the open-air venue is seasonal (June–October) and big nights sell out in advance."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/brooklyn-mirage-640.webp"
+   "photo": "img/brooklyn-mirage-640.webp",
+   "lat": 40.710631,
+   "lng": -73.926183
   },
   {
    "slug": "death-and-co",
@@ -252,7 +262,9 @@
     "You want to stand and mingle or stay all night: no standing room and a 2-hour cap per visit."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/death-and-co-640.webp"
+   "photo": "img/death-and-co-640.webp",
+   "lat": 40.725944,
+   "lng": -73.984657
   },
   {
    "slug": "elsewhere",
@@ -288,7 +300,9 @@
     "You want a polished cocktail experience: it is a loud, large warehouse venue with drinks served in plastic cups."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/elsewhere-640.webp"
+   "photo": "img/elsewhere-640.webp",
+   "lat": 40.709451,
+   "lng": -73.923221
   },
   {
    "slug": "employees-only",
@@ -332,7 +346,9 @@
     "You hate lines: the bar is walk-in only and reviewers report waits at the door."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/employees-only-640.webp"
+   "photo": "img/employees-only-640.webp",
+   "lat": 40.733443,
+   "lng": -74.006078
   },
   {
    "slug": "good-room",
@@ -366,7 +382,9 @@
     "You want a non-ticketed drop-in: most nights are ticketed RA parties, so check the calendar first."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/good-room-640.webp"
+   "photo": "img/good-room-640.webp",
+   "lat": 40.72688,
+   "lng": -73.952869
   },
   {
    "slug": "harriets-rooftop",
@@ -410,7 +428,9 @@
     "The weather is bad: the rooftop opens weather permitting, so check Instagram first."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/harriets-rooftop-640.webp"
+   "photo": "img/harriets-rooftop-640.webp",
+   "lat": 40.70228,
+   "lng": -73.995519
   },
   {
    "slug": "house-of-yes",
@@ -447,7 +467,9 @@
     "Strobes or sensory overload are a problem: the venue warns strobe lights are often used."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/house-of-yes-640.webp"
+   "photo": "img/house-of-yes-640.webp",
+   "lat": 40.706772,
+   "lng": -73.923611
   },
   {
    "slug": "knockdown-center",
@@ -484,7 +506,9 @@
     "You like to step out and come back: listings say there is no re-entry."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/knockdown-center-640.webp"
+   "photo": "img/knockdown-center-640.webp",
+   "lat": 40.7156,
+   "lng": -73.91418
   },
   {
    "slug": "le-bain",
@@ -526,7 +550,9 @@
     "You want cheap drinks: reviewers say prices run on the expensive end, and a Wanderlog reviewer mentions a mandatory coat check."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/le-bain-640.webp"
+   "photo": "img/le-bain-640.webp",
+   "lat": 40.740981,
+   "lng": -74.008156
   },
   {
    "slug": "magic-hour-rooftop",
@@ -570,7 +596,9 @@
     "You want attentive service at peak times: reviewers report slow or inattentive service when it is busy."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/magic-hour-rooftop-640.webp"
+   "photo": "img/magic-hour-rooftop-640.webp",
+   "lat": 40.752291,
+   "lng": -73.989149
   },
   {
    "slug": "marquee-new-york",
@@ -609,7 +637,9 @@
     "You are on a budget: listed GA tickets run around $80 before drinks, and tables are bottle-service bookings."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/marquee-new-york-640.webp"
+   "photo": "img/marquee-new-york-640.webp",
+   "lat": 40.750101,
+   "lng": -74.00283
   },
   {
    "slug": "mr-purple",
@@ -653,7 +683,9 @@
     "You want a swim: the terrace pool is small and decorative more than swimmable."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/mr-purple-640.webp"
+   "photo": "img/mr-purple-640.webp",
+   "lat": 40.721757,
+   "lng": -73.987937
   },
   {
    "slug": "musica-club",
@@ -688,7 +720,9 @@
     "You want flexibility: tickets are final sale with no refunds and no re-entry."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/musica-club-640.webp"
+   "photo": "img/musica-club-640.webp",
+   "lat": 40.766776,
+   "lng": -73.996151
   },
   {
    "slug": "nebula",
@@ -727,7 +761,9 @@
     "You go by ratings: it has about 2 stars on Yelp from roughly 99 reviews."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/nebula-640.webp"
+   "photo": "img/nebula-640.webp",
+   "lat": 40.754987,
+   "lng": -73.985635
   },
   {
    "slug": "nowadays",
@@ -766,7 +802,9 @@
     "You're sensitive to strobes or haze, or need smooth ground: most night parties use strobes and haze, and the yard is dirt and gravel."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/nowadays-640.webp"
+   "photo": "img/nowadays-640.webp",
+   "lat": 40.692509,
+   "lng": -73.901593
   },
   {
    "slug": "ophelia-lounge",
@@ -810,7 +848,9 @@
     "You want a fully open-air rooftop: much of the terrace is a covered greenhouse with only some open sections."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/ophelia-lounge-640.webp"
+   "photo": "img/ophelia-lounge-640.webp",
+   "lat": 40.753339,
+   "lng": -73.966084
   },
   {
    "slug": "pacha-new-york",
@@ -846,7 +886,9 @@
     "You're after a small, intimate club: it's a mega-venue (Billboard estimated ~5,000 on the floor on opening night)."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/pacha-new-york-640.webp"
+   "photo": "img/pacha-new-york-640.webp",
+   "lat": 40.710631,
+   "lng": -73.926183
   },
   {
    "slug": "paragon",
@@ -880,7 +922,9 @@
     "You want a polished, upscale club: it's a raw, two-level underground dance room."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/paragon-640.webp"
+   "photo": "img/paragon-640.webp",
+   "lat": 40.696055,
+   "lng": -73.934117
   },
   {
    "slug": "phd-rooftop-lounge",
@@ -919,7 +963,9 @@
     "You're on a budget: prices are steep and entry is at the door's discretion."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/phd-rooftop-lounge-640.webp"
+   "photo": "img/phd-rooftop-lounge-640.webp",
+   "lat": 40.742299,
+   "lng": -74.003437
   },
   {
    "slug": "please-dont-tell",
@@ -962,7 +1008,9 @@
     "You expect to be wowed: Time Out's 2026 review gave it 3/5 and called the cocktails 'one-note' for the price."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/please-dont-tell-640.webp"
+   "photo": "img/please-dont-tell-640.webp",
+   "lat": 40.727128,
+   "lng": -73.983746
   },
   {
    "slug": "public-records",
@@ -1004,7 +1052,9 @@
     "You want a dressy cocktail-bar night: it's a casual, music-first, mostly vegan-food campus."
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/public-records-640.webp"
+   "photo": "img/public-records-640.webp",
+   "lat": 40.682176,
+   "lng": -73.98639
   },
   {
    "slug": "somewhere-nowhere",
@@ -1045,7 +1095,9 @@
     "You want value: OpenTable reviewers call it pricey for what you get and criticize the bench seating"
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/somewhere-nowhere-640.webp"
+   "photo": "img/somewhere-nowhere-640.webp",
+   "lat": 40.74431,
+   "lng": -73.992745
   },
   {
    "slug": "the-back-room",
@@ -1088,7 +1140,9 @@
     "You're under 25 on a weekend: the Fri–Sat age floor is 25"
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/the-back-room-640.webp"
+   "photo": "img/the-back-room-640.webp",
+   "lat": 40.718744,
+   "lng": -73.986957
   },
   {
    "slug": "the-box",
@@ -1127,7 +1181,9 @@
     "You're easily shocked: the shows are explicit, adult-oriented cabaret"
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/the-box-640.webp"
+   "photo": "img/the-box-640.webp",
+   "lat": 40.721898,
+   "lng": -73.99228
   },
   {
    "slug": "the-dead-rabbit",
@@ -1171,7 +1227,9 @@
     "You're watching the bill: reviewers say prices run higher than expected and a 20% service charge is added"
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/the-dead-rabbit-640.webp"
+   "photo": "img/the-dead-rabbit-640.webp",
+   "lat": 40.703303,
+   "lng": -74.011024
   },
   {
    "slug": "westlight",
@@ -1216,7 +1274,9 @@
     "You're price-sensitive: cocktails start at $22"
    ],
    "verified": "Oct 18, 2026",
-   "photo": "img/westlight-640.webp"
+   "photo": "img/westlight-640.webp",
+   "lat": 40.722298,
+   "lng": -73.956734
   }
  ],
  "plans": [

@@ -169,14 +169,42 @@
         groups.push({ x: item.sx, y: item.sy, items: [item] });
         return;
       }
-      best.items.push(item);
-      best.x = 0;
-      best.y = 0;
-      best.items.forEach(function (entry) { best.x += entry.sx; best.y += entry.sy; });
-      best.x /= best.items.length;
-      best.y /= best.items.length;
+      var next = best.items.concat([item]);
+      var cx = 0, cy = 0;
+      next.forEach(function (entry) { cx += entry.sx; cy += entry.sy; });
+      cx /= next.length;
+      cy /= next.length;
+      var radius = 0;
+      next.forEach(function (entry) {
+        radius = Math.max(radius, Math.hypot(entry.sx - cx, entry.sy - cy));
+      });
+      // Keep a cluster geographically tight. A downtown pile may still share
+      // one light; rooms a neighborhood apart stay separate.
+      if (radius > 26) {
+        groups.push({ x: item.sx, y: item.sy, items: [item] });
+        return;
+      }
+      best.items = next;
+      best.x = cx;
+      best.y = cy;
     });
     return groups;
+  }
+  function groupSpan(group) {
+    var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    group.items.forEach(function (item) {
+      minX = Math.min(minX, item.vx); maxX = Math.max(maxX, item.vx);
+      minY = Math.min(minY, item.vy); maxY = Math.max(maxY, item.vy);
+    });
+    return { x: minX, y: minY, w: Math.max(8, maxX - minX), h: Math.max(8, maxY - minY) };
+  }
+  function zoomToGroup(group) {
+    var b = groupSpan(group);
+    var pad = Math.max(36, b.w * 0.45, b.h * 0.45);
+    closeCard();
+    setView(fitAspect(b.x - pad, b.y - pad, b.w + pad * 2, b.h + pad * 2));
+    laid = '';
+    layout();
   }
   function groupKey(group) {
     return group.items.map(function (item) { return item.slug; }).sort().join('+');
@@ -295,13 +323,22 @@
           btn.appendChild(count);
         }
         btn.addEventListener('click', function (event) {
+          var spread = groupSpan(group);
+          if (group.items.length > 1 && (spread.w > 28 || spread.h > 28)) {
+            zoomToGroup(group);
+            return;
+          }
           openCard(group, btn);
           if (event.detail === 0) {
             var link = card.querySelector('a');
             if (link) link.focus();
           }
         });
-        btn.addEventListener('focus', function () { openCard(group, btn); });
+        btn.addEventListener('focus', function () {
+          var spread = groupSpan(group);
+          if (group.items.length > 1 && (spread.w > 28 || spread.h > 28)) return;
+          openCard(group, btn);
+        });
         pinLayer.appendChild(btn);
       });
       if (focusSlug) {

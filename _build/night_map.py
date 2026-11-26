@@ -353,7 +353,7 @@ def markup(venues: list, u, js_src: str) -> str:
     return f"""<section class="night-map" id="night-map" data-night-map data-proj="{proj}" data-svg="{e(u('/img/night-map.svg'))}" aria-labelledby="night-map-title">
 <p class="eyebrow"><span class="line-mark" aria-hidden="true">N</span>Five boroughs</p>
 <h2 id="night-map-title">Night map</h2>
-<p class="night-map-lede">Checked rooms, placed only where a city address point matches the address on the venue page.</p>
+<p class="night-map-lede">Rooms whose address matches a city address point.</p>
 <div class="night-map-layout">
 <div class="night-map-stage" style="aspect-ratio:{w}/{h}">
 <div class="night-map-canvas" data-canvas></div>
