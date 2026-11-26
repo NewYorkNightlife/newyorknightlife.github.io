@@ -1,12 +1,12 @@
 {
- "end": "2026-11-26T06:00:00-05:00",
- "fetched": "2026-11-26T05:00:46+00:00",
- "issued": "2026-11-26T00:55:50+00:00",
+ "end": "2026-11-27T06:00:00-05:00",
+ "fetched": "2026-11-26T22:58:52+00:00",
+ "issued": "2026-11-26T19:40:34+00:00",
  "period": "Tonight",
- "rain_pct": 13,
- "short": "Cloudy",
+ "rain_pct": 100,
+ "short": "Heavy Rain",
  "source": "National Weather Service (weather.gov)",
- "start": "2026-11-25T20:00:00-05:00",
- "temp_f": 43,
- "wind": "9 to 21 mph NE"
+ "start": "2026-11-26T18:00:00-05:00",
+ "temp_f": 50,
+ "wind": "13 to 29 mph SE"
 }
