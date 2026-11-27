@@ -39,6 +39,9 @@
   var animId = 0;
   var goal = null;
   var suppressClick = false;
+  var swallowClick = false;
+  var skipOpenOnFocus = false;
+  var closedAt = 0;
   var MIN_ZOOM = 1;
   var MAX_ZOOM = 6;
   var mac = (navigator.userAgentData && navigator.userAgentData.platform === 'macOS')
@@ -372,7 +375,12 @@
     openKey = '';
     card.hidden = true;
     card.textContent = '';
-    if (restore && restore.focus) restore.focus();
+    closedAt = Date.now();
+    var target = restore && restore.isConnected && restore.focus ? restore : stage;
+    if (!target || !target.focus) return;
+    skipOpenOnFocus = true;
+    try { target.focus(); } catch (err) { /* the control may already be gone */ }
+    setTimeout(function () { skipOpenOnFocus = false; }, 400);
   }
   function rowLink(venue) {
     var link = document.createElement('a');
@@ -421,7 +429,25 @@
     close.className = 'nmap-close';
     close.setAttribute('aria-label', 'Close');
     close.textContent = 'Close';
-    close.addEventListener('click', function () { closeCard(from); });
+    var press = null;
+    function shut(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      closeCard(from);
+    }
+    close.addEventListener('pointerdown', function (event) {
+      press = { id: event.pointerId, x: event.clientX, y: event.clientY };
+    });
+    close.addEventListener('pointerup', function (event) {
+      if (!press || event.pointerId !== press.id) return;
+      var moved = Math.hypot(event.clientX - press.x, event.clientY - press.y);
+      press = null;
+      if (moved > 10) return;
+      if (event.pointerType === 'mouse' && event.button !== 0) return;
+      swallowClick = true;
+      shut(event);
+    });
+    close.addEventListener('click', shut);
     venues.forEach(function (venue) {
       var link = rowLink(venue);
       if (link) card.appendChild(link);
@@ -481,6 +507,7 @@
           btn.appendChild(count);
         }
         btn.addEventListener('click', function (event) {
+          if (swallowClick || Date.now() - closedAt < 400) return;
           var spread = groupSpan(group);
           if (group.items.length > 1 && (spread.w > 28 || spread.h > 28) && zoomLevel() < MAX_ZOOM - 0.05) {
             zoomToGroup(group);
@@ -493,6 +520,7 @@
           }
         });
         btn.addEventListener('focus', function () {
+          if (skipOpenOnFocus || Date.now() - closedAt < 400) return;
           var spread = groupSpan(group);
           if (group.items.length > 1 && (spread.w > 28 || spread.h > 28) && zoomLevel() < MAX_ZOOM - 0.05) return;
           openCard(group, btn);
@@ -599,6 +627,9 @@
   function isControl(target) {
     return !!(target && target.closest && target.closest('button, a, input, textarea, select'));
   }
+  function onCard(target) {
+    return !!(target && target.closest && target.closest('.night-map-card'));
+  }
   function showHint(text) {
     var hint = root.querySelector('[data-hint]');
     if (!hint) return;
@@ -622,15 +653,25 @@
     var pinchMoved = false;
 
     stage.addEventListener('click', function (event) {
-      if (!suppressClick) return;
-      event.preventDefault();
-      event.stopPropagation();
-      suppressClick = false;
+      if (swallowClick) {
+        event.preventDefault();
+        event.stopPropagation();
+        swallowClick = false;
+        return;
+      }
+      if (onCard(event.target)) return;
+      if (suppressClick) {
+        event.preventDefault();
+        event.stopPropagation();
+        suppressClick = false;
+        return;
+      }
+      if (!card.hidden && !isControl(event.target)) closeCard(stage);
     }, true);
 
     stage.addEventListener('pointerdown', function (event) {
       if (event.pointerType !== 'mouse' || event.button !== 0) return;
-      if (isControl(event.target)) return;
+      if (onCard(event.target) || isControl(event.target)) return;
       mouse = {
         id: event.pointerId,
         x: event.clientX,
@@ -667,6 +708,7 @@
     stage.addEventListener('pointercancel', endMouse);
 
     stage.addEventListener('touchstart', function (event) {
+      if (onCard(event.target)) return;
       sawTouch = Date.now();
       if (event.touches.length >= 2) event.preventDefault();
       if (event.touches.length === 1) {
@@ -689,6 +731,7 @@
       }
     }, { passive: false });
     stage.addEventListener('touchmove', function (event) {
+      if (onCard(event.target) && !pinch) return;
       if (event.touches.length >= 2 && pinch) {
         event.preventDefault();
         var a = event.touches[0];
@@ -742,7 +785,7 @@
         syncZoom();
         return;
       }
-      if (isControl(event.target)) return;
+      if (onCard(event.target) || isControl(event.target)) return;
       var t = event.changedTouches && event.changedTouches[0];
       if (!t) return;
       var now = Date.now();
@@ -764,13 +807,13 @@
     });
 
     stage.addEventListener('dblclick', function (event) {
-      if (Date.now() - sawTouch < 700 || isControl(event.target)) return;
+      if (Date.now() - sawTouch < 700 || onCard(event.target) || isControl(event.target)) return;
       event.preventDefault();
       var rect = stage.getBoundingClientRect();
       zoomAbout(2, event.clientX - rect.left, event.clientY - rect.top, true);
     });
     stage.addEventListener('wheel', function (event) {
-      if (event.target.closest && event.target.closest('.night-map-card') && !(event.ctrlKey || event.metaKey)) return;
+      if (onCard(event.target)) return;
       if (event.ctrlKey || event.metaKey) {
         event.preventDefault();
         var rect = stage.getBoundingClientRect();
