@@ -159,6 +159,7 @@ def home(page, write, u, vs, H):
 <h2>Most asked about</h2>
 <div class="vlist two posters">{cards}</div>
 {affiliates.block(affiliates.HOME, "nynightlife-home", "home", u, "Book a night out")}
+{affiliates.klook_block(affiliates.KLOOK_VISITOR, "klook:home", u, "Book ahead", "Klook listings for a New York visit, separate from the Viator links above. " + affiliates.NOTE)}
 <h2>Why trust this</h2>
 <div class="card"><ul class="clean">
 <li>Each fact is checked against the venue's own site or two independent sources.</li>
@@ -204,6 +205,7 @@ def trust_pages(page, write, u):
     simple(page, write, "/affiliate-disclosure.html", "Affiliate disclosure | NY Nightlife", "How NY Nightlife may earn money.", "Affiliate disclosure",
            """<p class="lede">Some links on NY Nightlife may be affiliate links. If you book through one, we may earn a commission at no extra cost to you.</p>
 <p>Booking links to Viator are affiliate links (partner ID P00330813). They are marked sponsored. You pay the price Viator shows; we don't add a fee.</p>
+<p>Booking links to Klook are affiliate links (account AID 145278). They are marked sponsored. You pay the price Klook shows; we don't add a fee.</p>
 <p>Affiliate links are labeled where they appear. Commissions never decide what a page says: dress codes, ages and prices are reported as the sources show them, including when that's bad news for a venue.</p>
 <p>We don't accept payment for reviews or rankings. If we ever sell a sponsored placement, it will be labeled "Sponsored".</p>""")
     simple(page, write, "/privacy.html", "Privacy | NY Nightlife", "What NY Nightlife collects.", "Privacy",
@@ -262,6 +264,10 @@ def cruise_guide(page, write, u, actions, fmt_date, H):
         "Book a cruise",
         "Viator listings, separate from the facts above. " + affiliates.NOTE,
         heading_id="book")
+    book += affiliates.klook_block(
+        affiliates.KLOOK_HARBOR, "klook:nyc-dinner-cruises", u, "Harbor Lights on Klook",
+        "Klook listing for Circle Line's evening Harbor Lights cruise, separate from the facts above. " + affiliates.NOTE_ONE,
+        heading_id="harbor-lights")
     import present
     media = H["picture"]("bachelorette-night", "Lower Manhattan skyline at sunset from New York Harbor",
                          "(min-width: 1040px) 1016px, calc(100vw - 36px)", eager=True)
@@ -286,7 +292,7 @@ def cruise_guide(page, write, u, actions, fmt_date, H):
                               ["Pier 83", "Pier 16", "Pier 61", "Midtown"], media) + f"""
 <p class="credit">Photo: {credit}</p>
 {present.answer_box("Where sunset, dinner, jazz, brunch, and New Year's Eve cruises leave from, and how long the sailings we could verify actually run. If a fact is missing, we did not confirm it.")}
-{present.jump_nav([("sunset", "Sunset"), ("dinner", "Dinner"), ("jazz", "Jazz and brunch"), ("nye", "New Year's Eve"), ("book", "Book"), ("sources", "Sources")])}
+{present.jump_nav([("sunset", "Sunset"), ("dinner", "Dinner"), ("jazz", "Jazz and brunch"), ("nye", "New Year's Eve"), ("book", "Book"), ("harbor-lights", "Harbor Lights"), ("sources", "Sources")])}
 <h2 id="sunset">Sunset cruises</h2>
 <p>Circle Line publishes three evening cruises. Checked on the operator's pages, Nov 11, 2026.</p>
 <div class="vlist two posters">{sailings}</div>
@@ -333,14 +339,18 @@ def plans_hub(page, write, u):
         ["Harbor", "Comedy", "Clubs"]) + present.answer_box(
         "Checked pages for a group of 10, a harbor cruise, a boat party, and a bachelor night. Each one only states what we could verify.") + present.jump_nav([
             ("weekend", "This weekend"), ("bach", "Bachelorette"), ("cruises", "Cruises"),
-            ("boat", "Boat party"), ("bachelor", "Bachelor party"), ("comedy", "Comedy")]) + """
+            ("boat", "Boat party"), ("bachelor", "Bachelor party"), ("comedy", "Comedy"),
+            ("book-ahead", "Book ahead")]) + """
 <a class="card-link" id="weekend" href="/this-weekend/"><span>This weekend<span class="sub">Friday through Sunday from the same event feeds as Tonight.</span></span><span class="go">See the weekend →</span></a>
 <a class="card-link" id="bach" href="/plans/bachelorette-night.html"><span>Bachelorette Night for 10<span class="sub">Cruise, party bus, or yacht, priced per person. Checked Oct 18, 2026.</span></span><span class="go">See prices →</span></a>
 <a class="card-link" id="cruises" href="/plans/nyc-dinner-cruises.html"><span>NYC dinner and sunset cruises<span class="sub">Piers, timing, and what we did not confirm. Checked Nov 11, 2026.</span></span><span class="go">Read →</span></a>
 <a class="card-link" id="boat" href="/plans/nyc-boat-party.html"><span>NYC boat party<span class="sub">DJ cruise, sunset sail, and the dinner boat. Checked Nov 16, 2026.</span></span><span class="go">Read →</span></a>
 <a class="card-link" id="bachelor" href="/plans/bachelor-party.html"><span>Bachelor party ideas<span class="sub">A boat, a comedy room, or a checked club. Checked Nov 16, 2026.</span></span><span class="go">Read →</span></a>
 <a class="card-link" id="comedy" href="/guides/nyc-comedy-clubs.html"><span>NYC comedy clubs<span class="sub">Rooms the clubs publish, plus comedy in the feed.</span></span><span class="go">Read →</span></a>
-"""
+""" + affiliates.klook_block(
+        affiliates.KLOOK_AHEAD, "klook:plans", u, "Book ahead",
+        "Klook listings for a New York visit, separate from the guides above. " + affiliates.NOTE,
+        heading_id="book-ahead")
     write("/plans/index.html", page("Group nights in NYC | NY Nightlife",
                                     "Bachelorette prices, NYC boat party, bachelor party ideas, and a checked guide to dinner and sunset cruises.",
                                     "/plans/", body, None, "no-bar", updated="2026-11-16"))
@@ -435,6 +445,10 @@ def boat_party(page, write, u, actions, H, vs):
         "nynightlife-nyc-boat-party", "nyc-boat-party", u, "Book a boat",
         "Viator listings, separate from the facts above. " + affiliates.NOTE,
         heading_id="book")
+    book += affiliates.klook_block(
+        affiliates.KLOOK_HARBOR, "klook:nyc-boat-party", u, "Harbor Lights on Klook",
+        "Klook listing for Circle Line's evening Harbor Lights cruise, separate from the facts above. " + affiliates.NOTE_ONE,
+        heading_id="harbor-lights")
     faqs = [
         ("What counts as an NYC boat party?",
          "Circle Line describes Sip 'N Groove as an 18+ live-DJ party cruise from Pier 83, built for groups, birthdays, and a night out. Harbor Lights and Statue at Sunset are sightseeing cruises. City Cruises' Signature Dinner Cruise is a 2.5-hour dinner with a live DJ from Pier 61."),
@@ -450,7 +464,7 @@ def boat_party(page, write, u, actions, H, vs):
     body = present.guide_hero("NYC boat party", "Guide · New York Harbor", MONEY_CHECKED,
                               ["Pier 83", "Pier 16", "Pier 61", "Midtown"]) + f"""
 {present.answer_box("For an NYC boat party, Circle Line's Sip 'N Groove is the 18+ DJ cruise from Pier 83. Harbor Lights (Pier 83, 2 hours) and Statue at Sunset (Pier 16, about 90 minutes) are sightseeing cruises. City Cruises' Signature Dinner Cruise is 2.5 hours from Pier 61 with a dinner buffet, a live DJ, and a casual dress code. We are not publishing a ticket price. Checked " + MONEY_CHECKED + ".")}
-{present.jump_nav([("party", "The party cruise"), ("sunset", "Sunset"), ("dinner", "Dinner"), ("land", "On land"), ("book", "Book"), ("questions", "Questions"), ("sources", "Sources")])}
+{present.jump_nav([("party", "The party cruise"), ("sunset", "Sunset"), ("dinner", "Dinner"), ("land", "On land"), ("book", "Book"), ("harbor-lights", "Harbor Lights"), ("questions", "Questions"), ("sources", "Sources")])}
 <p class="lede">A ticketed night on the harbor, not a private yacht quote. These are the sailings the operators describe, checked {MONEY_CHECKED}.</p>
 <h2 id="party">The party cruise</h2>
 <p>Circle Line's own comparison of its evening cruises calls Sip 'N Groove a two-hour 18+ party cruise from Pier 83 with a live DJ and a full bar. The same page says it fits birthdays, bachelorette weekends, and groups of friends. It does not list a clock time or a dress code. Alcohol service is still 21+ in New York. <a href="{u('/guides/under-21-nyc-bars-clubs.html')}">Under 21 in NYC</a> cites the statute. Boarding age is the 18+ rule printed for this sailing.</p>
@@ -497,6 +511,10 @@ def bachelor_party(page, write, u, actions, H, vs):
         "nynightlife-bachelor-party", "bachelor-party", u, "Book a piece of the night",
         "Viator listings, separate from the checked pages above. " + affiliates.NOTE,
         heading_id="book")
+    show = affiliates.klook_block(
+        affiliates.KLOOK_SHOW, "klook:bachelor-party", u, "Book a Broadway show",
+        "Klook ticket for The Lion King, separate from the comedy rooms above. " + affiliates.NOTE_ONE,
+        heading_id="broadway")
     faqs = [
         ("What are NYC bachelor party ideas you actually checked?",
          "A harbor boat, a comedy club, or a nightclub that already has a fact page here. Circle Line's Sip 'N Groove is an 18+ DJ cruise. Comedy Cellar, Gotham Comedy Club, The Stand, and New York Comedy Club publish their rooms on their own sites. This page does not sell a package or a price."),
@@ -512,12 +530,13 @@ def bachelor_party(page, write, u, actions, H, vs):
     body = present.guide_hero("NYC bachelor party", "Guide · group night", MONEY_CHECKED,
                               ["Pier 83", "Chelsea", "Bushwick", "Comedy"]) + f"""
 {present.answer_box("NYC bachelor party ideas on this site are a boat, a comedy room, or a club we have already checked. Circle Line's Sip 'N Groove is an 18+ DJ cruise from Pier 83. Comedy Cellar, Gotham, The Stand, and New York Comedy Club publish their own addresses. Covers and dress codes for clubs stay on the venue pages. Checked " + MONEY_CHECKED + ".")}
-{present.jump_nav([("water", "On the water"), ("comedy", "Comedy"), ("clubs", "Clubs"), ("prices", "Prices"), ("book", "Book"), ("questions", "Questions"), ("sources", "Sources")])}
+{present.jump_nav([("water", "On the water"), ("comedy", "Comedy"), ("broadway", "Broadway"), ("clubs", "Clubs"), ("prices", "Prices"), ("book", "Book"), ("questions", "Questions"), ("sources", "Sources")])}
 <p class="lede">Three kinds of plan we could verify. No package price, and no ranking.</p>
 <h2 id="water">Start on the water</h2>
 <p>The boat we can describe from the operator is on <a href="{u('/plans/nyc-boat-party.html')}">NYC boat party</a>. Short version: Sip 'N Groove is Circle Line's 18+ DJ cruise from Pier 83, and City Cruises runs a 2.5-hour dinner with a DJ from Pier 61. <a href="{u('/plans/nyc-dinner-cruises.html')}">Dinner and sunset cruises</a> has the sightseeing piers.</p>
 <h2 id="comedy">Comedy</h2>
 <p>A show is a simpler group plan than a club door. Addresses, Comedy Cellar's published prices, and any comedy row in the events feed are on <a href="{u('/guides/nyc-comedy-clubs.html')}">NYC comedy clubs</a>.</p>
+{show}
 <h2 id="clubs">Clubs we have already checked</h2>
 <p>These are not a ranking. Each page has the cover, dress code, age, and hours we could source, plus the date that page was checked. Read the page before you promise the group a yes at the door. Marquee New York is in Chelsea. House of Yes is in Bushwick.</p>
 <div class="vlist two posters">{clubs}</div>
@@ -798,6 +817,10 @@ def new_years_eve(page, write, u, actions, H, vs):
         "Book an NYE cruise or tour",
         "Viator search, separate from the operator pages above. " + affiliates.NOTE,
         heading_id="book")
+    book += affiliates.klook_block(
+        affiliates.KLOOK_AHEAD, "klook:nyc-new-years-eve", u, "Book ahead",
+        "Klook listings for a New York visit, separate from the operator pages above. This page does not copy a price from them. " + affiliates.NOTE,
+        heading_id="book-ahead")
     faqs = [
         ("When is New Year's Eve 2026?",
          "Thursday, December 31, 2026. New York City's Mayor's Office of Media and Entertainment dates the 2027 Times Square ball drop that day. The Times Square Alliance FAQ, checked the same day as this page, calls the season New Year's Eve 2027."),
@@ -806,14 +829,14 @@ def new_years_eve(page, write, u, actions, H, vs):
         ("What time do NYC bars close on New Year's Eve?",
          "4am, according to the closing-time guide on this site. That guide cites New York ABC Law section 106(5): no on-premises alcohol sales from 4am to 8am, and no drinking on the premises more than half an hour after 4am. The guide's citation does not describe a New Year's Eve exception. December 31, 2026 is a Thursday, so the Sunday-morning rule in that section is not the one in effect that night. Many venues close earlier. Weekly hours on a venue page are not an NYE schedule."),
         ("How much is an NYE cruise?",
-         "Circle Line's New Year's Eve page does not print a price, and this guide does not invent one. The page describes two Pier 83 sailings for ringing in 2027 and does not print a calendar date. Read the operator's listing. Viator links below are a separate search."),
+         "Circle Line's New Year's Eve page does not print a price, and this guide does not invent one. The page describes two Pier 83 sailings for ringing in 2027 and does not print a calendar date. Read the operator's listing. Viator links below are a separate search. Klook cards below are separate labeled booking links, and this page does not copy a price from them."),
     ]
     body = present.guide_hero("New Year's Eve 2026", f"Guide · official pages checked {NYE_CHECKED}", NYE_CHECKED,
                               ["Times Square", "Midtown", "Pier 83"]) + f"""
 <p class="lede">The ball drop, two cruises, and the 4am rule. Only what an official page or a checked venue page actually says. No prices.</p>
 <p>The weeks before this, from Thanksgiving through New Year's Day, are on <a href="{u('/guides/nyc-holiday-nights.html')}">holiday nights 2026</a>.</p>
 {present.answer_box("New Year's Eve 2026 is Thursday, December 31. New York City dates the Times Square ball drop that night. The Alliance FAQ says the ball goes up around 6:00pm EST and starts a 60-second descent at 11:59pm EST, and that the outdoor viewing areas open at 3pm with no ticket. On-premises alcohol sales still stop at 4am. This page does not publish a cruise or party price. Official pages checked " + NYE_CHECKED + ".")}
-{present.jump_nav([("line", "The night"), ("ball", "Ball drop"), ("cruises", "Cruises"), ("parties", "Parties and bars"), ("close", "4am"), ("book", "Book"), ("questions", "Questions"), ("sources", "Sources")])}
+{present.jump_nav([("line", "The night"), ("ball", "Ball drop"), ("cruises", "Cruises"), ("parties", "Parties and bars"), ("close", "4am"), ("book", "Book"), ("book-ahead", "Book ahead"), ("questions", "Questions"), ("sources", "Sources")])}
 {present.route_html()}
 <h2 id="ball">Times Square ball drop</h2>
 <p>New York City's <a href="{MOME_NYE}" rel="nofollow noopener">press-card page</a> titles the event the 2027 New Year's Eve ball drop and dates it Thursday, Dec. 31, 2026. That page is about press credentials, not about public viewing.</p>
@@ -889,6 +912,10 @@ def holiday_nights(page, write, u, actions, H, vs):
         "A holiday-only menu was not on a product page we could verify, so this card does not call it a Christmas sailing. "
         + affiliates.NOTE,
         heading_id="book")
+    book += affiliates.klook_block(
+        affiliates.KLOOK_AHEAD, "klook:nyc-holiday-nights", u, "Book ahead",
+        "Klook listings for a New York visit, including Top of the Rock, separate from the facts above. This page does not copy a price from them. " + affiliates.NOTE,
+        heading_id="book-ahead")
     faqs = [
         ("When are the Dyker Heights lights best?",
          "Time Out's Dyker Heights guide, dated November 20, 2026, says most homeowners put the lights up the weekend after Thanksgiving, and that the best time to see them is mid-December through New Year's Eve, between dusk and 9pm if you are walking. Most houses turn the displays off after 9pm. Some leave them on later. The decor usually stays up until the end of the first week of January. There is no official switch-on. The blocks that guide names are 11th to 13th Avenues, from 83rd to 86th Street, in Dyker Heights, Brooklyn. Walking them is free. The D train to 79th Street leaves about a 15-minute walk, and the guide calls the walk hilly."),
@@ -967,7 +994,7 @@ def holiday_nights(page, write, u, actions, H, vs):
         ["Dyker Heights", "Rockefeller Center", "Bryant Park", "FiDi"], media) + f"""
 <p class="credit">Photo: {credit}. The rink at Bank of America Winter Village. The Rockefeller card is the tree on December 2, 2023, not the 2026 lighting.</p>
 {present.answer_box(short)}
-{present.jump_nav([("line", "The route"), ("dyker", "Dyker Heights"), ("tree", "Tree and Saks"), ("markets", "Markets"), ("bars", "Festive bars"), ("eve", "Thanksgiving Eve"), ("nye", "New Year's Eve"), ("book", "Book"), ("questions", "Questions"), ("sources", "Sources")])}
+{present.jump_nav([("line", "The route"), ("dyker", "Dyker Heights"), ("tree", "Tree and Saks"), ("markets", "Markets"), ("bars", "Festive bars"), ("eve", "Thanksgiving Eve"), ("nye", "New Year's Eve"), ("book", "Book"), ("book-ahead", "Book ahead"), ("questions", "Questions"), ("sources", "Sources")])}
 <section class="route-block" id="line"><h2>Six stops after dark</h2>
 <p class="small">A route, not a timetable. Each stop is a place with a page we opened on {HOLIDAY_CHECKED}. The lit hour-line on Tonight is a different clock.</p>
 <ol class="route" aria-label="Holiday nights, stop by stop">{route}</ol></section>

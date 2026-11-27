@@ -1,7 +1,12 @@
-"""Viator affiliate links approved 2026-11-09 (partner P00330813, mcid 42383).
+"""Affiliate links.
 
-Ratings, review counts and prices are copied from that list. Search links have
-none, and this module never invents them.
+Viator, approved 2026-11-09 (partner P00330813, mcid 42383). Ratings, review
+counts and prices are copied from that list. Search links have none, and this
+module never invents them.
+
+Klook, approved 2026-11-26 (account AID 145278). Each href is a Link-converter
+URL from the Klook portal, used exactly. This module does not add a price, a
+rating, or any other Klook product URL.
 """
 import html
 import urllib.parse
@@ -164,6 +169,60 @@ EXTRA_VENUE = {
 NOTE = "We may earn a commission when you book through these links, at no extra cost to you."
 NOTE_ONE = "We may earn a commission when you book through this link, at no extra cost to you."
 
+# Exact portal links. Do not rebuild these, and do not add a price or a rating.
+KLOOK_AID = "145278"
+KLOOK_OFFERS = (
+    {
+        "id": "top-of-the-rock",
+        "title": "Top of the Rock",
+        "detail": "Observation deck",
+        "go": "Book",
+        "url": "https://affiliate.klook.com/redirect?aid=145278&aff_adid=1599974&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Factivity%2F2964-top-of-the-rock-new-york%2F",
+    },
+    {
+        "id": "harbor-lights",
+        "title": "Harbor Lights cruise",
+        "detail": "Circle Line · evening",
+        "go": "Book",
+        "url": "https://affiliate.klook.com/redirect?aid=145278&aff_adid=1599975&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Factivity%2F10784-harbor-lights-cruise-new-york%2F",
+    },
+    {
+        "id": "lion-king",
+        "title": "The Lion King",
+        "detail": "Broadway",
+        "go": "Tickets",
+        "url": "https://affiliate.klook.com/redirect?aid=145278&aff_adid=1599976&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Factivity%2F7705-lion-king-broadway-show-ticket-new-york%2F",
+    },
+    {
+        "id": "citypass",
+        "title": "New York CityPASS",
+        "detail": "Attraction pass",
+        "go": "Book",
+        "url": "https://affiliate.klook.com/redirect?aid=145278&aff_adid=1599977&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Factivity%2F11167-new-york-city-pass-attractions-new-york%2F",
+    },
+    {
+        "id": "gocity",
+        "title": "Go City New York",
+        "detail": "All-inclusive pass",
+        "go": "Book",
+        "url": "https://affiliate.klook.com/redirect?aid=145278&aff_adid=1599978&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Factivity%2F107217-new-york-all-inclusive-pass%2F",
+    },
+    {
+        "id": "ny-destination",
+        "title": "New York on Klook",
+        "detail": "Destination page",
+        "go": "Browse",
+        "url": "https://affiliate.klook.com/redirect?aid=145278&aff_adid=1599979&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Fdestination%2Fc93-new-york%2F",
+    },
+)
+KLOOK_BY_ID = {o["id"]: o for o in KLOOK_OFFERS}
+# Visitor strip: night deck, evening cruise, a Broadway ticket, and the two passes.
+KLOOK_AHEAD = ("top-of-the-rock", "harbor-lights", "lion-king", "citypass", "gocity")
+# Home is the visitor start, so it also carries the New York destination page.
+KLOOK_VISITOR = KLOOK_AHEAD + ("ny-destination",)
+KLOOK_HARBOR = ("harbor-lights",)
+KLOOK_SHOW = ("lion-king",)
+
 
 def href(offer, campaign):
     parts = urllib.parse.urlsplit(offer["url"])
@@ -193,20 +252,44 @@ def _card(offer, campaign, placement):
     )
 
 
-def block(ids, campaign, placement, u, heading=None, note=None, heading_id=None):
-    """A compact group of existing card-links, plus the FTC line."""
-    links = "".join(_card(BY_ID[i], campaign, placement) for i in ids)
+def _group(links, n, u, heading, note, heading_id):
     if heading:
         hid = f' id="{e(heading_id)}"' if heading_id else ""
         h = f"<h2{hid}>{e(heading)}</h2>"
     else:
         h = ""
-    cls = "book-grid" if len(ids) > 1 else "book-one"
-    line = note or (NOTE if len(ids) > 1 else NOTE_ONE)
+    cls = "book-grid" if n > 1 else "book-one"
+    line = note or (NOTE if n > 1 else NOTE_ONE)
     return (
         f'{h}<div class="{cls}">{links}</div>'
         f'<p class="aff-note">{line} <a href="{u("/affiliate-disclosure.html")}">Affiliate disclosure.</a></p>'
     )
+
+
+def block(ids, campaign, placement, u, heading=None, note=None, heading_id=None):
+    """A compact group of existing card-links, plus the FTC line."""
+    links = "".join(_card(BY_ID[i], campaign, placement) for i in ids)
+    return _group(links, len(ids), u, heading, note, heading_id)
+
+
+def _ksub(offer):
+    return f'{offer["detail"]} · Klook' if offer.get("detail") else "Klook"
+
+
+def _kcard(offer, placement):
+    return (
+        f'<a class="card-link" href="{e(offer["url"])}" '
+        f'rel="sponsored nofollow noopener" target="_blank" '
+        f'data-partner="klook" data-placement="{e(placement)}" data-track="{e(offer["title"])}">'
+        f'<span>{e(offer["title"])}<span class="sub">{e(_ksub(offer))}</span></span>'
+        f'<span class="go">{e(offer["go"])} →</span></a>'
+    )
+
+
+def klook_block(ids, placement, u, heading=None, note=None, heading_id=None):
+    """Text-only Klook cards. The href is the portal URL, with nothing added."""
+    links = "".join(_kcard(KLOOK_BY_ID[i], placement) for i in ids)
+    return _group(links, len(ids), u, heading, note, heading_id)
 
 
 def venue_block(v, u):

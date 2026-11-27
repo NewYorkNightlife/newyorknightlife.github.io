@@ -233,7 +233,7 @@ def weekend_page(H, vs):
         ("Where do these listings come from?",
          "NYC Parks public events and NYC permitted events, both from NYC Open Data, plus Ticketmaster Discovery when the site's build has a key. We do not scrape Resident Advisor or SeatGeek. Viator cards on this page are separate, labeled booking links."),
         ("Are the booking links affiliate links?",
-         "Viator links are affiliate links (partner ID P00330813) and they are marked sponsored. Ticketmaster buttons, when a listing has one, go to the event URL Ticketmaster returned and are not affiliate links."),
+         "Viator links are affiliate links (partner ID P00330813) and Klook links are affiliate links (account AID 145278). Both are marked sponsored. Ticketmaster buttons, when a listing has one, go to the event URL Ticketmaster returned and are not affiliate links."),
         ("Why is a show missing?",
          "The parks feed is mostly daytime programs, and we keep concerts, festivals, theater, and dance performances. Ticketmaster is limited to the next seven days in New York City. Anything outside those feeds is not listed. A missing listing means the feed did not include it."),
     ]
@@ -269,6 +269,7 @@ def weekend_page(H, vs):
 <li>Thanksgiving through New Year's Day: <a href="{u('/guides/nyc-holiday-nights.html')}">holiday nights 2026</a>.</li>
 <li>A group plan: <a href="{u('/plans/')}">group nights</a>.</li></ul>
 {affiliates.block(affiliates.WEEKEND, "nynightlife-this-weekend", "this-weekend", u, "Book a weekend tour or cruise")}
+{affiliates.klook_block(affiliates.KLOOK_AHEAD, "klook:this-weekend", u, "Book ahead", "Klook listings for a New York visit, separate from the event feed and the Viator links above. " + affiliates.NOTE)}
 {newsletter_block(H)}
 <script defer src="{H['tonight_js']}"></script>"""
     title = "NYC this weekend | NY Nightlife"
