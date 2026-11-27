@@ -1343,7 +1343,8 @@ body.guide-page .vlist.posters .poster-t { font-size: clamp(18px, 2vw, 26px); -w
 .night-map-land path.is-on { fill: #1b2740; stroke: #ffb86b; }
 .night-map-card {
   position: absolute;
-  z-index: 3;
+  z-index: 6;
+  touch-action: manipulation;
   left: 10px;
   right: 10px;
   bottom: 10px;
@@ -1413,10 +1414,13 @@ body.guide-page .vlist.posters .poster-t { font-size: clamp(18px, 2vw, 26px); -w
 }
 .nmap-close {
   position: absolute;
+  z-index: 2;
   top: 6px;
   right: 6px;
   width: 44px;
   height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border: 0;
   border-radius: 12px;
   background: transparent;
@@ -1425,6 +1429,7 @@ body.guide-page .vlist.posters .poster-t { font-size: clamp(18px, 2vw, 26px); -w
   font-size: 12px;
   letter-spacing: .04em;
   cursor: pointer;
+  touch-action: manipulation;
 }
 .night-map-empty {
   position: absolute;

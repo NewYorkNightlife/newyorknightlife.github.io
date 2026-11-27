@@ -116,6 +116,14 @@ jobs:
           python _build/test_nyla_audio.py
           node _build/test_nyla.js . --links
           node _build/test_nyla_voice.js .
+          if [ ! -x /usr/bin/google-chrome ] && [ ! -x /usr/bin/google-chrome-stable ] && [ ! -x /usr/bin/chromium ] && [ ! -x /usr/bin/chromium-browser ]; then
+            npm install --prefix "$RUNNER_TEMP/mapclose" --no-fund --no-audit puppeteer
+            export NODE_PATH="$RUNNER_TEMP/mapclose/node_modules${NODE_PATH:+:$NODE_PATH}"
+          elif ! node -e "require('puppeteer-core')" 2>/dev/null; then
+            npm install --prefix "$RUNNER_TEMP/mapclose" --no-fund --no-audit puppeteer-core
+            export NODE_PATH="$RUNNER_TEMP/mapclose/node_modules${NODE_PATH:+:$NODE_PATH}"
+          fi
+          node _build/test_night_map_close.js
 
       - name: Intent checks
         continue-on-error: true
