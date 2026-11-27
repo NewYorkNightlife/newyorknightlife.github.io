@@ -26,7 +26,7 @@
 <meta name='impact-site-verification' value='59f0bf98-cda3-4aaf-9bd2-b750205147c8'>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/instrument-sans-normal-400_700-latin.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/fraunces-normal-600-latin.woff2">
-<link rel="stylesheet" href="/css/site.css?v=f8b1a271">
+<link rel="stylesheet" href="/css/site.css?v=713cfa73">
 <link rel="stylesheet" href="/css/concierge.css">
 <script defer src="/js/concierge.js?v=5413a40c"></script>
 <script defer src="/js/nyla-voice.js?v=24e7ab97"></script>
@@ -65,10 +65,12 @@
 <h2 id="night-map-title">Night map</h2>
 <p class="night-map-lede">Rooms whose address matches a city address point.</p>
 <div class="night-map-layout">
-<div class="night-map-stage" style="aspect-ratio:800/811">
+<div class="night-map-stage" style="aspect-ratio:800/811" tabindex="0" aria-label="Night map. Drag or use two fingers to move. Pinch, or Ctrl or Command and scroll, to zoom. Arrow keys move. Plus and minus zoom.">
 <div class="night-map-canvas" data-canvas></div>
 <div class="night-map-labels"><button type="button" class="night-map-label" data-boro="manhattan" style="left:53.80%;top:26.34%" aria-pressed="false">Manhattan</button><button type="button" class="night-map-label" data-boro="brooklyn" style="left:52.96%;top:65.35%" aria-pressed="false">Brooklyn</button><button type="button" class="night-map-label" data-boro="queens" style="left:79.64%;top:43.67%" aria-pressed="false">Queens</button><button type="button" class="night-map-label" data-boro="bronx" style="left:67.96%;top:17.67%" aria-pressed="false">Bronx</button><button type="button" class="night-map-label" data-boro="staten-island" style="left:21.30%;top:77.27%" aria-pressed="false">Staten Island</button></div>
 <div class="night-map-pins" data-pins></div>
+<div class="nmap-zoom" role="group" aria-label="Zoom the map"><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="out" aria-label="Zoom out" disabled>−</button><button type="button" data-zoom="reset" aria-label="Recenter map"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button></div>
+<p class="nmap-hint" data-hint hidden aria-hidden="true">Use two fingers to move the map</p>
 <div class="night-map-card" data-card role="region" hidden></div>
 <p class="night-map-empty" data-empty hidden>No checked room in this borough.</p>
 </div>
@@ -89,7 +91,7 @@
     if (root.getAttribute('data-booted')) return;
     root.setAttribute('data-booted', '1');
     var s = document.createElement('script');
-    s.src = '/js/night-map.js?v=9d4c67ff';
+    s.src = '/js/night-map.js?v=6bcced09';
     s.defer = true;
     document.body.appendChild(s);
   }

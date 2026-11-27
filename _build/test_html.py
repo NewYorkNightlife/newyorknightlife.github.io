@@ -228,6 +228,13 @@ def main():
         fail("night map drew a poster")
     if 'id="night-map-pins"' not in home or "/img/night-map.svg" not in home:
         fail("night map is missing its pin data or borough drawing")
+    map_html = home[night:beyond]
+    stage = re.search(r'<div class="night-map-stage"[^>]*>', map_html)
+    if not stage or 'tabindex="0"' not in stage.group(0):
+        fail("night map stage is not keyboard focusable")
+    for token in ('data-zoom="in"', 'data-zoom="out"', 'data-zoom="reset"', 'data-hint', "Use two fingers to move the map"):
+        if token not in map_html:
+            fail(f"night map missing {token}")
     for guide in ("/venues/#manhattan", "/venues/#brooklyn", "/venues/#queens"):
         if guide not in home:
             fail(f"night map missing borough link {guide}")
