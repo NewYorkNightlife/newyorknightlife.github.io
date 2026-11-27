@@ -288,6 +288,7 @@ def _labels(box) -> str:
         slug = name.lower().replace(" ", "-")
         bits.append(
             f'<button type="button" class="night-map-label" data-boro="{slug}" '
+            f'data-vx="{x:.2f}" data-vy="{y:.2f}" '
             f'style="left:{x / box["w"] * 100:.2f}%;top:{y / box["h"] * 100:.2f}%" '
             f'aria-pressed="false">{e(name)}</button>'
         )
@@ -350,15 +351,26 @@ def markup(venues: list, u, js_src: str) -> str:
         f'{box["maxlng"]:.6f},{box["maxlat"]:.6f},{box["lat0"]}'
     )
     guides = _guide_links(u)
+    zoom = (
+        '<div class="nmap-zoom" role="group" aria-label="Zoom the map">'
+        '<button type="button" data-zoom="in" aria-label="Zoom in">+</button>'
+        '<button type="button" data-zoom="out" aria-label="Zoom out" disabled>−</button>'
+        '<button type="button" data-zoom="reset" aria-label="Recenter map">'
+        '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">'
+        '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+        'd="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button></div>'
+        '<p class="nmap-hint" data-hint hidden aria-hidden="true">Use two fingers to move the map</p>'
+    )
     return f"""<section class="night-map" id="night-map" data-night-map data-proj="{proj}" data-svg="{e(u('/img/night-map.svg'))}" aria-labelledby="night-map-title">
 <p class="eyebrow"><span class="line-mark" aria-hidden="true">N</span>Five boroughs</p>
 <h2 id="night-map-title">Night map</h2>
 <p class="night-map-lede">Rooms whose address matches a city address point.</p>
 <div class="night-map-layout">
-<div class="night-map-stage" style="aspect-ratio:{w}/{h}">
+<div class="night-map-stage" style="aspect-ratio:{w}/{h}" tabindex="0" aria-label="Night map. Drag or use two fingers to move. Pinch, or Ctrl or Command and scroll, to zoom. Arrow keys move. Plus and minus zoom.">
 <div class="night-map-canvas" data-canvas></div>
 <div class="night-map-labels">{_labels(box)}</div>
 <div class="night-map-pins" data-pins></div>
+{zoom}
 <div class="night-map-card" data-card role="region" hidden></div>
 <p class="night-map-empty" data-empty hidden>No checked room in this borough.</p>
 </div>
